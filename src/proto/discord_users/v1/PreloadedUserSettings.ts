@@ -1186,21 +1186,21 @@ export enum PreloadedUserSettings_GuildsLeaderboardOptOutDefault {
  */
 export enum PreloadedUserSettings_SlayerSDKReceiveInGameDMs {
     /**
-     * @generated from protobuf enum value: SLAYER_SDKRECEIVE_IN_GAME_DMS_SLAYER_SDK_RECEIVE_IN_GAME_DMS_UNSET = 0;
+     * @generated from protobuf enum value: SLAYER_SDK_RECEIVE_IN_GAME_DMS_UNSET = 0;
      */
-    SLAYER_SDKRECEIVE_IN_GAME_DMS_SLAYER_SDK_RECEIVE_IN_GAME_DMS_UNSET = 0,
+    SLAYER_SDK_RECEIVE_IN_GAME_DMS_UNSET = 0,
     /**
-     * @generated from protobuf enum value: SLAYER_SDKRECEIVE_IN_GAME_DMS_SLAYER_SDK_RECEIVE_IN_GAME_DMS_ALL = 1;
+     * @generated from protobuf enum value: SLAYER_SDK_RECEIVE_IN_GAME_DMS_ALL = 1;
      */
-    SLAYER_SDKRECEIVE_IN_GAME_DMS_SLAYER_SDK_RECEIVE_IN_GAME_DMS_ALL = 1,
+    SLAYER_SDK_RECEIVE_IN_GAME_DMS_ALL = 1,
     /**
-     * @generated from protobuf enum value: SLAYER_SDKRECEIVE_IN_GAME_DMS_SLAYER_SDK_RECEIVE_IN_GAME_DMS_USERS_WITH_GAME = 2;
+     * @generated from protobuf enum value: SLAYER_SDK_RECEIVE_IN_GAME_DMS_USERS_WITH_GAME = 2;
      */
-    SLAYER_SDKRECEIVE_IN_GAME_DMS_SLAYER_SDK_RECEIVE_IN_GAME_DMS_USERS_WITH_GAME = 2,
+    SLAYER_SDK_RECEIVE_IN_GAME_DMS_USERS_WITH_GAME = 2,
     /**
-     * @generated from protobuf enum value: SLAYER_SDKRECEIVE_IN_GAME_DMS_SLAYER_SDK_RECEIVE_IN_GAME_DMS_NONE = 3;
+     * @generated from protobuf enum value: SLAYER_SDK_RECEIVE_IN_GAME_DMS_NONE = 3;
      */
-    SLAYER_SDKRECEIVE_IN_GAME_DMS_SLAYER_SDK_RECEIVE_IN_GAME_DMS_NONE = 3
+    SLAYER_SDK_RECEIVE_IN_GAME_DMS_NONE = 3
 }
 /**
  * @generated from protobuf enum discord_protos.discord_users.v1.PreloadedUserSettings.Theme
@@ -1270,21 +1270,21 @@ export enum PreloadedUserSettings_LaunchPadMode {
  */
 export enum PreloadedUserSettings_UIDensity {
     /**
-     * @generated from protobuf enum value: UIDENSITY_UNSET_UI_DENSITY = 0;
+     * @generated from protobuf enum value: UI_DENSITY_UNSET_UI_DENSITY = 0;
      */
-    UIDENSITY_UNSET_UI_DENSITY = 0,
+    UI_DENSITY_UNSET_UI_DENSITY = 0,
     /**
-     * @generated from protobuf enum value: UIDENSITY_COMPACT = 1;
+     * @generated from protobuf enum value: UI_DENSITY_COMPACT = 1;
      */
-    UIDENSITY_COMPACT = 1,
+    UI_DENSITY_COMPACT = 1,
     /**
-     * @generated from protobuf enum value: UIDENSITY_COZY = 2;
+     * @generated from protobuf enum value: UI_DENSITY_COZY = 2;
      */
-    UIDENSITY_COZY = 2,
+    UI_DENSITY_COZY = 2,
     /**
-     * @generated from protobuf enum value: UIDENSITY_RESPONSIVE = 3;
+     * @generated from protobuf enum value: UI_DENSITY_RESPONSIVE = 3;
      */
-    UIDENSITY_RESPONSIVE = 3
+    UI_DENSITY_RESPONSIVE = 3
 }
 /**
  * @generated from protobuf enum discord_protos.discord_users.v1.PreloadedUserSettings.SwipeRightToLeftMode

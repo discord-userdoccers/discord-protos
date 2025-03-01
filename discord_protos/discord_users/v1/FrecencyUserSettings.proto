@@ -10,9 +10,9 @@ message FrecencyUserSettings {
   }
 
   enum GIFType {
-    GIFTYPE_NONE = 0;
-    GIFTYPE_IMAGE = 1;
-    GIFTYPE_VIDEO = 2;
+    GIF_TYPE_NONE = 0;
+    GIF_TYPE_IMAGE = 1;
+    GIF_TYPE_VIDEO = 2;
   }
 
   message FavoriteGIF {

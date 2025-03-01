@@ -254,17 +254,17 @@ export interface FrecencyUserSettings_GuildAndChannelFrecency {
  */
 export enum FrecencyUserSettings_GIFType {
     /**
-     * @generated from protobuf enum value: GIFTYPE_NONE = 0;
+     * @generated from protobuf enum value: GIF_TYPE_NONE = 0;
      */
-    GIFTYPE_NONE = 0,
+    GIF_TYPE_NONE = 0,
     /**
-     * @generated from protobuf enum value: GIFTYPE_IMAGE = 1;
+     * @generated from protobuf enum value: GIF_TYPE_IMAGE = 1;
      */
-    GIFTYPE_IMAGE = 1,
+    GIF_TYPE_IMAGE = 1,
     /**
-     * @generated from protobuf enum value: GIFTYPE_VIDEO = 2;
+     * @generated from protobuf enum value: GIF_TYPE_VIDEO = 2;
      */
-    GIFTYPE_VIDEO = 2
+    GIF_TYPE_VIDEO = 2
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class FrecencyUserSettings$Type extends MessageType<FrecencyUserSettings> {
