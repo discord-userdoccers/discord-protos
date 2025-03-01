@@ -27,7 +27,7 @@ jobs:
     - name: Install protoc
       uses: arduino/setup-protoc@v3
       with:
-        version: '5.28.x'
+        version: '28.x'
 
     - name: Install dependencies
       run: npm install
