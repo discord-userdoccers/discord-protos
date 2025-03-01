@@ -77,7 +77,15 @@ function parseName(name) {
 
 function convertCase(str) {
     // This converts standard EnumType case to ENUM_TYPE
-    return str.replace(/([a-z])([A-Z])/g, "$1_$2").toUpperCase();
+    // it must support the special case SlayerSDKReceive to SLAYER_SDK_RECEIVE
+    return str
+        // HACK: I can't think of another way to fix this
+        .replace("DMs", "Dms")
+        .replace(/([a-z])([A-Z])/g, "$1_$2")
+        .replace(/([A-Z])([A-Z][a-z])/g, "$1_$2")
+        .replace(/([a-z])(\d)/g, "$1_$2")
+        .replace(/([A-Z]+)(?=[A-Z][a-z])/g, "$1_")
+        .toUpperCase();
 }
 
 function flattenField(field) {
@@ -108,7 +116,9 @@ function parseEnum(enun) {
         values: Object.entries(data)
             .filter(([k, _]) => isNaN(Number(k)))
             .map(([k, v]) => ({
-                name: prefix + k,
+                // Discord shitcode sometimes fails to strip the prefix on the special case
+                // so we check if it already has it
+                name: k.startsWith(prefix) ? k : prefix + k,
                 value: v,
             })),
     };
