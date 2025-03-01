@@ -696,6 +696,10 @@ export interface PreloadedUserSettings_PrivacySettings {
      * @generated from protobuf field: optional google.protobuf.BoolValue default_guilds_restricted_v2 = 27;
      */
     defaultGuildsRestrictedV2?: BoolValue;
+    /**
+     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.SlayerSDKReceiveInGameDMs slayer_sdk_receive_dms_in_game = 28;
+     */
+    slayerSdkReceiveDmsInGame: PreloadedUserSettings_SlayerSDKReceiveInGameDMs;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.DebugSettings
@@ -839,6 +843,10 @@ export interface PreloadedUserSettings_AppearanceSettings {
      * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.UIDensity ui_density = 12;
      */
     uiDensity: PreloadedUserSettings_UIDensity;
+    /**
+     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.SwipeRightToLeftMode swipe_right_to_left_mode = 13;
+     */
+    swipeRightToLeftMode: PreloadedUserSettings_SwipeRightToLeftMode;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.GuildFolder
@@ -1174,6 +1182,27 @@ export enum PreloadedUserSettings_GuildsLeaderboardOptOutDefault {
     ON_FOR_NEW_GUILDS = 1
 }
 /**
+ * @generated from protobuf enum discord_protos.discord_users.v1.PreloadedUserSettings.SlayerSDKReceiveInGameDMs
+ */
+export enum PreloadedUserSettings_SlayerSDKReceiveInGameDMs {
+    /**
+     * @generated from protobuf enum value: SLAYER_SDKRECEIVE_IN_GAME_DMS_SLAYER_SDK_RECEIVE_IN_GAME_DMS_UNSET = 0;
+     */
+    SLAYER_SDKRECEIVE_IN_GAME_DMS_SLAYER_SDK_RECEIVE_IN_GAME_DMS_UNSET = 0,
+    /**
+     * @generated from protobuf enum value: SLAYER_SDKRECEIVE_IN_GAME_DMS_SLAYER_SDK_RECEIVE_IN_GAME_DMS_ALL = 1;
+     */
+    SLAYER_SDKRECEIVE_IN_GAME_DMS_SLAYER_SDK_RECEIVE_IN_GAME_DMS_ALL = 1,
+    /**
+     * @generated from protobuf enum value: SLAYER_SDKRECEIVE_IN_GAME_DMS_SLAYER_SDK_RECEIVE_IN_GAME_DMS_USERS_WITH_GAME = 2;
+     */
+    SLAYER_SDKRECEIVE_IN_GAME_DMS_SLAYER_SDK_RECEIVE_IN_GAME_DMS_USERS_WITH_GAME = 2,
+    /**
+     * @generated from protobuf enum value: SLAYER_SDKRECEIVE_IN_GAME_DMS_SLAYER_SDK_RECEIVE_IN_GAME_DMS_NONE = 3;
+     */
+    SLAYER_SDKRECEIVE_IN_GAME_DMS_SLAYER_SDK_RECEIVE_IN_GAME_DMS_NONE = 3
+}
+/**
  * @generated from protobuf enum discord_protos.discord_users.v1.PreloadedUserSettings.Theme
  */
 export enum PreloadedUserSettings_Theme {
@@ -1256,6 +1285,23 @@ export enum PreloadedUserSettings_UIDensity {
      * @generated from protobuf enum value: UIDENSITY_RESPONSIVE = 3;
      */
     UIDENSITY_RESPONSIVE = 3
+}
+/**
+ * @generated from protobuf enum discord_protos.discord_users.v1.PreloadedUserSettings.SwipeRightToLeftMode
+ */
+export enum PreloadedUserSettings_SwipeRightToLeftMode {
+    /**
+     * @generated from protobuf enum value: SWIPE_RIGHT_TO_LEFT_MODE_SWIPE_RIGHT_TO_LEFT_UNSET = 0;
+     */
+    SWIPE_RIGHT_TO_LEFT_UNSET = 0,
+    /**
+     * @generated from protobuf enum value: SWIPE_RIGHT_TO_LEFT_MODE_SWIPE_RIGHT_TO_LEFT_CHANNEL_DETAILS = 1;
+     */
+    SWIPE_RIGHT_TO_LEFT_CHANNEL_DETAILS = 1,
+    /**
+     * @generated from protobuf enum value: SWIPE_RIGHT_TO_LEFT_MODE_SWIPE_RIGHT_TO_LEFT_REPLY = 2;
+     */
+    SWIPE_RIGHT_TO_LEFT_REPLY = 2
 }
 /**
  * @generated from protobuf enum discord_protos.discord_users.v1.PreloadedUserSettings.FavoriteChannelType
@@ -3043,7 +3089,8 @@ class PreloadedUserSettings_PrivacySettings$Type extends MessageType<PreloadedUs
             { no: 24, name: "recent_games_enabled", kind: "message", T: () => BoolValue },
             { no: 25, name: "guilds_leaderboard_opt_out_default", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.GuildsLeaderboardOptOutDefault", PreloadedUserSettings_GuildsLeaderboardOptOutDefault, "GUILDS_LEADERBOARD_OPT_OUT_DEFAULT_"] },
             { no: 26, name: "allow_game_friend_dms_in_discord", kind: "message", T: () => BoolValue },
-            { no: 27, name: "default_guilds_restricted_v2", kind: "message", T: () => BoolValue }
+            { no: 27, name: "default_guilds_restricted_v2", kind: "message", T: () => BoolValue },
+            { no: 28, name: "slayer_sdk_receive_dms_in_game", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.SlayerSDKReceiveInGameDMs", PreloadedUserSettings_SlayerSDKReceiveInGameDMs] }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_PrivacySettings>): PreloadedUserSettings_PrivacySettings {
@@ -3056,6 +3103,7 @@ class PreloadedUserSettings_PrivacySettings$Type extends MessageType<PreloadedUs
         message.activityJoiningRestrictedGuildIds = [];
         message.messageRequestRestrictedGuildIds = [];
         message.guildsLeaderboardOptOutDefault = 0;
+        message.slayerSdkReceiveDmsInGame = 0;
         if (value !== undefined)
             reflectionMergePartial<PreloadedUserSettings_PrivacySettings>(this, message, value);
         return message;
@@ -3155,6 +3203,9 @@ class PreloadedUserSettings_PrivacySettings$Type extends MessageType<PreloadedUs
                     break;
                 case /* optional google.protobuf.BoolValue default_guilds_restricted_v2 */ 27:
                     message.defaultGuildsRestrictedV2 = BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.defaultGuildsRestrictedV2);
+                    break;
+                case /* discord_protos.discord_users.v1.PreloadedUserSettings.SlayerSDKReceiveInGameDMs slayer_sdk_receive_dms_in_game */ 28:
+                    message.slayerSdkReceiveDmsInGame = reader.int32();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -3259,6 +3310,9 @@ class PreloadedUserSettings_PrivacySettings$Type extends MessageType<PreloadedUs
         /* optional google.protobuf.BoolValue default_guilds_restricted_v2 = 27; */
         if (message.defaultGuildsRestrictedV2)
             BoolValue.internalBinaryWrite(message.defaultGuildsRestrictedV2, writer.tag(27, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.discord_users.v1.PreloadedUserSettings.SlayerSDKReceiveInGameDMs slayer_sdk_receive_dms_in_game = 28; */
+        if (message.slayerSdkReceiveDmsInGame !== 0)
+            writer.tag(28, WireType.Varint).int32(message.slayerSdkReceiveDmsInGame);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -3635,7 +3689,8 @@ class PreloadedUserSettings_AppearanceSettings$Type extends MessageType<Preloade
             { no: 9, name: "timestamp_hour_cycle", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.TimestampHourCycle", PreloadedUserSettings_TimestampHourCycle, "TIMESTAMP_HOUR_CYCLE_"] },
             { no: 10, name: "happening_now_cards_disabled", kind: "message", T: () => BoolValue },
             { no: 11, name: "launch_pad_mode", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.LaunchPadMode", PreloadedUserSettings_LaunchPadMode, "LAUNCH_PAD_MODE_"] },
-            { no: 12, name: "ui_density", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.UIDensity", PreloadedUserSettings_UIDensity] }
+            { no: 12, name: "ui_density", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.UIDensity", PreloadedUserSettings_UIDensity] },
+            { no: 13, name: "swipe_right_to_left_mode", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.SwipeRightToLeftMode", PreloadedUserSettings_SwipeRightToLeftMode, "SWIPE_RIGHT_TO_LEFT_MODE_"] }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_AppearanceSettings>): PreloadedUserSettings_AppearanceSettings {
@@ -3646,6 +3701,7 @@ class PreloadedUserSettings_AppearanceSettings$Type extends MessageType<Preloade
         message.timestampHourCycle = 0;
         message.launchPadMode = 0;
         message.uiDensity = 0;
+        message.swipeRightToLeftMode = 0;
         if (value !== undefined)
             reflectionMergePartial<PreloadedUserSettings_AppearanceSettings>(this, message, value);
         return message;
@@ -3687,6 +3743,9 @@ class PreloadedUserSettings_AppearanceSettings$Type extends MessageType<Preloade
                     break;
                 case /* discord_protos.discord_users.v1.PreloadedUserSettings.UIDensity ui_density */ 12:
                     message.uiDensity = reader.int32();
+                    break;
+                case /* discord_protos.discord_users.v1.PreloadedUserSettings.SwipeRightToLeftMode swipe_right_to_left_mode */ 13:
+                    message.swipeRightToLeftMode = reader.int32();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -3733,6 +3792,9 @@ class PreloadedUserSettings_AppearanceSettings$Type extends MessageType<Preloade
         /* discord_protos.discord_users.v1.PreloadedUserSettings.UIDensity ui_density = 12; */
         if (message.uiDensity !== 0)
             writer.tag(12, WireType.Varint).int32(message.uiDensity);
+        /* discord_protos.discord_users.v1.PreloadedUserSettings.SwipeRightToLeftMode swipe_right_to_left_mode = 13; */
+        if (message.swipeRightToLeftMode !== 0)
+            writer.tag(13, WireType.Varint).int32(message.swipeRightToLeftMode);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

@@ -181,7 +181,15 @@ export enum PremiumMarketingComponentProperties_ButtonAction {
     /**
      * @generated from protobuf enum value: BUTTON_ACTION_OPEN_TIER_2_PAYMENT_MODAL = 2;
      */
-    OPEN_TIER_2_PAYMENT_MODAL = 2
+    OPEN_TIER_2_PAYMENT_MODAL = 2,
+    /**
+     * @generated from protobuf enum value: BUTTON_ACTION_OPEN_TIER_1_PAYMENT_MODAL = 3;
+     */
+    OPEN_TIER_1_PAYMENT_MODAL = 3,
+    /**
+     * @generated from protobuf enum value: BUTTON_ACTION_OPEN_TIER_2_PAYMENT_MODAL_CUSTOM_CONFIRMATION_FOOTER = 4;
+     */
+    OPEN_TIER_2_PAYMENT_MODAL_CUSTOM_CONFIRMATION_FOOTER = 4
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarketingComponentProperties> {

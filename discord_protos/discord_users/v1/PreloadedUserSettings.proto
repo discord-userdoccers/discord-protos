@@ -199,6 +199,13 @@ message PreloadedUserSettings {
     GUILDS_LEADERBOARD_OPT_OUT_DEFAULT_ON_FOR_NEW_GUILDS = 1;
   }
 
+  enum SlayerSDKReceiveInGameDMs {
+    SLAYER_SDKRECEIVE_IN_GAME_DMS_SLAYER_SDK_RECEIVE_IN_GAME_DMS_UNSET = 0;
+    SLAYER_SDKRECEIVE_IN_GAME_DMS_SLAYER_SDK_RECEIVE_IN_GAME_DMS_ALL = 1;
+    SLAYER_SDKRECEIVE_IN_GAME_DMS_SLAYER_SDK_RECEIVE_IN_GAME_DMS_USERS_WITH_GAME = 2;
+    SLAYER_SDKRECEIVE_IN_GAME_DMS_SLAYER_SDK_RECEIVE_IN_GAME_DMS_NONE = 3;
+  }
+
   message PrivacySettings {
     optional google.protobuf.BoolValue allow_activity_party_privacy_friends = 1;
     optional google.protobuf.BoolValue allow_activity_party_privacy_voice_channel = 2;
@@ -225,6 +232,7 @@ message PreloadedUserSettings {
     GuildsLeaderboardOptOutDefault guilds_leaderboard_opt_out_default = 25;
     optional google.protobuf.BoolValue allow_game_friend_dms_in_discord = 26;
     optional google.protobuf.BoolValue default_guilds_restricted_v2 = 27;
+    SlayerSDKReceiveInGameDMs slayer_sdk_receive_dms_in_game = 28;
   }
 
   message DebugSettings {
@@ -289,6 +297,12 @@ message PreloadedUserSettings {
     UIDENSITY_RESPONSIVE = 3;
   }
 
+  enum SwipeRightToLeftMode {
+    SWIPE_RIGHT_TO_LEFT_MODE_SWIPE_RIGHT_TO_LEFT_UNSET = 0;
+    SWIPE_RIGHT_TO_LEFT_MODE_SWIPE_RIGHT_TO_LEFT_CHANNEL_DETAILS = 1;
+    SWIPE_RIGHT_TO_LEFT_MODE_SWIPE_RIGHT_TO_LEFT_REPLY = 2;
+  }
+
   message AppearanceSettings {
     Theme theme = 1;
     bool developer_mode = 2;
@@ -301,6 +315,7 @@ message PreloadedUserSettings {
     optional google.protobuf.BoolValue happening_now_cards_disabled = 10;
     LaunchPadMode launch_pad_mode = 11;
     UIDensity ui_density = 12;
+    SwipeRightToLeftMode swipe_right_to_left_mode = 13;
   }
 
   message GuildFolder {
