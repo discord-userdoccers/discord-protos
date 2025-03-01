@@ -132,7 +132,7 @@ async function main() {
 
     // Check if we have any changes using git
     const changes = execSync("git status --porcelain").toString().trim();
-    if (changes.length === 0) {
+    if (!changes.includes(".proto")) {
         console.log("No changes detected, exiting...");
         return;
     }
