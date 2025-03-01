@@ -107,7 +107,7 @@ async function main() {
     await browser.close();
 
     // Delete all existing files and folders in the discord_protos directory
-    const outputs = [join(__dirname, "..", "discord_protos"), join(__dirname, "..", "src", "proto")];
+    const outputs = [join(__dirname, "..", "discord_protos"), join(__dirname, "..", "src", "discord_protos")];
     for (const output of outputs) {
         if (existsSync(output)) {
             for (const file of readdirSync(output)) {
@@ -152,7 +152,7 @@ async function main() {
     writeFileSync(join(__dirname, "..", "package.json"), JSON.stringify(packageJson, null, 4));
 
     // Update the JS template
-    const jsExports = filenames.map((x) => `export * from "${x.replaceAll("\\", "/").replace("./discord_protos", "./proto").replace(".proto", "")}";`).join("\n");
+    const jsExports = filenames.map((x) => `export * from "${x.replaceAll("\\", "/").replace(".proto", "")}";`).join("\n");
     writeFileSync(join(__dirname, "..", "src", "index.ts"), JS_TEMPLATE.replace("{{ protos_exports }}", jsExports));
 
     // Update the Python template

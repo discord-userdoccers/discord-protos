@@ -1,6 +1,6 @@
 {
     "name": "discord-protos",
-    "version": "1.2.27",
+    "version": "1.2.28",
     "description": "A parser for Discord's protobufs",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -18,8 +18,8 @@
     ],
     "license": "MIT",
     "scripts": {
-        "py": "protoc --proto_path=./discord_protos/ --python_out=discord_protos ./discord_protos/discord_users/v1/PreloadedUserSettings.proto ./discord_protos/discord_users/v1/FrecencyUserSettings.proto ./discord_protos/discord_kkv_store_value_models/v1/ApplicationUserRoleConnection.proto ./discord_protos/discord_kkv_store_value_models/v1/AcknowledgedApplicationDisclosures.proto ./discord_protos/premium_marketing/v1/PremiumMarketingComponentProperties.proto",
-        "js": "protoc --proto_path=./discord_protos/ --ts_out src/proto ./discord_protos/discord_users/v1/PreloadedUserSettings.proto ./discord_protos/discord_users/v1/FrecencyUserSettings.proto ./discord_protos/discord_kkv_store_value_models/v1/ApplicationUserRoleConnection.proto ./discord_protos/discord_kkv_store_value_models/v1/AcknowledgedApplicationDisclosures.proto ./discord_protos/premium_marketing/v1/PremiumMarketingComponentProperties.proto",
+        "py": "protoc --proto_path=./discord_protos/ --python_out=discord_protos .\\discord_protos\\discord_users\\v1\\PreloadedUserSettings.proto .\\discord_protos\\discord_users\\v1\\FrecencyUserSettings.proto .\\discord_protos\\discord_kkv_store_value_models\\v1\\ApplicationUserRoleConnection.proto .\\discord_protos\\discord_kkv_store_value_models\\v1\\AcknowledgedApplicationDisclosures.proto .\\discord_protos\\premium_marketing\\v1\\PremiumMarketingComponentProperties.proto",
+        "js": "protoc --proto_path=./discord_protos/ --ts_out src/discord_protos .\\discord_protos\\discord_users\\v1\\PreloadedUserSettings.proto .\\discord_protos\\discord_users\\v1\\FrecencyUserSettings.proto .\\discord_protos\\discord_kkv_store_value_models\\v1\\ApplicationUserRoleConnection.proto .\\discord_protos\\discord_kkv_store_value_models\\v1\\AcknowledgedApplicationDisclosures.proto .\\discord_protos\\premium_marketing\\v1\\PremiumMarketingComponentProperties.proto",
         "build": "tsc",
         "load": "npm run build && node dist/load.js"
     },
