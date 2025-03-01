@@ -121,7 +121,7 @@ async function main() {
     for (const [name, proto] of Object.entries(protos)) {
         const dir = join(__dirname, "..", ...proto.package.split("."));
         const filename = join(dir, `${name}.proto`);
-        filenames.push(filename.replace(join(__dirname, ".."), "."));
+        filenames.push(filename.replace(join(__dirname, ".."), ".").replaceAll("\\", "/"));
 
         // Ensure the directory exists
         if (!existsSync(dir)) {
