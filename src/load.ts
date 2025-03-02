@@ -111,7 +111,11 @@ async function main() {
     for (const output of outputs) {
         if (existsSync(output)) {
             for (const file of readdirSync(output)) {
-                rmSync(join(output, file), { recursive: true, force: true });
+                try {
+                    if (readdirSync(join(output, file)).length > 0) {
+                        rmSync(join(output, file), { recursive: true, force: true });
+                    }
+                } catch {}
             }
         }
     }
