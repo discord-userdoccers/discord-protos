@@ -295,6 +295,7 @@ message PreloadedUserSettings {
     UI_DENSITY_COMPACT = 1;
     UI_DENSITY_COZY = 2;
     UI_DENSITY_RESPONSIVE = 3;
+    UI_DENSITY_DEFAULT = 4;
   }
 
   enum SwipeRightToLeftMode {

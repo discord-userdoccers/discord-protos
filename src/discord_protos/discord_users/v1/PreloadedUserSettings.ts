@@ -1284,7 +1284,11 @@ export enum PreloadedUserSettings_UIDensity {
     /**
      * @generated from protobuf enum value: UI_DENSITY_RESPONSIVE = 3;
      */
-    UI_DENSITY_RESPONSIVE = 3
+    UI_DENSITY_RESPONSIVE = 3,
+    /**
+     * @generated from protobuf enum value: UI_DENSITY_DEFAULT = 4;
+     */
+    UI_DENSITY_DEFAULT = 4
 }
 /**
  * @generated from protobuf enum discord_protos.discord_users.v1.PreloadedUserSettings.SwipeRightToLeftMode
