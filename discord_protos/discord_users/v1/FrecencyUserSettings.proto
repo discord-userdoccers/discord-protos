@@ -44,7 +44,7 @@ message FrecencyUserSettings {
   }
 
   message FavoriteEmojis {
-    repeated string emojis = 1;
+    repeated string emojis = 1 [packed = false];
   }
 
   message EmojiFrecency {

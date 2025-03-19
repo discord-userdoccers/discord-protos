@@ -144,8 +144,8 @@ message PreloadedUserSettings {
     optional google.protobuf.BoolValue use_rich_chat_input = 2;
     optional google.protobuf.BoolValue use_thread_sidebar = 3;
     optional google.protobuf.StringValue render_spoilers = 4;
-    repeated string emoji_picker_collapsed_sections = 5;
-    repeated string sticker_picker_collapsed_sections = 6;
+    repeated string emoji_picker_collapsed_sections = 5 [packed = false];
+    repeated string sticker_picker_collapsed_sections = 6 [packed = false];
     optional google.protobuf.BoolValue view_image_descriptions = 7;
     optional google.protobuf.BoolValue show_command_suggestions = 8;
     optional google.protobuf.BoolValue inline_attachment_media = 9;
@@ -163,7 +163,7 @@ message PreloadedUserSettings {
     optional google.protobuf.BoolValue expression_suggestions_enabled = 22;
     optional google.protobuf.BoolValue view_nsfw_commands = 23;
     optional google.protobuf.BoolValue use_legacy_chat_input = 24;
-    repeated string soundboard_picker_collapsed_sections = 25;
+    repeated string soundboard_picker_collapsed_sections = 25 [packed = false];
     optional google.protobuf.UInt32Value dm_spam_filter = 26;
     DmSpamFilterV2 dm_spam_filter_v2 = 27;
     optional google.protobuf.BoolValue include_stickers_in_autocomplete = 28;

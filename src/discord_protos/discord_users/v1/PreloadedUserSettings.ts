@@ -455,11 +455,11 @@ export interface PreloadedUserSettings_TextAndImagesSettings {
      */
     renderSpoilers?: StringValue;
     /**
-     * @generated from protobuf field: repeated string emoji_picker_collapsed_sections = 5;
+     * @generated from protobuf field: repeated string emoji_picker_collapsed_sections = 5 [packed = false];
      */
     emojiPickerCollapsedSections: string[];
     /**
-     * @generated from protobuf field: repeated string sticker_picker_collapsed_sections = 6;
+     * @generated from protobuf field: repeated string sticker_picker_collapsed_sections = 6 [packed = false];
      */
     stickerPickerCollapsedSections: string[];
     /**
@@ -531,7 +531,7 @@ export interface PreloadedUserSettings_TextAndImagesSettings {
      */
     useLegacyChatInput?: BoolValue;
     /**
-     * @generated from protobuf field: repeated string soundboard_picker_collapsed_sections = 25;
+     * @generated from protobuf field: repeated string soundboard_picker_collapsed_sections = 25 [packed = false];
      */
     soundboardPickerCollapsedSections: string[];
     /**
@@ -2784,10 +2784,10 @@ class PreloadedUserSettings_TextAndImagesSettings$Type extends MessageType<Prelo
                 case /* optional google.protobuf.StringValue render_spoilers */ 4:
                     message.renderSpoilers = StringValue.internalBinaryRead(reader, reader.uint32(), options, message.renderSpoilers);
                     break;
-                case /* repeated string emoji_picker_collapsed_sections */ 5:
+                case /* repeated string emoji_picker_collapsed_sections = 5 [packed = false];*/ 5:
                     message.emojiPickerCollapsedSections.push(reader.string());
                     break;
-                case /* repeated string sticker_picker_collapsed_sections */ 6:
+                case /* repeated string sticker_picker_collapsed_sections = 6 [packed = false];*/ 6:
                     message.stickerPickerCollapsedSections.push(reader.string());
                     break;
                 case /* optional google.protobuf.BoolValue view_image_descriptions */ 7:
@@ -2841,7 +2841,7 @@ class PreloadedUserSettings_TextAndImagesSettings$Type extends MessageType<Prelo
                 case /* optional google.protobuf.BoolValue use_legacy_chat_input */ 24:
                     message.useLegacyChatInput = BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.useLegacyChatInput);
                     break;
-                case /* repeated string soundboard_picker_collapsed_sections */ 25:
+                case /* repeated string soundboard_picker_collapsed_sections = 25 [packed = false];*/ 25:
                     message.soundboardPickerCollapsedSections.push(reader.string());
                     break;
                 case /* optional google.protobuf.UInt32Value dm_spam_filter */ 26:
@@ -2886,10 +2886,10 @@ class PreloadedUserSettings_TextAndImagesSettings$Type extends MessageType<Prelo
         /* optional google.protobuf.StringValue render_spoilers = 4; */
         if (message.renderSpoilers)
             StringValue.internalBinaryWrite(message.renderSpoilers, writer.tag(4, WireType.LengthDelimited).fork(), options).join();
-        /* repeated string emoji_picker_collapsed_sections = 5; */
+        /* repeated string emoji_picker_collapsed_sections = 5 [packed = false]; */
         for (let i = 0; i < message.emojiPickerCollapsedSections.length; i++)
             writer.tag(5, WireType.LengthDelimited).string(message.emojiPickerCollapsedSections[i]);
-        /* repeated string sticker_picker_collapsed_sections = 6; */
+        /* repeated string sticker_picker_collapsed_sections = 6 [packed = false]; */
         for (let i = 0; i < message.stickerPickerCollapsedSections.length; i++)
             writer.tag(6, WireType.LengthDelimited).string(message.stickerPickerCollapsedSections[i]);
         /* optional google.protobuf.BoolValue view_image_descriptions = 7; */
@@ -2943,7 +2943,7 @@ class PreloadedUserSettings_TextAndImagesSettings$Type extends MessageType<Prelo
         /* optional google.protobuf.BoolValue use_legacy_chat_input = 24; */
         if (message.useLegacyChatInput)
             BoolValue.internalBinaryWrite(message.useLegacyChatInput, writer.tag(24, WireType.LengthDelimited).fork(), options).join();
-        /* repeated string soundboard_picker_collapsed_sections = 25; */
+        /* repeated string soundboard_picker_collapsed_sections = 25 [packed = false]; */
         for (let i = 0; i < message.soundboardPickerCollapsedSections.length; i++)
             writer.tag(25, WireType.LengthDelimited).string(message.soundboardPickerCollapsedSections[i]);
         /* optional google.protobuf.UInt32Value dm_spam_filter = 26; */

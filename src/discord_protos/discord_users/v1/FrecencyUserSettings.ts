@@ -170,7 +170,7 @@ export interface FrecencyUserSettings_StickerFrecency {
  */
 export interface FrecencyUserSettings_FavoriteEmojis {
     /**
-     * @generated from protobuf field: repeated string emojis = 1;
+     * @generated from protobuf field: repeated string emojis = 1 [packed = false];
      */
     emojis: string[];
 }
@@ -833,7 +833,7 @@ class FrecencyUserSettings_FavoriteEmojis$Type extends MessageType<FrecencyUserS
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
-                case /* repeated string emojis */ 1:
+                case /* repeated string emojis = 1 [packed = false];*/ 1:
                     message.emojis.push(reader.string());
                     break;
                 default:
@@ -848,7 +848,7 @@ class FrecencyUserSettings_FavoriteEmojis$Type extends MessageType<FrecencyUserS
         return message;
     }
     internalBinaryWrite(message: FrecencyUserSettings_FavoriteEmojis, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* repeated string emojis = 1; */
+        /* repeated string emojis = 1 [packed = false]; */
         for (let i = 0; i < message.emojis.length; i++)
             writer.tag(1, WireType.LengthDelimited).string(message.emojis[i]);
         let u = options.writeUnknownFields;
