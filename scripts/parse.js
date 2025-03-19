@@ -1,5 +1,5 @@
 // Map the type ints to their names
-const REAL_TYPES = {
+const ScalarType = {
     1: "double",
     2: "float",
     3: "int64",
@@ -16,6 +16,11 @@ const REAL_TYPES = {
     17: "sint32",
     18: "sint64",
 };
+const RepeatType = {
+    NO: 0,
+    PACKED: 1,
+    UNPACKED: 2,
+};
 
 function parseType(field) {
     // We extract the actual field if possible
@@ -23,7 +28,7 @@ function parseType(field) {
         field = field();
         // If it's a real type, we just return it
     } else if (typeof field === "number") {
-        return [REAL_TYPES[field], []];
+        return [ScalarType[field], []];
     }
 
     var type,
@@ -38,7 +43,7 @@ function parseType(field) {
             }
             break;
         case "scalar":
-            type = REAL_TYPES[field.T];
+            type = ScalarType[field.T];
             break;
         case "map":
             type = `map<${parseType(field.K)[0]}, ${parseType(field.V)[0]}>`;
@@ -98,6 +103,7 @@ function flattenField(field) {
             type: type,
             optional: field.opt,
             repeated: Boolean(field.repeat),
+            unpacked: field.repeat === RepeatType.UNPACKED,
         },
         structs,
     ];
@@ -166,7 +172,9 @@ function extractProtos() {
 }
 
 function createProtoField(field) {
-    return `${field.optional ? "optional " : field.repeated ? "repeated " : ""}${field.type} ${field.name} = ${field.number};`;
+    if (!field.repeated && field.unpacked)
+        throw new Error(`Field ${field.name} is not repeated but has unpacked set`);
+    return `${field.optional ? "optional " : field.repeated ? "repeated " : ""}${field.type} ${field.name} = ${field.number}${field.unpacked ? " [packed = false]" : ""};`;
 }
 
 function createProtoFile(proto) {
