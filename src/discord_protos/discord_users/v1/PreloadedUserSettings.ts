@@ -114,6 +114,10 @@ export interface PreloadedUserSettings {
      * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.AllApplicationSettings applications = 23;
      */
     applications?: PreloadedUserSettings_AllApplicationSettings;
+    /**
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.AdsSettings ads = 24;
+     */
+    ads?: PreloadedUserSettings_AdsSettings;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.Versions
@@ -1056,6 +1060,15 @@ export interface PreloadedUserSettings_AllApplicationSettings {
     };
 }
 /**
+ * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.AdsSettings
+ */
+export interface PreloadedUserSettings_AdsSettings {
+    /**
+     * @generated from protobuf field: bool always_deliver = 1;
+     */
+    alwaysDeliver: boolean;
+}
+/**
  * @generated from protobuf enum discord_protos.discord_users.v1.PreloadedUserSettings.InboxTab
  */
 export enum PreloadedUserSettings_InboxTab {
@@ -1396,7 +1409,8 @@ class PreloadedUserSettings$Type extends MessageType<PreloadedUserSettings> {
             { no: 20, name: "for_later", kind: "message", T: () => PreloadedUserSettings_ForLaterSettings },
             { no: 21, name: "safety_settings", kind: "message", T: () => PreloadedUserSettings_SafetySettings },
             { no: 22, name: "icymi_settings", kind: "message", T: () => PreloadedUserSettings_ICYMISettings },
-            { no: 23, name: "applications", kind: "message", T: () => PreloadedUserSettings_AllApplicationSettings }
+            { no: 23, name: "applications", kind: "message", T: () => PreloadedUserSettings_AllApplicationSettings },
+            { no: 24, name: "ads", kind: "message", T: () => PreloadedUserSettings_AdsSettings }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings>): PreloadedUserSettings {
@@ -1479,6 +1493,9 @@ class PreloadedUserSettings$Type extends MessageType<PreloadedUserSettings> {
                 case /* optional discord_protos.discord_users.v1.PreloadedUserSettings.AllApplicationSettings applications */ 23:
                     message.applications = PreloadedUserSettings_AllApplicationSettings.internalBinaryRead(reader, reader.uint32(), options, message.applications);
                     break;
+                case /* optional discord_protos.discord_users.v1.PreloadedUserSettings.AdsSettings ads */ 24:
+                    message.ads = PreloadedUserSettings_AdsSettings.internalBinaryRead(reader, reader.uint32(), options, message.ads);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -1560,6 +1577,9 @@ class PreloadedUserSettings$Type extends MessageType<PreloadedUserSettings> {
         /* optional discord_protos.discord_users.v1.PreloadedUserSettings.AllApplicationSettings applications = 23; */
         if (message.applications)
             PreloadedUserSettings_AllApplicationSettings.internalBinaryWrite(message.applications, writer.tag(23, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.discord_users.v1.PreloadedUserSettings.AdsSettings ads = 24; */
+        if (message.ads)
+            PreloadedUserSettings_AdsSettings.internalBinaryWrite(message.ads, writer.tag(24, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -4746,3 +4766,50 @@ class PreloadedUserSettings_AllApplicationSettings$Type extends MessageType<Prel
  * @generated MessageType for protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.AllApplicationSettings
  */
 export const PreloadedUserSettings_AllApplicationSettings = new PreloadedUserSettings_AllApplicationSettings$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PreloadedUserSettings_AdsSettings$Type extends MessageType<PreloadedUserSettings_AdsSettings> {
+    constructor() {
+        super("discord_protos.discord_users.v1.PreloadedUserSettings.AdsSettings", [
+            { no: 1, name: "always_deliver", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
+        ]);
+    }
+    create(value?: PartialMessage<PreloadedUserSettings_AdsSettings>): PreloadedUserSettings_AdsSettings {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.alwaysDeliver = false;
+        if (value !== undefined)
+            reflectionMergePartial<PreloadedUserSettings_AdsSettings>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PreloadedUserSettings_AdsSettings): PreloadedUserSettings_AdsSettings {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* bool always_deliver */ 1:
+                    message.alwaysDeliver = reader.bool();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PreloadedUserSettings_AdsSettings, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* bool always_deliver = 1; */
+        if (message.alwaysDeliver !== false)
+            writer.tag(1, WireType.Varint).bool(message.alwaysDeliver);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.AdsSettings
+ */
+export const PreloadedUserSettings_AdsSettings = new PreloadedUserSettings_AdsSettings$Type();

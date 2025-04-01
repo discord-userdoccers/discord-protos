@@ -416,6 +416,10 @@ message PreloadedUserSettings {
     map<fixed64, ApplicationSettings> app_settings = 1;
   }
 
+  message AdsSettings {
+    bool always_deliver = 1;
+  }
+
   optional Versions versions = 1;
   optional InboxSettings inbox = 2;
   optional AllGuildSettings guilds = 3;
@@ -439,4 +443,5 @@ message PreloadedUserSettings {
   optional SafetySettings safety_settings = 21;
   optional ICYMISettings icymi_settings = 22;
   optional AllApplicationSettings applications = 23;
+  optional AdsSettings ads = 24;
 }
