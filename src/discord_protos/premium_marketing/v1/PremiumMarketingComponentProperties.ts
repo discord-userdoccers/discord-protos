@@ -15,17 +15,27 @@ import { MessageType } from "@protobuf-ts/runtime";
  */
 export interface PremiumMarketingComponentProperties {
     /**
-     * @generated from protobuf field: string placeholder = 1;
-     */
-    placeholder: string;
-    /**
-     * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalVariant1Properties announcement_modal_variant_1 = 2;
-     */
-    announcementModalVariant1?: PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties;
-    /**
      * @generated from protobuf field: string content_identifier = 3;
      */
     contentIdentifier: string;
+    /**
+     * @generated from protobuf oneof: properties
+     */
+    properties: {
+        oneofKind: "placeholder";
+        /**
+         * @generated from protobuf field: string placeholder = 1;
+         */
+        placeholder: string;
+    } | {
+        oneofKind: "announcementModalVariant1";
+        /**
+         * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalVariant1Properties announcement_modal_variant_1 = 2;
+         */
+        announcementModalVariant1: PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties;
+    } | {
+        oneofKind: undefined;
+    };
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.FeatureCard
@@ -195,15 +205,15 @@ export enum PremiumMarketingComponentProperties_ButtonAction {
 class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarketingComponentProperties> {
     constructor() {
         super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties", [
-            { no: 1, name: "placeholder", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 2, name: "announcement_modal_variant_1", kind: "message", T: () => PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties },
-            { no: 3, name: "content_identifier", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+            { no: 3, name: "content_identifier", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 1, name: "placeholder", kind: "scalar", oneof: "properties", T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "announcement_modal_variant_1", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties>): PremiumMarketingComponentProperties {
         const message = globalThis.Object.create((this.messagePrototype!));
-        message.placeholder = "";
         message.contentIdentifier = "";
+        message.properties = { oneofKind: undefined };
         if (value !== undefined)
             reflectionMergePartial<PremiumMarketingComponentProperties>(this, message, value);
         return message;
@@ -213,14 +223,20 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
-                case /* string placeholder */ 1:
-                    message.placeholder = reader.string();
-                    break;
-                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalVariant1Properties announcement_modal_variant_1 */ 2:
-                    message.announcementModalVariant1 = PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties.internalBinaryRead(reader, reader.uint32(), options, message.announcementModalVariant1);
-                    break;
                 case /* string content_identifier */ 3:
                     message.contentIdentifier = reader.string();
+                    break;
+                case /* string placeholder */ 1:
+                    message.properties = {
+                        oneofKind: "placeholder",
+                        placeholder: reader.string()
+                    };
+                    break;
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalVariant1Properties announcement_modal_variant_1 */ 2:
+                    message.properties = {
+                        oneofKind: "announcementModalVariant1",
+                        announcementModalVariant1: PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).announcementModalVariant1)
+                    };
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -234,15 +250,15 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
         return message;
     }
     internalBinaryWrite(message: PremiumMarketingComponentProperties, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* string placeholder = 1; */
-        if (message.placeholder !== "")
-            writer.tag(1, WireType.LengthDelimited).string(message.placeholder);
-        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalVariant1Properties announcement_modal_variant_1 = 2; */
-        if (message.announcementModalVariant1)
-            PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties.internalBinaryWrite(message.announcementModalVariant1, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
         /* string content_identifier = 3; */
         if (message.contentIdentifier !== "")
             writer.tag(3, WireType.LengthDelimited).string(message.contentIdentifier);
+        /* string placeholder = 1; */
+        if (message.properties.oneofKind === "placeholder")
+            writer.tag(1, WireType.LengthDelimited).string(message.properties.placeholder);
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalVariant1Properties announcement_modal_variant_1 = 2; */
+        if (message.properties.oneofKind === "announcementModalVariant1")
+            PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties.internalBinaryWrite(message.properties.announcementModalVariant1, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

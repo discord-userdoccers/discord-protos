@@ -364,17 +364,29 @@ export interface PreloadedUserSettings_SoundboardSettings {
  */
 export interface PreloadedUserSettings_VoiceAndVideoSettings {
     /**
-     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.VideoFilterBackgroundBlur blur = 1;
+     * @generated from protobuf oneof: video_background_filter_desktop
      */
-    blur?: PreloadedUserSettings_VideoFilterBackgroundBlur;
-    /**
-     * @generated from protobuf field: uint32 preset_option = 2;
-     */
-    presetOption: number;
-    /**
-     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.VideoFilterAsset custom_asset = 3;
-     */
-    customAsset?: PreloadedUserSettings_VideoFilterAsset;
+    videoBackgroundFilterDesktop: {
+        oneofKind: "blur";
+        /**
+         * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.VideoFilterBackgroundBlur blur = 1;
+         */
+        blur: PreloadedUserSettings_VideoFilterBackgroundBlur;
+    } | {
+        oneofKind: "presetOption";
+        /**
+         * @generated from protobuf field: uint32 preset_option = 2;
+         */
+        presetOption: number;
+    } | {
+        oneofKind: "customAsset";
+        /**
+         * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.VideoFilterAsset custom_asset = 3;
+         */
+        customAsset: PreloadedUserSettings_VideoFilterAsset;
+    } | {
+        oneofKind: undefined;
+    };
     /**
      * @generated from protobuf field: optional google.protobuf.BoolValue always_preview_video = 5;
      */
@@ -2516,9 +2528,9 @@ export const PreloadedUserSettings_SoundboardSettings = new PreloadedUserSetting
 class PreloadedUserSettings_VoiceAndVideoSettings$Type extends MessageType<PreloadedUserSettings_VoiceAndVideoSettings> {
     constructor() {
         super("discord_protos.discord_users.v1.PreloadedUserSettings.VoiceAndVideoSettings", [
-            { no: 1, name: "blur", kind: "message", T: () => PreloadedUserSettings_VideoFilterBackgroundBlur },
-            { no: 2, name: "preset_option", kind: "scalar", T: 13 /*ScalarType.UINT32*/ },
-            { no: 3, name: "custom_asset", kind: "message", T: () => PreloadedUserSettings_VideoFilterAsset },
+            { no: 1, name: "blur", kind: "message", oneof: "videoBackgroundFilterDesktop", T: () => PreloadedUserSettings_VideoFilterBackgroundBlur },
+            { no: 2, name: "preset_option", kind: "scalar", oneof: "videoBackgroundFilterDesktop", T: 13 /*ScalarType.UINT32*/ },
+            { no: 3, name: "custom_asset", kind: "message", oneof: "videoBackgroundFilterDesktop", T: () => PreloadedUserSettings_VideoFilterAsset },
             { no: 5, name: "always_preview_video", kind: "message", T: () => BoolValue },
             { no: 6, name: "afk_timeout", kind: "message", T: () => UInt32Value },
             { no: 7, name: "stream_notifications_enabled", kind: "message", T: () => BoolValue },
@@ -2530,7 +2542,7 @@ class PreloadedUserSettings_VoiceAndVideoSettings$Type extends MessageType<Prelo
     }
     create(value?: PartialMessage<PreloadedUserSettings_VoiceAndVideoSettings>): PreloadedUserSettings_VoiceAndVideoSettings {
         const message = globalThis.Object.create((this.messagePrototype!));
-        message.presetOption = 0;
+        message.videoBackgroundFilterDesktop = { oneofKind: undefined };
         if (value !== undefined)
             reflectionMergePartial<PreloadedUserSettings_VoiceAndVideoSettings>(this, message, value);
         return message;
@@ -2541,13 +2553,22 @@ class PreloadedUserSettings_VoiceAndVideoSettings$Type extends MessageType<Prelo
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
                 case /* discord_protos.discord_users.v1.PreloadedUserSettings.VideoFilterBackgroundBlur blur */ 1:
-                    message.blur = PreloadedUserSettings_VideoFilterBackgroundBlur.internalBinaryRead(reader, reader.uint32(), options, message.blur);
+                    message.videoBackgroundFilterDesktop = {
+                        oneofKind: "blur",
+                        blur: PreloadedUserSettings_VideoFilterBackgroundBlur.internalBinaryRead(reader, reader.uint32(), options, (message.videoBackgroundFilterDesktop as any).blur)
+                    };
                     break;
                 case /* uint32 preset_option */ 2:
-                    message.presetOption = reader.uint32();
+                    message.videoBackgroundFilterDesktop = {
+                        oneofKind: "presetOption",
+                        presetOption: reader.uint32()
+                    };
                     break;
                 case /* discord_protos.discord_users.v1.PreloadedUserSettings.VideoFilterAsset custom_asset */ 3:
-                    message.customAsset = PreloadedUserSettings_VideoFilterAsset.internalBinaryRead(reader, reader.uint32(), options, message.customAsset);
+                    message.videoBackgroundFilterDesktop = {
+                        oneofKind: "customAsset",
+                        customAsset: PreloadedUserSettings_VideoFilterAsset.internalBinaryRead(reader, reader.uint32(), options, (message.videoBackgroundFilterDesktop as any).customAsset)
+                    };
                     break;
                 case /* optional google.protobuf.BoolValue always_preview_video */ 5:
                     message.alwaysPreviewVideo = BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.alwaysPreviewVideo);
@@ -2583,14 +2604,14 @@ class PreloadedUserSettings_VoiceAndVideoSettings$Type extends MessageType<Prelo
     }
     internalBinaryWrite(message: PreloadedUserSettings_VoiceAndVideoSettings, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
         /* discord_protos.discord_users.v1.PreloadedUserSettings.VideoFilterBackgroundBlur blur = 1; */
-        if (message.blur)
-            PreloadedUserSettings_VideoFilterBackgroundBlur.internalBinaryWrite(message.blur, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        if (message.videoBackgroundFilterDesktop.oneofKind === "blur")
+            PreloadedUserSettings_VideoFilterBackgroundBlur.internalBinaryWrite(message.videoBackgroundFilterDesktop.blur, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
         /* uint32 preset_option = 2; */
-        if (message.presetOption !== 0)
-            writer.tag(2, WireType.Varint).uint32(message.presetOption);
+        if (message.videoBackgroundFilterDesktop.oneofKind === "presetOption")
+            writer.tag(2, WireType.Varint).uint32(message.videoBackgroundFilterDesktop.presetOption);
         /* discord_protos.discord_users.v1.PreloadedUserSettings.VideoFilterAsset custom_asset = 3; */
-        if (message.customAsset)
-            PreloadedUserSettings_VideoFilterAsset.internalBinaryWrite(message.customAsset, writer.tag(3, WireType.LengthDelimited).fork(), options).join();
+        if (message.videoBackgroundFilterDesktop.oneofKind === "customAsset")
+            PreloadedUserSettings_VideoFilterAsset.internalBinaryWrite(message.videoBackgroundFilterDesktop.customAsset, writer.tag(3, WireType.LengthDelimited).fork(), options).join();
         /* optional google.protobuf.BoolValue always_preview_video = 5; */
         if (message.alwaysPreviewVideo)
             BoolValue.internalBinaryWrite(message.alwaysPreviewVideo, writer.tag(5, WireType.LengthDelimited).fork(), options).join();

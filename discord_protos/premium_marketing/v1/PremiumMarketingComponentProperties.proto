@@ -53,7 +53,10 @@ message PremiumMarketingComponentProperties {
     optional Variant1Storage storage = 14;
   }
 
-  string placeholder = 1;
-  AnnouncementModalVariant1Properties announcement_modal_variant_1 = 2;
   string content_identifier = 3;
+  oneof properties {
+    string placeholder = 1;
+    AnnouncementModalVariant1Properties announcement_modal_variant_1 = 2;
+  }
+
 }

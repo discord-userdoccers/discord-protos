@@ -101,9 +101,11 @@ message PreloadedUserSettings {
   }
 
   message VoiceAndVideoSettings {
-    VideoFilterBackgroundBlur blur = 1;
-    uint32 preset_option = 2;
-    VideoFilterAsset custom_asset = 3;
+    oneof video_background_filter_desktop {
+      VideoFilterBackgroundBlur blur = 1;
+      uint32 preset_option = 2;
+      VideoFilterAsset custom_asset = 3;
+    }
     optional google.protobuf.BoolValue always_preview_video = 5;
     optional google.protobuf.UInt32Value afk_timeout = 6;
     optional google.protobuf.BoolValue stream_notifications_enabled = 7;
