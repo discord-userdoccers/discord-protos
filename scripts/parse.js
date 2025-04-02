@@ -93,6 +93,10 @@ function convertCase(str) {
         .toUpperCase();
 }
 
+function camelToSnake(str) {
+    return str.replace(/(([a-z])(?=[A-Z][a-zA-Z])|([A-Z])(?=[A-Z][a-z]))/g,'$1_').toLowerCase()
+}
+
 function flattenField(field) {
     const [type, structs] = parseType(field);
     return [
@@ -101,6 +105,7 @@ function flattenField(field) {
             name: field.name,
             kind: field.kind,
             type: type,
+            oneof: field.oneof,
             optional: field.opt,
             repeated: Boolean(field.repeat),
             unpacked: field.repeat === RepeatType.UNPACKED,
@@ -190,7 +195,30 @@ function createProtoFile(proto) {
                 });
                 break;
             case "message":
+                // Group fields by oneof if applicable
+                const oneofGroups = new Map();
+                const normalFields = [];
+                
                 struct.fields.forEach((field) => {
+                    if (field.oneof) {
+                        if (!oneofGroups.has(field.oneof)) {
+                            oneofGroups.set(field.oneof, []);
+                        }
+                        oneofGroups.get(field.oneof).push(field);
+                    } else {
+                        normalFields.push(field);
+                    }
+                });
+
+                oneofGroups.forEach((fields, oneofName) => {
+                    lines.push(`    oneof ${camelToSnake(oneofName)} {`);
+                    fields.forEach((field) => {
+                        lines.push(`      ${createProtoField(field)}`);
+                    });
+                    lines.push(`    }`);
+                });
+
+                normalFields.forEach((field) => {
                     lines.push(`    ${createProtoField(field)}`);
                 });
                 break;
@@ -201,8 +229,23 @@ function createProtoFile(proto) {
         lines.push(`  }\n`);
     });
 
+    const oneofGroups = new Map();
+
     proto.fields.forEach((field) => {
-        lines.push(`  ${createProtoField(field)}`);
+        if (field.oneof) {
+            if (!oneofGroups.has(field.oneof)) {
+                oneofGroups.set(field.oneof, []);
+            }
+            oneofGroups.get(field.oneof).push(createProtoField(field));
+        } else {
+            lines.push(`  ${createProtoField(field)}`);
+        }
+    });
+
+    oneofGroups.forEach((fields, oneofName) => {
+        lines.push(`  oneof ${camelToSnake(oneofName)} {`);
+        fields.forEach(field => lines.push(`    ${field}`));
+        lines.push(`  }\n`);
     });
 
     // Check if we're using the funny Google well-knowns and insert an import statement (I love Discord)
