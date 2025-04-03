@@ -75,6 +75,7 @@ message PreloadedUserSettings {
   message RecurringDismissibleContentState {
     uint32 last_dismissed_version = 1;
     uint64 last_dismissed_at_ms = 2;
+    uint64 last_dismissed_object_id = 3;
   }
 
   message UserContentSettings {
