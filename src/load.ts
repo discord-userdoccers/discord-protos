@@ -93,6 +93,11 @@ UserSettingsImpl = {
 const PRELOAD_SCRIPT = readFileSync(join(__dirname, "..", "scripts", "preload.js"), "utf8");
 const PARSE_SCRIPT = readFileSync(join(__dirname, "..", "scripts", "parse.js"), "utf8");
 
+interface Proto {
+    package: string;
+    data: string;
+}
+
 async function main() {
     const browser = await puppeteer.launch();
 
@@ -103,7 +108,7 @@ async function main() {
     await page.evaluateOnNewDocument(PRELOAD_SCRIPT);
     await page.goto("https://canary.discord.com/app", { waitUntil: "networkidle0" });
 
-    const protos = await page.evaluate(`${PARSE_SCRIPT}; protos`);
+    const protos = await page.evaluate(`${PARSE_SCRIPT}; protos`) as unknown as Record<string, Proto>;
     await browser.close();
 
     // Delete all existing files and folders in the discord_protos directory
@@ -121,7 +126,7 @@ async function main() {
     }
 
     // Write the protos to disk
-    const filenames = []
+    const filenames: string[] = [];
     for (const [name, proto] of Object.entries(protos)) {
         const dir = join(__dirname, "..", ...proto.package.split("."));
         const filename = join(dir, `${name}.proto`);

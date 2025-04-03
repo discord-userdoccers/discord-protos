@@ -4,6 +4,7 @@
         "module": "commonjs",
         "allowJs": true,
         "declaration": true,
+        "strictNullChecks": true,
         "outDir": "./dist",
         "rootDir": "./src"
     },
