@@ -1055,9 +1055,9 @@ export interface PreloadedUserSettings_ICYMISettings {
  */
 export interface PreloadedUserSettings_ApplicationDMSettings {
     /**
-     * @generated from protobuf field: bool dm_disabled = 1;
+     * @generated from protobuf field: bool allow_mobile_push = 2;
      */
-    dmDisabled: boolean;
+    allowMobilePush: boolean;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.ApplicationSettings
@@ -4654,12 +4654,12 @@ export const PreloadedUserSettings_ICYMISettings = new PreloadedUserSettings_ICY
 class PreloadedUserSettings_ApplicationDMSettings$Type extends MessageType<PreloadedUserSettings_ApplicationDMSettings> {
     constructor() {
         super("discord_protos.discord_users.v1.PreloadedUserSettings.ApplicationDMSettings", [
-            { no: 1, name: "dm_disabled", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
+            { no: 2, name: "allow_mobile_push", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_ApplicationDMSettings>): PreloadedUserSettings_ApplicationDMSettings {
         const message = globalThis.Object.create((this.messagePrototype!));
-        message.dmDisabled = false;
+        message.allowMobilePush = false;
         if (value !== undefined)
             reflectionMergePartial<PreloadedUserSettings_ApplicationDMSettings>(this, message, value);
         return message;
@@ -4669,8 +4669,8 @@ class PreloadedUserSettings_ApplicationDMSettings$Type extends MessageType<Prelo
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
-                case /* bool dm_disabled */ 1:
-                    message.dmDisabled = reader.bool();
+                case /* bool allow_mobile_push */ 2:
+                    message.allowMobilePush = reader.bool();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -4684,9 +4684,9 @@ class PreloadedUserSettings_ApplicationDMSettings$Type extends MessageType<Prelo
         return message;
     }
     internalBinaryWrite(message: PreloadedUserSettings_ApplicationDMSettings, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* bool dm_disabled = 1; */
-        if (message.dmDisabled !== false)
-            writer.tag(1, WireType.Varint).bool(message.dmDisabled);
+        /* bool allow_mobile_push = 2; */
+        if (message.allowMobilePush !== false)
+            writer.tag(2, WireType.Varint).bool(message.allowMobilePush);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

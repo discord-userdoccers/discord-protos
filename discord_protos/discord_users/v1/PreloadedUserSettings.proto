@@ -409,7 +409,7 @@ message PreloadedUserSettings {
   }
 
   message ApplicationDMSettings {
-    bool dm_disabled = 1;
+    bool allow_mobile_push = 2;
   }
 
   message ApplicationSettings {
