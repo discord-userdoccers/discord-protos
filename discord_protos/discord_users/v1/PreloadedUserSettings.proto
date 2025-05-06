@@ -181,6 +181,13 @@ message PreloadedUserSettings {
     REACTION_NOTIFICATION_TYPE_NOTIFICATIONS_DISABLED = 2;
   }
 
+  enum GameActivityNotificationType {
+    GAME_ACTIVITY_NOTIFICATION_TYPE_ACTIVITY_NOTIFICATIONS_UNSET = 0;
+    GAME_ACTIVITY_NOTIFICATION_TYPE_ACTIVITY_NOTIFICATIONS_DISABLED = 1;
+    GAME_ACTIVITY_NOTIFICATION_TYPE_ACTIVITY_NOTIFICATIONS_ENABLED = 2;
+    GAME_ACTIVITY_NOTIFICATION_TYPE_ONLY_GAMES_PLAYED = 3;
+  }
+
   message NotificationSettings {
     optional google.protobuf.BoolValue show_in_app_notifications = 1;
     optional google.protobuf.BoolValue notify_friends_on_go_live = 2;
@@ -189,6 +196,7 @@ message PreloadedUserSettings {
     optional google.protobuf.BoolValue quiet_mode = 5;
     fixed64 focus_mode_expires_at_ms = 6;
     ReactionNotificationType reaction_notifications = 7;
+    GameActivityNotificationType game_activity_notifications = 8;
   }
 
   enum GuildActivityStatusRestrictionDefault {

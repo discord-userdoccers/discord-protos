@@ -611,6 +611,10 @@ export interface PreloadedUserSettings_NotificationSettings {
      * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.ReactionNotificationType reaction_notifications = 7;
      */
     reactionNotifications: PreloadedUserSettings_ReactionNotificationType;
+    /**
+     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.GameActivityNotificationType game_activity_notifications = 8;
+     */
+    gameActivityNotifications: PreloadedUserSettings_GameActivityNotificationType;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.PrivacySettings
@@ -1183,6 +1187,27 @@ export enum PreloadedUserSettings_ReactionNotificationType {
      * @generated from protobuf enum value: REACTION_NOTIFICATION_TYPE_NOTIFICATIONS_DISABLED = 2;
      */
     NOTIFICATIONS_DISABLED = 2
+}
+/**
+ * @generated from protobuf enum discord_protos.discord_users.v1.PreloadedUserSettings.GameActivityNotificationType
+ */
+export enum PreloadedUserSettings_GameActivityNotificationType {
+    /**
+     * @generated from protobuf enum value: GAME_ACTIVITY_NOTIFICATION_TYPE_ACTIVITY_NOTIFICATIONS_UNSET = 0;
+     */
+    ACTIVITY_NOTIFICATIONS_UNSET = 0,
+    /**
+     * @generated from protobuf enum value: GAME_ACTIVITY_NOTIFICATION_TYPE_ACTIVITY_NOTIFICATIONS_DISABLED = 1;
+     */
+    ACTIVITY_NOTIFICATIONS_DISABLED = 1,
+    /**
+     * @generated from protobuf enum value: GAME_ACTIVITY_NOTIFICATION_TYPE_ACTIVITY_NOTIFICATIONS_ENABLED = 2;
+     */
+    ACTIVITY_NOTIFICATIONS_ENABLED = 2,
+    /**
+     * @generated from protobuf enum value: GAME_ACTIVITY_NOTIFICATION_TYPE_ONLY_GAMES_PLAYED = 3;
+     */
+    ONLY_GAMES_PLAYED = 3
 }
 /**
  * @generated from protobuf enum discord_protos.discord_users.v1.PreloadedUserSettings.GuildActivityStatusRestrictionDefault
@@ -3041,7 +3066,8 @@ class PreloadedUserSettings_NotificationSettings$Type extends MessageType<Preloa
             { no: 4, name: "enable_burst_reaction_notifications", kind: "message", T: () => BoolValue },
             { no: 5, name: "quiet_mode", kind: "message", T: () => BoolValue },
             { no: 6, name: "focus_mode_expires_at_ms", kind: "scalar", T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ },
-            { no: 7, name: "reaction_notifications", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.ReactionNotificationType", PreloadedUserSettings_ReactionNotificationType, "REACTION_NOTIFICATION_TYPE_"] }
+            { no: 7, name: "reaction_notifications", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.ReactionNotificationType", PreloadedUserSettings_ReactionNotificationType, "REACTION_NOTIFICATION_TYPE_"] },
+            { no: 8, name: "game_activity_notifications", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.GameActivityNotificationType", PreloadedUserSettings_GameActivityNotificationType, "GAME_ACTIVITY_NOTIFICATION_TYPE_"] }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_NotificationSettings>): PreloadedUserSettings_NotificationSettings {
@@ -3049,6 +3075,7 @@ class PreloadedUserSettings_NotificationSettings$Type extends MessageType<Preloa
         message.notificationCenterAckedBeforeId = 0n;
         message.focusModeExpiresAtMs = 0n;
         message.reactionNotifications = 0;
+        message.gameActivityNotifications = 0;
         if (value !== undefined)
             reflectionMergePartial<PreloadedUserSettings_NotificationSettings>(this, message, value);
         return message;
@@ -3078,6 +3105,9 @@ class PreloadedUserSettings_NotificationSettings$Type extends MessageType<Preloa
                     break;
                 case /* discord_protos.discord_users.v1.PreloadedUserSettings.ReactionNotificationType reaction_notifications */ 7:
                     message.reactionNotifications = reader.int32();
+                    break;
+                case /* discord_protos.discord_users.v1.PreloadedUserSettings.GameActivityNotificationType game_activity_notifications */ 8:
+                    message.gameActivityNotifications = reader.int32();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -3112,6 +3142,9 @@ class PreloadedUserSettings_NotificationSettings$Type extends MessageType<Preloa
         /* discord_protos.discord_users.v1.PreloadedUserSettings.ReactionNotificationType reaction_notifications = 7; */
         if (message.reactionNotifications !== 0)
             writer.tag(7, WireType.Varint).int32(message.reactionNotifications);
+        /* discord_protos.discord_users.v1.PreloadedUserSettings.GameActivityNotificationType game_activity_notifications = 8; */
+        if (message.gameActivityNotifications !== 0)
+            writer.tag(8, WireType.Varint).int32(message.gameActivityNotifications);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
