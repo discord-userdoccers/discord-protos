@@ -420,8 +420,13 @@ message PreloadedUserSettings {
     bool allow_mobile_push = 2;
   }
 
+  message ApplicationSharingSettings {
+    bool disable_application_activity_sharing = 1;
+  }
+
   message ApplicationSettings {
     optional ApplicationDMSettings app_dm_settings = 1;
+    optional ApplicationSharingSettings app_sharing_settings = 2;
   }
 
   message AllApplicationSettings {

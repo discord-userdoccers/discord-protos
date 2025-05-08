@@ -1064,6 +1064,15 @@ export interface PreloadedUserSettings_ApplicationDMSettings {
     allowMobilePush: boolean;
 }
 /**
+ * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.ApplicationSharingSettings
+ */
+export interface PreloadedUserSettings_ApplicationSharingSettings {
+    /**
+     * @generated from protobuf field: bool disable_application_activity_sharing = 1;
+     */
+    disableApplicationActivitySharing: boolean;
+}
+/**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.ApplicationSettings
  */
 export interface PreloadedUserSettings_ApplicationSettings {
@@ -1071,6 +1080,10 @@ export interface PreloadedUserSettings_ApplicationSettings {
      * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.ApplicationDMSettings app_dm_settings = 1;
      */
     appDmSettings?: PreloadedUserSettings_ApplicationDMSettings;
+    /**
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.ApplicationSharingSettings app_sharing_settings = 2;
+     */
+    appSharingSettings?: PreloadedUserSettings_ApplicationSharingSettings;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.AllApplicationSettings
@@ -4731,10 +4744,58 @@ class PreloadedUserSettings_ApplicationDMSettings$Type extends MessageType<Prelo
  */
 export const PreloadedUserSettings_ApplicationDMSettings = new PreloadedUserSettings_ApplicationDMSettings$Type();
 // @generated message type with reflection information, may provide speed optimized methods
+class PreloadedUserSettings_ApplicationSharingSettings$Type extends MessageType<PreloadedUserSettings_ApplicationSharingSettings> {
+    constructor() {
+        super("discord_protos.discord_users.v1.PreloadedUserSettings.ApplicationSharingSettings", [
+            { no: 1, name: "disable_application_activity_sharing", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
+        ]);
+    }
+    create(value?: PartialMessage<PreloadedUserSettings_ApplicationSharingSettings>): PreloadedUserSettings_ApplicationSharingSettings {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.disableApplicationActivitySharing = false;
+        if (value !== undefined)
+            reflectionMergePartial<PreloadedUserSettings_ApplicationSharingSettings>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PreloadedUserSettings_ApplicationSharingSettings): PreloadedUserSettings_ApplicationSharingSettings {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* bool disable_application_activity_sharing */ 1:
+                    message.disableApplicationActivitySharing = reader.bool();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PreloadedUserSettings_ApplicationSharingSettings, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* bool disable_application_activity_sharing = 1; */
+        if (message.disableApplicationActivitySharing !== false)
+            writer.tag(1, WireType.Varint).bool(message.disableApplicationActivitySharing);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.ApplicationSharingSettings
+ */
+export const PreloadedUserSettings_ApplicationSharingSettings = new PreloadedUserSettings_ApplicationSharingSettings$Type();
+// @generated message type with reflection information, may provide speed optimized methods
 class PreloadedUserSettings_ApplicationSettings$Type extends MessageType<PreloadedUserSettings_ApplicationSettings> {
     constructor() {
         super("discord_protos.discord_users.v1.PreloadedUserSettings.ApplicationSettings", [
-            { no: 1, name: "app_dm_settings", kind: "message", T: () => PreloadedUserSettings_ApplicationDMSettings }
+            { no: 1, name: "app_dm_settings", kind: "message", T: () => PreloadedUserSettings_ApplicationDMSettings },
+            { no: 2, name: "app_sharing_settings", kind: "message", T: () => PreloadedUserSettings_ApplicationSharingSettings }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_ApplicationSettings>): PreloadedUserSettings_ApplicationSettings {
@@ -4751,6 +4812,9 @@ class PreloadedUserSettings_ApplicationSettings$Type extends MessageType<Preload
                 case /* optional discord_protos.discord_users.v1.PreloadedUserSettings.ApplicationDMSettings app_dm_settings */ 1:
                     message.appDmSettings = PreloadedUserSettings_ApplicationDMSettings.internalBinaryRead(reader, reader.uint32(), options, message.appDmSettings);
                     break;
+                case /* optional discord_protos.discord_users.v1.PreloadedUserSettings.ApplicationSharingSettings app_sharing_settings */ 2:
+                    message.appSharingSettings = PreloadedUserSettings_ApplicationSharingSettings.internalBinaryRead(reader, reader.uint32(), options, message.appSharingSettings);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -4766,6 +4830,9 @@ class PreloadedUserSettings_ApplicationSettings$Type extends MessageType<Preload
         /* optional discord_protos.discord_users.v1.PreloadedUserSettings.ApplicationDMSettings app_dm_settings = 1; */
         if (message.appDmSettings)
             PreloadedUserSettings_ApplicationDMSettings.internalBinaryWrite(message.appDmSettings, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.discord_users.v1.PreloadedUserSettings.ApplicationSharingSettings app_sharing_settings = 2; */
+        if (message.appSharingSettings)
+            PreloadedUserSettings_ApplicationSharingSettings.internalBinaryWrite(message.appSharingSettings, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
