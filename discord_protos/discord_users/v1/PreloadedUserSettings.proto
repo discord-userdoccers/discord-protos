@@ -437,6 +437,15 @@ message PreloadedUserSettings {
     bool always_deliver = 1;
   }
 
+  message InAppFeedbackState {
+    optional google.protobuf.UInt64Value last_impression_time = 1;
+    optional google.protobuf.UInt64Value opt_out_expiry_time = 2;
+  }
+
+  message InAppFeedbackSettings {
+    map<int32, InAppFeedbackState> in_app_feedback_states = 1;
+  }
+
   optional Versions versions = 1;
   optional InboxSettings inbox = 2;
   optional AllGuildSettings guilds = 3;
@@ -461,4 +470,5 @@ message PreloadedUserSettings {
   optional ICYMISettings icymi_settings = 22;
   optional AllApplicationSettings applications = 23;
   optional AdsSettings ads = 24;
+  optional InAppFeedbackSettings in_app_feedback_settings = 25;
 }

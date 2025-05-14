@@ -118,6 +118,10 @@ export interface PreloadedUserSettings {
      * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.AdsSettings ads = 24;
      */
     ads?: PreloadedUserSettings_AdsSettings;
+    /**
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.InAppFeedbackSettings in_app_feedback_settings = 25;
+     */
+    inAppFeedbackSettings?: PreloadedUserSettings_InAppFeedbackSettings;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.Versions
@@ -1106,6 +1110,30 @@ export interface PreloadedUserSettings_AdsSettings {
     alwaysDeliver: boolean;
 }
 /**
+ * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.InAppFeedbackState
+ */
+export interface PreloadedUserSettings_InAppFeedbackState {
+    /**
+     * @generated from protobuf field: optional google.protobuf.UInt64Value last_impression_time = 1;
+     */
+    lastImpressionTime?: UInt64Value;
+    /**
+     * @generated from protobuf field: optional google.protobuf.UInt64Value opt_out_expiry_time = 2;
+     */
+    optOutExpiryTime?: UInt64Value;
+}
+/**
+ * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.InAppFeedbackSettings
+ */
+export interface PreloadedUserSettings_InAppFeedbackSettings {
+    /**
+     * @generated from protobuf field: map<int32, discord_protos.discord_users.v1.PreloadedUserSettings.InAppFeedbackState> in_app_feedback_states = 1;
+     */
+    inAppFeedbackStates: {
+        [key: number]: PreloadedUserSettings_InAppFeedbackState;
+    };
+}
+/**
  * @generated from protobuf enum discord_protos.discord_users.v1.PreloadedUserSettings.InboxTab
  */
 export enum PreloadedUserSettings_InboxTab {
@@ -1468,7 +1496,8 @@ class PreloadedUserSettings$Type extends MessageType<PreloadedUserSettings> {
             { no: 21, name: "safety_settings", kind: "message", T: () => PreloadedUserSettings_SafetySettings },
             { no: 22, name: "icymi_settings", kind: "message", T: () => PreloadedUserSettings_ICYMISettings },
             { no: 23, name: "applications", kind: "message", T: () => PreloadedUserSettings_AllApplicationSettings },
-            { no: 24, name: "ads", kind: "message", T: () => PreloadedUserSettings_AdsSettings }
+            { no: 24, name: "ads", kind: "message", T: () => PreloadedUserSettings_AdsSettings },
+            { no: 25, name: "in_app_feedback_settings", kind: "message", T: () => PreloadedUserSettings_InAppFeedbackSettings }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings>): PreloadedUserSettings {
@@ -1554,6 +1583,9 @@ class PreloadedUserSettings$Type extends MessageType<PreloadedUserSettings> {
                 case /* optional discord_protos.discord_users.v1.PreloadedUserSettings.AdsSettings ads */ 24:
                     message.ads = PreloadedUserSettings_AdsSettings.internalBinaryRead(reader, reader.uint32(), options, message.ads);
                     break;
+                case /* optional discord_protos.discord_users.v1.PreloadedUserSettings.InAppFeedbackSettings in_app_feedback_settings */ 25:
+                    message.inAppFeedbackSettings = PreloadedUserSettings_InAppFeedbackSettings.internalBinaryRead(reader, reader.uint32(), options, message.inAppFeedbackSettings);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -1638,6 +1670,9 @@ class PreloadedUserSettings$Type extends MessageType<PreloadedUserSettings> {
         /* optional discord_protos.discord_users.v1.PreloadedUserSettings.AdsSettings ads = 24; */
         if (message.ads)
             PreloadedUserSettings_AdsSettings.internalBinaryWrite(message.ads, writer.tag(24, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.discord_users.v1.PreloadedUserSettings.InAppFeedbackSettings in_app_feedback_settings = 25; */
+        if (message.inAppFeedbackSettings)
+            PreloadedUserSettings_InAppFeedbackSettings.internalBinaryWrite(message.inAppFeedbackSettings, writer.tag(25, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -4957,3 +4992,123 @@ class PreloadedUserSettings_AdsSettings$Type extends MessageType<PreloadedUserSe
  * @generated MessageType for protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.AdsSettings
  */
 export const PreloadedUserSettings_AdsSettings = new PreloadedUserSettings_AdsSettings$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PreloadedUserSettings_InAppFeedbackState$Type extends MessageType<PreloadedUserSettings_InAppFeedbackState> {
+    constructor() {
+        super("discord_protos.discord_users.v1.PreloadedUserSettings.InAppFeedbackState", [
+            { no: 1, name: "last_impression_time", kind: "message", T: () => UInt64Value },
+            { no: 2, name: "opt_out_expiry_time", kind: "message", T: () => UInt64Value }
+        ]);
+    }
+    create(value?: PartialMessage<PreloadedUserSettings_InAppFeedbackState>): PreloadedUserSettings_InAppFeedbackState {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        if (value !== undefined)
+            reflectionMergePartial<PreloadedUserSettings_InAppFeedbackState>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PreloadedUserSettings_InAppFeedbackState): PreloadedUserSettings_InAppFeedbackState {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* optional google.protobuf.UInt64Value last_impression_time */ 1:
+                    message.lastImpressionTime = UInt64Value.internalBinaryRead(reader, reader.uint32(), options, message.lastImpressionTime);
+                    break;
+                case /* optional google.protobuf.UInt64Value opt_out_expiry_time */ 2:
+                    message.optOutExpiryTime = UInt64Value.internalBinaryRead(reader, reader.uint32(), options, message.optOutExpiryTime);
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PreloadedUserSettings_InAppFeedbackState, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* optional google.protobuf.UInt64Value last_impression_time = 1; */
+        if (message.lastImpressionTime)
+            UInt64Value.internalBinaryWrite(message.lastImpressionTime, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        /* optional google.protobuf.UInt64Value opt_out_expiry_time = 2; */
+        if (message.optOutExpiryTime)
+            UInt64Value.internalBinaryWrite(message.optOutExpiryTime, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.InAppFeedbackState
+ */
+export const PreloadedUserSettings_InAppFeedbackState = new PreloadedUserSettings_InAppFeedbackState$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PreloadedUserSettings_InAppFeedbackSettings$Type extends MessageType<PreloadedUserSettings_InAppFeedbackSettings> {
+    constructor() {
+        super("discord_protos.discord_users.v1.PreloadedUserSettings.InAppFeedbackSettings", [
+            { no: 1, name: "in_app_feedback_states", kind: "map", K: 5 /*ScalarType.INT32*/, V: { kind: "message", T: () => PreloadedUserSettings_InAppFeedbackState } }
+        ]);
+    }
+    create(value?: PartialMessage<PreloadedUserSettings_InAppFeedbackSettings>): PreloadedUserSettings_InAppFeedbackSettings {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.inAppFeedbackStates = {};
+        if (value !== undefined)
+            reflectionMergePartial<PreloadedUserSettings_InAppFeedbackSettings>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PreloadedUserSettings_InAppFeedbackSettings): PreloadedUserSettings_InAppFeedbackSettings {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* map<int32, discord_protos.discord_users.v1.PreloadedUserSettings.InAppFeedbackState> in_app_feedback_states */ 1:
+                    this.binaryReadMap1(message.inAppFeedbackStates, reader, options);
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    private binaryReadMap1(map: PreloadedUserSettings_InAppFeedbackSettings["inAppFeedbackStates"], reader: IBinaryReader, options: BinaryReadOptions): void {
+        let len = reader.uint32(), end = reader.pos + len, key: keyof PreloadedUserSettings_InAppFeedbackSettings["inAppFeedbackStates"] | undefined, val: PreloadedUserSettings_InAppFeedbackSettings["inAppFeedbackStates"][any] | undefined;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case 1:
+                    key = reader.int32();
+                    break;
+                case 2:
+                    val = PreloadedUserSettings_InAppFeedbackState.internalBinaryRead(reader, reader.uint32(), options);
+                    break;
+                default: throw new globalThis.Error("unknown map entry field for field discord_protos.discord_users.v1.PreloadedUserSettings.InAppFeedbackSettings.in_app_feedback_states");
+            }
+        }
+        map[key ?? 0] = val ?? PreloadedUserSettings_InAppFeedbackState.create();
+    }
+    internalBinaryWrite(message: PreloadedUserSettings_InAppFeedbackSettings, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* map<int32, discord_protos.discord_users.v1.PreloadedUserSettings.InAppFeedbackState> in_app_feedback_states = 1; */
+        for (let k of globalThis.Object.keys(message.inAppFeedbackStates)) {
+            writer.tag(1, WireType.LengthDelimited).fork().tag(1, WireType.Varint).int32(parseInt(k));
+            writer.tag(2, WireType.LengthDelimited).fork();
+            PreloadedUserSettings_InAppFeedbackState.internalBinaryWrite(message.inAppFeedbackStates[k as any], writer, options);
+            writer.join().join();
+        }
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.InAppFeedbackSettings
+ */
+export const PreloadedUserSettings_InAppFeedbackSettings = new PreloadedUserSettings_InAppFeedbackSettings$Type();
