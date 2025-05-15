@@ -459,6 +459,23 @@ export interface PreloadedUserSettings_KeywordFilterSettings {
     slurs?: BoolValue;
 }
 /**
+ * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.GoreContentSettings
+ */
+export interface PreloadedUserSettings_GoreContentSettings {
+    /**
+     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction gore_content_guilds = 1;
+     */
+    goreContentGuilds: PreloadedUserSettings_ExplicitContentRedaction;
+    /**
+     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction gore_content_friend_dm = 2;
+     */
+    goreContentFriendDm: PreloadedUserSettings_ExplicitContentRedaction;
+    /**
+     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction gore_content_non_friend_dm = 3;
+     */
+    goreContentNonFriendDm: PreloadedUserSettings_ExplicitContentRedaction;
+}
+/**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.TextAndImagesSettings
  */
 export interface PreloadedUserSettings_TextAndImagesSettings {
@@ -582,6 +599,10 @@ export interface PreloadedUserSettings_TextAndImagesSettings {
      * @generated from protobuf field: optional google.protobuf.BoolValue include_soundmoji_in_autocomplete = 31;
      */
     includeSoundmojiInAutocomplete?: BoolValue;
+    /**
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.GoreContentSettings gore_content_settings = 32;
+     */
+    goreContentSettings?: PreloadedUserSettings_GoreContentSettings;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.NotificationSettings
@@ -2852,6 +2873,69 @@ class PreloadedUserSettings_KeywordFilterSettings$Type extends MessageType<Prelo
  */
 export const PreloadedUserSettings_KeywordFilterSettings = new PreloadedUserSettings_KeywordFilterSettings$Type();
 // @generated message type with reflection information, may provide speed optimized methods
+class PreloadedUserSettings_GoreContentSettings$Type extends MessageType<PreloadedUserSettings_GoreContentSettings> {
+    constructor() {
+        super("discord_protos.discord_users.v1.PreloadedUserSettings.GoreContentSettings", [
+            { no: 1, name: "gore_content_guilds", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction", PreloadedUserSettings_ExplicitContentRedaction, "EXPLICIT_CONTENT_REDACTION_"] },
+            { no: 2, name: "gore_content_friend_dm", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction", PreloadedUserSettings_ExplicitContentRedaction, "EXPLICIT_CONTENT_REDACTION_"] },
+            { no: 3, name: "gore_content_non_friend_dm", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction", PreloadedUserSettings_ExplicitContentRedaction, "EXPLICIT_CONTENT_REDACTION_"] }
+        ]);
+    }
+    create(value?: PartialMessage<PreloadedUserSettings_GoreContentSettings>): PreloadedUserSettings_GoreContentSettings {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.goreContentGuilds = 0;
+        message.goreContentFriendDm = 0;
+        message.goreContentNonFriendDm = 0;
+        if (value !== undefined)
+            reflectionMergePartial<PreloadedUserSettings_GoreContentSettings>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PreloadedUserSettings_GoreContentSettings): PreloadedUserSettings_GoreContentSettings {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction gore_content_guilds */ 1:
+                    message.goreContentGuilds = reader.int32();
+                    break;
+                case /* discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction gore_content_friend_dm */ 2:
+                    message.goreContentFriendDm = reader.int32();
+                    break;
+                case /* discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction gore_content_non_friend_dm */ 3:
+                    message.goreContentNonFriendDm = reader.int32();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PreloadedUserSettings_GoreContentSettings, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction gore_content_guilds = 1; */
+        if (message.goreContentGuilds !== 0)
+            writer.tag(1, WireType.Varint).int32(message.goreContentGuilds);
+        /* discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction gore_content_friend_dm = 2; */
+        if (message.goreContentFriendDm !== 0)
+            writer.tag(2, WireType.Varint).int32(message.goreContentFriendDm);
+        /* discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction gore_content_non_friend_dm = 3; */
+        if (message.goreContentNonFriendDm !== 0)
+            writer.tag(3, WireType.Varint).int32(message.goreContentNonFriendDm);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.GoreContentSettings
+ */
+export const PreloadedUserSettings_GoreContentSettings = new PreloadedUserSettings_GoreContentSettings$Type();
+// @generated message type with reflection information, may provide speed optimized methods
 class PreloadedUserSettings_TextAndImagesSettings$Type extends MessageType<PreloadedUserSettings_TextAndImagesSettings> {
     constructor() {
         super("discord_protos.discord_users.v1.PreloadedUserSettings.TextAndImagesSettings", [
@@ -2884,7 +2968,8 @@ class PreloadedUserSettings_TextAndImagesSettings$Type extends MessageType<Prelo
             { no: 28, name: "include_stickers_in_autocomplete", kind: "message", T: () => BoolValue },
             { no: 29, name: "explicit_content_settings", kind: "message", T: () => PreloadedUserSettings_ExplicitContentSettings },
             { no: 30, name: "keyword_filter_settings", kind: "message", T: () => PreloadedUserSettings_KeywordFilterSettings },
-            { no: 31, name: "include_soundmoji_in_autocomplete", kind: "message", T: () => BoolValue }
+            { no: 31, name: "include_soundmoji_in_autocomplete", kind: "message", T: () => BoolValue },
+            { no: 32, name: "gore_content_settings", kind: "message", T: () => PreloadedUserSettings_GoreContentSettings }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_TextAndImagesSettings>): PreloadedUserSettings_TextAndImagesSettings {
@@ -2992,6 +3077,9 @@ class PreloadedUserSettings_TextAndImagesSettings$Type extends MessageType<Prelo
                 case /* optional google.protobuf.BoolValue include_soundmoji_in_autocomplete */ 31:
                     message.includeSoundmojiInAutocomplete = BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.includeSoundmojiInAutocomplete);
                     break;
+                case /* optional discord_protos.discord_users.v1.PreloadedUserSettings.GoreContentSettings gore_content_settings */ 32:
+                    message.goreContentSettings = PreloadedUserSettings_GoreContentSettings.internalBinaryRead(reader, reader.uint32(), options, message.goreContentSettings);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -3094,6 +3182,9 @@ class PreloadedUserSettings_TextAndImagesSettings$Type extends MessageType<Prelo
         /* optional google.protobuf.BoolValue include_soundmoji_in_autocomplete = 31; */
         if (message.includeSoundmojiInAutocomplete)
             BoolValue.internalBinaryWrite(message.includeSoundmojiInAutocomplete, writer.tag(31, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.discord_users.v1.PreloadedUserSettings.GoreContentSettings gore_content_settings = 32; */
+        if (message.goreContentSettings)
+            PreloadedUserSettings_GoreContentSettings.internalBinaryWrite(message.goreContentSettings, writer.tag(32, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

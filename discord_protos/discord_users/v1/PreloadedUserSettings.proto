@@ -142,6 +142,12 @@ message PreloadedUserSettings {
     optional google.protobuf.BoolValue slurs = 3;
   }
 
+  message GoreContentSettings {
+    ExplicitContentRedaction gore_content_guilds = 1;
+    ExplicitContentRedaction gore_content_friend_dm = 2;
+    ExplicitContentRedaction gore_content_non_friend_dm = 3;
+  }
+
   message TextAndImagesSettings {
     optional google.protobuf.StringValue diversity_surrogate = 1;
     optional google.protobuf.BoolValue use_rich_chat_input = 2;
@@ -173,6 +179,7 @@ message PreloadedUserSettings {
     optional ExplicitContentSettings explicit_content_settings = 29;
     optional KeywordFilterSettings keyword_filter_settings = 30;
     optional google.protobuf.BoolValue include_soundmoji_in_autocomplete = 31;
+    optional GoreContentSettings gore_content_settings = 32;
   }
 
   enum ReactionNotificationType {
