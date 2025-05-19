@@ -292,8 +292,16 @@ message PreloadedUserSettings {
     THEME_MIDNIGHT = 4;
   }
 
+  message CustomUserThemeSettings {
+    repeated string colors = 1 [packed = false];
+    repeated float gradient_color_stops = 2;
+    int32 gradient_angle = 3;
+    int32 base_mix = 4;
+  }
+
   message ClientThemeSettings {
     optional google.protobuf.UInt32Value background_gradient_preset_id = 2;
+    optional CustomUserThemeSettings custom_user_theme_settings = 4;
   }
 
   enum TimestampHourCycle {

@@ -840,6 +840,27 @@ export interface PreloadedUserSettings_LocalizationSettings {
     timezoneOffset?: Int32Value;
 }
 /**
+ * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.CustomUserThemeSettings
+ */
+export interface PreloadedUserSettings_CustomUserThemeSettings {
+    /**
+     * @generated from protobuf field: repeated string colors = 1 [packed = false];
+     */
+    colors: string[];
+    /**
+     * @generated from protobuf field: repeated float gradient_color_stops = 2;
+     */
+    gradientColorStops: number[];
+    /**
+     * @generated from protobuf field: int32 gradient_angle = 3;
+     */
+    gradientAngle: number;
+    /**
+     * @generated from protobuf field: int32 base_mix = 4;
+     */
+    baseMix: number;
+}
+/**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.ClientThemeSettings
  */
 export interface PreloadedUserSettings_ClientThemeSettings {
@@ -847,6 +868,10 @@ export interface PreloadedUserSettings_ClientThemeSettings {
      * @generated from protobuf field: optional google.protobuf.UInt32Value background_gradient_preset_id = 2;
      */
     backgroundGradientPresetId?: UInt32Value;
+    /**
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.CustomUserThemeSettings custom_user_theme_settings = 4;
+     */
+    customUserThemeSettings?: PreloadedUserSettings_CustomUserThemeSettings;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.AppearanceSettings
@@ -3870,10 +3895,90 @@ class PreloadedUserSettings_LocalizationSettings$Type extends MessageType<Preloa
  */
 export const PreloadedUserSettings_LocalizationSettings = new PreloadedUserSettings_LocalizationSettings$Type();
 // @generated message type with reflection information, may provide speed optimized methods
+class PreloadedUserSettings_CustomUserThemeSettings$Type extends MessageType<PreloadedUserSettings_CustomUserThemeSettings> {
+    constructor() {
+        super("discord_protos.discord_users.v1.PreloadedUserSettings.CustomUserThemeSettings", [
+            { no: 1, name: "colors", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "gradient_color_stops", kind: "scalar", repeat: 1 /*RepeatType.PACKED*/, T: 2 /*ScalarType.FLOAT*/ },
+            { no: 3, name: "gradient_angle", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
+            { no: 4, name: "base_mix", kind: "scalar", T: 5 /*ScalarType.INT32*/ }
+        ]);
+    }
+    create(value?: PartialMessage<PreloadedUserSettings_CustomUserThemeSettings>): PreloadedUserSettings_CustomUserThemeSettings {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.colors = [];
+        message.gradientColorStops = [];
+        message.gradientAngle = 0;
+        message.baseMix = 0;
+        if (value !== undefined)
+            reflectionMergePartial<PreloadedUserSettings_CustomUserThemeSettings>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PreloadedUserSettings_CustomUserThemeSettings): PreloadedUserSettings_CustomUserThemeSettings {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* repeated string colors = 1 [packed = false];*/ 1:
+                    message.colors.push(reader.string());
+                    break;
+                case /* repeated float gradient_color_stops */ 2:
+                    if (wireType === WireType.LengthDelimited)
+                        for (let e = reader.int32() + reader.pos; reader.pos < e;)
+                            message.gradientColorStops.push(reader.float());
+                    else
+                        message.gradientColorStops.push(reader.float());
+                    break;
+                case /* int32 gradient_angle */ 3:
+                    message.gradientAngle = reader.int32();
+                    break;
+                case /* int32 base_mix */ 4:
+                    message.baseMix = reader.int32();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PreloadedUserSettings_CustomUserThemeSettings, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* repeated string colors = 1 [packed = false]; */
+        for (let i = 0; i < message.colors.length; i++)
+            writer.tag(1, WireType.LengthDelimited).string(message.colors[i]);
+        /* repeated float gradient_color_stops = 2; */
+        if (message.gradientColorStops.length) {
+            writer.tag(2, WireType.LengthDelimited).fork();
+            for (let i = 0; i < message.gradientColorStops.length; i++)
+                writer.float(message.gradientColorStops[i]);
+            writer.join();
+        }
+        /* int32 gradient_angle = 3; */
+        if (message.gradientAngle !== 0)
+            writer.tag(3, WireType.Varint).int32(message.gradientAngle);
+        /* int32 base_mix = 4; */
+        if (message.baseMix !== 0)
+            writer.tag(4, WireType.Varint).int32(message.baseMix);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.CustomUserThemeSettings
+ */
+export const PreloadedUserSettings_CustomUserThemeSettings = new PreloadedUserSettings_CustomUserThemeSettings$Type();
+// @generated message type with reflection information, may provide speed optimized methods
 class PreloadedUserSettings_ClientThemeSettings$Type extends MessageType<PreloadedUserSettings_ClientThemeSettings> {
     constructor() {
         super("discord_protos.discord_users.v1.PreloadedUserSettings.ClientThemeSettings", [
-            { no: 2, name: "background_gradient_preset_id", kind: "message", T: () => UInt32Value }
+            { no: 2, name: "background_gradient_preset_id", kind: "message", T: () => UInt32Value },
+            { no: 4, name: "custom_user_theme_settings", kind: "message", T: () => PreloadedUserSettings_CustomUserThemeSettings }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_ClientThemeSettings>): PreloadedUserSettings_ClientThemeSettings {
@@ -3890,6 +3995,9 @@ class PreloadedUserSettings_ClientThemeSettings$Type extends MessageType<Preload
                 case /* optional google.protobuf.UInt32Value background_gradient_preset_id */ 2:
                     message.backgroundGradientPresetId = UInt32Value.internalBinaryRead(reader, reader.uint32(), options, message.backgroundGradientPresetId);
                     break;
+                case /* optional discord_protos.discord_users.v1.PreloadedUserSettings.CustomUserThemeSettings custom_user_theme_settings */ 4:
+                    message.customUserThemeSettings = PreloadedUserSettings_CustomUserThemeSettings.internalBinaryRead(reader, reader.uint32(), options, message.customUserThemeSettings);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -3905,6 +4013,9 @@ class PreloadedUserSettings_ClientThemeSettings$Type extends MessageType<Preload
         /* optional google.protobuf.UInt32Value background_gradient_preset_id = 2; */
         if (message.backgroundGradientPresetId)
             UInt32Value.internalBinaryWrite(message.backgroundGradientPresetId, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.discord_users.v1.PreloadedUserSettings.CustomUserThemeSettings custom_user_theme_settings = 4; */
+        if (message.customUserThemeSettings)
+            PreloadedUserSettings_CustomUserThemeSettings.internalBinaryWrite(message.customUserThemeSettings, writer.tag(4, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
