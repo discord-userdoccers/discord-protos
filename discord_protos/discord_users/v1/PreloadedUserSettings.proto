@@ -195,6 +195,12 @@ message PreloadedUserSettings {
     GAME_ACTIVITY_NOTIFICATION_TYPE_ONLY_GAMES_PLAYED = 3;
   }
 
+  enum CustomStatusPushNotificationType {
+    CUSTOM_STATUS_PUSH_NOTIFICATION_TYPE_STATUS_PUSH_UNSET = 0;
+    CUSTOM_STATUS_PUSH_NOTIFICATION_TYPE_STATUS_PUSH_ENABLED = 1;
+    CUSTOM_STATUS_PUSH_NOTIFICATION_TYPE_STATUS_PUSH_DISABLED = 2;
+  }
+
   message NotificationSettings {
     optional google.protobuf.BoolValue show_in_app_notifications = 1;
     optional google.protobuf.BoolValue notify_friends_on_go_live = 2;
@@ -204,6 +210,7 @@ message PreloadedUserSettings {
     fixed64 focus_mode_expires_at_ms = 6;
     ReactionNotificationType reaction_notifications = 7;
     GameActivityNotificationType game_activity_notifications = 8;
+    CustomStatusPushNotificationType custom_status_push_notifications = 9;
   }
 
   enum GuildActivityStatusRestrictionDefault {

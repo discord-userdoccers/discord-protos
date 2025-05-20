@@ -640,6 +640,10 @@ export interface PreloadedUserSettings_NotificationSettings {
      * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.GameActivityNotificationType game_activity_notifications = 8;
      */
     gameActivityNotifications: PreloadedUserSettings_GameActivityNotificationType;
+    /**
+     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.CustomStatusPushNotificationType custom_status_push_notifications = 9;
+     */
+    customStatusPushNotifications: PreloadedUserSettings_CustomStatusPushNotificationType;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.PrivacySettings
@@ -1295,6 +1299,23 @@ export enum PreloadedUserSettings_GameActivityNotificationType {
      * @generated from protobuf enum value: GAME_ACTIVITY_NOTIFICATION_TYPE_ONLY_GAMES_PLAYED = 3;
      */
     ONLY_GAMES_PLAYED = 3
+}
+/**
+ * @generated from protobuf enum discord_protos.discord_users.v1.PreloadedUserSettings.CustomStatusPushNotificationType
+ */
+export enum PreloadedUserSettings_CustomStatusPushNotificationType {
+    /**
+     * @generated from protobuf enum value: CUSTOM_STATUS_PUSH_NOTIFICATION_TYPE_STATUS_PUSH_UNSET = 0;
+     */
+    STATUS_PUSH_UNSET = 0,
+    /**
+     * @generated from protobuf enum value: CUSTOM_STATUS_PUSH_NOTIFICATION_TYPE_STATUS_PUSH_ENABLED = 1;
+     */
+    STATUS_PUSH_ENABLED = 1,
+    /**
+     * @generated from protobuf enum value: CUSTOM_STATUS_PUSH_NOTIFICATION_TYPE_STATUS_PUSH_DISABLED = 2;
+     */
+    STATUS_PUSH_DISABLED = 2
 }
 /**
  * @generated from protobuf enum discord_protos.discord_users.v1.PreloadedUserSettings.GuildActivityStatusRestrictionDefault
@@ -3231,7 +3252,8 @@ class PreloadedUserSettings_NotificationSettings$Type extends MessageType<Preloa
             { no: 5, name: "quiet_mode", kind: "message", T: () => BoolValue },
             { no: 6, name: "focus_mode_expires_at_ms", kind: "scalar", T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ },
             { no: 7, name: "reaction_notifications", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.ReactionNotificationType", PreloadedUserSettings_ReactionNotificationType, "REACTION_NOTIFICATION_TYPE_"] },
-            { no: 8, name: "game_activity_notifications", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.GameActivityNotificationType", PreloadedUserSettings_GameActivityNotificationType, "GAME_ACTIVITY_NOTIFICATION_TYPE_"] }
+            { no: 8, name: "game_activity_notifications", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.GameActivityNotificationType", PreloadedUserSettings_GameActivityNotificationType, "GAME_ACTIVITY_NOTIFICATION_TYPE_"] },
+            { no: 9, name: "custom_status_push_notifications", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.CustomStatusPushNotificationType", PreloadedUserSettings_CustomStatusPushNotificationType, "CUSTOM_STATUS_PUSH_NOTIFICATION_TYPE_"] }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_NotificationSettings>): PreloadedUserSettings_NotificationSettings {
@@ -3240,6 +3262,7 @@ class PreloadedUserSettings_NotificationSettings$Type extends MessageType<Preloa
         message.focusModeExpiresAtMs = 0n;
         message.reactionNotifications = 0;
         message.gameActivityNotifications = 0;
+        message.customStatusPushNotifications = 0;
         if (value !== undefined)
             reflectionMergePartial<PreloadedUserSettings_NotificationSettings>(this, message, value);
         return message;
@@ -3272,6 +3295,9 @@ class PreloadedUserSettings_NotificationSettings$Type extends MessageType<Preloa
                     break;
                 case /* discord_protos.discord_users.v1.PreloadedUserSettings.GameActivityNotificationType game_activity_notifications */ 8:
                     message.gameActivityNotifications = reader.int32();
+                    break;
+                case /* discord_protos.discord_users.v1.PreloadedUserSettings.CustomStatusPushNotificationType custom_status_push_notifications */ 9:
+                    message.customStatusPushNotifications = reader.int32();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -3309,6 +3335,9 @@ class PreloadedUserSettings_NotificationSettings$Type extends MessageType<Preloa
         /* discord_protos.discord_users.v1.PreloadedUserSettings.GameActivityNotificationType game_activity_notifications = 8; */
         if (message.gameActivityNotifications !== 0)
             writer.tag(8, WireType.Varint).int32(message.gameActivityNotifications);
+        /* discord_protos.discord_users.v1.PreloadedUserSettings.CustomStatusPushNotificationType custom_status_push_notifications = 9; */
+        if (message.customStatusPushNotifications !== 0)
+            writer.tag(9, WireType.Varint).int32(message.customStatusPushNotifications);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
