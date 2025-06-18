@@ -3,18 +3,17 @@ from __future__ import annotations
 from enum import Enum as _Enum
 from typing import TYPE_CHECKING
 
-__version__ = '1.2.41'
+__version__ = '1.2.42'
 
 if TYPE_CHECKING:
     from google.protobuf.message import Message as _Message
 
-    PreloadedUserSettings = FrecencyUserSettings = ApplicationUserRoleConnection = AcknowledgedApplicationDisclosures = PremiumMarketingComponentProperties = _Message
+    PreloadedUserSettings = FrecencyUserSettings = ApplicationUserRoleConnection = AcknowledgedApplicationDisclosures = _Message
 else:
     from .discord_users.v1.PreloadedUserSettings_pb2 import *
     from .discord_users.v1.FrecencyUserSettings_pb2 import *
     from .discord_kkv_store_value_models.v1.ApplicationUserRoleConnection_pb2 import *
     from .discord_kkv_store_value_models.v1.AcknowledgedApplicationDisclosures_pb2 import *
-    from .premium_marketing.v1.PremiumMarketingComponentProperties_pb2 import *
 
 __all__ = (
     '__version__',
@@ -23,7 +22,6 @@ __all__ = (
     'FrecencyUserSettings',
     'ApplicationUserRoleConnection',
     'AcknowledgedApplicationDisclosures',
-    'PremiumMarketingComponentProperties',
 )
 
 
