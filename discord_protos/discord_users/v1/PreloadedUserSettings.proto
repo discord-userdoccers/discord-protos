@@ -211,6 +211,7 @@ message PreloadedUserSettings {
     ReactionNotificationType reaction_notifications = 7;
     GameActivityNotificationType game_activity_notifications = 8;
     CustomStatusPushNotificationType custom_status_push_notifications = 9;
+    optional google.protobuf.BoolValue game_activity_exclude_steam_notifications = 10;
   }
 
   enum GuildActivityStatusRestrictionDefault {

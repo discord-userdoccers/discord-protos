@@ -644,6 +644,10 @@ export interface PreloadedUserSettings_NotificationSettings {
      * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.CustomStatusPushNotificationType custom_status_push_notifications = 9
      */
     customStatusPushNotifications: PreloadedUserSettings_CustomStatusPushNotificationType;
+    /**
+     * @generated from protobuf field: optional google.protobuf.BoolValue game_activity_exclude_steam_notifications = 10
+     */
+    gameActivityExcludeSteamNotifications?: BoolValue;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.PrivacySettings
@@ -3253,7 +3257,8 @@ class PreloadedUserSettings_NotificationSettings$Type extends MessageType<Preloa
             { no: 6, name: "focus_mode_expires_at_ms", kind: "scalar", T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ },
             { no: 7, name: "reaction_notifications", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.ReactionNotificationType", PreloadedUserSettings_ReactionNotificationType, "REACTION_NOTIFICATION_TYPE_"] },
             { no: 8, name: "game_activity_notifications", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.GameActivityNotificationType", PreloadedUserSettings_GameActivityNotificationType, "GAME_ACTIVITY_NOTIFICATION_TYPE_"] },
-            { no: 9, name: "custom_status_push_notifications", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.CustomStatusPushNotificationType", PreloadedUserSettings_CustomStatusPushNotificationType, "CUSTOM_STATUS_PUSH_NOTIFICATION_TYPE_"] }
+            { no: 9, name: "custom_status_push_notifications", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.CustomStatusPushNotificationType", PreloadedUserSettings_CustomStatusPushNotificationType, "CUSTOM_STATUS_PUSH_NOTIFICATION_TYPE_"] },
+            { no: 10, name: "game_activity_exclude_steam_notifications", kind: "message", T: () => BoolValue }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_NotificationSettings>): PreloadedUserSettings_NotificationSettings {
@@ -3299,6 +3304,9 @@ class PreloadedUserSettings_NotificationSettings$Type extends MessageType<Preloa
                 case /* discord_protos.discord_users.v1.PreloadedUserSettings.CustomStatusPushNotificationType custom_status_push_notifications */ 9:
                     message.customStatusPushNotifications = reader.int32();
                     break;
+                case /* optional google.protobuf.BoolValue game_activity_exclude_steam_notifications */ 10:
+                    message.gameActivityExcludeSteamNotifications = BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.gameActivityExcludeSteamNotifications);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -3338,6 +3346,9 @@ class PreloadedUserSettings_NotificationSettings$Type extends MessageType<Preloa
         /* discord_protos.discord_users.v1.PreloadedUserSettings.CustomStatusPushNotificationType custom_status_push_notifications = 9; */
         if (message.customStatusPushNotifications !== 0)
             writer.tag(9, WireType.Varint).int32(message.customStatusPushNotifications);
+        /* optional google.protobuf.BoolValue game_activity_exclude_steam_notifications = 10; */
+        if (message.gameActivityExcludeSteamNotifications)
+            BoolValue.internalBinaryWrite(message.gameActivityExcludeSteamNotifications, writer.tag(10, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
