@@ -16,6 +16,9 @@
             "url": "https://samuelscheit.com"
         }
     ],
+    "repository": {
+        "url": "https://github.com/discord-userdoccers/discord-protos"
+    },
     "license": "MIT",
     "scripts": {
         "py": "protoc --proto_path=./discord_protos/ --python_out=discord_protos ./discord_protos/discord_users/v1/PreloadedUserSettings.proto ./discord_protos/discord_users/v1/FrecencyUserSettings.proto ./discord_protos/discord_kkv_store_value_models/v1/ApplicationUserRoleConnection.proto ./discord_protos/discord_kkv_store_value_models/v1/AcknowledgedApplicationDisclosures.proto ./discord_protos/premium_marketing/v1/PremiumMarketingComponentProperties.proto",
