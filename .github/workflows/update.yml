@@ -48,23 +48,20 @@ jobs:
         npm run py
 
     - name: Commit changes
+      id: changes
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add .
-        git commit -m "Update protobuf definitions" || exit 0
-        git push
-      env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Detect file changes
-      id: changes
-      run: |
         if git diff --quiet; then
           echo "has_changes=false" >> "$GITHUB_OUTPUT"
         else
           echo "has_changes=true"  >> "$GITHUB_OUTPUT"
         fi
+        git add .
+        git commit -m "Update protobuf definitions" || exit 0
+        git push
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Publish to NPM
       if: steps.changes.outputs.has_changes == 'true'
