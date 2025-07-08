@@ -66,16 +66,6 @@ jobs:
           echo "has_changes=true"  >> "$GITHUB_OUTPUT"
         fi
 
-    - name: Bump version and push
-      if: steps.changes.outputs.has_changes == 'true'
-      run: |
-        git config --global user.name  "github-actions[bot]"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        npm version patch -m "chore(release) %s [skip ci]"
-        git push --follow-tags
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
     - name: Publish to NPM
       if: steps.changes.outputs.has_changes == 'true'
       run: npm publish --provenance --access public
