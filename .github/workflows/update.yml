@@ -23,6 +23,7 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: 'latest'
+        registry-url: 'https://registry.npmjs.org'
 
     - name: Install protoc
       uses: arduino/setup-protoc@v3
@@ -54,3 +55,8 @@ jobs:
         git push
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+    - name: Publish to NPM
+      run: npm publish --provenance --access public
+      env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
