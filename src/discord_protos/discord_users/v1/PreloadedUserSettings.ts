@@ -223,6 +223,27 @@ export interface PreloadedUserSettings_ChannelListSettings {
     messagePreviews?: StringValue;
 }
 /**
+ * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.GuildDismissibleContentState
+ */
+export interface PreloadedUserSettings_GuildDismissibleContentState {
+    /**
+     * @generated from protobuf field: bool dismissed = 1
+     */
+    dismissed: boolean;
+    /**
+     * @generated from protobuf field: uint32 last_dismissed_version = 2
+     */
+    lastDismissedVersion: number;
+    /**
+     * @generated from protobuf field: uint64 last_dismissed_at_ms = 3
+     */
+    lastDismissedAtMs: bigint;
+    /**
+     * @generated from protobuf field: uint64 last_dismissed_object_id = 4
+     */
+    lastDismissedObjectId: bigint;
+}
+/**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.GuildSettings
  */
 export interface PreloadedUserSettings_GuildSettings {
@@ -272,6 +293,12 @@ export interface PreloadedUserSettings_GuildSettings {
      * @generated from protobuf field: bool leaderboards_disabled = 11
      */
     leaderboardsDisabled: boolean;
+    /**
+     * @generated from protobuf field: map<int32, discord_protos.discord_users.v1.PreloadedUserSettings.GuildDismissibleContentState> guild_dismissible_content_states = 12
+     */
+    guildDismissibleContentStates: {
+        [key: number]: PreloadedUserSettings_GuildDismissibleContentState;
+    };
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.AllGuildSettings
@@ -2148,6 +2175,77 @@ class PreloadedUserSettings_ChannelListSettings$Type extends MessageType<Preload
  */
 export const PreloadedUserSettings_ChannelListSettings = new PreloadedUserSettings_ChannelListSettings$Type();
 // @generated message type with reflection information, may provide speed optimized methods
+class PreloadedUserSettings_GuildDismissibleContentState$Type extends MessageType<PreloadedUserSettings_GuildDismissibleContentState> {
+    constructor() {
+        super("discord_protos.discord_users.v1.PreloadedUserSettings.GuildDismissibleContentState", [
+            { no: 1, name: "dismissed", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
+            { no: 2, name: "last_dismissed_version", kind: "scalar", T: 13 /*ScalarType.UINT32*/ },
+            { no: 3, name: "last_dismissed_at_ms", kind: "scalar", T: 4 /*ScalarType.UINT64*/, L: 0 /*LongType.BIGINT*/ },
+            { no: 4, name: "last_dismissed_object_id", kind: "scalar", T: 4 /*ScalarType.UINT64*/, L: 0 /*LongType.BIGINT*/ }
+        ]);
+    }
+    create(value?: PartialMessage<PreloadedUserSettings_GuildDismissibleContentState>): PreloadedUserSettings_GuildDismissibleContentState {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.dismissed = false;
+        message.lastDismissedVersion = 0;
+        message.lastDismissedAtMs = 0n;
+        message.lastDismissedObjectId = 0n;
+        if (value !== undefined)
+            reflectionMergePartial<PreloadedUserSettings_GuildDismissibleContentState>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PreloadedUserSettings_GuildDismissibleContentState): PreloadedUserSettings_GuildDismissibleContentState {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* bool dismissed */ 1:
+                    message.dismissed = reader.bool();
+                    break;
+                case /* uint32 last_dismissed_version */ 2:
+                    message.lastDismissedVersion = reader.uint32();
+                    break;
+                case /* uint64 last_dismissed_at_ms */ 3:
+                    message.lastDismissedAtMs = reader.uint64().toBigInt();
+                    break;
+                case /* uint64 last_dismissed_object_id */ 4:
+                    message.lastDismissedObjectId = reader.uint64().toBigInt();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PreloadedUserSettings_GuildDismissibleContentState, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* bool dismissed = 1; */
+        if (message.dismissed !== false)
+            writer.tag(1, WireType.Varint).bool(message.dismissed);
+        /* uint32 last_dismissed_version = 2; */
+        if (message.lastDismissedVersion !== 0)
+            writer.tag(2, WireType.Varint).uint32(message.lastDismissedVersion);
+        /* uint64 last_dismissed_at_ms = 3; */
+        if (message.lastDismissedAtMs !== 0n)
+            writer.tag(3, WireType.Varint).uint64(message.lastDismissedAtMs);
+        /* uint64 last_dismissed_object_id = 4; */
+        if (message.lastDismissedObjectId !== 0n)
+            writer.tag(4, WireType.Varint).uint64(message.lastDismissedObjectId);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.GuildDismissibleContentState
+ */
+export const PreloadedUserSettings_GuildDismissibleContentState = new PreloadedUserSettings_GuildDismissibleContentState$Type();
+// @generated message type with reflection information, may provide speed optimized methods
 class PreloadedUserSettings_GuildSettings$Type extends MessageType<PreloadedUserSettings_GuildSettings> {
     constructor() {
         super("discord_protos.discord_users.v1.PreloadedUserSettings.GuildSettings", [
@@ -2161,7 +2259,8 @@ class PreloadedUserSettings_GuildSettings$Type extends MessageType<PreloadedUser
             { no: 8, name: "disable_raid_alert_push", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
             { no: 9, name: "disable_raid_alert_nag", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
             { no: 10, name: "custom_notification_sound_config", kind: "message", T: () => PreloadedUserSettings_CustomNotificationSoundConfig },
-            { no: 11, name: "leaderboards_disabled", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
+            { no: 11, name: "leaderboards_disabled", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
+            { no: 12, name: "guild_dismissible_content_states", kind: "map", K: 5 /*ScalarType.INT32*/, V: { kind: "message", T: () => PreloadedUserSettings_GuildDismissibleContentState } }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_GuildSettings>): PreloadedUserSettings_GuildSettings {
@@ -2173,6 +2272,7 @@ class PreloadedUserSettings_GuildSettings$Type extends MessageType<PreloadedUser
         message.disableRaidAlertPush = false;
         message.disableRaidAlertNag = false;
         message.leaderboardsDisabled = false;
+        message.guildDismissibleContentStates = {};
         if (value !== undefined)
             reflectionMergePartial<PreloadedUserSettings_GuildSettings>(this, message, value);
         return message;
@@ -2215,6 +2315,9 @@ class PreloadedUserSettings_GuildSettings$Type extends MessageType<PreloadedUser
                 case /* bool leaderboards_disabled */ 11:
                     message.leaderboardsDisabled = reader.bool();
                     break;
+                case /* map<int32, discord_protos.discord_users.v1.PreloadedUserSettings.GuildDismissibleContentState> guild_dismissible_content_states */ 12:
+                    this.binaryReadMap12(message.guildDismissibleContentStates, reader, options);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -2241,6 +2344,22 @@ class PreloadedUserSettings_GuildSettings$Type extends MessageType<PreloadedUser
             }
         }
         map[key ?? "0"] = val ?? PreloadedUserSettings_ChannelSettings.create();
+    }
+    private binaryReadMap12(map: PreloadedUserSettings_GuildSettings["guildDismissibleContentStates"], reader: IBinaryReader, options: BinaryReadOptions): void {
+        let len = reader.uint32(), end = reader.pos + len, key: keyof PreloadedUserSettings_GuildSettings["guildDismissibleContentStates"] | undefined, val: PreloadedUserSettings_GuildSettings["guildDismissibleContentStates"][any] | undefined;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case 1:
+                    key = reader.int32();
+                    break;
+                case 2:
+                    val = PreloadedUserSettings_GuildDismissibleContentState.internalBinaryRead(reader, reader.uint32(), options);
+                    break;
+                default: throw new globalThis.Error("unknown map entry field for discord_protos.discord_users.v1.PreloadedUserSettings.GuildSettings.guild_dismissible_content_states");
+            }
+        }
+        map[key ?? 0] = val ?? PreloadedUserSettings_GuildDismissibleContentState.create();
     }
     internalBinaryWrite(message: PreloadedUserSettings_GuildSettings, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
         /* map<fixed64, discord_protos.discord_users.v1.PreloadedUserSettings.ChannelSettings> channels = 1; */
@@ -2280,6 +2399,13 @@ class PreloadedUserSettings_GuildSettings$Type extends MessageType<PreloadedUser
         /* bool leaderboards_disabled = 11; */
         if (message.leaderboardsDisabled !== false)
             writer.tag(11, WireType.Varint).bool(message.leaderboardsDisabled);
+        /* map<int32, discord_protos.discord_users.v1.PreloadedUserSettings.GuildDismissibleContentState> guild_dismissible_content_states = 12; */
+        for (let k of globalThis.Object.keys(message.guildDismissibleContentStates)) {
+            writer.tag(12, WireType.LengthDelimited).fork().tag(1, WireType.Varint).int32(parseInt(k));
+            writer.tag(2, WireType.LengthDelimited).fork();
+            PreloadedUserSettings_GuildDismissibleContentState.internalBinaryWrite(message.guildDismissibleContentStates[k as any], writer, options);
+            writer.join().join();
+        }
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
