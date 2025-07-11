@@ -1,0 +1,247 @@
+syntax = "proto3";
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/timestamp.proto";
+
+package discord_protos.discord_experimentation.v1;
+
+message Experiment {
+  enum UnitType {
+    UNIT_TYPE_UNSPECIFIED = 0;
+    UNIT_TYPE_USER = 1;
+  }
+
+  enum Type {
+    TYPE_UNSPECIFIED = 0;
+    TYPE_ACTIVE = 1;
+    TYPE_UNUSED = 2;
+  }
+
+  message VariantAllocation {
+    int32 start = 1;
+    int32 stop = 2;
+    Type type = 3;
+  }
+
+  message Variant {
+    int32 id = 1;
+    string label = 2;
+    repeated VariantAllocation allocations = 4;
+    Type type = 5;
+  }
+
+  message PlatformVersionSpecifier {
+    uint32 major = 1;
+    optional google.protobuf.UInt32Value minor = 2;
+    optional google.protobuf.UInt64Value build = 3;
+  }
+
+  message PlatformVersionRangeBound {
+    optional PlatformVersionSpecifier version = 1;
+    bool inclusive = 2;
+  }
+
+  message PlatformVersionRange {
+    optional PlatformVersionRangeBound lower_bound = 1;
+    optional PlatformVersionRangeBound upper_bound = 2;
+  }
+
+  message PlatformVersion {
+    repeated PlatformVersionRange ranges = 1;
+    bool work_around_pyoto_bug = 2;
+  }
+
+  message ClientPlatform {
+    optional PlatformVersion ios_version = 1;
+    optional PlatformVersion android_version = 2;
+    optional PlatformVersion web_version = 3;
+    optional PlatformVersion native_version = 4;
+  }
+
+  message SDKVersionSpecifier {
+    int32 version = 1;
+  }
+
+  message SDKVersionRangeBound {
+    optional SDKVersionSpecifier version = 1;
+    bool inclusive = 2;
+  }
+
+  message SDKVersionRange {
+    optional SDKVersionRangeBound lower_bound = 1;
+    optional SDKVersionRangeBound upper_bound = 2;
+  }
+
+  message SDKVersion {
+    repeated SDKVersionRange ranges = 1;
+    bool work_around_pyoto_bug = 2;
+  }
+
+  message ClientOperatingSystem {
+    optional SDKVersion ios_version = 1;
+    optional SDKVersion android_version = 2;
+    optional SDKVersion macos_version = 3;
+    optional SDKVersion windows_version = 4;
+    optional SDKVersion playstation_version = 5;
+    optional SDKVersion xbox_version = 6;
+    optional SDKVersion linux_version = 7;
+  }
+
+  message StaffUsers {
+    bool work_accounts = 1;
+    bool personal_accounts = 2;
+  }
+
+  message UserInGuild {
+    repeated fixed64 guild_ids = 1;
+  }
+
+  message UserIds {
+    repeated fixed64 user_ids = 1;
+  }
+
+  message ClientLocale {
+    repeated string locales = 1 [packed = false];
+  }
+
+  message ISORegion {
+    string iso_country = 1;
+    string iso_subdivision = 2;
+  }
+
+  message Place {
+    string city = 1;
+    string subdivision = 2;
+    string country = 3;
+  }
+
+  message Location {
+    oneof location {
+      ISORegion iso_region = 1;
+      bool is_eu = 2;
+      Place place = 3;
+    }
+  }
+
+  message ClientLocation {
+    repeated Location locations = 1;
+  }
+
+  message ClientIP {
+    repeated string blocks = 1 [packed = false];
+  }
+
+  message UserLocale {
+    repeated string locales = 1 [packed = false];
+  }
+
+  message UserIsBot {
+    bool is_bot = 1;
+  }
+
+  message UserAgeRange {
+    optional google.protobuf.UInt32Value min_age_years = 1;
+    optional google.protobuf.UInt32Value max_age_years = 2;
+  }
+
+  message Fixed64Value {
+    fixed64 value = 1;
+  }
+
+  message UserIDRange {
+    optional Fixed64Value min_id = 1;
+    optional Fixed64Value max_id = 2;
+  }
+
+  message UserHasFlag {
+    fixed64 mask = 1;
+  }
+
+  message UnitIdInRangeByHash {
+    string hash_key = 1;
+    uint32 target = 2;
+  }
+
+  message ClientReleaseChannel {
+    repeated string release_channels = 1 [packed = false];
+  }
+
+  message Always {
+    bool value = 1;
+  }
+
+  message Filter {
+    oneof filter {
+      ClientPlatform client_version = 2;
+      ClientOperatingSystem client_os = 3;
+      StaffUsers staff = 4;
+      UserInGuild user_in_guild = 5;
+      UserIds user_ids = 6;
+      ClientLocale client_locale = 7;
+      ClientLocation client_location = 8;
+      ClientIP client_ip = 9;
+      UserLocale user_locale = 10;
+      UserIsBot bot = 11;
+      UserAgeRange user_age_range = 12;
+      UserIDRange user_id_range = 13;
+      UserHasFlag user_has_flag = 14;
+      UnitIdInRangeByHash unit_id_in_range_by_hash = 15;
+      ClientReleaseChannel client_release_channel = 16;
+      Always always = 17;
+    }
+  }
+
+  message Override {
+    int32 variant_id = 1;
+  }
+
+  message Rule {
+    Type type = 1;
+    repeated Filter filters = 2;
+    optional Override override = 3;
+  }
+
+  enum Status {
+    STATUS_UNSPECIFIED = 0;
+    STATUS_DRAFT = 1;
+    STATUS_TESTING = 2;
+    STATUS_TESTING_ENDED = 3;
+    STATUS_ROLLOUT = 4;
+    STATUS_ARCHIVED = 5;
+  }
+
+  enum Surface {
+    SURFACE_UNSPECIFIED = 0;
+    SURFACE_API = 1;
+    SURFACE_APP = 2;
+  }
+
+  enum ExposureTracking {
+    EXPOSURE_TRACKING_ENABLED = 0;
+    EXPOSURE_TRACKING_DISABLED = 1;
+    EXPOSURE_TRACKING_AA_MODE = 2;
+  }
+
+  fixed64 id = 1;
+  string name = 2;
+  optional google.protobuf.Timestamp created_at = 3;
+  fixed64 creator_id = 4;
+  int32 version = 5;
+  optional google.protobuf.Timestamp edited_at = 6;
+  fixed64 editor_id = 7;
+  string title = 8;
+  string description = 9;
+  optional google.protobuf.StringValue hypothesis = 10;
+  optional google.protobuf.StringValue tech_spec_link = 11;
+  int32 revision = 12;
+  string hash_key = 13;
+  UnitType unit_type = 14;
+  repeated Variant variants = 15;
+  repeated Rule rules = 16;
+  Status status = 18;
+  repeated Surface surfaces = 19;
+  string owning_team_name = 20;
+  fixed64 cached_notification_channel_id = 21;
+  ExposureTracking exposure_tracking = 22;
+  bool enable_edit_raw_json_ui = 23;
+}
