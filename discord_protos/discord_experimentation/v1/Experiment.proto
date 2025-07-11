@@ -199,6 +199,7 @@ message Experiment {
     Type type = 1;
     repeated Filter filters = 2;
     optional Override override = 3;
+    bool is_sunset_rule = 4;
   }
 
   enum Status {
@@ -244,4 +245,5 @@ message Experiment {
   fixed64 cached_notification_channel_id = 21;
   ExposureTracking exposure_tracking = 22;
   bool enable_edit_raw_json_ui = 23;
+  int32 winning_variant_id = 24;
 }
