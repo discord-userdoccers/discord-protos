@@ -220,7 +220,12 @@ message Experiment {
   enum ExposureTracking {
     EXPOSURE_TRACKING_ENABLED = 0;
     EXPOSURE_TRACKING_DISABLED = 1;
-    EXPOSURE_TRACKING_AA_MODE = 2;
+  }
+
+  enum AssignmentMode {
+    ASSIGNMENT_MODE_FULL = 0;
+    ASSIGNMENT_MODE_FORCE_DEFAULT = 1;
+    ASSIGNMENT_MODE_OVERRIDE_ONLY = 2;
   }
 
   fixed64 id = 1;
@@ -244,6 +249,7 @@ message Experiment {
   string owning_team_name = 20;
   fixed64 cached_notification_channel_id = 21;
   ExposureTracking exposure_tracking = 22;
+  AssignmentMode assignment_mode = 25;
   bool enable_edit_raw_json_ui = 23;
   int32 winning_variant_id = 24;
 }

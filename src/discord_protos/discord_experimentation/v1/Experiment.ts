@@ -103,6 +103,10 @@ export interface Experiment {
      */
     exposureTracking: Experiment_ExposureTracking;
     /**
+     * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.AssignmentMode assignment_mode = 25
+     */
+    assignmentMode: Experiment_AssignmentMode;
+    /**
      * @generated from protobuf field: bool enable_edit_raw_json_ui = 23
      */
     enableEditRawJsonUi: boolean;
@@ -741,11 +745,24 @@ export enum Experiment_ExposureTracking {
     /**
      * @generated from protobuf enum value: EXPOSURE_TRACKING_DISABLED = 1;
      */
-    DISABLED = 1,
+    DISABLED = 1
+}
+/**
+ * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.AssignmentMode
+ */
+export enum Experiment_AssignmentMode {
     /**
-     * @generated from protobuf enum value: EXPOSURE_TRACKING_AA_MODE = 2;
+     * @generated from protobuf enum value: ASSIGNMENT_MODE_FULL = 0;
      */
-    AA_MODE = 2
+    FULL = 0,
+    /**
+     * @generated from protobuf enum value: ASSIGNMENT_MODE_FORCE_DEFAULT = 1;
+     */
+    FORCE_DEFAULT = 1,
+    /**
+     * @generated from protobuf enum value: ASSIGNMENT_MODE_OVERRIDE_ONLY = 2;
+     */
+    OVERRIDE_ONLY = 2
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class Experiment$Type extends MessageType<Experiment> {
@@ -772,6 +789,7 @@ class Experiment$Type extends MessageType<Experiment> {
             { no: 20, name: "owning_team_name", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 21, name: "cached_notification_channel_id", kind: "scalar", T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ },
             { no: 22, name: "exposure_tracking", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.ExposureTracking", Experiment_ExposureTracking, "EXPOSURE_TRACKING_"] },
+            { no: 25, name: "assignment_mode", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.AssignmentMode", Experiment_AssignmentMode, "ASSIGNMENT_MODE_"] },
             { no: 23, name: "enable_edit_raw_json_ui", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
             { no: 24, name: "winning_variant_id", kind: "scalar", T: 5 /*ScalarType.INT32*/ }
         ]);
@@ -795,6 +813,7 @@ class Experiment$Type extends MessageType<Experiment> {
         message.owningTeamName = "";
         message.cachedNotificationChannelId = 0n;
         message.exposureTracking = 0;
+        message.assignmentMode = 0;
         message.enableEditRawJsonUi = false;
         message.winningVariantId = 0;
         if (value !== undefined)
@@ -872,6 +891,9 @@ class Experiment$Type extends MessageType<Experiment> {
                     break;
                 case /* discord_protos.discord_experimentation.v1.Experiment.ExposureTracking exposure_tracking */ 22:
                     message.exposureTracking = reader.int32();
+                    break;
+                case /* discord_protos.discord_experimentation.v1.Experiment.AssignmentMode assignment_mode */ 25:
+                    message.assignmentMode = reader.int32();
                     break;
                 case /* bool enable_edit_raw_json_ui */ 23:
                     message.enableEditRawJsonUi = reader.bool();
@@ -964,6 +986,9 @@ class Experiment$Type extends MessageType<Experiment> {
         /* int32 winning_variant_id = 24; */
         if (message.winningVariantId !== 0)
             writer.tag(24, WireType.Varint).int32(message.winningVariantId);
+        /* discord_protos.discord_experimentation.v1.Experiment.AssignmentMode assignment_mode = 25; */
+        if (message.assignmentMode !== 0)
+            writer.tag(25, WireType.Varint).int32(message.assignmentMode);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
