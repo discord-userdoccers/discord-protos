@@ -686,7 +686,11 @@ export enum Experiment_Type {
     /**
      * @generated from protobuf enum value: TYPE_UNUSED = 2;
      */
-    UNUSED = 2
+    UNUSED = 2,
+    /**
+     * @generated from protobuf enum value: TYPE_BURNED = 3;
+     */
+    BURNED = 3
 }
 /**
  * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.Status

@@ -15,6 +15,7 @@ message Experiment {
     TYPE_UNSPECIFIED = 0;
     TYPE_ACTIVE = 1;
     TYPE_UNUSED = 2;
+    TYPE_BURNED = 3;
   }
 
   message VariantAllocation {
