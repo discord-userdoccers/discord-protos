@@ -713,13 +713,17 @@ export enum Experiment_Status {
      */
     TESTING_ENDED = 3,
     /**
-     * @generated from protobuf enum value: STATUS_ROLLOUT = 4;
+     * @generated from protobuf enum value: STATUS_ROLLING_OUT = 4;
      */
-    ROLLOUT = 4,
+    ROLLING_OUT = 4,
     /**
-     * @generated from protobuf enum value: STATUS_ARCHIVED = 5;
+     * @generated from protobuf enum value: STATUS_ROLLED_OUT = 5;
      */
-    ARCHIVED = 5
+    ROLLED_OUT = 5,
+    /**
+     * @generated from protobuf enum value: STATUS_ARCHIVED = 6;
+     */
+    ARCHIVED = 6
 }
 /**
  * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.Surface
