@@ -171,6 +171,10 @@ message Experiment {
     bool value = 1;
   }
 
+  message ClientSystemLocale {
+    repeated string locales = 1 [packed = false];
+  }
+
   message Filter {
     oneof filter {
       ClientPlatform client_version = 2;
@@ -189,6 +193,7 @@ message Experiment {
       UnitIdInRangeByHash unit_id_in_range_by_hash = 15;
       ClientReleaseChannel client_release_channel = 16;
       Always always = 17;
+      ClientSystemLocale client_system_locale = 18;
     }
   }
 

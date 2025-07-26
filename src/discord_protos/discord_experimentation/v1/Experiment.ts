@@ -522,6 +522,15 @@ export interface Experiment_Always {
     value: boolean;
 }
 /**
+ * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.ClientSystemLocale
+ */
+export interface Experiment_ClientSystemLocale {
+    /**
+     * @generated from protobuf field: repeated string locales = 1 [packed = false]
+     */
+    locales: string[];
+}
+/**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.Filter
  */
 export interface Experiment_Filter {
@@ -624,6 +633,12 @@ export interface Experiment_Filter {
          * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.Always always = 17
          */
         always: Experiment_Always;
+    } | {
+        oneofKind: "clientSystemLocale";
+        /**
+         * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.ClientSystemLocale client_system_locale = 18
+         */
+        clientSystemLocale: Experiment_ClientSystemLocale;
     } | {
         oneofKind: undefined;
     };
@@ -2666,6 +2681,53 @@ class Experiment_Always$Type extends MessageType<Experiment_Always> {
  */
 export const Experiment_Always = new Experiment_Always$Type();
 // @generated message type with reflection information, may provide speed optimized methods
+class Experiment_ClientSystemLocale$Type extends MessageType<Experiment_ClientSystemLocale> {
+    constructor() {
+        super("discord_protos.discord_experimentation.v1.Experiment.ClientSystemLocale", [
+            { no: 1, name: "locales", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 9 /*ScalarType.STRING*/ }
+        ]);
+    }
+    create(value?: PartialMessage<Experiment_ClientSystemLocale>): Experiment_ClientSystemLocale {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.locales = [];
+        if (value !== undefined)
+            reflectionMergePartial<Experiment_ClientSystemLocale>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: Experiment_ClientSystemLocale): Experiment_ClientSystemLocale {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* repeated string locales = 1 [packed = false] */ 1:
+                    message.locales.push(reader.string());
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: Experiment_ClientSystemLocale, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* repeated string locales = 1 [packed = false]; */
+        for (let i = 0; i < message.locales.length; i++)
+            writer.tag(1, WireType.LengthDelimited).string(message.locales[i]);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_experimentation.v1.Experiment.ClientSystemLocale
+ */
+export const Experiment_ClientSystemLocale = new Experiment_ClientSystemLocale$Type();
+// @generated message type with reflection information, may provide speed optimized methods
 class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
     constructor() {
         super("discord_protos.discord_experimentation.v1.Experiment.Filter", [
@@ -2684,7 +2746,8 @@ class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
             { no: 14, name: "user_has_flag", kind: "message", oneof: "filter", T: () => Experiment_UserHasFlag },
             { no: 15, name: "unit_id_in_range_by_hash", kind: "message", oneof: "filter", T: () => Experiment_UnitIdInRangeByHash },
             { no: 16, name: "client_release_channel", kind: "message", oneof: "filter", T: () => Experiment_ClientReleaseChannel },
-            { no: 17, name: "always", kind: "message", oneof: "filter", T: () => Experiment_Always }
+            { no: 17, name: "always", kind: "message", oneof: "filter", T: () => Experiment_Always },
+            { no: 18, name: "client_system_locale", kind: "message", oneof: "filter", T: () => Experiment_ClientSystemLocale }
         ]);
     }
     create(value?: PartialMessage<Experiment_Filter>): Experiment_Filter {
@@ -2795,6 +2858,12 @@ class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
                         always: Experiment_Always.internalBinaryRead(reader, reader.uint32(), options, (message.filter as any).always)
                     };
                     break;
+                case /* discord_protos.discord_experimentation.v1.Experiment.ClientSystemLocale client_system_locale */ 18:
+                    message.filter = {
+                        oneofKind: "clientSystemLocale",
+                        clientSystemLocale: Experiment_ClientSystemLocale.internalBinaryRead(reader, reader.uint32(), options, (message.filter as any).clientSystemLocale)
+                    };
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -2855,6 +2924,9 @@ class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
         /* discord_protos.discord_experimentation.v1.Experiment.Always always = 17; */
         if (message.filter.oneofKind === "always")
             Experiment_Always.internalBinaryWrite(message.filter.always, writer.tag(17, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.discord_experimentation.v1.Experiment.ClientSystemLocale client_system_locale = 18; */
+        if (message.filter.oneofKind === "clientSystemLocale")
+            Experiment_ClientSystemLocale.internalBinaryWrite(message.filter.clientSystemLocale, writer.tag(18, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
