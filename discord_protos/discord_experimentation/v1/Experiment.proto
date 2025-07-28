@@ -27,6 +27,7 @@ message Experiment {
   message Variant {
     int32 id = 1;
     string label = 2;
+    int32 target_allocation = 3;
     repeated VariantAllocation allocations = 4;
     Type type = 5;
   }

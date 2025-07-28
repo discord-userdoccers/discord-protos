@@ -145,6 +145,10 @@ export interface Experiment_Variant {
      */
     label: string;
     /**
+     * @generated from protobuf field: int32 target_allocation = 3
+     */
+    targetAllocation: number;
+    /**
      * @generated from protobuf field: repeated discord_protos.discord_experimentation.v1.Experiment.VariantAllocation allocations = 4
      */
     allocations: Experiment_VariantAllocation[];
@@ -1091,6 +1095,7 @@ class Experiment_Variant$Type extends MessageType<Experiment_Variant> {
         super("discord_protos.discord_experimentation.v1.Experiment.Variant", [
             { no: 1, name: "id", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
             { no: 2, name: "label", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 3, name: "target_allocation", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
             { no: 4, name: "allocations", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => Experiment_VariantAllocation },
             { no: 5, name: "type", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.Type", Experiment_Type, "TYPE_"] }
         ]);
@@ -1099,6 +1104,7 @@ class Experiment_Variant$Type extends MessageType<Experiment_Variant> {
         const message = globalThis.Object.create((this.messagePrototype!));
         message.id = 0;
         message.label = "";
+        message.targetAllocation = 0;
         message.allocations = [];
         message.type = 0;
         if (value !== undefined)
@@ -1115,6 +1121,9 @@ class Experiment_Variant$Type extends MessageType<Experiment_Variant> {
                     break;
                 case /* string label */ 2:
                     message.label = reader.string();
+                    break;
+                case /* int32 target_allocation */ 3:
+                    message.targetAllocation = reader.int32();
                     break;
                 case /* repeated discord_protos.discord_experimentation.v1.Experiment.VariantAllocation allocations */ 4:
                     message.allocations.push(Experiment_VariantAllocation.internalBinaryRead(reader, reader.uint32(), options));
@@ -1140,6 +1149,9 @@ class Experiment_Variant$Type extends MessageType<Experiment_Variant> {
         /* string label = 2; */
         if (message.label !== "")
             writer.tag(2, WireType.LengthDelimited).string(message.label);
+        /* int32 target_allocation = 3; */
+        if (message.targetAllocation !== 0)
+            writer.tag(3, WireType.Varint).int32(message.targetAllocation);
         /* repeated discord_protos.discord_experimentation.v1.Experiment.VariantAllocation allocations = 4; */
         for (let i = 0; i < message.allocations.length; i++)
             Experiment_VariantAllocation.internalBinaryWrite(message.allocations[i], writer.tag(4, WireType.LengthDelimited).fork(), options).join();
