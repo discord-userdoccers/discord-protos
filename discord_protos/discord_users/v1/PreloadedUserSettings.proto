@@ -241,6 +241,13 @@ message PreloadedUserSettings {
     SLAYER_SDK_RECEIVE_IN_GAME_DMS_NONE = 3;
   }
 
+  enum GuildActivityStatusRestrictionDefaultV2 {
+    GUILD_ACTIVITY_STATUS_RESTRICTION_DEFAULT_V2_ACTIVITY_STATUS_UNSET = 0;
+    GUILD_ACTIVITY_STATUS_RESTRICTION_DEFAULT_V2_ACTIVITY_STATUS_OFF = 1;
+    GUILD_ACTIVITY_STATUS_RESTRICTION_DEFAULT_V2_ACTIVITY_STATUS_ON_FOR_LARGE_GUILDS = 2;
+    GUILD_ACTIVITY_STATUS_RESTRICTION_DEFAULT_V2_ACTIVITY_STATUS_ON = 3;
+  }
+
   message PrivacySettings {
     optional google.protobuf.BoolValue allow_activity_party_privacy_friends = 1;
     optional google.protobuf.BoolValue allow_activity_party_privacy_voice_channel = 2;
@@ -268,6 +275,7 @@ message PreloadedUserSettings {
     optional google.protobuf.BoolValue allow_game_friend_dms_in_discord = 26;
     optional google.protobuf.BoolValue default_guilds_restricted_v2 = 27;
     SlayerSDKReceiveInGameDMs slayer_sdk_receive_dms_in_game = 28;
+    GuildActivityStatusRestrictionDefaultV2 default_guilds_activity_restricted_v2 = 29;
   }
 
   message DebugSettings {

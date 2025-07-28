@@ -788,6 +788,10 @@ export interface PreloadedUserSettings_PrivacySettings {
      * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.SlayerSDKReceiveInGameDMs slayer_sdk_receive_dms_in_game = 28
      */
     slayerSdkReceiveDmsInGame: PreloadedUserSettings_SlayerSDKReceiveInGameDMs;
+    /**
+     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.GuildActivityStatusRestrictionDefaultV2 default_guilds_activity_restricted_v2 = 29
+     */
+    defaultGuildsActivityRestrictedV2: PreloadedUserSettings_GuildActivityStatusRestrictionDefaultV2;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.DebugSettings
@@ -1402,6 +1406,27 @@ export enum PreloadedUserSettings_SlayerSDKReceiveInGameDMs {
      * @generated from protobuf enum value: SLAYER_SDK_RECEIVE_IN_GAME_DMS_NONE = 3;
      */
     SLAYER_SDK_RECEIVE_IN_GAME_DMS_NONE = 3
+}
+/**
+ * @generated from protobuf enum discord_protos.discord_users.v1.PreloadedUserSettings.GuildActivityStatusRestrictionDefaultV2
+ */
+export enum PreloadedUserSettings_GuildActivityStatusRestrictionDefaultV2 {
+    /**
+     * @generated from protobuf enum value: GUILD_ACTIVITY_STATUS_RESTRICTION_DEFAULT_V2_ACTIVITY_STATUS_UNSET = 0;
+     */
+    ACTIVITY_STATUS_UNSET = 0,
+    /**
+     * @generated from protobuf enum value: GUILD_ACTIVITY_STATUS_RESTRICTION_DEFAULT_V2_ACTIVITY_STATUS_OFF = 1;
+     */
+    ACTIVITY_STATUS_OFF = 1,
+    /**
+     * @generated from protobuf enum value: GUILD_ACTIVITY_STATUS_RESTRICTION_DEFAULT_V2_ACTIVITY_STATUS_ON_FOR_LARGE_GUILDS = 2;
+     */
+    ACTIVITY_STATUS_ON_FOR_LARGE_GUILDS = 2,
+    /**
+     * @generated from protobuf enum value: GUILD_ACTIVITY_STATUS_RESTRICTION_DEFAULT_V2_ACTIVITY_STATUS_ON = 3;
+     */
+    ACTIVITY_STATUS_ON = 3
 }
 /**
  * @generated from protobuf enum discord_protos.discord_users.v1.PreloadedUserSettings.Theme
@@ -3525,7 +3550,8 @@ class PreloadedUserSettings_PrivacySettings$Type extends MessageType<PreloadedUs
             { no: 25, name: "guilds_leaderboard_opt_out_default", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.GuildsLeaderboardOptOutDefault", PreloadedUserSettings_GuildsLeaderboardOptOutDefault, "GUILDS_LEADERBOARD_OPT_OUT_DEFAULT_"] },
             { no: 26, name: "allow_game_friend_dms_in_discord", kind: "message", T: () => BoolValue },
             { no: 27, name: "default_guilds_restricted_v2", kind: "message", T: () => BoolValue },
-            { no: 28, name: "slayer_sdk_receive_dms_in_game", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.SlayerSDKReceiveInGameDMs", PreloadedUserSettings_SlayerSDKReceiveInGameDMs] }
+            { no: 28, name: "slayer_sdk_receive_dms_in_game", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.SlayerSDKReceiveInGameDMs", PreloadedUserSettings_SlayerSDKReceiveInGameDMs] },
+            { no: 29, name: "default_guilds_activity_restricted_v2", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.GuildActivityStatusRestrictionDefaultV2", PreloadedUserSettings_GuildActivityStatusRestrictionDefaultV2, "GUILD_ACTIVITY_STATUS_RESTRICTION_DEFAULT_V2_"] }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_PrivacySettings>): PreloadedUserSettings_PrivacySettings {
@@ -3539,6 +3565,7 @@ class PreloadedUserSettings_PrivacySettings$Type extends MessageType<PreloadedUs
         message.messageRequestRestrictedGuildIds = [];
         message.guildsLeaderboardOptOutDefault = 0;
         message.slayerSdkReceiveDmsInGame = 0;
+        message.defaultGuildsActivityRestrictedV2 = 0;
         if (value !== undefined)
             reflectionMergePartial<PreloadedUserSettings_PrivacySettings>(this, message, value);
         return message;
@@ -3641,6 +3668,9 @@ class PreloadedUserSettings_PrivacySettings$Type extends MessageType<PreloadedUs
                     break;
                 case /* discord_protos.discord_users.v1.PreloadedUserSettings.SlayerSDKReceiveInGameDMs slayer_sdk_receive_dms_in_game */ 28:
                     message.slayerSdkReceiveDmsInGame = reader.int32();
+                    break;
+                case /* discord_protos.discord_users.v1.PreloadedUserSettings.GuildActivityStatusRestrictionDefaultV2 default_guilds_activity_restricted_v2 */ 29:
+                    message.defaultGuildsActivityRestrictedV2 = reader.int32();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -3748,6 +3778,9 @@ class PreloadedUserSettings_PrivacySettings$Type extends MessageType<PreloadedUs
         /* discord_protos.discord_users.v1.PreloadedUserSettings.SlayerSDKReceiveInGameDMs slayer_sdk_receive_dms_in_game = 28; */
         if (message.slayerSdkReceiveDmsInGame !== 0)
             writer.tag(28, WireType.Varint).int32(message.slayerSdkReceiveDmsInGame);
+        /* discord_protos.discord_users.v1.PreloadedUserSettings.GuildActivityStatusRestrictionDefaultV2 default_guilds_activity_restricted_v2 = 29; */
+        if (message.defaultGuildsActivityRestrictedV2 !== 0)
+            writer.tag(29, WireType.Varint).int32(message.defaultGuildsActivityRestrictedV2);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
