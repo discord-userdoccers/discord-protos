@@ -276,6 +276,7 @@ message PreloadedUserSettings {
     optional google.protobuf.BoolValue default_guilds_restricted_v2 = 27;
     SlayerSDKReceiveInGameDMs slayer_sdk_receive_dms_in_game = 28;
     GuildActivityStatusRestrictionDefaultV2 default_guilds_activity_restricted_v2 = 29;
+    optional google.protobuf.BoolValue quests_3p_data_opted_out = 30;
   }
 
   message DebugSettings {

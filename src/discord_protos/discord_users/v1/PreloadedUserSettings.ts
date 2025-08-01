@@ -792,6 +792,10 @@ export interface PreloadedUserSettings_PrivacySettings {
      * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.GuildActivityStatusRestrictionDefaultV2 default_guilds_activity_restricted_v2 = 29
      */
     defaultGuildsActivityRestrictedV2: PreloadedUserSettings_GuildActivityStatusRestrictionDefaultV2;
+    /**
+     * @generated from protobuf field: optional google.protobuf.BoolValue quests_3p_data_opted_out = 30
+     */
+    quests3PDataOptedOut?: BoolValue;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.DebugSettings
@@ -3551,7 +3555,8 @@ class PreloadedUserSettings_PrivacySettings$Type extends MessageType<PreloadedUs
             { no: 26, name: "allow_game_friend_dms_in_discord", kind: "message", T: () => BoolValue },
             { no: 27, name: "default_guilds_restricted_v2", kind: "message", T: () => BoolValue },
             { no: 28, name: "slayer_sdk_receive_dms_in_game", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.SlayerSDKReceiveInGameDMs", PreloadedUserSettings_SlayerSDKReceiveInGameDMs] },
-            { no: 29, name: "default_guilds_activity_restricted_v2", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.GuildActivityStatusRestrictionDefaultV2", PreloadedUserSettings_GuildActivityStatusRestrictionDefaultV2, "GUILD_ACTIVITY_STATUS_RESTRICTION_DEFAULT_V2_"] }
+            { no: 29, name: "default_guilds_activity_restricted_v2", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.GuildActivityStatusRestrictionDefaultV2", PreloadedUserSettings_GuildActivityStatusRestrictionDefaultV2, "GUILD_ACTIVITY_STATUS_RESTRICTION_DEFAULT_V2_"] },
+            { no: 30, name: "quests_3p_data_opted_out", kind: "message", jsonName: "quests3pDataOptedOut", T: () => BoolValue }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_PrivacySettings>): PreloadedUserSettings_PrivacySettings {
@@ -3672,6 +3677,9 @@ class PreloadedUserSettings_PrivacySettings$Type extends MessageType<PreloadedUs
                 case /* discord_protos.discord_users.v1.PreloadedUserSettings.GuildActivityStatusRestrictionDefaultV2 default_guilds_activity_restricted_v2 */ 29:
                     message.defaultGuildsActivityRestrictedV2 = reader.int32();
                     break;
+                case /* optional google.protobuf.BoolValue quests_3p_data_opted_out */ 30:
+                    message.quests3PDataOptedOut = BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.quests3PDataOptedOut);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -3781,6 +3789,9 @@ class PreloadedUserSettings_PrivacySettings$Type extends MessageType<PreloadedUs
         /* discord_protos.discord_users.v1.PreloadedUserSettings.GuildActivityStatusRestrictionDefaultV2 default_guilds_activity_restricted_v2 = 29; */
         if (message.defaultGuildsActivityRestrictedV2 !== 0)
             writer.tag(29, WireType.Varint).int32(message.defaultGuildsActivityRestrictedV2);
+        /* optional google.protobuf.BoolValue quests_3p_data_opted_out = 30; */
+        if (message.quests3PDataOptedOut)
+            BoolValue.internalBinaryWrite(message.quests3PDataOptedOut, writer.tag(30, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
