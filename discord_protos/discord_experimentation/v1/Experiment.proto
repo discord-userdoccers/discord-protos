@@ -217,6 +217,7 @@ message Experiment {
     STATUS_ROLLING_OUT = 4;
     STATUS_ROLLED_OUT = 5;
     STATUS_ARCHIVED = 6;
+    STATUS_AA_MODE = 7;
   }
 
   enum Surface {

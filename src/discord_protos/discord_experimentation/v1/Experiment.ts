@@ -742,7 +742,11 @@ export enum Experiment_Status {
     /**
      * @generated from protobuf enum value: STATUS_ARCHIVED = 6;
      */
-    ARCHIVED = 6
+    ARCHIVED = 6,
+    /**
+     * @generated from protobuf enum value: STATUS_AA_MODE = 7;
+     */
+    AA_MODE = 7
 }
 /**
  * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.Surface
