@@ -83,9 +83,9 @@ export interface Experiment {
      */
     rules: Experiment_Rule[];
     /**
-     * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.Status status = 18
+     * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.Phase phase = 18
      */
-    status: Experiment_Status;
+    phase: Experiment_Phase;
     /**
      * @generated from protobuf field: repeated discord_protos.discord_experimentation.v1.Experiment.Surface surfaces = 19
      */
@@ -712,39 +712,39 @@ export enum Experiment_Type {
     BURNED = 3
 }
 /**
- * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.Status
+ * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.Phase
  */
-export enum Experiment_Status {
+export enum Experiment_Phase {
     /**
-     * @generated from protobuf enum value: STATUS_UNSPECIFIED = 0;
+     * @generated from protobuf enum value: PHASE_UNSPECIFIED = 0;
      */
     UNSPECIFIED = 0,
     /**
-     * @generated from protobuf enum value: STATUS_DRAFT = 1;
+     * @generated from protobuf enum value: PHASE_DRAFT = 1;
      */
     DRAFT = 1,
     /**
-     * @generated from protobuf enum value: STATUS_TESTING = 2;
+     * @generated from protobuf enum value: PHASE_MEASUREMENT = 2;
      */
-    TESTING = 2,
+    MEASUREMENT = 2,
     /**
-     * @generated from protobuf enum value: STATUS_TESTING_ENDED = 3;
+     * @generated from protobuf enum value: PHASE_MEASUREMENT_ENDED = 3;
      */
-    TESTING_ENDED = 3,
+    MEASUREMENT_ENDED = 3,
     /**
-     * @generated from protobuf enum value: STATUS_ROLLING_OUT = 4;
+     * @generated from protobuf enum value: PHASE_ROLLING_OUT = 4;
      */
     ROLLING_OUT = 4,
     /**
-     * @generated from protobuf enum value: STATUS_ROLLED_OUT = 5;
+     * @generated from protobuf enum value: PHASE_ROLLED_OUT = 5;
      */
     ROLLED_OUT = 5,
     /**
-     * @generated from protobuf enum value: STATUS_ARCHIVED = 6;
+     * @generated from protobuf enum value: PHASE_ARCHIVED = 6;
      */
     ARCHIVED = 6,
     /**
-     * @generated from protobuf enum value: STATUS_AA_MODE = 7;
+     * @generated from protobuf enum value: PHASE_AA_MODE = 7;
      */
     AA_MODE = 7
 }
@@ -815,7 +815,7 @@ class Experiment$Type extends MessageType<Experiment> {
             { no: 14, name: "unit_type", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.UnitType", Experiment_UnitType, "UNIT_TYPE_"] },
             { no: 15, name: "variants", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => Experiment_Variant },
             { no: 16, name: "rules", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => Experiment_Rule },
-            { no: 18, name: "status", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.Status", Experiment_Status, "STATUS_"] },
+            { no: 18, name: "phase", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.Phase", Experiment_Phase, "PHASE_"] },
             { no: 19, name: "surfaces", kind: "enum", repeat: 1 /*RepeatType.PACKED*/, T: () => ["discord_protos.discord_experimentation.v1.Experiment.Surface", Experiment_Surface, "SURFACE_"] },
             { no: 20, name: "owning_team_name", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 21, name: "cached_notification_channel_id", kind: "scalar", T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ },
@@ -839,7 +839,7 @@ class Experiment$Type extends MessageType<Experiment> {
         message.unitType = 0;
         message.variants = [];
         message.rules = [];
-        message.status = 0;
+        message.phase = 0;
         message.surfaces = [];
         message.owningTeamName = "";
         message.cachedNotificationChannelId = 0n;
@@ -904,8 +904,8 @@ class Experiment$Type extends MessageType<Experiment> {
                 case /* repeated discord_protos.discord_experimentation.v1.Experiment.Rule rules */ 16:
                     message.rules.push(Experiment_Rule.internalBinaryRead(reader, reader.uint32(), options));
                     break;
-                case /* discord_protos.discord_experimentation.v1.Experiment.Status status */ 18:
-                    message.status = reader.int32();
+                case /* discord_protos.discord_experimentation.v1.Experiment.Phase phase */ 18:
+                    message.phase = reader.int32();
                     break;
                 case /* repeated discord_protos.discord_experimentation.v1.Experiment.Surface surfaces */ 19:
                     if (wireType === WireType.LengthDelimited)
@@ -992,9 +992,9 @@ class Experiment$Type extends MessageType<Experiment> {
         /* repeated discord_protos.discord_experimentation.v1.Experiment.Rule rules = 16; */
         for (let i = 0; i < message.rules.length; i++)
             Experiment_Rule.internalBinaryWrite(message.rules[i], writer.tag(16, WireType.LengthDelimited).fork(), options).join();
-        /* discord_protos.discord_experimentation.v1.Experiment.Status status = 18; */
-        if (message.status !== 0)
-            writer.tag(18, WireType.Varint).int32(message.status);
+        /* discord_protos.discord_experimentation.v1.Experiment.Phase phase = 18; */
+        if (message.phase !== 0)
+            writer.tag(18, WireType.Varint).int32(message.phase);
         /* repeated discord_protos.discord_experimentation.v1.Experiment.Surface surfaces = 19; */
         if (message.surfaces.length) {
             writer.tag(19, WireType.LengthDelimited).fork();

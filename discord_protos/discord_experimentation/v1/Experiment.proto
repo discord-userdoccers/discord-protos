@@ -209,15 +209,15 @@ message Experiment {
     bool is_sunset_rule = 4;
   }
 
-  enum Status {
-    STATUS_UNSPECIFIED = 0;
-    STATUS_DRAFT = 1;
-    STATUS_TESTING = 2;
-    STATUS_TESTING_ENDED = 3;
-    STATUS_ROLLING_OUT = 4;
-    STATUS_ROLLED_OUT = 5;
-    STATUS_ARCHIVED = 6;
-    STATUS_AA_MODE = 7;
+  enum Phase {
+    PHASE_UNSPECIFIED = 0;
+    PHASE_DRAFT = 1;
+    PHASE_MEASUREMENT = 2;
+    PHASE_MEASUREMENT_ENDED = 3;
+    PHASE_ROLLING_OUT = 4;
+    PHASE_ROLLED_OUT = 5;
+    PHASE_ARCHIVED = 6;
+    PHASE_AA_MODE = 7;
   }
 
   enum Surface {
@@ -253,7 +253,7 @@ message Experiment {
   UnitType unit_type = 14;
   repeated Variant variants = 15;
   repeated Rule rules = 16;
-  Status status = 18;
+  Phase phase = 18;
   repeated Surface surfaces = 19;
   string owning_team_name = 20;
   fixed64 cached_notification_channel_id = 21;
