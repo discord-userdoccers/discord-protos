@@ -75,9 +75,9 @@ export interface Experiment {
      */
     unitType: Experiment_UnitType;
     /**
-     * @generated from protobuf field: repeated discord_protos.discord_experimentation.v1.Experiment.Variant variants = 15
+     * @generated from protobuf field: repeated discord_protos.discord_experimentation.v1.Experiment.Variation variations = 15
      */
-    variants: Experiment_Variant[];
+    variations: Experiment_Variation[];
     /**
      * @generated from protobuf field: repeated discord_protos.discord_experimentation.v1.Experiment.Rule rules = 16
      */
@@ -111,14 +111,14 @@ export interface Experiment {
      */
     enableEditRawJsonUi: boolean;
     /**
-     * @generated from protobuf field: int32 winning_variant_id = 24
+     * @generated from protobuf field: int32 winning_variation_id = 24
      */
-    winningVariantId: number;
+    winningVariationId: number;
 }
 /**
- * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.VariantAllocation
+ * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.Bucket
  */
-export interface Experiment_VariantAllocation {
+export interface Experiment_Bucket {
     /**
      * @generated from protobuf field: int32 start = 1
      */
@@ -133,9 +133,9 @@ export interface Experiment_VariantAllocation {
     type: Experiment_Type;
 }
 /**
- * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.Variant
+ * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.Variation
  */
-export interface Experiment_Variant {
+export interface Experiment_Variation {
     /**
      * @generated from protobuf field: int32 id = 1
      */
@@ -149,9 +149,9 @@ export interface Experiment_Variant {
      */
     targetAllocation: number;
     /**
-     * @generated from protobuf field: repeated discord_protos.discord_experimentation.v1.Experiment.VariantAllocation allocations = 4
+     * @generated from protobuf field: repeated discord_protos.discord_experimentation.v1.Experiment.Bucket buckets = 4
      */
-    allocations: Experiment_VariantAllocation[];
+    buckets: Experiment_Bucket[];
     /**
      * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.Type type = 5
      */
@@ -652,9 +652,9 @@ export interface Experiment_Filter {
  */
 export interface Experiment_Override {
     /**
-     * @generated from protobuf field: int32 variant_id = 1
+     * @generated from protobuf field: int32 variation_id = 1
      */
-    variantId: number;
+    variationId: number;
 }
 /**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.Rule
@@ -813,7 +813,7 @@ class Experiment$Type extends MessageType<Experiment> {
             { no: 12, name: "revision", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
             { no: 13, name: "hash_key", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 14, name: "unit_type", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.UnitType", Experiment_UnitType, "UNIT_TYPE_"] },
-            { no: 15, name: "variants", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => Experiment_Variant },
+            { no: 15, name: "variations", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => Experiment_Variation },
             { no: 16, name: "rules", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => Experiment_Rule },
             { no: 18, name: "phase", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.Phase", Experiment_Phase, "PHASE_"] },
             { no: 19, name: "surfaces", kind: "enum", repeat: 1 /*RepeatType.PACKED*/, T: () => ["discord_protos.discord_experimentation.v1.Experiment.Surface", Experiment_Surface, "SURFACE_"] },
@@ -822,7 +822,7 @@ class Experiment$Type extends MessageType<Experiment> {
             { no: 22, name: "exposure_tracking", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.ExposureTracking", Experiment_ExposureTracking, "EXPOSURE_TRACKING_"] },
             { no: 25, name: "assignment_mode", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.AssignmentMode", Experiment_AssignmentMode, "ASSIGNMENT_MODE_"] },
             { no: 23, name: "enable_edit_raw_json_ui", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
-            { no: 24, name: "winning_variant_id", kind: "scalar", T: 5 /*ScalarType.INT32*/ }
+            { no: 24, name: "winning_variation_id", kind: "scalar", T: 5 /*ScalarType.INT32*/ }
         ]);
     }
     create(value?: PartialMessage<Experiment>): Experiment {
@@ -837,7 +837,7 @@ class Experiment$Type extends MessageType<Experiment> {
         message.revision = 0;
         message.hashKey = "";
         message.unitType = 0;
-        message.variants = [];
+        message.variations = [];
         message.rules = [];
         message.phase = 0;
         message.surfaces = [];
@@ -846,7 +846,7 @@ class Experiment$Type extends MessageType<Experiment> {
         message.exposureTracking = 0;
         message.assignmentMode = 0;
         message.enableEditRawJsonUi = false;
-        message.winningVariantId = 0;
+        message.winningVariationId = 0;
         if (value !== undefined)
             reflectionMergePartial<Experiment>(this, message, value);
         return message;
@@ -898,8 +898,8 @@ class Experiment$Type extends MessageType<Experiment> {
                 case /* discord_protos.discord_experimentation.v1.Experiment.UnitType unit_type */ 14:
                     message.unitType = reader.int32();
                     break;
-                case /* repeated discord_protos.discord_experimentation.v1.Experiment.Variant variants */ 15:
-                    message.variants.push(Experiment_Variant.internalBinaryRead(reader, reader.uint32(), options));
+                case /* repeated discord_protos.discord_experimentation.v1.Experiment.Variation variations */ 15:
+                    message.variations.push(Experiment_Variation.internalBinaryRead(reader, reader.uint32(), options));
                     break;
                 case /* repeated discord_protos.discord_experimentation.v1.Experiment.Rule rules */ 16:
                     message.rules.push(Experiment_Rule.internalBinaryRead(reader, reader.uint32(), options));
@@ -929,8 +929,8 @@ class Experiment$Type extends MessageType<Experiment> {
                 case /* bool enable_edit_raw_json_ui */ 23:
                     message.enableEditRawJsonUi = reader.bool();
                     break;
-                case /* int32 winning_variant_id */ 24:
-                    message.winningVariantId = reader.int32();
+                case /* int32 winning_variation_id */ 24:
+                    message.winningVariationId = reader.int32();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -986,9 +986,9 @@ class Experiment$Type extends MessageType<Experiment> {
         /* discord_protos.discord_experimentation.v1.Experiment.UnitType unit_type = 14; */
         if (message.unitType !== 0)
             writer.tag(14, WireType.Varint).int32(message.unitType);
-        /* repeated discord_protos.discord_experimentation.v1.Experiment.Variant variants = 15; */
-        for (let i = 0; i < message.variants.length; i++)
-            Experiment_Variant.internalBinaryWrite(message.variants[i], writer.tag(15, WireType.LengthDelimited).fork(), options).join();
+        /* repeated discord_protos.discord_experimentation.v1.Experiment.Variation variations = 15; */
+        for (let i = 0; i < message.variations.length; i++)
+            Experiment_Variation.internalBinaryWrite(message.variations[i], writer.tag(15, WireType.LengthDelimited).fork(), options).join();
         /* repeated discord_protos.discord_experimentation.v1.Experiment.Rule rules = 16; */
         for (let i = 0; i < message.rules.length; i++)
             Experiment_Rule.internalBinaryWrite(message.rules[i], writer.tag(16, WireType.LengthDelimited).fork(), options).join();
@@ -1014,9 +1014,9 @@ class Experiment$Type extends MessageType<Experiment> {
         /* bool enable_edit_raw_json_ui = 23; */
         if (message.enableEditRawJsonUi !== false)
             writer.tag(23, WireType.Varint).bool(message.enableEditRawJsonUi);
-        /* int32 winning_variant_id = 24; */
-        if (message.winningVariantId !== 0)
-            writer.tag(24, WireType.Varint).int32(message.winningVariantId);
+        /* int32 winning_variation_id = 24; */
+        if (message.winningVariationId !== 0)
+            writer.tag(24, WireType.Varint).int32(message.winningVariationId);
         /* discord_protos.discord_experimentation.v1.Experiment.AssignmentMode assignment_mode = 25; */
         if (message.assignmentMode !== 0)
             writer.tag(25, WireType.Varint).int32(message.assignmentMode);
@@ -1031,24 +1031,24 @@ class Experiment$Type extends MessageType<Experiment> {
  */
 export const Experiment = new Experiment$Type();
 // @generated message type with reflection information, may provide speed optimized methods
-class Experiment_VariantAllocation$Type extends MessageType<Experiment_VariantAllocation> {
+class Experiment_Bucket$Type extends MessageType<Experiment_Bucket> {
     constructor() {
-        super("discord_protos.discord_experimentation.v1.Experiment.VariantAllocation", [
+        super("discord_protos.discord_experimentation.v1.Experiment.Bucket", [
             { no: 1, name: "start", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
             { no: 2, name: "stop", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
             { no: 3, name: "type", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.Type", Experiment_Type, "TYPE_"] }
         ]);
     }
-    create(value?: PartialMessage<Experiment_VariantAllocation>): Experiment_VariantAllocation {
+    create(value?: PartialMessage<Experiment_Bucket>): Experiment_Bucket {
         const message = globalThis.Object.create((this.messagePrototype!));
         message.start = 0;
         message.stop = 0;
         message.type = 0;
         if (value !== undefined)
-            reflectionMergePartial<Experiment_VariantAllocation>(this, message, value);
+            reflectionMergePartial<Experiment_Bucket>(this, message, value);
         return message;
     }
-    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: Experiment_VariantAllocation): Experiment_VariantAllocation {
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: Experiment_Bucket): Experiment_Bucket {
         let message = target ?? this.create(), end = reader.pos + length;
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
@@ -1073,7 +1073,7 @@ class Experiment_VariantAllocation$Type extends MessageType<Experiment_VariantAl
         }
         return message;
     }
-    internalBinaryWrite(message: Experiment_VariantAllocation, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+    internalBinaryWrite(message: Experiment_Bucket, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
         /* int32 start = 1; */
         if (message.start !== 0)
             writer.tag(1, WireType.Varint).int32(message.start);
@@ -1090,32 +1090,32 @@ class Experiment_VariantAllocation$Type extends MessageType<Experiment_VariantAl
     }
 }
 /**
- * @generated MessageType for protobuf message discord_protos.discord_experimentation.v1.Experiment.VariantAllocation
+ * @generated MessageType for protobuf message discord_protos.discord_experimentation.v1.Experiment.Bucket
  */
-export const Experiment_VariantAllocation = new Experiment_VariantAllocation$Type();
+export const Experiment_Bucket = new Experiment_Bucket$Type();
 // @generated message type with reflection information, may provide speed optimized methods
-class Experiment_Variant$Type extends MessageType<Experiment_Variant> {
+class Experiment_Variation$Type extends MessageType<Experiment_Variation> {
     constructor() {
-        super("discord_protos.discord_experimentation.v1.Experiment.Variant", [
+        super("discord_protos.discord_experimentation.v1.Experiment.Variation", [
             { no: 1, name: "id", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
             { no: 2, name: "label", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 3, name: "target_allocation", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
-            { no: 4, name: "allocations", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => Experiment_VariantAllocation },
+            { no: 4, name: "buckets", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => Experiment_Bucket },
             { no: 5, name: "type", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.Type", Experiment_Type, "TYPE_"] }
         ]);
     }
-    create(value?: PartialMessage<Experiment_Variant>): Experiment_Variant {
+    create(value?: PartialMessage<Experiment_Variation>): Experiment_Variation {
         const message = globalThis.Object.create((this.messagePrototype!));
         message.id = 0;
         message.label = "";
         message.targetAllocation = 0;
-        message.allocations = [];
+        message.buckets = [];
         message.type = 0;
         if (value !== undefined)
-            reflectionMergePartial<Experiment_Variant>(this, message, value);
+            reflectionMergePartial<Experiment_Variation>(this, message, value);
         return message;
     }
-    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: Experiment_Variant): Experiment_Variant {
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: Experiment_Variation): Experiment_Variation {
         let message = target ?? this.create(), end = reader.pos + length;
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
@@ -1129,8 +1129,8 @@ class Experiment_Variant$Type extends MessageType<Experiment_Variant> {
                 case /* int32 target_allocation */ 3:
                     message.targetAllocation = reader.int32();
                     break;
-                case /* repeated discord_protos.discord_experimentation.v1.Experiment.VariantAllocation allocations */ 4:
-                    message.allocations.push(Experiment_VariantAllocation.internalBinaryRead(reader, reader.uint32(), options));
+                case /* repeated discord_protos.discord_experimentation.v1.Experiment.Bucket buckets */ 4:
+                    message.buckets.push(Experiment_Bucket.internalBinaryRead(reader, reader.uint32(), options));
                     break;
                 case /* discord_protos.discord_experimentation.v1.Experiment.Type type */ 5:
                     message.type = reader.int32();
@@ -1146,7 +1146,7 @@ class Experiment_Variant$Type extends MessageType<Experiment_Variant> {
         }
         return message;
     }
-    internalBinaryWrite(message: Experiment_Variant, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+    internalBinaryWrite(message: Experiment_Variation, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
         /* int32 id = 1; */
         if (message.id !== 0)
             writer.tag(1, WireType.Varint).int32(message.id);
@@ -1156,9 +1156,9 @@ class Experiment_Variant$Type extends MessageType<Experiment_Variant> {
         /* int32 target_allocation = 3; */
         if (message.targetAllocation !== 0)
             writer.tag(3, WireType.Varint).int32(message.targetAllocation);
-        /* repeated discord_protos.discord_experimentation.v1.Experiment.VariantAllocation allocations = 4; */
-        for (let i = 0; i < message.allocations.length; i++)
-            Experiment_VariantAllocation.internalBinaryWrite(message.allocations[i], writer.tag(4, WireType.LengthDelimited).fork(), options).join();
+        /* repeated discord_protos.discord_experimentation.v1.Experiment.Bucket buckets = 4; */
+        for (let i = 0; i < message.buckets.length; i++)
+            Experiment_Bucket.internalBinaryWrite(message.buckets[i], writer.tag(4, WireType.LengthDelimited).fork(), options).join();
         /* discord_protos.discord_experimentation.v1.Experiment.Type type = 5; */
         if (message.type !== 0)
             writer.tag(5, WireType.Varint).int32(message.type);
@@ -1169,9 +1169,9 @@ class Experiment_Variant$Type extends MessageType<Experiment_Variant> {
     }
 }
 /**
- * @generated MessageType for protobuf message discord_protos.discord_experimentation.v1.Experiment.Variant
+ * @generated MessageType for protobuf message discord_protos.discord_experimentation.v1.Experiment.Variation
  */
-export const Experiment_Variant = new Experiment_Variant$Type();
+export const Experiment_Variation = new Experiment_Variation$Type();
 // @generated message type with reflection information, may provide speed optimized methods
 class Experiment_PlatformVersionSpecifier$Type extends MessageType<Experiment_PlatformVersionSpecifier> {
     constructor() {
@@ -2957,12 +2957,12 @@ export const Experiment_Filter = new Experiment_Filter$Type();
 class Experiment_Override$Type extends MessageType<Experiment_Override> {
     constructor() {
         super("discord_protos.discord_experimentation.v1.Experiment.Override", [
-            { no: 1, name: "variant_id", kind: "scalar", T: 5 /*ScalarType.INT32*/ }
+            { no: 1, name: "variation_id", kind: "scalar", T: 5 /*ScalarType.INT32*/ }
         ]);
     }
     create(value?: PartialMessage<Experiment_Override>): Experiment_Override {
         const message = globalThis.Object.create((this.messagePrototype!));
-        message.variantId = 0;
+        message.variationId = 0;
         if (value !== undefined)
             reflectionMergePartial<Experiment_Override>(this, message, value);
         return message;
@@ -2972,8 +2972,8 @@ class Experiment_Override$Type extends MessageType<Experiment_Override> {
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
-                case /* int32 variant_id */ 1:
-                    message.variantId = reader.int32();
+                case /* int32 variation_id */ 1:
+                    message.variationId = reader.int32();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -2987,9 +2987,9 @@ class Experiment_Override$Type extends MessageType<Experiment_Override> {
         return message;
     }
     internalBinaryWrite(message: Experiment_Override, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* int32 variant_id = 1; */
-        if (message.variantId !== 0)
-            writer.tag(1, WireType.Varint).int32(message.variantId);
+        /* int32 variation_id = 1; */
+        if (message.variationId !== 0)
+            writer.tag(1, WireType.Varint).int32(message.variationId);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

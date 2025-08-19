@@ -18,17 +18,17 @@ message Experiment {
     TYPE_BURNED = 3;
   }
 
-  message VariantAllocation {
+  message Bucket {
     int32 start = 1;
     int32 stop = 2;
     Type type = 3;
   }
 
-  message Variant {
+  message Variation {
     int32 id = 1;
     string label = 2;
     int32 target_allocation = 3;
-    repeated VariantAllocation allocations = 4;
+    repeated Bucket buckets = 4;
     Type type = 5;
   }
 
@@ -199,7 +199,7 @@ message Experiment {
   }
 
   message Override {
-    int32 variant_id = 1;
+    int32 variation_id = 1;
   }
 
   message Rule {
@@ -251,7 +251,7 @@ message Experiment {
   int32 revision = 12;
   string hash_key = 13;
   UnitType unit_type = 14;
-  repeated Variant variants = 15;
+  repeated Variation variations = 15;
   repeated Rule rules = 16;
   Phase phase = 18;
   repeated Surface surfaces = 19;
@@ -260,5 +260,5 @@ message Experiment {
   ExposureTracking exposure_tracking = 22;
   AssignmentMode assignment_mode = 25;
   bool enable_edit_raw_json_ui = 23;
-  int32 winning_variant_id = 24;
+  int32 winning_variation_id = 24;
 }
