@@ -224,6 +224,7 @@ message Experiment {
     SURFACE_UNSPECIFIED = 0;
     SURFACE_API = 1;
     SURFACE_APP = 2;
+    SURFACE_DEVELOPER_PORTAL = 3;
   }
 
   enum ExposureTracking {
