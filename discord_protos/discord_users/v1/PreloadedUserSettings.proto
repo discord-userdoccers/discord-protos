@@ -156,6 +156,11 @@ message PreloadedUserSettings {
     ExplicitContentRedaction gore_content_non_friend_dm = 3;
   }
 
+  message DefaultReactionEmoji {
+    optional google.protobuf.UInt64Value emoji_id = 1;
+    optional google.protobuf.StringValue emoji_name = 2;
+  }
+
   message TextAndImagesSettings {
     optional google.protobuf.StringValue diversity_surrogate = 1;
     optional google.protobuf.BoolValue use_rich_chat_input = 2;
@@ -188,6 +193,7 @@ message PreloadedUserSettings {
     optional KeywordFilterSettings keyword_filter_settings = 30;
     optional google.protobuf.BoolValue include_soundmoji_in_autocomplete = 31;
     optional GoreContentSettings gore_content_settings = 32;
+    optional DefaultReactionEmoji default_reaction_emoji = 33;
   }
 
   enum ReactionNotificationType {

@@ -503,6 +503,19 @@ export interface PreloadedUserSettings_GoreContentSettings {
     goreContentNonFriendDm: PreloadedUserSettings_ExplicitContentRedaction;
 }
 /**
+ * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.DefaultReactionEmoji
+ */
+export interface PreloadedUserSettings_DefaultReactionEmoji {
+    /**
+     * @generated from protobuf field: optional google.protobuf.UInt64Value emoji_id = 1
+     */
+    emojiId?: UInt64Value;
+    /**
+     * @generated from protobuf field: optional google.protobuf.StringValue emoji_name = 2
+     */
+    emojiName?: StringValue;
+}
+/**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.TextAndImagesSettings
  */
 export interface PreloadedUserSettings_TextAndImagesSettings {
@@ -630,6 +643,10 @@ export interface PreloadedUserSettings_TextAndImagesSettings {
      * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.GoreContentSettings gore_content_settings = 32
      */
     goreContentSettings?: PreloadedUserSettings_GoreContentSettings;
+    /**
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.DefaultReactionEmoji default_reaction_emoji = 33
+     */
+    defaultReactionEmoji?: PreloadedUserSettings_DefaultReactionEmoji;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.NotificationSettings
@@ -3145,6 +3162,59 @@ class PreloadedUserSettings_GoreContentSettings$Type extends MessageType<Preload
  */
 export const PreloadedUserSettings_GoreContentSettings = new PreloadedUserSettings_GoreContentSettings$Type();
 // @generated message type with reflection information, may provide speed optimized methods
+class PreloadedUserSettings_DefaultReactionEmoji$Type extends MessageType<PreloadedUserSettings_DefaultReactionEmoji> {
+    constructor() {
+        super("discord_protos.discord_users.v1.PreloadedUserSettings.DefaultReactionEmoji", [
+            { no: 1, name: "emoji_id", kind: "message", T: () => UInt64Value },
+            { no: 2, name: "emoji_name", kind: "message", T: () => StringValue }
+        ]);
+    }
+    create(value?: PartialMessage<PreloadedUserSettings_DefaultReactionEmoji>): PreloadedUserSettings_DefaultReactionEmoji {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        if (value !== undefined)
+            reflectionMergePartial<PreloadedUserSettings_DefaultReactionEmoji>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PreloadedUserSettings_DefaultReactionEmoji): PreloadedUserSettings_DefaultReactionEmoji {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* optional google.protobuf.UInt64Value emoji_id */ 1:
+                    message.emojiId = UInt64Value.internalBinaryRead(reader, reader.uint32(), options, message.emojiId);
+                    break;
+                case /* optional google.protobuf.StringValue emoji_name */ 2:
+                    message.emojiName = StringValue.internalBinaryRead(reader, reader.uint32(), options, message.emojiName);
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PreloadedUserSettings_DefaultReactionEmoji, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* optional google.protobuf.UInt64Value emoji_id = 1; */
+        if (message.emojiId)
+            UInt64Value.internalBinaryWrite(message.emojiId, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        /* optional google.protobuf.StringValue emoji_name = 2; */
+        if (message.emojiName)
+            StringValue.internalBinaryWrite(message.emojiName, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.DefaultReactionEmoji
+ */
+export const PreloadedUserSettings_DefaultReactionEmoji = new PreloadedUserSettings_DefaultReactionEmoji$Type();
+// @generated message type with reflection information, may provide speed optimized methods
 class PreloadedUserSettings_TextAndImagesSettings$Type extends MessageType<PreloadedUserSettings_TextAndImagesSettings> {
     constructor() {
         super("discord_protos.discord_users.v1.PreloadedUserSettings.TextAndImagesSettings", [
@@ -3178,7 +3248,8 @@ class PreloadedUserSettings_TextAndImagesSettings$Type extends MessageType<Prelo
             { no: 29, name: "explicit_content_settings", kind: "message", T: () => PreloadedUserSettings_ExplicitContentSettings },
             { no: 30, name: "keyword_filter_settings", kind: "message", T: () => PreloadedUserSettings_KeywordFilterSettings },
             { no: 31, name: "include_soundmoji_in_autocomplete", kind: "message", T: () => BoolValue },
-            { no: 32, name: "gore_content_settings", kind: "message", T: () => PreloadedUserSettings_GoreContentSettings }
+            { no: 32, name: "gore_content_settings", kind: "message", T: () => PreloadedUserSettings_GoreContentSettings },
+            { no: 33, name: "default_reaction_emoji", kind: "message", T: () => PreloadedUserSettings_DefaultReactionEmoji }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_TextAndImagesSettings>): PreloadedUserSettings_TextAndImagesSettings {
@@ -3289,6 +3360,9 @@ class PreloadedUserSettings_TextAndImagesSettings$Type extends MessageType<Prelo
                 case /* optional discord_protos.discord_users.v1.PreloadedUserSettings.GoreContentSettings gore_content_settings */ 32:
                     message.goreContentSettings = PreloadedUserSettings_GoreContentSettings.internalBinaryRead(reader, reader.uint32(), options, message.goreContentSettings);
                     break;
+                case /* optional discord_protos.discord_users.v1.PreloadedUserSettings.DefaultReactionEmoji default_reaction_emoji */ 33:
+                    message.defaultReactionEmoji = PreloadedUserSettings_DefaultReactionEmoji.internalBinaryRead(reader, reader.uint32(), options, message.defaultReactionEmoji);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -3394,6 +3468,9 @@ class PreloadedUserSettings_TextAndImagesSettings$Type extends MessageType<Prelo
         /* optional discord_protos.discord_users.v1.PreloadedUserSettings.GoreContentSettings gore_content_settings = 32; */
         if (message.goreContentSettings)
             PreloadedUserSettings_GoreContentSettings.internalBinaryWrite(message.goreContentSettings, writer.tag(32, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.discord_users.v1.PreloadedUserSettings.DefaultReactionEmoji default_reaction_emoji = 33; */
+        if (message.defaultReactionEmoji)
+            PreloadedUserSettings_DefaultReactionEmoji.internalBinaryWrite(message.defaultReactionEmoji, writer.tag(33, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
