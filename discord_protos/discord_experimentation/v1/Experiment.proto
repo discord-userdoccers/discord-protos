@@ -30,6 +30,7 @@ message Experiment {
     int32 target_allocation = 3;
     repeated Bucket buckets = 4;
     Type type = 5;
+    optional google.protobuf.StringValue configuration = 6;
   }
 
   message PlatformVersionSpecifier {

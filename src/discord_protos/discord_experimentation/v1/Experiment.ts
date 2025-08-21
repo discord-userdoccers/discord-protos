@@ -156,6 +156,10 @@ export interface Experiment_Variation {
      * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.Type type = 5
      */
     type: Experiment_Type;
+    /**
+     * @generated from protobuf field: optional google.protobuf.StringValue configuration = 6
+     */
+    configuration?: StringValue;
 }
 /**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.PlatformVersionSpecifier
@@ -1105,7 +1109,8 @@ class Experiment_Variation$Type extends MessageType<Experiment_Variation> {
             { no: 2, name: "label", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 3, name: "target_allocation", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
             { no: 4, name: "buckets", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => Experiment_Bucket },
-            { no: 5, name: "type", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.Type", Experiment_Type, "TYPE_"] }
+            { no: 5, name: "type", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.Type", Experiment_Type, "TYPE_"] },
+            { no: 6, name: "configuration", kind: "message", T: () => StringValue }
         ]);
     }
     create(value?: PartialMessage<Experiment_Variation>): Experiment_Variation {
@@ -1139,6 +1144,9 @@ class Experiment_Variation$Type extends MessageType<Experiment_Variation> {
                 case /* discord_protos.discord_experimentation.v1.Experiment.Type type */ 5:
                     message.type = reader.int32();
                     break;
+                case /* optional google.protobuf.StringValue configuration */ 6:
+                    message.configuration = StringValue.internalBinaryRead(reader, reader.uint32(), options, message.configuration);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -1166,6 +1174,9 @@ class Experiment_Variation$Type extends MessageType<Experiment_Variation> {
         /* discord_protos.discord_experimentation.v1.Experiment.Type type = 5; */
         if (message.type !== 0)
             writer.tag(5, WireType.Varint).int32(message.type);
+        /* optional google.protobuf.StringValue configuration = 6; */
+        if (message.configuration)
+            StringValue.internalBinaryWrite(message.configuration, writer.tag(6, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
