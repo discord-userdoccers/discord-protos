@@ -771,7 +771,11 @@ export enum Experiment_Surface {
     /**
      * @generated from protobuf enum value: SURFACE_DEVELOPER_PORTAL = 3;
      */
-    DEVELOPER_PORTAL = 3
+    DEVELOPER_PORTAL = 3,
+    /**
+     * @generated from protobuf enum value: SURFACE_ADMIN_PORTAL = 4;
+     */
+    ADMIN_PORTAL = 4
 }
 /**
  * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.ExposureTracking
