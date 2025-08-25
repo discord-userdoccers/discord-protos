@@ -177,6 +177,11 @@ message Experiment {
     repeated string locales = 1 [packed = false];
   }
 
+  message UnitIdInExperiment {
+    fixed64 experiment_id = 1;
+    repeated int32 variation_ids = 2;
+  }
+
   message Filter {
     oneof filter {
       ClientPlatform client_version = 2;
@@ -196,6 +201,7 @@ message Experiment {
       ClientReleaseChannel client_release_channel = 16;
       Always always = 17;
       ClientSystemLocale client_system_locale = 18;
+      UnitIdInExperiment unit_id_in_experiment = 19;
     }
   }
 

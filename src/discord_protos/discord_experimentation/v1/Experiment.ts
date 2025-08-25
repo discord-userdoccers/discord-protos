@@ -539,6 +539,19 @@ export interface Experiment_ClientSystemLocale {
     locales: string[];
 }
 /**
+ * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.UnitIdInExperiment
+ */
+export interface Experiment_UnitIdInExperiment {
+    /**
+     * @generated from protobuf field: fixed64 experiment_id = 1
+     */
+    experimentId: bigint;
+    /**
+     * @generated from protobuf field: repeated int32 variation_ids = 2
+     */
+    variationIds: number[];
+}
+/**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.Filter
  */
 export interface Experiment_Filter {
@@ -647,6 +660,12 @@ export interface Experiment_Filter {
          * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.ClientSystemLocale client_system_locale = 18
          */
         clientSystemLocale: Experiment_ClientSystemLocale;
+    } | {
+        oneofKind: "unitIdInExperiment";
+        /**
+         * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.UnitIdInExperiment unit_id_in_experiment = 19
+         */
+        unitIdInExperiment: Experiment_UnitIdInExperiment;
     } | {
         oneofKind: undefined;
     };
@@ -2763,6 +2782,69 @@ class Experiment_ClientSystemLocale$Type extends MessageType<Experiment_ClientSy
  */
 export const Experiment_ClientSystemLocale = new Experiment_ClientSystemLocale$Type();
 // @generated message type with reflection information, may provide speed optimized methods
+class Experiment_UnitIdInExperiment$Type extends MessageType<Experiment_UnitIdInExperiment> {
+    constructor() {
+        super("discord_protos.discord_experimentation.v1.Experiment.UnitIdInExperiment", [
+            { no: 1, name: "experiment_id", kind: "scalar", T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ },
+            { no: 2, name: "variation_ids", kind: "scalar", repeat: 1 /*RepeatType.PACKED*/, T: 5 /*ScalarType.INT32*/ }
+        ]);
+    }
+    create(value?: PartialMessage<Experiment_UnitIdInExperiment>): Experiment_UnitIdInExperiment {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.experimentId = 0n;
+        message.variationIds = [];
+        if (value !== undefined)
+            reflectionMergePartial<Experiment_UnitIdInExperiment>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: Experiment_UnitIdInExperiment): Experiment_UnitIdInExperiment {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* fixed64 experiment_id */ 1:
+                    message.experimentId = reader.fixed64().toBigInt();
+                    break;
+                case /* repeated int32 variation_ids */ 2:
+                    if (wireType === WireType.LengthDelimited)
+                        for (let e = reader.int32() + reader.pos; reader.pos < e;)
+                            message.variationIds.push(reader.int32());
+                    else
+                        message.variationIds.push(reader.int32());
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: Experiment_UnitIdInExperiment, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* fixed64 experiment_id = 1; */
+        if (message.experimentId !== 0n)
+            writer.tag(1, WireType.Bit64).fixed64(message.experimentId);
+        /* repeated int32 variation_ids = 2; */
+        if (message.variationIds.length) {
+            writer.tag(2, WireType.LengthDelimited).fork();
+            for (let i = 0; i < message.variationIds.length; i++)
+                writer.int32(message.variationIds[i]);
+            writer.join();
+        }
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_experimentation.v1.Experiment.UnitIdInExperiment
+ */
+export const Experiment_UnitIdInExperiment = new Experiment_UnitIdInExperiment$Type();
+// @generated message type with reflection information, may provide speed optimized methods
 class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
     constructor() {
         super("discord_protos.discord_experimentation.v1.Experiment.Filter", [
@@ -2782,7 +2864,8 @@ class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
             { no: 15, name: "unit_id_in_range_by_hash", kind: "message", oneof: "filter", T: () => Experiment_UnitIdInRangeByHash },
             { no: 16, name: "client_release_channel", kind: "message", oneof: "filter", T: () => Experiment_ClientReleaseChannel },
             { no: 17, name: "always", kind: "message", oneof: "filter", T: () => Experiment_Always },
-            { no: 18, name: "client_system_locale", kind: "message", oneof: "filter", T: () => Experiment_ClientSystemLocale }
+            { no: 18, name: "client_system_locale", kind: "message", oneof: "filter", T: () => Experiment_ClientSystemLocale },
+            { no: 19, name: "unit_id_in_experiment", kind: "message", oneof: "filter", T: () => Experiment_UnitIdInExperiment }
         ]);
     }
     create(value?: PartialMessage<Experiment_Filter>): Experiment_Filter {
@@ -2899,6 +2982,12 @@ class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
                         clientSystemLocale: Experiment_ClientSystemLocale.internalBinaryRead(reader, reader.uint32(), options, (message.filter as any).clientSystemLocale)
                     };
                     break;
+                case /* discord_protos.discord_experimentation.v1.Experiment.UnitIdInExperiment unit_id_in_experiment */ 19:
+                    message.filter = {
+                        oneofKind: "unitIdInExperiment",
+                        unitIdInExperiment: Experiment_UnitIdInExperiment.internalBinaryRead(reader, reader.uint32(), options, (message.filter as any).unitIdInExperiment)
+                    };
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -2962,6 +3051,9 @@ class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
         /* discord_protos.discord_experimentation.v1.Experiment.ClientSystemLocale client_system_locale = 18; */
         if (message.filter.oneofKind === "clientSystemLocale")
             Experiment_ClientSystemLocale.internalBinaryWrite(message.filter.clientSystemLocale, writer.tag(18, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.discord_experimentation.v1.Experiment.UnitIdInExperiment unit_id_in_experiment = 19; */
+        if (message.filter.oneofKind === "unitIdInExperiment")
+            Experiment_UnitIdInExperiment.internalBinaryWrite(message.filter.unitIdInExperiment, writer.tag(19, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
