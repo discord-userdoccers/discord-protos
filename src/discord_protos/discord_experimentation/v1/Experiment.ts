@@ -114,6 +114,14 @@ export interface Experiment {
      * @generated from protobuf field: int32 winning_variation_id = 24
      */
     winningVariationId: number;
+    /**
+     * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.Type type = 26
+     */
+    type: Experiment_Type;
+    /**
+     * @generated from protobuf field: bool is_template = 27
+     */
+    isTemplate: boolean;
 }
 /**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.Bucket
@@ -853,7 +861,9 @@ class Experiment$Type extends MessageType<Experiment> {
             { no: 22, name: "exposure_tracking", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.ExposureTracking", Experiment_ExposureTracking, "EXPOSURE_TRACKING_"] },
             { no: 25, name: "assignment_mode", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.AssignmentMode", Experiment_AssignmentMode, "ASSIGNMENT_MODE_"] },
             { no: 23, name: "enable_edit_raw_json_ui", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
-            { no: 24, name: "winning_variation_id", kind: "scalar", T: 5 /*ScalarType.INT32*/ }
+            { no: 24, name: "winning_variation_id", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
+            { no: 26, name: "type", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.Type", Experiment_Type, "TYPE_"] },
+            { no: 27, name: "is_template", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
         ]);
     }
     create(value?: PartialMessage<Experiment>): Experiment {
@@ -878,6 +888,8 @@ class Experiment$Type extends MessageType<Experiment> {
         message.assignmentMode = 0;
         message.enableEditRawJsonUi = false;
         message.winningVariationId = 0;
+        message.type = 0;
+        message.isTemplate = false;
         if (value !== undefined)
             reflectionMergePartial<Experiment>(this, message, value);
         return message;
@@ -962,6 +974,12 @@ class Experiment$Type extends MessageType<Experiment> {
                     break;
                 case /* int32 winning_variation_id */ 24:
                     message.winningVariationId = reader.int32();
+                    break;
+                case /* discord_protos.discord_experimentation.v1.Experiment.Type type */ 26:
+                    message.type = reader.int32();
+                    break;
+                case /* bool is_template */ 27:
+                    message.isTemplate = reader.bool();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -1051,6 +1069,12 @@ class Experiment$Type extends MessageType<Experiment> {
         /* discord_protos.discord_experimentation.v1.Experiment.AssignmentMode assignment_mode = 25; */
         if (message.assignmentMode !== 0)
             writer.tag(25, WireType.Varint).int32(message.assignmentMode);
+        /* discord_protos.discord_experimentation.v1.Experiment.Type type = 26; */
+        if (message.type !== 0)
+            writer.tag(26, WireType.Varint).int32(message.type);
+        /* bool is_template = 27; */
+        if (message.isTemplate !== false)
+            writer.tag(27, WireType.Varint).bool(message.isTemplate);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

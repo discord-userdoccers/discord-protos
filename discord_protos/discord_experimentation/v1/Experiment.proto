@@ -270,4 +270,6 @@ message Experiment {
   AssignmentMode assignment_mode = 25;
   bool enable_edit_raw_json_ui = 23;
   int32 winning_variation_id = 24;
+  Type type = 26;
+  bool is_template = 27;
 }
