@@ -889,6 +889,10 @@ export interface PreloadedUserSettings_StatusSettings {
      * @generated from protobuf field: fixed64 status_expires_at_ms = 4
      */
     statusExpiresAtMs: bigint;
+    /**
+     * @generated from protobuf field: optional google.protobuf.UInt64Value status_created_at_ms = 5
+     */
+    statusCreatedAtMs?: UInt64Value;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.LocalizationSettings
@@ -4078,7 +4082,8 @@ class PreloadedUserSettings_StatusSettings$Type extends MessageType<PreloadedUse
             { no: 1, name: "status", kind: "message", T: () => StringValue },
             { no: 2, name: "custom_status", kind: "message", T: () => PreloadedUserSettings_CustomStatus },
             { no: 3, name: "show_current_game", kind: "message", T: () => BoolValue },
-            { no: 4, name: "status_expires_at_ms", kind: "scalar", T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ }
+            { no: 4, name: "status_expires_at_ms", kind: "scalar", T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ },
+            { no: 5, name: "status_created_at_ms", kind: "message", T: () => UInt64Value }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_StatusSettings>): PreloadedUserSettings_StatusSettings {
@@ -4105,6 +4110,9 @@ class PreloadedUserSettings_StatusSettings$Type extends MessageType<PreloadedUse
                 case /* fixed64 status_expires_at_ms */ 4:
                     message.statusExpiresAtMs = reader.fixed64().toBigInt();
                     break;
+                case /* optional google.protobuf.UInt64Value status_created_at_ms */ 5:
+                    message.statusCreatedAtMs = UInt64Value.internalBinaryRead(reader, reader.uint32(), options, message.statusCreatedAtMs);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -4129,6 +4137,9 @@ class PreloadedUserSettings_StatusSettings$Type extends MessageType<PreloadedUse
         /* fixed64 status_expires_at_ms = 4; */
         if (message.statusExpiresAtMs !== 0n)
             writer.tag(4, WireType.Bit64).fixed64(message.statusExpiresAtMs);
+        /* optional google.protobuf.UInt64Value status_created_at_ms = 5; */
+        if (message.statusCreatedAtMs)
+            UInt64Value.internalBinaryWrite(message.statusCreatedAtMs, writer.tag(5, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

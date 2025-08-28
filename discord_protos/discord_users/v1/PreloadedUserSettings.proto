@@ -309,6 +309,7 @@ message PreloadedUserSettings {
     optional CustomStatus custom_status = 2;
     optional google.protobuf.BoolValue show_current_game = 3;
     fixed64 status_expires_at_ms = 4;
+    optional google.protobuf.UInt64Value status_created_at_ms = 5;
   }
 
   message LocalizationSettings {
