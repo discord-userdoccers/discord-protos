@@ -800,9 +800,9 @@ export enum Experiment_Surface {
      */
     DEVELOPER_PORTAL = 3,
     /**
-     * @generated from protobuf enum value: SURFACE_ADMIN_PORTAL = 4;
+     * @generated from protobuf enum value: SURFACE_ADMIN_PANEL = 4;
      */
-    ADMIN_PORTAL = 4
+    ADMIN_PANEL = 4
 }
 /**
  * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.ExposureTracking
