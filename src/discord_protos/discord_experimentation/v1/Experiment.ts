@@ -122,6 +122,10 @@ export interface Experiment {
      * @generated from protobuf field: bool is_template = 27
      */
     isTemplate: boolean;
+    /**
+     * @generated from protobuf field: repeated int32 field_numbers_to_copy = 28
+     */
+    fieldNumbersToCopy: number[];
 }
 /**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.Bucket
@@ -863,7 +867,8 @@ class Experiment$Type extends MessageType<Experiment> {
             { no: 23, name: "enable_edit_raw_json_ui", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
             { no: 24, name: "winning_variation_id", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
             { no: 26, name: "type", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.Type", Experiment_Type, "TYPE_"] },
-            { no: 27, name: "is_template", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
+            { no: 27, name: "is_template", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
+            { no: 28, name: "field_numbers_to_copy", kind: "scalar", repeat: 1 /*RepeatType.PACKED*/, T: 5 /*ScalarType.INT32*/ }
         ]);
     }
     create(value?: PartialMessage<Experiment>): Experiment {
@@ -890,6 +895,7 @@ class Experiment$Type extends MessageType<Experiment> {
         message.winningVariationId = 0;
         message.type = 0;
         message.isTemplate = false;
+        message.fieldNumbersToCopy = [];
         if (value !== undefined)
             reflectionMergePartial<Experiment>(this, message, value);
         return message;
@@ -980,6 +986,13 @@ class Experiment$Type extends MessageType<Experiment> {
                     break;
                 case /* bool is_template */ 27:
                     message.isTemplate = reader.bool();
+                    break;
+                case /* repeated int32 field_numbers_to_copy */ 28:
+                    if (wireType === WireType.LengthDelimited)
+                        for (let e = reader.int32() + reader.pos; reader.pos < e;)
+                            message.fieldNumbersToCopy.push(reader.int32());
+                    else
+                        message.fieldNumbersToCopy.push(reader.int32());
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -1075,6 +1088,13 @@ class Experiment$Type extends MessageType<Experiment> {
         /* bool is_template = 27; */
         if (message.isTemplate !== false)
             writer.tag(27, WireType.Varint).bool(message.isTemplate);
+        /* repeated int32 field_numbers_to_copy = 28; */
+        if (message.fieldNumbersToCopy.length) {
+            writer.tag(28, WireType.LengthDelimited).fork();
+            for (let i = 0; i < message.fieldNumbersToCopy.length; i++)
+                writer.int32(message.fieldNumbersToCopy[i]);
+            writer.join();
+        }
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
