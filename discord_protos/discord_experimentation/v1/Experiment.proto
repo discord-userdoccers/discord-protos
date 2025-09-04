@@ -54,11 +54,17 @@ message Experiment {
     bool work_around_pyoto_bug = 2;
   }
 
+  message ClientRequiredChanges {
+    repeated string commit_hashes = 1 [packed = false];
+    repeated int32 pr_numbers = 2;
+  }
+
   message ClientPlatform {
     optional PlatformVersion ios_version = 1;
     optional PlatformVersion android_version = 2;
     optional PlatformVersion web_version = 3;
     optional PlatformVersion native_version = 4;
+    optional ClientRequiredChanges client_required_changes = 5;
   }
 
   message SDKVersionSpecifier {

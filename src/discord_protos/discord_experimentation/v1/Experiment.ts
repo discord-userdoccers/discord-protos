@@ -230,6 +230,19 @@ export interface Experiment_PlatformVersion {
     workAroundPyotoBug: boolean;
 }
 /**
+ * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.ClientRequiredChanges
+ */
+export interface Experiment_ClientRequiredChanges {
+    /**
+     * @generated from protobuf field: repeated string commit_hashes = 1 [packed = false]
+     */
+    commitHashes: string[];
+    /**
+     * @generated from protobuf field: repeated int32 pr_numbers = 2
+     */
+    prNumbers: number[];
+}
+/**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.ClientPlatform
  */
 export interface Experiment_ClientPlatform {
@@ -249,6 +262,10 @@ export interface Experiment_ClientPlatform {
      * @generated from protobuf field: optional discord_protos.discord_experimentation.v1.Experiment.PlatformVersion native_version = 4
      */
     nativeVersion?: Experiment_PlatformVersion;
+    /**
+     * @generated from protobuf field: optional discord_protos.discord_experimentation.v1.Experiment.ClientRequiredChanges client_required_changes = 5
+     */
+    clientRequiredChanges?: Experiment_ClientRequiredChanges;
 }
 /**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.SDKVersionSpecifier
@@ -1478,13 +1495,77 @@ class Experiment_PlatformVersion$Type extends MessageType<Experiment_PlatformVer
  */
 export const Experiment_PlatformVersion = new Experiment_PlatformVersion$Type();
 // @generated message type with reflection information, may provide speed optimized methods
+class Experiment_ClientRequiredChanges$Type extends MessageType<Experiment_ClientRequiredChanges> {
+    constructor() {
+        super("discord_protos.discord_experimentation.v1.Experiment.ClientRequiredChanges", [
+            { no: 1, name: "commit_hashes", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "pr_numbers", kind: "scalar", repeat: 1 /*RepeatType.PACKED*/, T: 5 /*ScalarType.INT32*/ }
+        ]);
+    }
+    create(value?: PartialMessage<Experiment_ClientRequiredChanges>): Experiment_ClientRequiredChanges {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.commitHashes = [];
+        message.prNumbers = [];
+        if (value !== undefined)
+            reflectionMergePartial<Experiment_ClientRequiredChanges>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: Experiment_ClientRequiredChanges): Experiment_ClientRequiredChanges {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* repeated string commit_hashes = 1 [packed = false] */ 1:
+                    message.commitHashes.push(reader.string());
+                    break;
+                case /* repeated int32 pr_numbers */ 2:
+                    if (wireType === WireType.LengthDelimited)
+                        for (let e = reader.int32() + reader.pos; reader.pos < e;)
+                            message.prNumbers.push(reader.int32());
+                    else
+                        message.prNumbers.push(reader.int32());
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: Experiment_ClientRequiredChanges, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* repeated string commit_hashes = 1 [packed = false]; */
+        for (let i = 0; i < message.commitHashes.length; i++)
+            writer.tag(1, WireType.LengthDelimited).string(message.commitHashes[i]);
+        /* repeated int32 pr_numbers = 2; */
+        if (message.prNumbers.length) {
+            writer.tag(2, WireType.LengthDelimited).fork();
+            for (let i = 0; i < message.prNumbers.length; i++)
+                writer.int32(message.prNumbers[i]);
+            writer.join();
+        }
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_experimentation.v1.Experiment.ClientRequiredChanges
+ */
+export const Experiment_ClientRequiredChanges = new Experiment_ClientRequiredChanges$Type();
+// @generated message type with reflection information, may provide speed optimized methods
 class Experiment_ClientPlatform$Type extends MessageType<Experiment_ClientPlatform> {
     constructor() {
         super("discord_protos.discord_experimentation.v1.Experiment.ClientPlatform", [
             { no: 1, name: "ios_version", kind: "message", T: () => Experiment_PlatformVersion },
             { no: 2, name: "android_version", kind: "message", T: () => Experiment_PlatformVersion },
             { no: 3, name: "web_version", kind: "message", T: () => Experiment_PlatformVersion },
-            { no: 4, name: "native_version", kind: "message", T: () => Experiment_PlatformVersion }
+            { no: 4, name: "native_version", kind: "message", T: () => Experiment_PlatformVersion },
+            { no: 5, name: "client_required_changes", kind: "message", T: () => Experiment_ClientRequiredChanges }
         ]);
     }
     create(value?: PartialMessage<Experiment_ClientPlatform>): Experiment_ClientPlatform {
@@ -1510,6 +1591,9 @@ class Experiment_ClientPlatform$Type extends MessageType<Experiment_ClientPlatfo
                 case /* optional discord_protos.discord_experimentation.v1.Experiment.PlatformVersion native_version */ 4:
                     message.nativeVersion = Experiment_PlatformVersion.internalBinaryRead(reader, reader.uint32(), options, message.nativeVersion);
                     break;
+                case /* optional discord_protos.discord_experimentation.v1.Experiment.ClientRequiredChanges client_required_changes */ 5:
+                    message.clientRequiredChanges = Experiment_ClientRequiredChanges.internalBinaryRead(reader, reader.uint32(), options, message.clientRequiredChanges);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -1534,6 +1618,9 @@ class Experiment_ClientPlatform$Type extends MessageType<Experiment_ClientPlatfo
         /* optional discord_protos.discord_experimentation.v1.Experiment.PlatformVersion native_version = 4; */
         if (message.nativeVersion)
             Experiment_PlatformVersion.internalBinaryWrite(message.nativeVersion, writer.tag(4, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.discord_experimentation.v1.Experiment.ClientRequiredChanges client_required_changes = 5; */
+        if (message.clientRequiredChanges)
+            Experiment_ClientRequiredChanges.internalBinaryWrite(message.clientRequiredChanges, writer.tag(5, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
