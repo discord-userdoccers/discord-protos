@@ -159,6 +159,7 @@ message PreloadedUserSettings {
   message DefaultReactionEmoji {
     optional google.protobuf.UInt64Value emoji_id = 1;
     optional google.protobuf.StringValue emoji_name = 2;
+    optional google.protobuf.BoolValue animated = 3;
   }
 
   message TextAndImagesSettings {
