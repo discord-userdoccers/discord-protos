@@ -242,6 +242,10 @@ export interface PreloadedUserSettings_GuildDismissibleContentState {
      * @generated from protobuf field: uint64 last_dismissed_object_id = 4
      */
     lastDismissedObjectId: bigint;
+    /**
+     * @generated from protobuf field: uint32 num_times_dismissed = 5
+     */
+    numTimesDismissed: number;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.GuildSettings
@@ -327,6 +331,10 @@ export interface PreloadedUserSettings_RecurringDismissibleContentState {
      * @generated from protobuf field: uint64 last_dismissed_object_id = 3
      */
     lastDismissedObjectId: bigint;
+    /**
+     * @generated from protobuf field: uint32 num_times_dismissed = 4
+     */
+    numTimesDismissed: number;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.UserContentSettings
@@ -2239,7 +2247,8 @@ class PreloadedUserSettings_GuildDismissibleContentState$Type extends MessageTyp
             { no: 1, name: "dismissed", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
             { no: 2, name: "last_dismissed_version", kind: "scalar", T: 13 /*ScalarType.UINT32*/ },
             { no: 3, name: "last_dismissed_at_ms", kind: "scalar", T: 4 /*ScalarType.UINT64*/, L: 0 /*LongType.BIGINT*/ },
-            { no: 4, name: "last_dismissed_object_id", kind: "scalar", T: 4 /*ScalarType.UINT64*/, L: 0 /*LongType.BIGINT*/ }
+            { no: 4, name: "last_dismissed_object_id", kind: "scalar", T: 4 /*ScalarType.UINT64*/, L: 0 /*LongType.BIGINT*/ },
+            { no: 5, name: "num_times_dismissed", kind: "scalar", T: 13 /*ScalarType.UINT32*/ }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_GuildDismissibleContentState>): PreloadedUserSettings_GuildDismissibleContentState {
@@ -2248,6 +2257,7 @@ class PreloadedUserSettings_GuildDismissibleContentState$Type extends MessageTyp
         message.lastDismissedVersion = 0;
         message.lastDismissedAtMs = 0n;
         message.lastDismissedObjectId = 0n;
+        message.numTimesDismissed = 0;
         if (value !== undefined)
             reflectionMergePartial<PreloadedUserSettings_GuildDismissibleContentState>(this, message, value);
         return message;
@@ -2268,6 +2278,9 @@ class PreloadedUserSettings_GuildDismissibleContentState$Type extends MessageTyp
                     break;
                 case /* uint64 last_dismissed_object_id */ 4:
                     message.lastDismissedObjectId = reader.uint64().toBigInt();
+                    break;
+                case /* uint32 num_times_dismissed */ 5:
+                    message.numTimesDismissed = reader.uint32();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -2293,6 +2306,9 @@ class PreloadedUserSettings_GuildDismissibleContentState$Type extends MessageTyp
         /* uint64 last_dismissed_object_id = 4; */
         if (message.lastDismissedObjectId !== 0n)
             writer.tag(4, WireType.Varint).uint64(message.lastDismissedObjectId);
+        /* uint32 num_times_dismissed = 5; */
+        if (message.numTimesDismissed !== 0)
+            writer.tag(5, WireType.Varint).uint32(message.numTimesDismissed);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -2547,7 +2563,8 @@ class PreloadedUserSettings_RecurringDismissibleContentState$Type extends Messag
         super("discord_protos.discord_users.v1.PreloadedUserSettings.RecurringDismissibleContentState", [
             { no: 1, name: "last_dismissed_version", kind: "scalar", T: 13 /*ScalarType.UINT32*/ },
             { no: 2, name: "last_dismissed_at_ms", kind: "scalar", T: 4 /*ScalarType.UINT64*/, L: 0 /*LongType.BIGINT*/ },
-            { no: 3, name: "last_dismissed_object_id", kind: "scalar", T: 4 /*ScalarType.UINT64*/, L: 0 /*LongType.BIGINT*/ }
+            { no: 3, name: "last_dismissed_object_id", kind: "scalar", T: 4 /*ScalarType.UINT64*/, L: 0 /*LongType.BIGINT*/ },
+            { no: 4, name: "num_times_dismissed", kind: "scalar", T: 13 /*ScalarType.UINT32*/ }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_RecurringDismissibleContentState>): PreloadedUserSettings_RecurringDismissibleContentState {
@@ -2555,6 +2572,7 @@ class PreloadedUserSettings_RecurringDismissibleContentState$Type extends Messag
         message.lastDismissedVersion = 0;
         message.lastDismissedAtMs = 0n;
         message.lastDismissedObjectId = 0n;
+        message.numTimesDismissed = 0;
         if (value !== undefined)
             reflectionMergePartial<PreloadedUserSettings_RecurringDismissibleContentState>(this, message, value);
         return message;
@@ -2572,6 +2590,9 @@ class PreloadedUserSettings_RecurringDismissibleContentState$Type extends Messag
                     break;
                 case /* uint64 last_dismissed_object_id */ 3:
                     message.lastDismissedObjectId = reader.uint64().toBigInt();
+                    break;
+                case /* uint32 num_times_dismissed */ 4:
+                    message.numTimesDismissed = reader.uint32();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -2594,6 +2615,9 @@ class PreloadedUserSettings_RecurringDismissibleContentState$Type extends Messag
         /* uint64 last_dismissed_object_id = 3; */
         if (message.lastDismissedObjectId !== 0n)
             writer.tag(3, WireType.Varint).uint64(message.lastDismissedObjectId);
+        /* uint32 num_times_dismissed = 4; */
+        if (message.numTimesDismissed !== 0)
+            writer.tag(4, WireType.Varint).uint32(message.numTimesDismissed);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

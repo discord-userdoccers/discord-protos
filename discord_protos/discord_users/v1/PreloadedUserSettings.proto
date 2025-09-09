@@ -59,6 +59,7 @@ message PreloadedUserSettings {
     uint32 last_dismissed_version = 2;
     uint64 last_dismissed_at_ms = 3;
     uint64 last_dismissed_object_id = 4;
+    uint32 num_times_dismissed = 5;
   }
 
   message GuildSettings {
@@ -84,6 +85,7 @@ message PreloadedUserSettings {
     uint32 last_dismissed_version = 1;
     uint64 last_dismissed_at_ms = 2;
     uint64 last_dismissed_object_id = 3;
+    uint32 num_times_dismissed = 4;
   }
 
   message UserContentSettings {
