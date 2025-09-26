@@ -239,6 +239,7 @@ message Experiment {
     SURFACE_APP = 2;
     SURFACE_DEVELOPER_PORTAL = 3;
     SURFACE_ADMIN_PANEL = 4;
+    SURFACE_ADS_BUDGET_AB = 5;
   }
 
   enum ExposureTracking {
