@@ -272,7 +272,7 @@ message Experiment {
   repeated Rule rules = 16;
   Phase phase = 18;
   repeated Surface surfaces = 19;
-  string owning_team_name = 20;
+  string owning_team_id = 20;
   fixed64 cached_notification_channel_id = 21;
   ExposureTracking exposure_tracking = 22;
   AssignmentMode assignment_mode = 25;

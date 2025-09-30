@@ -91,9 +91,9 @@ export interface Experiment {
      */
     surfaces: Experiment_Surface[];
     /**
-     * @generated from protobuf field: string owning_team_name = 20
+     * @generated from protobuf field: string owning_team_id = 20
      */
-    owningTeamName: string;
+    owningTeamId: string;
     /**
      * @generated from protobuf field: fixed64 cached_notification_channel_id = 21
      */
@@ -885,7 +885,7 @@ class Experiment$Type extends MessageType<Experiment> {
             { no: 16, name: "rules", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => Experiment_Rule },
             { no: 18, name: "phase", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.Phase", Experiment_Phase, "PHASE_"] },
             { no: 19, name: "surfaces", kind: "enum", repeat: 1 /*RepeatType.PACKED*/, T: () => ["discord_protos.discord_experimentation.v1.Experiment.Surface", Experiment_Surface, "SURFACE_"] },
-            { no: 20, name: "owning_team_name", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 20, name: "owning_team_id", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 21, name: "cached_notification_channel_id", kind: "scalar", T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ },
             { no: 22, name: "exposure_tracking", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.ExposureTracking", Experiment_ExposureTracking, "EXPOSURE_TRACKING_"] },
             { no: 25, name: "assignment_mode", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.AssignmentMode", Experiment_AssignmentMode, "ASSIGNMENT_MODE_"] },
@@ -912,7 +912,7 @@ class Experiment$Type extends MessageType<Experiment> {
         message.rules = [];
         message.phase = 0;
         message.surfaces = [];
-        message.owningTeamName = "";
+        message.owningTeamId = "";
         message.cachedNotificationChannelId = 0n;
         message.exposureTracking = 0;
         message.assignmentMode = 0;
@@ -988,8 +988,8 @@ class Experiment$Type extends MessageType<Experiment> {
                     else
                         message.surfaces.push(reader.int32());
                     break;
-                case /* string owning_team_name */ 20:
-                    message.owningTeamName = reader.string();
+                case /* string owning_team_id */ 20:
+                    message.owningTeamId = reader.string();
                     break;
                 case /* fixed64 cached_notification_channel_id */ 21:
                     message.cachedNotificationChannelId = reader.fixed64().toBigInt();
@@ -1089,9 +1089,9 @@ class Experiment$Type extends MessageType<Experiment> {
                 writer.int32(message.surfaces[i]);
             writer.join();
         }
-        /* string owning_team_name = 20; */
-        if (message.owningTeamName !== "")
-            writer.tag(20, WireType.LengthDelimited).string(message.owningTeamName);
+        /* string owning_team_id = 20; */
+        if (message.owningTeamId !== "")
+            writer.tag(20, WireType.LengthDelimited).string(message.owningTeamId);
         /* fixed64 cached_notification_channel_id = 21; */
         if (message.cachedNotificationChannelId !== 0n)
             writer.tag(21, WireType.Bit64).fixed64(message.cachedNotificationChannelId);
