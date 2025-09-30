@@ -64,6 +64,7 @@ message Experiment {
     optional PlatformVersion android_version = 2;
     optional PlatformVersion web_version = 3;
     optional PlatformVersion native_version = 4;
+    bool allow_non_native_web = 6;
     optional ClientRequiredChanges client_required_changes = 5;
   }
 

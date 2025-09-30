@@ -263,6 +263,10 @@ export interface Experiment_ClientPlatform {
      */
     nativeVersion?: Experiment_PlatformVersion;
     /**
+     * @generated from protobuf field: bool allow_non_native_web = 6
+     */
+    allowNonNativeWeb: boolean;
+    /**
      * @generated from protobuf field: optional discord_protos.discord_experimentation.v1.Experiment.ClientRequiredChanges client_required_changes = 5
      */
     clientRequiredChanges?: Experiment_ClientRequiredChanges;
@@ -1569,11 +1573,13 @@ class Experiment_ClientPlatform$Type extends MessageType<Experiment_ClientPlatfo
             { no: 2, name: "android_version", kind: "message", T: () => Experiment_PlatformVersion },
             { no: 3, name: "web_version", kind: "message", T: () => Experiment_PlatformVersion },
             { no: 4, name: "native_version", kind: "message", T: () => Experiment_PlatformVersion },
+            { no: 6, name: "allow_non_native_web", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
             { no: 5, name: "client_required_changes", kind: "message", T: () => Experiment_ClientRequiredChanges }
         ]);
     }
     create(value?: PartialMessage<Experiment_ClientPlatform>): Experiment_ClientPlatform {
         const message = globalThis.Object.create((this.messagePrototype!));
+        message.allowNonNativeWeb = false;
         if (value !== undefined)
             reflectionMergePartial<Experiment_ClientPlatform>(this, message, value);
         return message;
@@ -1594,6 +1600,9 @@ class Experiment_ClientPlatform$Type extends MessageType<Experiment_ClientPlatfo
                     break;
                 case /* optional discord_protos.discord_experimentation.v1.Experiment.PlatformVersion native_version */ 4:
                     message.nativeVersion = Experiment_PlatformVersion.internalBinaryRead(reader, reader.uint32(), options, message.nativeVersion);
+                    break;
+                case /* bool allow_non_native_web */ 6:
+                    message.allowNonNativeWeb = reader.bool();
                     break;
                 case /* optional discord_protos.discord_experimentation.v1.Experiment.ClientRequiredChanges client_required_changes */ 5:
                     message.clientRequiredChanges = Experiment_ClientRequiredChanges.internalBinaryRead(reader, reader.uint32(), options, message.clientRequiredChanges);
@@ -1625,6 +1634,9 @@ class Experiment_ClientPlatform$Type extends MessageType<Experiment_ClientPlatfo
         /* optional discord_protos.discord_experimentation.v1.Experiment.ClientRequiredChanges client_required_changes = 5; */
         if (message.clientRequiredChanges)
             Experiment_ClientRequiredChanges.internalBinaryWrite(message.clientRequiredChanges, writer.tag(5, WireType.LengthDelimited).fork(), options).join();
+        /* bool allow_non_native_web = 6; */
+        if (message.allowNonNativeWeb !== false)
+            writer.tag(6, WireType.Varint).bool(message.allowNonNativeWeb);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
