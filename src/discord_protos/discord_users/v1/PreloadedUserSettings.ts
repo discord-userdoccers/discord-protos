@@ -659,6 +659,10 @@ export interface PreloadedUserSettings_TextAndImagesSettings {
      * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.DefaultReactionEmoji default_reaction_emoji = 33
      */
     defaultReactionEmoji?: PreloadedUserSettings_DefaultReactionEmoji;
+    /**
+     * @generated from protobuf field: optional google.protobuf.BoolValue show_mention_suggestions = 34
+     */
+    showMentionSuggestions?: BoolValue;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.NotificationSettings
@@ -3288,7 +3292,8 @@ class PreloadedUserSettings_TextAndImagesSettings$Type extends MessageType<Prelo
             { no: 30, name: "keyword_filter_settings", kind: "message", T: () => PreloadedUserSettings_KeywordFilterSettings },
             { no: 31, name: "include_soundmoji_in_autocomplete", kind: "message", T: () => BoolValue },
             { no: 32, name: "gore_content_settings", kind: "message", T: () => PreloadedUserSettings_GoreContentSettings },
-            { no: 33, name: "default_reaction_emoji", kind: "message", T: () => PreloadedUserSettings_DefaultReactionEmoji }
+            { no: 33, name: "default_reaction_emoji", kind: "message", T: () => PreloadedUserSettings_DefaultReactionEmoji },
+            { no: 34, name: "show_mention_suggestions", kind: "message", T: () => BoolValue }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_TextAndImagesSettings>): PreloadedUserSettings_TextAndImagesSettings {
@@ -3402,6 +3407,9 @@ class PreloadedUserSettings_TextAndImagesSettings$Type extends MessageType<Prelo
                 case /* optional discord_protos.discord_users.v1.PreloadedUserSettings.DefaultReactionEmoji default_reaction_emoji */ 33:
                     message.defaultReactionEmoji = PreloadedUserSettings_DefaultReactionEmoji.internalBinaryRead(reader, reader.uint32(), options, message.defaultReactionEmoji);
                     break;
+                case /* optional google.protobuf.BoolValue show_mention_suggestions */ 34:
+                    message.showMentionSuggestions = BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.showMentionSuggestions);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -3510,6 +3518,9 @@ class PreloadedUserSettings_TextAndImagesSettings$Type extends MessageType<Prelo
         /* optional discord_protos.discord_users.v1.PreloadedUserSettings.DefaultReactionEmoji default_reaction_emoji = 33; */
         if (message.defaultReactionEmoji)
             PreloadedUserSettings_DefaultReactionEmoji.internalBinaryWrite(message.defaultReactionEmoji, writer.tag(33, WireType.LengthDelimited).fork(), options).join();
+        /* optional google.protobuf.BoolValue show_mention_suggestions = 34; */
+        if (message.showMentionSuggestions)
+            BoolValue.internalBinaryWrite(message.showMentionSuggestions, writer.tag(34, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

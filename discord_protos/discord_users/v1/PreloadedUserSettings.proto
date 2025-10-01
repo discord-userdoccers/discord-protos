@@ -197,6 +197,7 @@ message PreloadedUserSettings {
     optional google.protobuf.BoolValue include_soundmoji_in_autocomplete = 31;
     optional GoreContentSettings gore_content_settings = 32;
     optional DefaultReactionEmoji default_reaction_emoji = 33;
+    optional google.protobuf.BoolValue show_mention_suggestions = 34;
   }
 
   enum ReactionNotificationType {
