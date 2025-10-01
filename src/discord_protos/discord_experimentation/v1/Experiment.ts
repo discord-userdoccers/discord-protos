@@ -585,6 +585,15 @@ export interface Experiment_UnitIdInExperiment {
     variationIds: number[];
 }
 /**
+ * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.UserPremiumType
+ */
+export interface Experiment_UserPremiumType {
+    /**
+     * @generated from protobuf field: repeated int32 premium_types = 1
+     */
+    premiumTypes: number[];
+}
+/**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.Filter
  */
 export interface Experiment_Filter {
@@ -699,6 +708,12 @@ export interface Experiment_Filter {
          * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.UnitIdInExperiment unit_id_in_experiment = 19
          */
         unitIdInExperiment: Experiment_UnitIdInExperiment;
+    } | {
+        oneofKind: "userPremiumType";
+        /**
+         * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.UserPremiumType user_premium_type = 20
+         */
+        userPremiumType: Experiment_UserPremiumType;
     } | {
         oneofKind: undefined;
     };
@@ -2992,6 +3007,61 @@ class Experiment_UnitIdInExperiment$Type extends MessageType<Experiment_UnitIdIn
  */
 export const Experiment_UnitIdInExperiment = new Experiment_UnitIdInExperiment$Type();
 // @generated message type with reflection information, may provide speed optimized methods
+class Experiment_UserPremiumType$Type extends MessageType<Experiment_UserPremiumType> {
+    constructor() {
+        super("discord_protos.discord_experimentation.v1.Experiment.UserPremiumType", [
+            { no: 1, name: "premium_types", kind: "scalar", repeat: 1 /*RepeatType.PACKED*/, T: 5 /*ScalarType.INT32*/ }
+        ]);
+    }
+    create(value?: PartialMessage<Experiment_UserPremiumType>): Experiment_UserPremiumType {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.premiumTypes = [];
+        if (value !== undefined)
+            reflectionMergePartial<Experiment_UserPremiumType>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: Experiment_UserPremiumType): Experiment_UserPremiumType {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* repeated int32 premium_types */ 1:
+                    if (wireType === WireType.LengthDelimited)
+                        for (let e = reader.int32() + reader.pos; reader.pos < e;)
+                            message.premiumTypes.push(reader.int32());
+                    else
+                        message.premiumTypes.push(reader.int32());
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: Experiment_UserPremiumType, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* repeated int32 premium_types = 1; */
+        if (message.premiumTypes.length) {
+            writer.tag(1, WireType.LengthDelimited).fork();
+            for (let i = 0; i < message.premiumTypes.length; i++)
+                writer.int32(message.premiumTypes[i]);
+            writer.join();
+        }
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_experimentation.v1.Experiment.UserPremiumType
+ */
+export const Experiment_UserPremiumType = new Experiment_UserPremiumType$Type();
+// @generated message type with reflection information, may provide speed optimized methods
 class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
     constructor() {
         super("discord_protos.discord_experimentation.v1.Experiment.Filter", [
@@ -3012,7 +3082,8 @@ class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
             { no: 16, name: "client_release_channel", kind: "message", oneof: "filter", T: () => Experiment_ClientReleaseChannel },
             { no: 17, name: "always", kind: "message", oneof: "filter", T: () => Experiment_Always },
             { no: 18, name: "client_system_locale", kind: "message", oneof: "filter", T: () => Experiment_ClientSystemLocale },
-            { no: 19, name: "unit_id_in_experiment", kind: "message", oneof: "filter", T: () => Experiment_UnitIdInExperiment }
+            { no: 19, name: "unit_id_in_experiment", kind: "message", oneof: "filter", T: () => Experiment_UnitIdInExperiment },
+            { no: 20, name: "user_premium_type", kind: "message", oneof: "filter", T: () => Experiment_UserPremiumType }
         ]);
     }
     create(value?: PartialMessage<Experiment_Filter>): Experiment_Filter {
@@ -3135,6 +3206,12 @@ class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
                         unitIdInExperiment: Experiment_UnitIdInExperiment.internalBinaryRead(reader, reader.uint32(), options, (message.filter as any).unitIdInExperiment)
                     };
                     break;
+                case /* discord_protos.discord_experimentation.v1.Experiment.UserPremiumType user_premium_type */ 20:
+                    message.filter = {
+                        oneofKind: "userPremiumType",
+                        userPremiumType: Experiment_UserPremiumType.internalBinaryRead(reader, reader.uint32(), options, (message.filter as any).userPremiumType)
+                    };
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -3201,6 +3278,9 @@ class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
         /* discord_protos.discord_experimentation.v1.Experiment.UnitIdInExperiment unit_id_in_experiment = 19; */
         if (message.filter.oneofKind === "unitIdInExperiment")
             Experiment_UnitIdInExperiment.internalBinaryWrite(message.filter.unitIdInExperiment, writer.tag(19, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.discord_experimentation.v1.Experiment.UserPremiumType user_premium_type = 20; */
+        if (message.filter.oneofKind === "userPremiumType")
+            Experiment_UserPremiumType.internalBinaryWrite(message.filter.userPremiumType, writer.tag(20, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

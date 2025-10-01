@@ -189,6 +189,10 @@ message Experiment {
     repeated int32 variation_ids = 2;
   }
 
+  message UserPremiumType {
+    repeated int32 premium_types = 1;
+  }
+
   message Filter {
     oneof filter {
       ClientPlatform client_version = 2;
@@ -209,6 +213,7 @@ message Experiment {
       Always always = 17;
       ClientSystemLocale client_system_locale = 18;
       UnitIdInExperiment unit_id_in_experiment = 19;
+      UserPremiumType user_premium_type = 20;
     }
   }
 
