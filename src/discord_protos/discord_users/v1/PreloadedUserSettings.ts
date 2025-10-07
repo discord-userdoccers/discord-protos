@@ -528,6 +528,23 @@ export interface PreloadedUserSettings_DefaultReactionEmoji {
     animated?: BoolValue;
 }
 /**
+ * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.SelfHarmContentSettings
+ */
+export interface PreloadedUserSettings_SelfHarmContentSettings {
+    /**
+     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction self_harm_content_guilds = 1
+     */
+    selfHarmContentGuilds: PreloadedUserSettings_ExplicitContentRedaction;
+    /**
+     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction self_harm_content_friend_dm = 2
+     */
+    selfHarmContentFriendDm: PreloadedUserSettings_ExplicitContentRedaction;
+    /**
+     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction self_harm_content_non_friend_dm = 3
+     */
+    selfHarmContentNonFriendDm: PreloadedUserSettings_ExplicitContentRedaction;
+}
+/**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.TextAndImagesSettings
  */
 export interface PreloadedUserSettings_TextAndImagesSettings {
@@ -663,6 +680,10 @@ export interface PreloadedUserSettings_TextAndImagesSettings {
      * @generated from protobuf field: optional google.protobuf.BoolValue show_mention_suggestions = 34
      */
     showMentionSuggestions?: BoolValue;
+    /**
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.SelfHarmContentSettings self_harm_content_settings = 35
+     */
+    selfHarmContentSettings?: PreloadedUserSettings_SelfHarmContentSettings;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.NotificationSettings
@@ -3258,6 +3279,69 @@ class PreloadedUserSettings_DefaultReactionEmoji$Type extends MessageType<Preloa
  */
 export const PreloadedUserSettings_DefaultReactionEmoji = new PreloadedUserSettings_DefaultReactionEmoji$Type();
 // @generated message type with reflection information, may provide speed optimized methods
+class PreloadedUserSettings_SelfHarmContentSettings$Type extends MessageType<PreloadedUserSettings_SelfHarmContentSettings> {
+    constructor() {
+        super("discord_protos.discord_users.v1.PreloadedUserSettings.SelfHarmContentSettings", [
+            { no: 1, name: "self_harm_content_guilds", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction", PreloadedUserSettings_ExplicitContentRedaction, "EXPLICIT_CONTENT_REDACTION_"] },
+            { no: 2, name: "self_harm_content_friend_dm", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction", PreloadedUserSettings_ExplicitContentRedaction, "EXPLICIT_CONTENT_REDACTION_"] },
+            { no: 3, name: "self_harm_content_non_friend_dm", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction", PreloadedUserSettings_ExplicitContentRedaction, "EXPLICIT_CONTENT_REDACTION_"] }
+        ]);
+    }
+    create(value?: PartialMessage<PreloadedUserSettings_SelfHarmContentSettings>): PreloadedUserSettings_SelfHarmContentSettings {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.selfHarmContentGuilds = 0;
+        message.selfHarmContentFriendDm = 0;
+        message.selfHarmContentNonFriendDm = 0;
+        if (value !== undefined)
+            reflectionMergePartial<PreloadedUserSettings_SelfHarmContentSettings>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PreloadedUserSettings_SelfHarmContentSettings): PreloadedUserSettings_SelfHarmContentSettings {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction self_harm_content_guilds */ 1:
+                    message.selfHarmContentGuilds = reader.int32();
+                    break;
+                case /* discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction self_harm_content_friend_dm */ 2:
+                    message.selfHarmContentFriendDm = reader.int32();
+                    break;
+                case /* discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction self_harm_content_non_friend_dm */ 3:
+                    message.selfHarmContentNonFriendDm = reader.int32();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PreloadedUserSettings_SelfHarmContentSettings, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction self_harm_content_guilds = 1; */
+        if (message.selfHarmContentGuilds !== 0)
+            writer.tag(1, WireType.Varint).int32(message.selfHarmContentGuilds);
+        /* discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction self_harm_content_friend_dm = 2; */
+        if (message.selfHarmContentFriendDm !== 0)
+            writer.tag(2, WireType.Varint).int32(message.selfHarmContentFriendDm);
+        /* discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction self_harm_content_non_friend_dm = 3; */
+        if (message.selfHarmContentNonFriendDm !== 0)
+            writer.tag(3, WireType.Varint).int32(message.selfHarmContentNonFriendDm);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.SelfHarmContentSettings
+ */
+export const PreloadedUserSettings_SelfHarmContentSettings = new PreloadedUserSettings_SelfHarmContentSettings$Type();
+// @generated message type with reflection information, may provide speed optimized methods
 class PreloadedUserSettings_TextAndImagesSettings$Type extends MessageType<PreloadedUserSettings_TextAndImagesSettings> {
     constructor() {
         super("discord_protos.discord_users.v1.PreloadedUserSettings.TextAndImagesSettings", [
@@ -3293,7 +3377,8 @@ class PreloadedUserSettings_TextAndImagesSettings$Type extends MessageType<Prelo
             { no: 31, name: "include_soundmoji_in_autocomplete", kind: "message", T: () => BoolValue },
             { no: 32, name: "gore_content_settings", kind: "message", T: () => PreloadedUserSettings_GoreContentSettings },
             { no: 33, name: "default_reaction_emoji", kind: "message", T: () => PreloadedUserSettings_DefaultReactionEmoji },
-            { no: 34, name: "show_mention_suggestions", kind: "message", T: () => BoolValue }
+            { no: 34, name: "show_mention_suggestions", kind: "message", T: () => BoolValue },
+            { no: 35, name: "self_harm_content_settings", kind: "message", T: () => PreloadedUserSettings_SelfHarmContentSettings }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_TextAndImagesSettings>): PreloadedUserSettings_TextAndImagesSettings {
@@ -3410,6 +3495,9 @@ class PreloadedUserSettings_TextAndImagesSettings$Type extends MessageType<Prelo
                 case /* optional google.protobuf.BoolValue show_mention_suggestions */ 34:
                     message.showMentionSuggestions = BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.showMentionSuggestions);
                     break;
+                case /* optional discord_protos.discord_users.v1.PreloadedUserSettings.SelfHarmContentSettings self_harm_content_settings */ 35:
+                    message.selfHarmContentSettings = PreloadedUserSettings_SelfHarmContentSettings.internalBinaryRead(reader, reader.uint32(), options, message.selfHarmContentSettings);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -3521,6 +3609,9 @@ class PreloadedUserSettings_TextAndImagesSettings$Type extends MessageType<Prelo
         /* optional google.protobuf.BoolValue show_mention_suggestions = 34; */
         if (message.showMentionSuggestions)
             BoolValue.internalBinaryWrite(message.showMentionSuggestions, writer.tag(34, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.discord_users.v1.PreloadedUserSettings.SelfHarmContentSettings self_harm_content_settings = 35; */
+        if (message.selfHarmContentSettings)
+            PreloadedUserSettings_SelfHarmContentSettings.internalBinaryWrite(message.selfHarmContentSettings, writer.tag(35, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

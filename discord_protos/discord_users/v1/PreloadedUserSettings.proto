@@ -164,6 +164,12 @@ message PreloadedUserSettings {
     optional google.protobuf.BoolValue animated = 3;
   }
 
+  message SelfHarmContentSettings {
+    ExplicitContentRedaction self_harm_content_guilds = 1;
+    ExplicitContentRedaction self_harm_content_friend_dm = 2;
+    ExplicitContentRedaction self_harm_content_non_friend_dm = 3;
+  }
+
   message TextAndImagesSettings {
     optional google.protobuf.StringValue diversity_surrogate = 1;
     optional google.protobuf.BoolValue use_rich_chat_input = 2;
@@ -198,6 +204,7 @@ message PreloadedUserSettings {
     optional GoreContentSettings gore_content_settings = 32;
     optional DefaultReactionEmoji default_reaction_emoji = 33;
     optional google.protobuf.BoolValue show_mention_suggestions = 34;
+    optional SelfHarmContentSettings self_harm_content_settings = 35;
   }
 
   enum ReactionNotificationType {
