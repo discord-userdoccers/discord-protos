@@ -286,4 +286,5 @@ message Experiment {
   Type type = 26;
   bool is_template = 27;
   repeated int32 field_numbers_to_copy = 28;
+  repeated string engine_feature_flags = 29 [packed = false];
 }
