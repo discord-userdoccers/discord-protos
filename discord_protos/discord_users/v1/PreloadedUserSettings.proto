@@ -205,6 +205,7 @@ message PreloadedUserSettings {
     optional DefaultReactionEmoji default_reaction_emoji = 33;
     optional google.protobuf.BoolValue show_mention_suggestions = 34;
     optional SelfHarmContentSettings self_harm_content_settings = 35;
+    optional google.protobuf.BoolValue is_cross_dm_search_enabled = 36;
   }
 
   enum ReactionNotificationType {

@@ -684,6 +684,10 @@ export interface PreloadedUserSettings_TextAndImagesSettings {
      * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.SelfHarmContentSettings self_harm_content_settings = 35
      */
     selfHarmContentSettings?: PreloadedUserSettings_SelfHarmContentSettings;
+    /**
+     * @generated from protobuf field: optional google.protobuf.BoolValue is_cross_dm_search_enabled = 36
+     */
+    isCrossDmSearchEnabled?: BoolValue;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.NotificationSettings
@@ -3378,7 +3382,8 @@ class PreloadedUserSettings_TextAndImagesSettings$Type extends MessageType<Prelo
             { no: 32, name: "gore_content_settings", kind: "message", T: () => PreloadedUserSettings_GoreContentSettings },
             { no: 33, name: "default_reaction_emoji", kind: "message", T: () => PreloadedUserSettings_DefaultReactionEmoji },
             { no: 34, name: "show_mention_suggestions", kind: "message", T: () => BoolValue },
-            { no: 35, name: "self_harm_content_settings", kind: "message", T: () => PreloadedUserSettings_SelfHarmContentSettings }
+            { no: 35, name: "self_harm_content_settings", kind: "message", T: () => PreloadedUserSettings_SelfHarmContentSettings },
+            { no: 36, name: "is_cross_dm_search_enabled", kind: "message", T: () => BoolValue }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_TextAndImagesSettings>): PreloadedUserSettings_TextAndImagesSettings {
@@ -3498,6 +3503,9 @@ class PreloadedUserSettings_TextAndImagesSettings$Type extends MessageType<Prelo
                 case /* optional discord_protos.discord_users.v1.PreloadedUserSettings.SelfHarmContentSettings self_harm_content_settings */ 35:
                     message.selfHarmContentSettings = PreloadedUserSettings_SelfHarmContentSettings.internalBinaryRead(reader, reader.uint32(), options, message.selfHarmContentSettings);
                     break;
+                case /* optional google.protobuf.BoolValue is_cross_dm_search_enabled */ 36:
+                    message.isCrossDmSearchEnabled = BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.isCrossDmSearchEnabled);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -3612,6 +3620,9 @@ class PreloadedUserSettings_TextAndImagesSettings$Type extends MessageType<Prelo
         /* optional discord_protos.discord_users.v1.PreloadedUserSettings.SelfHarmContentSettings self_harm_content_settings = 35; */
         if (message.selfHarmContentSettings)
             PreloadedUserSettings_SelfHarmContentSettings.internalBinaryWrite(message.selfHarmContentSettings, writer.tag(35, WireType.LengthDelimited).fork(), options).join();
+        /* optional google.protobuf.BoolValue is_cross_dm_search_enabled = 36; */
+        if (message.isCrossDmSearchEnabled)
+            BoolValue.internalBinaryWrite(message.isCrossDmSearchEnabled, writer.tag(36, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
