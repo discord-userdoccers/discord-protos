@@ -130,6 +130,10 @@ export interface Experiment {
      * @generated from protobuf field: repeated string engine_feature_flags = 29 [packed = false]
      */
     engineFeatureFlags: string[];
+    /**
+     * @generated from protobuf field: optional discord_protos.discord_experimentation.v1.Experiment.DebugConfig debug_config = 30
+     */
+    debugConfig?: Experiment_DebugConfig;
 }
 /**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.Bucket
@@ -753,6 +757,35 @@ export interface Experiment_Rule {
     isSunsetRule: boolean;
 }
 /**
+ * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.DebugConfig
+ */
+export interface Experiment_DebugConfig {
+    /**
+     * @generated from protobuf field: bool enable_decision_logging = 1
+     */
+    enableDecisionLogging: boolean;
+    /**
+     * @generated from protobuf field: double metrics_sample_rate = 2
+     */
+    metricsSampleRate: number;
+    /**
+     * @generated from protobuf field: bool log_context_on_failure = 3
+     */
+    logContextOnFailure: boolean;
+    /**
+     * @generated from protobuf field: bool log_raw_headers = 4
+     */
+    logRawHeaders: boolean;
+    /**
+     * @generated from protobuf field: bool tag_filter_metrics = 5
+     */
+    tagFilterMetrics: boolean;
+    /**
+     * @generated from protobuf field: double decision_log_sample_rate = 6
+     */
+    decisionLogSampleRate: number;
+}
+/**
  * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.UnitType
  */
 export enum Experiment_UnitType {
@@ -913,7 +946,8 @@ class Experiment$Type extends MessageType<Experiment> {
             { no: 26, name: "type", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.Type", Experiment_Type, "TYPE_"] },
             { no: 27, name: "is_template", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
             { no: 28, name: "field_numbers_to_copy", kind: "scalar", repeat: 1 /*RepeatType.PACKED*/, T: 5 /*ScalarType.INT32*/ },
-            { no: 29, name: "engine_feature_flags", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 9 /*ScalarType.STRING*/ }
+            { no: 29, name: "engine_feature_flags", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 9 /*ScalarType.STRING*/ },
+            { no: 30, name: "debug_config", kind: "message", T: () => Experiment_DebugConfig }
         ]);
     }
     create(value?: PartialMessage<Experiment>): Experiment {
@@ -1043,6 +1077,9 @@ class Experiment$Type extends MessageType<Experiment> {
                 case /* repeated string engine_feature_flags = 29 [packed = false] */ 29:
                     message.engineFeatureFlags.push(reader.string());
                     break;
+                case /* optional discord_protos.discord_experimentation.v1.Experiment.DebugConfig debug_config */ 30:
+                    message.debugConfig = Experiment_DebugConfig.internalBinaryRead(reader, reader.uint32(), options, message.debugConfig);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -1147,6 +1184,9 @@ class Experiment$Type extends MessageType<Experiment> {
         /* repeated string engine_feature_flags = 29 [packed = false]; */
         for (let i = 0; i < message.engineFeatureFlags.length; i++)
             writer.tag(29, WireType.LengthDelimited).string(message.engineFeatureFlags[i]);
+        /* optional discord_protos.discord_experimentation.v1.Experiment.DebugConfig debug_config = 30; */
+        if (message.debugConfig)
+            Experiment_DebugConfig.internalBinaryWrite(message.debugConfig, writer.tag(30, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -3420,3 +3460,90 @@ class Experiment_Rule$Type extends MessageType<Experiment_Rule> {
  * @generated MessageType for protobuf message discord_protos.discord_experimentation.v1.Experiment.Rule
  */
 export const Experiment_Rule = new Experiment_Rule$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class Experiment_DebugConfig$Type extends MessageType<Experiment_DebugConfig> {
+    constructor() {
+        super("discord_protos.discord_experimentation.v1.Experiment.DebugConfig", [
+            { no: 1, name: "enable_decision_logging", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
+            { no: 2, name: "metrics_sample_rate", kind: "scalar", T: 1 /*ScalarType.DOUBLE*/ },
+            { no: 3, name: "log_context_on_failure", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
+            { no: 4, name: "log_raw_headers", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
+            { no: 5, name: "tag_filter_metrics", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
+            { no: 6, name: "decision_log_sample_rate", kind: "scalar", T: 1 /*ScalarType.DOUBLE*/ }
+        ]);
+    }
+    create(value?: PartialMessage<Experiment_DebugConfig>): Experiment_DebugConfig {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.enableDecisionLogging = false;
+        message.metricsSampleRate = 0;
+        message.logContextOnFailure = false;
+        message.logRawHeaders = false;
+        message.tagFilterMetrics = false;
+        message.decisionLogSampleRate = 0;
+        if (value !== undefined)
+            reflectionMergePartial<Experiment_DebugConfig>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: Experiment_DebugConfig): Experiment_DebugConfig {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* bool enable_decision_logging */ 1:
+                    message.enableDecisionLogging = reader.bool();
+                    break;
+                case /* double metrics_sample_rate */ 2:
+                    message.metricsSampleRate = reader.double();
+                    break;
+                case /* bool log_context_on_failure */ 3:
+                    message.logContextOnFailure = reader.bool();
+                    break;
+                case /* bool log_raw_headers */ 4:
+                    message.logRawHeaders = reader.bool();
+                    break;
+                case /* bool tag_filter_metrics */ 5:
+                    message.tagFilterMetrics = reader.bool();
+                    break;
+                case /* double decision_log_sample_rate */ 6:
+                    message.decisionLogSampleRate = reader.double();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: Experiment_DebugConfig, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* bool enable_decision_logging = 1; */
+        if (message.enableDecisionLogging !== false)
+            writer.tag(1, WireType.Varint).bool(message.enableDecisionLogging);
+        /* double metrics_sample_rate = 2; */
+        if (message.metricsSampleRate !== 0)
+            writer.tag(2, WireType.Bit64).double(message.metricsSampleRate);
+        /* bool log_context_on_failure = 3; */
+        if (message.logContextOnFailure !== false)
+            writer.tag(3, WireType.Varint).bool(message.logContextOnFailure);
+        /* bool log_raw_headers = 4; */
+        if (message.logRawHeaders !== false)
+            writer.tag(4, WireType.Varint).bool(message.logRawHeaders);
+        /* bool tag_filter_metrics = 5; */
+        if (message.tagFilterMetrics !== false)
+            writer.tag(5, WireType.Varint).bool(message.tagFilterMetrics);
+        /* double decision_log_sample_rate = 6; */
+        if (message.decisionLogSampleRate !== 0)
+            writer.tag(6, WireType.Bit64).double(message.decisionLogSampleRate);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_experimentation.v1.Experiment.DebugConfig
+ */
+export const Experiment_DebugConfig = new Experiment_DebugConfig$Type();

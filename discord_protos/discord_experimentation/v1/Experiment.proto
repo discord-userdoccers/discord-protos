@@ -259,6 +259,15 @@ message Experiment {
     ASSIGNMENT_MODE_OVERRIDE_ONLY = 2;
   }
 
+  message DebugConfig {
+    bool enable_decision_logging = 1;
+    double metrics_sample_rate = 2;
+    bool log_context_on_failure = 3;
+    bool log_raw_headers = 4;
+    bool tag_filter_metrics = 5;
+    double decision_log_sample_rate = 6;
+  }
+
   fixed64 id = 1;
   string name = 2;
   optional google.protobuf.Timestamp created_at = 3;
@@ -287,4 +296,5 @@ message Experiment {
   bool is_template = 27;
   repeated int32 field_numbers_to_copy = 28;
   repeated string engine_feature_flags = 29 [packed = false];
+  optional DebugConfig debug_config = 30;
 }
