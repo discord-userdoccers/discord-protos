@@ -134,6 +134,10 @@ export interface Experiment {
      * @generated from protobuf field: optional discord_protos.discord_experimentation.v1.Experiment.DebugConfig debug_config = 30
      */
     debugConfig?: Experiment_DebugConfig;
+    /**
+     * @generated from protobuf field: optional google.protobuf.Timestamp expected_end_date = 31
+     */
+    expectedEndDate?: Timestamp;
 }
 /**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.Bucket
@@ -947,7 +951,8 @@ class Experiment$Type extends MessageType<Experiment> {
             { no: 27, name: "is_template", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
             { no: 28, name: "field_numbers_to_copy", kind: "scalar", repeat: 1 /*RepeatType.PACKED*/, T: 5 /*ScalarType.INT32*/ },
             { no: 29, name: "engine_feature_flags", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 9 /*ScalarType.STRING*/ },
-            { no: 30, name: "debug_config", kind: "message", T: () => Experiment_DebugConfig }
+            { no: 30, name: "debug_config", kind: "message", T: () => Experiment_DebugConfig },
+            { no: 31, name: "expected_end_date", kind: "message", T: () => Timestamp }
         ]);
     }
     create(value?: PartialMessage<Experiment>): Experiment {
@@ -1080,6 +1085,9 @@ class Experiment$Type extends MessageType<Experiment> {
                 case /* optional discord_protos.discord_experimentation.v1.Experiment.DebugConfig debug_config */ 30:
                     message.debugConfig = Experiment_DebugConfig.internalBinaryRead(reader, reader.uint32(), options, message.debugConfig);
                     break;
+                case /* optional google.protobuf.Timestamp expected_end_date */ 31:
+                    message.expectedEndDate = Timestamp.internalBinaryRead(reader, reader.uint32(), options, message.expectedEndDate);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -1187,6 +1195,9 @@ class Experiment$Type extends MessageType<Experiment> {
         /* optional discord_protos.discord_experimentation.v1.Experiment.DebugConfig debug_config = 30; */
         if (message.debugConfig)
             Experiment_DebugConfig.internalBinaryWrite(message.debugConfig, writer.tag(30, WireType.LengthDelimited).fork(), options).join();
+        /* optional google.protobuf.Timestamp expected_end_date = 31; */
+        if (message.expectedEndDate)
+            Timestamp.internalBinaryWrite(message.expectedEndDate, writer.tag(31, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

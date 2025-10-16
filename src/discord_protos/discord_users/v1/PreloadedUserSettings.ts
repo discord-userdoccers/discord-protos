@@ -737,6 +737,14 @@ export interface PreloadedUserSettings_NotificationSettings {
      * @generated from protobuf field: optional google.protobuf.BoolValue enable_voice_activity_notifications = 11
      */
     enableVoiceActivityNotifications?: BoolValue;
+    /**
+     * @generated from protobuf field: optional google.protobuf.BoolValue enable_friend_online_notifications = 12
+     */
+    enableFriendOnlineNotifications?: BoolValue;
+    /**
+     * @generated from protobuf field: optional google.protobuf.BoolValue enable_user_resurrection_notifications = 13
+     */
+    enableUserResurrectionNotifications?: BoolValue;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.PrivacySettings
@@ -3647,7 +3655,9 @@ class PreloadedUserSettings_NotificationSettings$Type extends MessageType<Preloa
             { no: 8, name: "game_activity_notifications", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.GameActivityNotificationType", PreloadedUserSettings_GameActivityNotificationType, "GAME_ACTIVITY_NOTIFICATION_TYPE_"] },
             { no: 9, name: "custom_status_push_notifications", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.CustomStatusPushNotificationType", PreloadedUserSettings_CustomStatusPushNotificationType, "CUSTOM_STATUS_PUSH_NOTIFICATION_TYPE_"] },
             { no: 10, name: "game_activity_exclude_steam_notifications", kind: "message", T: () => BoolValue },
-            { no: 11, name: "enable_voice_activity_notifications", kind: "message", T: () => BoolValue }
+            { no: 11, name: "enable_voice_activity_notifications", kind: "message", T: () => BoolValue },
+            { no: 12, name: "enable_friend_online_notifications", kind: "message", T: () => BoolValue },
+            { no: 13, name: "enable_user_resurrection_notifications", kind: "message", T: () => BoolValue }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_NotificationSettings>): PreloadedUserSettings_NotificationSettings {
@@ -3699,6 +3709,12 @@ class PreloadedUserSettings_NotificationSettings$Type extends MessageType<Preloa
                 case /* optional google.protobuf.BoolValue enable_voice_activity_notifications */ 11:
                     message.enableVoiceActivityNotifications = BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.enableVoiceActivityNotifications);
                     break;
+                case /* optional google.protobuf.BoolValue enable_friend_online_notifications */ 12:
+                    message.enableFriendOnlineNotifications = BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.enableFriendOnlineNotifications);
+                    break;
+                case /* optional google.protobuf.BoolValue enable_user_resurrection_notifications */ 13:
+                    message.enableUserResurrectionNotifications = BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.enableUserResurrectionNotifications);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -3744,6 +3760,12 @@ class PreloadedUserSettings_NotificationSettings$Type extends MessageType<Preloa
         /* optional google.protobuf.BoolValue enable_voice_activity_notifications = 11; */
         if (message.enableVoiceActivityNotifications)
             BoolValue.internalBinaryWrite(message.enableVoiceActivityNotifications, writer.tag(11, WireType.LengthDelimited).fork(), options).join();
+        /* optional google.protobuf.BoolValue enable_friend_online_notifications = 12; */
+        if (message.enableFriendOnlineNotifications)
+            BoolValue.internalBinaryWrite(message.enableFriendOnlineNotifications, writer.tag(12, WireType.LengthDelimited).fork(), options).join();
+        /* optional google.protobuf.BoolValue enable_user_resurrection_notifications = 13; */
+        if (message.enableUserResurrectionNotifications)
+            BoolValue.internalBinaryWrite(message.enableUserResurrectionNotifications, writer.tag(13, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

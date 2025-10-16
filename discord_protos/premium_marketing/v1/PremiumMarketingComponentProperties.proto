@@ -53,10 +53,44 @@ message PremiumMarketingComponentProperties {
     optional Variant1Storage storage = 14;
   }
 
+  message PremiumTab {
+    string badge_label = 1;
+    string acknowledged_badge_label = 2;
+  }
+
+  message MarketingPageBanner {
+    string asset_url = 1;
+    string header = 2;
+    string body = 3;
+    string help_article_id = 4;
+  }
+
+  message PaymentModalBanner {
+    string asset_url = 1;
+    string header = 2;
+    string body = 3;
+  }
+
+  message CTAButton {
+    string copy = 1;
+  }
+
+  message MobileBottomSheet {
+    string asset_url = 1;
+    string header = 2;
+    string body = 3;
+    string help_article_id = 4;
+    optional CTAButton button = 5;
+  }
+
   string content_identifier = 3;
   oneof properties {
     string placeholder = 1;
     AnnouncementModalVariant1Properties announcement_modal_variant_1 = 2;
+    PremiumTab premium_tab = 4;
+    MarketingPageBanner marketing_page_banner = 5;
+    PaymentModalBanner payment_modal_banner = 6;
+    MobileBottomSheet mobile_bottom_sheet = 7;
   }
 
 }

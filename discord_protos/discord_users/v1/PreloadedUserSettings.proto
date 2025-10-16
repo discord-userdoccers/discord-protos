@@ -239,6 +239,8 @@ message PreloadedUserSettings {
     CustomStatusPushNotificationType custom_status_push_notifications = 9;
     optional google.protobuf.BoolValue game_activity_exclude_steam_notifications = 10;
     optional google.protobuf.BoolValue enable_voice_activity_notifications = 11;
+    optional google.protobuf.BoolValue enable_friend_online_notifications = 12;
+    optional google.protobuf.BoolValue enable_user_resurrection_notifications = 13;
   }
 
   enum GuildActivityStatusRestrictionDefault {

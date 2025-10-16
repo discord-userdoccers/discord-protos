@@ -34,6 +34,30 @@ export interface PremiumMarketingComponentProperties {
          */
         announcementModalVariant1: PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties;
     } | {
+        oneofKind: "premiumTab";
+        /**
+         * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PremiumTab premium_tab = 4
+         */
+        premiumTab: PremiumMarketingComponentProperties_PremiumTab;
+    } | {
+        oneofKind: "marketingPageBanner";
+        /**
+         * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MarketingPageBanner marketing_page_banner = 5
+         */
+        marketingPageBanner: PremiumMarketingComponentProperties_MarketingPageBanner;
+    } | {
+        oneofKind: "paymentModalBanner";
+        /**
+         * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PaymentModalBanner payment_modal_banner = 6
+         */
+        paymentModalBanner: PremiumMarketingComponentProperties_PaymentModalBanner;
+    } | {
+        oneofKind: "mobileBottomSheet";
+        /**
+         * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MobileBottomSheet mobile_bottom_sheet = 7
+         */
+        mobileBottomSheet: PremiumMarketingComponentProperties_MobileBottomSheet;
+    } | {
         oneofKind: undefined;
     };
 }
@@ -177,6 +201,91 @@ export interface PremiumMarketingComponentProperties_AnnouncementModalVariant1Pr
     storage?: PremiumMarketingComponentProperties_Variant1Storage;
 }
 /**
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PremiumTab
+ */
+export interface PremiumMarketingComponentProperties_PremiumTab {
+    /**
+     * @generated from protobuf field: string badge_label = 1
+     */
+    badgeLabel: string;
+    /**
+     * @generated from protobuf field: string acknowledged_badge_label = 2
+     */
+    acknowledgedBadgeLabel: string;
+}
+/**
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MarketingPageBanner
+ */
+export interface PremiumMarketingComponentProperties_MarketingPageBanner {
+    /**
+     * @generated from protobuf field: string asset_url = 1
+     */
+    assetUrl: string;
+    /**
+     * @generated from protobuf field: string header = 2
+     */
+    header: string;
+    /**
+     * @generated from protobuf field: string body = 3
+     */
+    body: string;
+    /**
+     * @generated from protobuf field: string help_article_id = 4
+     */
+    helpArticleId: string;
+}
+/**
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PaymentModalBanner
+ */
+export interface PremiumMarketingComponentProperties_PaymentModalBanner {
+    /**
+     * @generated from protobuf field: string asset_url = 1
+     */
+    assetUrl: string;
+    /**
+     * @generated from protobuf field: string header = 2
+     */
+    header: string;
+    /**
+     * @generated from protobuf field: string body = 3
+     */
+    body: string;
+}
+/**
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.CTAButton
+ */
+export interface PremiumMarketingComponentProperties_CTAButton {
+    /**
+     * @generated from protobuf field: string copy = 1
+     */
+    copy: string;
+}
+/**
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MobileBottomSheet
+ */
+export interface PremiumMarketingComponentProperties_MobileBottomSheet {
+    /**
+     * @generated from protobuf field: string asset_url = 1
+     */
+    assetUrl: string;
+    /**
+     * @generated from protobuf field: string header = 2
+     */
+    header: string;
+    /**
+     * @generated from protobuf field: string body = 3
+     */
+    body: string;
+    /**
+     * @generated from protobuf field: string help_article_id = 4
+     */
+    helpArticleId: string;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.CTAButton button = 5
+     */
+    button?: PremiumMarketingComponentProperties_CTAButton;
+}
+/**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction
  */
 export enum PremiumMarketingComponentProperties_ButtonAction {
@@ -207,7 +316,11 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
         super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties", [
             { no: 3, name: "content_identifier", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 1, name: "placeholder", kind: "scalar", oneof: "properties", T: 9 /*ScalarType.STRING*/ },
-            { no: 2, name: "announcement_modal_variant_1", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties }
+            { no: 2, name: "announcement_modal_variant_1", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties },
+            { no: 4, name: "premium_tab", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_PremiumTab },
+            { no: 5, name: "marketing_page_banner", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_MarketingPageBanner },
+            { no: 6, name: "payment_modal_banner", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_PaymentModalBanner },
+            { no: 7, name: "mobile_bottom_sheet", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_MobileBottomSheet }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties>): PremiumMarketingComponentProperties {
@@ -238,6 +351,30 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
                         announcementModalVariant1: PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).announcementModalVariant1)
                     };
                     break;
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PremiumTab premium_tab */ 4:
+                    message.properties = {
+                        oneofKind: "premiumTab",
+                        premiumTab: PremiumMarketingComponentProperties_PremiumTab.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).premiumTab)
+                    };
+                    break;
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MarketingPageBanner marketing_page_banner */ 5:
+                    message.properties = {
+                        oneofKind: "marketingPageBanner",
+                        marketingPageBanner: PremiumMarketingComponentProperties_MarketingPageBanner.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).marketingPageBanner)
+                    };
+                    break;
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PaymentModalBanner payment_modal_banner */ 6:
+                    message.properties = {
+                        oneofKind: "paymentModalBanner",
+                        paymentModalBanner: PremiumMarketingComponentProperties_PaymentModalBanner.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).paymentModalBanner)
+                    };
+                    break;
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MobileBottomSheet mobile_bottom_sheet */ 7:
+                    message.properties = {
+                        oneofKind: "mobileBottomSheet",
+                        mobileBottomSheet: PremiumMarketingComponentProperties_MobileBottomSheet.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).mobileBottomSheet)
+                    };
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -259,6 +396,18 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
         /* string content_identifier = 3; */
         if (message.contentIdentifier !== "")
             writer.tag(3, WireType.LengthDelimited).string(message.contentIdentifier);
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PremiumTab premium_tab = 4; */
+        if (message.properties.oneofKind === "premiumTab")
+            PremiumMarketingComponentProperties_PremiumTab.internalBinaryWrite(message.properties.premiumTab, writer.tag(4, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MarketingPageBanner marketing_page_banner = 5; */
+        if (message.properties.oneofKind === "marketingPageBanner")
+            PremiumMarketingComponentProperties_MarketingPageBanner.internalBinaryWrite(message.properties.marketingPageBanner, writer.tag(5, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PaymentModalBanner payment_modal_banner = 6; */
+        if (message.properties.oneofKind === "paymentModalBanner")
+            PremiumMarketingComponentProperties_PaymentModalBanner.internalBinaryWrite(message.properties.paymentModalBanner, writer.tag(6, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MobileBottomSheet mobile_bottom_sheet = 7; */
+        if (message.properties.oneofKind === "mobileBottomSheet")
+            PremiumMarketingComponentProperties_MobileBottomSheet.internalBinaryWrite(message.properties.mobileBottomSheet, writer.tag(7, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -726,3 +875,317 @@ class PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties$Ty
  * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalVariant1Properties
  */
 export const PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties = new PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PremiumMarketingComponentProperties_PremiumTab$Type extends MessageType<PremiumMarketingComponentProperties_PremiumTab> {
+    constructor() {
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PremiumTab", [
+            { no: 1, name: "badge_label", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "acknowledged_badge_label", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+        ]);
+    }
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_PremiumTab>): PremiumMarketingComponentProperties_PremiumTab {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.badgeLabel = "";
+        message.acknowledgedBadgeLabel = "";
+        if (value !== undefined)
+            reflectionMergePartial<PremiumMarketingComponentProperties_PremiumTab>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_PremiumTab): PremiumMarketingComponentProperties_PremiumTab {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string badge_label */ 1:
+                    message.badgeLabel = reader.string();
+                    break;
+                case /* string acknowledged_badge_label */ 2:
+                    message.acknowledgedBadgeLabel = reader.string();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_PremiumTab, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string badge_label = 1; */
+        if (message.badgeLabel !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.badgeLabel);
+        /* string acknowledged_badge_label = 2; */
+        if (message.acknowledgedBadgeLabel !== "")
+            writer.tag(2, WireType.LengthDelimited).string(message.acknowledgedBadgeLabel);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PremiumTab
+ */
+export const PremiumMarketingComponentProperties_PremiumTab = new PremiumMarketingComponentProperties_PremiumTab$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PremiumMarketingComponentProperties_MarketingPageBanner$Type extends MessageType<PremiumMarketingComponentProperties_MarketingPageBanner> {
+    constructor() {
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MarketingPageBanner", [
+            { no: 1, name: "asset_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "header", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 3, name: "body", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 4, name: "help_article_id", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+        ]);
+    }
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_MarketingPageBanner>): PremiumMarketingComponentProperties_MarketingPageBanner {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.assetUrl = "";
+        message.header = "";
+        message.body = "";
+        message.helpArticleId = "";
+        if (value !== undefined)
+            reflectionMergePartial<PremiumMarketingComponentProperties_MarketingPageBanner>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_MarketingPageBanner): PremiumMarketingComponentProperties_MarketingPageBanner {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string asset_url */ 1:
+                    message.assetUrl = reader.string();
+                    break;
+                case /* string header */ 2:
+                    message.header = reader.string();
+                    break;
+                case /* string body */ 3:
+                    message.body = reader.string();
+                    break;
+                case /* string help_article_id */ 4:
+                    message.helpArticleId = reader.string();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_MarketingPageBanner, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string asset_url = 1; */
+        if (message.assetUrl !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.assetUrl);
+        /* string header = 2; */
+        if (message.header !== "")
+            writer.tag(2, WireType.LengthDelimited).string(message.header);
+        /* string body = 3; */
+        if (message.body !== "")
+            writer.tag(3, WireType.LengthDelimited).string(message.body);
+        /* string help_article_id = 4; */
+        if (message.helpArticleId !== "")
+            writer.tag(4, WireType.LengthDelimited).string(message.helpArticleId);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MarketingPageBanner
+ */
+export const PremiumMarketingComponentProperties_MarketingPageBanner = new PremiumMarketingComponentProperties_MarketingPageBanner$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PremiumMarketingComponentProperties_PaymentModalBanner$Type extends MessageType<PremiumMarketingComponentProperties_PaymentModalBanner> {
+    constructor() {
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PaymentModalBanner", [
+            { no: 1, name: "asset_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "header", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 3, name: "body", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+        ]);
+    }
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_PaymentModalBanner>): PremiumMarketingComponentProperties_PaymentModalBanner {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.assetUrl = "";
+        message.header = "";
+        message.body = "";
+        if (value !== undefined)
+            reflectionMergePartial<PremiumMarketingComponentProperties_PaymentModalBanner>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_PaymentModalBanner): PremiumMarketingComponentProperties_PaymentModalBanner {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string asset_url */ 1:
+                    message.assetUrl = reader.string();
+                    break;
+                case /* string header */ 2:
+                    message.header = reader.string();
+                    break;
+                case /* string body */ 3:
+                    message.body = reader.string();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_PaymentModalBanner, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string asset_url = 1; */
+        if (message.assetUrl !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.assetUrl);
+        /* string header = 2; */
+        if (message.header !== "")
+            writer.tag(2, WireType.LengthDelimited).string(message.header);
+        /* string body = 3; */
+        if (message.body !== "")
+            writer.tag(3, WireType.LengthDelimited).string(message.body);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PaymentModalBanner
+ */
+export const PremiumMarketingComponentProperties_PaymentModalBanner = new PremiumMarketingComponentProperties_PaymentModalBanner$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PremiumMarketingComponentProperties_CTAButton$Type extends MessageType<PremiumMarketingComponentProperties_CTAButton> {
+    constructor() {
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.CTAButton", [
+            { no: 1, name: "copy", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+        ]);
+    }
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_CTAButton>): PremiumMarketingComponentProperties_CTAButton {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.copy = "";
+        if (value !== undefined)
+            reflectionMergePartial<PremiumMarketingComponentProperties_CTAButton>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_CTAButton): PremiumMarketingComponentProperties_CTAButton {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string copy */ 1:
+                    message.copy = reader.string();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_CTAButton, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string copy = 1; */
+        if (message.copy !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.copy);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.CTAButton
+ */
+export const PremiumMarketingComponentProperties_CTAButton = new PremiumMarketingComponentProperties_CTAButton$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PremiumMarketingComponentProperties_MobileBottomSheet$Type extends MessageType<PremiumMarketingComponentProperties_MobileBottomSheet> {
+    constructor() {
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MobileBottomSheet", [
+            { no: 1, name: "asset_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "header", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 3, name: "body", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 4, name: "help_article_id", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 5, name: "button", kind: "message", T: () => PremiumMarketingComponentProperties_CTAButton }
+        ]);
+    }
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_MobileBottomSheet>): PremiumMarketingComponentProperties_MobileBottomSheet {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.assetUrl = "";
+        message.header = "";
+        message.body = "";
+        message.helpArticleId = "";
+        if (value !== undefined)
+            reflectionMergePartial<PremiumMarketingComponentProperties_MobileBottomSheet>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_MobileBottomSheet): PremiumMarketingComponentProperties_MobileBottomSheet {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string asset_url */ 1:
+                    message.assetUrl = reader.string();
+                    break;
+                case /* string header */ 2:
+                    message.header = reader.string();
+                    break;
+                case /* string body */ 3:
+                    message.body = reader.string();
+                    break;
+                case /* string help_article_id */ 4:
+                    message.helpArticleId = reader.string();
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.CTAButton button */ 5:
+                    message.button = PremiumMarketingComponentProperties_CTAButton.internalBinaryRead(reader, reader.uint32(), options, message.button);
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_MobileBottomSheet, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string asset_url = 1; */
+        if (message.assetUrl !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.assetUrl);
+        /* string header = 2; */
+        if (message.header !== "")
+            writer.tag(2, WireType.LengthDelimited).string(message.header);
+        /* string body = 3; */
+        if (message.body !== "")
+            writer.tag(3, WireType.LengthDelimited).string(message.body);
+        /* string help_article_id = 4; */
+        if (message.helpArticleId !== "")
+            writer.tag(4, WireType.LengthDelimited).string(message.helpArticleId);
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.CTAButton button = 5; */
+        if (message.button)
+            PremiumMarketingComponentProperties_CTAButton.internalBinaryWrite(message.button, writer.tag(5, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MobileBottomSheet
+ */
+export const PremiumMarketingComponentProperties_MobileBottomSheet = new PremiumMarketingComponentProperties_MobileBottomSheet$Type();
