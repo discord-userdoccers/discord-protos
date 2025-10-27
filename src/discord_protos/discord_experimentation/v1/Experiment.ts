@@ -911,13 +911,25 @@ export enum Experiment_AssignmentMode {
      */
     FULL = 0,
     /**
-     * @generated from protobuf enum value: ASSIGNMENT_MODE_FORCE_DEFAULT = 1;
+     * @generated from protobuf enum value: ASSIGNMENT_MODE_DEPRECATED_FORCE_DEFAULT = 1;
      */
-    FORCE_DEFAULT = 1,
+    DEPRECATED_FORCE_DEFAULT = 1,
     /**
-     * @generated from protobuf enum value: ASSIGNMENT_MODE_OVERRIDE_ONLY = 2;
+     * @generated from protobuf enum value: ASSIGNMENT_MODE_DEPRECATED_OVERRIDE_ONLY = 2;
      */
-    OVERRIDE_ONLY = 2
+    DEPRECATED_OVERRIDE_ONLY = 2,
+    /**
+     * @generated from protobuf enum value: ASSIGNMENT_MODE_FORCE_CONTROL = 3;
+     */
+    FORCE_CONTROL = 3,
+    /**
+     * @generated from protobuf enum value: ASSIGNMENT_MODE_OVERRIDES_ONLY = 4;
+     */
+    OVERRIDES_ONLY = 4,
+    /**
+     * @generated from protobuf enum value: ASSIGNMENT_MODE_OFF = 5;
+     */
+    OFF = 5
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class Experiment$Type extends MessageType<Experiment> {
