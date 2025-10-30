@@ -911,14 +911,6 @@ export enum Experiment_AssignmentMode {
      */
     FULL = 0,
     /**
-     * @generated from protobuf enum value: ASSIGNMENT_MODE_DEPRECATED_FORCE_DEFAULT = 1;
-     */
-    DEPRECATED_FORCE_DEFAULT = 1,
-    /**
-     * @generated from protobuf enum value: ASSIGNMENT_MODE_DEPRECATED_OVERRIDE_ONLY = 2;
-     */
-    DEPRECATED_OVERRIDE_ONLY = 2,
-    /**
      * @generated from protobuf enum value: ASSIGNMENT_MODE_FORCE_CONTROL = 3;
      */
     FORCE_CONTROL = 3,
