@@ -1,0 +1,137 @@
+syntax = "proto3";
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/timestamp.proto";
+
+package discord_protos.users.v1;
+
+message User {
+  message UserAvatarDecoration {
+    string asset = 1;
+    optional google.protobuf.UInt64Value sku_id = 2;
+    optional google.protobuf.UInt32Value expires_at = 3;
+  }
+
+  message UserPrimaryGuild {
+    optional google.protobuf.UInt64Value identity_guild_id = 1;
+    optional google.protobuf.BoolValue identity_enabled = 2;
+    optional google.protobuf.StringValue tag = 3;
+    optional google.protobuf.StringValue badge = 4;
+  }
+
+  message UserNameplate {
+    string asset = 1;
+    string palette = 2;
+    optional google.protobuf.UInt64Value sku_id = 3;
+    optional google.protobuf.Timestamp expires_at = 4;
+    string label = 5;
+  }
+
+  message UserCollectibles {
+    optional UserNameplate nameplate = 1;
+  }
+
+  message NormalState {
+  }
+
+  message RestrictedState {
+    optional google.protobuf.Timestamp restricted_until = 1;
+  }
+
+  message DeferredActionState {
+    optional google.protobuf.Timestamp action_deferred_until = 1;
+  }
+
+  message TempBannedState {
+    optional google.protobuf.Timestamp banned_until = 1;
+  }
+
+  message BannedState {
+  }
+
+  enum SafetyStateReason {
+    SAFETY_STATE_REASON_REASON_UNSPECIFIED = 0;
+    SAFETY_STATE_REASON_DISABLED_SUSPICIOUS_ACTIVITY = 1;
+    SAFETY_STATE_REASON_SMITE_REMOVE_EMAIL_VERIFICATION = 2;
+    SAFETY_STATE_REASON_USER_REQUIRED_VERIFICATION_INTERVENTIONS_CLIENT = 3;
+    SAFETY_STATE_REASON_ACTIVE_ASSIGNMENT_COMPLETED = 4;
+    SAFETY_STATE_REASON_ACTIVE_ASSIGNMENT_CREATED = 5;
+    SAFETY_STATE_REASON_DEFERRED_ASSIGNMENT_CREATED = 6;
+    SAFETY_STATE_REASON_DEFERRED_ASSIGNMENT_UPGRADED_TO_ACTIVE = 7;
+    SAFETY_STATE_REASON_DEFERRED_ASSIGNMENT_CANCELLED = 8;
+    SAFETY_STATE_REASON_ASSIGNMENT_STATE_REPAIRED = 9;
+    SAFETY_STATE_REASON_MANUAL_PERMANENT_BAN = 10;
+    SAFETY_STATE_REASON_SAFETY_SYSTEM_UNBAN = 11;
+    SAFETY_STATE_REASON_GENERIC_AUTOMATED_SAFETY_ACTION = 12;
+    SAFETY_STATE_REASON_GENERIC_MANUAL_SAFETY_ACTION = 13;
+  }
+
+  enum SafetyAnnotations {
+    SAFETY_ANNOTATIONS_ANNOTATION_UNSPECIFIED = 0;
+    SAFETY_ANNOTATIONS_SPAMMER = 1;
+    SAFETY_ANNOTATIONS_SELF_DELETED = 2;
+    SAFETY_ANNOTATIONS_SELF_DISABLED = 3;
+    SAFETY_ANNOTATIONS_UNDERAGE_DELETED = 4;
+    SAFETY_ANNOTATIONS_SAFETY_POLICY_VIOLATION = 5;
+    SAFETY_ANNOTATIONS_INACTIVITY_DELETED = 6;
+    SAFETY_ANNOTATIONS_GENERIC_DELETED = 7;
+  }
+
+  message SafetyState {
+    oneof state {
+      NormalState normal = 101;
+      RestrictedState restricted = 102;
+      DeferredActionState deferred_action = 103;
+      TempBannedState temp_banned = 104;
+      BannedState banned = 105;
+    }
+    SafetyStateReason reason = 1;
+    repeated SafetyAnnotations annotations = 2;
+    optional google.protobuf.UInt64Value last_mutation_id = 3;
+  }
+
+  enum DisplayNameFont {
+    DISPLAY_NAME_FONT_UNSPECIFIED = 0;
+    DISPLAY_NAME_FONT_DEFAULT = 11;
+    DISPLAY_NAME_FONT_BANGERS = 1;
+    DISPLAY_NAME_FONT_BIO_RHYME = 2;
+    DISPLAY_NAME_FONT_CHERRY_BOMB = 3;
+    DISPLAY_NAME_FONT_CHICLE = 4;
+    DISPLAY_NAME_FONT_COMPAGNON = 5;
+    DISPLAY_NAME_FONT_MUSEO_MODERNO = 6;
+    DISPLAY_NAME_FONT_NEO_CASTEL = 7;
+    DISPLAY_NAME_FONT_PIXELIFY = 8;
+    DISPLAY_NAME_FONT_RIBES = 9;
+    DISPLAY_NAME_FONT_SINISTRE = 10;
+    DISPLAY_NAME_FONT_ZILLA_SLAB = 12;
+  }
+
+  enum DisplayNameEffect {
+    DISPLAY_NAME_EFFECT_UNSPECIFIED = 0;
+    DISPLAY_NAME_EFFECT_SOLID = 1;
+    DISPLAY_NAME_EFFECT_GRADIENT = 2;
+    DISPLAY_NAME_EFFECT_NEON = 3;
+    DISPLAY_NAME_EFFECT_TOON = 4;
+    DISPLAY_NAME_EFFECT_POP = 5;
+    DISPLAY_NAME_EFFECT_GLOW = 6;
+  }
+
+  message DisplayNameStyles {
+    DisplayNameFont font_id = 1;
+    DisplayNameEffect effect_id = 2;
+    repeated uint32 colors = 3;
+  }
+
+  uint64 id = 1;
+  string username = 2;
+  string discriminator = 3;
+  optional google.protobuf.StringValue avatar = 4;
+  bool bot = 5;
+  uint64 public_flags = 6;
+  optional google.protobuf.StringValue global_name = 8;
+  optional UserAvatarDecoration avatar_decoration_data = 9;
+  optional UserPrimaryGuild primary_guild = 10;
+  optional UserCollectibles collectibles = 11;
+  optional SafetyState safety_state = 12;
+  optional DisplayNameStyles display_name_styles = 13;
+}

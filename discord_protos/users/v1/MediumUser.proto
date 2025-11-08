@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/timestamp.proto";
+
+package discord_protos.users.v1;
+
+message MediumUser {
+  fixed64 id = 1;
+  string username = 2;
+  uint32 discriminator = 3;
+  optional google.protobuf.StringValue avatar_hash = 4;
+  bool bot = 5;
+  uint64 flags = 6;
+  optional google.protobuf.StringValue email = 7;
+  optional google.protobuf.StringValue phone = 8;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package discord_protos.users.v1;
+
+message GuildShardingConfig {
+  repeated int32 shards = 1;
+}
