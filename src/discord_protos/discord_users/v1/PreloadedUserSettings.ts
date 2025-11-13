@@ -862,6 +862,10 @@ export interface PreloadedUserSettings_PrivacySettings {
      * @generated from protobuf field: optional google.protobuf.BoolValue quests_3p_data_opted_out = 30
      */
     quests3PDataOptedOut?: BoolValue;
+    /**
+     * @generated from protobuf field: optional google.protobuf.BoolValue show_local_time = 31
+     */
+    showLocalTime?: BoolValue;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.DebugSettings
@@ -955,6 +959,10 @@ export interface PreloadedUserSettings_LocalizationSettings {
      * @generated from protobuf field: optional google.protobuf.Int32Value timezone_offset = 2
      */
     timezoneOffset?: Int32Value;
+    /**
+     * @generated from protobuf field: optional google.protobuf.StringValue timezone_name = 3
+     */
+    timezoneName?: StringValue;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.CustomUserThemeSettings
@@ -3807,7 +3815,8 @@ class PreloadedUserSettings_PrivacySettings$Type extends MessageType<PreloadedUs
             { no: 27, name: "default_guilds_restricted_v2", kind: "message", T: () => BoolValue },
             { no: 28, name: "slayer_sdk_receive_dms_in_game", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.SlayerSDKReceiveInGameDMs", PreloadedUserSettings_SlayerSDKReceiveInGameDMs] },
             { no: 29, name: "default_guilds_activity_restricted_v2", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.GuildActivityStatusRestrictionDefaultV2", PreloadedUserSettings_GuildActivityStatusRestrictionDefaultV2, "GUILD_ACTIVITY_STATUS_RESTRICTION_DEFAULT_V2_"] },
-            { no: 30, name: "quests_3p_data_opted_out", kind: "message", jsonName: "quests3pDataOptedOut", T: () => BoolValue }
+            { no: 30, name: "quests_3p_data_opted_out", kind: "message", jsonName: "quests3pDataOptedOut", T: () => BoolValue },
+            { no: 31, name: "show_local_time", kind: "message", T: () => BoolValue }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_PrivacySettings>): PreloadedUserSettings_PrivacySettings {
@@ -3931,6 +3940,9 @@ class PreloadedUserSettings_PrivacySettings$Type extends MessageType<PreloadedUs
                 case /* optional google.protobuf.BoolValue quests_3p_data_opted_out */ 30:
                     message.quests3PDataOptedOut = BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.quests3PDataOptedOut);
                     break;
+                case /* optional google.protobuf.BoolValue show_local_time */ 31:
+                    message.showLocalTime = BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.showLocalTime);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -4043,6 +4055,9 @@ class PreloadedUserSettings_PrivacySettings$Type extends MessageType<PreloadedUs
         /* optional google.protobuf.BoolValue quests_3p_data_opted_out = 30; */
         if (message.quests3PDataOptedOut)
             BoolValue.internalBinaryWrite(message.quests3PDataOptedOut, writer.tag(30, WireType.LengthDelimited).fork(), options).join();
+        /* optional google.protobuf.BoolValue show_local_time = 31; */
+        if (message.showLocalTime)
+            BoolValue.internalBinaryWrite(message.showLocalTime, writer.tag(31, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -4325,7 +4340,8 @@ class PreloadedUserSettings_LocalizationSettings$Type extends MessageType<Preloa
     constructor() {
         super("discord_protos.discord_users.v1.PreloadedUserSettings.LocalizationSettings", [
             { no: 1, name: "locale", kind: "message", T: () => StringValue },
-            { no: 2, name: "timezone_offset", kind: "message", T: () => Int32Value }
+            { no: 2, name: "timezone_offset", kind: "message", T: () => Int32Value },
+            { no: 3, name: "timezone_name", kind: "message", T: () => StringValue }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_LocalizationSettings>): PreloadedUserSettings_LocalizationSettings {
@@ -4345,6 +4361,9 @@ class PreloadedUserSettings_LocalizationSettings$Type extends MessageType<Preloa
                 case /* optional google.protobuf.Int32Value timezone_offset */ 2:
                     message.timezoneOffset = Int32Value.internalBinaryRead(reader, reader.uint32(), options, message.timezoneOffset);
                     break;
+                case /* optional google.protobuf.StringValue timezone_name */ 3:
+                    message.timezoneName = StringValue.internalBinaryRead(reader, reader.uint32(), options, message.timezoneName);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -4363,6 +4382,9 @@ class PreloadedUserSettings_LocalizationSettings$Type extends MessageType<Preloa
         /* optional google.protobuf.Int32Value timezone_offset = 2; */
         if (message.timezoneOffset)
             Int32Value.internalBinaryWrite(message.timezoneOffset, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+        /* optional google.protobuf.StringValue timezone_name = 3; */
+        if (message.timezoneName)
+            StringValue.internalBinaryWrite(message.timezoneName, writer.tag(3, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

@@ -297,6 +297,7 @@ message PreloadedUserSettings {
     SlayerSDKReceiveInGameDMs slayer_sdk_receive_dms_in_game = 28;
     GuildActivityStatusRestrictionDefaultV2 default_guilds_activity_restricted_v2 = 29;
     optional google.protobuf.BoolValue quests_3p_data_opted_out = 30;
+    optional google.protobuf.BoolValue show_local_time = 31;
   }
 
   message DebugSettings {
@@ -329,6 +330,7 @@ message PreloadedUserSettings {
   message LocalizationSettings {
     optional google.protobuf.StringValue locale = 1;
     optional google.protobuf.Int32Value timezone_offset = 2;
+    optional google.protobuf.StringValue timezone_name = 3;
   }
 
   enum Theme {
