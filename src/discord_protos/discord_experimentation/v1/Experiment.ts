@@ -606,6 +606,19 @@ export interface Experiment_UserPremiumType {
     premiumTypes: number[];
 }
 /**
+ * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.UnitIdMatchesFilterSnapshot
+ */
+export interface Experiment_UnitIdMatchesFilterSnapshot {
+    /**
+     * @generated from protobuf field: string filter_snapshot_name = 1
+     */
+    filterSnapshotName: string;
+    /**
+     * @generated from protobuf field: repeated fixed64 target_filter_values = 2
+     */
+    targetFilterValues: bigint[];
+}
+/**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.Filter
  */
 export interface Experiment_Filter {
@@ -726,6 +739,12 @@ export interface Experiment_Filter {
          * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.UserPremiumType user_premium_type = 20
          */
         userPremiumType: Experiment_UserPremiumType;
+    } | {
+        oneofKind: "unitIdMatchesFilterSnapshot";
+        /**
+         * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.UnitIdMatchesFilterSnapshot unit_id_matches_filter_snapshot = 21
+         */
+        unitIdMatchesFilterSnapshot: Experiment_UnitIdMatchesFilterSnapshot;
     } | {
         oneofKind: undefined;
     };
@@ -3129,6 +3148,69 @@ class Experiment_UserPremiumType$Type extends MessageType<Experiment_UserPremium
  */
 export const Experiment_UserPremiumType = new Experiment_UserPremiumType$Type();
 // @generated message type with reflection information, may provide speed optimized methods
+class Experiment_UnitIdMatchesFilterSnapshot$Type extends MessageType<Experiment_UnitIdMatchesFilterSnapshot> {
+    constructor() {
+        super("discord_protos.discord_experimentation.v1.Experiment.UnitIdMatchesFilterSnapshot", [
+            { no: 1, name: "filter_snapshot_name", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "target_filter_values", kind: "scalar", repeat: 1 /*RepeatType.PACKED*/, T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ }
+        ]);
+    }
+    create(value?: PartialMessage<Experiment_UnitIdMatchesFilterSnapshot>): Experiment_UnitIdMatchesFilterSnapshot {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.filterSnapshotName = "";
+        message.targetFilterValues = [];
+        if (value !== undefined)
+            reflectionMergePartial<Experiment_UnitIdMatchesFilterSnapshot>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: Experiment_UnitIdMatchesFilterSnapshot): Experiment_UnitIdMatchesFilterSnapshot {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string filter_snapshot_name */ 1:
+                    message.filterSnapshotName = reader.string();
+                    break;
+                case /* repeated fixed64 target_filter_values */ 2:
+                    if (wireType === WireType.LengthDelimited)
+                        for (let e = reader.int32() + reader.pos; reader.pos < e;)
+                            message.targetFilterValues.push(reader.fixed64().toBigInt());
+                    else
+                        message.targetFilterValues.push(reader.fixed64().toBigInt());
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: Experiment_UnitIdMatchesFilterSnapshot, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string filter_snapshot_name = 1; */
+        if (message.filterSnapshotName !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.filterSnapshotName);
+        /* repeated fixed64 target_filter_values = 2; */
+        if (message.targetFilterValues.length) {
+            writer.tag(2, WireType.LengthDelimited).fork();
+            for (let i = 0; i < message.targetFilterValues.length; i++)
+                writer.fixed64(message.targetFilterValues[i]);
+            writer.join();
+        }
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_experimentation.v1.Experiment.UnitIdMatchesFilterSnapshot
+ */
+export const Experiment_UnitIdMatchesFilterSnapshot = new Experiment_UnitIdMatchesFilterSnapshot$Type();
+// @generated message type with reflection information, may provide speed optimized methods
 class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
     constructor() {
         super("discord_protos.discord_experimentation.v1.Experiment.Filter", [
@@ -3150,7 +3232,8 @@ class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
             { no: 17, name: "always", kind: "message", oneof: "filter", T: () => Experiment_Always },
             { no: 18, name: "client_system_locale", kind: "message", oneof: "filter", T: () => Experiment_ClientSystemLocale },
             { no: 19, name: "unit_id_in_experiment", kind: "message", oneof: "filter", T: () => Experiment_UnitIdInExperiment },
-            { no: 20, name: "user_premium_type", kind: "message", oneof: "filter", T: () => Experiment_UserPremiumType }
+            { no: 20, name: "user_premium_type", kind: "message", oneof: "filter", T: () => Experiment_UserPremiumType },
+            { no: 21, name: "unit_id_matches_filter_snapshot", kind: "message", oneof: "filter", T: () => Experiment_UnitIdMatchesFilterSnapshot }
         ]);
     }
     create(value?: PartialMessage<Experiment_Filter>): Experiment_Filter {
@@ -3279,6 +3362,12 @@ class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
                         userPremiumType: Experiment_UserPremiumType.internalBinaryRead(reader, reader.uint32(), options, (message.filter as any).userPremiumType)
                     };
                     break;
+                case /* discord_protos.discord_experimentation.v1.Experiment.UnitIdMatchesFilterSnapshot unit_id_matches_filter_snapshot */ 21:
+                    message.filter = {
+                        oneofKind: "unitIdMatchesFilterSnapshot",
+                        unitIdMatchesFilterSnapshot: Experiment_UnitIdMatchesFilterSnapshot.internalBinaryRead(reader, reader.uint32(), options, (message.filter as any).unitIdMatchesFilterSnapshot)
+                    };
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -3348,6 +3437,9 @@ class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
         /* discord_protos.discord_experimentation.v1.Experiment.UserPremiumType user_premium_type = 20; */
         if (message.filter.oneofKind === "userPremiumType")
             Experiment_UserPremiumType.internalBinaryWrite(message.filter.userPremiumType, writer.tag(20, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.discord_experimentation.v1.Experiment.UnitIdMatchesFilterSnapshot unit_id_matches_filter_snapshot = 21; */
+        if (message.filter.oneofKind === "unitIdMatchesFilterSnapshot")
+            Experiment_UnitIdMatchesFilterSnapshot.internalBinaryWrite(message.filter.unitIdMatchesFilterSnapshot, writer.tag(21, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
