@@ -526,6 +526,10 @@ export interface PreloadedUserSettings_DefaultReactionEmoji {
      * @generated from protobuf field: optional google.protobuf.BoolValue animated = 3
      */
     animated?: BoolValue;
+    /**
+     * @generated from protobuf field: optional google.protobuf.BoolValue disable_double_tap = 4
+     */
+    disableDoubleTap?: BoolValue;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.SelfHarmContentSettings
@@ -3244,7 +3248,8 @@ class PreloadedUserSettings_DefaultReactionEmoji$Type extends MessageType<Preloa
         super("discord_protos.discord_users.v1.PreloadedUserSettings.DefaultReactionEmoji", [
             { no: 1, name: "emoji_id", kind: "message", T: () => UInt64Value },
             { no: 2, name: "emoji_name", kind: "message", T: () => StringValue },
-            { no: 3, name: "animated", kind: "message", T: () => BoolValue }
+            { no: 3, name: "animated", kind: "message", T: () => BoolValue },
+            { no: 4, name: "disable_double_tap", kind: "message", T: () => BoolValue }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_DefaultReactionEmoji>): PreloadedUserSettings_DefaultReactionEmoji {
@@ -3267,6 +3272,9 @@ class PreloadedUserSettings_DefaultReactionEmoji$Type extends MessageType<Preloa
                 case /* optional google.protobuf.BoolValue animated */ 3:
                     message.animated = BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.animated);
                     break;
+                case /* optional google.protobuf.BoolValue disable_double_tap */ 4:
+                    message.disableDoubleTap = BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.disableDoubleTap);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -3288,6 +3296,9 @@ class PreloadedUserSettings_DefaultReactionEmoji$Type extends MessageType<Preloa
         /* optional google.protobuf.BoolValue animated = 3; */
         if (message.animated)
             BoolValue.internalBinaryWrite(message.animated, writer.tag(3, WireType.LengthDelimited).fork(), options).join();
+        /* optional google.protobuf.BoolValue disable_double_tap = 4; */
+        if (message.disableDoubleTap)
+            BoolValue.internalBinaryWrite(message.disableDoubleTap, writer.tag(4, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

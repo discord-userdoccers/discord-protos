@@ -162,6 +162,7 @@ message PreloadedUserSettings {
     optional google.protobuf.UInt64Value emoji_id = 1;
     optional google.protobuf.StringValue emoji_name = 2;
     optional google.protobuf.BoolValue animated = 3;
+    optional google.protobuf.BoolValue disable_double_tap = 4;
   }
 
   message SelfHarmContentSettings {
