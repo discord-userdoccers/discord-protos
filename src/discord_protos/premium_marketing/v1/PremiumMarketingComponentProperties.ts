@@ -214,6 +214,19 @@ export interface PremiumMarketingComponentProperties_PremiumTab {
     acknowledgedBadgeLabel: string;
 }
 /**
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MarketingPageBannerButton
+ */
+export interface PremiumMarketingComponentProperties_MarketingPageBannerButton {
+    /**
+     * @generated from protobuf field: string copy = 1
+     */
+    copy: string;
+    /**
+     * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction button_action = 2
+     */
+    buttonAction: PremiumMarketingComponentProperties_ButtonAction;
+}
+/**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MarketingPageBanner
  */
 export interface PremiumMarketingComponentProperties_MarketingPageBanner {
@@ -233,6 +246,10 @@ export interface PremiumMarketingComponentProperties_MarketingPageBanner {
      * @generated from protobuf field: string help_article_id = 4
      */
     helpArticleId: string;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MarketingPageBannerButton button = 5
+     */
+    button?: PremiumMarketingComponentProperties_MarketingPageBannerButton;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PaymentModalBanner
@@ -931,13 +948,69 @@ class PremiumMarketingComponentProperties_PremiumTab$Type extends MessageType<Pr
  */
 export const PremiumMarketingComponentProperties_PremiumTab = new PremiumMarketingComponentProperties_PremiumTab$Type();
 // @generated message type with reflection information, may provide speed optimized methods
+class PremiumMarketingComponentProperties_MarketingPageBannerButton$Type extends MessageType<PremiumMarketingComponentProperties_MarketingPageBannerButton> {
+    constructor() {
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MarketingPageBannerButton", [
+            { no: 1, name: "copy", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "button_action", kind: "enum", T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction", PremiumMarketingComponentProperties_ButtonAction, "BUTTON_ACTION_"] }
+        ]);
+    }
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_MarketingPageBannerButton>): PremiumMarketingComponentProperties_MarketingPageBannerButton {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.copy = "";
+        message.buttonAction = 0;
+        if (value !== undefined)
+            reflectionMergePartial<PremiumMarketingComponentProperties_MarketingPageBannerButton>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_MarketingPageBannerButton): PremiumMarketingComponentProperties_MarketingPageBannerButton {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string copy */ 1:
+                    message.copy = reader.string();
+                    break;
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction button_action */ 2:
+                    message.buttonAction = reader.int32();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_MarketingPageBannerButton, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string copy = 1; */
+        if (message.copy !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.copy);
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction button_action = 2; */
+        if (message.buttonAction !== 0)
+            writer.tag(2, WireType.Varint).int32(message.buttonAction);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MarketingPageBannerButton
+ */
+export const PremiumMarketingComponentProperties_MarketingPageBannerButton = new PremiumMarketingComponentProperties_MarketingPageBannerButton$Type();
+// @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties_MarketingPageBanner$Type extends MessageType<PremiumMarketingComponentProperties_MarketingPageBanner> {
     constructor() {
         super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MarketingPageBanner", [
             { no: 1, name: "asset_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 2, name: "header", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 3, name: "body", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 4, name: "help_article_id", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+            { no: 4, name: "help_article_id", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 5, name: "button", kind: "message", T: () => PremiumMarketingComponentProperties_MarketingPageBannerButton }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_MarketingPageBanner>): PremiumMarketingComponentProperties_MarketingPageBanner {
@@ -967,6 +1040,9 @@ class PremiumMarketingComponentProperties_MarketingPageBanner$Type extends Messa
                 case /* string help_article_id */ 4:
                     message.helpArticleId = reader.string();
                     break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MarketingPageBannerButton button */ 5:
+                    message.button = PremiumMarketingComponentProperties_MarketingPageBannerButton.internalBinaryRead(reader, reader.uint32(), options, message.button);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -991,6 +1067,9 @@ class PremiumMarketingComponentProperties_MarketingPageBanner$Type extends Messa
         /* string help_article_id = 4; */
         if (message.helpArticleId !== "")
             writer.tag(4, WireType.LengthDelimited).string(message.helpArticleId);
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MarketingPageBannerButton button = 5; */
+        if (message.button)
+            PremiumMarketingComponentProperties_MarketingPageBannerButton.internalBinaryWrite(message.button, writer.tag(5, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

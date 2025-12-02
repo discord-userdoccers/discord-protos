@@ -58,11 +58,17 @@ message PremiumMarketingComponentProperties {
     string acknowledged_badge_label = 2;
   }
 
+  message MarketingPageBannerButton {
+    string copy = 1;
+    ButtonAction button_action = 2;
+  }
+
   message MarketingPageBanner {
     string asset_url = 1;
     string header = 2;
     string body = 3;
     string help_article_id = 4;
+    optional MarketingPageBannerButton button = 5;
   }
 
   message PaymentModalBanner {
