@@ -138,6 +138,10 @@ export interface Experiment {
      * @generated from protobuf field: optional google.protobuf.Timestamp expected_end_date = 31
      */
     expectedEndDate?: Timestamp;
+    /**
+     * @generated from protobuf field: bool is_automated_change = 32
+     */
+    isAutomatedChange: boolean;
 }
 /**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.Bucket
@@ -975,7 +979,8 @@ class Experiment$Type extends MessageType<Experiment> {
             { no: 28, name: "field_numbers_to_copy", kind: "scalar", repeat: 1 /*RepeatType.PACKED*/, T: 5 /*ScalarType.INT32*/ },
             { no: 29, name: "engine_feature_flags", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 9 /*ScalarType.STRING*/ },
             { no: 30, name: "debug_config", kind: "message", T: () => Experiment_DebugConfig },
-            { no: 31, name: "expected_end_date", kind: "message", T: () => Timestamp }
+            { no: 31, name: "expected_end_date", kind: "message", T: () => Timestamp },
+            { no: 32, name: "is_automated_change", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
         ]);
     }
     create(value?: PartialMessage<Experiment>): Experiment {
@@ -1004,6 +1009,7 @@ class Experiment$Type extends MessageType<Experiment> {
         message.isTemplate = false;
         message.fieldNumbersToCopy = [];
         message.engineFeatureFlags = [];
+        message.isAutomatedChange = false;
         if (value !== undefined)
             reflectionMergePartial<Experiment>(this, message, value);
         return message;
@@ -1110,6 +1116,9 @@ class Experiment$Type extends MessageType<Experiment> {
                     break;
                 case /* optional google.protobuf.Timestamp expected_end_date */ 31:
                     message.expectedEndDate = Timestamp.internalBinaryRead(reader, reader.uint32(), options, message.expectedEndDate);
+                    break;
+                case /* bool is_automated_change */ 32:
+                    message.isAutomatedChange = reader.bool();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -1221,6 +1230,9 @@ class Experiment$Type extends MessageType<Experiment> {
         /* optional google.protobuf.Timestamp expected_end_date = 31; */
         if (message.expectedEndDate)
             Timestamp.internalBinaryWrite(message.expectedEndDate, writer.tag(31, WireType.LengthDelimited).fork(), options).join();
+        /* bool is_automated_change = 32; */
+        if (message.isAutomatedChange !== false)
+            writer.tag(32, WireType.Varint).bool(message.isAutomatedChange);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

@@ -305,4 +305,5 @@ message Experiment {
   repeated string engine_feature_flags = 29 [packed = false];
   optional DebugConfig debug_config = 30;
   optional google.protobuf.Timestamp expected_end_date = 31;
+  bool is_automated_change = 32;
 }
