@@ -753,6 +753,10 @@ export interface PreloadedUserSettings_NotificationSettings {
      * @generated from protobuf field: optional google.protobuf.BoolValue enable_friend_anniversary_notifications = 14
      */
     enableFriendAnniversaryNotifications?: BoolValue;
+    /**
+     * @generated from protobuf field: optional google.protobuf.BoolValue enable_game_update_notifications = 15
+     */
+    enableGameUpdateNotifications?: BoolValue;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.PrivacySettings
@@ -3681,7 +3685,8 @@ class PreloadedUserSettings_NotificationSettings$Type extends MessageType<Preloa
             { no: 11, name: "enable_voice_activity_notifications", kind: "message", T: () => BoolValue },
             { no: 12, name: "enable_friend_online_notifications", kind: "message", T: () => BoolValue },
             { no: 13, name: "enable_user_resurrection_notifications", kind: "message", T: () => BoolValue },
-            { no: 14, name: "enable_friend_anniversary_notifications", kind: "message", T: () => BoolValue }
+            { no: 14, name: "enable_friend_anniversary_notifications", kind: "message", T: () => BoolValue },
+            { no: 15, name: "enable_game_update_notifications", kind: "message", T: () => BoolValue }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_NotificationSettings>): PreloadedUserSettings_NotificationSettings {
@@ -3742,6 +3747,9 @@ class PreloadedUserSettings_NotificationSettings$Type extends MessageType<Preloa
                 case /* optional google.protobuf.BoolValue enable_friend_anniversary_notifications */ 14:
                     message.enableFriendAnniversaryNotifications = BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.enableFriendAnniversaryNotifications);
                     break;
+                case /* optional google.protobuf.BoolValue enable_game_update_notifications */ 15:
+                    message.enableGameUpdateNotifications = BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.enableGameUpdateNotifications);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -3796,6 +3804,9 @@ class PreloadedUserSettings_NotificationSettings$Type extends MessageType<Preloa
         /* optional google.protobuf.BoolValue enable_friend_anniversary_notifications = 14; */
         if (message.enableFriendAnniversaryNotifications)
             BoolValue.internalBinaryWrite(message.enableFriendAnniversaryNotifications, writer.tag(14, WireType.LengthDelimited).fork(), options).join();
+        /* optional google.protobuf.BoolValue enable_game_update_notifications = 15; */
+        if (message.enableGameUpdateNotifications)
+            BoolValue.internalBinaryWrite(message.enableGameUpdateNotifications, writer.tag(15, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

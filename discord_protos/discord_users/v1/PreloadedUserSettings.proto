@@ -243,6 +243,7 @@ message PreloadedUserSettings {
     optional google.protobuf.BoolValue enable_friend_online_notifications = 12;
     optional google.protobuf.BoolValue enable_user_resurrection_notifications = 13;
     optional google.protobuf.BoolValue enable_friend_anniversary_notifications = 14;
+    optional google.protobuf.BoolValue enable_game_update_notifications = 15;
   }
 
   enum GuildActivityStatusRestrictionDefault {
