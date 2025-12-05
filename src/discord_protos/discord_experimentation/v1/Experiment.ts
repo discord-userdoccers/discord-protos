@@ -863,17 +863,9 @@ export enum Experiment_Phase {
      */
     MEASUREMENT = 2,
     /**
-     * @generated from protobuf enum value: PHASE_MEASUREMENT_ENDED = 3;
-     */
-    MEASUREMENT_ENDED = 3,
-    /**
      * @generated from protobuf enum value: PHASE_ROLLING_OUT = 4;
      */
     ROLLING_OUT = 4,
-    /**
-     * @generated from protobuf enum value: PHASE_ROLLED_OUT = 5;
-     */
-    ROLLED_OUT = 5,
     /**
      * @generated from protobuf enum value: PHASE_ARCHIVED = 6;
      */
