@@ -297,6 +297,7 @@ message Experiment {
   AssignmentMode assignment_mode = 25;
   bool enable_edit_raw_json_ui = 23;
   int32 winning_variation_id = 24;
+  string extra_outcome_context = 34;
   Type type = 26;
   bool is_template = 27;
   repeated int32 field_numbers_to_copy = 28;
@@ -304,4 +305,5 @@ message Experiment {
   optional DebugConfig debug_config = 30;
   optional google.protobuf.Timestamp expected_end_date = 31;
   bool is_automated_change = 32;
+  optional google.protobuf.Timestamp archive_at = 33;
 }

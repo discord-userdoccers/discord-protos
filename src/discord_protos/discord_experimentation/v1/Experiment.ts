@@ -115,6 +115,10 @@ export interface Experiment {
      */
     winningVariationId: number;
     /**
+     * @generated from protobuf field: string extra_outcome_context = 34
+     */
+    extraOutcomeContext: string;
+    /**
      * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.Type type = 26
      */
     type: Experiment_Type;
@@ -142,6 +146,10 @@ export interface Experiment {
      * @generated from protobuf field: bool is_automated_change = 32
      */
     isAutomatedChange: boolean;
+    /**
+     * @generated from protobuf field: optional google.protobuf.Timestamp archive_at = 33
+     */
+    archiveAt?: Timestamp;
 }
 /**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.Bucket
@@ -966,13 +974,15 @@ class Experiment$Type extends MessageType<Experiment> {
             { no: 25, name: "assignment_mode", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.AssignmentMode", Experiment_AssignmentMode, "ASSIGNMENT_MODE_"] },
             { no: 23, name: "enable_edit_raw_json_ui", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
             { no: 24, name: "winning_variation_id", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
+            { no: 34, name: "extra_outcome_context", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 26, name: "type", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.Type", Experiment_Type, "TYPE_"] },
             { no: 27, name: "is_template", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
             { no: 28, name: "field_numbers_to_copy", kind: "scalar", repeat: 1 /*RepeatType.PACKED*/, T: 5 /*ScalarType.INT32*/ },
             { no: 29, name: "engine_feature_flags", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 9 /*ScalarType.STRING*/ },
             { no: 30, name: "debug_config", kind: "message", T: () => Experiment_DebugConfig },
             { no: 31, name: "expected_end_date", kind: "message", T: () => Timestamp },
-            { no: 32, name: "is_automated_change", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
+            { no: 32, name: "is_automated_change", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
+            { no: 33, name: "archive_at", kind: "message", T: () => Timestamp }
         ]);
     }
     create(value?: PartialMessage<Experiment>): Experiment {
@@ -997,6 +1007,7 @@ class Experiment$Type extends MessageType<Experiment> {
         message.assignmentMode = 0;
         message.enableEditRawJsonUi = false;
         message.winningVariationId = 0;
+        message.extraOutcomeContext = "";
         message.type = 0;
         message.isTemplate = false;
         message.fieldNumbersToCopy = [];
@@ -1087,6 +1098,9 @@ class Experiment$Type extends MessageType<Experiment> {
                 case /* int32 winning_variation_id */ 24:
                     message.winningVariationId = reader.int32();
                     break;
+                case /* string extra_outcome_context */ 34:
+                    message.extraOutcomeContext = reader.string();
+                    break;
                 case /* discord_protos.discord_experimentation.v1.Experiment.Type type */ 26:
                     message.type = reader.int32();
                     break;
@@ -1111,6 +1125,9 @@ class Experiment$Type extends MessageType<Experiment> {
                     break;
                 case /* bool is_automated_change */ 32:
                     message.isAutomatedChange = reader.bool();
+                    break;
+                case /* optional google.protobuf.Timestamp archive_at */ 33:
+                    message.archiveAt = Timestamp.internalBinaryRead(reader, reader.uint32(), options, message.archiveAt);
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -1225,6 +1242,12 @@ class Experiment$Type extends MessageType<Experiment> {
         /* bool is_automated_change = 32; */
         if (message.isAutomatedChange !== false)
             writer.tag(32, WireType.Varint).bool(message.isAutomatedChange);
+        /* optional google.protobuf.Timestamp archive_at = 33; */
+        if (message.archiveAt)
+            Timestamp.internalBinaryWrite(message.archiveAt, writer.tag(33, WireType.LengthDelimited).fork(), options).join();
+        /* string extra_outcome_context = 34; */
+        if (message.extraOutcomeContext !== "")
+            writer.tag(34, WireType.LengthDelimited).string(message.extraOutcomeContext);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
