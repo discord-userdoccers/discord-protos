@@ -58,6 +58,48 @@ export interface PremiumMarketingComponentProperties {
          */
         mobileBottomSheet: PremiumMarketingComponentProperties_MobileBottomSheet;
     } | {
+        oneofKind: "giftIcon";
+        /**
+         * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftIcon gift_icon = 8
+         */
+        giftIcon: PremiumMarketingComponentProperties_GiftIcon;
+    } | {
+        oneofKind: "giftIconCoachmark";
+        /**
+         * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftIconCoachmark gift_icon_coachmark = 9
+         */
+        giftIconCoachmark: PremiumMarketingComponentProperties_GiftIconCoachmark;
+    } | {
+        oneofKind: "giftPlanSelectionCardBanner";
+        /**
+         * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftPlanSelectionCardBanner gift_plan_selection_card_banner = 10
+         */
+        giftPlanSelectionCardBanner: PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner;
+    } | {
+        oneofKind: "giftCustomizationBanner";
+        /**
+         * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftCustomizationBanner gift_customization_banner = 11
+         */
+        giftCustomizationBanner: PremiumMarketingComponentProperties_GiftCustomizationBanner;
+    } | {
+        oneofKind: "billingSettingsNitroGiftBanner";
+        /**
+         * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.BillingSettingsNitroGiftBanner billing_settings_nitro_gift_banner = 12
+         */
+        billingSettingsNitroGiftBanner: PremiumMarketingComponentProperties_BillingSettingsNitroGiftBanner;
+    } | {
+        oneofKind: "giftReminderNagbar";
+        /**
+         * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftReminderNagbar gift_reminder_nagbar = 13
+         */
+        giftReminderNagbar: PremiumMarketingComponentProperties_GiftReminderNagbar;
+    } | {
+        oneofKind: "giftReminderCoachmark";
+        /**
+         * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftReminderCoachmark gift_reminder_coachmark = 14
+         */
+        giftReminderCoachmark: PremiumMarketingComponentProperties_GiftReminderCoachmark;
+    } | {
         oneofKind: undefined;
     };
 }
@@ -303,6 +345,191 @@ export interface PremiumMarketingComponentProperties_MobileBottomSheet {
     button?: PremiumMarketingComponentProperties_CTAButton;
 }
 /**
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Gradient
+ */
+export interface PremiumMarketingComponentProperties_Gradient {
+    /**
+     * @generated from protobuf field: repeated string colors = 1 [packed = false]
+     */
+    colors: string[];
+    /**
+     * @generated from protobuf field: float angle = 2
+     */
+    angle: number;
+}
+/**
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftIcon
+ */
+export interface PremiumMarketingComponentProperties_GiftIcon {
+    /**
+     * @generated from protobuf field: string box_animation_url = 1
+     */
+    boxAnimationUrl: string;
+    /**
+     * @generated from protobuf field: string trinket_animation_url = 2
+     */
+    trinketAnimationUrl: string;
+    /**
+     * @generated from protobuf field: string trinket_glow_animation_url = 3
+     */
+    trinketGlowAnimationUrl: string;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Gradient gradient = 4
+     */
+    gradient?: PremiumMarketingComponentProperties_Gradient;
+}
+/**
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftIconCoachmark
+ */
+export interface PremiumMarketingComponentProperties_GiftIconCoachmark {
+    /**
+     * @generated from protobuf field: string header_key = 1
+     */
+    headerKey: string;
+    /**
+     * @generated from protobuf field: string body_key = 2
+     */
+    bodyKey: string;
+    /**
+     * @generated from protobuf field: string asset_url = 3
+     */
+    assetUrl: string;
+}
+/**
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset
+ */
+export interface PremiumMarketingComponentProperties_ThemeAwareAsset {
+    /**
+     * @generated from protobuf field: string light_url = 1
+     */
+    lightUrl: string;
+    /**
+     * @generated from protobuf field: string dark_url = 2
+     */
+    darkUrl: string;
+}
+/**
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftPlanSelectionCardBanner
+ */
+export interface PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner {
+    /**
+     * @generated from protobuf field: string header_key = 1
+     */
+    headerKey: string;
+    /**
+     * @generated from protobuf field: string desktop_body_key = 2
+     */
+    desktopBodyKey: string;
+    /**
+     * @generated from protobuf field: string mobile_body_key = 3
+     */
+    mobileBodyKey: string;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset avatar_asset = 4
+     */
+    avatarAsset?: PremiumMarketingComponentProperties_ThemeAwareAsset;
+    /**
+     * @generated from protobuf field: string banner_asset_url = 5
+     */
+    bannerAssetUrl: string;
+    /**
+     * @generated from protobuf field: string background_asset_url = 6
+     */
+    backgroundAssetUrl: string;
+    /**
+     * @generated from protobuf field: string card_asset_url = 7
+     */
+    cardAssetUrl: string;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Gradient gradient = 8
+     */
+    gradient?: PremiumMarketingComponentProperties_Gradient;
+}
+/**
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftCustomizationBanner
+ */
+export interface PremiumMarketingComponentProperties_GiftCustomizationBanner {
+    /**
+     * @generated from protobuf field: string asset_url = 1
+     */
+    assetUrl: string;
+    /**
+     * @generated from protobuf field: string desktop_body_key = 2
+     */
+    desktopBodyKey: string;
+    /**
+     * @generated from protobuf field: string mobile_body_key = 3
+     */
+    mobileBodyKey: string;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Gradient gradient = 4
+     */
+    gradient?: PremiumMarketingComponentProperties_Gradient;
+    /**
+     * @generated from protobuf field: string background_asset_url = 5
+     */
+    backgroundAssetUrl: string;
+}
+/**
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.BillingSettingsNitroGiftBanner
+ */
+export interface PremiumMarketingComponentProperties_BillingSettingsNitroGiftBanner {
+    /**
+     * @generated from protobuf field: string asset_url = 1
+     */
+    assetUrl: string;
+    /**
+     * @generated from protobuf field: string header_key = 2
+     */
+    headerKey: string;
+    /**
+     * @generated from protobuf field: string body_key = 3
+     */
+    bodyKey: string;
+    /**
+     * @generated from protobuf field: string background_asset_url = 4
+     */
+    backgroundAssetUrl: string;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Gradient gradient = 5
+     */
+    gradient?: PremiumMarketingComponentProperties_Gradient;
+    /**
+     * @generated from protobuf field: string text_color = 6
+     */
+    textColor: string;
+    /**
+     * @generated from protobuf field: string additional_terms_key = 7
+     */
+    additionalTermsKey: string;
+}
+/**
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftReminderNagbar
+ */
+export interface PremiumMarketingComponentProperties_GiftReminderNagbar {
+    /**
+     * @generated from protobuf field: string body_key = 1
+     */
+    bodyKey: string;
+}
+/**
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftReminderCoachmark
+ */
+export interface PremiumMarketingComponentProperties_GiftReminderCoachmark {
+    /**
+     * @generated from protobuf field: string header_key = 1
+     */
+    headerKey: string;
+    /**
+     * @generated from protobuf field: string body_key = 2
+     */
+    bodyKey: string;
+    /**
+     * @generated from protobuf field: string asset_url = 3
+     */
+    assetUrl: string;
+}
+/**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction
  */
 export enum PremiumMarketingComponentProperties_ButtonAction {
@@ -337,7 +564,14 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
             { no: 4, name: "premium_tab", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_PremiumTab },
             { no: 5, name: "marketing_page_banner", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_MarketingPageBanner },
             { no: 6, name: "payment_modal_banner", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_PaymentModalBanner },
-            { no: 7, name: "mobile_bottom_sheet", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_MobileBottomSheet }
+            { no: 7, name: "mobile_bottom_sheet", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_MobileBottomSheet },
+            { no: 8, name: "gift_icon", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_GiftIcon },
+            { no: 9, name: "gift_icon_coachmark", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_GiftIconCoachmark },
+            { no: 10, name: "gift_plan_selection_card_banner", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner },
+            { no: 11, name: "gift_customization_banner", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_GiftCustomizationBanner },
+            { no: 12, name: "billing_settings_nitro_gift_banner", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_BillingSettingsNitroGiftBanner },
+            { no: 13, name: "gift_reminder_nagbar", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_GiftReminderNagbar },
+            { no: 14, name: "gift_reminder_coachmark", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_GiftReminderCoachmark }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties>): PremiumMarketingComponentProperties {
@@ -392,6 +626,48 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
                         mobileBottomSheet: PremiumMarketingComponentProperties_MobileBottomSheet.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).mobileBottomSheet)
                     };
                     break;
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftIcon gift_icon */ 8:
+                    message.properties = {
+                        oneofKind: "giftIcon",
+                        giftIcon: PremiumMarketingComponentProperties_GiftIcon.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).giftIcon)
+                    };
+                    break;
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftIconCoachmark gift_icon_coachmark */ 9:
+                    message.properties = {
+                        oneofKind: "giftIconCoachmark",
+                        giftIconCoachmark: PremiumMarketingComponentProperties_GiftIconCoachmark.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).giftIconCoachmark)
+                    };
+                    break;
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftPlanSelectionCardBanner gift_plan_selection_card_banner */ 10:
+                    message.properties = {
+                        oneofKind: "giftPlanSelectionCardBanner",
+                        giftPlanSelectionCardBanner: PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).giftPlanSelectionCardBanner)
+                    };
+                    break;
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftCustomizationBanner gift_customization_banner */ 11:
+                    message.properties = {
+                        oneofKind: "giftCustomizationBanner",
+                        giftCustomizationBanner: PremiumMarketingComponentProperties_GiftCustomizationBanner.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).giftCustomizationBanner)
+                    };
+                    break;
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.BillingSettingsNitroGiftBanner billing_settings_nitro_gift_banner */ 12:
+                    message.properties = {
+                        oneofKind: "billingSettingsNitroGiftBanner",
+                        billingSettingsNitroGiftBanner: PremiumMarketingComponentProperties_BillingSettingsNitroGiftBanner.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).billingSettingsNitroGiftBanner)
+                    };
+                    break;
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftReminderNagbar gift_reminder_nagbar */ 13:
+                    message.properties = {
+                        oneofKind: "giftReminderNagbar",
+                        giftReminderNagbar: PremiumMarketingComponentProperties_GiftReminderNagbar.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).giftReminderNagbar)
+                    };
+                    break;
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftReminderCoachmark gift_reminder_coachmark */ 14:
+                    message.properties = {
+                        oneofKind: "giftReminderCoachmark",
+                        giftReminderCoachmark: PremiumMarketingComponentProperties_GiftReminderCoachmark.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).giftReminderCoachmark)
+                    };
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -425,6 +701,27 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
         /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MobileBottomSheet mobile_bottom_sheet = 7; */
         if (message.properties.oneofKind === "mobileBottomSheet")
             PremiumMarketingComponentProperties_MobileBottomSheet.internalBinaryWrite(message.properties.mobileBottomSheet, writer.tag(7, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftIcon gift_icon = 8; */
+        if (message.properties.oneofKind === "giftIcon")
+            PremiumMarketingComponentProperties_GiftIcon.internalBinaryWrite(message.properties.giftIcon, writer.tag(8, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftIconCoachmark gift_icon_coachmark = 9; */
+        if (message.properties.oneofKind === "giftIconCoachmark")
+            PremiumMarketingComponentProperties_GiftIconCoachmark.internalBinaryWrite(message.properties.giftIconCoachmark, writer.tag(9, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftPlanSelectionCardBanner gift_plan_selection_card_banner = 10; */
+        if (message.properties.oneofKind === "giftPlanSelectionCardBanner")
+            PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner.internalBinaryWrite(message.properties.giftPlanSelectionCardBanner, writer.tag(10, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftCustomizationBanner gift_customization_banner = 11; */
+        if (message.properties.oneofKind === "giftCustomizationBanner")
+            PremiumMarketingComponentProperties_GiftCustomizationBanner.internalBinaryWrite(message.properties.giftCustomizationBanner, writer.tag(11, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.BillingSettingsNitroGiftBanner billing_settings_nitro_gift_banner = 12; */
+        if (message.properties.oneofKind === "billingSettingsNitroGiftBanner")
+            PremiumMarketingComponentProperties_BillingSettingsNitroGiftBanner.internalBinaryWrite(message.properties.billingSettingsNitroGiftBanner, writer.tag(12, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftReminderNagbar gift_reminder_nagbar = 13; */
+        if (message.properties.oneofKind === "giftReminderNagbar")
+            PremiumMarketingComponentProperties_GiftReminderNagbar.internalBinaryWrite(message.properties.giftReminderNagbar, writer.tag(13, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftReminderCoachmark gift_reminder_coachmark = 14; */
+        if (message.properties.oneofKind === "giftReminderCoachmark")
+            PremiumMarketingComponentProperties_GiftReminderCoachmark.internalBinaryWrite(message.properties.giftReminderCoachmark, writer.tag(14, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -1268,3 +1565,629 @@ class PremiumMarketingComponentProperties_MobileBottomSheet$Type extends Message
  * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MobileBottomSheet
  */
 export const PremiumMarketingComponentProperties_MobileBottomSheet = new PremiumMarketingComponentProperties_MobileBottomSheet$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PremiumMarketingComponentProperties_Gradient$Type extends MessageType<PremiumMarketingComponentProperties_Gradient> {
+    constructor() {
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Gradient", [
+            { no: 1, name: "colors", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "angle", kind: "scalar", T: 2 /*ScalarType.FLOAT*/ }
+        ]);
+    }
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_Gradient>): PremiumMarketingComponentProperties_Gradient {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.colors = [];
+        message.angle = 0;
+        if (value !== undefined)
+            reflectionMergePartial<PremiumMarketingComponentProperties_Gradient>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_Gradient): PremiumMarketingComponentProperties_Gradient {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* repeated string colors = 1 [packed = false] */ 1:
+                    message.colors.push(reader.string());
+                    break;
+                case /* float angle */ 2:
+                    message.angle = reader.float();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_Gradient, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* repeated string colors = 1 [packed = false]; */
+        for (let i = 0; i < message.colors.length; i++)
+            writer.tag(1, WireType.LengthDelimited).string(message.colors[i]);
+        /* float angle = 2; */
+        if (message.angle !== 0)
+            writer.tag(2, WireType.Bit32).float(message.angle);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Gradient
+ */
+export const PremiumMarketingComponentProperties_Gradient = new PremiumMarketingComponentProperties_Gradient$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PremiumMarketingComponentProperties_GiftIcon$Type extends MessageType<PremiumMarketingComponentProperties_GiftIcon> {
+    constructor() {
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftIcon", [
+            { no: 1, name: "box_animation_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "trinket_animation_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 3, name: "trinket_glow_animation_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 4, name: "gradient", kind: "message", T: () => PremiumMarketingComponentProperties_Gradient }
+        ]);
+    }
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_GiftIcon>): PremiumMarketingComponentProperties_GiftIcon {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.boxAnimationUrl = "";
+        message.trinketAnimationUrl = "";
+        message.trinketGlowAnimationUrl = "";
+        if (value !== undefined)
+            reflectionMergePartial<PremiumMarketingComponentProperties_GiftIcon>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_GiftIcon): PremiumMarketingComponentProperties_GiftIcon {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string box_animation_url */ 1:
+                    message.boxAnimationUrl = reader.string();
+                    break;
+                case /* string trinket_animation_url */ 2:
+                    message.trinketAnimationUrl = reader.string();
+                    break;
+                case /* string trinket_glow_animation_url */ 3:
+                    message.trinketGlowAnimationUrl = reader.string();
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Gradient gradient */ 4:
+                    message.gradient = PremiumMarketingComponentProperties_Gradient.internalBinaryRead(reader, reader.uint32(), options, message.gradient);
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_GiftIcon, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string box_animation_url = 1; */
+        if (message.boxAnimationUrl !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.boxAnimationUrl);
+        /* string trinket_animation_url = 2; */
+        if (message.trinketAnimationUrl !== "")
+            writer.tag(2, WireType.LengthDelimited).string(message.trinketAnimationUrl);
+        /* string trinket_glow_animation_url = 3; */
+        if (message.trinketGlowAnimationUrl !== "")
+            writer.tag(3, WireType.LengthDelimited).string(message.trinketGlowAnimationUrl);
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Gradient gradient = 4; */
+        if (message.gradient)
+            PremiumMarketingComponentProperties_Gradient.internalBinaryWrite(message.gradient, writer.tag(4, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftIcon
+ */
+export const PremiumMarketingComponentProperties_GiftIcon = new PremiumMarketingComponentProperties_GiftIcon$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PremiumMarketingComponentProperties_GiftIconCoachmark$Type extends MessageType<PremiumMarketingComponentProperties_GiftIconCoachmark> {
+    constructor() {
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftIconCoachmark", [
+            { no: 1, name: "header_key", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "body_key", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 3, name: "asset_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+        ]);
+    }
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_GiftIconCoachmark>): PremiumMarketingComponentProperties_GiftIconCoachmark {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.headerKey = "";
+        message.bodyKey = "";
+        message.assetUrl = "";
+        if (value !== undefined)
+            reflectionMergePartial<PremiumMarketingComponentProperties_GiftIconCoachmark>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_GiftIconCoachmark): PremiumMarketingComponentProperties_GiftIconCoachmark {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string header_key */ 1:
+                    message.headerKey = reader.string();
+                    break;
+                case /* string body_key */ 2:
+                    message.bodyKey = reader.string();
+                    break;
+                case /* string asset_url */ 3:
+                    message.assetUrl = reader.string();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_GiftIconCoachmark, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string header_key = 1; */
+        if (message.headerKey !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.headerKey);
+        /* string body_key = 2; */
+        if (message.bodyKey !== "")
+            writer.tag(2, WireType.LengthDelimited).string(message.bodyKey);
+        /* string asset_url = 3; */
+        if (message.assetUrl !== "")
+            writer.tag(3, WireType.LengthDelimited).string(message.assetUrl);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftIconCoachmark
+ */
+export const PremiumMarketingComponentProperties_GiftIconCoachmark = new PremiumMarketingComponentProperties_GiftIconCoachmark$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PremiumMarketingComponentProperties_ThemeAwareAsset$Type extends MessageType<PremiumMarketingComponentProperties_ThemeAwareAsset> {
+    constructor() {
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset", [
+            { no: 1, name: "light_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "dark_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+        ]);
+    }
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_ThemeAwareAsset>): PremiumMarketingComponentProperties_ThemeAwareAsset {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.lightUrl = "";
+        message.darkUrl = "";
+        if (value !== undefined)
+            reflectionMergePartial<PremiumMarketingComponentProperties_ThemeAwareAsset>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_ThemeAwareAsset): PremiumMarketingComponentProperties_ThemeAwareAsset {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string light_url */ 1:
+                    message.lightUrl = reader.string();
+                    break;
+                case /* string dark_url */ 2:
+                    message.darkUrl = reader.string();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_ThemeAwareAsset, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string light_url = 1; */
+        if (message.lightUrl !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.lightUrl);
+        /* string dark_url = 2; */
+        if (message.darkUrl !== "")
+            writer.tag(2, WireType.LengthDelimited).string(message.darkUrl);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset
+ */
+export const PremiumMarketingComponentProperties_ThemeAwareAsset = new PremiumMarketingComponentProperties_ThemeAwareAsset$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner$Type extends MessageType<PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner> {
+    constructor() {
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftPlanSelectionCardBanner", [
+            { no: 1, name: "header_key", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "desktop_body_key", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 3, name: "mobile_body_key", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 4, name: "avatar_asset", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset },
+            { no: 5, name: "banner_asset_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 6, name: "background_asset_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 7, name: "card_asset_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 8, name: "gradient", kind: "message", T: () => PremiumMarketingComponentProperties_Gradient }
+        ]);
+    }
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner>): PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.headerKey = "";
+        message.desktopBodyKey = "";
+        message.mobileBodyKey = "";
+        message.bannerAssetUrl = "";
+        message.backgroundAssetUrl = "";
+        message.cardAssetUrl = "";
+        if (value !== undefined)
+            reflectionMergePartial<PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner): PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string header_key */ 1:
+                    message.headerKey = reader.string();
+                    break;
+                case /* string desktop_body_key */ 2:
+                    message.desktopBodyKey = reader.string();
+                    break;
+                case /* string mobile_body_key */ 3:
+                    message.mobileBodyKey = reader.string();
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset avatar_asset */ 4:
+                    message.avatarAsset = PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryRead(reader, reader.uint32(), options, message.avatarAsset);
+                    break;
+                case /* string banner_asset_url */ 5:
+                    message.bannerAssetUrl = reader.string();
+                    break;
+                case /* string background_asset_url */ 6:
+                    message.backgroundAssetUrl = reader.string();
+                    break;
+                case /* string card_asset_url */ 7:
+                    message.cardAssetUrl = reader.string();
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Gradient gradient */ 8:
+                    message.gradient = PremiumMarketingComponentProperties_Gradient.internalBinaryRead(reader, reader.uint32(), options, message.gradient);
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string header_key = 1; */
+        if (message.headerKey !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.headerKey);
+        /* string desktop_body_key = 2; */
+        if (message.desktopBodyKey !== "")
+            writer.tag(2, WireType.LengthDelimited).string(message.desktopBodyKey);
+        /* string mobile_body_key = 3; */
+        if (message.mobileBodyKey !== "")
+            writer.tag(3, WireType.LengthDelimited).string(message.mobileBodyKey);
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset avatar_asset = 4; */
+        if (message.avatarAsset)
+            PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryWrite(message.avatarAsset, writer.tag(4, WireType.LengthDelimited).fork(), options).join();
+        /* string banner_asset_url = 5; */
+        if (message.bannerAssetUrl !== "")
+            writer.tag(5, WireType.LengthDelimited).string(message.bannerAssetUrl);
+        /* string background_asset_url = 6; */
+        if (message.backgroundAssetUrl !== "")
+            writer.tag(6, WireType.LengthDelimited).string(message.backgroundAssetUrl);
+        /* string card_asset_url = 7; */
+        if (message.cardAssetUrl !== "")
+            writer.tag(7, WireType.LengthDelimited).string(message.cardAssetUrl);
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Gradient gradient = 8; */
+        if (message.gradient)
+            PremiumMarketingComponentProperties_Gradient.internalBinaryWrite(message.gradient, writer.tag(8, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftPlanSelectionCardBanner
+ */
+export const PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner = new PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PremiumMarketingComponentProperties_GiftCustomizationBanner$Type extends MessageType<PremiumMarketingComponentProperties_GiftCustomizationBanner> {
+    constructor() {
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftCustomizationBanner", [
+            { no: 1, name: "asset_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "desktop_body_key", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 3, name: "mobile_body_key", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 4, name: "gradient", kind: "message", T: () => PremiumMarketingComponentProperties_Gradient },
+            { no: 5, name: "background_asset_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+        ]);
+    }
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_GiftCustomizationBanner>): PremiumMarketingComponentProperties_GiftCustomizationBanner {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.assetUrl = "";
+        message.desktopBodyKey = "";
+        message.mobileBodyKey = "";
+        message.backgroundAssetUrl = "";
+        if (value !== undefined)
+            reflectionMergePartial<PremiumMarketingComponentProperties_GiftCustomizationBanner>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_GiftCustomizationBanner): PremiumMarketingComponentProperties_GiftCustomizationBanner {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string asset_url */ 1:
+                    message.assetUrl = reader.string();
+                    break;
+                case /* string desktop_body_key */ 2:
+                    message.desktopBodyKey = reader.string();
+                    break;
+                case /* string mobile_body_key */ 3:
+                    message.mobileBodyKey = reader.string();
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Gradient gradient */ 4:
+                    message.gradient = PremiumMarketingComponentProperties_Gradient.internalBinaryRead(reader, reader.uint32(), options, message.gradient);
+                    break;
+                case /* string background_asset_url */ 5:
+                    message.backgroundAssetUrl = reader.string();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_GiftCustomizationBanner, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string asset_url = 1; */
+        if (message.assetUrl !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.assetUrl);
+        /* string desktop_body_key = 2; */
+        if (message.desktopBodyKey !== "")
+            writer.tag(2, WireType.LengthDelimited).string(message.desktopBodyKey);
+        /* string mobile_body_key = 3; */
+        if (message.mobileBodyKey !== "")
+            writer.tag(3, WireType.LengthDelimited).string(message.mobileBodyKey);
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Gradient gradient = 4; */
+        if (message.gradient)
+            PremiumMarketingComponentProperties_Gradient.internalBinaryWrite(message.gradient, writer.tag(4, WireType.LengthDelimited).fork(), options).join();
+        /* string background_asset_url = 5; */
+        if (message.backgroundAssetUrl !== "")
+            writer.tag(5, WireType.LengthDelimited).string(message.backgroundAssetUrl);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftCustomizationBanner
+ */
+export const PremiumMarketingComponentProperties_GiftCustomizationBanner = new PremiumMarketingComponentProperties_GiftCustomizationBanner$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PremiumMarketingComponentProperties_BillingSettingsNitroGiftBanner$Type extends MessageType<PremiumMarketingComponentProperties_BillingSettingsNitroGiftBanner> {
+    constructor() {
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.BillingSettingsNitroGiftBanner", [
+            { no: 1, name: "asset_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "header_key", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 3, name: "body_key", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 4, name: "background_asset_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 5, name: "gradient", kind: "message", T: () => PremiumMarketingComponentProperties_Gradient },
+            { no: 6, name: "text_color", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 7, name: "additional_terms_key", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+        ]);
+    }
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_BillingSettingsNitroGiftBanner>): PremiumMarketingComponentProperties_BillingSettingsNitroGiftBanner {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.assetUrl = "";
+        message.headerKey = "";
+        message.bodyKey = "";
+        message.backgroundAssetUrl = "";
+        message.textColor = "";
+        message.additionalTermsKey = "";
+        if (value !== undefined)
+            reflectionMergePartial<PremiumMarketingComponentProperties_BillingSettingsNitroGiftBanner>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_BillingSettingsNitroGiftBanner): PremiumMarketingComponentProperties_BillingSettingsNitroGiftBanner {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string asset_url */ 1:
+                    message.assetUrl = reader.string();
+                    break;
+                case /* string header_key */ 2:
+                    message.headerKey = reader.string();
+                    break;
+                case /* string body_key */ 3:
+                    message.bodyKey = reader.string();
+                    break;
+                case /* string background_asset_url */ 4:
+                    message.backgroundAssetUrl = reader.string();
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Gradient gradient */ 5:
+                    message.gradient = PremiumMarketingComponentProperties_Gradient.internalBinaryRead(reader, reader.uint32(), options, message.gradient);
+                    break;
+                case /* string text_color */ 6:
+                    message.textColor = reader.string();
+                    break;
+                case /* string additional_terms_key */ 7:
+                    message.additionalTermsKey = reader.string();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_BillingSettingsNitroGiftBanner, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string asset_url = 1; */
+        if (message.assetUrl !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.assetUrl);
+        /* string header_key = 2; */
+        if (message.headerKey !== "")
+            writer.tag(2, WireType.LengthDelimited).string(message.headerKey);
+        /* string body_key = 3; */
+        if (message.bodyKey !== "")
+            writer.tag(3, WireType.LengthDelimited).string(message.bodyKey);
+        /* string background_asset_url = 4; */
+        if (message.backgroundAssetUrl !== "")
+            writer.tag(4, WireType.LengthDelimited).string(message.backgroundAssetUrl);
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Gradient gradient = 5; */
+        if (message.gradient)
+            PremiumMarketingComponentProperties_Gradient.internalBinaryWrite(message.gradient, writer.tag(5, WireType.LengthDelimited).fork(), options).join();
+        /* string text_color = 6; */
+        if (message.textColor !== "")
+            writer.tag(6, WireType.LengthDelimited).string(message.textColor);
+        /* string additional_terms_key = 7; */
+        if (message.additionalTermsKey !== "")
+            writer.tag(7, WireType.LengthDelimited).string(message.additionalTermsKey);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.BillingSettingsNitroGiftBanner
+ */
+export const PremiumMarketingComponentProperties_BillingSettingsNitroGiftBanner = new PremiumMarketingComponentProperties_BillingSettingsNitroGiftBanner$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PremiumMarketingComponentProperties_GiftReminderNagbar$Type extends MessageType<PremiumMarketingComponentProperties_GiftReminderNagbar> {
+    constructor() {
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftReminderNagbar", [
+            { no: 1, name: "body_key", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+        ]);
+    }
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_GiftReminderNagbar>): PremiumMarketingComponentProperties_GiftReminderNagbar {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.bodyKey = "";
+        if (value !== undefined)
+            reflectionMergePartial<PremiumMarketingComponentProperties_GiftReminderNagbar>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_GiftReminderNagbar): PremiumMarketingComponentProperties_GiftReminderNagbar {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string body_key */ 1:
+                    message.bodyKey = reader.string();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_GiftReminderNagbar, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string body_key = 1; */
+        if (message.bodyKey !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.bodyKey);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftReminderNagbar
+ */
+export const PremiumMarketingComponentProperties_GiftReminderNagbar = new PremiumMarketingComponentProperties_GiftReminderNagbar$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PremiumMarketingComponentProperties_GiftReminderCoachmark$Type extends MessageType<PremiumMarketingComponentProperties_GiftReminderCoachmark> {
+    constructor() {
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftReminderCoachmark", [
+            { no: 1, name: "header_key", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "body_key", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 3, name: "asset_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+        ]);
+    }
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_GiftReminderCoachmark>): PremiumMarketingComponentProperties_GiftReminderCoachmark {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.headerKey = "";
+        message.bodyKey = "";
+        message.assetUrl = "";
+        if (value !== undefined)
+            reflectionMergePartial<PremiumMarketingComponentProperties_GiftReminderCoachmark>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_GiftReminderCoachmark): PremiumMarketingComponentProperties_GiftReminderCoachmark {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string header_key */ 1:
+                    message.headerKey = reader.string();
+                    break;
+                case /* string body_key */ 2:
+                    message.bodyKey = reader.string();
+                    break;
+                case /* string asset_url */ 3:
+                    message.assetUrl = reader.string();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_GiftReminderCoachmark, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string header_key = 1; */
+        if (message.headerKey !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.headerKey);
+        /* string body_key = 2; */
+        if (message.bodyKey !== "")
+            writer.tag(2, WireType.LengthDelimited).string(message.bodyKey);
+        /* string asset_url = 3; */
+        if (message.assetUrl !== "")
+            writer.tag(3, WireType.LengthDelimited).string(message.assetUrl);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftReminderCoachmark
+ */
+export const PremiumMarketingComponentProperties_GiftReminderCoachmark = new PremiumMarketingComponentProperties_GiftReminderCoachmark$Type();

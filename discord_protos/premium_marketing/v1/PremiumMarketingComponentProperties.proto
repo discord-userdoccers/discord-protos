@@ -89,6 +89,68 @@ message PremiumMarketingComponentProperties {
     optional CTAButton button = 5;
   }
 
+  message Gradient {
+    repeated string colors = 1 [packed = false];
+    float angle = 2;
+  }
+
+  message GiftIcon {
+    string box_animation_url = 1;
+    string trinket_animation_url = 2;
+    string trinket_glow_animation_url = 3;
+    optional Gradient gradient = 4;
+  }
+
+  message GiftIconCoachmark {
+    string header_key = 1;
+    string body_key = 2;
+    string asset_url = 3;
+  }
+
+  message ThemeAwareAsset {
+    string light_url = 1;
+    string dark_url = 2;
+  }
+
+  message GiftPlanSelectionCardBanner {
+    string header_key = 1;
+    string desktop_body_key = 2;
+    string mobile_body_key = 3;
+    optional ThemeAwareAsset avatar_asset = 4;
+    string banner_asset_url = 5;
+    string background_asset_url = 6;
+    string card_asset_url = 7;
+    optional Gradient gradient = 8;
+  }
+
+  message GiftCustomizationBanner {
+    string asset_url = 1;
+    string desktop_body_key = 2;
+    string mobile_body_key = 3;
+    optional Gradient gradient = 4;
+    string background_asset_url = 5;
+  }
+
+  message BillingSettingsNitroGiftBanner {
+    string asset_url = 1;
+    string header_key = 2;
+    string body_key = 3;
+    string background_asset_url = 4;
+    optional Gradient gradient = 5;
+    string text_color = 6;
+    string additional_terms_key = 7;
+  }
+
+  message GiftReminderNagbar {
+    string body_key = 1;
+  }
+
+  message GiftReminderCoachmark {
+    string header_key = 1;
+    string body_key = 2;
+    string asset_url = 3;
+  }
+
   string content_identifier = 3;
   oneof properties {
     string placeholder = 1;
@@ -97,6 +159,13 @@ message PremiumMarketingComponentProperties {
     MarketingPageBanner marketing_page_banner = 5;
     PaymentModalBanner payment_modal_banner = 6;
     MobileBottomSheet mobile_bottom_sheet = 7;
+    GiftIcon gift_icon = 8;
+    GiftIconCoachmark gift_icon_coachmark = 9;
+    GiftPlanSelectionCardBanner gift_plan_selection_card_banner = 10;
+    GiftCustomizationBanner gift_customization_banner = 11;
+    BillingSettingsNitroGiftBanner billing_settings_nitro_gift_banner = 12;
+    GiftReminderNagbar gift_reminder_nagbar = 13;
+    GiftReminderCoachmark gift_reminder_coachmark = 14;
   }
 
 }
