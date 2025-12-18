@@ -564,9 +564,13 @@ export interface Experiment_UnitIdInRangeByHash {
      */
     hashKey: string;
     /**
-     * @generated from protobuf field: uint32 target = 2
+     * @generated from protobuf field: uint32 stop_ring_position = 2
      */
-    target: number;
+    stopRingPosition: number;
+    /**
+     * @generated from protobuf field: uint32 start_ring_position = 3
+     */
+    startRingPosition: number;
 }
 /**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.ClientReleaseChannel
@@ -2865,13 +2869,15 @@ class Experiment_UnitIdInRangeByHash$Type extends MessageType<Experiment_UnitIdI
     constructor() {
         super("discord_protos.discord_experimentation.v1.Experiment.UnitIdInRangeByHash", [
             { no: 1, name: "hash_key", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 2, name: "target", kind: "scalar", T: 13 /*ScalarType.UINT32*/ }
+            { no: 2, name: "stop_ring_position", kind: "scalar", T: 13 /*ScalarType.UINT32*/ },
+            { no: 3, name: "start_ring_position", kind: "scalar", T: 13 /*ScalarType.UINT32*/ }
         ]);
     }
     create(value?: PartialMessage<Experiment_UnitIdInRangeByHash>): Experiment_UnitIdInRangeByHash {
         const message = globalThis.Object.create((this.messagePrototype!));
         message.hashKey = "";
-        message.target = 0;
+        message.stopRingPosition = 0;
+        message.startRingPosition = 0;
         if (value !== undefined)
             reflectionMergePartial<Experiment_UnitIdInRangeByHash>(this, message, value);
         return message;
@@ -2884,8 +2890,11 @@ class Experiment_UnitIdInRangeByHash$Type extends MessageType<Experiment_UnitIdI
                 case /* string hash_key */ 1:
                     message.hashKey = reader.string();
                     break;
-                case /* uint32 target */ 2:
-                    message.target = reader.uint32();
+                case /* uint32 stop_ring_position */ 2:
+                    message.stopRingPosition = reader.uint32();
+                    break;
+                case /* uint32 start_ring_position */ 3:
+                    message.startRingPosition = reader.uint32();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -2902,9 +2911,12 @@ class Experiment_UnitIdInRangeByHash$Type extends MessageType<Experiment_UnitIdI
         /* string hash_key = 1; */
         if (message.hashKey !== "")
             writer.tag(1, WireType.LengthDelimited).string(message.hashKey);
-        /* uint32 target = 2; */
-        if (message.target !== 0)
-            writer.tag(2, WireType.Varint).uint32(message.target);
+        /* uint32 stop_ring_position = 2; */
+        if (message.stopRingPosition !== 0)
+            writer.tag(2, WireType.Varint).uint32(message.stopRingPosition);
+        /* uint32 start_ring_position = 3; */
+        if (message.startRingPosition !== 0)
+            writer.tag(3, WireType.Varint).uint32(message.startRingPosition);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

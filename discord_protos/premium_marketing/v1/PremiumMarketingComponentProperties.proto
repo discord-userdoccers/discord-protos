@@ -102,8 +102,8 @@ message PremiumMarketingComponentProperties {
   }
 
   message GiftIconCoachmark {
-    string header_key = 1;
-    string body_key = 2;
+    string header = 1;
+    string body = 2;
     string asset_url = 3;
   }
 
@@ -113,9 +113,9 @@ message PremiumMarketingComponentProperties {
   }
 
   message GiftPlanSelectionCardBanner {
-    string header_key = 1;
-    string desktop_body_key = 2;
-    string mobile_body_key = 3;
+    string header = 1;
+    string desktop_body = 2;
+    string mobile_body = 3;
     optional ThemeAwareAsset avatar_asset = 4;
     string banner_asset_url = 5;
     string background_asset_url = 6;
@@ -125,29 +125,29 @@ message PremiumMarketingComponentProperties {
 
   message GiftCustomizationBanner {
     string asset_url = 1;
-    string desktop_body_key = 2;
-    string mobile_body_key = 3;
+    string desktop_body = 2;
+    string mobile_body = 3;
     optional Gradient gradient = 4;
     string background_asset_url = 5;
   }
 
   message BillingSettingsNitroGiftBanner {
     string asset_url = 1;
-    string header_key = 2;
-    string body_key = 3;
+    string header = 2;
+    string body = 3;
     string background_asset_url = 4;
     optional Gradient gradient = 5;
     string text_color = 6;
-    string additional_terms_key = 7;
+    string additional_terms = 7;
   }
 
   message GiftReminderNagbar {
-    string body_key = 1;
+    string body = 1;
   }
 
   message GiftReminderCoachmark {
-    string header_key = 1;
-    string body_key = 2;
+    string header = 1;
+    string body = 2;
     string asset_url = 3;
   }
 

@@ -761,6 +761,10 @@ export interface PreloadedUserSettings_NotificationSettings {
      * @generated from protobuf field: optional google.protobuf.BoolValue enable_profile_updates_notifications = 16
      */
     enableProfileUpdatesNotifications?: BoolValue;
+    /**
+     * @generated from protobuf field: optional google.protobuf.BoolValue enable_server_trending_notifications = 17
+     */
+    enableServerTrendingNotifications?: BoolValue;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.PrivacySettings
@@ -3691,7 +3695,8 @@ class PreloadedUserSettings_NotificationSettings$Type extends MessageType<Preloa
             { no: 13, name: "enable_user_resurrection_notifications", kind: "message", T: () => BoolValue },
             { no: 14, name: "enable_friend_anniversary_notifications", kind: "message", T: () => BoolValue },
             { no: 15, name: "enable_game_update_notifications", kind: "message", T: () => BoolValue },
-            { no: 16, name: "enable_profile_updates_notifications", kind: "message", T: () => BoolValue }
+            { no: 16, name: "enable_profile_updates_notifications", kind: "message", T: () => BoolValue },
+            { no: 17, name: "enable_server_trending_notifications", kind: "message", T: () => BoolValue }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_NotificationSettings>): PreloadedUserSettings_NotificationSettings {
@@ -3758,6 +3763,9 @@ class PreloadedUserSettings_NotificationSettings$Type extends MessageType<Preloa
                 case /* optional google.protobuf.BoolValue enable_profile_updates_notifications */ 16:
                     message.enableProfileUpdatesNotifications = BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.enableProfileUpdatesNotifications);
                     break;
+                case /* optional google.protobuf.BoolValue enable_server_trending_notifications */ 17:
+                    message.enableServerTrendingNotifications = BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.enableServerTrendingNotifications);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -3818,6 +3826,9 @@ class PreloadedUserSettings_NotificationSettings$Type extends MessageType<Preloa
         /* optional google.protobuf.BoolValue enable_profile_updates_notifications = 16; */
         if (message.enableProfileUpdatesNotifications)
             BoolValue.internalBinaryWrite(message.enableProfileUpdatesNotifications, writer.tag(16, WireType.LengthDelimited).fork(), options).join();
+        /* optional google.protobuf.BoolValue enable_server_trending_notifications = 17; */
+        if (message.enableServerTrendingNotifications)
+            BoolValue.internalBinaryWrite(message.enableServerTrendingNotifications, writer.tag(17, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

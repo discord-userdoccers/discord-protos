@@ -169,7 +169,8 @@ message Experiment {
 
   message UnitIdInRangeByHash {
     string hash_key = 1;
-    uint32 target = 2;
+    uint32 stop_ring_position = 2;
+    uint32 start_ring_position = 3;
   }
 
   message ClientReleaseChannel {

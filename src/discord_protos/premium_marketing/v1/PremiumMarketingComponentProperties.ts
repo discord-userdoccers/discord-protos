@@ -383,13 +383,13 @@ export interface PremiumMarketingComponentProperties_GiftIcon {
  */
 export interface PremiumMarketingComponentProperties_GiftIconCoachmark {
     /**
-     * @generated from protobuf field: string header_key = 1
+     * @generated from protobuf field: string header = 1
      */
-    headerKey: string;
+    header: string;
     /**
-     * @generated from protobuf field: string body_key = 2
+     * @generated from protobuf field: string body = 2
      */
-    bodyKey: string;
+    body: string;
     /**
      * @generated from protobuf field: string asset_url = 3
      */
@@ -413,17 +413,17 @@ export interface PremiumMarketingComponentProperties_ThemeAwareAsset {
  */
 export interface PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner {
     /**
-     * @generated from protobuf field: string header_key = 1
+     * @generated from protobuf field: string header = 1
      */
-    headerKey: string;
+    header: string;
     /**
-     * @generated from protobuf field: string desktop_body_key = 2
+     * @generated from protobuf field: string desktop_body = 2
      */
-    desktopBodyKey: string;
+    desktopBody: string;
     /**
-     * @generated from protobuf field: string mobile_body_key = 3
+     * @generated from protobuf field: string mobile_body = 3
      */
-    mobileBodyKey: string;
+    mobileBody: string;
     /**
      * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset avatar_asset = 4
      */
@@ -454,13 +454,13 @@ export interface PremiumMarketingComponentProperties_GiftCustomizationBanner {
      */
     assetUrl: string;
     /**
-     * @generated from protobuf field: string desktop_body_key = 2
+     * @generated from protobuf field: string desktop_body = 2
      */
-    desktopBodyKey: string;
+    desktopBody: string;
     /**
-     * @generated from protobuf field: string mobile_body_key = 3
+     * @generated from protobuf field: string mobile_body = 3
      */
-    mobileBodyKey: string;
+    mobileBody: string;
     /**
      * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Gradient gradient = 4
      */
@@ -479,13 +479,13 @@ export interface PremiumMarketingComponentProperties_BillingSettingsNitroGiftBan
      */
     assetUrl: string;
     /**
-     * @generated from protobuf field: string header_key = 2
+     * @generated from protobuf field: string header = 2
      */
-    headerKey: string;
+    header: string;
     /**
-     * @generated from protobuf field: string body_key = 3
+     * @generated from protobuf field: string body = 3
      */
-    bodyKey: string;
+    body: string;
     /**
      * @generated from protobuf field: string background_asset_url = 4
      */
@@ -499,31 +499,31 @@ export interface PremiumMarketingComponentProperties_BillingSettingsNitroGiftBan
      */
     textColor: string;
     /**
-     * @generated from protobuf field: string additional_terms_key = 7
+     * @generated from protobuf field: string additional_terms = 7
      */
-    additionalTermsKey: string;
+    additionalTerms: string;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftReminderNagbar
  */
 export interface PremiumMarketingComponentProperties_GiftReminderNagbar {
     /**
-     * @generated from protobuf field: string body_key = 1
+     * @generated from protobuf field: string body = 1
      */
-    bodyKey: string;
+    body: string;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftReminderCoachmark
  */
 export interface PremiumMarketingComponentProperties_GiftReminderCoachmark {
     /**
-     * @generated from protobuf field: string header_key = 1
+     * @generated from protobuf field: string header = 1
      */
-    headerKey: string;
+    header: string;
     /**
-     * @generated from protobuf field: string body_key = 2
+     * @generated from protobuf field: string body = 2
      */
-    bodyKey: string;
+    body: string;
     /**
      * @generated from protobuf field: string asset_url = 3
      */
@@ -1694,15 +1694,15 @@ export const PremiumMarketingComponentProperties_GiftIcon = new PremiumMarketing
 class PremiumMarketingComponentProperties_GiftIconCoachmark$Type extends MessageType<PremiumMarketingComponentProperties_GiftIconCoachmark> {
     constructor() {
         super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftIconCoachmark", [
-            { no: 1, name: "header_key", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 2, name: "body_key", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 1, name: "header", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "body", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 3, name: "asset_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_GiftIconCoachmark>): PremiumMarketingComponentProperties_GiftIconCoachmark {
         const message = globalThis.Object.create((this.messagePrototype!));
-        message.headerKey = "";
-        message.bodyKey = "";
+        message.header = "";
+        message.body = "";
         message.assetUrl = "";
         if (value !== undefined)
             reflectionMergePartial<PremiumMarketingComponentProperties_GiftIconCoachmark>(this, message, value);
@@ -1713,11 +1713,11 @@ class PremiumMarketingComponentProperties_GiftIconCoachmark$Type extends Message
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
-                case /* string header_key */ 1:
-                    message.headerKey = reader.string();
+                case /* string header */ 1:
+                    message.header = reader.string();
                     break;
-                case /* string body_key */ 2:
-                    message.bodyKey = reader.string();
+                case /* string body */ 2:
+                    message.body = reader.string();
                     break;
                 case /* string asset_url */ 3:
                     message.assetUrl = reader.string();
@@ -1734,12 +1734,12 @@ class PremiumMarketingComponentProperties_GiftIconCoachmark$Type extends Message
         return message;
     }
     internalBinaryWrite(message: PremiumMarketingComponentProperties_GiftIconCoachmark, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* string header_key = 1; */
-        if (message.headerKey !== "")
-            writer.tag(1, WireType.LengthDelimited).string(message.headerKey);
-        /* string body_key = 2; */
-        if (message.bodyKey !== "")
-            writer.tag(2, WireType.LengthDelimited).string(message.bodyKey);
+        /* string header = 1; */
+        if (message.header !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.header);
+        /* string body = 2; */
+        if (message.body !== "")
+            writer.tag(2, WireType.LengthDelimited).string(message.body);
         /* string asset_url = 3; */
         if (message.assetUrl !== "")
             writer.tag(3, WireType.LengthDelimited).string(message.assetUrl);
@@ -1812,9 +1812,9 @@ export const PremiumMarketingComponentProperties_ThemeAwareAsset = new PremiumMa
 class PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner$Type extends MessageType<PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner> {
     constructor() {
         super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftPlanSelectionCardBanner", [
-            { no: 1, name: "header_key", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 2, name: "desktop_body_key", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 3, name: "mobile_body_key", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 1, name: "header", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "desktop_body", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 3, name: "mobile_body", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 4, name: "avatar_asset", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset },
             { no: 5, name: "banner_asset_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 6, name: "background_asset_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
@@ -1824,9 +1824,9 @@ class PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner$Type exten
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner>): PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner {
         const message = globalThis.Object.create((this.messagePrototype!));
-        message.headerKey = "";
-        message.desktopBodyKey = "";
-        message.mobileBodyKey = "";
+        message.header = "";
+        message.desktopBody = "";
+        message.mobileBody = "";
         message.bannerAssetUrl = "";
         message.backgroundAssetUrl = "";
         message.cardAssetUrl = "";
@@ -1839,14 +1839,14 @@ class PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner$Type exten
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
-                case /* string header_key */ 1:
-                    message.headerKey = reader.string();
+                case /* string header */ 1:
+                    message.header = reader.string();
                     break;
-                case /* string desktop_body_key */ 2:
-                    message.desktopBodyKey = reader.string();
+                case /* string desktop_body */ 2:
+                    message.desktopBody = reader.string();
                     break;
-                case /* string mobile_body_key */ 3:
-                    message.mobileBodyKey = reader.string();
+                case /* string mobile_body */ 3:
+                    message.mobileBody = reader.string();
                     break;
                 case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset avatar_asset */ 4:
                     message.avatarAsset = PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryRead(reader, reader.uint32(), options, message.avatarAsset);
@@ -1875,15 +1875,15 @@ class PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner$Type exten
         return message;
     }
     internalBinaryWrite(message: PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* string header_key = 1; */
-        if (message.headerKey !== "")
-            writer.tag(1, WireType.LengthDelimited).string(message.headerKey);
-        /* string desktop_body_key = 2; */
-        if (message.desktopBodyKey !== "")
-            writer.tag(2, WireType.LengthDelimited).string(message.desktopBodyKey);
-        /* string mobile_body_key = 3; */
-        if (message.mobileBodyKey !== "")
-            writer.tag(3, WireType.LengthDelimited).string(message.mobileBodyKey);
+        /* string header = 1; */
+        if (message.header !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.header);
+        /* string desktop_body = 2; */
+        if (message.desktopBody !== "")
+            writer.tag(2, WireType.LengthDelimited).string(message.desktopBody);
+        /* string mobile_body = 3; */
+        if (message.mobileBody !== "")
+            writer.tag(3, WireType.LengthDelimited).string(message.mobileBody);
         /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset avatar_asset = 4; */
         if (message.avatarAsset)
             PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryWrite(message.avatarAsset, writer.tag(4, WireType.LengthDelimited).fork(), options).join();
@@ -1914,8 +1914,8 @@ class PremiumMarketingComponentProperties_GiftCustomizationBanner$Type extends M
     constructor() {
         super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftCustomizationBanner", [
             { no: 1, name: "asset_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 2, name: "desktop_body_key", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 3, name: "mobile_body_key", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "desktop_body", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 3, name: "mobile_body", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 4, name: "gradient", kind: "message", T: () => PremiumMarketingComponentProperties_Gradient },
             { no: 5, name: "background_asset_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
         ]);
@@ -1923,8 +1923,8 @@ class PremiumMarketingComponentProperties_GiftCustomizationBanner$Type extends M
     create(value?: PartialMessage<PremiumMarketingComponentProperties_GiftCustomizationBanner>): PremiumMarketingComponentProperties_GiftCustomizationBanner {
         const message = globalThis.Object.create((this.messagePrototype!));
         message.assetUrl = "";
-        message.desktopBodyKey = "";
-        message.mobileBodyKey = "";
+        message.desktopBody = "";
+        message.mobileBody = "";
         message.backgroundAssetUrl = "";
         if (value !== undefined)
             reflectionMergePartial<PremiumMarketingComponentProperties_GiftCustomizationBanner>(this, message, value);
@@ -1938,11 +1938,11 @@ class PremiumMarketingComponentProperties_GiftCustomizationBanner$Type extends M
                 case /* string asset_url */ 1:
                     message.assetUrl = reader.string();
                     break;
-                case /* string desktop_body_key */ 2:
-                    message.desktopBodyKey = reader.string();
+                case /* string desktop_body */ 2:
+                    message.desktopBody = reader.string();
                     break;
-                case /* string mobile_body_key */ 3:
-                    message.mobileBodyKey = reader.string();
+                case /* string mobile_body */ 3:
+                    message.mobileBody = reader.string();
                     break;
                 case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Gradient gradient */ 4:
                     message.gradient = PremiumMarketingComponentProperties_Gradient.internalBinaryRead(reader, reader.uint32(), options, message.gradient);
@@ -1965,12 +1965,12 @@ class PremiumMarketingComponentProperties_GiftCustomizationBanner$Type extends M
         /* string asset_url = 1; */
         if (message.assetUrl !== "")
             writer.tag(1, WireType.LengthDelimited).string(message.assetUrl);
-        /* string desktop_body_key = 2; */
-        if (message.desktopBodyKey !== "")
-            writer.tag(2, WireType.LengthDelimited).string(message.desktopBodyKey);
-        /* string mobile_body_key = 3; */
-        if (message.mobileBodyKey !== "")
-            writer.tag(3, WireType.LengthDelimited).string(message.mobileBodyKey);
+        /* string desktop_body = 2; */
+        if (message.desktopBody !== "")
+            writer.tag(2, WireType.LengthDelimited).string(message.desktopBody);
+        /* string mobile_body = 3; */
+        if (message.mobileBody !== "")
+            writer.tag(3, WireType.LengthDelimited).string(message.mobileBody);
         /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Gradient gradient = 4; */
         if (message.gradient)
             PremiumMarketingComponentProperties_Gradient.internalBinaryWrite(message.gradient, writer.tag(4, WireType.LengthDelimited).fork(), options).join();
@@ -1992,22 +1992,22 @@ class PremiumMarketingComponentProperties_BillingSettingsNitroGiftBanner$Type ex
     constructor() {
         super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.BillingSettingsNitroGiftBanner", [
             { no: 1, name: "asset_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 2, name: "header_key", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 3, name: "body_key", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "header", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 3, name: "body", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 4, name: "background_asset_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 5, name: "gradient", kind: "message", T: () => PremiumMarketingComponentProperties_Gradient },
             { no: 6, name: "text_color", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 7, name: "additional_terms_key", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+            { no: 7, name: "additional_terms", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_BillingSettingsNitroGiftBanner>): PremiumMarketingComponentProperties_BillingSettingsNitroGiftBanner {
         const message = globalThis.Object.create((this.messagePrototype!));
         message.assetUrl = "";
-        message.headerKey = "";
-        message.bodyKey = "";
+        message.header = "";
+        message.body = "";
         message.backgroundAssetUrl = "";
         message.textColor = "";
-        message.additionalTermsKey = "";
+        message.additionalTerms = "";
         if (value !== undefined)
             reflectionMergePartial<PremiumMarketingComponentProperties_BillingSettingsNitroGiftBanner>(this, message, value);
         return message;
@@ -2020,11 +2020,11 @@ class PremiumMarketingComponentProperties_BillingSettingsNitroGiftBanner$Type ex
                 case /* string asset_url */ 1:
                     message.assetUrl = reader.string();
                     break;
-                case /* string header_key */ 2:
-                    message.headerKey = reader.string();
+                case /* string header */ 2:
+                    message.header = reader.string();
                     break;
-                case /* string body_key */ 3:
-                    message.bodyKey = reader.string();
+                case /* string body */ 3:
+                    message.body = reader.string();
                     break;
                 case /* string background_asset_url */ 4:
                     message.backgroundAssetUrl = reader.string();
@@ -2035,8 +2035,8 @@ class PremiumMarketingComponentProperties_BillingSettingsNitroGiftBanner$Type ex
                 case /* string text_color */ 6:
                     message.textColor = reader.string();
                     break;
-                case /* string additional_terms_key */ 7:
-                    message.additionalTermsKey = reader.string();
+                case /* string additional_terms */ 7:
+                    message.additionalTerms = reader.string();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -2053,12 +2053,12 @@ class PremiumMarketingComponentProperties_BillingSettingsNitroGiftBanner$Type ex
         /* string asset_url = 1; */
         if (message.assetUrl !== "")
             writer.tag(1, WireType.LengthDelimited).string(message.assetUrl);
-        /* string header_key = 2; */
-        if (message.headerKey !== "")
-            writer.tag(2, WireType.LengthDelimited).string(message.headerKey);
-        /* string body_key = 3; */
-        if (message.bodyKey !== "")
-            writer.tag(3, WireType.LengthDelimited).string(message.bodyKey);
+        /* string header = 2; */
+        if (message.header !== "")
+            writer.tag(2, WireType.LengthDelimited).string(message.header);
+        /* string body = 3; */
+        if (message.body !== "")
+            writer.tag(3, WireType.LengthDelimited).string(message.body);
         /* string background_asset_url = 4; */
         if (message.backgroundAssetUrl !== "")
             writer.tag(4, WireType.LengthDelimited).string(message.backgroundAssetUrl);
@@ -2068,9 +2068,9 @@ class PremiumMarketingComponentProperties_BillingSettingsNitroGiftBanner$Type ex
         /* string text_color = 6; */
         if (message.textColor !== "")
             writer.tag(6, WireType.LengthDelimited).string(message.textColor);
-        /* string additional_terms_key = 7; */
-        if (message.additionalTermsKey !== "")
-            writer.tag(7, WireType.LengthDelimited).string(message.additionalTermsKey);
+        /* string additional_terms = 7; */
+        if (message.additionalTerms !== "")
+            writer.tag(7, WireType.LengthDelimited).string(message.additionalTerms);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -2085,12 +2085,12 @@ export const PremiumMarketingComponentProperties_BillingSettingsNitroGiftBanner 
 class PremiumMarketingComponentProperties_GiftReminderNagbar$Type extends MessageType<PremiumMarketingComponentProperties_GiftReminderNagbar> {
     constructor() {
         super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftReminderNagbar", [
-            { no: 1, name: "body_key", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+            { no: 1, name: "body", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_GiftReminderNagbar>): PremiumMarketingComponentProperties_GiftReminderNagbar {
         const message = globalThis.Object.create((this.messagePrototype!));
-        message.bodyKey = "";
+        message.body = "";
         if (value !== undefined)
             reflectionMergePartial<PremiumMarketingComponentProperties_GiftReminderNagbar>(this, message, value);
         return message;
@@ -2100,8 +2100,8 @@ class PremiumMarketingComponentProperties_GiftReminderNagbar$Type extends Messag
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
-                case /* string body_key */ 1:
-                    message.bodyKey = reader.string();
+                case /* string body */ 1:
+                    message.body = reader.string();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -2115,9 +2115,9 @@ class PremiumMarketingComponentProperties_GiftReminderNagbar$Type extends Messag
         return message;
     }
     internalBinaryWrite(message: PremiumMarketingComponentProperties_GiftReminderNagbar, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* string body_key = 1; */
-        if (message.bodyKey !== "")
-            writer.tag(1, WireType.LengthDelimited).string(message.bodyKey);
+        /* string body = 1; */
+        if (message.body !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.body);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -2132,15 +2132,15 @@ export const PremiumMarketingComponentProperties_GiftReminderNagbar = new Premiu
 class PremiumMarketingComponentProperties_GiftReminderCoachmark$Type extends MessageType<PremiumMarketingComponentProperties_GiftReminderCoachmark> {
     constructor() {
         super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftReminderCoachmark", [
-            { no: 1, name: "header_key", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 2, name: "body_key", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 1, name: "header", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "body", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 3, name: "asset_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_GiftReminderCoachmark>): PremiumMarketingComponentProperties_GiftReminderCoachmark {
         const message = globalThis.Object.create((this.messagePrototype!));
-        message.headerKey = "";
-        message.bodyKey = "";
+        message.header = "";
+        message.body = "";
         message.assetUrl = "";
         if (value !== undefined)
             reflectionMergePartial<PremiumMarketingComponentProperties_GiftReminderCoachmark>(this, message, value);
@@ -2151,11 +2151,11 @@ class PremiumMarketingComponentProperties_GiftReminderCoachmark$Type extends Mes
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
-                case /* string header_key */ 1:
-                    message.headerKey = reader.string();
+                case /* string header */ 1:
+                    message.header = reader.string();
                     break;
-                case /* string body_key */ 2:
-                    message.bodyKey = reader.string();
+                case /* string body */ 2:
+                    message.body = reader.string();
                     break;
                 case /* string asset_url */ 3:
                     message.assetUrl = reader.string();
@@ -2172,12 +2172,12 @@ class PremiumMarketingComponentProperties_GiftReminderCoachmark$Type extends Mes
         return message;
     }
     internalBinaryWrite(message: PremiumMarketingComponentProperties_GiftReminderCoachmark, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* string header_key = 1; */
-        if (message.headerKey !== "")
-            writer.tag(1, WireType.LengthDelimited).string(message.headerKey);
-        /* string body_key = 2; */
-        if (message.bodyKey !== "")
-            writer.tag(2, WireType.LengthDelimited).string(message.bodyKey);
+        /* string header = 1; */
+        if (message.header !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.header);
+        /* string body = 2; */
+        if (message.body !== "")
+            writer.tag(2, WireType.LengthDelimited).string(message.body);
         /* string asset_url = 3; */
         if (message.assetUrl !== "")
             writer.tag(3, WireType.LengthDelimited).string(message.assetUrl);
