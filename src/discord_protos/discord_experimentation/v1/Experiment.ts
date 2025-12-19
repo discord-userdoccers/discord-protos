@@ -835,7 +835,11 @@ export enum Experiment_UnitType {
     /**
      * @generated from protobuf enum value: UNIT_TYPE_USER = 1;
      */
-    USER = 1
+    USER = 1,
+    /**
+     * @generated from protobuf enum value: UNIT_TYPE_INSTALLATION = 2;
+     */
+    INSTALLATION = 2
 }
 /**
  * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.Type

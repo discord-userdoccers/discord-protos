@@ -9,6 +9,7 @@ message Experiment {
   enum UnitType {
     UNIT_TYPE_UNSPECIFIED = 0;
     UNIT_TYPE_USER = 1;
+    UNIT_TYPE_INSTALLATION = 2;
   }
 
   enum Type {
