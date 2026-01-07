@@ -379,6 +379,27 @@ export interface PremiumMarketingComponentProperties_GiftIcon {
     gradient?: PremiumMarketingComponentProperties_Gradient;
 }
 /**
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset
+ */
+export interface PremiumMarketingComponentProperties_ThemeAwareAsset {
+    /**
+     * @generated from protobuf field: string light_url = 1
+     */
+    lightUrl: string;
+    /**
+     * @generated from protobuf field: string dark_url = 2
+     */
+    darkUrl: string;
+    /**
+     * @generated from protobuf field: string light_static_url = 3
+     */
+    lightStaticUrl: string;
+    /**
+     * @generated from protobuf field: string dark_static_url = 4
+     */
+    darkStaticUrl: string;
+}
+/**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftIconCoachmark
  */
 export interface PremiumMarketingComponentProperties_GiftIconCoachmark {
@@ -394,19 +415,10 @@ export interface PremiumMarketingComponentProperties_GiftIconCoachmark {
      * @generated from protobuf field: string asset_url = 3
      */
     assetUrl: string;
-}
-/**
- * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset
- */
-export interface PremiumMarketingComponentProperties_ThemeAwareAsset {
     /**
-     * @generated from protobuf field: string light_url = 1
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset = 4
      */
-    lightUrl: string;
-    /**
-     * @generated from protobuf field: string dark_url = 2
-     */
-    darkUrl: string;
+    asset?: PremiumMarketingComponentProperties_ThemeAwareAsset;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftPlanSelectionCardBanner
@@ -444,6 +456,22 @@ export interface PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner
      * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Gradient gradient = 8
      */
     gradient?: PremiumMarketingComponentProperties_Gradient;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset banner_asset = 9
+     */
+    bannerAsset?: PremiumMarketingComponentProperties_ThemeAwareAsset;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset background_asset = 10
+     */
+    backgroundAsset?: PremiumMarketingComponentProperties_ThemeAwareAsset;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset card_asset = 11
+     */
+    cardAsset?: PremiumMarketingComponentProperties_ThemeAwareAsset;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset mobile_card_asset = 12
+     */
+    mobileCardAsset?: PremiumMarketingComponentProperties_ThemeAwareAsset;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftCustomizationBanner
@@ -469,6 +497,18 @@ export interface PremiumMarketingComponentProperties_GiftCustomizationBanner {
      * @generated from protobuf field: string background_asset_url = 5
      */
     backgroundAssetUrl: string;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset = 6
+     */
+    asset?: PremiumMarketingComponentProperties_ThemeAwareAsset;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset background_asset = 7
+     */
+    backgroundAsset?: PremiumMarketingComponentProperties_ThemeAwareAsset;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset mobile_background_asset = 8
+     */
+    mobileBackgroundAsset?: PremiumMarketingComponentProperties_ThemeAwareAsset;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.BillingSettingsNitroGiftBanner
@@ -502,6 +542,14 @@ export interface PremiumMarketingComponentProperties_BillingSettingsNitroGiftBan
      * @generated from protobuf field: string additional_terms = 7
      */
     additionalTerms: string;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset = 8
+     */
+    asset?: PremiumMarketingComponentProperties_ThemeAwareAsset;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset background_asset = 9
+     */
+    backgroundAsset?: PremiumMarketingComponentProperties_ThemeAwareAsset;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftReminderNagbar
@@ -528,6 +576,10 @@ export interface PremiumMarketingComponentProperties_GiftReminderCoachmark {
      * @generated from protobuf field: string asset_url = 3
      */
     assetUrl: string;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset = 4
+     */
+    asset?: PremiumMarketingComponentProperties_ThemeAwareAsset;
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction
@@ -1691,12 +1743,84 @@ class PremiumMarketingComponentProperties_GiftIcon$Type extends MessageType<Prem
  */
 export const PremiumMarketingComponentProperties_GiftIcon = new PremiumMarketingComponentProperties_GiftIcon$Type();
 // @generated message type with reflection information, may provide speed optimized methods
+class PremiumMarketingComponentProperties_ThemeAwareAsset$Type extends MessageType<PremiumMarketingComponentProperties_ThemeAwareAsset> {
+    constructor() {
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset", [
+            { no: 1, name: "light_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "dark_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 3, name: "light_static_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 4, name: "dark_static_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+        ]);
+    }
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_ThemeAwareAsset>): PremiumMarketingComponentProperties_ThemeAwareAsset {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.lightUrl = "";
+        message.darkUrl = "";
+        message.lightStaticUrl = "";
+        message.darkStaticUrl = "";
+        if (value !== undefined)
+            reflectionMergePartial<PremiumMarketingComponentProperties_ThemeAwareAsset>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_ThemeAwareAsset): PremiumMarketingComponentProperties_ThemeAwareAsset {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string light_url */ 1:
+                    message.lightUrl = reader.string();
+                    break;
+                case /* string dark_url */ 2:
+                    message.darkUrl = reader.string();
+                    break;
+                case /* string light_static_url */ 3:
+                    message.lightStaticUrl = reader.string();
+                    break;
+                case /* string dark_static_url */ 4:
+                    message.darkStaticUrl = reader.string();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_ThemeAwareAsset, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string light_url = 1; */
+        if (message.lightUrl !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.lightUrl);
+        /* string dark_url = 2; */
+        if (message.darkUrl !== "")
+            writer.tag(2, WireType.LengthDelimited).string(message.darkUrl);
+        /* string light_static_url = 3; */
+        if (message.lightStaticUrl !== "")
+            writer.tag(3, WireType.LengthDelimited).string(message.lightStaticUrl);
+        /* string dark_static_url = 4; */
+        if (message.darkStaticUrl !== "")
+            writer.tag(4, WireType.LengthDelimited).string(message.darkStaticUrl);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset
+ */
+export const PremiumMarketingComponentProperties_ThemeAwareAsset = new PremiumMarketingComponentProperties_ThemeAwareAsset$Type();
+// @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties_GiftIconCoachmark$Type extends MessageType<PremiumMarketingComponentProperties_GiftIconCoachmark> {
     constructor() {
         super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftIconCoachmark", [
             { no: 1, name: "header", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 2, name: "body", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 3, name: "asset_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+            { no: 3, name: "asset_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 4, name: "asset", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_GiftIconCoachmark>): PremiumMarketingComponentProperties_GiftIconCoachmark {
@@ -1722,6 +1846,9 @@ class PremiumMarketingComponentProperties_GiftIconCoachmark$Type extends Message
                 case /* string asset_url */ 3:
                     message.assetUrl = reader.string();
                     break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset */ 4:
+                    message.asset = PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryRead(reader, reader.uint32(), options, message.asset);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -1743,6 +1870,9 @@ class PremiumMarketingComponentProperties_GiftIconCoachmark$Type extends Message
         /* string asset_url = 3; */
         if (message.assetUrl !== "")
             writer.tag(3, WireType.LengthDelimited).string(message.assetUrl);
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset = 4; */
+        if (message.asset)
+            PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryWrite(message.asset, writer.tag(4, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -1754,61 +1884,6 @@ class PremiumMarketingComponentProperties_GiftIconCoachmark$Type extends Message
  */
 export const PremiumMarketingComponentProperties_GiftIconCoachmark = new PremiumMarketingComponentProperties_GiftIconCoachmark$Type();
 // @generated message type with reflection information, may provide speed optimized methods
-class PremiumMarketingComponentProperties_ThemeAwareAsset$Type extends MessageType<PremiumMarketingComponentProperties_ThemeAwareAsset> {
-    constructor() {
-        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset", [
-            { no: 1, name: "light_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 2, name: "dark_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
-        ]);
-    }
-    create(value?: PartialMessage<PremiumMarketingComponentProperties_ThemeAwareAsset>): PremiumMarketingComponentProperties_ThemeAwareAsset {
-        const message = globalThis.Object.create((this.messagePrototype!));
-        message.lightUrl = "";
-        message.darkUrl = "";
-        if (value !== undefined)
-            reflectionMergePartial<PremiumMarketingComponentProperties_ThemeAwareAsset>(this, message, value);
-        return message;
-    }
-    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_ThemeAwareAsset): PremiumMarketingComponentProperties_ThemeAwareAsset {
-        let message = target ?? this.create(), end = reader.pos + length;
-        while (reader.pos < end) {
-            let [fieldNo, wireType] = reader.tag();
-            switch (fieldNo) {
-                case /* string light_url */ 1:
-                    message.lightUrl = reader.string();
-                    break;
-                case /* string dark_url */ 2:
-                    message.darkUrl = reader.string();
-                    break;
-                default:
-                    let u = options.readUnknownField;
-                    if (u === "throw")
-                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
-                    let d = reader.skip(wireType);
-                    if (u !== false)
-                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
-            }
-        }
-        return message;
-    }
-    internalBinaryWrite(message: PremiumMarketingComponentProperties_ThemeAwareAsset, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* string light_url = 1; */
-        if (message.lightUrl !== "")
-            writer.tag(1, WireType.LengthDelimited).string(message.lightUrl);
-        /* string dark_url = 2; */
-        if (message.darkUrl !== "")
-            writer.tag(2, WireType.LengthDelimited).string(message.darkUrl);
-        let u = options.writeUnknownFields;
-        if (u !== false)
-            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
-        return writer;
-    }
-}
-/**
- * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset
- */
-export const PremiumMarketingComponentProperties_ThemeAwareAsset = new PremiumMarketingComponentProperties_ThemeAwareAsset$Type();
-// @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner$Type extends MessageType<PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner> {
     constructor() {
         super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftPlanSelectionCardBanner", [
@@ -1819,7 +1894,11 @@ class PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner$Type exten
             { no: 5, name: "banner_asset_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 6, name: "background_asset_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 7, name: "card_asset_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 8, name: "gradient", kind: "message", T: () => PremiumMarketingComponentProperties_Gradient }
+            { no: 8, name: "gradient", kind: "message", T: () => PremiumMarketingComponentProperties_Gradient },
+            { no: 9, name: "banner_asset", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset },
+            { no: 10, name: "background_asset", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset },
+            { no: 11, name: "card_asset", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset },
+            { no: 12, name: "mobile_card_asset", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner>): PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner {
@@ -1863,6 +1942,18 @@ class PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner$Type exten
                 case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Gradient gradient */ 8:
                     message.gradient = PremiumMarketingComponentProperties_Gradient.internalBinaryRead(reader, reader.uint32(), options, message.gradient);
                     break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset banner_asset */ 9:
+                    message.bannerAsset = PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryRead(reader, reader.uint32(), options, message.bannerAsset);
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset background_asset */ 10:
+                    message.backgroundAsset = PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryRead(reader, reader.uint32(), options, message.backgroundAsset);
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset card_asset */ 11:
+                    message.cardAsset = PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryRead(reader, reader.uint32(), options, message.cardAsset);
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset mobile_card_asset */ 12:
+                    message.mobileCardAsset = PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryRead(reader, reader.uint32(), options, message.mobileCardAsset);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -1899,6 +1990,18 @@ class PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner$Type exten
         /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Gradient gradient = 8; */
         if (message.gradient)
             PremiumMarketingComponentProperties_Gradient.internalBinaryWrite(message.gradient, writer.tag(8, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset banner_asset = 9; */
+        if (message.bannerAsset)
+            PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryWrite(message.bannerAsset, writer.tag(9, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset background_asset = 10; */
+        if (message.backgroundAsset)
+            PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryWrite(message.backgroundAsset, writer.tag(10, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset card_asset = 11; */
+        if (message.cardAsset)
+            PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryWrite(message.cardAsset, writer.tag(11, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset mobile_card_asset = 12; */
+        if (message.mobileCardAsset)
+            PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryWrite(message.mobileCardAsset, writer.tag(12, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -1917,7 +2020,10 @@ class PremiumMarketingComponentProperties_GiftCustomizationBanner$Type extends M
             { no: 2, name: "desktop_body", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 3, name: "mobile_body", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 4, name: "gradient", kind: "message", T: () => PremiumMarketingComponentProperties_Gradient },
-            { no: 5, name: "background_asset_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+            { no: 5, name: "background_asset_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 6, name: "asset", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset },
+            { no: 7, name: "background_asset", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset },
+            { no: 8, name: "mobile_background_asset", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_GiftCustomizationBanner>): PremiumMarketingComponentProperties_GiftCustomizationBanner {
@@ -1950,6 +2056,15 @@ class PremiumMarketingComponentProperties_GiftCustomizationBanner$Type extends M
                 case /* string background_asset_url */ 5:
                     message.backgroundAssetUrl = reader.string();
                     break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset */ 6:
+                    message.asset = PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryRead(reader, reader.uint32(), options, message.asset);
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset background_asset */ 7:
+                    message.backgroundAsset = PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryRead(reader, reader.uint32(), options, message.backgroundAsset);
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset mobile_background_asset */ 8:
+                    message.mobileBackgroundAsset = PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryRead(reader, reader.uint32(), options, message.mobileBackgroundAsset);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -1977,6 +2092,15 @@ class PremiumMarketingComponentProperties_GiftCustomizationBanner$Type extends M
         /* string background_asset_url = 5; */
         if (message.backgroundAssetUrl !== "")
             writer.tag(5, WireType.LengthDelimited).string(message.backgroundAssetUrl);
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset = 6; */
+        if (message.asset)
+            PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryWrite(message.asset, writer.tag(6, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset background_asset = 7; */
+        if (message.backgroundAsset)
+            PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryWrite(message.backgroundAsset, writer.tag(7, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset mobile_background_asset = 8; */
+        if (message.mobileBackgroundAsset)
+            PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryWrite(message.mobileBackgroundAsset, writer.tag(8, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -1997,7 +2121,9 @@ class PremiumMarketingComponentProperties_BillingSettingsNitroGiftBanner$Type ex
             { no: 4, name: "background_asset_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 5, name: "gradient", kind: "message", T: () => PremiumMarketingComponentProperties_Gradient },
             { no: 6, name: "text_color", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 7, name: "additional_terms", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+            { no: 7, name: "additional_terms", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 8, name: "asset", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset },
+            { no: 9, name: "background_asset", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_BillingSettingsNitroGiftBanner>): PremiumMarketingComponentProperties_BillingSettingsNitroGiftBanner {
@@ -2038,6 +2164,12 @@ class PremiumMarketingComponentProperties_BillingSettingsNitroGiftBanner$Type ex
                 case /* string additional_terms */ 7:
                     message.additionalTerms = reader.string();
                     break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset */ 8:
+                    message.asset = PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryRead(reader, reader.uint32(), options, message.asset);
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset background_asset */ 9:
+                    message.backgroundAsset = PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryRead(reader, reader.uint32(), options, message.backgroundAsset);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -2071,6 +2203,12 @@ class PremiumMarketingComponentProperties_BillingSettingsNitroGiftBanner$Type ex
         /* string additional_terms = 7; */
         if (message.additionalTerms !== "")
             writer.tag(7, WireType.LengthDelimited).string(message.additionalTerms);
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset = 8; */
+        if (message.asset)
+            PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryWrite(message.asset, writer.tag(8, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset background_asset = 9; */
+        if (message.backgroundAsset)
+            PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryWrite(message.backgroundAsset, writer.tag(9, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -2134,7 +2272,8 @@ class PremiumMarketingComponentProperties_GiftReminderCoachmark$Type extends Mes
         super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftReminderCoachmark", [
             { no: 1, name: "header", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 2, name: "body", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 3, name: "asset_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+            { no: 3, name: "asset_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 4, name: "asset", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_GiftReminderCoachmark>): PremiumMarketingComponentProperties_GiftReminderCoachmark {
@@ -2160,6 +2299,9 @@ class PremiumMarketingComponentProperties_GiftReminderCoachmark$Type extends Mes
                 case /* string asset_url */ 3:
                     message.assetUrl = reader.string();
                     break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset */ 4:
+                    message.asset = PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryRead(reader, reader.uint32(), options, message.asset);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -2181,6 +2323,9 @@ class PremiumMarketingComponentProperties_GiftReminderCoachmark$Type extends Mes
         /* string asset_url = 3; */
         if (message.assetUrl !== "")
             writer.tag(3, WireType.LengthDelimited).string(message.assetUrl);
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset = 4; */
+        if (message.asset)
+            PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryWrite(message.asset, writer.tag(4, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

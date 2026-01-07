@@ -101,15 +101,18 @@ message PremiumMarketingComponentProperties {
     optional Gradient gradient = 4;
   }
 
+  message ThemeAwareAsset {
+    string light_url = 1;
+    string dark_url = 2;
+    string light_static_url = 3;
+    string dark_static_url = 4;
+  }
+
   message GiftIconCoachmark {
     string header = 1;
     string body = 2;
     string asset_url = 3;
-  }
-
-  message ThemeAwareAsset {
-    string light_url = 1;
-    string dark_url = 2;
+    optional ThemeAwareAsset asset = 4;
   }
 
   message GiftPlanSelectionCardBanner {
@@ -121,6 +124,10 @@ message PremiumMarketingComponentProperties {
     string background_asset_url = 6;
     string card_asset_url = 7;
     optional Gradient gradient = 8;
+    optional ThemeAwareAsset banner_asset = 9;
+    optional ThemeAwareAsset background_asset = 10;
+    optional ThemeAwareAsset card_asset = 11;
+    optional ThemeAwareAsset mobile_card_asset = 12;
   }
 
   message GiftCustomizationBanner {
@@ -129,6 +136,9 @@ message PremiumMarketingComponentProperties {
     string mobile_body = 3;
     optional Gradient gradient = 4;
     string background_asset_url = 5;
+    optional ThemeAwareAsset asset = 6;
+    optional ThemeAwareAsset background_asset = 7;
+    optional ThemeAwareAsset mobile_background_asset = 8;
   }
 
   message BillingSettingsNitroGiftBanner {
@@ -139,6 +149,8 @@ message PremiumMarketingComponentProperties {
     optional Gradient gradient = 5;
     string text_color = 6;
     string additional_terms = 7;
+    optional ThemeAwareAsset asset = 8;
+    optional ThemeAwareAsset background_asset = 9;
   }
 
   message GiftReminderNagbar {
@@ -149,6 +161,7 @@ message PremiumMarketingComponentProperties {
     string header = 1;
     string body = 2;
     string asset_url = 3;
+    optional ThemeAwareAsset asset = 4;
   }
 
   string content_identifier = 3;
