@@ -127,7 +127,7 @@ message PremiumMarketingComponentProperties {
     optional ThemeAwareAsset banner_asset = 9;
     optional ThemeAwareAsset background_asset = 10;
     optional ThemeAwareAsset card_asset = 11;
-    optional ThemeAwareAsset mobile_card_asset = 12;
+    optional ThemeAwareAsset mobile_banner_asset = 12;
   }
 
   message GiftCustomizationBanner {

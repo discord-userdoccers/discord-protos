@@ -469,9 +469,9 @@ export interface PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner
      */
     cardAsset?: PremiumMarketingComponentProperties_ThemeAwareAsset;
     /**
-     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset mobile_card_asset = 12
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset mobile_banner_asset = 12
      */
-    mobileCardAsset?: PremiumMarketingComponentProperties_ThemeAwareAsset;
+    mobileBannerAsset?: PremiumMarketingComponentProperties_ThemeAwareAsset;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftCustomizationBanner
@@ -1898,7 +1898,7 @@ class PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner$Type exten
             { no: 9, name: "banner_asset", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset },
             { no: 10, name: "background_asset", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset },
             { no: 11, name: "card_asset", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset },
-            { no: 12, name: "mobile_card_asset", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset }
+            { no: 12, name: "mobile_banner_asset", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner>): PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner {
@@ -1951,8 +1951,8 @@ class PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner$Type exten
                 case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset card_asset */ 11:
                     message.cardAsset = PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryRead(reader, reader.uint32(), options, message.cardAsset);
                     break;
-                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset mobile_card_asset */ 12:
-                    message.mobileCardAsset = PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryRead(reader, reader.uint32(), options, message.mobileCardAsset);
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset mobile_banner_asset */ 12:
+                    message.mobileBannerAsset = PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryRead(reader, reader.uint32(), options, message.mobileBannerAsset);
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -1999,9 +1999,9 @@ class PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner$Type exten
         /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset card_asset = 11; */
         if (message.cardAsset)
             PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryWrite(message.cardAsset, writer.tag(11, WireType.LengthDelimited).fork(), options).join();
-        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset mobile_card_asset = 12; */
-        if (message.mobileCardAsset)
-            PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryWrite(message.mobileCardAsset, writer.tag(12, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset mobile_banner_asset = 12; */
+        if (message.mobileBannerAsset)
+            PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryWrite(message.mobileBannerAsset, writer.tag(12, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
