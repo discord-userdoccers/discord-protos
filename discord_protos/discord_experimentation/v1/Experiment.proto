@@ -201,6 +201,19 @@ message Experiment {
     repeated fixed64 target_filter_values = 2;
   }
 
+  message GuildIds {
+    repeated fixed64 guild_ids = 1;
+  }
+
+  message GuildMemberCountRange {
+    optional google.protobuf.UInt32Value min_count = 1;
+    optional google.protobuf.UInt32Value max_count = 2;
+  }
+
+  message GuildHasFeature {
+    repeated string features = 1 [packed = false];
+  }
+
   message Filter {
     oneof filter {
       ClientPlatform client_version = 2;
@@ -223,6 +236,9 @@ message Experiment {
       UnitIdInExperiment unit_id_in_experiment = 19;
       UserPremiumType user_premium_type = 20;
       UnitIdMatchesFilterSnapshot unit_id_matches_filter_snapshot = 21;
+      GuildIds guild_ids = 22;
+      GuildMemberCountRange guild_member_count_range = 25;
+      GuildHasFeature guild_has_feature = 26;
     }
   }
 

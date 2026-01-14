@@ -635,6 +635,37 @@ export interface Experiment_UnitIdMatchesFilterSnapshot {
     targetFilterValues: bigint[];
 }
 /**
+ * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.GuildIds
+ */
+export interface Experiment_GuildIds {
+    /**
+     * @generated from protobuf field: repeated fixed64 guild_ids = 1
+     */
+    guildIds: bigint[];
+}
+/**
+ * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.GuildMemberCountRange
+ */
+export interface Experiment_GuildMemberCountRange {
+    /**
+     * @generated from protobuf field: optional google.protobuf.UInt32Value min_count = 1
+     */
+    minCount?: UInt32Value;
+    /**
+     * @generated from protobuf field: optional google.protobuf.UInt32Value max_count = 2
+     */
+    maxCount?: UInt32Value;
+}
+/**
+ * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.GuildHasFeature
+ */
+export interface Experiment_GuildHasFeature {
+    /**
+     * @generated from protobuf field: repeated string features = 1 [packed = false]
+     */
+    features: string[];
+}
+/**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.Filter
  */
 export interface Experiment_Filter {
@@ -761,6 +792,24 @@ export interface Experiment_Filter {
          * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.UnitIdMatchesFilterSnapshot unit_id_matches_filter_snapshot = 21
          */
         unitIdMatchesFilterSnapshot: Experiment_UnitIdMatchesFilterSnapshot;
+    } | {
+        oneofKind: "guildIds";
+        /**
+         * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.GuildIds guild_ids = 22
+         */
+        guildIds: Experiment_GuildIds;
+    } | {
+        oneofKind: "guildMemberCountRange";
+        /**
+         * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.GuildMemberCountRange guild_member_count_range = 25
+         */
+        guildMemberCountRange: Experiment_GuildMemberCountRange;
+    } | {
+        oneofKind: "guildHasFeature";
+        /**
+         * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.GuildHasFeature guild_has_feature = 26
+         */
+        guildHasFeature: Experiment_GuildHasFeature;
     } | {
         oneofKind: undefined;
     };
@@ -3258,6 +3307,161 @@ class Experiment_UnitIdMatchesFilterSnapshot$Type extends MessageType<Experiment
  */
 export const Experiment_UnitIdMatchesFilterSnapshot = new Experiment_UnitIdMatchesFilterSnapshot$Type();
 // @generated message type with reflection information, may provide speed optimized methods
+class Experiment_GuildIds$Type extends MessageType<Experiment_GuildIds> {
+    constructor() {
+        super("discord_protos.discord_experimentation.v1.Experiment.GuildIds", [
+            { no: 1, name: "guild_ids", kind: "scalar", repeat: 1 /*RepeatType.PACKED*/, T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ }
+        ]);
+    }
+    create(value?: PartialMessage<Experiment_GuildIds>): Experiment_GuildIds {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.guildIds = [];
+        if (value !== undefined)
+            reflectionMergePartial<Experiment_GuildIds>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: Experiment_GuildIds): Experiment_GuildIds {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* repeated fixed64 guild_ids */ 1:
+                    if (wireType === WireType.LengthDelimited)
+                        for (let e = reader.int32() + reader.pos; reader.pos < e;)
+                            message.guildIds.push(reader.fixed64().toBigInt());
+                    else
+                        message.guildIds.push(reader.fixed64().toBigInt());
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: Experiment_GuildIds, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* repeated fixed64 guild_ids = 1; */
+        if (message.guildIds.length) {
+            writer.tag(1, WireType.LengthDelimited).fork();
+            for (let i = 0; i < message.guildIds.length; i++)
+                writer.fixed64(message.guildIds[i]);
+            writer.join();
+        }
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_experimentation.v1.Experiment.GuildIds
+ */
+export const Experiment_GuildIds = new Experiment_GuildIds$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class Experiment_GuildMemberCountRange$Type extends MessageType<Experiment_GuildMemberCountRange> {
+    constructor() {
+        super("discord_protos.discord_experimentation.v1.Experiment.GuildMemberCountRange", [
+            { no: 1, name: "min_count", kind: "message", T: () => UInt32Value },
+            { no: 2, name: "max_count", kind: "message", T: () => UInt32Value }
+        ]);
+    }
+    create(value?: PartialMessage<Experiment_GuildMemberCountRange>): Experiment_GuildMemberCountRange {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        if (value !== undefined)
+            reflectionMergePartial<Experiment_GuildMemberCountRange>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: Experiment_GuildMemberCountRange): Experiment_GuildMemberCountRange {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* optional google.protobuf.UInt32Value min_count */ 1:
+                    message.minCount = UInt32Value.internalBinaryRead(reader, reader.uint32(), options, message.minCount);
+                    break;
+                case /* optional google.protobuf.UInt32Value max_count */ 2:
+                    message.maxCount = UInt32Value.internalBinaryRead(reader, reader.uint32(), options, message.maxCount);
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: Experiment_GuildMemberCountRange, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* optional google.protobuf.UInt32Value min_count = 1; */
+        if (message.minCount)
+            UInt32Value.internalBinaryWrite(message.minCount, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        /* optional google.protobuf.UInt32Value max_count = 2; */
+        if (message.maxCount)
+            UInt32Value.internalBinaryWrite(message.maxCount, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_experimentation.v1.Experiment.GuildMemberCountRange
+ */
+export const Experiment_GuildMemberCountRange = new Experiment_GuildMemberCountRange$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class Experiment_GuildHasFeature$Type extends MessageType<Experiment_GuildHasFeature> {
+    constructor() {
+        super("discord_protos.discord_experimentation.v1.Experiment.GuildHasFeature", [
+            { no: 1, name: "features", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 9 /*ScalarType.STRING*/ }
+        ]);
+    }
+    create(value?: PartialMessage<Experiment_GuildHasFeature>): Experiment_GuildHasFeature {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.features = [];
+        if (value !== undefined)
+            reflectionMergePartial<Experiment_GuildHasFeature>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: Experiment_GuildHasFeature): Experiment_GuildHasFeature {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* repeated string features = 1 [packed = false] */ 1:
+                    message.features.push(reader.string());
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: Experiment_GuildHasFeature, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* repeated string features = 1 [packed = false]; */
+        for (let i = 0; i < message.features.length; i++)
+            writer.tag(1, WireType.LengthDelimited).string(message.features[i]);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_experimentation.v1.Experiment.GuildHasFeature
+ */
+export const Experiment_GuildHasFeature = new Experiment_GuildHasFeature$Type();
+// @generated message type with reflection information, may provide speed optimized methods
 class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
     constructor() {
         super("discord_protos.discord_experimentation.v1.Experiment.Filter", [
@@ -3280,7 +3484,10 @@ class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
             { no: 18, name: "client_system_locale", kind: "message", oneof: "filter", T: () => Experiment_ClientSystemLocale },
             { no: 19, name: "unit_id_in_experiment", kind: "message", oneof: "filter", T: () => Experiment_UnitIdInExperiment },
             { no: 20, name: "user_premium_type", kind: "message", oneof: "filter", T: () => Experiment_UserPremiumType },
-            { no: 21, name: "unit_id_matches_filter_snapshot", kind: "message", oneof: "filter", T: () => Experiment_UnitIdMatchesFilterSnapshot }
+            { no: 21, name: "unit_id_matches_filter_snapshot", kind: "message", oneof: "filter", T: () => Experiment_UnitIdMatchesFilterSnapshot },
+            { no: 22, name: "guild_ids", kind: "message", oneof: "filter", T: () => Experiment_GuildIds },
+            { no: 25, name: "guild_member_count_range", kind: "message", oneof: "filter", T: () => Experiment_GuildMemberCountRange },
+            { no: 26, name: "guild_has_feature", kind: "message", oneof: "filter", T: () => Experiment_GuildHasFeature }
         ]);
     }
     create(value?: PartialMessage<Experiment_Filter>): Experiment_Filter {
@@ -3415,6 +3622,24 @@ class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
                         unitIdMatchesFilterSnapshot: Experiment_UnitIdMatchesFilterSnapshot.internalBinaryRead(reader, reader.uint32(), options, (message.filter as any).unitIdMatchesFilterSnapshot)
                     };
                     break;
+                case /* discord_protos.discord_experimentation.v1.Experiment.GuildIds guild_ids */ 22:
+                    message.filter = {
+                        oneofKind: "guildIds",
+                        guildIds: Experiment_GuildIds.internalBinaryRead(reader, reader.uint32(), options, (message.filter as any).guildIds)
+                    };
+                    break;
+                case /* discord_protos.discord_experimentation.v1.Experiment.GuildMemberCountRange guild_member_count_range */ 25:
+                    message.filter = {
+                        oneofKind: "guildMemberCountRange",
+                        guildMemberCountRange: Experiment_GuildMemberCountRange.internalBinaryRead(reader, reader.uint32(), options, (message.filter as any).guildMemberCountRange)
+                    };
+                    break;
+                case /* discord_protos.discord_experimentation.v1.Experiment.GuildHasFeature guild_has_feature */ 26:
+                    message.filter = {
+                        oneofKind: "guildHasFeature",
+                        guildHasFeature: Experiment_GuildHasFeature.internalBinaryRead(reader, reader.uint32(), options, (message.filter as any).guildHasFeature)
+                    };
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -3487,6 +3712,15 @@ class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
         /* discord_protos.discord_experimentation.v1.Experiment.UnitIdMatchesFilterSnapshot unit_id_matches_filter_snapshot = 21; */
         if (message.filter.oneofKind === "unitIdMatchesFilterSnapshot")
             Experiment_UnitIdMatchesFilterSnapshot.internalBinaryWrite(message.filter.unitIdMatchesFilterSnapshot, writer.tag(21, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.discord_experimentation.v1.Experiment.GuildIds guild_ids = 22; */
+        if (message.filter.oneofKind === "guildIds")
+            Experiment_GuildIds.internalBinaryWrite(message.filter.guildIds, writer.tag(22, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.discord_experimentation.v1.Experiment.GuildMemberCountRange guild_member_count_range = 25; */
+        if (message.filter.oneofKind === "guildMemberCountRange")
+            Experiment_GuildMemberCountRange.internalBinaryWrite(message.filter.guildMemberCountRange, writer.tag(25, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.discord_experimentation.v1.Experiment.GuildHasFeature guild_has_feature = 26; */
+        if (message.filter.oneofKind === "guildHasFeature")
+            Experiment_GuildHasFeature.internalBinaryWrite(message.filter.guildHasFeature, writer.tag(26, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
