@@ -18,6 +18,7 @@ message Experiment {
     TYPE_ACTIVE = 1;
     TYPE_UNUSED = 2;
     TYPE_BURNED = 3;
+    TYPE_PRESERVED = 4;
   }
 
   message Bucket {
@@ -246,11 +247,17 @@ message Experiment {
     int32 variation_id = 1;
   }
 
+  enum Subtype {
+    SUBTYPE_REGULAR = 0;
+    SUBTYPE_HOLDOUT = 1;
+  }
+
   message Rule {
     Type type = 1;
     repeated Filter filters = 2;
     optional Override override = 3;
     bool is_sunset_rule = 4;
+    Subtype subtype = 5;
   }
 
   enum Phase {

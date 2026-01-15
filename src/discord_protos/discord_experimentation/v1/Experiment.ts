@@ -843,6 +843,10 @@ export interface Experiment_Rule {
      * @generated from protobuf field: bool is_sunset_rule = 4
      */
     isSunsetRule: boolean;
+    /**
+     * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.Subtype subtype = 5
+     */
+    subtype: Experiment_Subtype;
 }
 /**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.DebugConfig
@@ -913,7 +917,24 @@ export enum Experiment_Type {
     /**
      * @generated from protobuf enum value: TYPE_BURNED = 3;
      */
-    BURNED = 3
+    BURNED = 3,
+    /**
+     * @generated from protobuf enum value: TYPE_PRESERVED = 4;
+     */
+    PRESERVED = 4
+}
+/**
+ * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.Subtype
+ */
+export enum Experiment_Subtype {
+    /**
+     * @generated from protobuf enum value: SUBTYPE_REGULAR = 0;
+     */
+    REGULAR = 0,
+    /**
+     * @generated from protobuf enum value: SUBTYPE_HOLDOUT = 1;
+     */
+    HOLDOUT = 1
 }
 /**
  * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.Phase
@@ -3785,7 +3806,8 @@ class Experiment_Rule$Type extends MessageType<Experiment_Rule> {
             { no: 1, name: "type", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.Type", Experiment_Type, "TYPE_"] },
             { no: 2, name: "filters", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => Experiment_Filter },
             { no: 3, name: "override", kind: "message", T: () => Experiment_Override },
-            { no: 4, name: "is_sunset_rule", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
+            { no: 4, name: "is_sunset_rule", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
+            { no: 5, name: "subtype", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.Subtype", Experiment_Subtype, "SUBTYPE_"] }
         ]);
     }
     create(value?: PartialMessage<Experiment_Rule>): Experiment_Rule {
@@ -3793,6 +3815,7 @@ class Experiment_Rule$Type extends MessageType<Experiment_Rule> {
         message.type = 0;
         message.filters = [];
         message.isSunsetRule = false;
+        message.subtype = 0;
         if (value !== undefined)
             reflectionMergePartial<Experiment_Rule>(this, message, value);
         return message;
@@ -3813,6 +3836,9 @@ class Experiment_Rule$Type extends MessageType<Experiment_Rule> {
                     break;
                 case /* bool is_sunset_rule */ 4:
                     message.isSunsetRule = reader.bool();
+                    break;
+                case /* discord_protos.discord_experimentation.v1.Experiment.Subtype subtype */ 5:
+                    message.subtype = reader.int32();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -3838,6 +3864,9 @@ class Experiment_Rule$Type extends MessageType<Experiment_Rule> {
         /* bool is_sunset_rule = 4; */
         if (message.isSunsetRule !== false)
             writer.tag(4, WireType.Varint).bool(message.isSunsetRule);
+        /* discord_protos.discord_experimentation.v1.Experiment.Subtype subtype = 5; */
+        if (message.subtype !== 0)
+            writer.tag(5, WireType.Varint).int32(message.subtype);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

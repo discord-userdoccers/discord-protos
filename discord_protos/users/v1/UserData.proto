@@ -188,6 +188,11 @@ message UserData {
     repeated uint32 colors = 3;
   }
 
+  message StoreCountry {
+    string country = 1;
+    optional google.protobuf.Timestamp set_at = 2;
+  }
+
   map<fixed64, LinkedUser> linked_users = 1;
   map<uint32, FeatureLimits> safety_feature_limits = 2;
   map<uint32, SafetyFlag> safety_flags = 3;
@@ -198,4 +203,5 @@ message UserData {
   optional SafetyState safety_state = 8;
   optional PremiumState premium_state = 9;
   optional DisplayNameStyles display_name_styles = 10;
+  optional StoreCountry store_country = 11;
 }

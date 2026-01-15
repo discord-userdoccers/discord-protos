@@ -64,6 +64,10 @@ export interface UserData {
      * @generated from protobuf field: optional discord_protos.users.v1.UserData.DisplayNameStyles display_name_styles = 10
      */
     displayNameStyles?: UserData_DisplayNameStyles;
+    /**
+     * @generated from protobuf field: optional discord_protos.users.v1.UserData.StoreCountry store_country = 11
+     */
+    storeCountry?: UserData_StoreCountry;
 }
 /**
  * @generated from protobuf message discord_protos.users.v1.UserData.LinkedUser
@@ -323,6 +327,19 @@ export interface UserData_DisplayNameStyles {
      * @generated from protobuf field: repeated uint32 colors = 3
      */
     colors: number[];
+}
+/**
+ * @generated from protobuf message discord_protos.users.v1.UserData.StoreCountry
+ */
+export interface UserData_StoreCountry {
+    /**
+     * @generated from protobuf field: string country = 1
+     */
+    country: string;
+    /**
+     * @generated from protobuf field: optional google.protobuf.Timestamp set_at = 2
+     */
+    setAt?: Timestamp;
 }
 /**
  * @generated from protobuf enum discord_protos.users.v1.UserData.UserLinkType
@@ -634,7 +651,8 @@ class UserData$Type extends MessageType<UserData> {
             { no: 7, name: "collectibles", kind: "message", T: () => UserData_UserCollectibles },
             { no: 8, name: "safety_state", kind: "message", T: () => UserData_SafetyState },
             { no: 9, name: "premium_state", kind: "message", T: () => UserData_PremiumState },
-            { no: 10, name: "display_name_styles", kind: "message", T: () => UserData_DisplayNameStyles }
+            { no: 10, name: "display_name_styles", kind: "message", T: () => UserData_DisplayNameStyles },
+            { no: 11, name: "store_country", kind: "message", T: () => UserData_StoreCountry }
         ]);
     }
     create(value?: PartialMessage<UserData>): UserData {
@@ -680,6 +698,9 @@ class UserData$Type extends MessageType<UserData> {
                     break;
                 case /* optional discord_protos.users.v1.UserData.DisplayNameStyles display_name_styles */ 10:
                     message.displayNameStyles = UserData_DisplayNameStyles.internalBinaryRead(reader, reader.uint32(), options, message.displayNameStyles);
+                    break;
+                case /* optional discord_protos.users.v1.UserData.StoreCountry store_country */ 11:
+                    message.storeCountry = UserData_StoreCountry.internalBinaryRead(reader, reader.uint32(), options, message.storeCountry);
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -783,6 +804,9 @@ class UserData$Type extends MessageType<UserData> {
         /* optional discord_protos.users.v1.UserData.DisplayNameStyles display_name_styles = 10; */
         if (message.displayNameStyles)
             UserData_DisplayNameStyles.internalBinaryWrite(message.displayNameStyles, writer.tag(10, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.users.v1.UserData.StoreCountry store_country = 11; */
+        if (message.storeCountry)
+            UserData_StoreCountry.internalBinaryWrite(message.storeCountry, writer.tag(11, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -1797,3 +1821,57 @@ class UserData_DisplayNameStyles$Type extends MessageType<UserData_DisplayNameSt
  * @generated MessageType for protobuf message discord_protos.users.v1.UserData.DisplayNameStyles
  */
 export const UserData_DisplayNameStyles = new UserData_DisplayNameStyles$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class UserData_StoreCountry$Type extends MessageType<UserData_StoreCountry> {
+    constructor() {
+        super("discord_protos.users.v1.UserData.StoreCountry", [
+            { no: 1, name: "country", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "set_at", kind: "message", T: () => Timestamp }
+        ]);
+    }
+    create(value?: PartialMessage<UserData_StoreCountry>): UserData_StoreCountry {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.country = "";
+        if (value !== undefined)
+            reflectionMergePartial<UserData_StoreCountry>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: UserData_StoreCountry): UserData_StoreCountry {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string country */ 1:
+                    message.country = reader.string();
+                    break;
+                case /* optional google.protobuf.Timestamp set_at */ 2:
+                    message.setAt = Timestamp.internalBinaryRead(reader, reader.uint32(), options, message.setAt);
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: UserData_StoreCountry, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string country = 1; */
+        if (message.country !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.country);
+        /* optional google.protobuf.Timestamp set_at = 2; */
+        if (message.setAt)
+            Timestamp.internalBinaryWrite(message.setAt, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.users.v1.UserData.StoreCountry
+ */
+export const UserData_StoreCountry = new UserData_StoreCountry$Type();
