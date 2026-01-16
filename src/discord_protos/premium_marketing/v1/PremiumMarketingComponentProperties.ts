@@ -100,6 +100,12 @@ export interface PremiumMarketingComponentProperties {
          */
         giftReminderCoachmark: PremiumMarketingComponentProperties_GiftReminderCoachmark;
     } | {
+        oneofKind: "premiumTabTooltip";
+        /**
+         * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PremiumTabTooltip premium_tab_tooltip = 15
+         */
+        premiumTabTooltip: PremiumMarketingComponentProperties_PremiumTabTooltip;
+    } | {
         oneofKind: undefined;
     };
 }
@@ -582,6 +588,23 @@ export interface PremiumMarketingComponentProperties_GiftReminderCoachmark {
     asset?: PremiumMarketingComponentProperties_ThemeAwareAsset;
 }
 /**
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PremiumTabTooltip
+ */
+export interface PremiumMarketingComponentProperties_PremiumTabTooltip {
+    /**
+     * @generated from protobuf field: string header = 1
+     */
+    header: string;
+    /**
+     * @generated from protobuf field: string body = 2
+     */
+    body: string;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset = 3
+     */
+    asset?: PremiumMarketingComponentProperties_ThemeAwareAsset;
+}
+/**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction
  */
 export enum PremiumMarketingComponentProperties_ButtonAction {
@@ -627,7 +650,8 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
             { no: 11, name: "gift_customization_banner", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_GiftCustomizationBanner },
             { no: 12, name: "billing_settings_nitro_gift_banner", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_BillingSettingsNitroGiftBanner },
             { no: 13, name: "gift_reminder_nagbar", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_GiftReminderNagbar },
-            { no: 14, name: "gift_reminder_coachmark", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_GiftReminderCoachmark }
+            { no: 14, name: "gift_reminder_coachmark", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_GiftReminderCoachmark },
+            { no: 15, name: "premium_tab_tooltip", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_PremiumTabTooltip }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties>): PremiumMarketingComponentProperties {
@@ -724,6 +748,12 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
                         giftReminderCoachmark: PremiumMarketingComponentProperties_GiftReminderCoachmark.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).giftReminderCoachmark)
                     };
                     break;
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PremiumTabTooltip premium_tab_tooltip */ 15:
+                    message.properties = {
+                        oneofKind: "premiumTabTooltip",
+                        premiumTabTooltip: PremiumMarketingComponentProperties_PremiumTabTooltip.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).premiumTabTooltip)
+                    };
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -778,6 +808,9 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
         /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftReminderCoachmark gift_reminder_coachmark = 14; */
         if (message.properties.oneofKind === "giftReminderCoachmark")
             PremiumMarketingComponentProperties_GiftReminderCoachmark.internalBinaryWrite(message.properties.giftReminderCoachmark, writer.tag(14, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PremiumTabTooltip premium_tab_tooltip = 15; */
+        if (message.properties.oneofKind === "premiumTabTooltip")
+            PremiumMarketingComponentProperties_PremiumTabTooltip.internalBinaryWrite(message.properties.premiumTabTooltip, writer.tag(15, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -2340,3 +2373,65 @@ class PremiumMarketingComponentProperties_GiftReminderCoachmark$Type extends Mes
  * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftReminderCoachmark
  */
 export const PremiumMarketingComponentProperties_GiftReminderCoachmark = new PremiumMarketingComponentProperties_GiftReminderCoachmark$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PremiumMarketingComponentProperties_PremiumTabTooltip$Type extends MessageType<PremiumMarketingComponentProperties_PremiumTabTooltip> {
+    constructor() {
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PremiumTabTooltip", [
+            { no: 1, name: "header", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "body", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 3, name: "asset", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset }
+        ]);
+    }
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_PremiumTabTooltip>): PremiumMarketingComponentProperties_PremiumTabTooltip {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.header = "";
+        message.body = "";
+        if (value !== undefined)
+            reflectionMergePartial<PremiumMarketingComponentProperties_PremiumTabTooltip>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_PremiumTabTooltip): PremiumMarketingComponentProperties_PremiumTabTooltip {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string header */ 1:
+                    message.header = reader.string();
+                    break;
+                case /* string body */ 2:
+                    message.body = reader.string();
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset */ 3:
+                    message.asset = PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryRead(reader, reader.uint32(), options, message.asset);
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_PremiumTabTooltip, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string header = 1; */
+        if (message.header !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.header);
+        /* string body = 2; */
+        if (message.body !== "")
+            writer.tag(2, WireType.LengthDelimited).string(message.body);
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset = 3; */
+        if (message.asset)
+            PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryWrite(message.asset, writer.tag(3, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PremiumTabTooltip
+ */
+export const PremiumMarketingComponentProperties_PremiumTabTooltip = new PremiumMarketingComponentProperties_PremiumTabTooltip$Type();

@@ -165,6 +165,12 @@ message PremiumMarketingComponentProperties {
     optional ThemeAwareAsset asset = 4;
   }
 
+  message PremiumTabTooltip {
+    string header = 1;
+    string body = 2;
+    optional ThemeAwareAsset asset = 3;
+  }
+
   string content_identifier = 3;
   oneof properties {
     string placeholder = 1;
@@ -180,6 +186,7 @@ message PremiumMarketingComponentProperties {
     BillingSettingsNitroGiftBanner billing_settings_nitro_gift_banner = 12;
     GiftReminderNagbar gift_reminder_nagbar = 13;
     GiftReminderCoachmark gift_reminder_coachmark = 14;
+    PremiumTabTooltip premium_tab_tooltip = 15;
   }
 
 }
