@@ -476,9 +476,19 @@ message PreloadedUserSettings {
     SAFETY_SETTINGS_PRESET_TYPE_CUSTOM = 4;
   }
 
+  message SpendingLimit {
+    uint64 amount = 1;
+    string currency = 2;
+  }
+
+  message SpendingLimitSettings {
+    optional SpendingLimit one_time_purchase_limit = 1;
+  }
+
   message SafetySettings {
     SafetySettingsPresetType safety_settings_preset = 1;
     bool ignore_profile_speedbump_disabled = 2;
+    optional SpendingLimitSettings spending_limit_settings = 3;
   }
 
   message ICYMISettings {

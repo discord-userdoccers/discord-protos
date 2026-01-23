@@ -1228,6 +1228,28 @@ export interface PreloadedUserSettings_ForLaterSettings {
     currentTab: PreloadedUserSettings_ForLaterTab;
 }
 /**
+ * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.SpendingLimit
+ */
+export interface PreloadedUserSettings_SpendingLimit {
+    /**
+     * @generated from protobuf field: uint64 amount = 1
+     */
+    amount: bigint;
+    /**
+     * @generated from protobuf field: string currency = 2
+     */
+    currency: string;
+}
+/**
+ * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.SpendingLimitSettings
+ */
+export interface PreloadedUserSettings_SpendingLimitSettings {
+    /**
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.SpendingLimit one_time_purchase_limit = 1
+     */
+    oneTimePurchaseLimit?: PreloadedUserSettings_SpendingLimit;
+}
+/**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.SafetySettings
  */
 export interface PreloadedUserSettings_SafetySettings {
@@ -1239,6 +1261,10 @@ export interface PreloadedUserSettings_SafetySettings {
      * @generated from protobuf field: bool ignore_profile_speedbump_disabled = 2
      */
     ignoreProfileSpeedbumpDisabled: boolean;
+    /**
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.SpendingLimitSettings spending_limit_settings = 3
+     */
+    spendingLimitSettings?: PreloadedUserSettings_SpendingLimitSettings;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.ICYMISettings
@@ -5388,11 +5414,113 @@ class PreloadedUserSettings_ForLaterSettings$Type extends MessageType<PreloadedU
  */
 export const PreloadedUserSettings_ForLaterSettings = new PreloadedUserSettings_ForLaterSettings$Type();
 // @generated message type with reflection information, may provide speed optimized methods
+class PreloadedUserSettings_SpendingLimit$Type extends MessageType<PreloadedUserSettings_SpendingLimit> {
+    constructor() {
+        super("discord_protos.discord_users.v1.PreloadedUserSettings.SpendingLimit", [
+            { no: 1, name: "amount", kind: "scalar", T: 4 /*ScalarType.UINT64*/, L: 0 /*LongType.BIGINT*/ },
+            { no: 2, name: "currency", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+        ]);
+    }
+    create(value?: PartialMessage<PreloadedUserSettings_SpendingLimit>): PreloadedUserSettings_SpendingLimit {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.amount = 0n;
+        message.currency = "";
+        if (value !== undefined)
+            reflectionMergePartial<PreloadedUserSettings_SpendingLimit>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PreloadedUserSettings_SpendingLimit): PreloadedUserSettings_SpendingLimit {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* uint64 amount */ 1:
+                    message.amount = reader.uint64().toBigInt();
+                    break;
+                case /* string currency */ 2:
+                    message.currency = reader.string();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PreloadedUserSettings_SpendingLimit, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* uint64 amount = 1; */
+        if (message.amount !== 0n)
+            writer.tag(1, WireType.Varint).uint64(message.amount);
+        /* string currency = 2; */
+        if (message.currency !== "")
+            writer.tag(2, WireType.LengthDelimited).string(message.currency);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.SpendingLimit
+ */
+export const PreloadedUserSettings_SpendingLimit = new PreloadedUserSettings_SpendingLimit$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PreloadedUserSettings_SpendingLimitSettings$Type extends MessageType<PreloadedUserSettings_SpendingLimitSettings> {
+    constructor() {
+        super("discord_protos.discord_users.v1.PreloadedUserSettings.SpendingLimitSettings", [
+            { no: 1, name: "one_time_purchase_limit", kind: "message", T: () => PreloadedUserSettings_SpendingLimit }
+        ]);
+    }
+    create(value?: PartialMessage<PreloadedUserSettings_SpendingLimitSettings>): PreloadedUserSettings_SpendingLimitSettings {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        if (value !== undefined)
+            reflectionMergePartial<PreloadedUserSettings_SpendingLimitSettings>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PreloadedUserSettings_SpendingLimitSettings): PreloadedUserSettings_SpendingLimitSettings {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* optional discord_protos.discord_users.v1.PreloadedUserSettings.SpendingLimit one_time_purchase_limit */ 1:
+                    message.oneTimePurchaseLimit = PreloadedUserSettings_SpendingLimit.internalBinaryRead(reader, reader.uint32(), options, message.oneTimePurchaseLimit);
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PreloadedUserSettings_SpendingLimitSettings, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* optional discord_protos.discord_users.v1.PreloadedUserSettings.SpendingLimit one_time_purchase_limit = 1; */
+        if (message.oneTimePurchaseLimit)
+            PreloadedUserSettings_SpendingLimit.internalBinaryWrite(message.oneTimePurchaseLimit, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.SpendingLimitSettings
+ */
+export const PreloadedUserSettings_SpendingLimitSettings = new PreloadedUserSettings_SpendingLimitSettings$Type();
+// @generated message type with reflection information, may provide speed optimized methods
 class PreloadedUserSettings_SafetySettings$Type extends MessageType<PreloadedUserSettings_SafetySettings> {
     constructor() {
         super("discord_protos.discord_users.v1.PreloadedUserSettings.SafetySettings", [
             { no: 1, name: "safety_settings_preset", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.SafetySettingsPresetType", PreloadedUserSettings_SafetySettingsPresetType, "SAFETY_SETTINGS_PRESET_TYPE_"] },
-            { no: 2, name: "ignore_profile_speedbump_disabled", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
+            { no: 2, name: "ignore_profile_speedbump_disabled", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
+            { no: 3, name: "spending_limit_settings", kind: "message", T: () => PreloadedUserSettings_SpendingLimitSettings }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_SafetySettings>): PreloadedUserSettings_SafetySettings {
@@ -5414,6 +5542,9 @@ class PreloadedUserSettings_SafetySettings$Type extends MessageType<PreloadedUse
                 case /* bool ignore_profile_speedbump_disabled */ 2:
                     message.ignoreProfileSpeedbumpDisabled = reader.bool();
                     break;
+                case /* optional discord_protos.discord_users.v1.PreloadedUserSettings.SpendingLimitSettings spending_limit_settings */ 3:
+                    message.spendingLimitSettings = PreloadedUserSettings_SpendingLimitSettings.internalBinaryRead(reader, reader.uint32(), options, message.spendingLimitSettings);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -5432,6 +5563,9 @@ class PreloadedUserSettings_SafetySettings$Type extends MessageType<PreloadedUse
         /* bool ignore_profile_speedbump_disabled = 2; */
         if (message.ignoreProfileSpeedbumpDisabled !== false)
             writer.tag(2, WireType.Varint).bool(message.ignoreProfileSpeedbumpDisabled);
+        /* optional discord_protos.discord_users.v1.PreloadedUserSettings.SpendingLimitSettings spending_limit_settings = 3; */
+        if (message.spendingLimitSettings)
+            PreloadedUserSettings_SpendingLimitSettings.internalBinaryWrite(message.spendingLimitSettings, writer.tag(3, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
