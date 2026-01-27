@@ -68,6 +68,10 @@ export interface UserData {
      * @generated from protobuf field: optional discord_protos.users.v1.UserData.StoreCountry store_country = 11
      */
     storeCountry?: UserData_StoreCountry;
+    /**
+     * @generated from protobuf field: optional discord_protos.users.v1.UserData.RestrictedSchedule restricted_schedule = 12
+     */
+    restrictedSchedule?: UserData_RestrictedSchedule;
 }
 /**
  * @generated from protobuf message discord_protos.users.v1.UserData.LinkedUser
@@ -340,6 +344,61 @@ export interface UserData_StoreCountry {
      * @generated from protobuf field: optional google.protobuf.Timestamp set_at = 2
      */
     setAt?: Timestamp;
+}
+/**
+ * @generated from protobuf message discord_protos.users.v1.UserData.TimeOfDay
+ */
+export interface UserData_TimeOfDay {
+    /**
+     * @generated from protobuf field: int32 hours = 1
+     */
+    hours: number;
+    /**
+     * @generated from protobuf field: int32 minutes = 2
+     */
+    minutes: number;
+    /**
+     * @generated from protobuf field: int32 seconds = 3
+     */
+    seconds: number;
+    /**
+     * @generated from protobuf field: int32 nanos = 4
+     */
+    nanos: number;
+}
+/**
+ * @generated from protobuf message discord_protos.users.v1.UserData.ScheduleRule
+ */
+export interface UserData_ScheduleRule {
+    /**
+     * @generated from protobuf field: string rule_id = 1
+     */
+    ruleId: string;
+    /**
+     * @generated from protobuf field: string label = 2
+     */
+    label: string;
+    /**
+     * @generated from protobuf field: optional discord_protos.users.v1.UserData.TimeOfDay start_time = 3
+     */
+    startTime?: UserData_TimeOfDay;
+    /**
+     * @generated from protobuf field: optional discord_protos.users.v1.UserData.TimeOfDay end_time = 4
+     */
+    endTime?: UserData_TimeOfDay;
+    /**
+     * @generated from protobuf field: repeated discord_protos.users.v1.UserData.DayOfWeek days = 5
+     */
+    days: UserData_DayOfWeek[];
+}
+/**
+ * @generated from protobuf message discord_protos.users.v1.UserData.RestrictedSchedule
+ */
+export interface UserData_RestrictedSchedule {
+    /**
+     * @generated from protobuf field: repeated discord_protos.users.v1.UserData.ScheduleRule rules = 1
+     */
+    rules: UserData_ScheduleRule[];
 }
 /**
  * @generated from protobuf enum discord_protos.users.v1.UserData.UserLinkType
@@ -638,6 +697,43 @@ export enum UserData_DisplayNameEffect {
      */
     GLOW = 6
 }
+/**
+ * @generated from protobuf enum discord_protos.users.v1.UserData.DayOfWeek
+ */
+export enum UserData_DayOfWeek {
+    /**
+     * @generated from protobuf enum value: DAY_OF_WEEK_UNSPECIFIED = 0;
+     */
+    UNSPECIFIED = 0,
+    /**
+     * @generated from protobuf enum value: DAY_OF_WEEK_MONDAY = 1;
+     */
+    MONDAY = 1,
+    /**
+     * @generated from protobuf enum value: DAY_OF_WEEK_TUESDAY = 2;
+     */
+    TUESDAY = 2,
+    /**
+     * @generated from protobuf enum value: DAY_OF_WEEK_WEDNESDAY = 3;
+     */
+    WEDNESDAY = 3,
+    /**
+     * @generated from protobuf enum value: DAY_OF_WEEK_THURSDAY = 4;
+     */
+    THURSDAY = 4,
+    /**
+     * @generated from protobuf enum value: DAY_OF_WEEK_FRIDAY = 5;
+     */
+    FRIDAY = 5,
+    /**
+     * @generated from protobuf enum value: DAY_OF_WEEK_SATURDAY = 6;
+     */
+    SATURDAY = 6,
+    /**
+     * @generated from protobuf enum value: DAY_OF_WEEK_SUNDAY = 7;
+     */
+    SUNDAY = 7
+}
 // @generated message type with reflection information, may provide speed optimized methods
 class UserData$Type extends MessageType<UserData> {
     constructor() {
@@ -652,7 +748,8 @@ class UserData$Type extends MessageType<UserData> {
             { no: 8, name: "safety_state", kind: "message", T: () => UserData_SafetyState },
             { no: 9, name: "premium_state", kind: "message", T: () => UserData_PremiumState },
             { no: 10, name: "display_name_styles", kind: "message", T: () => UserData_DisplayNameStyles },
-            { no: 11, name: "store_country", kind: "message", T: () => UserData_StoreCountry }
+            { no: 11, name: "store_country", kind: "message", T: () => UserData_StoreCountry },
+            { no: 12, name: "restricted_schedule", kind: "message", T: () => UserData_RestrictedSchedule }
         ]);
     }
     create(value?: PartialMessage<UserData>): UserData {
@@ -701,6 +798,9 @@ class UserData$Type extends MessageType<UserData> {
                     break;
                 case /* optional discord_protos.users.v1.UserData.StoreCountry store_country */ 11:
                     message.storeCountry = UserData_StoreCountry.internalBinaryRead(reader, reader.uint32(), options, message.storeCountry);
+                    break;
+                case /* optional discord_protos.users.v1.UserData.RestrictedSchedule restricted_schedule */ 12:
+                    message.restrictedSchedule = UserData_RestrictedSchedule.internalBinaryRead(reader, reader.uint32(), options, message.restrictedSchedule);
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -807,6 +907,9 @@ class UserData$Type extends MessageType<UserData> {
         /* optional discord_protos.users.v1.UserData.StoreCountry store_country = 11; */
         if (message.storeCountry)
             UserData_StoreCountry.internalBinaryWrite(message.storeCountry, writer.tag(11, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.users.v1.UserData.RestrictedSchedule restricted_schedule = 12; */
+        if (message.restrictedSchedule)
+            UserData_RestrictedSchedule.internalBinaryWrite(message.restrictedSchedule, writer.tag(12, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -1875,3 +1978,206 @@ class UserData_StoreCountry$Type extends MessageType<UserData_StoreCountry> {
  * @generated MessageType for protobuf message discord_protos.users.v1.UserData.StoreCountry
  */
 export const UserData_StoreCountry = new UserData_StoreCountry$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class UserData_TimeOfDay$Type extends MessageType<UserData_TimeOfDay> {
+    constructor() {
+        super("discord_protos.users.v1.UserData.TimeOfDay", [
+            { no: 1, name: "hours", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
+            { no: 2, name: "minutes", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
+            { no: 3, name: "seconds", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
+            { no: 4, name: "nanos", kind: "scalar", T: 5 /*ScalarType.INT32*/ }
+        ]);
+    }
+    create(value?: PartialMessage<UserData_TimeOfDay>): UserData_TimeOfDay {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.hours = 0;
+        message.minutes = 0;
+        message.seconds = 0;
+        message.nanos = 0;
+        if (value !== undefined)
+            reflectionMergePartial<UserData_TimeOfDay>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: UserData_TimeOfDay): UserData_TimeOfDay {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* int32 hours */ 1:
+                    message.hours = reader.int32();
+                    break;
+                case /* int32 minutes */ 2:
+                    message.minutes = reader.int32();
+                    break;
+                case /* int32 seconds */ 3:
+                    message.seconds = reader.int32();
+                    break;
+                case /* int32 nanos */ 4:
+                    message.nanos = reader.int32();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: UserData_TimeOfDay, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* int32 hours = 1; */
+        if (message.hours !== 0)
+            writer.tag(1, WireType.Varint).int32(message.hours);
+        /* int32 minutes = 2; */
+        if (message.minutes !== 0)
+            writer.tag(2, WireType.Varint).int32(message.minutes);
+        /* int32 seconds = 3; */
+        if (message.seconds !== 0)
+            writer.tag(3, WireType.Varint).int32(message.seconds);
+        /* int32 nanos = 4; */
+        if (message.nanos !== 0)
+            writer.tag(4, WireType.Varint).int32(message.nanos);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.users.v1.UserData.TimeOfDay
+ */
+export const UserData_TimeOfDay = new UserData_TimeOfDay$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class UserData_ScheduleRule$Type extends MessageType<UserData_ScheduleRule> {
+    constructor() {
+        super("discord_protos.users.v1.UserData.ScheduleRule", [
+            { no: 1, name: "rule_id", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "label", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 3, name: "start_time", kind: "message", T: () => UserData_TimeOfDay },
+            { no: 4, name: "end_time", kind: "message", T: () => UserData_TimeOfDay },
+            { no: 5, name: "days", kind: "enum", repeat: 1 /*RepeatType.PACKED*/, T: () => ["discord_protos.users.v1.UserData.DayOfWeek", UserData_DayOfWeek, "DAY_OF_WEEK_"] }
+        ]);
+    }
+    create(value?: PartialMessage<UserData_ScheduleRule>): UserData_ScheduleRule {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.ruleId = "";
+        message.label = "";
+        message.days = [];
+        if (value !== undefined)
+            reflectionMergePartial<UserData_ScheduleRule>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: UserData_ScheduleRule): UserData_ScheduleRule {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string rule_id */ 1:
+                    message.ruleId = reader.string();
+                    break;
+                case /* string label */ 2:
+                    message.label = reader.string();
+                    break;
+                case /* optional discord_protos.users.v1.UserData.TimeOfDay start_time */ 3:
+                    message.startTime = UserData_TimeOfDay.internalBinaryRead(reader, reader.uint32(), options, message.startTime);
+                    break;
+                case /* optional discord_protos.users.v1.UserData.TimeOfDay end_time */ 4:
+                    message.endTime = UserData_TimeOfDay.internalBinaryRead(reader, reader.uint32(), options, message.endTime);
+                    break;
+                case /* repeated discord_protos.users.v1.UserData.DayOfWeek days */ 5:
+                    if (wireType === WireType.LengthDelimited)
+                        for (let e = reader.int32() + reader.pos; reader.pos < e;)
+                            message.days.push(reader.int32());
+                    else
+                        message.days.push(reader.int32());
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: UserData_ScheduleRule, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string rule_id = 1; */
+        if (message.ruleId !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.ruleId);
+        /* string label = 2; */
+        if (message.label !== "")
+            writer.tag(2, WireType.LengthDelimited).string(message.label);
+        /* optional discord_protos.users.v1.UserData.TimeOfDay start_time = 3; */
+        if (message.startTime)
+            UserData_TimeOfDay.internalBinaryWrite(message.startTime, writer.tag(3, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.users.v1.UserData.TimeOfDay end_time = 4; */
+        if (message.endTime)
+            UserData_TimeOfDay.internalBinaryWrite(message.endTime, writer.tag(4, WireType.LengthDelimited).fork(), options).join();
+        /* repeated discord_protos.users.v1.UserData.DayOfWeek days = 5; */
+        if (message.days.length) {
+            writer.tag(5, WireType.LengthDelimited).fork();
+            for (let i = 0; i < message.days.length; i++)
+                writer.int32(message.days[i]);
+            writer.join();
+        }
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.users.v1.UserData.ScheduleRule
+ */
+export const UserData_ScheduleRule = new UserData_ScheduleRule$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class UserData_RestrictedSchedule$Type extends MessageType<UserData_RestrictedSchedule> {
+    constructor() {
+        super("discord_protos.users.v1.UserData.RestrictedSchedule", [
+            { no: 1, name: "rules", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => UserData_ScheduleRule }
+        ]);
+    }
+    create(value?: PartialMessage<UserData_RestrictedSchedule>): UserData_RestrictedSchedule {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.rules = [];
+        if (value !== undefined)
+            reflectionMergePartial<UserData_RestrictedSchedule>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: UserData_RestrictedSchedule): UserData_RestrictedSchedule {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* repeated discord_protos.users.v1.UserData.ScheduleRule rules */ 1:
+                    message.rules.push(UserData_ScheduleRule.internalBinaryRead(reader, reader.uint32(), options));
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: UserData_RestrictedSchedule, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* repeated discord_protos.users.v1.UserData.ScheduleRule rules = 1; */
+        for (let i = 0; i < message.rules.length; i++)
+            UserData_ScheduleRule.internalBinaryWrite(message.rules[i], writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.users.v1.UserData.RestrictedSchedule
+ */
+export const UserData_RestrictedSchedule = new UserData_RestrictedSchedule$Type();
