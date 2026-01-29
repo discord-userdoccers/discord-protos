@@ -246,6 +246,7 @@ message PreloadedUserSettings {
     optional google.protobuf.BoolValue enable_game_update_notifications = 15;
     optional google.protobuf.BoolValue enable_profile_updates_notifications = 16;
     optional google.protobuf.BoolValue enable_server_trending_notifications = 17;
+    optional google.protobuf.BoolValue enable_dm_reply_nudge_reminders = 18;
   }
 
   enum GuildActivityStatusRestrictionDefault {
