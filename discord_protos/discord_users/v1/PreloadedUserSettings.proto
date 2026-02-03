@@ -274,6 +274,13 @@ message PreloadedUserSettings {
     GUILD_ACTIVITY_STATUS_RESTRICTION_DEFAULT_V2_ACTIVITY_STATUS_ON = 3;
   }
 
+  enum ProfileVisibility {
+    PROFILE_VISIBILITY_UNSET = 0;
+    PROFILE_VISIBILITY_FRIENDS_ONLY = 1;
+    PROFILE_VISIBILITY_FRIENDS_AND_SMALL_GUILDS = 2;
+    PROFILE_VISIBILITY_FRIENDS_AND_ALL_GUILDS = 3;
+  }
+
   message PrivacySettings {
     optional google.protobuf.BoolValue allow_activity_party_privacy_friends = 1;
     optional google.protobuf.BoolValue allow_activity_party_privacy_voice_channel = 2;
@@ -304,6 +311,7 @@ message PreloadedUserSettings {
     GuildActivityStatusRestrictionDefaultV2 default_guilds_activity_restricted_v2 = 29;
     optional google.protobuf.BoolValue quests_3p_data_opted_out = 30;
     optional google.protobuf.BoolValue show_local_time = 31;
+    ProfileVisibility profile_visibility = 32;
   }
 
   message DebugSettings {
