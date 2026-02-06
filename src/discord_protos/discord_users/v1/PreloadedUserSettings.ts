@@ -769,6 +769,10 @@ export interface PreloadedUserSettings_NotificationSettings {
      * @generated from protobuf field: optional google.protobuf.BoolValue enable_dm_reply_nudge_reminders = 18
      */
     enableDmReplyNudgeReminders?: BoolValue;
+    /**
+     * @generated from protobuf field: optional google.protobuf.BoolValue enable_summary_reminder_notifications = 19
+     */
+    enableSummaryReminderNotifications?: BoolValue;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.PrivacySettings
@@ -3752,7 +3756,8 @@ class PreloadedUserSettings_NotificationSettings$Type extends MessageType<Preloa
             { no: 15, name: "enable_game_update_notifications", kind: "message", T: () => BoolValue },
             { no: 16, name: "enable_profile_updates_notifications", kind: "message", T: () => BoolValue },
             { no: 17, name: "enable_server_trending_notifications", kind: "message", T: () => BoolValue },
-            { no: 18, name: "enable_dm_reply_nudge_reminders", kind: "message", T: () => BoolValue }
+            { no: 18, name: "enable_dm_reply_nudge_reminders", kind: "message", T: () => BoolValue },
+            { no: 19, name: "enable_summary_reminder_notifications", kind: "message", T: () => BoolValue }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_NotificationSettings>): PreloadedUserSettings_NotificationSettings {
@@ -3825,6 +3830,9 @@ class PreloadedUserSettings_NotificationSettings$Type extends MessageType<Preloa
                 case /* optional google.protobuf.BoolValue enable_dm_reply_nudge_reminders */ 18:
                     message.enableDmReplyNudgeReminders = BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.enableDmReplyNudgeReminders);
                     break;
+                case /* optional google.protobuf.BoolValue enable_summary_reminder_notifications */ 19:
+                    message.enableSummaryReminderNotifications = BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.enableSummaryReminderNotifications);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -3891,6 +3899,9 @@ class PreloadedUserSettings_NotificationSettings$Type extends MessageType<Preloa
         /* optional google.protobuf.BoolValue enable_dm_reply_nudge_reminders = 18; */
         if (message.enableDmReplyNudgeReminders)
             BoolValue.internalBinaryWrite(message.enableDmReplyNudgeReminders, writer.tag(18, WireType.LengthDelimited).fork(), options).join();
+        /* optional google.protobuf.BoolValue enable_summary_reminder_notifications = 19; */
+        if (message.enableSummaryReminderNotifications)
+            BoolValue.internalBinaryWrite(message.enableSummaryReminderNotifications, writer.tag(19, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
