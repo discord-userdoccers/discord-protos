@@ -12,6 +12,7 @@ import { reflectionMergePartial } from "@protobuf-ts/runtime";
 import { MessageType } from "@protobuf-ts/runtime";
 import { UInt64Value } from "../../google/protobuf/wrappers";
 import { UInt32Value } from "../../google/protobuf/wrappers";
+import { Int32Value } from "../../google/protobuf/wrappers";
 import { StringValue } from "../../google/protobuf/wrappers";
 import { Timestamp } from "../../google/protobuf/timestamp";
 /**
@@ -150,6 +151,10 @@ export interface Experiment {
      * @generated from protobuf field: optional google.protobuf.Timestamp archive_at = 33
      */
     archiveAt?: Timestamp;
+    /**
+     * @generated from protobuf field: optional google.protobuf.Int32Value guild_experiment_version = 35
+     */
+    guildExperimentVersion?: Int32Value;
 }
 /**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.Bucket
@@ -1064,7 +1069,8 @@ class Experiment$Type extends MessageType<Experiment> {
             { no: 30, name: "debug_config", kind: "message", T: () => Experiment_DebugConfig },
             { no: 31, name: "expected_end_date", kind: "message", T: () => Timestamp },
             { no: 32, name: "is_automated_change", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
-            { no: 33, name: "archive_at", kind: "message", T: () => Timestamp }
+            { no: 33, name: "archive_at", kind: "message", T: () => Timestamp },
+            { no: 35, name: "guild_experiment_version", kind: "message", T: () => Int32Value }
         ]);
     }
     create(value?: PartialMessage<Experiment>): Experiment {
@@ -1211,6 +1217,9 @@ class Experiment$Type extends MessageType<Experiment> {
                 case /* optional google.protobuf.Timestamp archive_at */ 33:
                     message.archiveAt = Timestamp.internalBinaryRead(reader, reader.uint32(), options, message.archiveAt);
                     break;
+                case /* optional google.protobuf.Int32Value guild_experiment_version */ 35:
+                    message.guildExperimentVersion = Int32Value.internalBinaryRead(reader, reader.uint32(), options, message.guildExperimentVersion);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -1330,6 +1339,9 @@ class Experiment$Type extends MessageType<Experiment> {
         /* string extra_outcome_context = 34; */
         if (message.extraOutcomeContext !== "")
             writer.tag(34, WireType.LengthDelimited).string(message.extraOutcomeContext);
+        /* optional google.protobuf.Int32Value guild_experiment_version = 35; */
+        if (message.guildExperimentVersion)
+            Int32Value.internalBinaryWrite(message.guildExperimentVersion, writer.tag(35, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
