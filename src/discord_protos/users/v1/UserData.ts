@@ -72,6 +72,10 @@ export interface UserData {
      * @generated from protobuf field: optional discord_protos.users.v1.UserData.RestrictedSchedule restricted_schedule = 12
      */
     restrictedSchedule?: UserData_RestrictedSchedule;
+    /**
+     * @generated from protobuf field: optional discord_protos.users.v1.UserData.AgeAssuranceData age_assurance_data = 13
+     */
+    ageAssuranceData?: UserData_AgeAssuranceData;
 }
 /**
  * @generated from protobuf message discord_protos.users.v1.UserData.LinkedUser
@@ -407,6 +411,15 @@ export interface UserData_RestrictedSchedule {
      * @generated from protobuf field: repeated discord_protos.users.v1.UserData.ScheduleRule rules = 1
      */
     rules: UserData_ScheduleRule[];
+}
+/**
+ * @generated from protobuf message discord_protos.users.v1.UserData.AgeAssuranceData
+ */
+export interface UserData_AgeAssuranceData {
+    /**
+     * @generated from protobuf field: optional google.protobuf.Timestamp estimated_date_of_birth = 1
+     */
+    estimatedDateOfBirth?: Timestamp;
 }
 /**
  * @generated from protobuf enum discord_protos.users.v1.UserData.UserLinkType
@@ -2714,7 +2727,8 @@ class UserData$Type extends MessageType<UserData> {
             { no: 9, name: "premium_state", kind: "message", T: () => UserData_PremiumState },
             { no: 10, name: "display_name_styles", kind: "message", T: () => UserData_DisplayNameStyles },
             { no: 11, name: "store_country", kind: "message", T: () => UserData_StoreCountry },
-            { no: 12, name: "restricted_schedule", kind: "message", T: () => UserData_RestrictedSchedule }
+            { no: 12, name: "restricted_schedule", kind: "message", T: () => UserData_RestrictedSchedule },
+            { no: 13, name: "age_assurance_data", kind: "message", T: () => UserData_AgeAssuranceData }
         ]);
     }
     create(value?: PartialMessage<UserData>): UserData {
@@ -2766,6 +2780,9 @@ class UserData$Type extends MessageType<UserData> {
                     break;
                 case /* optional discord_protos.users.v1.UserData.RestrictedSchedule restricted_schedule */ 12:
                     message.restrictedSchedule = UserData_RestrictedSchedule.internalBinaryRead(reader, reader.uint32(), options, message.restrictedSchedule);
+                    break;
+                case /* optional discord_protos.users.v1.UserData.AgeAssuranceData age_assurance_data */ 13:
+                    message.ageAssuranceData = UserData_AgeAssuranceData.internalBinaryRead(reader, reader.uint32(), options, message.ageAssuranceData);
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -2875,6 +2892,9 @@ class UserData$Type extends MessageType<UserData> {
         /* optional discord_protos.users.v1.UserData.RestrictedSchedule restricted_schedule = 12; */
         if (message.restrictedSchedule)
             UserData_RestrictedSchedule.internalBinaryWrite(message.restrictedSchedule, writer.tag(12, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.users.v1.UserData.AgeAssuranceData age_assurance_data = 13; */
+        if (message.ageAssuranceData)
+            UserData_AgeAssuranceData.internalBinaryWrite(message.ageAssuranceData, writer.tag(13, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -4179,3 +4199,49 @@ class UserData_RestrictedSchedule$Type extends MessageType<UserData_RestrictedSc
  * @generated MessageType for protobuf message discord_protos.users.v1.UserData.RestrictedSchedule
  */
 export const UserData_RestrictedSchedule = new UserData_RestrictedSchedule$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class UserData_AgeAssuranceData$Type extends MessageType<UserData_AgeAssuranceData> {
+    constructor() {
+        super("discord_protos.users.v1.UserData.AgeAssuranceData", [
+            { no: 1, name: "estimated_date_of_birth", kind: "message", T: () => Timestamp }
+        ]);
+    }
+    create(value?: PartialMessage<UserData_AgeAssuranceData>): UserData_AgeAssuranceData {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        if (value !== undefined)
+            reflectionMergePartial<UserData_AgeAssuranceData>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: UserData_AgeAssuranceData): UserData_AgeAssuranceData {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* optional google.protobuf.Timestamp estimated_date_of_birth */ 1:
+                    message.estimatedDateOfBirth = Timestamp.internalBinaryRead(reader, reader.uint32(), options, message.estimatedDateOfBirth);
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: UserData_AgeAssuranceData, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* optional google.protobuf.Timestamp estimated_date_of_birth = 1; */
+        if (message.estimatedDateOfBirth)
+            Timestamp.internalBinaryWrite(message.estimatedDateOfBirth, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.users.v1.UserData.AgeAssuranceData
+ */
+export const UserData_AgeAssuranceData = new UserData_AgeAssuranceData$Type();
