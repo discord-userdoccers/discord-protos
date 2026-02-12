@@ -11,6 +11,7 @@ message Experiment {
     UNIT_TYPE_USER = 1;
     UNIT_TYPE_INSTALLATION = 2;
     UNIT_TYPE_GUILD = 3;
+    UNIT_TYPE_CUSTOM = 4;
   }
 
   enum Type {

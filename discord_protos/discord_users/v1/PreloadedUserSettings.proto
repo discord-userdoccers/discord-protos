@@ -249,6 +249,7 @@ message PreloadedUserSettings {
     optional google.protobuf.BoolValue enable_dm_reply_nudge_reminders = 18;
     optional google.protobuf.BoolValue enable_summary_reminder_notifications = 19;
     optional google.protobuf.BoolValue enable_gdm_all_reaction_notifications = 20;
+    optional google.protobuf.BoolValue enable_friend_gaming_activity_notifications = 21;
   }
 
   enum GuildActivityStatusRestrictionDefault {

@@ -777,6 +777,10 @@ export interface PreloadedUserSettings_NotificationSettings {
      * @generated from protobuf field: optional google.protobuf.BoolValue enable_gdm_all_reaction_notifications = 20
      */
     enableGdmAllReactionNotifications?: BoolValue;
+    /**
+     * @generated from protobuf field: optional google.protobuf.BoolValue enable_friend_gaming_activity_notifications = 21
+     */
+    enableFriendGamingActivityNotifications?: BoolValue;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.PrivacySettings
@@ -3762,7 +3766,8 @@ class PreloadedUserSettings_NotificationSettings$Type extends MessageType<Preloa
             { no: 17, name: "enable_server_trending_notifications", kind: "message", T: () => BoolValue },
             { no: 18, name: "enable_dm_reply_nudge_reminders", kind: "message", T: () => BoolValue },
             { no: 19, name: "enable_summary_reminder_notifications", kind: "message", T: () => BoolValue },
-            { no: 20, name: "enable_gdm_all_reaction_notifications", kind: "message", T: () => BoolValue }
+            { no: 20, name: "enable_gdm_all_reaction_notifications", kind: "message", T: () => BoolValue },
+            { no: 21, name: "enable_friend_gaming_activity_notifications", kind: "message", T: () => BoolValue }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_NotificationSettings>): PreloadedUserSettings_NotificationSettings {
@@ -3841,6 +3846,9 @@ class PreloadedUserSettings_NotificationSettings$Type extends MessageType<Preloa
                 case /* optional google.protobuf.BoolValue enable_gdm_all_reaction_notifications */ 20:
                     message.enableGdmAllReactionNotifications = BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.enableGdmAllReactionNotifications);
                     break;
+                case /* optional google.protobuf.BoolValue enable_friend_gaming_activity_notifications */ 21:
+                    message.enableFriendGamingActivityNotifications = BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.enableFriendGamingActivityNotifications);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -3913,6 +3921,9 @@ class PreloadedUserSettings_NotificationSettings$Type extends MessageType<Preloa
         /* optional google.protobuf.BoolValue enable_gdm_all_reaction_notifications = 20; */
         if (message.enableGdmAllReactionNotifications)
             BoolValue.internalBinaryWrite(message.enableGdmAllReactionNotifications, writer.tag(20, WireType.LengthDelimited).fork(), options).join();
+        /* optional google.protobuf.BoolValue enable_friend_gaming_activity_notifications = 21; */
+        if (message.enableFriendGamingActivityNotifications)
+            BoolValue.internalBinaryWrite(message.enableFriendGamingActivityNotifications, writer.tag(21, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
