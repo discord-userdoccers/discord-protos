@@ -155,6 +155,10 @@ export interface Experiment {
      * @generated from protobuf field: optional google.protobuf.Int32Value guild_experiment_version = 35
      */
     guildExperimentVersion?: Int32Value;
+    /**
+     * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.CustomUnitPrefix custom_unit_prefix = 36
+     */
+    customUnitPrefix: Experiment_CustomUnitPrefix;
 }
 /**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.Bucket
@@ -1037,6 +1041,19 @@ export enum Experiment_AssignmentMode {
      */
     OFF = 5
 }
+/**
+ * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.CustomUnitPrefix
+ */
+export enum Experiment_CustomUnitPrefix {
+    /**
+     * @generated from protobuf enum value: CUSTOM_UNIT_PREFIX_UNSPECIFIED = 0;
+     */
+    UNSPECIFIED = 0,
+    /**
+     * @generated from protobuf enum value: CUSTOM_UNIT_PREFIX_SEO_URL_SLUG = 1;
+     */
+    SEO_URL_SLUG = 1
+}
 // @generated message type with reflection information, may provide speed optimized methods
 class Experiment$Type extends MessageType<Experiment> {
     constructor() {
@@ -1074,7 +1091,8 @@ class Experiment$Type extends MessageType<Experiment> {
             { no: 31, name: "expected_end_date", kind: "message", T: () => Timestamp },
             { no: 32, name: "is_automated_change", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
             { no: 33, name: "archive_at", kind: "message", T: () => Timestamp },
-            { no: 35, name: "guild_experiment_version", kind: "message", T: () => Int32Value }
+            { no: 35, name: "guild_experiment_version", kind: "message", T: () => Int32Value },
+            { no: 36, name: "custom_unit_prefix", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.CustomUnitPrefix", Experiment_CustomUnitPrefix, "CUSTOM_UNIT_PREFIX_"] }
         ]);
     }
     create(value?: PartialMessage<Experiment>): Experiment {
@@ -1105,6 +1123,7 @@ class Experiment$Type extends MessageType<Experiment> {
         message.fieldNumbersToCopy = [];
         message.engineFeatureFlags = [];
         message.isAutomatedChange = false;
+        message.customUnitPrefix = 0;
         if (value !== undefined)
             reflectionMergePartial<Experiment>(this, message, value);
         return message;
@@ -1223,6 +1242,9 @@ class Experiment$Type extends MessageType<Experiment> {
                     break;
                 case /* optional google.protobuf.Int32Value guild_experiment_version */ 35:
                     message.guildExperimentVersion = Int32Value.internalBinaryRead(reader, reader.uint32(), options, message.guildExperimentVersion);
+                    break;
+                case /* discord_protos.discord_experimentation.v1.Experiment.CustomUnitPrefix custom_unit_prefix */ 36:
+                    message.customUnitPrefix = reader.int32();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -1346,6 +1368,9 @@ class Experiment$Type extends MessageType<Experiment> {
         /* optional google.protobuf.Int32Value guild_experiment_version = 35; */
         if (message.guildExperimentVersion)
             Int32Value.internalBinaryWrite(message.guildExperimentVersion, writer.tag(35, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.discord_experimentation.v1.Experiment.CustomUnitPrefix custom_unit_prefix = 36; */
+        if (message.customUnitPrefix !== 0)
+            writer.tag(36, WireType.Varint).int32(message.customUnitPrefix);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

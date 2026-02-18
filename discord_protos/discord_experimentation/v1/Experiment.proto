@@ -300,6 +300,11 @@ message Experiment {
     double decision_log_sample_rate = 6;
   }
 
+  enum CustomUnitPrefix {
+    CUSTOM_UNIT_PREFIX_UNSPECIFIED = 0;
+    CUSTOM_UNIT_PREFIX_SEO_URL_SLUG = 1;
+  }
+
   fixed64 id = 1;
   string name = 2;
   optional google.protobuf.Timestamp created_at = 3;
@@ -334,4 +339,5 @@ message Experiment {
   bool is_automated_change = 32;
   optional google.protobuf.Timestamp archive_at = 33;
   optional google.protobuf.Int32Value guild_experiment_version = 35;
+  CustomUnitPrefix custom_unit_prefix = 36;
 }
