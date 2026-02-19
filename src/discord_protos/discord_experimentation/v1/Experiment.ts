@@ -1005,7 +1005,11 @@ export enum Experiment_Surface {
     /**
      * @generated from protobuf enum value: SURFACE_ADS_BUDGET_AB = 5;
      */
-    ADS_BUDGET_AB = 5
+    ADS_BUDGET_AB = 5,
+    /**
+     * @generated from protobuf enum value: SURFACE_AV_WORKER = 6;
+     */
+    AV_WORKER = 6
 }
 /**
  * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.ExposureTracking
