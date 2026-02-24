@@ -740,6 +740,10 @@ export enum User_ClassificationType {
      */
     GORE_NON_DEDICATED_GUILD_SAFETY_DISPATCH = 976,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_AGE_RESTRICTED_CONTENT_IN_SERVER_ASSETS_NON_DEDICATED_GUILD_SAFETY_DISPATCH = 986;
+     */
+    AGE_RESTRICTED_CONTENT_IN_SERVER_ASSETS_NON_DEDICATED_GUILD_SAFETY_DISPATCH = 986,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSAM_SMITE = 3000;
      */
     CSAM_SMITE = 3000,
