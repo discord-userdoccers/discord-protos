@@ -216,6 +216,16 @@ message Experiment {
     repeated string features = 1 [packed = false];
   }
 
+  message UserLocation {
+    repeated Location locations = 1;
+    bool prefer_client_ip = 2;
+  }
+
+  message UserIP {
+    repeated string blocks = 1 [packed = false];
+    bool prefer_client_ip = 2;
+  }
+
   message Filter {
     oneof filter {
       ClientPlatform client_version = 2;
@@ -241,6 +251,8 @@ message Experiment {
       GuildIds guild_ids = 22;
       GuildMemberCountRange guild_member_count_range = 25;
       GuildHasFeature guild_has_feature = 26;
+      UserLocation user_location = 27;
+      UserIP user_ip = 28;
     }
   }
 

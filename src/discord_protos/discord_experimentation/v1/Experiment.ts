@@ -675,6 +675,32 @@ export interface Experiment_GuildHasFeature {
     features: string[];
 }
 /**
+ * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.UserLocation
+ */
+export interface Experiment_UserLocation {
+    /**
+     * @generated from protobuf field: repeated discord_protos.discord_experimentation.v1.Experiment.Location locations = 1
+     */
+    locations: Experiment_Location[];
+    /**
+     * @generated from protobuf field: bool prefer_client_ip = 2
+     */
+    preferClientIp: boolean;
+}
+/**
+ * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.UserIP
+ */
+export interface Experiment_UserIP {
+    /**
+     * @generated from protobuf field: repeated string blocks = 1 [packed = false]
+     */
+    blocks: string[];
+    /**
+     * @generated from protobuf field: bool prefer_client_ip = 2
+     */
+    preferClientIp: boolean;
+}
+/**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.Filter
  */
 export interface Experiment_Filter {
@@ -819,6 +845,18 @@ export interface Experiment_Filter {
          * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.GuildHasFeature guild_has_feature = 26
          */
         guildHasFeature: Experiment_GuildHasFeature;
+    } | {
+        oneofKind: "userLocation";
+        /**
+         * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.UserLocation user_location = 27
+         */
+        userLocation: Experiment_UserLocation;
+    } | {
+        oneofKind: "userIp";
+        /**
+         * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.UserIP user_ip = 28
+         */
+        userIp: Experiment_UserIP;
     } | {
         oneofKind: undefined;
     };
@@ -3528,6 +3566,116 @@ class Experiment_GuildHasFeature$Type extends MessageType<Experiment_GuildHasFea
  */
 export const Experiment_GuildHasFeature = new Experiment_GuildHasFeature$Type();
 // @generated message type with reflection information, may provide speed optimized methods
+class Experiment_UserLocation$Type extends MessageType<Experiment_UserLocation> {
+    constructor() {
+        super("discord_protos.discord_experimentation.v1.Experiment.UserLocation", [
+            { no: 1, name: "locations", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => Experiment_Location },
+            { no: 2, name: "prefer_client_ip", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
+        ]);
+    }
+    create(value?: PartialMessage<Experiment_UserLocation>): Experiment_UserLocation {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.locations = [];
+        message.preferClientIp = false;
+        if (value !== undefined)
+            reflectionMergePartial<Experiment_UserLocation>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: Experiment_UserLocation): Experiment_UserLocation {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* repeated discord_protos.discord_experimentation.v1.Experiment.Location locations */ 1:
+                    message.locations.push(Experiment_Location.internalBinaryRead(reader, reader.uint32(), options));
+                    break;
+                case /* bool prefer_client_ip */ 2:
+                    message.preferClientIp = reader.bool();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: Experiment_UserLocation, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* repeated discord_protos.discord_experimentation.v1.Experiment.Location locations = 1; */
+        for (let i = 0; i < message.locations.length; i++)
+            Experiment_Location.internalBinaryWrite(message.locations[i], writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        /* bool prefer_client_ip = 2; */
+        if (message.preferClientIp !== false)
+            writer.tag(2, WireType.Varint).bool(message.preferClientIp);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_experimentation.v1.Experiment.UserLocation
+ */
+export const Experiment_UserLocation = new Experiment_UserLocation$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class Experiment_UserIP$Type extends MessageType<Experiment_UserIP> {
+    constructor() {
+        super("discord_protos.discord_experimentation.v1.Experiment.UserIP", [
+            { no: 1, name: "blocks", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "prefer_client_ip", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
+        ]);
+    }
+    create(value?: PartialMessage<Experiment_UserIP>): Experiment_UserIP {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.blocks = [];
+        message.preferClientIp = false;
+        if (value !== undefined)
+            reflectionMergePartial<Experiment_UserIP>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: Experiment_UserIP): Experiment_UserIP {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* repeated string blocks = 1 [packed = false] */ 1:
+                    message.blocks.push(reader.string());
+                    break;
+                case /* bool prefer_client_ip */ 2:
+                    message.preferClientIp = reader.bool();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: Experiment_UserIP, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* repeated string blocks = 1 [packed = false]; */
+        for (let i = 0; i < message.blocks.length; i++)
+            writer.tag(1, WireType.LengthDelimited).string(message.blocks[i]);
+        /* bool prefer_client_ip = 2; */
+        if (message.preferClientIp !== false)
+            writer.tag(2, WireType.Varint).bool(message.preferClientIp);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_experimentation.v1.Experiment.UserIP
+ */
+export const Experiment_UserIP = new Experiment_UserIP$Type();
+// @generated message type with reflection information, may provide speed optimized methods
 class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
     constructor() {
         super("discord_protos.discord_experimentation.v1.Experiment.Filter", [
@@ -3553,7 +3701,9 @@ class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
             { no: 21, name: "unit_id_matches_filter_snapshot", kind: "message", oneof: "filter", T: () => Experiment_UnitIdMatchesFilterSnapshot },
             { no: 22, name: "guild_ids", kind: "message", oneof: "filter", T: () => Experiment_GuildIds },
             { no: 25, name: "guild_member_count_range", kind: "message", oneof: "filter", T: () => Experiment_GuildMemberCountRange },
-            { no: 26, name: "guild_has_feature", kind: "message", oneof: "filter", T: () => Experiment_GuildHasFeature }
+            { no: 26, name: "guild_has_feature", kind: "message", oneof: "filter", T: () => Experiment_GuildHasFeature },
+            { no: 27, name: "user_location", kind: "message", oneof: "filter", T: () => Experiment_UserLocation },
+            { no: 28, name: "user_ip", kind: "message", oneof: "filter", T: () => Experiment_UserIP }
         ]);
     }
     create(value?: PartialMessage<Experiment_Filter>): Experiment_Filter {
@@ -3706,6 +3856,18 @@ class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
                         guildHasFeature: Experiment_GuildHasFeature.internalBinaryRead(reader, reader.uint32(), options, (message.filter as any).guildHasFeature)
                     };
                     break;
+                case /* discord_protos.discord_experimentation.v1.Experiment.UserLocation user_location */ 27:
+                    message.filter = {
+                        oneofKind: "userLocation",
+                        userLocation: Experiment_UserLocation.internalBinaryRead(reader, reader.uint32(), options, (message.filter as any).userLocation)
+                    };
+                    break;
+                case /* discord_protos.discord_experimentation.v1.Experiment.UserIP user_ip */ 28:
+                    message.filter = {
+                        oneofKind: "userIp",
+                        userIp: Experiment_UserIP.internalBinaryRead(reader, reader.uint32(), options, (message.filter as any).userIp)
+                    };
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -3787,6 +3949,12 @@ class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
         /* discord_protos.discord_experimentation.v1.Experiment.GuildHasFeature guild_has_feature = 26; */
         if (message.filter.oneofKind === "guildHasFeature")
             Experiment_GuildHasFeature.internalBinaryWrite(message.filter.guildHasFeature, writer.tag(26, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.discord_experimentation.v1.Experiment.UserLocation user_location = 27; */
+        if (message.filter.oneofKind === "userLocation")
+            Experiment_UserLocation.internalBinaryWrite(message.filter.userLocation, writer.tag(27, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.discord_experimentation.v1.Experiment.UserIP user_ip = 28; */
+        if (message.filter.oneofKind === "userIp")
+            Experiment_UserIP.internalBinaryWrite(message.filter.userIp, writer.tag(28, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
