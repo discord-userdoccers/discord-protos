@@ -1047,7 +1047,11 @@ export enum Experiment_Surface {
     /**
      * @generated from protobuf enum value: SURFACE_AV_WORKER = 6;
      */
-    AV_WORKER = 6
+    AV_WORKER = 6,
+    /**
+     * @generated from protobuf enum value: SURFACE_SEO = 7;
+     */
+    SEO = 7
 }
 /**
  * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.ExposureTracking
