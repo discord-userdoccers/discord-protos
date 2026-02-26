@@ -1160,6 +1160,10 @@ export interface PreloadedUserSettings_Favorites {
      * @generated from protobuf field: bool muted = 2
      */
     muted: boolean;
+    /**
+     * @generated from protobuf field: optional google.protobuf.BoolValue guild_visible = 3
+     */
+    guildVisible?: BoolValue;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.AudioContextSetting
@@ -5030,7 +5034,8 @@ class PreloadedUserSettings_Favorites$Type extends MessageType<PreloadedUserSett
     constructor() {
         super("discord_protos.discord_users.v1.PreloadedUserSettings.Favorites", [
             { no: 1, name: "favorite_channels", kind: "map", K: 6 /*ScalarType.FIXED64*/, V: { kind: "message", T: () => PreloadedUserSettings_FavoriteChannel } },
-            { no: 2, name: "muted", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
+            { no: 2, name: "muted", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
+            { no: 3, name: "guild_visible", kind: "message", T: () => BoolValue }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_Favorites>): PreloadedUserSettings_Favorites {
@@ -5051,6 +5056,9 @@ class PreloadedUserSettings_Favorites$Type extends MessageType<PreloadedUserSett
                     break;
                 case /* bool muted */ 2:
                     message.muted = reader.bool();
+                    break;
+                case /* optional google.protobuf.BoolValue guild_visible */ 3:
+                    message.guildVisible = BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.guildVisible);
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -5090,6 +5098,9 @@ class PreloadedUserSettings_Favorites$Type extends MessageType<PreloadedUserSett
         /* bool muted = 2; */
         if (message.muted !== false)
             writer.tag(2, WireType.Varint).bool(message.muted);
+        /* optional google.protobuf.BoolValue guild_visible = 3; */
+        if (message.guildVisible)
+            BoolValue.internalBinaryWrite(message.guildVisible, writer.tag(3, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
