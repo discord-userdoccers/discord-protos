@@ -1,8 +1,7 @@
 *.pyc
 __pycache__/
 node_modules/
-yarn*
-package-lock.json
 .DS_STORE
 dist/
+build/
 *.egg-info

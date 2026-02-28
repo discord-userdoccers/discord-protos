@@ -21,18 +21,16 @@
     },
     "license": "MIT",
     "scripts": {
-        "py": "protoc --proto_path=./discord_protos/ --python_out=discord_protos ./discord_protos/users/v1/User.proto ./discord_protos/users/v1/MediumUser.proto ./discord_protos/users/v1/UserData.proto ./discord_protos/users/v1/GuildShardingConfig.proto ./discord_protos/discord_experimentation/v1/Experiment.proto ./discord_protos/discord_users/v1/PreloadedUserSettings.proto ./discord_protos/discord_users/v1/FrecencyUserSettings.proto ./discord_protos/discord_kkv_store_value_models/v1/ApplicationUserRoleConnection.proto ./discord_protos/discord_kkv_store_value_models/v1/AcknowledgedApplicationDisclosures.proto ./discord_protos/premium_marketing/v1/PremiumMarketingComponentProperties.proto",
-        "js": "protoc --proto_path=./discord_protos/ --ts_out src/discord_protos ./discord_protos/users/v1/User.proto ./discord_protos/users/v1/MediumUser.proto ./discord_protos/users/v1/UserData.proto ./discord_protos/users/v1/GuildShardingConfig.proto ./discord_protos/discord_experimentation/v1/Experiment.proto ./discord_protos/discord_users/v1/PreloadedUserSettings.proto ./discord_protos/discord_users/v1/FrecencyUserSettings.proto ./discord_protos/discord_kkv_store_value_models/v1/ApplicationUserRoleConnection.proto ./discord_protos/discord_kkv_store_value_models/v1/AcknowledgedApplicationDisclosures.proto ./discord_protos/premium_marketing/v1/PremiumMarketingComponentProperties.proto",
-        "build": "tsc",
-        "load": "npm run build && node dist/load.js"
+        "build": "tsc --project tsconfig.script.json",
+        "load": "pnpm run build && node dist/load.js"
     },
     "devDependencies": {
-        "@protobuf-ts/plugin": "^2.9.6",
-        "@protobuf-ts/protoc": "^2.9.6",
-        "puppeteer": "^24.6.0",
-        "typescript": "^5.8.2"
+        "@protobuf-ts/plugin": "^2.11.1",
+        "@protobuf-ts/protoc": "^2.11.1",
+        "puppeteer": "^24.37.5",
+        "typescript": "^5.9.3"
     },
     "dependencies": {
-        "@protobuf-ts/runtime": "^2.9.6"
+        "@protobuf-ts/runtime": "^2.11.1"
     }
 }

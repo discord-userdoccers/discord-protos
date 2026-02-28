@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 import re
 
 with open('requirements.txt') as f:
@@ -18,7 +18,7 @@ setup(
         'Issue tracker': 'https://github.com/dolfies/discord-protos/issues',
     },
     version=version,
-    packages=['discord_protos'],
+    packages=['discord_protos', *find_packages()],
     license='MIT',
     description='Discord user settings protobufs.',
     long_description=readme,
@@ -34,6 +34,8 @@ setup(
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: 3.11',
+        'Programming Language :: Python :: 3.12',
+        'Programming Language :: Python :: 3.13',
         'Topic :: Internet',
         'Topic :: Software Development :: Libraries',
         'Topic :: Software Development :: Libraries :: Python Modules',

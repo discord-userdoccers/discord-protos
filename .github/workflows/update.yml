@@ -20,11 +20,14 @@ jobs:
       with:
         ref: ${{ github.head_ref }}
 
+    - name: Install pnpm
+      uses: pnpm/action-setup@v2
+
     - name: Install Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '23.11.1'
-        registry-url: 'https://registry.npmjs.org'
+        node-version: 23
+        cache: 'pnpm'
 
     - name: Install protoc
       uses: arduino/setup-protoc@v3
@@ -32,20 +35,15 @@ jobs:
         version: '28.x'
 
     - name: Install dependencies
-      run: npm install
+      run: pnpm install --frozen-lockfile
 
     - name: Load protobuf definitions
       run: |
         # Fix puppeteer on Ubuntu 23.10+
         # See https://github.com/puppeteer/puppeteer/issues/12818
         echo 0 | sudo tee /proc/sys/kernel/apparmor_restrict_unprivileged_userns
-        npm run load
+        pnpm load
       shell: bash
-
-    - name: Build protobuf definitions
-      run: |
-        npm run js
-        npm run py
 
     - name: Commit changes
       id: changes
@@ -63,8 +61,18 @@ jobs:
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+    - name: Install Python
+      if: steps.changes.outputs.has_changes == 'true'
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Build package
+      run: python -m build
+
+    - name: Publish to PyPI
+      uses: pypa/gh-action-pypi-publish@release/v1
+
     - name: Publish to NPM
       if: steps.changes.outputs.has_changes == 'true'
-      run: npm publish --provenance --access public
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      run: pnpm publish --provenance --access public

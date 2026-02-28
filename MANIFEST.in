@@ -1,4 +1,4 @@
 include README.md
 include LICENSE
 include requirements.txt
-include discord_protos/*.proto
+include discord_protos/**/**/*.proto
