@@ -68,7 +68,10 @@ jobs:
         python-version: '3.11'
 
     - name: Build package
-      run: python -m build
+      run: |
+        rm -rf dist
+        python -m pip install -U pip build
+        python -m build
 
     - name: Publish to PyPI
       uses: pypa/gh-action-pypi-publish@release/v1
