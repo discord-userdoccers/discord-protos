@@ -563,4 +563,4 @@ message PreloadedUserSettings {
   optional AllApplicationSettings applications = 23;
   optional AdsSettings ads = 24;
   optional InAppFeedbackSettings in_app_feedback_settings = 25;
-} 
+}
