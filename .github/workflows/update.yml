@@ -78,4 +78,4 @@ jobs:
 
     - name: Publish to NPM
       if: steps.changes.outputs.has_changes == 'true'
-      run: pnpm publish --provenance --access public
+      run: pnpm publish --provenance --access public --no-git-checks
