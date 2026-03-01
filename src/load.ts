@@ -231,6 +231,7 @@ async function main() {
     const changes = execSync("git status --porcelain").toString().trim();
     if (!changes.includes(".proto")) {
         console.log("No changes detected, exiting...");
+        execSync("git restore .");
         return;
     }
 }
