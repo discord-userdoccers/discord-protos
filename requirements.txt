@@ -1,1 +1,2 @@
 protobuf
+mypy-protobuf<6
