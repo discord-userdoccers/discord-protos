@@ -248,9 +248,12 @@ function createProtoFile(proto) {
         lines.push(`  }\n`);
     });
 
-    // Check if we're using the funny Google well-knowns and insert an import statement (I love Discord)
-    if (lines.some((line) => line.includes("google.protobuf"))) {
-        lines.splice(1, 0, `import "google/protobuf/wrappers.proto";\nimport "google/protobuf/timestamp.proto";\n`);
+    // Check if we're using the funny Google well-knowns and insert an import statement
+    if (lines.some((line) => line.includes("google.protobuf.Timestamp"))) {
+        lines.splice(1, 0, `import "google/protobuf/timestamp.proto";\n`);
+    }
+    if (lines.some((line) => line.match(/google\.protobuf\.\w+Value/))) {
+        lines.splice(1, 0, `import "google/protobuf/wrappers.proto";\n`);
     }
 
     lines.push("}\n");
