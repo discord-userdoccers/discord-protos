@@ -95,7 +95,9 @@ interface Proto {
 }
 
 async function main() {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+        args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
+    });
 
     const page = await browser.newPage();
     await page.setRequestInterception(true);
@@ -175,9 +177,7 @@ async function main() {
         .join("\n");
     writeFileSync(
         join(__dirname, "..", "discord_protos", "__init__.py"),
-        PY_TEMPLATE.replace("{{ version }}", version)
-            .replace("{{ exports }}", pyExports)
-            .replace("{{ protos_imports }}", pyImports)
+        PY_TEMPLATE.replace("{{ version }}", version).replace("{{ exports }}", pyExports).replace("{{ protos_imports }}", pyImports),
     );
 
     // Ensure output directories exist
@@ -189,7 +189,10 @@ async function main() {
 
     const protoArgs = filenames.join(" ");
     try {
-        execSync(`protoc --proto_path=./discord_protos/ --python_out=discord_protos --mypy_out=discord_protos ${protoArgs}`, { cwd: root, stdio: "inherit" });
+        execSync(`protoc --proto_path=./discord_protos/ --python_out=discord_protos --mypy_out=discord_protos ${protoArgs}`, {
+            cwd: root,
+            stdio: "inherit",
+        });
     } catch (e) {
         console.error("Python protoc compilation failed:", e);
         throw e;
