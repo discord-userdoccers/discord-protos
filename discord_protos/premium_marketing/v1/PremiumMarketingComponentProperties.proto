@@ -80,6 +80,7 @@ message PremiumMarketingComponentProperties {
 
   message CTAButton {
     string copy = 1;
+    ButtonAction button_action = 2;
   }
 
   message MobileBottomSheet {

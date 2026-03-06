@@ -339,13 +339,16 @@ class PremiumMarketingComponentProperties(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
 
         COPY_FIELD_NUMBER: _builtins.int
+        BUTTON_ACTION_FIELD_NUMBER: _builtins.int
         copy: _builtins.str
+        button_action: Global___PremiumMarketingComponentProperties.ButtonAction.ValueType
         def __init__(
             self,
             *,
             copy: _builtins.str = ...,
+            button_action: Global___PremiumMarketingComponentProperties.ButtonAction.ValueType = ...,
         ) -> None: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["copy", b"copy"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["button_action", b"button_action", "copy", b"copy"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
 
     @_typing.final

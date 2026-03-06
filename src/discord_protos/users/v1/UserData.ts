@@ -420,6 +420,22 @@ export interface UserData_AgeAssuranceData {
      * @generated from protobuf field: optional google.protobuf.Timestamp estimated_date_of_birth = 1
      */
     estimatedDateOfBirth?: Timestamp;
+    /**
+     * @generated from protobuf field: discord_protos.users.v1.UserData.AgeAssuranceMethod method = 2
+     */
+    method: UserData_AgeAssuranceMethod;
+    /**
+     * @generated from protobuf field: int32 method_version = 3
+     */
+    methodVersion: number;
+    /**
+     * @generated from protobuf field: discord_protos.users.v1.UserData.AgeAssuranceVendor vendor = 4
+     */
+    vendor: UserData_AgeAssuranceVendor;
+    /**
+     * @generated from protobuf field: optional google.protobuf.Timestamp verified_at = 5
+     */
+    verifiedAt?: Timestamp;
 }
 /**
  * @generated from protobuf enum discord_protos.users.v1.UserData.UserLinkType
@@ -2736,6 +2752,72 @@ export enum UserData_DayOfWeek {
      */
     SUNDAY = 7
 }
+/**
+ * @generated from protobuf enum discord_protos.users.v1.UserData.AgeAssuranceMethod
+ */
+export enum UserData_AgeAssuranceMethod {
+    /**
+     * @generated from protobuf enum value: AGE_ASSURANCE_METHOD_UNSPECIFIED = 0;
+     */
+    UNSPECIFIED = 0,
+    /**
+     * @generated from protobuf enum value: AGE_ASSURANCE_METHOD_ID_SELFIE_MATCH = 1;
+     */
+    ID_SELFIE_MATCH = 1,
+    /**
+     * @generated from protobuf enum value: AGE_ASSURANCE_METHOD_ID_SCAN = 2;
+     */
+    ID_SCAN = 2,
+    /**
+     * @generated from protobuf enum value: AGE_ASSURANCE_METHOD_FACIAL_AGE_ESTIMATION = 3;
+     */
+    FACIAL_AGE_ESTIMATION = 3,
+    /**
+     * @generated from protobuf enum value: AGE_ASSURANCE_METHOD_BEHAVIORAL_INFERENCE = 4;
+     */
+    BEHAVIORAL_INFERENCE = 4,
+    /**
+     * @generated from protobuf enum value: AGE_ASSURANCE_METHOD_CREDIT_CARD = 5;
+     */
+    CREDIT_CARD = 5,
+    /**
+     * @generated from protobuf enum value: AGE_ASSURANCE_METHOD_EMAIL_DOMAIN = 6;
+     */
+    EMAIL_DOMAIN = 6,
+    /**
+     * @generated from protobuf enum value: AGE_ASSURANCE_METHOD_OS_SIGNAL = 7;
+     */
+    OS_SIGNAL = 7,
+    /**
+     * @generated from protobuf enum value: AGE_ASSURANCE_METHOD_ML_AGE_INFERENCE = 8;
+     */
+    ML_AGE_INFERENCE = 8
+}
+/**
+ * @generated from protobuf enum discord_protos.users.v1.UserData.AgeAssuranceVendor
+ */
+export enum UserData_AgeAssuranceVendor {
+    /**
+     * @generated from protobuf enum value: AGE_ASSURANCE_VENDOR_UNSPECIFIED = 0;
+     */
+    UNSPECIFIED = 0,
+    /**
+     * @generated from protobuf enum value: AGE_ASSURANCE_VENDOR_K_ID = 1;
+     */
+    K_ID = 1,
+    /**
+     * @generated from protobuf enum value: AGE_ASSURANCE_VENDOR_PERSONA = 2;
+     */
+    PERSONA = 2,
+    /**
+     * @generated from protobuf enum value: AGE_ASSURANCE_VENDOR_INCODE = 3;
+     */
+    INCODE = 3,
+    /**
+     * @generated from protobuf enum value: AGE_ASSURANCE_VENDOR_DISCORD = 4;
+     */
+    DISCORD = 4
+}
 // @generated message type with reflection information, may provide speed optimized methods
 class UserData$Type extends MessageType<UserData> {
     constructor() {
@@ -4227,11 +4309,18 @@ export const UserData_RestrictedSchedule = new UserData_RestrictedSchedule$Type(
 class UserData_AgeAssuranceData$Type extends MessageType<UserData_AgeAssuranceData> {
     constructor() {
         super("discord_protos.users.v1.UserData.AgeAssuranceData", [
-            { no: 1, name: "estimated_date_of_birth", kind: "message", T: () => Timestamp }
+            { no: 1, name: "estimated_date_of_birth", kind: "message", T: () => Timestamp },
+            { no: 2, name: "method", kind: "enum", T: () => ["discord_protos.users.v1.UserData.AgeAssuranceMethod", UserData_AgeAssuranceMethod, "AGE_ASSURANCE_METHOD_"] },
+            { no: 3, name: "method_version", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
+            { no: 4, name: "vendor", kind: "enum", T: () => ["discord_protos.users.v1.UserData.AgeAssuranceVendor", UserData_AgeAssuranceVendor, "AGE_ASSURANCE_VENDOR_"] },
+            { no: 5, name: "verified_at", kind: "message", T: () => Timestamp }
         ]);
     }
     create(value?: PartialMessage<UserData_AgeAssuranceData>): UserData_AgeAssuranceData {
         const message = globalThis.Object.create((this.messagePrototype!));
+        message.method = 0;
+        message.methodVersion = 0;
+        message.vendor = 0;
         if (value !== undefined)
             reflectionMergePartial<UserData_AgeAssuranceData>(this, message, value);
         return message;
@@ -4243,6 +4332,18 @@ class UserData_AgeAssuranceData$Type extends MessageType<UserData_AgeAssuranceDa
             switch (fieldNo) {
                 case /* optional google.protobuf.Timestamp estimated_date_of_birth */ 1:
                     message.estimatedDateOfBirth = Timestamp.internalBinaryRead(reader, reader.uint32(), options, message.estimatedDateOfBirth);
+                    break;
+                case /* discord_protos.users.v1.UserData.AgeAssuranceMethod method */ 2:
+                    message.method = reader.int32();
+                    break;
+                case /* int32 method_version */ 3:
+                    message.methodVersion = reader.int32();
+                    break;
+                case /* discord_protos.users.v1.UserData.AgeAssuranceVendor vendor */ 4:
+                    message.vendor = reader.int32();
+                    break;
+                case /* optional google.protobuf.Timestamp verified_at */ 5:
+                    message.verifiedAt = Timestamp.internalBinaryRead(reader, reader.uint32(), options, message.verifiedAt);
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -4259,6 +4360,18 @@ class UserData_AgeAssuranceData$Type extends MessageType<UserData_AgeAssuranceDa
         /* optional google.protobuf.Timestamp estimated_date_of_birth = 1; */
         if (message.estimatedDateOfBirth)
             Timestamp.internalBinaryWrite(message.estimatedDateOfBirth, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.users.v1.UserData.AgeAssuranceMethod method = 2; */
+        if (message.method !== 0)
+            writer.tag(2, WireType.Varint).int32(message.method);
+        /* int32 method_version = 3; */
+        if (message.methodVersion !== 0)
+            writer.tag(3, WireType.Varint).int32(message.methodVersion);
+        /* discord_protos.users.v1.UserData.AgeAssuranceVendor vendor = 4; */
+        if (message.vendor !== 0)
+            writer.tag(4, WireType.Varint).int32(message.vendor);
+        /* optional google.protobuf.Timestamp verified_at = 5; */
+        if (message.verifiedAt)
+            Timestamp.internalBinaryWrite(message.verifiedAt, writer.tag(5, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

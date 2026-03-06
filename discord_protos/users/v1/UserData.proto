@@ -723,8 +723,32 @@ message UserData {
     repeated ScheduleRule rules = 1;
   }
 
+  enum AgeAssuranceMethod {
+    AGE_ASSURANCE_METHOD_UNSPECIFIED = 0;
+    AGE_ASSURANCE_METHOD_ID_SELFIE_MATCH = 1;
+    AGE_ASSURANCE_METHOD_ID_SCAN = 2;
+    AGE_ASSURANCE_METHOD_FACIAL_AGE_ESTIMATION = 3;
+    AGE_ASSURANCE_METHOD_BEHAVIORAL_INFERENCE = 4;
+    AGE_ASSURANCE_METHOD_CREDIT_CARD = 5;
+    AGE_ASSURANCE_METHOD_EMAIL_DOMAIN = 6;
+    AGE_ASSURANCE_METHOD_OS_SIGNAL = 7;
+    AGE_ASSURANCE_METHOD_ML_AGE_INFERENCE = 8;
+  }
+
+  enum AgeAssuranceVendor {
+    AGE_ASSURANCE_VENDOR_UNSPECIFIED = 0;
+    AGE_ASSURANCE_VENDOR_K_ID = 1;
+    AGE_ASSURANCE_VENDOR_PERSONA = 2;
+    AGE_ASSURANCE_VENDOR_INCODE = 3;
+    AGE_ASSURANCE_VENDOR_DISCORD = 4;
+  }
+
   message AgeAssuranceData {
     optional google.protobuf.Timestamp estimated_date_of_birth = 1;
+    AgeAssuranceMethod method = 2;
+    int32 method_version = 3;
+    AgeAssuranceVendor vendor = 4;
+    optional google.protobuf.Timestamp verified_at = 5;
   }
 
   map<fixed64, LinkedUser> linked_users = 1;

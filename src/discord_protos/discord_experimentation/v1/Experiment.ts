@@ -159,6 +159,10 @@ export interface Experiment {
      * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.CustomUnitPrefix custom_unit_prefix = 36
      */
     customUnitPrefix: Experiment_CustomUnitPrefix;
+    /**
+     * @generated from protobuf field: repeated string growthbook_tags = 37 [packed = false]
+     */
+    growthbookTags: string[];
 }
 /**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.Bucket
@@ -1138,7 +1142,8 @@ class Experiment$Type extends MessageType<Experiment> {
             { no: 32, name: "is_automated_change", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
             { no: 33, name: "archive_at", kind: "message", T: () => Timestamp },
             { no: 35, name: "guild_experiment_version", kind: "message", T: () => Int32Value },
-            { no: 36, name: "custom_unit_prefix", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.CustomUnitPrefix", Experiment_CustomUnitPrefix, "CUSTOM_UNIT_PREFIX_"] }
+            { no: 36, name: "custom_unit_prefix", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.CustomUnitPrefix", Experiment_CustomUnitPrefix, "CUSTOM_UNIT_PREFIX_"] },
+            { no: 37, name: "growthbook_tags", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 9 /*ScalarType.STRING*/ }
         ]);
     }
     create(value?: PartialMessage<Experiment>): Experiment {
@@ -1170,6 +1175,7 @@ class Experiment$Type extends MessageType<Experiment> {
         message.engineFeatureFlags = [];
         message.isAutomatedChange = false;
         message.customUnitPrefix = 0;
+        message.growthbookTags = [];
         if (value !== undefined)
             reflectionMergePartial<Experiment>(this, message, value);
         return message;
@@ -1291,6 +1297,9 @@ class Experiment$Type extends MessageType<Experiment> {
                     break;
                 case /* discord_protos.discord_experimentation.v1.Experiment.CustomUnitPrefix custom_unit_prefix */ 36:
                     message.customUnitPrefix = reader.int32();
+                    break;
+                case /* repeated string growthbook_tags = 37 [packed = false] */ 37:
+                    message.growthbookTags.push(reader.string());
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -1417,6 +1426,9 @@ class Experiment$Type extends MessageType<Experiment> {
         /* discord_protos.discord_experimentation.v1.Experiment.CustomUnitPrefix custom_unit_prefix = 36; */
         if (message.customUnitPrefix !== 0)
             writer.tag(36, WireType.Varint).int32(message.customUnitPrefix);
+        /* repeated string growthbook_tags = 37 [packed = false]; */
+        for (let i = 0; i < message.growthbookTags.length; i++)
+            writer.tag(37, WireType.LengthDelimited).string(message.growthbookTags[i]);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

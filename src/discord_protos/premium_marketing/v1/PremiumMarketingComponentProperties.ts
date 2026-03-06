@@ -324,6 +324,10 @@ export interface PremiumMarketingComponentProperties_CTAButton {
      * @generated from protobuf field: string copy = 1
      */
     copy: string;
+    /**
+     * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction button_action = 2
+     */
+    buttonAction: PremiumMarketingComponentProperties_ButtonAction;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MobileBottomSheet
@@ -1533,12 +1537,14 @@ export const PremiumMarketingComponentProperties_PaymentModalBanner = new Premiu
 class PremiumMarketingComponentProperties_CTAButton$Type extends MessageType<PremiumMarketingComponentProperties_CTAButton> {
     constructor() {
         super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.CTAButton", [
-            { no: 1, name: "copy", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+            { no: 1, name: "copy", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "button_action", kind: "enum", T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction", PremiumMarketingComponentProperties_ButtonAction, "BUTTON_ACTION_"] }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_CTAButton>): PremiumMarketingComponentProperties_CTAButton {
         const message = globalThis.Object.create((this.messagePrototype!));
         message.copy = "";
+        message.buttonAction = 0;
         if (value !== undefined)
             reflectionMergePartial<PremiumMarketingComponentProperties_CTAButton>(this, message, value);
         return message;
@@ -1550,6 +1556,9 @@ class PremiumMarketingComponentProperties_CTAButton$Type extends MessageType<Pre
             switch (fieldNo) {
                 case /* string copy */ 1:
                     message.copy = reader.string();
+                    break;
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction button_action */ 2:
+                    message.buttonAction = reader.int32();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -1566,6 +1575,9 @@ class PremiumMarketingComponentProperties_CTAButton$Type extends MessageType<Pre
         /* string copy = 1; */
         if (message.copy !== "")
             writer.tag(1, WireType.LengthDelimited).string(message.copy);
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction button_action = 2; */
+        if (message.buttonAction !== 0)
+            writer.tag(2, WireType.Varint).int32(message.buttonAction);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

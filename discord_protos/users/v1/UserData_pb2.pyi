@@ -1254,6 +1254,52 @@ class UserData(_message.Message):
     DAY_OF_WEEK_SATURDAY: UserData.DayOfWeek.ValueType  # 6
     DAY_OF_WEEK_SUNDAY: UserData.DayOfWeek.ValueType  # 7
 
+    class _AgeAssuranceMethod:
+        ValueType = _typing.NewType("ValueType", _builtins.int)
+        V: _TypeAlias = ValueType  # noqa: Y015
+
+    class _AgeAssuranceMethodEnumTypeWrapper(_enum_type_wrapper._EnumTypeWrapper[UserData._AgeAssuranceMethod.ValueType], _builtins.type):
+        DESCRIPTOR: _descriptor.EnumDescriptor
+        AGE_ASSURANCE_METHOD_UNSPECIFIED: UserData._AgeAssuranceMethod.ValueType  # 0
+        AGE_ASSURANCE_METHOD_ID_SELFIE_MATCH: UserData._AgeAssuranceMethod.ValueType  # 1
+        AGE_ASSURANCE_METHOD_ID_SCAN: UserData._AgeAssuranceMethod.ValueType  # 2
+        AGE_ASSURANCE_METHOD_FACIAL_AGE_ESTIMATION: UserData._AgeAssuranceMethod.ValueType  # 3
+        AGE_ASSURANCE_METHOD_BEHAVIORAL_INFERENCE: UserData._AgeAssuranceMethod.ValueType  # 4
+        AGE_ASSURANCE_METHOD_CREDIT_CARD: UserData._AgeAssuranceMethod.ValueType  # 5
+        AGE_ASSURANCE_METHOD_EMAIL_DOMAIN: UserData._AgeAssuranceMethod.ValueType  # 6
+        AGE_ASSURANCE_METHOD_OS_SIGNAL: UserData._AgeAssuranceMethod.ValueType  # 7
+        AGE_ASSURANCE_METHOD_ML_AGE_INFERENCE: UserData._AgeAssuranceMethod.ValueType  # 8
+
+    class AgeAssuranceMethod(_AgeAssuranceMethod, metaclass=_AgeAssuranceMethodEnumTypeWrapper): ...
+    AGE_ASSURANCE_METHOD_UNSPECIFIED: UserData.AgeAssuranceMethod.ValueType  # 0
+    AGE_ASSURANCE_METHOD_ID_SELFIE_MATCH: UserData.AgeAssuranceMethod.ValueType  # 1
+    AGE_ASSURANCE_METHOD_ID_SCAN: UserData.AgeAssuranceMethod.ValueType  # 2
+    AGE_ASSURANCE_METHOD_FACIAL_AGE_ESTIMATION: UserData.AgeAssuranceMethod.ValueType  # 3
+    AGE_ASSURANCE_METHOD_BEHAVIORAL_INFERENCE: UserData.AgeAssuranceMethod.ValueType  # 4
+    AGE_ASSURANCE_METHOD_CREDIT_CARD: UserData.AgeAssuranceMethod.ValueType  # 5
+    AGE_ASSURANCE_METHOD_EMAIL_DOMAIN: UserData.AgeAssuranceMethod.ValueType  # 6
+    AGE_ASSURANCE_METHOD_OS_SIGNAL: UserData.AgeAssuranceMethod.ValueType  # 7
+    AGE_ASSURANCE_METHOD_ML_AGE_INFERENCE: UserData.AgeAssuranceMethod.ValueType  # 8
+
+    class _AgeAssuranceVendor:
+        ValueType = _typing.NewType("ValueType", _builtins.int)
+        V: _TypeAlias = ValueType  # noqa: Y015
+
+    class _AgeAssuranceVendorEnumTypeWrapper(_enum_type_wrapper._EnumTypeWrapper[UserData._AgeAssuranceVendor.ValueType], _builtins.type):
+        DESCRIPTOR: _descriptor.EnumDescriptor
+        AGE_ASSURANCE_VENDOR_UNSPECIFIED: UserData._AgeAssuranceVendor.ValueType  # 0
+        AGE_ASSURANCE_VENDOR_K_ID: UserData._AgeAssuranceVendor.ValueType  # 1
+        AGE_ASSURANCE_VENDOR_PERSONA: UserData._AgeAssuranceVendor.ValueType  # 2
+        AGE_ASSURANCE_VENDOR_INCODE: UserData._AgeAssuranceVendor.ValueType  # 3
+        AGE_ASSURANCE_VENDOR_DISCORD: UserData._AgeAssuranceVendor.ValueType  # 4
+
+    class AgeAssuranceVendor(_AgeAssuranceVendor, metaclass=_AgeAssuranceVendorEnumTypeWrapper): ...
+    AGE_ASSURANCE_VENDOR_UNSPECIFIED: UserData.AgeAssuranceVendor.ValueType  # 0
+    AGE_ASSURANCE_VENDOR_K_ID: UserData.AgeAssuranceVendor.ValueType  # 1
+    AGE_ASSURANCE_VENDOR_PERSONA: UserData.AgeAssuranceVendor.ValueType  # 2
+    AGE_ASSURANCE_VENDOR_INCODE: UserData.AgeAssuranceVendor.ValueType  # 3
+    AGE_ASSURANCE_VENDOR_DISCORD: UserData.AgeAssuranceVendor.ValueType  # 4
+
     @_typing.final
     class LinkedUser(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
@@ -1795,20 +1841,38 @@ class UserData(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
 
         ESTIMATED_DATE_OF_BIRTH_FIELD_NUMBER: _builtins.int
+        METHOD_FIELD_NUMBER: _builtins.int
+        METHOD_VERSION_FIELD_NUMBER: _builtins.int
+        VENDOR_FIELD_NUMBER: _builtins.int
+        VERIFIED_AT_FIELD_NUMBER: _builtins.int
+        method: Global___UserData.AgeAssuranceMethod.ValueType
+        method_version: _builtins.int
+        vendor: Global___UserData.AgeAssuranceVendor.ValueType
         @_builtins.property
         def estimated_date_of_birth(self) -> _timestamp_pb2.Timestamp: ...
+        @_builtins.property
+        def verified_at(self) -> _timestamp_pb2.Timestamp: ...
         def __init__(
             self,
             *,
             estimated_date_of_birth: _timestamp_pb2.Timestamp | None = ...,
+            method: Global___UserData.AgeAssuranceMethod.ValueType = ...,
+            method_version: _builtins.int = ...,
+            vendor: Global___UserData.AgeAssuranceVendor.ValueType = ...,
+            verified_at: _timestamp_pb2.Timestamp | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _typing.Literal["_estimated_date_of_birth", b"_estimated_date_of_birth", "estimated_date_of_birth", b"estimated_date_of_birth"]  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_estimated_date_of_birth", b"_estimated_date_of_birth", "_verified_at", b"_verified_at", "estimated_date_of_birth", b"estimated_date_of_birth", "verified_at", b"verified_at"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_estimated_date_of_birth", b"_estimated_date_of_birth", "estimated_date_of_birth", b"estimated_date_of_birth"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_estimated_date_of_birth", b"_estimated_date_of_birth", "_verified_at", b"_verified_at", "estimated_date_of_birth", b"estimated_date_of_birth", "method", b"method", "method_version", b"method_version", "vendor", b"vendor", "verified_at", b"verified_at"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__estimated_date_of_birth: _TypeAlias = _typing.Literal["estimated_date_of_birth"]  # noqa: Y015
         _WhichOneofArgType__estimated_date_of_birth: _TypeAlias = _typing.Literal["_estimated_date_of_birth", b"_estimated_date_of_birth"]  # noqa: Y015
+        _WhichOneofReturnType__verified_at: _TypeAlias = _typing.Literal["verified_at"]  # noqa: Y015
+        _WhichOneofArgType__verified_at: _TypeAlias = _typing.Literal["_verified_at", b"_verified_at"]  # noqa: Y015
+        @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__estimated_date_of_birth) -> _WhichOneofReturnType__estimated_date_of_birth | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__verified_at) -> _WhichOneofReturnType__verified_at | None: ...
 
     @_typing.final
     class LinkedUsersEntry(_message.Message):
