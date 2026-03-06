@@ -27,7 +27,7 @@
     "devDependencies": {
         "@protobuf-ts/plugin": "^2.11.1",
         "@protobuf-ts/protoc": "^2.11.1",
-        "puppeteer": "^24.37.5",
+        "puppeteer": "^24.38.0",
         "typescript": "^5.9.3"
     },
     "dependencies": {
