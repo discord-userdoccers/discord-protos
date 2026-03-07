@@ -150,6 +150,7 @@ function parseProto(proto) {
         package,
         name,
         kind: "message",
+        options: proto.options,
         fields: fields,
         structs: structs.filter((v) => (seen.has(v.name) ? false : seen.add(v.name))),
     };
@@ -182,8 +183,67 @@ function createProtoField(field) {
     return `${field.optional ? "optional " : field.repeated ? "repeated " : ""}${field.type} ${field.name} = ${field.number}${field.unpacked ? " [packed = false]" : ""};`;
 }
 
+function formatOptionValue(value) {
+    if (typeof value === "string") {
+        return /^[A-Z_][A-Z0-9_]*$/.test(value) ? value : `"${value.replace(/"/g, '\\"')}"`;
+    }
+    return String(value);
+}
+
 function createProtoFile(proto) {
-    const lines = [`syntax = "proto3";\n`, `package ${proto.package};\n`, `message ${proto.name} {`];
+    const lines = [`syntax = "proto3";\n`, `package ${proto.package};\n`];
+
+    const optionsMap = new Map(); // fullQualifiedName -> Set<value>
+    const collectOpts = (opts) => {
+        if (!opts) return;
+        for (const [key, value] of Object.entries(opts)) {
+            if (!optionsMap.has(key)) optionsMap.set(key, new Set());
+            if (value !== undefined && value !== null) optionsMap.get(key).add(value);
+        }
+    };
+    collectOpts(proto.options);
+    for (const struct of proto.structs) {
+        if (struct.kind === "message") collectOpts(struct.options);
+    }
+
+    // Unfortunately, the way protobuf-ts compiles custom options is lossy,
+    // so we have to make up our own field numbers
+    const sortedKeys = [...optionsMap.keys()].sort();
+    const optionFieldNumbers = new Map(sortedKeys.map((key, i) => [key, 50000 + i]));
+
+    // We have to make up our own enums too :(
+    for (const [key, values] of optionsMap) {
+        const shortName = key.split(".").pop();
+        const allValues = [...values];
+        const isEnum = allValues.every(v => typeof v === "string" && /^[A-Z][A-Z0-9_]*$/.test(v));
+        const fieldNum = optionFieldNumbers.get(key);
+
+        if (isEnum) {
+            const typeName = shortName.split("_").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join("");
+            const prefix = shortName.toUpperCase() + "_";
+            lines.push(`enum ${typeName} {`);
+            lines.push(`  ${prefix}UNSPECIFIED = 0;`);
+            [...allValues].sort().forEach((v, i) => lines.push(`  ${v} = ${i + 1};`));
+            lines.push(`}\n`);
+            lines.push(`extend google.protobuf.MessageOptions {`);
+            lines.push(`  ${typeName} ${shortName} = ${fieldNum};`);
+            lines.push(`}\n`);
+        } else {
+            const protoType = typeof allValues[0] === "number" ? "int32" : "string";
+            lines.push(`extend google.protobuf.MessageOptions {`);
+            lines.push(`  ${protoType} ${shortName} = ${fieldNum};`);
+            lines.push(`}\n`);
+        }
+    }
+
+    lines.push(`message ${proto.name} {`);
+
+    // Root message options go inside the message body
+    if (proto.options) {
+        for (const [key, value] of Object.entries(proto.options)) {
+            lines.push(`  option (${key}) = ${formatOptionValue(value)};`);
+        }
+    }
 
     proto.structs.forEach((struct) => {
         lines.push(`  ${struct.kind} ${struct.name} {`);
@@ -195,6 +255,11 @@ function createProtoFile(proto) {
                 });
                 break;
             case "message":
+                if (struct.options) {
+                    for (const [key, value] of Object.entries(struct.options)) {
+                        lines.push(`    option (${key}) = ${formatOptionValue(value)};`);
+                    }
+                }
                 // Group fields by oneof if applicable
                 const oneofGroups = new Map();
                 const normalFields = [];
@@ -254,6 +319,9 @@ function createProtoFile(proto) {
     }
     if (lines.some((line) => line.match(/google\.protobuf\.\w+Value/))) {
         lines.splice(1, 0, `import "google/protobuf/wrappers.proto";\n`);
+    }
+    if (lines.some((line) => line.includes("extend google.protobuf"))) {
+        lines.splice(1, 0, `import "google/protobuf/descriptor.proto";\n`);
     }
 
     lines.push("}\n");
