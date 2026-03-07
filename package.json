@@ -20,9 +20,9 @@
         "url": "https://github.com/discord-userdoccers/discord-protos"
     },
     "license": "MIT",
+    "type": "module",
     "scripts": {
-        "build": "tsc --project tsconfig.script.json",
-        "load": "pnpm run build && node dist/load.js"
+        "load": "node --experimental-strip-types scripts/load.ts"
     },
     "devDependencies": {
         "@protobuf-ts/plugin": "^2.11.1",
