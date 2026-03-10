@@ -1300,6 +1300,19 @@ class UserData(_message.Message):
     AGE_ASSURANCE_VENDOR_INCODE: UserData.AgeAssuranceVendor.ValueType  # 3
     AGE_ASSURANCE_VENDOR_DISCORD: UserData.AgeAssuranceVendor.ValueType  # 4
 
+    class _PerkSource:
+        ValueType = _typing.NewType("ValueType", _builtins.int)
+        V: _TypeAlias = ValueType  # noqa: Y015
+
+    class _PerkSourceEnumTypeWrapper(_enum_type_wrapper._EnumTypeWrapper[UserData._PerkSource.ValueType], _builtins.type):
+        DESCRIPTOR: _descriptor.EnumDescriptor
+        PERK_SOURCE_SOURCE_UNSPECIFIED: UserData._PerkSource.ValueType  # 0
+        PERK_SOURCE_SOURCE_NITRO: UserData._PerkSource.ValueType  # 1
+
+    class PerkSource(_PerkSource, metaclass=_PerkSourceEnumTypeWrapper): ...
+    PERK_SOURCE_SOURCE_UNSPECIFIED: UserData.PerkSource.ValueType  # 0
+    PERK_SOURCE_SOURCE_NITRO: UserData.PerkSource.ValueType  # 1
+
     @_typing.final
     class LinkedUser(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
@@ -1875,6 +1888,113 @@ class UserData(_message.Message):
         def WhichOneof(self, oneof_group: _WhichOneofArgType__verified_at) -> _WhichOneofReturnType__verified_at | None: ...
 
     @_typing.final
+    class PerkConfigIncreasedFileUploadSize(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        MAX_SIZE_FIELD_NUMBER: _builtins.int
+        max_size: _builtins.int
+        def __init__(
+            self,
+            *,
+            max_size: _builtins.int = ...,
+        ) -> None: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["max_size", b"max_size"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+
+    @_typing.final
+    class PerkConfigIncreasedGuildLimit(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        MAX_GUILDS_FIELD_NUMBER: _builtins.int
+        max_guilds: _builtins.int
+        def __init__(
+            self,
+            *,
+            max_guilds: _builtins.int = ...,
+        ) -> None: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["max_guilds", b"max_guilds"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+
+    @_typing.final
+    class PerkConfig(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        INCREASED_FILE_UPLOAD_SIZE_FIELD_NUMBER: _builtins.int
+        INCREASED_GUILD_LIMIT_FIELD_NUMBER: _builtins.int
+        SOURCE_FIELD_NUMBER: _builtins.int
+        @_builtins.property
+        def increased_file_upload_size(self) -> Global___UserData.PerkConfigIncreasedFileUploadSize: ...
+        @_builtins.property
+        def increased_guild_limit(self) -> Global___UserData.PerkConfigIncreasedGuildLimit: ...
+        @_builtins.property
+        def source(self) -> _containers.RepeatedScalarFieldContainer[Global___UserData.PerkSource.ValueType]: ...
+        def __init__(
+            self,
+            *,
+            increased_file_upload_size: Global___UserData.PerkConfigIncreasedFileUploadSize | None = ...,
+            increased_guild_limit: Global___UserData.PerkConfigIncreasedGuildLimit | None = ...,
+            source: _abc.Iterable[Global___UserData.PerkSource.ValueType] | None = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _typing.Literal["increased_file_upload_size", b"increased_file_upload_size", "increased_guild_limit", b"increased_guild_limit", "kind", b"kind"]  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["increased_file_upload_size", b"increased_file_upload_size", "increased_guild_limit", b"increased_guild_limit", "kind", b"kind", "source", b"source"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        _WhichOneofReturnType_kind: _TypeAlias = _typing.Literal["increased_file_upload_size", "increased_guild_limit"]  # noqa: Y015
+        _WhichOneofArgType_kind: _TypeAlias = _typing.Literal["kind", b"kind"]  # noqa: Y015
+        def WhichOneof(self, oneof_group: _WhichOneofArgType_kind) -> _WhichOneofReturnType_kind | None: ...
+
+    @_typing.final
+    class Perks(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        @_typing.final
+        class ConfigByPerkEntry(_message.Message):
+            DESCRIPTOR: _descriptor.Descriptor
+
+            KEY_FIELD_NUMBER: _builtins.int
+            VALUE_FIELD_NUMBER: _builtins.int
+            key: _builtins.int
+            @_builtins.property
+            def value(self) -> Global___UserData.PerkConfig: ...
+            def __init__(
+                self,
+                *,
+                key: _builtins.int = ...,
+                value: Global___UserData.PerkConfig | None = ...,
+            ) -> None: ...
+            _HasFieldArgType: _TypeAlias = _typing.Literal["value", b"value"]  # noqa: Y015
+            def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+            _ClearFieldArgType: _TypeAlias = _typing.Literal["key", b"key", "value", b"value"]  # noqa: Y015
+            def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+
+        ACTIVE_PERKS_BITMASK_FIELD_NUMBER: _builtins.int
+        CONFIG_BY_PERK_FIELD_NUMBER: _builtins.int
+        RULES_VERSION_FIELD_NUMBER: _builtins.int
+        UPDATED_AT_FIELD_NUMBER: _builtins.int
+        rules_version: _builtins.int
+        @_builtins.property
+        def active_perks_bitmask(self) -> _containers.RepeatedScalarFieldContainer[_builtins.int]: ...
+        @_builtins.property
+        def config_by_perk(self) -> _containers.MessageMap[_builtins.int, Global___UserData.PerkConfig]: ...
+        @_builtins.property
+        def updated_at(self) -> _timestamp_pb2.Timestamp: ...
+        def __init__(
+            self,
+            *,
+            active_perks_bitmask: _abc.Iterable[_builtins.int] | None = ...,
+            config_by_perk: _abc.Mapping[_builtins.int, Global___UserData.PerkConfig] | None = ...,
+            rules_version: _builtins.int = ...,
+            updated_at: _timestamp_pb2.Timestamp | None = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_updated_at", b"_updated_at", "updated_at", b"updated_at"]  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_updated_at", b"_updated_at", "active_perks_bitmask", b"active_perks_bitmask", "config_by_perk", b"config_by_perk", "rules_version", b"rules_version", "updated_at", b"updated_at"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        _WhichOneofReturnType__updated_at: _TypeAlias = _typing.Literal["updated_at"]  # noqa: Y015
+        _WhichOneofArgType__updated_at: _TypeAlias = _typing.Literal["_updated_at", b"_updated_at"]  # noqa: Y015
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__updated_at) -> _WhichOneofReturnType__updated_at | None: ...
+
+    @_typing.final
     class LinkedUsersEntry(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
 
@@ -1947,6 +2067,7 @@ class UserData(_message.Message):
     STORE_COUNTRY_FIELD_NUMBER: _builtins.int
     RESTRICTED_SCHEDULE_FIELD_NUMBER: _builtins.int
     AGE_ASSURANCE_DATA_FIELD_NUMBER: _builtins.int
+    PERKS_FIELD_NUMBER: _builtins.int
     @_builtins.property
     def linked_users(self) -> _containers.MessageMap[_builtins.int, Global___UserData.LinkedUser]: ...
     @_builtins.property
@@ -1973,6 +2094,8 @@ class UserData(_message.Message):
     def restricted_schedule(self) -> Global___UserData.RestrictedSchedule: ...
     @_builtins.property
     def age_assurance_data(self) -> Global___UserData.AgeAssuranceData: ...
+    @_builtins.property
+    def perks(self) -> Global___UserData.Perks: ...
     def __init__(
         self,
         *,
@@ -1989,10 +2112,11 @@ class UserData(_message.Message):
         store_country: Global___UserData.StoreCountry | None = ...,
         restricted_schedule: Global___UserData.RestrictedSchedule | None = ...,
         age_assurance_data: Global___UserData.AgeAssuranceData | None = ...,
+        perks: Global___UserData.Perks | None = ...,
     ) -> None: ...
-    _HasFieldArgType: _TypeAlias = _typing.Literal["_age_assurance_data", b"_age_assurance_data", "_collectibles", b"_collectibles", "_cross_platform_restriction", b"_cross_platform_restriction", "_display_name_styles", b"_display_name_styles", "_premium_state", b"_premium_state", "_primary_guild", b"_primary_guild", "_quest", b"_quest", "_restricted_schedule", b"_restricted_schedule", "_safety_state", b"_safety_state", "_store_country", b"_store_country", "age_assurance_data", b"age_assurance_data", "collectibles", b"collectibles", "cross_platform_restriction", b"cross_platform_restriction", "display_name_styles", b"display_name_styles", "premium_state", b"premium_state", "primary_guild", b"primary_guild", "quest", b"quest", "restricted_schedule", b"restricted_schedule", "safety_state", b"safety_state", "store_country", b"store_country"]  # noqa: Y015
+    _HasFieldArgType: _TypeAlias = _typing.Literal["_age_assurance_data", b"_age_assurance_data", "_collectibles", b"_collectibles", "_cross_platform_restriction", b"_cross_platform_restriction", "_display_name_styles", b"_display_name_styles", "_perks", b"_perks", "_premium_state", b"_premium_state", "_primary_guild", b"_primary_guild", "_quest", b"_quest", "_restricted_schedule", b"_restricted_schedule", "_safety_state", b"_safety_state", "_store_country", b"_store_country", "age_assurance_data", b"age_assurance_data", "collectibles", b"collectibles", "cross_platform_restriction", b"cross_platform_restriction", "display_name_styles", b"display_name_styles", "perks", b"perks", "premium_state", b"premium_state", "primary_guild", b"primary_guild", "quest", b"quest", "restricted_schedule", b"restricted_schedule", "safety_state", b"safety_state", "store_country", b"store_country"]  # noqa: Y015
     def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["_age_assurance_data", b"_age_assurance_data", "_collectibles", b"_collectibles", "_cross_platform_restriction", b"_cross_platform_restriction", "_display_name_styles", b"_display_name_styles", "_premium_state", b"_premium_state", "_primary_guild", b"_primary_guild", "_quest", b"_quest", "_restricted_schedule", b"_restricted_schedule", "_safety_state", b"_safety_state", "_store_country", b"_store_country", "age_assurance_data", b"age_assurance_data", "collectibles", b"collectibles", "cross_platform_restriction", b"cross_platform_restriction", "display_name_styles", b"display_name_styles", "linked_users", b"linked_users", "premium_state", b"premium_state", "primary_guild", b"primary_guild", "quest", b"quest", "restricted_schedule", b"restricted_schedule", "safety_feature_limits", b"safety_feature_limits", "safety_flags", b"safety_flags", "safety_state", b"safety_state", "store_country", b"store_country"]  # noqa: Y015
+    _ClearFieldArgType: _TypeAlias = _typing.Literal["_age_assurance_data", b"_age_assurance_data", "_collectibles", b"_collectibles", "_cross_platform_restriction", b"_cross_platform_restriction", "_display_name_styles", b"_display_name_styles", "_perks", b"_perks", "_premium_state", b"_premium_state", "_primary_guild", b"_primary_guild", "_quest", b"_quest", "_restricted_schedule", b"_restricted_schedule", "_safety_state", b"_safety_state", "_store_country", b"_store_country", "age_assurance_data", b"age_assurance_data", "collectibles", b"collectibles", "cross_platform_restriction", b"cross_platform_restriction", "display_name_styles", b"display_name_styles", "linked_users", b"linked_users", "perks", b"perks", "premium_state", b"premium_state", "primary_guild", b"primary_guild", "quest", b"quest", "restricted_schedule", b"restricted_schedule", "safety_feature_limits", b"safety_feature_limits", "safety_flags", b"safety_flags", "safety_state", b"safety_state", "store_country", b"store_country"]  # noqa: Y015
     def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
     _WhichOneofReturnType__age_assurance_data: _TypeAlias = _typing.Literal["age_assurance_data"]  # noqa: Y015
     _WhichOneofArgType__age_assurance_data: _TypeAlias = _typing.Literal["_age_assurance_data", b"_age_assurance_data"]  # noqa: Y015
@@ -2002,6 +2126,8 @@ class UserData(_message.Message):
     _WhichOneofArgType__cross_platform_restriction: _TypeAlias = _typing.Literal["_cross_platform_restriction", b"_cross_platform_restriction"]  # noqa: Y015
     _WhichOneofReturnType__display_name_styles: _TypeAlias = _typing.Literal["display_name_styles"]  # noqa: Y015
     _WhichOneofArgType__display_name_styles: _TypeAlias = _typing.Literal["_display_name_styles", b"_display_name_styles"]  # noqa: Y015
+    _WhichOneofReturnType__perks: _TypeAlias = _typing.Literal["perks"]  # noqa: Y015
+    _WhichOneofArgType__perks: _TypeAlias = _typing.Literal["_perks", b"_perks"]  # noqa: Y015
     _WhichOneofReturnType__premium_state: _TypeAlias = _typing.Literal["premium_state"]  # noqa: Y015
     _WhichOneofArgType__premium_state: _TypeAlias = _typing.Literal["_premium_state", b"_premium_state"]  # noqa: Y015
     _WhichOneofReturnType__primary_guild: _TypeAlias = _typing.Literal["primary_guild"]  # noqa: Y015
@@ -2022,6 +2148,8 @@ class UserData(_message.Message):
     def WhichOneof(self, oneof_group: _WhichOneofArgType__cross_platform_restriction) -> _WhichOneofReturnType__cross_platform_restriction | None: ...
     @_typing.overload
     def WhichOneof(self, oneof_group: _WhichOneofArgType__display_name_styles) -> _WhichOneofReturnType__display_name_styles | None: ...
+    @_typing.overload
+    def WhichOneof(self, oneof_group: _WhichOneofArgType__perks) -> _WhichOneofReturnType__perks | None: ...
     @_typing.overload
     def WhichOneof(self, oneof_group: _WhichOneofArgType__premium_state) -> _WhichOneofReturnType__premium_state | None: ...
     @_typing.overload

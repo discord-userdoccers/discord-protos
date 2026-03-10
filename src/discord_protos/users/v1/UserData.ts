@@ -76,6 +76,10 @@ export interface UserData {
      * @generated from protobuf field: optional discord_protos.users.v1.UserData.AgeAssuranceData age_assurance_data = 13
      */
     ageAssuranceData?: UserData_AgeAssuranceData;
+    /**
+     * @generated from protobuf field: optional discord_protos.users.v1.UserData.Perks perks = 14
+     */
+    perks?: UserData_Perks;
 }
 /**
  * @generated from protobuf message discord_protos.users.v1.UserData.LinkedUser
@@ -436,6 +440,74 @@ export interface UserData_AgeAssuranceData {
      * @generated from protobuf field: optional google.protobuf.Timestamp verified_at = 5
      */
     verifiedAt?: Timestamp;
+}
+/**
+ * @generated from protobuf message discord_protos.users.v1.UserData.PerkConfigIncreasedFileUploadSize
+ */
+export interface UserData_PerkConfigIncreasedFileUploadSize {
+    /**
+     * @generated from protobuf field: uint64 max_size = 1
+     */
+    maxSize: bigint;
+}
+/**
+ * @generated from protobuf message discord_protos.users.v1.UserData.PerkConfigIncreasedGuildLimit
+ */
+export interface UserData_PerkConfigIncreasedGuildLimit {
+    /**
+     * @generated from protobuf field: uint32 max_guilds = 1
+     */
+    maxGuilds: number;
+}
+/**
+ * @generated from protobuf message discord_protos.users.v1.UserData.PerkConfig
+ */
+export interface UserData_PerkConfig {
+    /**
+     * @generated from protobuf oneof: kind
+     */
+    kind: {
+        oneofKind: "increasedFileUploadSize";
+        /**
+         * @generated from protobuf field: discord_protos.users.v1.UserData.PerkConfigIncreasedFileUploadSize increased_file_upload_size = 2
+         */
+        increasedFileUploadSize: UserData_PerkConfigIncreasedFileUploadSize;
+    } | {
+        oneofKind: "increasedGuildLimit";
+        /**
+         * @generated from protobuf field: discord_protos.users.v1.UserData.PerkConfigIncreasedGuildLimit increased_guild_limit = 3
+         */
+        increasedGuildLimit: UserData_PerkConfigIncreasedGuildLimit;
+    } | {
+        oneofKind: undefined;
+    };
+    /**
+     * @generated from protobuf field: repeated discord_protos.users.v1.UserData.PerkSource source = 1
+     */
+    source: UserData_PerkSource[];
+}
+/**
+ * @generated from protobuf message discord_protos.users.v1.UserData.Perks
+ */
+export interface UserData_Perks {
+    /**
+     * @generated from protobuf field: repeated uint64 active_perks_bitmask = 1
+     */
+    activePerksBitmask: bigint[];
+    /**
+     * @generated from protobuf field: map<uint32, discord_protos.users.v1.UserData.PerkConfig> config_by_perk = 2
+     */
+    configByPerk: {
+        [key: number]: UserData_PerkConfig;
+    };
+    /**
+     * @generated from protobuf field: uint32 rules_version = 3
+     */
+    rulesVersion: number;
+    /**
+     * @generated from protobuf field: optional google.protobuf.Timestamp updated_at = 4
+     */
+    updatedAt?: Timestamp;
 }
 /**
  * @generated from protobuf enum discord_protos.users.v1.UserData.UserLinkType
@@ -2818,6 +2890,19 @@ export enum UserData_AgeAssuranceVendor {
      */
     DISCORD = 4
 }
+/**
+ * @generated from protobuf enum discord_protos.users.v1.UserData.PerkSource
+ */
+export enum UserData_PerkSource {
+    /**
+     * @generated from protobuf enum value: PERK_SOURCE_SOURCE_UNSPECIFIED = 0;
+     */
+    SOURCE_UNSPECIFIED = 0,
+    /**
+     * @generated from protobuf enum value: PERK_SOURCE_SOURCE_NITRO = 1;
+     */
+    SOURCE_NITRO = 1
+}
 // @generated message type with reflection information, may provide speed optimized methods
 class UserData$Type extends MessageType<UserData> {
     constructor() {
@@ -2834,7 +2919,8 @@ class UserData$Type extends MessageType<UserData> {
             { no: 10, name: "display_name_styles", kind: "message", T: () => UserData_DisplayNameStyles },
             { no: 11, name: "store_country", kind: "message", T: () => UserData_StoreCountry },
             { no: 12, name: "restricted_schedule", kind: "message", T: () => UserData_RestrictedSchedule },
-            { no: 13, name: "age_assurance_data", kind: "message", T: () => UserData_AgeAssuranceData }
+            { no: 13, name: "age_assurance_data", kind: "message", T: () => UserData_AgeAssuranceData },
+            { no: 14, name: "perks", kind: "message", T: () => UserData_Perks }
         ]);
     }
     create(value?: PartialMessage<UserData>): UserData {
@@ -2889,6 +2975,9 @@ class UserData$Type extends MessageType<UserData> {
                     break;
                 case /* optional discord_protos.users.v1.UserData.AgeAssuranceData age_assurance_data */ 13:
                     message.ageAssuranceData = UserData_AgeAssuranceData.internalBinaryRead(reader, reader.uint32(), options, message.ageAssuranceData);
+                    break;
+                case /* optional discord_protos.users.v1.UserData.Perks perks */ 14:
+                    message.perks = UserData_Perks.internalBinaryRead(reader, reader.uint32(), options, message.perks);
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -3001,6 +3090,9 @@ class UserData$Type extends MessageType<UserData> {
         /* optional discord_protos.users.v1.UserData.AgeAssuranceData age_assurance_data = 13; */
         if (message.ageAssuranceData)
             UserData_AgeAssuranceData.internalBinaryWrite(message.ageAssuranceData, writer.tag(13, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.users.v1.UserData.Perks perks = 14; */
+        if (message.perks)
+            UserData_Perks.internalBinaryWrite(message.perks, writer.tag(14, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -4382,3 +4474,271 @@ class UserData_AgeAssuranceData$Type extends MessageType<UserData_AgeAssuranceDa
  * @generated MessageType for protobuf message discord_protos.users.v1.UserData.AgeAssuranceData
  */
 export const UserData_AgeAssuranceData = new UserData_AgeAssuranceData$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class UserData_PerkConfigIncreasedFileUploadSize$Type extends MessageType<UserData_PerkConfigIncreasedFileUploadSize> {
+    constructor() {
+        super("discord_protos.users.v1.UserData.PerkConfigIncreasedFileUploadSize", [
+            { no: 1, name: "max_size", kind: "scalar", T: 4 /*ScalarType.UINT64*/, L: 0 /*LongType.BIGINT*/ }
+        ]);
+    }
+    create(value?: PartialMessage<UserData_PerkConfigIncreasedFileUploadSize>): UserData_PerkConfigIncreasedFileUploadSize {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.maxSize = 0n;
+        if (value !== undefined)
+            reflectionMergePartial<UserData_PerkConfigIncreasedFileUploadSize>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: UserData_PerkConfigIncreasedFileUploadSize): UserData_PerkConfigIncreasedFileUploadSize {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* uint64 max_size */ 1:
+                    message.maxSize = reader.uint64().toBigInt();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: UserData_PerkConfigIncreasedFileUploadSize, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* uint64 max_size = 1; */
+        if (message.maxSize !== 0n)
+            writer.tag(1, WireType.Varint).uint64(message.maxSize);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.users.v1.UserData.PerkConfigIncreasedFileUploadSize
+ */
+export const UserData_PerkConfigIncreasedFileUploadSize = new UserData_PerkConfigIncreasedFileUploadSize$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class UserData_PerkConfigIncreasedGuildLimit$Type extends MessageType<UserData_PerkConfigIncreasedGuildLimit> {
+    constructor() {
+        super("discord_protos.users.v1.UserData.PerkConfigIncreasedGuildLimit", [
+            { no: 1, name: "max_guilds", kind: "scalar", T: 13 /*ScalarType.UINT32*/ }
+        ]);
+    }
+    create(value?: PartialMessage<UserData_PerkConfigIncreasedGuildLimit>): UserData_PerkConfigIncreasedGuildLimit {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.maxGuilds = 0;
+        if (value !== undefined)
+            reflectionMergePartial<UserData_PerkConfigIncreasedGuildLimit>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: UserData_PerkConfigIncreasedGuildLimit): UserData_PerkConfigIncreasedGuildLimit {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* uint32 max_guilds */ 1:
+                    message.maxGuilds = reader.uint32();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: UserData_PerkConfigIncreasedGuildLimit, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* uint32 max_guilds = 1; */
+        if (message.maxGuilds !== 0)
+            writer.tag(1, WireType.Varint).uint32(message.maxGuilds);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.users.v1.UserData.PerkConfigIncreasedGuildLimit
+ */
+export const UserData_PerkConfigIncreasedGuildLimit = new UserData_PerkConfigIncreasedGuildLimit$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class UserData_PerkConfig$Type extends MessageType<UserData_PerkConfig> {
+    constructor() {
+        super("discord_protos.users.v1.UserData.PerkConfig", [
+            { no: 2, name: "increased_file_upload_size", kind: "message", oneof: "kind", T: () => UserData_PerkConfigIncreasedFileUploadSize },
+            { no: 3, name: "increased_guild_limit", kind: "message", oneof: "kind", T: () => UserData_PerkConfigIncreasedGuildLimit },
+            { no: 1, name: "source", kind: "enum", repeat: 1 /*RepeatType.PACKED*/, T: () => ["discord_protos.users.v1.UserData.PerkSource", UserData_PerkSource, "PERK_SOURCE_"] }
+        ]);
+    }
+    create(value?: PartialMessage<UserData_PerkConfig>): UserData_PerkConfig {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.kind = { oneofKind: undefined };
+        message.source = [];
+        if (value !== undefined)
+            reflectionMergePartial<UserData_PerkConfig>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: UserData_PerkConfig): UserData_PerkConfig {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* discord_protos.users.v1.UserData.PerkConfigIncreasedFileUploadSize increased_file_upload_size */ 2:
+                    message.kind = {
+                        oneofKind: "increasedFileUploadSize",
+                        increasedFileUploadSize: UserData_PerkConfigIncreasedFileUploadSize.internalBinaryRead(reader, reader.uint32(), options, (message.kind as any).increasedFileUploadSize)
+                    };
+                    break;
+                case /* discord_protos.users.v1.UserData.PerkConfigIncreasedGuildLimit increased_guild_limit */ 3:
+                    message.kind = {
+                        oneofKind: "increasedGuildLimit",
+                        increasedGuildLimit: UserData_PerkConfigIncreasedGuildLimit.internalBinaryRead(reader, reader.uint32(), options, (message.kind as any).increasedGuildLimit)
+                    };
+                    break;
+                case /* repeated discord_protos.users.v1.UserData.PerkSource source */ 1:
+                    if (wireType === WireType.LengthDelimited)
+                        for (let e = reader.int32() + reader.pos; reader.pos < e;)
+                            message.source.push(reader.int32());
+                    else
+                        message.source.push(reader.int32());
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: UserData_PerkConfig, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* repeated discord_protos.users.v1.UserData.PerkSource source = 1; */
+        if (message.source.length) {
+            writer.tag(1, WireType.LengthDelimited).fork();
+            for (let i = 0; i < message.source.length; i++)
+                writer.int32(message.source[i]);
+            writer.join();
+        }
+        /* discord_protos.users.v1.UserData.PerkConfigIncreasedFileUploadSize increased_file_upload_size = 2; */
+        if (message.kind.oneofKind === "increasedFileUploadSize")
+            UserData_PerkConfigIncreasedFileUploadSize.internalBinaryWrite(message.kind.increasedFileUploadSize, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.users.v1.UserData.PerkConfigIncreasedGuildLimit increased_guild_limit = 3; */
+        if (message.kind.oneofKind === "increasedGuildLimit")
+            UserData_PerkConfigIncreasedGuildLimit.internalBinaryWrite(message.kind.increasedGuildLimit, writer.tag(3, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.users.v1.UserData.PerkConfig
+ */
+export const UserData_PerkConfig = new UserData_PerkConfig$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class UserData_Perks$Type extends MessageType<UserData_Perks> {
+    constructor() {
+        super("discord_protos.users.v1.UserData.Perks", [
+            { no: 1, name: "active_perks_bitmask", kind: "scalar", repeat: 1 /*RepeatType.PACKED*/, T: 4 /*ScalarType.UINT64*/, L: 0 /*LongType.BIGINT*/ },
+            { no: 2, name: "config_by_perk", kind: "map", K: 13 /*ScalarType.UINT32*/, V: { kind: "message", T: () => UserData_PerkConfig } },
+            { no: 3, name: "rules_version", kind: "scalar", T: 13 /*ScalarType.UINT32*/ },
+            { no: 4, name: "updated_at", kind: "message", T: () => Timestamp }
+        ]);
+    }
+    create(value?: PartialMessage<UserData_Perks>): UserData_Perks {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.activePerksBitmask = [];
+        message.configByPerk = {};
+        message.rulesVersion = 0;
+        if (value !== undefined)
+            reflectionMergePartial<UserData_Perks>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: UserData_Perks): UserData_Perks {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* repeated uint64 active_perks_bitmask */ 1:
+                    if (wireType === WireType.LengthDelimited)
+                        for (let e = reader.int32() + reader.pos; reader.pos < e;)
+                            message.activePerksBitmask.push(reader.uint64().toBigInt());
+                    else
+                        message.activePerksBitmask.push(reader.uint64().toBigInt());
+                    break;
+                case /* map<uint32, discord_protos.users.v1.UserData.PerkConfig> config_by_perk */ 2:
+                    this.binaryReadMap2(message.configByPerk, reader, options);
+                    break;
+                case /* uint32 rules_version */ 3:
+                    message.rulesVersion = reader.uint32();
+                    break;
+                case /* optional google.protobuf.Timestamp updated_at */ 4:
+                    message.updatedAt = Timestamp.internalBinaryRead(reader, reader.uint32(), options, message.updatedAt);
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    private binaryReadMap2(map: UserData_Perks["configByPerk"], reader: IBinaryReader, options: BinaryReadOptions): void {
+        let len = reader.uint32(), end = reader.pos + len, key: keyof UserData_Perks["configByPerk"] | undefined, val: UserData_Perks["configByPerk"][any] | undefined;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case 1:
+                    key = reader.uint32();
+                    break;
+                case 2:
+                    val = UserData_PerkConfig.internalBinaryRead(reader, reader.uint32(), options);
+                    break;
+                default: throw new globalThis.Error("unknown map entry field for discord_protos.users.v1.UserData.Perks.config_by_perk");
+            }
+        }
+        map[key ?? 0] = val ?? UserData_PerkConfig.create();
+    }
+    internalBinaryWrite(message: UserData_Perks, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* repeated uint64 active_perks_bitmask = 1; */
+        if (message.activePerksBitmask.length) {
+            writer.tag(1, WireType.LengthDelimited).fork();
+            for (let i = 0; i < message.activePerksBitmask.length; i++)
+                writer.uint64(message.activePerksBitmask[i]);
+            writer.join();
+        }
+        /* map<uint32, discord_protos.users.v1.UserData.PerkConfig> config_by_perk = 2; */
+        for (let k of globalThis.Object.keys(message.configByPerk)) {
+            writer.tag(2, WireType.LengthDelimited).fork().tag(1, WireType.Varint).uint32(parseInt(k));
+            writer.tag(2, WireType.LengthDelimited).fork();
+            UserData_PerkConfig.internalBinaryWrite(message.configByPerk[k as any], writer, options);
+            writer.join().join();
+        }
+        /* uint32 rules_version = 3; */
+        if (message.rulesVersion !== 0)
+            writer.tag(3, WireType.Varint).uint32(message.rulesVersion);
+        /* optional google.protobuf.Timestamp updated_at = 4; */
+        if (message.updatedAt)
+            Timestamp.internalBinaryWrite(message.updatedAt, writer.tag(4, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.users.v1.UserData.Perks
+ */
+export const UserData_Perks = new UserData_Perks$Type();

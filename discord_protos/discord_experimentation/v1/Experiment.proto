@@ -1,10 +1,24 @@
 syntax = "proto3";
 
+import "google/protobuf/descriptor.proto";
+
 import "google/protobuf/wrappers.proto";
 
 import "google/protobuf/timestamp.proto";
 
 package discord_protos.discord_experimentation.v1;
+
+enum FilterCategory {
+  FILTER_CATEGORY_UNSPECIFIED = 0;
+  FILTER_CATEGORY_CLIENT = 1;
+  FILTER_CATEGORY_GUILD = 2;
+  FILTER_CATEGORY_USER = 3;
+  FILTER_CATEGORY_UTILITY = 4;
+}
+
+extend google.protobuf.MessageOptions {
+  FilterCategory filter_category = 50000;
+}
 
 message Experiment {
   enum UnitType {
@@ -65,6 +79,7 @@ message Experiment {
   }
 
   message ClientPlatform {
+    option (discord_protos.discord_experimentation.v1.filter_category) = FILTER_CATEGORY_CLIENT;
     optional PlatformVersion ios_version = 1;
     optional PlatformVersion android_version = 2;
     optional PlatformVersion web_version = 3;
@@ -93,6 +108,7 @@ message Experiment {
   }
 
   message ClientOperatingSystem {
+    option (discord_protos.discord_experimentation.v1.filter_category) = FILTER_CATEGORY_CLIENT;
     optional SDKVersion ios_version = 1;
     optional SDKVersion android_version = 2;
     optional SDKVersion macos_version = 3;
@@ -103,19 +119,23 @@ message Experiment {
   }
 
   message StaffUsers {
+    option (discord_protos.discord_experimentation.v1.filter_category) = FILTER_CATEGORY_USER;
     bool work_accounts = 1;
     bool personal_accounts = 2;
   }
 
   message UserInGuild {
+    option (discord_protos.discord_experimentation.v1.filter_category) = FILTER_CATEGORY_USER;
     repeated fixed64 guild_ids = 1;
   }
 
   message UserIds {
+    option (discord_protos.discord_experimentation.v1.filter_category) = FILTER_CATEGORY_USER;
     repeated fixed64 user_ids = 1;
   }
 
   message ClientLocale {
+    option (discord_protos.discord_experimentation.v1.filter_category) = FILTER_CATEGORY_CLIENT;
     repeated string locales = 1 [packed = false];
   }
 
@@ -139,22 +159,27 @@ message Experiment {
   }
 
   message ClientLocation {
+    option (discord_protos.discord_experimentation.v1.filter_category) = FILTER_CATEGORY_CLIENT;
     repeated Location locations = 1;
   }
 
   message ClientIP {
+    option (discord_protos.discord_experimentation.v1.filter_category) = FILTER_CATEGORY_CLIENT;
     repeated string blocks = 1 [packed = false];
   }
 
   message UserLocale {
+    option (discord_protos.discord_experimentation.v1.filter_category) = FILTER_CATEGORY_USER;
     repeated string locales = 1 [packed = false];
   }
 
   message UserIsBot {
+    option (discord_protos.discord_experimentation.v1.filter_category) = FILTER_CATEGORY_USER;
     bool is_bot = 1;
   }
 
   message UserAgeRange {
+    option (discord_protos.discord_experimentation.v1.filter_category) = FILTER_CATEGORY_USER;
     optional google.protobuf.UInt32Value min_age_years = 1;
     optional google.protobuf.UInt32Value max_age_years = 2;
   }
@@ -164,65 +189,79 @@ message Experiment {
   }
 
   message UserIDRange {
+    option (discord_protos.discord_experimentation.v1.filter_category) = FILTER_CATEGORY_USER;
     optional Fixed64Value min_id = 1;
     optional Fixed64Value max_id = 2;
   }
 
   message UserHasFlag {
+    option (discord_protos.discord_experimentation.v1.filter_category) = FILTER_CATEGORY_USER;
     fixed64 mask = 1;
   }
 
   message UnitIdInRangeByHash {
+    option (discord_protos.discord_experimentation.v1.filter_category) = FILTER_CATEGORY_UTILITY;
     string hash_key = 1;
     uint32 stop_ring_position = 2;
     uint32 start_ring_position = 3;
   }
 
   message ClientReleaseChannel {
+    option (discord_protos.discord_experimentation.v1.filter_category) = FILTER_CATEGORY_CLIENT;
     repeated string release_channels = 1 [packed = false];
   }
 
   message Always {
+    option (discord_protos.discord_experimentation.v1.filter_category) = FILTER_CATEGORY_UTILITY;
     bool value = 1;
   }
 
   message ClientSystemLocale {
+    option (discord_protos.discord_experimentation.v1.filter_category) = FILTER_CATEGORY_CLIENT;
     repeated string locales = 1 [packed = false];
   }
 
   message UnitIdInExperiment {
+    option (discord_protos.discord_experimentation.v1.filter_category) = FILTER_CATEGORY_UTILITY;
     fixed64 experiment_id = 1;
     repeated int32 variation_ids = 2;
   }
 
   message UserPremiumType {
+    option (discord_protos.discord_experimentation.v1.filter_category) = FILTER_CATEGORY_USER;
     repeated int32 premium_types = 1;
   }
 
   message UnitIdMatchesFilterSnapshot {
+    option (discord_protos.discord_experimentation.v1.filter_category) = FILTER_CATEGORY_UTILITY;
     string filter_snapshot_name = 1;
     repeated fixed64 target_filter_values = 2;
   }
 
   message GuildIds {
+    option (discord_protos.discord_experimentation.v1.filter_category) = FILTER_CATEGORY_GUILD;
     repeated fixed64 guild_ids = 1;
   }
 
   message GuildMemberCountRange {
+    option (discord_protos.discord_experimentation.v1.filter_category) = FILTER_CATEGORY_GUILD;
     optional google.protobuf.UInt32Value min_count = 1;
     optional google.protobuf.UInt32Value max_count = 2;
   }
 
   message GuildHasFeature {
+    option (discord_protos.discord_experimentation.v1.filter_category) = FILTER_CATEGORY_GUILD;
     repeated string features = 1 [packed = false];
   }
 
   message UserLocation {
+    option (discord_protos.discord_experimentation.v1.filter_category) = FILTER_CATEGORY_USER;
     repeated Location locations = 1;
     bool prefer_client_ip = 2;
   }
 
   message UserIP {
+    option (discord_protos.discord_experimentation.v1.filter_category) = FILTER_CATEGORY_USER;
     repeated string blocks = 1 [packed = false];
     bool prefer_client_ip = 2;
   }

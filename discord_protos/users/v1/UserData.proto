@@ -751,6 +751,34 @@ message UserData {
     optional google.protobuf.Timestamp verified_at = 5;
   }
 
+  enum PerkSource {
+    PERK_SOURCE_SOURCE_UNSPECIFIED = 0;
+    PERK_SOURCE_SOURCE_NITRO = 1;
+  }
+
+  message PerkConfigIncreasedFileUploadSize {
+    uint64 max_size = 1;
+  }
+
+  message PerkConfigIncreasedGuildLimit {
+    uint32 max_guilds = 1;
+  }
+
+  message PerkConfig {
+    oneof kind {
+      PerkConfigIncreasedFileUploadSize increased_file_upload_size = 2;
+      PerkConfigIncreasedGuildLimit increased_guild_limit = 3;
+    }
+    repeated PerkSource source = 1;
+  }
+
+  message Perks {
+    repeated uint64 active_perks_bitmask = 1;
+    map<uint32, PerkConfig> config_by_perk = 2;
+    uint32 rules_version = 3;
+    optional google.protobuf.Timestamp updated_at = 4;
+  }
+
   map<fixed64, LinkedUser> linked_users = 1;
   map<uint32, FeatureLimits> safety_feature_limits = 2;
   map<uint32, SafetyFlag> safety_flags = 3;
@@ -764,4 +792,5 @@ message UserData {
   optional StoreCountry store_country = 11;
   optional RestrictedSchedule restricted_schedule = 12;
   optional AgeAssuranceData age_assurance_data = 13;
+  optional Perks perks = 14;
 }

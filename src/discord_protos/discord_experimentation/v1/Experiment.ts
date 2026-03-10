@@ -1104,6 +1104,31 @@ export enum Experiment_CustomUnitPrefix {
      */
     SEO_URL_SLUG = 1
 }
+/**
+ * @generated from protobuf enum discord_protos.discord_experimentation.v1.FilterCategory
+ */
+export enum FilterCategory {
+    /**
+     * @generated from protobuf enum value: FILTER_CATEGORY_UNSPECIFIED = 0;
+     */
+    UNSPECIFIED = 0,
+    /**
+     * @generated from protobuf enum value: FILTER_CATEGORY_CLIENT = 1;
+     */
+    CLIENT = 1,
+    /**
+     * @generated from protobuf enum value: FILTER_CATEGORY_GUILD = 2;
+     */
+    GUILD = 2,
+    /**
+     * @generated from protobuf enum value: FILTER_CATEGORY_USER = 3;
+     */
+    USER = 3,
+    /**
+     * @generated from protobuf enum value: FILTER_CATEGORY_UTILITY = 4;
+     */
+    UTILITY = 4
+}
 // @generated message type with reflection information, may provide speed optimized methods
 class Experiment$Type extends MessageType<Experiment> {
     constructor() {
@@ -1884,7 +1909,7 @@ class Experiment_ClientPlatform$Type extends MessageType<Experiment_ClientPlatfo
             { no: 4, name: "native_version", kind: "message", T: () => Experiment_PlatformVersion },
             { no: 6, name: "allow_non_native_web", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
             { no: 5, name: "client_required_changes", kind: "message", T: () => Experiment_ClientRequiredChanges }
-        ]);
+        ], { "discord_protos.discord_experimentation.v1.filter_category": "FILTER_CATEGORY_CLIENT" });
     }
     create(value?: PartialMessage<Experiment_ClientPlatform>): Experiment_ClientPlatform {
         const message = globalThis.Object.create((this.messagePrototype!));
@@ -2176,7 +2201,7 @@ class Experiment_ClientOperatingSystem$Type extends MessageType<Experiment_Clien
             { no: 5, name: "playstation_version", kind: "message", T: () => Experiment_SDKVersion },
             { no: 6, name: "xbox_version", kind: "message", T: () => Experiment_SDKVersion },
             { no: 7, name: "linux_version", kind: "message", T: () => Experiment_SDKVersion }
-        ]);
+        ], { "discord_protos.discord_experimentation.v1.filter_category": "FILTER_CATEGORY_CLIENT" });
     }
     create(value?: PartialMessage<Experiment_ClientOperatingSystem>): Experiment_ClientOperatingSystem {
         const message = globalThis.Object.create((this.messagePrototype!));
@@ -2259,7 +2284,7 @@ class Experiment_StaffUsers$Type extends MessageType<Experiment_StaffUsers> {
         super("discord_protos.discord_experimentation.v1.Experiment.StaffUsers", [
             { no: 1, name: "work_accounts", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
             { no: 2, name: "personal_accounts", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
-        ]);
+        ], { "discord_protos.discord_experimentation.v1.filter_category": "FILTER_CATEGORY_USER" });
     }
     create(value?: PartialMessage<Experiment_StaffUsers>): Experiment_StaffUsers {
         const message = globalThis.Object.create((this.messagePrototype!));
@@ -2313,7 +2338,7 @@ class Experiment_UserInGuild$Type extends MessageType<Experiment_UserInGuild> {
     constructor() {
         super("discord_protos.discord_experimentation.v1.Experiment.UserInGuild", [
             { no: 1, name: "guild_ids", kind: "scalar", repeat: 1 /*RepeatType.PACKED*/, T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ }
-        ]);
+        ], { "discord_protos.discord_experimentation.v1.filter_category": "FILTER_CATEGORY_USER" });
     }
     create(value?: PartialMessage<Experiment_UserInGuild>): Experiment_UserInGuild {
         const message = globalThis.Object.create((this.messagePrototype!));
@@ -2368,7 +2393,7 @@ class Experiment_UserIds$Type extends MessageType<Experiment_UserIds> {
     constructor() {
         super("discord_protos.discord_experimentation.v1.Experiment.UserIds", [
             { no: 1, name: "user_ids", kind: "scalar", repeat: 1 /*RepeatType.PACKED*/, T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ }
-        ]);
+        ], { "discord_protos.discord_experimentation.v1.filter_category": "FILTER_CATEGORY_USER" });
     }
     create(value?: PartialMessage<Experiment_UserIds>): Experiment_UserIds {
         const message = globalThis.Object.create((this.messagePrototype!));
@@ -2423,7 +2448,7 @@ class Experiment_ClientLocale$Type extends MessageType<Experiment_ClientLocale> 
     constructor() {
         super("discord_protos.discord_experimentation.v1.Experiment.ClientLocale", [
             { no: 1, name: "locales", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 9 /*ScalarType.STRING*/ }
-        ]);
+        ], { "discord_protos.discord_experimentation.v1.filter_category": "FILTER_CATEGORY_CLIENT" });
     }
     create(value?: PartialMessage<Experiment_ClientLocale>): Experiment_ClientLocale {
         const message = globalThis.Object.create((this.messagePrototype!));
@@ -2658,7 +2683,7 @@ class Experiment_ClientLocation$Type extends MessageType<Experiment_ClientLocati
     constructor() {
         super("discord_protos.discord_experimentation.v1.Experiment.ClientLocation", [
             { no: 1, name: "locations", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => Experiment_Location }
-        ]);
+        ], { "discord_protos.discord_experimentation.v1.filter_category": "FILTER_CATEGORY_CLIENT" });
     }
     create(value?: PartialMessage<Experiment_ClientLocation>): Experiment_ClientLocation {
         const message = globalThis.Object.create((this.messagePrototype!));
@@ -2705,7 +2730,7 @@ class Experiment_ClientIP$Type extends MessageType<Experiment_ClientIP> {
     constructor() {
         super("discord_protos.discord_experimentation.v1.Experiment.ClientIP", [
             { no: 1, name: "blocks", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 9 /*ScalarType.STRING*/ }
-        ]);
+        ], { "discord_protos.discord_experimentation.v1.filter_category": "FILTER_CATEGORY_CLIENT" });
     }
     create(value?: PartialMessage<Experiment_ClientIP>): Experiment_ClientIP {
         const message = globalThis.Object.create((this.messagePrototype!));
@@ -2752,7 +2777,7 @@ class Experiment_UserLocale$Type extends MessageType<Experiment_UserLocale> {
     constructor() {
         super("discord_protos.discord_experimentation.v1.Experiment.UserLocale", [
             { no: 1, name: "locales", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 9 /*ScalarType.STRING*/ }
-        ]);
+        ], { "discord_protos.discord_experimentation.v1.filter_category": "FILTER_CATEGORY_USER" });
     }
     create(value?: PartialMessage<Experiment_UserLocale>): Experiment_UserLocale {
         const message = globalThis.Object.create((this.messagePrototype!));
@@ -2799,7 +2824,7 @@ class Experiment_UserIsBot$Type extends MessageType<Experiment_UserIsBot> {
     constructor() {
         super("discord_protos.discord_experimentation.v1.Experiment.UserIsBot", [
             { no: 1, name: "is_bot", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
-        ]);
+        ], { "discord_protos.discord_experimentation.v1.filter_category": "FILTER_CATEGORY_USER" });
     }
     create(value?: PartialMessage<Experiment_UserIsBot>): Experiment_UserIsBot {
         const message = globalThis.Object.create((this.messagePrototype!));
@@ -2847,7 +2872,7 @@ class Experiment_UserAgeRange$Type extends MessageType<Experiment_UserAgeRange> 
         super("discord_protos.discord_experimentation.v1.Experiment.UserAgeRange", [
             { no: 1, name: "min_age_years", kind: "message", T: () => UInt32Value },
             { no: 2, name: "max_age_years", kind: "message", T: () => UInt32Value }
-        ]);
+        ], { "discord_protos.discord_experimentation.v1.filter_category": "FILTER_CATEGORY_USER" });
     }
     create(value?: PartialMessage<Experiment_UserAgeRange>): Experiment_UserAgeRange {
         const message = globalThis.Object.create((this.messagePrototype!));
@@ -2947,7 +2972,7 @@ class Experiment_UserIDRange$Type extends MessageType<Experiment_UserIDRange> {
         super("discord_protos.discord_experimentation.v1.Experiment.UserIDRange", [
             { no: 1, name: "min_id", kind: "message", T: () => Experiment_Fixed64Value },
             { no: 2, name: "max_id", kind: "message", T: () => Experiment_Fixed64Value }
-        ]);
+        ], { "discord_protos.discord_experimentation.v1.filter_category": "FILTER_CATEGORY_USER" });
     }
     create(value?: PartialMessage<Experiment_UserIDRange>): Experiment_UserIDRange {
         const message = globalThis.Object.create((this.messagePrototype!));
@@ -2999,7 +3024,7 @@ class Experiment_UserHasFlag$Type extends MessageType<Experiment_UserHasFlag> {
     constructor() {
         super("discord_protos.discord_experimentation.v1.Experiment.UserHasFlag", [
             { no: 1, name: "mask", kind: "scalar", T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ }
-        ]);
+        ], { "discord_protos.discord_experimentation.v1.filter_category": "FILTER_CATEGORY_USER" });
     }
     create(value?: PartialMessage<Experiment_UserHasFlag>): Experiment_UserHasFlag {
         const message = globalThis.Object.create((this.messagePrototype!));
@@ -3048,7 +3073,7 @@ class Experiment_UnitIdInRangeByHash$Type extends MessageType<Experiment_UnitIdI
             { no: 1, name: "hash_key", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 2, name: "stop_ring_position", kind: "scalar", T: 13 /*ScalarType.UINT32*/ },
             { no: 3, name: "start_ring_position", kind: "scalar", T: 13 /*ScalarType.UINT32*/ }
-        ]);
+        ], { "discord_protos.discord_experimentation.v1.filter_category": "FILTER_CATEGORY_UTILITY" });
     }
     create(value?: PartialMessage<Experiment_UnitIdInRangeByHash>): Experiment_UnitIdInRangeByHash {
         const message = globalThis.Object.create((this.messagePrototype!));
@@ -3109,7 +3134,7 @@ class Experiment_ClientReleaseChannel$Type extends MessageType<Experiment_Client
     constructor() {
         super("discord_protos.discord_experimentation.v1.Experiment.ClientReleaseChannel", [
             { no: 1, name: "release_channels", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 9 /*ScalarType.STRING*/ }
-        ]);
+        ], { "discord_protos.discord_experimentation.v1.filter_category": "FILTER_CATEGORY_CLIENT" });
     }
     create(value?: PartialMessage<Experiment_ClientReleaseChannel>): Experiment_ClientReleaseChannel {
         const message = globalThis.Object.create((this.messagePrototype!));
@@ -3156,7 +3181,7 @@ class Experiment_Always$Type extends MessageType<Experiment_Always> {
     constructor() {
         super("discord_protos.discord_experimentation.v1.Experiment.Always", [
             { no: 1, name: "value", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
-        ]);
+        ], { "discord_protos.discord_experimentation.v1.filter_category": "FILTER_CATEGORY_UTILITY" });
     }
     create(value?: PartialMessage<Experiment_Always>): Experiment_Always {
         const message = globalThis.Object.create((this.messagePrototype!));
@@ -3203,7 +3228,7 @@ class Experiment_ClientSystemLocale$Type extends MessageType<Experiment_ClientSy
     constructor() {
         super("discord_protos.discord_experimentation.v1.Experiment.ClientSystemLocale", [
             { no: 1, name: "locales", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 9 /*ScalarType.STRING*/ }
-        ]);
+        ], { "discord_protos.discord_experimentation.v1.filter_category": "FILTER_CATEGORY_CLIENT" });
     }
     create(value?: PartialMessage<Experiment_ClientSystemLocale>): Experiment_ClientSystemLocale {
         const message = globalThis.Object.create((this.messagePrototype!));
@@ -3251,7 +3276,7 @@ class Experiment_UnitIdInExperiment$Type extends MessageType<Experiment_UnitIdIn
         super("discord_protos.discord_experimentation.v1.Experiment.UnitIdInExperiment", [
             { no: 1, name: "experiment_id", kind: "scalar", T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ },
             { no: 2, name: "variation_ids", kind: "scalar", repeat: 1 /*RepeatType.PACKED*/, T: 5 /*ScalarType.INT32*/ }
-        ]);
+        ], { "discord_protos.discord_experimentation.v1.filter_category": "FILTER_CATEGORY_UTILITY" });
     }
     create(value?: PartialMessage<Experiment_UnitIdInExperiment>): Experiment_UnitIdInExperiment {
         const message = globalThis.Object.create((this.messagePrototype!));
@@ -3313,7 +3338,7 @@ class Experiment_UserPremiumType$Type extends MessageType<Experiment_UserPremium
     constructor() {
         super("discord_protos.discord_experimentation.v1.Experiment.UserPremiumType", [
             { no: 1, name: "premium_types", kind: "scalar", repeat: 1 /*RepeatType.PACKED*/, T: 5 /*ScalarType.INT32*/ }
-        ]);
+        ], { "discord_protos.discord_experimentation.v1.filter_category": "FILTER_CATEGORY_USER" });
     }
     create(value?: PartialMessage<Experiment_UserPremiumType>): Experiment_UserPremiumType {
         const message = globalThis.Object.create((this.messagePrototype!));
@@ -3369,7 +3394,7 @@ class Experiment_UnitIdMatchesFilterSnapshot$Type extends MessageType<Experiment
         super("discord_protos.discord_experimentation.v1.Experiment.UnitIdMatchesFilterSnapshot", [
             { no: 1, name: "filter_snapshot_name", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 2, name: "target_filter_values", kind: "scalar", repeat: 1 /*RepeatType.PACKED*/, T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ }
-        ]);
+        ], { "discord_protos.discord_experimentation.v1.filter_category": "FILTER_CATEGORY_UTILITY" });
     }
     create(value?: PartialMessage<Experiment_UnitIdMatchesFilterSnapshot>): Experiment_UnitIdMatchesFilterSnapshot {
         const message = globalThis.Object.create((this.messagePrototype!));
@@ -3431,7 +3456,7 @@ class Experiment_GuildIds$Type extends MessageType<Experiment_GuildIds> {
     constructor() {
         super("discord_protos.discord_experimentation.v1.Experiment.GuildIds", [
             { no: 1, name: "guild_ids", kind: "scalar", repeat: 1 /*RepeatType.PACKED*/, T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ }
-        ]);
+        ], { "discord_protos.discord_experimentation.v1.filter_category": "FILTER_CATEGORY_GUILD" });
     }
     create(value?: PartialMessage<Experiment_GuildIds>): Experiment_GuildIds {
         const message = globalThis.Object.create((this.messagePrototype!));
@@ -3487,7 +3512,7 @@ class Experiment_GuildMemberCountRange$Type extends MessageType<Experiment_Guild
         super("discord_protos.discord_experimentation.v1.Experiment.GuildMemberCountRange", [
             { no: 1, name: "min_count", kind: "message", T: () => UInt32Value },
             { no: 2, name: "max_count", kind: "message", T: () => UInt32Value }
-        ]);
+        ], { "discord_protos.discord_experimentation.v1.filter_category": "FILTER_CATEGORY_GUILD" });
     }
     create(value?: PartialMessage<Experiment_GuildMemberCountRange>): Experiment_GuildMemberCountRange {
         const message = globalThis.Object.create((this.messagePrototype!));
@@ -3539,7 +3564,7 @@ class Experiment_GuildHasFeature$Type extends MessageType<Experiment_GuildHasFea
     constructor() {
         super("discord_protos.discord_experimentation.v1.Experiment.GuildHasFeature", [
             { no: 1, name: "features", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 9 /*ScalarType.STRING*/ }
-        ]);
+        ], { "discord_protos.discord_experimentation.v1.filter_category": "FILTER_CATEGORY_GUILD" });
     }
     create(value?: PartialMessage<Experiment_GuildHasFeature>): Experiment_GuildHasFeature {
         const message = globalThis.Object.create((this.messagePrototype!));
@@ -3587,7 +3612,7 @@ class Experiment_UserLocation$Type extends MessageType<Experiment_UserLocation> 
         super("discord_protos.discord_experimentation.v1.Experiment.UserLocation", [
             { no: 1, name: "locations", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => Experiment_Location },
             { no: 2, name: "prefer_client_ip", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
-        ]);
+        ], { "discord_protos.discord_experimentation.v1.filter_category": "FILTER_CATEGORY_USER" });
     }
     create(value?: PartialMessage<Experiment_UserLocation>): Experiment_UserLocation {
         const message = globalThis.Object.create((this.messagePrototype!));
@@ -3642,7 +3667,7 @@ class Experiment_UserIP$Type extends MessageType<Experiment_UserIP> {
         super("discord_protos.discord_experimentation.v1.Experiment.UserIP", [
             { no: 1, name: "blocks", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 9 /*ScalarType.STRING*/ },
             { no: 2, name: "prefer_client_ip", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
-        ]);
+        ], { "discord_protos.discord_experimentation.v1.filter_category": "FILTER_CATEGORY_USER" });
     }
     create(value?: PartialMessage<Experiment_UserIP>): Experiment_UserIP {
         const message = globalThis.Object.create((this.messagePrototype!));

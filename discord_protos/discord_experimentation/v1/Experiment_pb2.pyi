@@ -5,11 +5,13 @@ isort:skip_file
 
 from collections import abc as _abc
 from google.protobuf import descriptor as _descriptor
+from google.protobuf import descriptor_pb2 as _descriptor_pb2
 from google.protobuf import message as _message
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf import wrappers_pb2 as _wrappers_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
+from google.protobuf.internal import extension_dict as _extension_dict
 import builtins as _builtins
 import sys
 import typing as _typing
@@ -20,6 +22,27 @@ else:
     from typing_extensions import TypeAlias as _TypeAlias
 
 DESCRIPTOR: _descriptor.FileDescriptor
+
+class _FilterCategory:
+    ValueType = _typing.NewType("ValueType", _builtins.int)
+    V: _TypeAlias = ValueType  # noqa: Y015
+
+class _FilterCategoryEnumTypeWrapper(_enum_type_wrapper._EnumTypeWrapper[_FilterCategory.ValueType], _builtins.type):
+    DESCRIPTOR: _descriptor.EnumDescriptor
+    FILTER_CATEGORY_UNSPECIFIED: _FilterCategory.ValueType  # 0
+    FILTER_CATEGORY_CLIENT: _FilterCategory.ValueType  # 1
+    FILTER_CATEGORY_GUILD: _FilterCategory.ValueType  # 2
+    FILTER_CATEGORY_USER: _FilterCategory.ValueType  # 3
+    FILTER_CATEGORY_UTILITY: _FilterCategory.ValueType  # 4
+
+class FilterCategory(_FilterCategory, metaclass=_FilterCategoryEnumTypeWrapper): ...
+
+FILTER_CATEGORY_UNSPECIFIED: FilterCategory.ValueType  # 0
+FILTER_CATEGORY_CLIENT: FilterCategory.ValueType  # 1
+FILTER_CATEGORY_GUILD: FilterCategory.ValueType  # 2
+FILTER_CATEGORY_USER: FilterCategory.ValueType  # 3
+FILTER_CATEGORY_UTILITY: FilterCategory.ValueType  # 4
+Global___FilterCategory: _TypeAlias = FilterCategory  # noqa: Y015
 
 @_typing.final
 class Experiment(_message.Message):
@@ -1388,3 +1411,6 @@ class Experiment(_message.Message):
     def WhichOneof(self, oneof_group: _WhichOneofArgType__tech_spec_link) -> _WhichOneofReturnType__tech_spec_link | None: ...
 
 Global___Experiment: _TypeAlias = Experiment  # noqa: Y015
+
+FILTER_CATEGORY_FIELD_NUMBER: _builtins.int
+filter_category: _extension_dict._ExtensionFieldDescriptor[_descriptor_pb2.MessageOptions, Global___FilterCategory.ValueType]
