@@ -560,6 +560,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_FIRST_BOOSTER_UPSELL_OVERSEER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 710
         DISMISSIBLE_CONTENT_MOBILE_MULTI_GUILD_CREATE_UPSELL_ANIMATION: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 711
         DISMISSIBLE_CONTENT_PREMIUM_MARKETING_MOMENT_REMINDER_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 712
+        DISMISSIBLE_CONTENT_GAME_SERVER_PRICING_CHANGE_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 713
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_HUB_WAITLIST_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1072,6 +1073,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_FIRST_BOOSTER_UPSELL_OVERSEER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 710
     DISMISSIBLE_CONTENT_MOBILE_MULTI_GUILD_CREATE_UPSELL_ANIMATION: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 711
     DISMISSIBLE_CONTENT_PREMIUM_MARKETING_MOMENT_REMINDER_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 712
+    DISMISSIBLE_CONTENT_GAME_SERVER_PRICING_CHANGE_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 713
 
     @_typing.final
     class FeatureCard(_message.Message):
