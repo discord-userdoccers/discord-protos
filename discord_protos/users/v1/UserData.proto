@@ -754,6 +754,7 @@ message UserData {
   enum PerkSource {
     PERK_SOURCE_SOURCE_UNSPECIFIED = 0;
     PERK_SOURCE_SOURCE_NITRO = 1;
+    PERK_SOURCE_SOURCE_THIRDPARTY_CROISSANT = 2;
   }
 
   message PerkConfigIncreasedFileUploadSize {

@@ -1308,10 +1308,12 @@ class UserData(_message.Message):
         DESCRIPTOR: _descriptor.EnumDescriptor
         PERK_SOURCE_SOURCE_UNSPECIFIED: UserData._PerkSource.ValueType  # 0
         PERK_SOURCE_SOURCE_NITRO: UserData._PerkSource.ValueType  # 1
+        PERK_SOURCE_SOURCE_THIRDPARTY_CROISSANT: UserData._PerkSource.ValueType  # 2
 
     class PerkSource(_PerkSource, metaclass=_PerkSourceEnumTypeWrapper): ...
     PERK_SOURCE_SOURCE_UNSPECIFIED: UserData.PerkSource.ValueType  # 0
     PERK_SOURCE_SOURCE_NITRO: UserData.PerkSource.ValueType  # 1
+    PERK_SOURCE_SOURCE_THIRDPARTY_CROISSANT: UserData.PerkSource.ValueType  # 2
 
     @_typing.final
     class LinkedUser(_message.Message):

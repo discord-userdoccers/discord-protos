@@ -2901,7 +2901,11 @@ export enum UserData_PerkSource {
     /**
      * @generated from protobuf enum value: PERK_SOURCE_SOURCE_NITRO = 1;
      */
-    SOURCE_NITRO = 1
+    SOURCE_NITRO = 1,
+    /**
+     * @generated from protobuf enum value: PERK_SOURCE_SOURCE_THIRDPARTY_CROISSANT = 2;
+     */
+    SOURCE_THIRDPARTY_CROISSANT = 2
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class UserData$Type extends MessageType<UserData> {
