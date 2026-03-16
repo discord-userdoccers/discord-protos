@@ -780,6 +780,26 @@ message UserData {
     optional google.protobuf.Timestamp updated_at = 4;
   }
 
+  message BadgeCommon {
+    optional google.protobuf.Timestamp obtained_at = 1;
+  }
+
+  message AprilFools2026Badge {
+    optional BadgeCommon common = 1;
+    int32 level = 2;
+    string combat_class = 3;
+  }
+
+  message Badge {
+    oneof badge {
+      AprilFools2026Badge april_fools_2026 = 1;
+    }
+  }
+
+  message UserBadges {
+    repeated Badge badges = 1;
+  }
+
   map<fixed64, LinkedUser> linked_users = 1;
   map<uint32, FeatureLimits> safety_feature_limits = 2;
   map<uint32, SafetyFlag> safety_flags = 3;
@@ -794,4 +814,5 @@ message UserData {
   optional RestrictedSchedule restricted_schedule = 12;
   optional AgeAssuranceData age_assurance_data = 13;
   optional Perks perks = 14;
+  optional UserBadges badges = 15;
 }

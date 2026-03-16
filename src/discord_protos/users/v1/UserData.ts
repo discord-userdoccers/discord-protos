@@ -80,6 +80,10 @@ export interface UserData {
      * @generated from protobuf field: optional discord_protos.users.v1.UserData.Perks perks = 14
      */
     perks?: UserData_Perks;
+    /**
+     * @generated from protobuf field: optional discord_protos.users.v1.UserData.UserBadges badges = 15
+     */
+    badges?: UserData_UserBadges;
 }
 /**
  * @generated from protobuf message discord_protos.users.v1.UserData.LinkedUser
@@ -508,6 +512,58 @@ export interface UserData_Perks {
      * @generated from protobuf field: optional google.protobuf.Timestamp updated_at = 4
      */
     updatedAt?: Timestamp;
+}
+/**
+ * @generated from protobuf message discord_protos.users.v1.UserData.BadgeCommon
+ */
+export interface UserData_BadgeCommon {
+    /**
+     * @generated from protobuf field: optional google.protobuf.Timestamp obtained_at = 1
+     */
+    obtainedAt?: Timestamp;
+}
+/**
+ * @generated from protobuf message discord_protos.users.v1.UserData.AprilFools2026Badge
+ */
+export interface UserData_AprilFools2026Badge {
+    /**
+     * @generated from protobuf field: optional discord_protos.users.v1.UserData.BadgeCommon common = 1
+     */
+    common?: UserData_BadgeCommon;
+    /**
+     * @generated from protobuf field: int32 level = 2
+     */
+    level: number;
+    /**
+     * @generated from protobuf field: string combat_class = 3
+     */
+    combatClass: string;
+}
+/**
+ * @generated from protobuf message discord_protos.users.v1.UserData.Badge
+ */
+export interface UserData_Badge {
+    /**
+     * @generated from protobuf oneof: badge
+     */
+    badge: {
+        oneofKind: "aprilFools2026";
+        /**
+         * @generated from protobuf field: discord_protos.users.v1.UserData.AprilFools2026Badge april_fools_2026 = 1
+         */
+        aprilFools2026: UserData_AprilFools2026Badge;
+    } | {
+        oneofKind: undefined;
+    };
+}
+/**
+ * @generated from protobuf message discord_protos.users.v1.UserData.UserBadges
+ */
+export interface UserData_UserBadges {
+    /**
+     * @generated from protobuf field: repeated discord_protos.users.v1.UserData.Badge badges = 1
+     */
+    badges: UserData_Badge[];
 }
 /**
  * @generated from protobuf enum discord_protos.users.v1.UserData.UserLinkType
@@ -2924,7 +2980,8 @@ class UserData$Type extends MessageType<UserData> {
             { no: 11, name: "store_country", kind: "message", T: () => UserData_StoreCountry },
             { no: 12, name: "restricted_schedule", kind: "message", T: () => UserData_RestrictedSchedule },
             { no: 13, name: "age_assurance_data", kind: "message", T: () => UserData_AgeAssuranceData },
-            { no: 14, name: "perks", kind: "message", T: () => UserData_Perks }
+            { no: 14, name: "perks", kind: "message", T: () => UserData_Perks },
+            { no: 15, name: "badges", kind: "message", T: () => UserData_UserBadges }
         ]);
     }
     create(value?: PartialMessage<UserData>): UserData {
@@ -2982,6 +3039,9 @@ class UserData$Type extends MessageType<UserData> {
                     break;
                 case /* optional discord_protos.users.v1.UserData.Perks perks */ 14:
                     message.perks = UserData_Perks.internalBinaryRead(reader, reader.uint32(), options, message.perks);
+                    break;
+                case /* optional discord_protos.users.v1.UserData.UserBadges badges */ 15:
+                    message.badges = UserData_UserBadges.internalBinaryRead(reader, reader.uint32(), options, message.badges);
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -3097,6 +3157,9 @@ class UserData$Type extends MessageType<UserData> {
         /* optional discord_protos.users.v1.UserData.Perks perks = 14; */
         if (message.perks)
             UserData_Perks.internalBinaryWrite(message.perks, writer.tag(14, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.users.v1.UserData.UserBadges badges = 15; */
+        if (message.badges)
+            UserData_UserBadges.internalBinaryWrite(message.badges, writer.tag(15, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -4746,3 +4809,208 @@ class UserData_Perks$Type extends MessageType<UserData_Perks> {
  * @generated MessageType for protobuf message discord_protos.users.v1.UserData.Perks
  */
 export const UserData_Perks = new UserData_Perks$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class UserData_BadgeCommon$Type extends MessageType<UserData_BadgeCommon> {
+    constructor() {
+        super("discord_protos.users.v1.UserData.BadgeCommon", [
+            { no: 1, name: "obtained_at", kind: "message", T: () => Timestamp }
+        ]);
+    }
+    create(value?: PartialMessage<UserData_BadgeCommon>): UserData_BadgeCommon {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        if (value !== undefined)
+            reflectionMergePartial<UserData_BadgeCommon>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: UserData_BadgeCommon): UserData_BadgeCommon {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* optional google.protobuf.Timestamp obtained_at */ 1:
+                    message.obtainedAt = Timestamp.internalBinaryRead(reader, reader.uint32(), options, message.obtainedAt);
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: UserData_BadgeCommon, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* optional google.protobuf.Timestamp obtained_at = 1; */
+        if (message.obtainedAt)
+            Timestamp.internalBinaryWrite(message.obtainedAt, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.users.v1.UserData.BadgeCommon
+ */
+export const UserData_BadgeCommon = new UserData_BadgeCommon$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class UserData_AprilFools2026Badge$Type extends MessageType<UserData_AprilFools2026Badge> {
+    constructor() {
+        super("discord_protos.users.v1.UserData.AprilFools2026Badge", [
+            { no: 1, name: "common", kind: "message", T: () => UserData_BadgeCommon },
+            { no: 2, name: "level", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
+            { no: 3, name: "combat_class", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+        ]);
+    }
+    create(value?: PartialMessage<UserData_AprilFools2026Badge>): UserData_AprilFools2026Badge {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.level = 0;
+        message.combatClass = "";
+        if (value !== undefined)
+            reflectionMergePartial<UserData_AprilFools2026Badge>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: UserData_AprilFools2026Badge): UserData_AprilFools2026Badge {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* optional discord_protos.users.v1.UserData.BadgeCommon common */ 1:
+                    message.common = UserData_BadgeCommon.internalBinaryRead(reader, reader.uint32(), options, message.common);
+                    break;
+                case /* int32 level */ 2:
+                    message.level = reader.int32();
+                    break;
+                case /* string combat_class */ 3:
+                    message.combatClass = reader.string();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: UserData_AprilFools2026Badge, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* optional discord_protos.users.v1.UserData.BadgeCommon common = 1; */
+        if (message.common)
+            UserData_BadgeCommon.internalBinaryWrite(message.common, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        /* int32 level = 2; */
+        if (message.level !== 0)
+            writer.tag(2, WireType.Varint).int32(message.level);
+        /* string combat_class = 3; */
+        if (message.combatClass !== "")
+            writer.tag(3, WireType.LengthDelimited).string(message.combatClass);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.users.v1.UserData.AprilFools2026Badge
+ */
+export const UserData_AprilFools2026Badge = new UserData_AprilFools2026Badge$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class UserData_Badge$Type extends MessageType<UserData_Badge> {
+    constructor() {
+        super("discord_protos.users.v1.UserData.Badge", [
+            { no: 1, name: "april_fools_2026", kind: "message", oneof: "badge", T: () => UserData_AprilFools2026Badge }
+        ]);
+    }
+    create(value?: PartialMessage<UserData_Badge>): UserData_Badge {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.badge = { oneofKind: undefined };
+        if (value !== undefined)
+            reflectionMergePartial<UserData_Badge>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: UserData_Badge): UserData_Badge {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* discord_protos.users.v1.UserData.AprilFools2026Badge april_fools_2026 */ 1:
+                    message.badge = {
+                        oneofKind: "aprilFools2026",
+                        aprilFools2026: UserData_AprilFools2026Badge.internalBinaryRead(reader, reader.uint32(), options, (message.badge as any).aprilFools2026)
+                    };
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: UserData_Badge, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* discord_protos.users.v1.UserData.AprilFools2026Badge april_fools_2026 = 1; */
+        if (message.badge.oneofKind === "aprilFools2026")
+            UserData_AprilFools2026Badge.internalBinaryWrite(message.badge.aprilFools2026, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.users.v1.UserData.Badge
+ */
+export const UserData_Badge = new UserData_Badge$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class UserData_UserBadges$Type extends MessageType<UserData_UserBadges> {
+    constructor() {
+        super("discord_protos.users.v1.UserData.UserBadges", [
+            { no: 1, name: "badges", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => UserData_Badge }
+        ]);
+    }
+    create(value?: PartialMessage<UserData_UserBadges>): UserData_UserBadges {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.badges = [];
+        if (value !== undefined)
+            reflectionMergePartial<UserData_UserBadges>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: UserData_UserBadges): UserData_UserBadges {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* repeated discord_protos.users.v1.UserData.Badge badges */ 1:
+                    message.badges.push(UserData_Badge.internalBinaryRead(reader, reader.uint32(), options));
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: UserData_UserBadges, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* repeated discord_protos.users.v1.UserData.Badge badges = 1; */
+        for (let i = 0; i < message.badges.length; i++)
+            UserData_Badge.internalBinaryWrite(message.badges[i], writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.users.v1.UserData.UserBadges
+ */
+export const UserData_UserBadges = new UserData_UserBadges$Type();

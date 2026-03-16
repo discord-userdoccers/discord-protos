@@ -1997,6 +1997,87 @@ class UserData(_message.Message):
         def WhichOneof(self, oneof_group: _WhichOneofArgType__updated_at) -> _WhichOneofReturnType__updated_at | None: ...
 
     @_typing.final
+    class BadgeCommon(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        OBTAINED_AT_FIELD_NUMBER: _builtins.int
+        @_builtins.property
+        def obtained_at(self) -> _timestamp_pb2.Timestamp: ...
+        def __init__(
+            self,
+            *,
+            obtained_at: _timestamp_pb2.Timestamp | None = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_obtained_at", b"_obtained_at", "obtained_at", b"obtained_at"]  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_obtained_at", b"_obtained_at", "obtained_at", b"obtained_at"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        _WhichOneofReturnType__obtained_at: _TypeAlias = _typing.Literal["obtained_at"]  # noqa: Y015
+        _WhichOneofArgType__obtained_at: _TypeAlias = _typing.Literal["_obtained_at", b"_obtained_at"]  # noqa: Y015
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__obtained_at) -> _WhichOneofReturnType__obtained_at | None: ...
+
+    @_typing.final
+    class AprilFools2026Badge(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        COMMON_FIELD_NUMBER: _builtins.int
+        LEVEL_FIELD_NUMBER: _builtins.int
+        COMBAT_CLASS_FIELD_NUMBER: _builtins.int
+        level: _builtins.int
+        combat_class: _builtins.str
+        @_builtins.property
+        def common(self) -> Global___UserData.BadgeCommon: ...
+        def __init__(
+            self,
+            *,
+            common: Global___UserData.BadgeCommon | None = ...,
+            level: _builtins.int = ...,
+            combat_class: _builtins.str = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_common", b"_common", "common", b"common"]  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_common", b"_common", "combat_class", b"combat_class", "common", b"common", "level", b"level"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        _WhichOneofReturnType__common: _TypeAlias = _typing.Literal["common"]  # noqa: Y015
+        _WhichOneofArgType__common: _TypeAlias = _typing.Literal["_common", b"_common"]  # noqa: Y015
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__common) -> _WhichOneofReturnType__common | None: ...
+
+    @_typing.final
+    class Badge(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        APRIL_FOOLS_2026_FIELD_NUMBER: _builtins.int
+        @_builtins.property
+        def april_fools_2026(self) -> Global___UserData.AprilFools2026Badge: ...
+        def __init__(
+            self,
+            *,
+            april_fools_2026: Global___UserData.AprilFools2026Badge | None = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _typing.Literal["april_fools_2026", b"april_fools_2026", "badge", b"badge"]  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["april_fools_2026", b"april_fools_2026", "badge", b"badge"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        _WhichOneofReturnType_badge: _TypeAlias = _typing.Literal["april_fools_2026"]  # noqa: Y015
+        _WhichOneofArgType_badge: _TypeAlias = _typing.Literal["badge", b"badge"]  # noqa: Y015
+        def WhichOneof(self, oneof_group: _WhichOneofArgType_badge) -> _WhichOneofReturnType_badge | None: ...
+
+    @_typing.final
+    class UserBadges(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        BADGES_FIELD_NUMBER: _builtins.int
+        @_builtins.property
+        def badges(self) -> _containers.RepeatedCompositeFieldContainer[Global___UserData.Badge]: ...
+        def __init__(
+            self,
+            *,
+            badges: _abc.Iterable[Global___UserData.Badge] | None = ...,
+        ) -> None: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["badges", b"badges"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+
+    @_typing.final
     class LinkedUsersEntry(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
 
@@ -2070,6 +2151,7 @@ class UserData(_message.Message):
     RESTRICTED_SCHEDULE_FIELD_NUMBER: _builtins.int
     AGE_ASSURANCE_DATA_FIELD_NUMBER: _builtins.int
     PERKS_FIELD_NUMBER: _builtins.int
+    BADGES_FIELD_NUMBER: _builtins.int
     @_builtins.property
     def linked_users(self) -> _containers.MessageMap[_builtins.int, Global___UserData.LinkedUser]: ...
     @_builtins.property
@@ -2098,6 +2180,8 @@ class UserData(_message.Message):
     def age_assurance_data(self) -> Global___UserData.AgeAssuranceData: ...
     @_builtins.property
     def perks(self) -> Global___UserData.Perks: ...
+    @_builtins.property
+    def badges(self) -> Global___UserData.UserBadges: ...
     def __init__(
         self,
         *,
@@ -2115,13 +2199,16 @@ class UserData(_message.Message):
         restricted_schedule: Global___UserData.RestrictedSchedule | None = ...,
         age_assurance_data: Global___UserData.AgeAssuranceData | None = ...,
         perks: Global___UserData.Perks | None = ...,
+        badges: Global___UserData.UserBadges | None = ...,
     ) -> None: ...
-    _HasFieldArgType: _TypeAlias = _typing.Literal["_age_assurance_data", b"_age_assurance_data", "_collectibles", b"_collectibles", "_cross_platform_restriction", b"_cross_platform_restriction", "_display_name_styles", b"_display_name_styles", "_perks", b"_perks", "_premium_state", b"_premium_state", "_primary_guild", b"_primary_guild", "_quest", b"_quest", "_restricted_schedule", b"_restricted_schedule", "_safety_state", b"_safety_state", "_store_country", b"_store_country", "age_assurance_data", b"age_assurance_data", "collectibles", b"collectibles", "cross_platform_restriction", b"cross_platform_restriction", "display_name_styles", b"display_name_styles", "perks", b"perks", "premium_state", b"premium_state", "primary_guild", b"primary_guild", "quest", b"quest", "restricted_schedule", b"restricted_schedule", "safety_state", b"safety_state", "store_country", b"store_country"]  # noqa: Y015
+    _HasFieldArgType: _TypeAlias = _typing.Literal["_age_assurance_data", b"_age_assurance_data", "_badges", b"_badges", "_collectibles", b"_collectibles", "_cross_platform_restriction", b"_cross_platform_restriction", "_display_name_styles", b"_display_name_styles", "_perks", b"_perks", "_premium_state", b"_premium_state", "_primary_guild", b"_primary_guild", "_quest", b"_quest", "_restricted_schedule", b"_restricted_schedule", "_safety_state", b"_safety_state", "_store_country", b"_store_country", "age_assurance_data", b"age_assurance_data", "badges", b"badges", "collectibles", b"collectibles", "cross_platform_restriction", b"cross_platform_restriction", "display_name_styles", b"display_name_styles", "perks", b"perks", "premium_state", b"premium_state", "primary_guild", b"primary_guild", "quest", b"quest", "restricted_schedule", b"restricted_schedule", "safety_state", b"safety_state", "store_country", b"store_country"]  # noqa: Y015
     def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["_age_assurance_data", b"_age_assurance_data", "_collectibles", b"_collectibles", "_cross_platform_restriction", b"_cross_platform_restriction", "_display_name_styles", b"_display_name_styles", "_perks", b"_perks", "_premium_state", b"_premium_state", "_primary_guild", b"_primary_guild", "_quest", b"_quest", "_restricted_schedule", b"_restricted_schedule", "_safety_state", b"_safety_state", "_store_country", b"_store_country", "age_assurance_data", b"age_assurance_data", "collectibles", b"collectibles", "cross_platform_restriction", b"cross_platform_restriction", "display_name_styles", b"display_name_styles", "linked_users", b"linked_users", "perks", b"perks", "premium_state", b"premium_state", "primary_guild", b"primary_guild", "quest", b"quest", "restricted_schedule", b"restricted_schedule", "safety_feature_limits", b"safety_feature_limits", "safety_flags", b"safety_flags", "safety_state", b"safety_state", "store_country", b"store_country"]  # noqa: Y015
+    _ClearFieldArgType: _TypeAlias = _typing.Literal["_age_assurance_data", b"_age_assurance_data", "_badges", b"_badges", "_collectibles", b"_collectibles", "_cross_platform_restriction", b"_cross_platform_restriction", "_display_name_styles", b"_display_name_styles", "_perks", b"_perks", "_premium_state", b"_premium_state", "_primary_guild", b"_primary_guild", "_quest", b"_quest", "_restricted_schedule", b"_restricted_schedule", "_safety_state", b"_safety_state", "_store_country", b"_store_country", "age_assurance_data", b"age_assurance_data", "badges", b"badges", "collectibles", b"collectibles", "cross_platform_restriction", b"cross_platform_restriction", "display_name_styles", b"display_name_styles", "linked_users", b"linked_users", "perks", b"perks", "premium_state", b"premium_state", "primary_guild", b"primary_guild", "quest", b"quest", "restricted_schedule", b"restricted_schedule", "safety_feature_limits", b"safety_feature_limits", "safety_flags", b"safety_flags", "safety_state", b"safety_state", "store_country", b"store_country"]  # noqa: Y015
     def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
     _WhichOneofReturnType__age_assurance_data: _TypeAlias = _typing.Literal["age_assurance_data"]  # noqa: Y015
     _WhichOneofArgType__age_assurance_data: _TypeAlias = _typing.Literal["_age_assurance_data", b"_age_assurance_data"]  # noqa: Y015
+    _WhichOneofReturnType__badges: _TypeAlias = _typing.Literal["badges"]  # noqa: Y015
+    _WhichOneofArgType__badges: _TypeAlias = _typing.Literal["_badges", b"_badges"]  # noqa: Y015
     _WhichOneofReturnType__collectibles: _TypeAlias = _typing.Literal["collectibles"]  # noqa: Y015
     _WhichOneofArgType__collectibles: _TypeAlias = _typing.Literal["_collectibles", b"_collectibles"]  # noqa: Y015
     _WhichOneofReturnType__cross_platform_restriction: _TypeAlias = _typing.Literal["cross_platform_restriction"]  # noqa: Y015
@@ -2144,6 +2231,8 @@ class UserData(_message.Message):
     _WhichOneofArgType__store_country: _TypeAlias = _typing.Literal["_store_country", b"_store_country"]  # noqa: Y015
     @_typing.overload
     def WhichOneof(self, oneof_group: _WhichOneofArgType__age_assurance_data) -> _WhichOneofReturnType__age_assurance_data | None: ...
+    @_typing.overload
+    def WhichOneof(self, oneof_group: _WhichOneofArgType__badges) -> _WhichOneofReturnType__badges | None: ...
     @_typing.overload
     def WhichOneof(self, oneof_group: _WhichOneofArgType__collectibles) -> _WhichOneofReturnType__collectibles | None: ...
     @_typing.overload
