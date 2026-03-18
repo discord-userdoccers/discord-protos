@@ -1076,6 +1076,7 @@ class UserData(_message.Message):
         SAFETY_STATE_REASON_SAFETY_SYSTEM_UNBAN: UserData._SafetyStateReason.ValueType  # 11
         SAFETY_STATE_REASON_GENERIC_AUTOMATED_SAFETY_ACTION: UserData._SafetyStateReason.ValueType  # 12
         SAFETY_STATE_REASON_GENERIC_MANUAL_SAFETY_ACTION: UserData._SafetyStateReason.ValueType  # 13
+        SAFETY_STATE_REASON_BANNED_USER_BACKFILL: UserData._SafetyStateReason.ValueType  # 14
 
     class SafetyStateReason(_SafetyStateReason, metaclass=_SafetyStateReasonEnumTypeWrapper): ...
     SAFETY_STATE_REASON_REASON_UNSPECIFIED: UserData.SafetyStateReason.ValueType  # 0
@@ -1092,6 +1093,7 @@ class UserData(_message.Message):
     SAFETY_STATE_REASON_SAFETY_SYSTEM_UNBAN: UserData.SafetyStateReason.ValueType  # 11
     SAFETY_STATE_REASON_GENERIC_AUTOMATED_SAFETY_ACTION: UserData.SafetyStateReason.ValueType  # 12
     SAFETY_STATE_REASON_GENERIC_MANUAL_SAFETY_ACTION: UserData.SafetyStateReason.ValueType  # 13
+    SAFETY_STATE_REASON_BANNED_USER_BACKFILL: UserData.SafetyStateReason.ValueType  # 14
 
     class _SafetyAnnotations:
         ValueType = _typing.NewType("ValueType", _builtins.int)

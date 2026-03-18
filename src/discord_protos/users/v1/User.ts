@@ -2295,7 +2295,11 @@ export enum User_SafetyStateReason {
     /**
      * @generated from protobuf enum value: SAFETY_STATE_REASON_GENERIC_MANUAL_SAFETY_ACTION = 13;
      */
-    GENERIC_MANUAL_SAFETY_ACTION = 13
+    GENERIC_MANUAL_SAFETY_ACTION = 13,
+    /**
+     * @generated from protobuf enum value: SAFETY_STATE_REASON_BANNED_USER_BACKFILL = 14;
+     */
+    BANNED_USER_BACKFILL = 14
 }
 /**
  * @generated from protobuf enum discord_protos.users.v1.User.SafetyAnnotations
