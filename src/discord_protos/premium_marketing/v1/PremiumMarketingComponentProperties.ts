@@ -2688,7 +2688,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GAME_SERVER_PRICING_CHANGE_COACHMARK = 713;
      */
-    GAME_SERVER_PRICING_CHANGE_COACHMARK = 713
+    GAME_SERVER_PRICING_CHANGE_COACHMARK = 713,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_PREMIUM_WISHLIST_COACHMARK = 714;
+     */
+    PREMIUM_WISHLIST_COACHMARK = 714
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarketingComponentProperties> {
