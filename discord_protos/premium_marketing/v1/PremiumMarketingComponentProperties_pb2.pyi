@@ -562,6 +562,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_PREMIUM_MARKETING_MOMENT_REMINDER_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 712
         DISMISSIBLE_CONTENT_GAME_SERVER_PRICING_CHANGE_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 713
         DISMISSIBLE_CONTENT_PREMIUM_WISHLIST_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 714
+        DISMISSIBLE_CONTENT_PREMIUM_GROUP_POPOVER_UPSELL_V2: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 715
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_HUB_WAITLIST_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1076,6 +1077,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_PREMIUM_MARKETING_MOMENT_REMINDER_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 712
     DISMISSIBLE_CONTENT_GAME_SERVER_PRICING_CHANGE_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 713
     DISMISSIBLE_CONTENT_PREMIUM_WISHLIST_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 714
+    DISMISSIBLE_CONTENT_PREMIUM_GROUP_POPOVER_UPSELL_V2: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 715
 
     @_typing.final
     class FeatureCard(_message.Message):
