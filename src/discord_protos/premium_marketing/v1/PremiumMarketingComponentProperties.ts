@@ -2696,7 +2696,15 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_PREMIUM_GROUP_POPOVER_UPSELL_V2 = 715;
      */
-    PREMIUM_GROUP_POPOVER_UPSELL_V2 = 715
+    PREMIUM_GROUP_POPOVER_UPSELL_V2 = 715,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_L_3PP_NON_NITRO_POPOVER = 716;
+     */
+    L_3PP_NON_NITRO_POPOVER = 716,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_L_3PP_NITRO_TOOLTIP = 717;
+     */
+    L_3PP_NITRO_TOOLTIP = 717
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarketingComponentProperties> {

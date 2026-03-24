@@ -563,6 +563,8 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_GAME_SERVER_PRICING_CHANGE_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 713
         DISMISSIBLE_CONTENT_PREMIUM_WISHLIST_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 714
         DISMISSIBLE_CONTENT_PREMIUM_GROUP_POPOVER_UPSELL_V2: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 715
+        DISMISSIBLE_CONTENT_L_3PP_NON_NITRO_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 716
+        DISMISSIBLE_CONTENT_L_3PP_NITRO_TOOLTIP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 717
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_HUB_WAITLIST_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1078,6 +1080,8 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_GAME_SERVER_PRICING_CHANGE_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 713
     DISMISSIBLE_CONTENT_PREMIUM_WISHLIST_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 714
     DISMISSIBLE_CONTENT_PREMIUM_GROUP_POPOVER_UPSELL_V2: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 715
+    DISMISSIBLE_CONTENT_L_3PP_NON_NITRO_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 716
+    DISMISSIBLE_CONTENT_L_3PP_NITRO_TOOLTIP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 717
 
     @_typing.final
     class FeatureCard(_message.Message):
