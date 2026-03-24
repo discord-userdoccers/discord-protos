@@ -565,6 +565,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_PREMIUM_GROUP_POPOVER_UPSELL_V2: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 715
         DISMISSIBLE_CONTENT_L_3PP_NON_NITRO_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 716
         DISMISSIBLE_CONTENT_L_3PP_NITRO_TOOLTIP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 717
+        DISMISSIBLE_CONTENT_MOBILE_ACCOUNT_LINKING_BANNER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 718
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_HUB_WAITLIST_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1082,6 +1083,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_PREMIUM_GROUP_POPOVER_UPSELL_V2: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 715
     DISMISSIBLE_CONTENT_L_3PP_NON_NITRO_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 716
     DISMISSIBLE_CONTENT_L_3PP_NITRO_TOOLTIP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 717
+    DISMISSIBLE_CONTENT_MOBILE_ACCOUNT_LINKING_BANNER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 718
 
     @_typing.final
     class FeatureCard(_message.Message):

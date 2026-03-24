@@ -2704,7 +2704,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_L_3PP_NITRO_TOOLTIP = 717;
      */
-    L_3PP_NITRO_TOOLTIP = 717
+    L_3PP_NITRO_TOOLTIP = 717,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_MOBILE_ACCOUNT_LINKING_BANNER = 718;
+     */
+    MOBILE_ACCOUNT_LINKING_BANNER = 718
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarketingComponentProperties> {
