@@ -1,6 +1,6 @@
 {
     "name": "discord-protos",
-    "version": "1.2.131",
+    "version": "1.2.132",
     "description": "A parser for Discord's protobufs",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -16,18 +16,18 @@
             "url": "https://samuelscheit.com"
         }
     ],
-     "repository": {
+    "repository": {
         "type": "git",
         "url": "git+https://github.com/discord-userdoccers/discord-protos.git"
-     },
+    },
     "homepage": "https://github.com/discord-userdoccers/discord-protos#readme",
     "bugs": {
         "url": "https://github.com/discord-userdoccers/discord-protos/issues"
     },
     "license": "MIT",
-    "type": "module",
+    "type": "commonjs",
     "scripts": {
-        "load": "node --experimental-strip-types scripts/load.ts",
+        "load": "node --experimental-strip-types scripts/load.mts",
         "build": "tsc"
     },
     "files": [
