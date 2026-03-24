@@ -123,4 +123,7 @@ jobs:
         packages-dir: pydist
 
     - name: Publish to NPM
-      run: pnpm publish --provenance --access public --no-git-checks
+      run: |
+        # If we don't update npm, we fail with a 404
+        npm install -g npm
+        npm publish --provenance --access public --no-git-checks
