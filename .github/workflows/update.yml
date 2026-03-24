@@ -28,7 +28,7 @@ jobs:
         python-version: '3.11'
 
     - name: Install pnpm
-      uses: pnpm/action-setup@v2
+      uses: pnpm/action-setup@v5
 
     - name: Install Node.js
       uses: actions/setup-node@v4
@@ -94,7 +94,7 @@ jobs:
         python-version: '3.11'
 
     - name: Install pnpm
-      uses: pnpm/action-setup@v2
+      uses: pnpm/action-setup@v5
 
     - name: Install Node.js
       uses: actions/setup-node@v4
@@ -109,14 +109,18 @@ jobs:
         python -m pip install -U pip
         python -m pip install -r requirements.txt
 
-    - name: Build package
+    - name: Build Node.js package
+      run: pnpm build
+
+    - name: Build Python package
       run: |
-        rm -rf dist
         python -m pip install -U build
-        python -m build
+        python -m build --outdir pydist
 
     - name: Publish to PyPI
       uses: pypa/gh-action-pypi-publish@release/v1
+      with:
+        packages-dir: pydist
 
     - name: Publish to NPM
       run: pnpm publish --provenance --access public --no-git-checks

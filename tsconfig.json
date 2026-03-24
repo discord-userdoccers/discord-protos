@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "target": "ESNext",
-        "module": "commonjs",
+        "module": "ESNext",
         "allowJs": true,
         "declaration": true,
         "strictNullChecks": true,

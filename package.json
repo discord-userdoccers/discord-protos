@@ -1,6 +1,6 @@
 {
     "name": "discord-protos",
-    "version": "1.2.130",
+    "version": "1.2.131",
     "description": "A parser for Discord's protobufs",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -16,14 +16,27 @@
             "url": "https://samuelscheit.com"
         }
     ],
-    "repository": {
-        "url": "https://github.com/discord-userdoccers/discord-protos"
+     "repository": {
+        "type": "git",
+        "url": "git+https://github.com/discord-userdoccers/discord-protos.git"
+     },
+    "homepage": "https://github.com/discord-userdoccers/discord-protos#readme",
+    "bugs": {
+        "url": "https://github.com/discord-userdoccers/discord-protos/issues"
     },
     "license": "MIT",
     "type": "module",
     "scripts": {
-        "load": "node --experimental-strip-types scripts/load.ts"
+        "load": "node --experimental-strip-types scripts/load.ts",
+        "build": "tsc"
     },
+    "files": [
+        "dist",
+        "discord_protos/**/*.proto",
+        "README.md",
+        "LICENSE",
+        "package.json"
+    ],
     "devDependencies": {
         "@protobuf-ts/plugin": "^2.11.1",
         "@protobuf-ts/protoc": "^2.11.1",
@@ -32,6 +45,10 @@
     },
     "dependencies": {
         "@protobuf-ts/runtime": "^2.11.1"
+    },
+    "publishConfig": {
+        "access": "public",
+        "provenance": true
     },
     "packageManager": "pnpm@10.24.0"
 }
