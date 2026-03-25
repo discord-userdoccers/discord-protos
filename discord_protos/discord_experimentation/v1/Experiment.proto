@@ -395,4 +395,5 @@ message Experiment {
   optional google.protobuf.Int32Value guild_experiment_version = 35;
   CustomUnitPrefix custom_unit_prefix = 36;
   repeated string growthbook_tags = 37 [packed = false];
+  bool allocate_right_to_left = 38;
 }
