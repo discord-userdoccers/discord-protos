@@ -692,6 +692,18 @@ message PremiumMarketingComponentProperties {
     optional ThemeAwareAsset asset = 3;
   }
 
+  message PremiumTabPopoverCTAButton {
+    string copy = 1;
+    ButtonAction button_action = 2;
+  }
+
+  message PremiumTabPopover {
+    string header = 1;
+    string body = 2;
+    optional ThemeAwareAsset asset = 3;
+    optional PremiumTabPopoverCTAButton button = 4;
+  }
+
   string content_identifier = 3;
   oneof properties {
     string placeholder = 1;
@@ -708,6 +720,7 @@ message PremiumMarketingComponentProperties {
     GiftReminderNagbar gift_reminder_nagbar = 13;
     GiftReminderCoachmark gift_reminder_coachmark = 14;
     PremiumTabTooltip premium_tab_tooltip = 15;
+    PremiumTabPopover premium_tab_popover = 16;
   }
 
 }

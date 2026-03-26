@@ -1786,6 +1786,58 @@ class PremiumMarketingComponentProperties(_message.Message):
         _WhichOneofArgType__asset: _TypeAlias = _typing.Literal["_asset", b"_asset"]  # noqa: Y015
         def WhichOneof(self, oneof_group: _WhichOneofArgType__asset) -> _WhichOneofReturnType__asset | None: ...
 
+    @_typing.final
+    class PremiumTabPopoverCTAButton(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        COPY_FIELD_NUMBER: _builtins.int
+        BUTTON_ACTION_FIELD_NUMBER: _builtins.int
+        copy: _builtins.str
+        button_action: Global___PremiumMarketingComponentProperties.ButtonAction.ValueType
+        def __init__(
+            self,
+            *,
+            copy: _builtins.str = ...,
+            button_action: Global___PremiumMarketingComponentProperties.ButtonAction.ValueType = ...,
+        ) -> None: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["button_action", b"button_action", "copy", b"copy"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+
+    @_typing.final
+    class PremiumTabPopover(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        HEADER_FIELD_NUMBER: _builtins.int
+        BODY_FIELD_NUMBER: _builtins.int
+        ASSET_FIELD_NUMBER: _builtins.int
+        BUTTON_FIELD_NUMBER: _builtins.int
+        header: _builtins.str
+        body: _builtins.str
+        @_builtins.property
+        def asset(self) -> Global___PremiumMarketingComponentProperties.ThemeAwareAsset: ...
+        @_builtins.property
+        def button(self) -> Global___PremiumMarketingComponentProperties.PremiumTabPopoverCTAButton: ...
+        def __init__(
+            self,
+            *,
+            header: _builtins.str = ...,
+            body: _builtins.str = ...,
+            asset: Global___PremiumMarketingComponentProperties.ThemeAwareAsset | None = ...,
+            button: Global___PremiumMarketingComponentProperties.PremiumTabPopoverCTAButton | None = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_button", b"_button", "asset", b"asset", "button", b"button"]  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_button", b"_button", "asset", b"asset", "body", b"body", "button", b"button", "header", b"header"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        _WhichOneofReturnType__asset: _TypeAlias = _typing.Literal["asset"]  # noqa: Y015
+        _WhichOneofArgType__asset: _TypeAlias = _typing.Literal["_asset", b"_asset"]  # noqa: Y015
+        _WhichOneofReturnType__button: _TypeAlias = _typing.Literal["button"]  # noqa: Y015
+        _WhichOneofArgType__button: _TypeAlias = _typing.Literal["_button", b"_button"]  # noqa: Y015
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__asset) -> _WhichOneofReturnType__asset | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__button) -> _WhichOneofReturnType__button | None: ...
+
     CONTENT_IDENTIFIER_FIELD_NUMBER: _builtins.int
     PLACEHOLDER_FIELD_NUMBER: _builtins.int
     ANNOUNCEMENT_MODAL_VARIANT_1_FIELD_NUMBER: _builtins.int
@@ -1801,6 +1853,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     GIFT_REMINDER_NAGBAR_FIELD_NUMBER: _builtins.int
     GIFT_REMINDER_COACHMARK_FIELD_NUMBER: _builtins.int
     PREMIUM_TAB_TOOLTIP_FIELD_NUMBER: _builtins.int
+    PREMIUM_TAB_POPOVER_FIELD_NUMBER: _builtins.int
     content_identifier: _builtins.str
     placeholder: _builtins.str
     @_builtins.property
@@ -1829,6 +1882,8 @@ class PremiumMarketingComponentProperties(_message.Message):
     def gift_reminder_coachmark(self) -> Global___PremiumMarketingComponentProperties.GiftReminderCoachmark: ...
     @_builtins.property
     def premium_tab_tooltip(self) -> Global___PremiumMarketingComponentProperties.PremiumTabTooltip: ...
+    @_builtins.property
+    def premium_tab_popover(self) -> Global___PremiumMarketingComponentProperties.PremiumTabPopover: ...
     def __init__(
         self,
         *,
@@ -1847,12 +1902,13 @@ class PremiumMarketingComponentProperties(_message.Message):
         gift_reminder_nagbar: Global___PremiumMarketingComponentProperties.GiftReminderNagbar | None = ...,
         gift_reminder_coachmark: Global___PremiumMarketingComponentProperties.GiftReminderCoachmark | None = ...,
         premium_tab_tooltip: Global___PremiumMarketingComponentProperties.PremiumTabTooltip | None = ...,
+        premium_tab_popover: Global___PremiumMarketingComponentProperties.PremiumTabPopover | None = ...,
     ) -> None: ...
-    _HasFieldArgType: _TypeAlias = _typing.Literal["announcement_modal_variant_1", b"announcement_modal_variant_1", "billing_settings_nitro_gift_banner", b"billing_settings_nitro_gift_banner", "gift_customization_banner", b"gift_customization_banner", "gift_icon", b"gift_icon", "gift_icon_coachmark", b"gift_icon_coachmark", "gift_plan_selection_card_banner", b"gift_plan_selection_card_banner", "gift_reminder_coachmark", b"gift_reminder_coachmark", "gift_reminder_nagbar", b"gift_reminder_nagbar", "marketing_page_banner", b"marketing_page_banner", "mobile_bottom_sheet", b"mobile_bottom_sheet", "payment_modal_banner", b"payment_modal_banner", "placeholder", b"placeholder", "premium_tab", b"premium_tab", "premium_tab_tooltip", b"premium_tab_tooltip", "properties", b"properties"]  # noqa: Y015
+    _HasFieldArgType: _TypeAlias = _typing.Literal["announcement_modal_variant_1", b"announcement_modal_variant_1", "billing_settings_nitro_gift_banner", b"billing_settings_nitro_gift_banner", "gift_customization_banner", b"gift_customization_banner", "gift_icon", b"gift_icon", "gift_icon_coachmark", b"gift_icon_coachmark", "gift_plan_selection_card_banner", b"gift_plan_selection_card_banner", "gift_reminder_coachmark", b"gift_reminder_coachmark", "gift_reminder_nagbar", b"gift_reminder_nagbar", "marketing_page_banner", b"marketing_page_banner", "mobile_bottom_sheet", b"mobile_bottom_sheet", "payment_modal_banner", b"payment_modal_banner", "placeholder", b"placeholder", "premium_tab", b"premium_tab", "premium_tab_popover", b"premium_tab_popover", "premium_tab_tooltip", b"premium_tab_tooltip", "properties", b"properties"]  # noqa: Y015
     def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["announcement_modal_variant_1", b"announcement_modal_variant_1", "billing_settings_nitro_gift_banner", b"billing_settings_nitro_gift_banner", "content_identifier", b"content_identifier", "gift_customization_banner", b"gift_customization_banner", "gift_icon", b"gift_icon", "gift_icon_coachmark", b"gift_icon_coachmark", "gift_plan_selection_card_banner", b"gift_plan_selection_card_banner", "gift_reminder_coachmark", b"gift_reminder_coachmark", "gift_reminder_nagbar", b"gift_reminder_nagbar", "marketing_page_banner", b"marketing_page_banner", "mobile_bottom_sheet", b"mobile_bottom_sheet", "payment_modal_banner", b"payment_modal_banner", "placeholder", b"placeholder", "premium_tab", b"premium_tab", "premium_tab_tooltip", b"premium_tab_tooltip", "properties", b"properties"]  # noqa: Y015
+    _ClearFieldArgType: _TypeAlias = _typing.Literal["announcement_modal_variant_1", b"announcement_modal_variant_1", "billing_settings_nitro_gift_banner", b"billing_settings_nitro_gift_banner", "content_identifier", b"content_identifier", "gift_customization_banner", b"gift_customization_banner", "gift_icon", b"gift_icon", "gift_icon_coachmark", b"gift_icon_coachmark", "gift_plan_selection_card_banner", b"gift_plan_selection_card_banner", "gift_reminder_coachmark", b"gift_reminder_coachmark", "gift_reminder_nagbar", b"gift_reminder_nagbar", "marketing_page_banner", b"marketing_page_banner", "mobile_bottom_sheet", b"mobile_bottom_sheet", "payment_modal_banner", b"payment_modal_banner", "placeholder", b"placeholder", "premium_tab", b"premium_tab", "premium_tab_popover", b"premium_tab_popover", "premium_tab_tooltip", b"premium_tab_tooltip", "properties", b"properties"]  # noqa: Y015
     def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-    _WhichOneofReturnType_properties: _TypeAlias = _typing.Literal["placeholder", "announcement_modal_variant_1", "premium_tab", "marketing_page_banner", "payment_modal_banner", "mobile_bottom_sheet", "gift_icon", "gift_icon_coachmark", "gift_plan_selection_card_banner", "gift_customization_banner", "billing_settings_nitro_gift_banner", "gift_reminder_nagbar", "gift_reminder_coachmark", "premium_tab_tooltip"]  # noqa: Y015
+    _WhichOneofReturnType_properties: _TypeAlias = _typing.Literal["placeholder", "announcement_modal_variant_1", "premium_tab", "marketing_page_banner", "payment_modal_banner", "mobile_bottom_sheet", "gift_icon", "gift_icon_coachmark", "gift_plan_selection_card_banner", "gift_customization_banner", "billing_settings_nitro_gift_banner", "gift_reminder_nagbar", "gift_reminder_coachmark", "premium_tab_tooltip", "premium_tab_popover"]  # noqa: Y015
     _WhichOneofArgType_properties: _TypeAlias = _typing.Literal["properties", b"properties"]  # noqa: Y015
     def WhichOneof(self, oneof_group: _WhichOneofArgType_properties) -> _WhichOneofReturnType_properties | None: ...
 
