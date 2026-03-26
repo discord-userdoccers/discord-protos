@@ -2948,7 +2948,11 @@ export enum UserData_AgeAssuranceVendor {
     /**
      * @generated from protobuf enum value: AGE_ASSURANCE_VENDOR_DISCORD = 4;
      */
-    DISCORD = 4
+    DISCORD = 4,
+    /**
+     * @generated from protobuf enum value: AGE_ASSURANCE_VENDOR_GOOGLE_WALLET = 5;
+     */
+    GOOGLE_WALLET = 5
 }
 /**
  * @generated from protobuf enum discord_protos.users.v1.UserData.PerkSource

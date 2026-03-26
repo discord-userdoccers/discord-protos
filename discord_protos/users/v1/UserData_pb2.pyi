@@ -1294,6 +1294,7 @@ class UserData(_message.Message):
         AGE_ASSURANCE_VENDOR_PERSONA: UserData._AgeAssuranceVendor.ValueType  # 2
         AGE_ASSURANCE_VENDOR_INCODE: UserData._AgeAssuranceVendor.ValueType  # 3
         AGE_ASSURANCE_VENDOR_DISCORD: UserData._AgeAssuranceVendor.ValueType  # 4
+        AGE_ASSURANCE_VENDOR_GOOGLE_WALLET: UserData._AgeAssuranceVendor.ValueType  # 5
 
     class AgeAssuranceVendor(_AgeAssuranceVendor, metaclass=_AgeAssuranceVendorEnumTypeWrapper): ...
     AGE_ASSURANCE_VENDOR_UNSPECIFIED: UserData.AgeAssuranceVendor.ValueType  # 0
@@ -1301,6 +1302,7 @@ class UserData(_message.Message):
     AGE_ASSURANCE_VENDOR_PERSONA: UserData.AgeAssuranceVendor.ValueType  # 2
     AGE_ASSURANCE_VENDOR_INCODE: UserData.AgeAssuranceVendor.ValueType  # 3
     AGE_ASSURANCE_VENDOR_DISCORD: UserData.AgeAssuranceVendor.ValueType  # 4
+    AGE_ASSURANCE_VENDOR_GOOGLE_WALLET: UserData.AgeAssuranceVendor.ValueType  # 5
 
     class _PerkSource:
         ValueType = _typing.NewType("ValueType", _builtins.int)
