@@ -2756,7 +2756,15 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_APRIL_FOOLS_2026_COACHMARK = 719;
      */
-    APRIL_FOOLS_2026_COACHMARK = 719
+    APRIL_FOOLS_2026_COACHMARK = 719,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_PRIVATE_PROFILE_COACHMARK = 720;
+     */
+    PRIVATE_PROFILE_COACHMARK = 720,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_PRIVATE_PROFILE_INLINE_NOTICE = 721;
+     */
+    PRIVATE_PROFILE_INLINE_NOTICE = 721
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarketingComponentProperties> {

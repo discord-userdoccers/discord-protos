@@ -167,6 +167,10 @@ export interface Experiment {
      * @generated from protobuf field: bool allocate_right_to_left = 38
      */
     allocateRightToLeft: boolean;
+    /**
+     * @generated from protobuf field: bool is_managed = 39
+     */
+    isManaged: boolean;
 }
 /**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.Bucket
@@ -1173,7 +1177,8 @@ class Experiment$Type extends MessageType<Experiment> {
             { no: 35, name: "guild_experiment_version", kind: "message", T: () => Int32Value },
             { no: 36, name: "custom_unit_prefix", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.CustomUnitPrefix", Experiment_CustomUnitPrefix, "CUSTOM_UNIT_PREFIX_"] },
             { no: 37, name: "growthbook_tags", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 9 /*ScalarType.STRING*/ },
-            { no: 38, name: "allocate_right_to_left", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
+            { no: 38, name: "allocate_right_to_left", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
+            { no: 39, name: "is_managed", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
         ]);
     }
     create(value?: PartialMessage<Experiment>): Experiment {
@@ -1207,6 +1212,7 @@ class Experiment$Type extends MessageType<Experiment> {
         message.customUnitPrefix = 0;
         message.growthbookTags = [];
         message.allocateRightToLeft = false;
+        message.isManaged = false;
         if (value !== undefined)
             reflectionMergePartial<Experiment>(this, message, value);
         return message;
@@ -1334,6 +1340,9 @@ class Experiment$Type extends MessageType<Experiment> {
                     break;
                 case /* bool allocate_right_to_left */ 38:
                     message.allocateRightToLeft = reader.bool();
+                    break;
+                case /* bool is_managed */ 39:
+                    message.isManaged = reader.bool();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -1466,6 +1475,9 @@ class Experiment$Type extends MessageType<Experiment> {
         /* bool allocate_right_to_left = 38; */
         if (message.allocateRightToLeft !== false)
             writer.tag(38, WireType.Varint).bool(message.allocateRightToLeft);
+        /* bool is_managed = 39; */
+        if (message.isManaged !== false)
+            writer.tag(39, WireType.Varint).bool(message.isManaged);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
