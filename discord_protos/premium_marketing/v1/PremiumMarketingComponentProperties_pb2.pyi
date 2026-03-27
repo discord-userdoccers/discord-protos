@@ -571,6 +571,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_APRIL_FOOLS_2026_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 719
         DISMISSIBLE_CONTENT_PRIVATE_PROFILE_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 720
         DISMISSIBLE_CONTENT_PRIVATE_PROFILE_INLINE_NOTICE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 721
+        DISMISSIBLE_CONTENT_GAME_SERVER_HOSTING_BATCH_RELEASE_V3_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 722
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_HUB_WAITLIST_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1092,6 +1093,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_APRIL_FOOLS_2026_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 719
     DISMISSIBLE_CONTENT_PRIVATE_PROFILE_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 720
     DISMISSIBLE_CONTENT_PRIVATE_PROFILE_INLINE_NOTICE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 721
+    DISMISSIBLE_CONTENT_GAME_SERVER_HOSTING_BATCH_RELEASE_V3_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 722
 
     @_typing.final
     class FeatureCard(_message.Message):
