@@ -35,6 +35,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         BUTTON_ACTION_OPEN_TIER_1_PAYMENT_MODAL: PremiumMarketingComponentProperties._ButtonAction.ValueType  # 3
         BUTTON_ACTION_OPEN_TIER_2_PAYMENT_MODAL_CUSTOM_CONFIRMATION_FOOTER: PremiumMarketingComponentProperties._ButtonAction.ValueType  # 4
         BUTTON_ACTION_OPEN_PLAN_SELECTION_MODAL: PremiumMarketingComponentProperties._ButtonAction.ValueType  # 5
+        BUTTON_ACTION_OPEN_PREMIUM_GROUP_PAYMENT_MODAL: PremiumMarketingComponentProperties._ButtonAction.ValueType  # 6
 
     class ButtonAction(_ButtonAction, metaclass=_ButtonActionEnumTypeWrapper): ...
     BUTTON_ACTION_UNSPECIFIED: PremiumMarketingComponentProperties.ButtonAction.ValueType  # 0
@@ -43,6 +44,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     BUTTON_ACTION_OPEN_TIER_1_PAYMENT_MODAL: PremiumMarketingComponentProperties.ButtonAction.ValueType  # 3
     BUTTON_ACTION_OPEN_TIER_2_PAYMENT_MODAL_CUSTOM_CONFIRMATION_FOOTER: PremiumMarketingComponentProperties.ButtonAction.ValueType  # 4
     BUTTON_ACTION_OPEN_PLAN_SELECTION_MODAL: PremiumMarketingComponentProperties.ButtonAction.ValueType  # 5
+    BUTTON_ACTION_OPEN_PREMIUM_GROUP_PAYMENT_MODAL: PremiumMarketingComponentProperties.ButtonAction.ValueType  # 6
 
     class _DismissibleContent:
         ValueType = _typing.NewType("ValueType", _builtins.int)
@@ -566,6 +568,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_L_3PP_NON_NITRO_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 716
         DISMISSIBLE_CONTENT_L_3PP_NITRO_TOOLTIP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 717
         DISMISSIBLE_CONTENT_MOBILE_ACCOUNT_LINKING_BANNER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 718
+        DISMISSIBLE_CONTENT_APRIL_FOOLS_2026_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 719
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_HUB_WAITLIST_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1084,6 +1087,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_L_3PP_NON_NITRO_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 716
     DISMISSIBLE_CONTENT_L_3PP_NITRO_TOOLTIP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 717
     DISMISSIBLE_CONTENT_MOBILE_ACCOUNT_LINKING_BANNER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 718
+    DISMISSIBLE_CONTENT_APRIL_FOOLS_2026_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 719
 
     @_typing.final
     class FeatureCard(_message.Message):

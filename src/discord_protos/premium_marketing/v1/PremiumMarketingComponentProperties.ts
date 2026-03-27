@@ -679,7 +679,11 @@ export enum PremiumMarketingComponentProperties_ButtonAction {
     /**
      * @generated from protobuf enum value: BUTTON_ACTION_OPEN_PLAN_SELECTION_MODAL = 5;
      */
-    OPEN_PLAN_SELECTION_MODAL = 5
+    OPEN_PLAN_SELECTION_MODAL = 5,
+    /**
+     * @generated from protobuf enum value: BUTTON_ACTION_OPEN_PREMIUM_GROUP_PAYMENT_MODAL = 6;
+     */
+    OPEN_PREMIUM_GROUP_PAYMENT_MODAL = 6
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.DismissibleContent
@@ -2748,7 +2752,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_MOBILE_ACCOUNT_LINKING_BANNER = 718;
      */
-    MOBILE_ACCOUNT_LINKING_BANNER = 718
+    MOBILE_ACCOUNT_LINKING_BANNER = 718,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_APRIL_FOOLS_2026_COACHMARK = 719;
+     */
+    APRIL_FOOLS_2026_COACHMARK = 719
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarketingComponentProperties> {
