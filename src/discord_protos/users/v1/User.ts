@@ -1696,6 +1696,10 @@ export enum User_ClassificationType {
      */
     SPAM_CEILING_ADMIN = 5940,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_QUEST_REWARD_ABUSE_ADMIN = 5950;
+     */
+    QUEST_REWARD_ABUSE_ADMIN = 5950,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_HIGH_RISK_DANGEROUS_AND_REGULATED_GOODS_GUILD_RETOOL = 7005;
      */
     HIGH_RISK_DANGEROUS_AND_REGULATED_GOODS_GUILD_RETOOL = 7005,
