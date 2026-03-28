@@ -572,6 +572,8 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_PRIVATE_PROFILE_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 720
         DISMISSIBLE_CONTENT_PRIVATE_PROFILE_INLINE_NOTICE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 721
         DISMISSIBLE_CONTENT_GAME_SERVER_HOSTING_BATCH_RELEASE_V3_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 722
+        DISMISSIBLE_CONTENT_ML_REVERSE_TRIAL_UPSELL_MODAL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 723
+        DISMISSIBLE_CONTENT_ML_REVERSE_TRIAL_FOLLOWUP_UPSELL_MODAL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 724
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_HUB_WAITLIST_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1094,6 +1096,8 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_PRIVATE_PROFILE_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 720
     DISMISSIBLE_CONTENT_PRIVATE_PROFILE_INLINE_NOTICE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 721
     DISMISSIBLE_CONTENT_GAME_SERVER_HOSTING_BATCH_RELEASE_V3_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 722
+    DISMISSIBLE_CONTENT_ML_REVERSE_TRIAL_UPSELL_MODAL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 723
+    DISMISSIBLE_CONTENT_ML_REVERSE_TRIAL_FOLLOWUP_UPSELL_MODAL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 724
 
     @_typing.final
     class FeatureCard(_message.Message):

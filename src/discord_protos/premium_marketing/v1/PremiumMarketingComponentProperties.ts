@@ -2768,7 +2768,15 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GAME_SERVER_HOSTING_BATCH_RELEASE_V3_COACHMARK = 722;
      */
-    GAME_SERVER_HOSTING_BATCH_RELEASE_V3_COACHMARK = 722
+    GAME_SERVER_HOSTING_BATCH_RELEASE_V3_COACHMARK = 722,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_ML_REVERSE_TRIAL_UPSELL_MODAL = 723;
+     */
+    ML_REVERSE_TRIAL_UPSELL_MODAL = 723,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_ML_REVERSE_TRIAL_FOLLOWUP_UPSELL_MODAL = 724;
+     */
+    ML_REVERSE_TRIAL_FOLLOWUP_UPSELL_MODAL = 724
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarketingComponentProperties> {
