@@ -711,6 +711,12 @@ message PremiumMarketingComponentProperties {
     optional PremiumTabPopoverCTAButton button = 4;
   }
 
+  message Nagbar {
+    string body = 1;
+    string cta_label = 2;
+    ButtonAction cta_action = 3;
+  }
+
   string content_identifier = 3;
   oneof properties {
     string placeholder = 1;
@@ -728,6 +734,7 @@ message PremiumMarketingComponentProperties {
     GiftReminderCoachmark gift_reminder_coachmark = 14;
     PremiumTabTooltip premium_tab_tooltip = 15;
     PremiumTabPopover premium_tab_popover = 16;
+    Nagbar nagbar = 17;
   }
 
 }

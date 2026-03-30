@@ -112,6 +112,12 @@ export interface PremiumMarketingComponentProperties {
          */
         premiumTabPopover: PremiumMarketingComponentProperties_PremiumTabPopover;
     } | {
+        oneofKind: "nagbar";
+        /**
+         * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Nagbar nagbar = 17
+         */
+        nagbar: PremiumMarketingComponentProperties_Nagbar;
+    } | {
         oneofKind: undefined;
     };
 }
@@ -651,6 +657,23 @@ export interface PremiumMarketingComponentProperties_PremiumTabPopover {
      * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PremiumTabPopoverCTAButton button = 4
      */
     button?: PremiumMarketingComponentProperties_PremiumTabPopoverCTAButton;
+}
+/**
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Nagbar
+ */
+export interface PremiumMarketingComponentProperties_Nagbar {
+    /**
+     * @generated from protobuf field: string body = 1
+     */
+    body: string;
+    /**
+     * @generated from protobuf field: string cta_label = 2
+     */
+    ctaLabel: string;
+    /**
+     * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction cta_action = 3
+     */
+    ctaAction: PremiumMarketingComponentProperties_ButtonAction;
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction
@@ -2797,7 +2820,8 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
             { no: 13, name: "gift_reminder_nagbar", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_GiftReminderNagbar },
             { no: 14, name: "gift_reminder_coachmark", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_GiftReminderCoachmark },
             { no: 15, name: "premium_tab_tooltip", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_PremiumTabTooltip },
-            { no: 16, name: "premium_tab_popover", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_PremiumTabPopover }
+            { no: 16, name: "premium_tab_popover", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_PremiumTabPopover },
+            { no: 17, name: "nagbar", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_Nagbar }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties>): PremiumMarketingComponentProperties {
@@ -2906,6 +2930,12 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
                         premiumTabPopover: PremiumMarketingComponentProperties_PremiumTabPopover.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).premiumTabPopover)
                     };
                     break;
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Nagbar nagbar */ 17:
+                    message.properties = {
+                        oneofKind: "nagbar",
+                        nagbar: PremiumMarketingComponentProperties_Nagbar.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).nagbar)
+                    };
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -2966,6 +2996,9 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
         /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PremiumTabPopover premium_tab_popover = 16; */
         if (message.properties.oneofKind === "premiumTabPopover")
             PremiumMarketingComponentProperties_PremiumTabPopover.internalBinaryWrite(message.properties.premiumTabPopover, writer.tag(16, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Nagbar nagbar = 17; */
+        if (message.properties.oneofKind === "nagbar")
+            PremiumMarketingComponentProperties_Nagbar.internalBinaryWrite(message.properties.nagbar, writer.tag(17, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -4730,3 +4763,66 @@ class PremiumMarketingComponentProperties_PremiumTabPopover$Type extends Message
  * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PremiumTabPopover
  */
 export const PremiumMarketingComponentProperties_PremiumTabPopover = new PremiumMarketingComponentProperties_PremiumTabPopover$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PremiumMarketingComponentProperties_Nagbar$Type extends MessageType<PremiumMarketingComponentProperties_Nagbar> {
+    constructor() {
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Nagbar", [
+            { no: 1, name: "body", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "cta_label", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 3, name: "cta_action", kind: "enum", T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction", PremiumMarketingComponentProperties_ButtonAction, "BUTTON_ACTION_"] }
+        ]);
+    }
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_Nagbar>): PremiumMarketingComponentProperties_Nagbar {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.body = "";
+        message.ctaLabel = "";
+        message.ctaAction = 0;
+        if (value !== undefined)
+            reflectionMergePartial<PremiumMarketingComponentProperties_Nagbar>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_Nagbar): PremiumMarketingComponentProperties_Nagbar {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string body */ 1:
+                    message.body = reader.string();
+                    break;
+                case /* string cta_label */ 2:
+                    message.ctaLabel = reader.string();
+                    break;
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction cta_action */ 3:
+                    message.ctaAction = reader.int32();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_Nagbar, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string body = 1; */
+        if (message.body !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.body);
+        /* string cta_label = 2; */
+        if (message.ctaLabel !== "")
+            writer.tag(2, WireType.LengthDelimited).string(message.ctaLabel);
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction cta_action = 3; */
+        if (message.ctaAction !== 0)
+            writer.tag(3, WireType.Varint).int32(message.ctaAction);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Nagbar
+ */
+export const PremiumMarketingComponentProperties_Nagbar = new PremiumMarketingComponentProperties_Nagbar$Type();
