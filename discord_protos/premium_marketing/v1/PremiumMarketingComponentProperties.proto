@@ -709,6 +709,7 @@ message PremiumMarketingComponentProperties {
     string body = 2;
     optional ThemeAwareAsset asset = 3;
     optional PremiumTabPopoverCTAButton button = 4;
+    string help_article_id = 5;
   }
 
   message Nagbar {

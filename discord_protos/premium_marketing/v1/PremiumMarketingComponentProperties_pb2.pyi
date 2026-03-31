@@ -1825,8 +1825,10 @@ class PremiumMarketingComponentProperties(_message.Message):
         BODY_FIELD_NUMBER: _builtins.int
         ASSET_FIELD_NUMBER: _builtins.int
         BUTTON_FIELD_NUMBER: _builtins.int
+        HELP_ARTICLE_ID_FIELD_NUMBER: _builtins.int
         header: _builtins.str
         body: _builtins.str
+        help_article_id: _builtins.str
         @_builtins.property
         def asset(self) -> Global___PremiumMarketingComponentProperties.ThemeAwareAsset: ...
         @_builtins.property
@@ -1838,10 +1840,11 @@ class PremiumMarketingComponentProperties(_message.Message):
             body: _builtins.str = ...,
             asset: Global___PremiumMarketingComponentProperties.ThemeAwareAsset | None = ...,
             button: Global___PremiumMarketingComponentProperties.PremiumTabPopoverCTAButton | None = ...,
+            help_article_id: _builtins.str = ...,
         ) -> None: ...
         _HasFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_button", b"_button", "asset", b"asset", "button", b"button"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_button", b"_button", "asset", b"asset", "body", b"body", "button", b"button", "header", b"header"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_button", b"_button", "asset", b"asset", "body", b"body", "button", b"button", "header", b"header", "help_article_id", b"help_article_id"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__asset: _TypeAlias = _typing.Literal["asset"]  # noqa: Y015
         _WhichOneofArgType__asset: _TypeAlias = _typing.Literal["_asset", b"_asset"]  # noqa: Y015

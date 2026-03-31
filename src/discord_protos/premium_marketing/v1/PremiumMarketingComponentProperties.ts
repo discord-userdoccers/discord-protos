@@ -657,6 +657,10 @@ export interface PremiumMarketingComponentProperties_PremiumTabPopover {
      * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PremiumTabPopoverCTAButton button = 4
      */
     button?: PremiumMarketingComponentProperties_PremiumTabPopoverCTAButton;
+    /**
+     * @generated from protobuf field: string help_article_id = 5
+     */
+    helpArticleId: string;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Nagbar
@@ -4701,13 +4705,15 @@ class PremiumMarketingComponentProperties_PremiumTabPopover$Type extends Message
             { no: 1, name: "header", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 2, name: "body", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 3, name: "asset", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset },
-            { no: 4, name: "button", kind: "message", T: () => PremiumMarketingComponentProperties_PremiumTabPopoverCTAButton }
+            { no: 4, name: "button", kind: "message", T: () => PremiumMarketingComponentProperties_PremiumTabPopoverCTAButton },
+            { no: 5, name: "help_article_id", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_PremiumTabPopover>): PremiumMarketingComponentProperties_PremiumTabPopover {
         const message = globalThis.Object.create((this.messagePrototype!));
         message.header = "";
         message.body = "";
+        message.helpArticleId = "";
         if (value !== undefined)
             reflectionMergePartial<PremiumMarketingComponentProperties_PremiumTabPopover>(this, message, value);
         return message;
@@ -4728,6 +4734,9 @@ class PremiumMarketingComponentProperties_PremiumTabPopover$Type extends Message
                     break;
                 case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PremiumTabPopoverCTAButton button */ 4:
                     message.button = PremiumMarketingComponentProperties_PremiumTabPopoverCTAButton.internalBinaryRead(reader, reader.uint32(), options, message.button);
+                    break;
+                case /* string help_article_id */ 5:
+                    message.helpArticleId = reader.string();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -4753,6 +4762,9 @@ class PremiumMarketingComponentProperties_PremiumTabPopover$Type extends Message
         /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PremiumTabPopoverCTAButton button = 4; */
         if (message.button)
             PremiumMarketingComponentProperties_PremiumTabPopoverCTAButton.internalBinaryWrite(message.button, writer.tag(4, WireType.LengthDelimited).fork(), options).join();
+        /* string help_article_id = 5; */
+        if (message.helpArticleId !== "")
+            writer.tag(5, WireType.LengthDelimited).string(message.helpArticleId);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
