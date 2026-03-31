@@ -2803,7 +2803,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_ML_REVERSE_TRIAL_FOLLOWUP_UPSELL_MODAL = 724;
      */
-    ML_REVERSE_TRIAL_FOLLOWUP_UPSELL_MODAL = 724
+    ML_REVERSE_TRIAL_FOLLOWUP_UPSELL_MODAL = 724,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GAME_SHOP_NEW_DROP_POPOVER = 725;
+     */
+    GAME_SHOP_NEW_DROP_POPOVER = 725
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarketingComponentProperties> {
