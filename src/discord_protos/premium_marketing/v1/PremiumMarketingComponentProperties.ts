@@ -2807,7 +2807,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GAME_SHOP_NEW_DROP_POPOVER = 725;
      */
-    GAME_SHOP_NEW_DROP_POPOVER = 725
+    GAME_SHOP_NEW_DROP_POPOVER = 725,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_PREMIUM_MARKETING_MOMENT_NAGBAR_UPSELL = 726;
+     */
+    PREMIUM_MARKETING_MOMENT_NAGBAR_UPSELL = 726
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarketingComponentProperties> {
