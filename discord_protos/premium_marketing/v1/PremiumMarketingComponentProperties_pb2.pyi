@@ -576,6 +576,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_ML_REVERSE_TRIAL_FOLLOWUP_UPSELL_MODAL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 724
         DISMISSIBLE_CONTENT_GAME_SHOP_NEW_DROP_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 725
         DISMISSIBLE_CONTENT_PREMIUM_MARKETING_MOMENT_NAGBAR_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 726
+        DISMISSIBLE_CONTENT_WISHLISTING_NITRO_TAB_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 727
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_HUB_WAITLIST_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1102,6 +1103,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_ML_REVERSE_TRIAL_FOLLOWUP_UPSELL_MODAL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 724
     DISMISSIBLE_CONTENT_GAME_SHOP_NEW_DROP_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 725
     DISMISSIBLE_CONTENT_PREMIUM_MARKETING_MOMENT_NAGBAR_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 726
+    DISMISSIBLE_CONTENT_WISHLISTING_NITRO_TAB_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 727
 
     @_typing.final
     class FeatureCard(_message.Message):
