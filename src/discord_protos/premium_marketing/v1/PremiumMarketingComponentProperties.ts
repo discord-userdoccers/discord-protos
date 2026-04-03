@@ -2815,7 +2815,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_WISHLISTING_NITRO_TAB_NEW_BADGE = 727;
      */
-    WISHLISTING_NITRO_TAB_NEW_BADGE = 727
+    WISHLISTING_NITRO_TAB_NEW_BADGE = 727,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_QUEST_HOME_NEW_QUEST_BADGE = 728;
+     */
+    QUEST_HOME_NEW_QUEST_BADGE = 728
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarketingComponentProperties> {

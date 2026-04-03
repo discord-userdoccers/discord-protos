@@ -251,6 +251,7 @@ message PreloadedUserSettings {
     optional google.protobuf.BoolValue enable_summary_reminder_notifications = 19;
     optional google.protobuf.BoolValue enable_gdm_all_reaction_notifications = 20;
     optional google.protobuf.BoolValue enable_friend_gaming_activity_notifications = 21;
+    optional google.protobuf.BoolValue enable_upcoming_server_event_notifications = 22;
   }
 
   enum GuildActivityStatusRestrictionDefault {
