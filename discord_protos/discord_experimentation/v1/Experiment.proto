@@ -397,4 +397,5 @@ message Experiment {
   repeated string growthbook_tags = 37 [packed = false];
   bool allocate_right_to_left = 38;
   bool is_managed = 39;
+  optional google.protobuf.Timestamp rollout_until = 40;
 }

@@ -171,6 +171,10 @@ export interface Experiment {
      * @generated from protobuf field: bool is_managed = 39
      */
     isManaged: boolean;
+    /**
+     * @generated from protobuf field: optional google.protobuf.Timestamp rollout_until = 40
+     */
+    rolloutUntil?: Timestamp;
 }
 /**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.Bucket
@@ -1178,7 +1182,8 @@ class Experiment$Type extends MessageType<Experiment> {
             { no: 36, name: "custom_unit_prefix", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.CustomUnitPrefix", Experiment_CustomUnitPrefix, "CUSTOM_UNIT_PREFIX_"] },
             { no: 37, name: "growthbook_tags", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 9 /*ScalarType.STRING*/ },
             { no: 38, name: "allocate_right_to_left", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
-            { no: 39, name: "is_managed", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
+            { no: 39, name: "is_managed", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
+            { no: 40, name: "rollout_until", kind: "message", T: () => Timestamp }
         ]);
     }
     create(value?: PartialMessage<Experiment>): Experiment {
@@ -1344,6 +1349,9 @@ class Experiment$Type extends MessageType<Experiment> {
                 case /* bool is_managed */ 39:
                     message.isManaged = reader.bool();
                     break;
+                case /* optional google.protobuf.Timestamp rollout_until */ 40:
+                    message.rolloutUntil = Timestamp.internalBinaryRead(reader, reader.uint32(), options, message.rolloutUntil);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -1478,6 +1486,9 @@ class Experiment$Type extends MessageType<Experiment> {
         /* bool is_managed = 39; */
         if (message.isManaged !== false)
             writer.tag(39, WireType.Varint).bool(message.isManaged);
+        /* optional google.protobuf.Timestamp rollout_until = 40; */
+        if (message.rolloutUntil)
+            Timestamp.internalBinaryWrite(message.rolloutUntil, writer.tag(40, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
