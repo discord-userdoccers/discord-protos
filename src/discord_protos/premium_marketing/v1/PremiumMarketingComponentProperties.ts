@@ -2819,7 +2819,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_QUEST_HOME_NEW_QUEST_BADGE = 728;
      */
-    QUEST_HOME_NEW_QUEST_BADGE = 728
+    QUEST_HOME_NEW_QUEST_BADGE = 728,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_PREMIUM_MARKETING_MOMENT_USER_SETTINGS_OFFER_BADGE = 729;
+     */
+    PREMIUM_MARKETING_MOMENT_USER_SETTINGS_OFFER_BADGE = 729
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarketingComponentProperties> {
