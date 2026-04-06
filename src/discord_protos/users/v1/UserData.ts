@@ -410,6 +410,10 @@ export interface UserData_ScheduleRule {
      * @generated from protobuf field: repeated discord_protos.users.v1.UserData.DayOfWeek days = 5
      */
     days: UserData_DayOfWeek[];
+    /**
+     * @generated from protobuf field: bool enabled = 6
+     */
+    enabled: boolean;
 }
 /**
  * @generated from protobuf message discord_protos.users.v1.UserData.RestrictedSchedule
@@ -4352,7 +4356,8 @@ class UserData_ScheduleRule$Type extends MessageType<UserData_ScheduleRule> {
             { no: 2, name: "label", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 3, name: "start_time", kind: "message", T: () => UserData_TimeOfDay },
             { no: 4, name: "end_time", kind: "message", T: () => UserData_TimeOfDay },
-            { no: 5, name: "days", kind: "enum", repeat: 1 /*RepeatType.PACKED*/, T: () => ["discord_protos.users.v1.UserData.DayOfWeek", UserData_DayOfWeek, "DAY_OF_WEEK_"] }
+            { no: 5, name: "days", kind: "enum", repeat: 1 /*RepeatType.PACKED*/, T: () => ["discord_protos.users.v1.UserData.DayOfWeek", UserData_DayOfWeek, "DAY_OF_WEEK_"] },
+            { no: 6, name: "enabled", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
         ]);
     }
     create(value?: PartialMessage<UserData_ScheduleRule>): UserData_ScheduleRule {
@@ -4360,6 +4365,7 @@ class UserData_ScheduleRule$Type extends MessageType<UserData_ScheduleRule> {
         message.ruleId = "";
         message.label = "";
         message.days = [];
+        message.enabled = false;
         if (value !== undefined)
             reflectionMergePartial<UserData_ScheduleRule>(this, message, value);
         return message;
@@ -4387,6 +4393,9 @@ class UserData_ScheduleRule$Type extends MessageType<UserData_ScheduleRule> {
                             message.days.push(reader.int32());
                     else
                         message.days.push(reader.int32());
+                    break;
+                case /* bool enabled */ 6:
+                    message.enabled = reader.bool();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -4419,6 +4428,9 @@ class UserData_ScheduleRule$Type extends MessageType<UserData_ScheduleRule> {
                 writer.int32(message.days[i]);
             writer.join();
         }
+        /* bool enabled = 6; */
+        if (message.enabled !== false)
+            writer.tag(6, WireType.Varint).bool(message.enabled);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

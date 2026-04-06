@@ -719,6 +719,7 @@ message UserData {
     optional TimeOfDay start_time = 3;
     optional TimeOfDay end_time = 4;
     repeated DayOfWeek days = 5;
+    bool enabled = 6;
   }
 
   message RestrictedSchedule {
