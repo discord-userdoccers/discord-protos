@@ -2,7 +2,7 @@
 
 from enum import Enum as _Enum
 
-__version__ = '1.2.153'
+__version__ = '1.2.154'
 
 from .users.v1.User_pb2 import *
 from .users.v1.MediumUser_pb2 import *
