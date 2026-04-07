@@ -717,6 +717,15 @@ export interface Experiment_UserIP {
     preferClientIp: boolean;
 }
 /**
+ * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.InstallationIds
+ */
+export interface Experiment_InstallationIds {
+    /**
+     * @generated from protobuf field: repeated fixed64 installation_ids = 1
+     */
+    installationIds: bigint[];
+}
+/**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.Filter
  */
 export interface Experiment_Filter {
@@ -873,6 +882,12 @@ export interface Experiment_Filter {
          * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.UserIP user_ip = 28
          */
         userIp: Experiment_UserIP;
+    } | {
+        oneofKind: "installationIds";
+        /**
+         * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.InstallationIds installation_ids = 29
+         */
+        installationIds: Experiment_InstallationIds;
     } | {
         oneofKind: undefined;
     };
@@ -3752,6 +3767,61 @@ class Experiment_UserIP$Type extends MessageType<Experiment_UserIP> {
  */
 export const Experiment_UserIP = new Experiment_UserIP$Type();
 // @generated message type with reflection information, may provide speed optimized methods
+class Experiment_InstallationIds$Type extends MessageType<Experiment_InstallationIds> {
+    constructor() {
+        super("discord_protos.discord_experimentation.v1.Experiment.InstallationIds", [
+            { no: 1, name: "installation_ids", kind: "scalar", repeat: 1 /*RepeatType.PACKED*/, T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ }
+        ], { "discord_protos.discord_experimentation.v1.filter_category": "FILTER_CATEGORY_CLIENT" });
+    }
+    create(value?: PartialMessage<Experiment_InstallationIds>): Experiment_InstallationIds {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.installationIds = [];
+        if (value !== undefined)
+            reflectionMergePartial<Experiment_InstallationIds>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: Experiment_InstallationIds): Experiment_InstallationIds {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* repeated fixed64 installation_ids */ 1:
+                    if (wireType === WireType.LengthDelimited)
+                        for (let e = reader.int32() + reader.pos; reader.pos < e;)
+                            message.installationIds.push(reader.fixed64().toBigInt());
+                    else
+                        message.installationIds.push(reader.fixed64().toBigInt());
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: Experiment_InstallationIds, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* repeated fixed64 installation_ids = 1; */
+        if (message.installationIds.length) {
+            writer.tag(1, WireType.LengthDelimited).fork();
+            for (let i = 0; i < message.installationIds.length; i++)
+                writer.fixed64(message.installationIds[i]);
+            writer.join();
+        }
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_experimentation.v1.Experiment.InstallationIds
+ */
+export const Experiment_InstallationIds = new Experiment_InstallationIds$Type();
+// @generated message type with reflection information, may provide speed optimized methods
 class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
     constructor() {
         super("discord_protos.discord_experimentation.v1.Experiment.Filter", [
@@ -3779,7 +3849,8 @@ class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
             { no: 25, name: "guild_member_count_range", kind: "message", oneof: "filter", T: () => Experiment_GuildMemberCountRange },
             { no: 26, name: "guild_has_feature", kind: "message", oneof: "filter", T: () => Experiment_GuildHasFeature },
             { no: 27, name: "user_location", kind: "message", oneof: "filter", T: () => Experiment_UserLocation },
-            { no: 28, name: "user_ip", kind: "message", oneof: "filter", T: () => Experiment_UserIP }
+            { no: 28, name: "user_ip", kind: "message", oneof: "filter", T: () => Experiment_UserIP },
+            { no: 29, name: "installation_ids", kind: "message", oneof: "filter", T: () => Experiment_InstallationIds }
         ]);
     }
     create(value?: PartialMessage<Experiment_Filter>): Experiment_Filter {
@@ -3944,6 +4015,12 @@ class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
                         userIp: Experiment_UserIP.internalBinaryRead(reader, reader.uint32(), options, (message.filter as any).userIp)
                     };
                     break;
+                case /* discord_protos.discord_experimentation.v1.Experiment.InstallationIds installation_ids */ 29:
+                    message.filter = {
+                        oneofKind: "installationIds",
+                        installationIds: Experiment_InstallationIds.internalBinaryRead(reader, reader.uint32(), options, (message.filter as any).installationIds)
+                    };
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -4031,6 +4108,9 @@ class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
         /* discord_protos.discord_experimentation.v1.Experiment.UserIP user_ip = 28; */
         if (message.filter.oneofKind === "userIp")
             Experiment_UserIP.internalBinaryWrite(message.filter.userIp, writer.tag(28, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.discord_experimentation.v1.Experiment.InstallationIds installation_ids = 29; */
+        if (message.filter.oneofKind === "installationIds")
+            Experiment_InstallationIds.internalBinaryWrite(message.filter.installationIds, writer.tag(29, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

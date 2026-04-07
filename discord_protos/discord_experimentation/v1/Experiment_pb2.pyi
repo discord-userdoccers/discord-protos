@@ -1056,6 +1056,21 @@ class Experiment(_message.Message):
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
 
     @_typing.final
+    class InstallationIds(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        INSTALLATION_IDS_FIELD_NUMBER: _builtins.int
+        @_builtins.property
+        def installation_ids(self) -> _containers.RepeatedScalarFieldContainer[_builtins.int]: ...
+        def __init__(
+            self,
+            *,
+            installation_ids: _abc.Iterable[_builtins.int] | None = ...,
+        ) -> None: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["installation_ids", b"installation_ids"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+
+    @_typing.final
     class Filter(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
 
@@ -1084,6 +1099,7 @@ class Experiment(_message.Message):
         GUILD_HAS_FEATURE_FIELD_NUMBER: _builtins.int
         USER_LOCATION_FIELD_NUMBER: _builtins.int
         USER_IP_FIELD_NUMBER: _builtins.int
+        INSTALLATION_IDS_FIELD_NUMBER: _builtins.int
         @_builtins.property
         def client_version(self) -> Global___Experiment.ClientPlatform: ...
         @_builtins.property
@@ -1134,6 +1150,8 @@ class Experiment(_message.Message):
         def user_location(self) -> Global___Experiment.UserLocation: ...
         @_builtins.property
         def user_ip(self) -> Global___Experiment.UserIP: ...
+        @_builtins.property
+        def installation_ids(self) -> Global___Experiment.InstallationIds: ...
         def __init__(
             self,
             *,
@@ -1162,12 +1180,13 @@ class Experiment(_message.Message):
             guild_has_feature: Global___Experiment.GuildHasFeature | None = ...,
             user_location: Global___Experiment.UserLocation | None = ...,
             user_ip: Global___Experiment.UserIP | None = ...,
+            installation_ids: Global___Experiment.InstallationIds | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _typing.Literal["always", b"always", "bot", b"bot", "client_ip", b"client_ip", "client_locale", b"client_locale", "client_location", b"client_location", "client_os", b"client_os", "client_release_channel", b"client_release_channel", "client_system_locale", b"client_system_locale", "client_version", b"client_version", "filter", b"filter", "guild_has_feature", b"guild_has_feature", "guild_ids", b"guild_ids", "guild_member_count_range", b"guild_member_count_range", "staff", b"staff", "unit_id_in_experiment", b"unit_id_in_experiment", "unit_id_in_range_by_hash", b"unit_id_in_range_by_hash", "unit_id_matches_filter_snapshot", b"unit_id_matches_filter_snapshot", "user_age_range", b"user_age_range", "user_has_flag", b"user_has_flag", "user_id_range", b"user_id_range", "user_ids", b"user_ids", "user_in_guild", b"user_in_guild", "user_ip", b"user_ip", "user_locale", b"user_locale", "user_location", b"user_location", "user_premium_type", b"user_premium_type"]  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["always", b"always", "bot", b"bot", "client_ip", b"client_ip", "client_locale", b"client_locale", "client_location", b"client_location", "client_os", b"client_os", "client_release_channel", b"client_release_channel", "client_system_locale", b"client_system_locale", "client_version", b"client_version", "filter", b"filter", "guild_has_feature", b"guild_has_feature", "guild_ids", b"guild_ids", "guild_member_count_range", b"guild_member_count_range", "installation_ids", b"installation_ids", "staff", b"staff", "unit_id_in_experiment", b"unit_id_in_experiment", "unit_id_in_range_by_hash", b"unit_id_in_range_by_hash", "unit_id_matches_filter_snapshot", b"unit_id_matches_filter_snapshot", "user_age_range", b"user_age_range", "user_has_flag", b"user_has_flag", "user_id_range", b"user_id_range", "user_ids", b"user_ids", "user_in_guild", b"user_in_guild", "user_ip", b"user_ip", "user_locale", b"user_locale", "user_location", b"user_location", "user_premium_type", b"user_premium_type"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["always", b"always", "bot", b"bot", "client_ip", b"client_ip", "client_locale", b"client_locale", "client_location", b"client_location", "client_os", b"client_os", "client_release_channel", b"client_release_channel", "client_system_locale", b"client_system_locale", "client_version", b"client_version", "filter", b"filter", "guild_has_feature", b"guild_has_feature", "guild_ids", b"guild_ids", "guild_member_count_range", b"guild_member_count_range", "staff", b"staff", "unit_id_in_experiment", b"unit_id_in_experiment", "unit_id_in_range_by_hash", b"unit_id_in_range_by_hash", "unit_id_matches_filter_snapshot", b"unit_id_matches_filter_snapshot", "user_age_range", b"user_age_range", "user_has_flag", b"user_has_flag", "user_id_range", b"user_id_range", "user_ids", b"user_ids", "user_in_guild", b"user_in_guild", "user_ip", b"user_ip", "user_locale", b"user_locale", "user_location", b"user_location", "user_premium_type", b"user_premium_type"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["always", b"always", "bot", b"bot", "client_ip", b"client_ip", "client_locale", b"client_locale", "client_location", b"client_location", "client_os", b"client_os", "client_release_channel", b"client_release_channel", "client_system_locale", b"client_system_locale", "client_version", b"client_version", "filter", b"filter", "guild_has_feature", b"guild_has_feature", "guild_ids", b"guild_ids", "guild_member_count_range", b"guild_member_count_range", "installation_ids", b"installation_ids", "staff", b"staff", "unit_id_in_experiment", b"unit_id_in_experiment", "unit_id_in_range_by_hash", b"unit_id_in_range_by_hash", "unit_id_matches_filter_snapshot", b"unit_id_matches_filter_snapshot", "user_age_range", b"user_age_range", "user_has_flag", b"user_has_flag", "user_id_range", b"user_id_range", "user_ids", b"user_ids", "user_in_guild", b"user_in_guild", "user_ip", b"user_ip", "user_locale", b"user_locale", "user_location", b"user_location", "user_premium_type", b"user_premium_type"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-        _WhichOneofReturnType_filter: _TypeAlias = _typing.Literal["client_version", "client_os", "staff", "user_in_guild", "user_ids", "client_locale", "client_location", "client_ip", "user_locale", "bot", "user_age_range", "user_id_range", "user_has_flag", "unit_id_in_range_by_hash", "client_release_channel", "always", "client_system_locale", "unit_id_in_experiment", "user_premium_type", "unit_id_matches_filter_snapshot", "guild_ids", "guild_member_count_range", "guild_has_feature", "user_location", "user_ip"]  # noqa: Y015
+        _WhichOneofReturnType_filter: _TypeAlias = _typing.Literal["client_version", "client_os", "staff", "user_in_guild", "user_ids", "client_locale", "client_location", "client_ip", "user_locale", "bot", "user_age_range", "user_id_range", "user_has_flag", "unit_id_in_range_by_hash", "client_release_channel", "always", "client_system_locale", "unit_id_in_experiment", "user_premium_type", "unit_id_matches_filter_snapshot", "guild_ids", "guild_member_count_range", "guild_has_feature", "user_location", "user_ip", "installation_ids"]  # noqa: Y015
         _WhichOneofArgType_filter: _TypeAlias = _typing.Literal["filter", b"filter"]  # noqa: Y015
         def WhichOneof(self, oneof_group: _WhichOneofArgType_filter) -> _WhichOneofReturnType_filter | None: ...
 

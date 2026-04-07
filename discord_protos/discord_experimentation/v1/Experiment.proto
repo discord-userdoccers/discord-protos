@@ -266,6 +266,11 @@ message Experiment {
     bool prefer_client_ip = 2;
   }
 
+  message InstallationIds {
+    option (discord_protos.discord_experimentation.v1.filter_category) = FILTER_CATEGORY_CLIENT;
+    repeated fixed64 installation_ids = 1;
+  }
+
   message Filter {
     oneof filter {
       ClientPlatform client_version = 2;
@@ -293,6 +298,7 @@ message Experiment {
       GuildHasFeature guild_has_feature = 26;
       UserLocation user_location = 27;
       UserIP user_ip = 28;
+      InstallationIds installation_ids = 29;
     }
   }
 
