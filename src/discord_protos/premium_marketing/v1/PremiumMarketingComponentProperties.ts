@@ -2827,7 +2827,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_NITRO_TAB_QUEST_ORB_MULTIPLIER_TOOLTIP = 730;
      */
-    NITRO_TAB_QUEST_ORB_MULTIPLIER_TOOLTIP = 730
+    NITRO_TAB_QUEST_ORB_MULTIPLIER_TOOLTIP = 730,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_PIN_CHANNEL_NEW_BADGE = 731;
+     */
+    PIN_CHANNEL_NEW_BADGE = 731
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarketingComponentProperties> {
