@@ -581,6 +581,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_PREMIUM_MARKETING_MOMENT_USER_SETTINGS_OFFER_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 729
         DISMISSIBLE_CONTENT_NITRO_TAB_QUEST_ORB_MULTIPLIER_TOOLTIP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 730
         DISMISSIBLE_CONTENT_PIN_CHANNEL_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 731
+        DISMISSIBLE_CONTENT_BOOST_PROGRESS_BAR_MOBILE_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 732
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_HUB_WAITLIST_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1112,6 +1113,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_PREMIUM_MARKETING_MOMENT_USER_SETTINGS_OFFER_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 729
     DISMISSIBLE_CONTENT_NITRO_TAB_QUEST_ORB_MULTIPLIER_TOOLTIP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 730
     DISMISSIBLE_CONTENT_PIN_CHANNEL_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 731
+    DISMISSIBLE_CONTENT_BOOST_PROGRESS_BAR_MOBILE_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 732
 
     @_typing.final
     class FeatureCard(_message.Message):
