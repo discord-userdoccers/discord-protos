@@ -38,6 +38,16 @@ message PremiumMarketingComponentProperties {
     map<string, string> hero_art_video_subtitle_links = 3;
   }
 
+  message HelpArticle {
+    string id = 1;
+    string link_text = 2;
+  }
+
+  message Disclaimer {
+    string disclaimer_text = 1;
+    optional HelpArticle disclaimer_help_article = 2;
+  }
+
   message AnnouncementModalVariant1Properties {
     string header = 1;
     string subheader = 2;
@@ -53,6 +63,7 @@ message PremiumMarketingComponentProperties {
     string body = 12;
     repeated Subtitle hero_art_video_subtitles = 13;
     optional Variant1Storage storage = 14;
+    optional Disclaimer disclaimer = 15;
   }
 
   message PremiumTab {

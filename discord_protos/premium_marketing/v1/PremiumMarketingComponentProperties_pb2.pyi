@@ -1253,6 +1253,46 @@ class PremiumMarketingComponentProperties(_message.Message):
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
 
     @_typing.final
+    class HelpArticle(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        ID_FIELD_NUMBER: _builtins.int
+        LINK_TEXT_FIELD_NUMBER: _builtins.int
+        id: _builtins.str
+        link_text: _builtins.str
+        def __init__(
+            self,
+            *,
+            id: _builtins.str = ...,
+            link_text: _builtins.str = ...,
+        ) -> None: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["id", b"id", "link_text", b"link_text"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+
+    @_typing.final
+    class Disclaimer(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        DISCLAIMER_TEXT_FIELD_NUMBER: _builtins.int
+        DISCLAIMER_HELP_ARTICLE_FIELD_NUMBER: _builtins.int
+        disclaimer_text: _builtins.str
+        @_builtins.property
+        def disclaimer_help_article(self) -> Global___PremiumMarketingComponentProperties.HelpArticle: ...
+        def __init__(
+            self,
+            *,
+            disclaimer_text: _builtins.str = ...,
+            disclaimer_help_article: Global___PremiumMarketingComponentProperties.HelpArticle | None = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_disclaimer_help_article", b"_disclaimer_help_article", "disclaimer_help_article", b"disclaimer_help_article"]  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_disclaimer_help_article", b"_disclaimer_help_article", "disclaimer_help_article", b"disclaimer_help_article", "disclaimer_text", b"disclaimer_text"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        _WhichOneofReturnType__disclaimer_help_article: _TypeAlias = _typing.Literal["disclaimer_help_article"]  # noqa: Y015
+        _WhichOneofArgType__disclaimer_help_article: _TypeAlias = _typing.Literal["_disclaimer_help_article", b"_disclaimer_help_article"]  # noqa: Y015
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__disclaimer_help_article) -> _WhichOneofReturnType__disclaimer_help_article | None: ...
+
+    @_typing.final
     class AnnouncementModalVariant1Properties(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
 
@@ -1270,6 +1310,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         BODY_FIELD_NUMBER: _builtins.int
         HERO_ART_VIDEO_SUBTITLES_FIELD_NUMBER: _builtins.int
         STORAGE_FIELD_NUMBER: _builtins.int
+        DISCLAIMER_FIELD_NUMBER: _builtins.int
         header: _builtins.str
         subheader: _builtins.str
         video_link: _builtins.str
@@ -1288,6 +1329,8 @@ class PremiumMarketingComponentProperties(_message.Message):
         def hero_art_video_subtitles(self) -> _containers.RepeatedCompositeFieldContainer[Global___PremiumMarketingComponentProperties.Subtitle]: ...
         @_builtins.property
         def storage(self) -> Global___PremiumMarketingComponentProperties.Variant1Storage: ...
+        @_builtins.property
+        def disclaimer(self) -> Global___PremiumMarketingComponentProperties.Disclaimer: ...
         def __init__(
             self,
             *,
@@ -1305,17 +1348,22 @@ class PremiumMarketingComponentProperties(_message.Message):
             body: _builtins.str = ...,
             hero_art_video_subtitles: _abc.Iterable[Global___PremiumMarketingComponentProperties.Subtitle] | None = ...,
             storage: Global___PremiumMarketingComponentProperties.Variant1Storage | None = ...,
+            disclaimer: Global___PremiumMarketingComponentProperties.Disclaimer | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _typing.Literal["_button", b"_button", "_storage", b"_storage", "button", b"button", "storage", b"storage"]  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_button", b"_button", "_disclaimer", b"_disclaimer", "_storage", b"_storage", "button", b"button", "disclaimer", b"disclaimer", "storage", b"storage"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_button", b"_button", "_storage", b"_storage", "body", b"body", "button", b"button", "dismiss_key", b"dismiss_key", "feature_cards", b"feature_cards", "header", b"header", "help_article_id", b"help_article_id", "hero_art_image_link_dark_theme", b"hero_art_image_link_dark_theme", "hero_art_image_link_light_theme", b"hero_art_image_link_light_theme", "hero_art_video_link_light_theme", b"hero_art_video_link_light_theme", "hero_art_video_subtitles", b"hero_art_video_subtitles", "modal_top_pill", b"modal_top_pill", "storage", b"storage", "subheader", b"subheader", "video_link", b"video_link"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_button", b"_button", "_disclaimer", b"_disclaimer", "_storage", b"_storage", "body", b"body", "button", b"button", "disclaimer", b"disclaimer", "dismiss_key", b"dismiss_key", "feature_cards", b"feature_cards", "header", b"header", "help_article_id", b"help_article_id", "hero_art_image_link_dark_theme", b"hero_art_image_link_dark_theme", "hero_art_image_link_light_theme", b"hero_art_image_link_light_theme", "hero_art_video_link_light_theme", b"hero_art_video_link_light_theme", "hero_art_video_subtitles", b"hero_art_video_subtitles", "modal_top_pill", b"modal_top_pill", "storage", b"storage", "subheader", b"subheader", "video_link", b"video_link"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__button: _TypeAlias = _typing.Literal["button"]  # noqa: Y015
         _WhichOneofArgType__button: _TypeAlias = _typing.Literal["_button", b"_button"]  # noqa: Y015
+        _WhichOneofReturnType__disclaimer: _TypeAlias = _typing.Literal["disclaimer"]  # noqa: Y015
+        _WhichOneofArgType__disclaimer: _TypeAlias = _typing.Literal["_disclaimer", b"_disclaimer"]  # noqa: Y015
         _WhichOneofReturnType__storage: _TypeAlias = _typing.Literal["storage"]  # noqa: Y015
         _WhichOneofArgType__storage: _TypeAlias = _typing.Literal["_storage", b"_storage"]  # noqa: Y015
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__button) -> _WhichOneofReturnType__button | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__disclaimer) -> _WhichOneofReturnType__disclaimer | None: ...
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__storage) -> _WhichOneofReturnType__storage | None: ...
 

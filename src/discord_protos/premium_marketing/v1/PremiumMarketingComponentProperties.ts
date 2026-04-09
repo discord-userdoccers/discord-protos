@@ -200,6 +200,32 @@ export interface PremiumMarketingComponentProperties_Variant1Storage {
     };
 }
 /**
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle
+ */
+export interface PremiumMarketingComponentProperties_HelpArticle {
+    /**
+     * @generated from protobuf field: string id = 1
+     */
+    id: string;
+    /**
+     * @generated from protobuf field: string link_text = 2
+     */
+    linkText: string;
+}
+/**
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Disclaimer
+ */
+export interface PremiumMarketingComponentProperties_Disclaimer {
+    /**
+     * @generated from protobuf field: string disclaimer_text = 1
+     */
+    disclaimerText: string;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle disclaimer_help_article = 2
+     */
+    disclaimerHelpArticle?: PremiumMarketingComponentProperties_HelpArticle;
+}
+/**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalVariant1Properties
  */
 export interface PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties {
@@ -259,6 +285,10 @@ export interface PremiumMarketingComponentProperties_AnnouncementModalVariant1Pr
      * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Variant1Storage storage = 14
      */
     storage?: PremiumMarketingComponentProperties_Variant1Storage;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Disclaimer disclaimer = 15
+     */
+    disclaimer?: PremiumMarketingComponentProperties_Disclaimer;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PremiumTab
@@ -3354,6 +3384,115 @@ class PremiumMarketingComponentProperties_Variant1Storage$Type extends MessageTy
  */
 export const PremiumMarketingComponentProperties_Variant1Storage = new PremiumMarketingComponentProperties_Variant1Storage$Type();
 // @generated message type with reflection information, may provide speed optimized methods
+class PremiumMarketingComponentProperties_HelpArticle$Type extends MessageType<PremiumMarketingComponentProperties_HelpArticle> {
+    constructor() {
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle", [
+            { no: 1, name: "id", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "link_text", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+        ]);
+    }
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_HelpArticle>): PremiumMarketingComponentProperties_HelpArticle {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.id = "";
+        message.linkText = "";
+        if (value !== undefined)
+            reflectionMergePartial<PremiumMarketingComponentProperties_HelpArticle>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_HelpArticle): PremiumMarketingComponentProperties_HelpArticle {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string id */ 1:
+                    message.id = reader.string();
+                    break;
+                case /* string link_text */ 2:
+                    message.linkText = reader.string();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_HelpArticle, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string id = 1; */
+        if (message.id !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.id);
+        /* string link_text = 2; */
+        if (message.linkText !== "")
+            writer.tag(2, WireType.LengthDelimited).string(message.linkText);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle
+ */
+export const PremiumMarketingComponentProperties_HelpArticle = new PremiumMarketingComponentProperties_HelpArticle$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PremiumMarketingComponentProperties_Disclaimer$Type extends MessageType<PremiumMarketingComponentProperties_Disclaimer> {
+    constructor() {
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Disclaimer", [
+            { no: 1, name: "disclaimer_text", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "disclaimer_help_article", kind: "message", T: () => PremiumMarketingComponentProperties_HelpArticle }
+        ]);
+    }
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_Disclaimer>): PremiumMarketingComponentProperties_Disclaimer {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.disclaimerText = "";
+        if (value !== undefined)
+            reflectionMergePartial<PremiumMarketingComponentProperties_Disclaimer>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_Disclaimer): PremiumMarketingComponentProperties_Disclaimer {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string disclaimer_text */ 1:
+                    message.disclaimerText = reader.string();
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle disclaimer_help_article */ 2:
+                    message.disclaimerHelpArticle = PremiumMarketingComponentProperties_HelpArticle.internalBinaryRead(reader, reader.uint32(), options, message.disclaimerHelpArticle);
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_Disclaimer, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string disclaimer_text = 1; */
+        if (message.disclaimerText !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.disclaimerText);
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle disclaimer_help_article = 2; */
+        if (message.disclaimerHelpArticle)
+            PremiumMarketingComponentProperties_HelpArticle.internalBinaryWrite(message.disclaimerHelpArticle, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Disclaimer
+ */
+export const PremiumMarketingComponentProperties_Disclaimer = new PremiumMarketingComponentProperties_Disclaimer$Type();
+// @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties$Type extends MessageType<PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties> {
     constructor() {
         super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalVariant1Properties", [
@@ -3370,7 +3509,8 @@ class PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties$Ty
             { no: 11, name: "modal_top_pill", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 12, name: "body", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 13, name: "hero_art_video_subtitles", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => PremiumMarketingComponentProperties_Subtitle },
-            { no: 14, name: "storage", kind: "message", T: () => PremiumMarketingComponentProperties_Variant1Storage }
+            { no: 14, name: "storage", kind: "message", T: () => PremiumMarketingComponentProperties_Variant1Storage },
+            { no: 15, name: "disclaimer", kind: "message", T: () => PremiumMarketingComponentProperties_Disclaimer }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties>): PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties {
@@ -3438,6 +3578,9 @@ class PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties$Ty
                 case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Variant1Storage storage */ 14:
                     message.storage = PremiumMarketingComponentProperties_Variant1Storage.internalBinaryRead(reader, reader.uint32(), options, message.storage);
                     break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Disclaimer disclaimer */ 15:
+                    message.disclaimer = PremiumMarketingComponentProperties_Disclaimer.internalBinaryRead(reader, reader.uint32(), options, message.disclaimer);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -3492,6 +3635,9 @@ class PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties$Ty
         /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Variant1Storage storage = 14; */
         if (message.storage)
             PremiumMarketingComponentProperties_Variant1Storage.internalBinaryWrite(message.storage, writer.tag(14, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Disclaimer disclaimer = 15; */
+        if (message.disclaimer)
+            PremiumMarketingComponentProperties_Disclaimer.internalBinaryWrite(message.disclaimer, writer.tag(15, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
