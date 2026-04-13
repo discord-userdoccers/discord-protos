@@ -172,6 +172,14 @@ message PreloadedUserSettings {
     ExplicitContentRedaction self_harm_content_non_friend_dm = 3;
   }
 
+  enum SearchProvider {
+    SEARCH_PROVIDER_UNSET = 0;
+    SEARCH_PROVIDER_GOOGLE = 1;
+    SEARCH_PROVIDER_BING = 2;
+    SEARCH_PROVIDER_DUCKDUCKGO = 3;
+    SEARCH_PROVIDER_CUSTOM = 4;
+  }
+
   message TextAndImagesSettings {
     optional google.protobuf.StringValue diversity_surrogate = 1;
     optional google.protobuf.BoolValue use_rich_chat_input = 2;
@@ -208,6 +216,8 @@ message PreloadedUserSettings {
     optional google.protobuf.BoolValue show_mention_suggestions = 34;
     optional SelfHarmContentSettings self_harm_content_settings = 35;
     optional google.protobuf.BoolValue is_cross_dm_search_enabled = 36;
+    SearchProvider search_provider = 37;
+    optional google.protobuf.StringValue custom_search_url = 38;
   }
 
   enum ReactionNotificationType {

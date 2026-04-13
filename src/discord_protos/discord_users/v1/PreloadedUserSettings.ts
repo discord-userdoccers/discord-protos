@@ -692,6 +692,14 @@ export interface PreloadedUserSettings_TextAndImagesSettings {
      * @generated from protobuf field: optional google.protobuf.BoolValue is_cross_dm_search_enabled = 36
      */
     isCrossDmSearchEnabled?: BoolValue;
+    /**
+     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.SearchProvider search_provider = 37
+     */
+    searchProvider: PreloadedUserSettings_SearchProvider;
+    /**
+     * @generated from protobuf field: optional google.protobuf.StringValue custom_search_url = 38
+     */
+    customSearchUrl?: StringValue;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.NotificationSettings
@@ -1456,6 +1464,31 @@ export enum PreloadedUserSettings_ExplicitContentRedaction {
      * @generated from protobuf enum value: EXPLICIT_CONTENT_REDACTION_BLOCK = 3;
      */
     BLOCK = 3
+}
+/**
+ * @generated from protobuf enum discord_protos.discord_users.v1.PreloadedUserSettings.SearchProvider
+ */
+export enum PreloadedUserSettings_SearchProvider {
+    /**
+     * @generated from protobuf enum value: SEARCH_PROVIDER_UNSET = 0;
+     */
+    UNSET = 0,
+    /**
+     * @generated from protobuf enum value: SEARCH_PROVIDER_GOOGLE = 1;
+     */
+    GOOGLE = 1,
+    /**
+     * @generated from protobuf enum value: SEARCH_PROVIDER_BING = 2;
+     */
+    BING = 2,
+    /**
+     * @generated from protobuf enum value: SEARCH_PROVIDER_DUCKDUCKGO = 3;
+     */
+    DUCKDUCKGO = 3,
+    /**
+     * @generated from protobuf enum value: SEARCH_PROVIDER_CUSTOM = 4;
+     */
+    CUSTOM = 4
 }
 /**
  * @generated from protobuf enum discord_protos.discord_users.v1.PreloadedUserSettings.ReactionNotificationType
@@ -3501,7 +3534,9 @@ class PreloadedUserSettings_TextAndImagesSettings$Type extends MessageType<Prelo
             { no: 33, name: "default_reaction_emoji", kind: "message", T: () => PreloadedUserSettings_DefaultReactionEmoji },
             { no: 34, name: "show_mention_suggestions", kind: "message", T: () => BoolValue },
             { no: 35, name: "self_harm_content_settings", kind: "message", T: () => PreloadedUserSettings_SelfHarmContentSettings },
-            { no: 36, name: "is_cross_dm_search_enabled", kind: "message", T: () => BoolValue }
+            { no: 36, name: "is_cross_dm_search_enabled", kind: "message", T: () => BoolValue },
+            { no: 37, name: "search_provider", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.SearchProvider", PreloadedUserSettings_SearchProvider, "SEARCH_PROVIDER_"] },
+            { no: 38, name: "custom_search_url", kind: "message", T: () => StringValue }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_TextAndImagesSettings>): PreloadedUserSettings_TextAndImagesSettings {
@@ -3510,6 +3545,7 @@ class PreloadedUserSettings_TextAndImagesSettings$Type extends MessageType<Prelo
         message.stickerPickerCollapsedSections = [];
         message.soundboardPickerCollapsedSections = [];
         message.dmSpamFilterV2 = 0;
+        message.searchProvider = 0;
         if (value !== undefined)
             reflectionMergePartial<PreloadedUserSettings_TextAndImagesSettings>(this, message, value);
         return message;
@@ -3623,6 +3659,12 @@ class PreloadedUserSettings_TextAndImagesSettings$Type extends MessageType<Prelo
                     break;
                 case /* optional google.protobuf.BoolValue is_cross_dm_search_enabled */ 36:
                     message.isCrossDmSearchEnabled = BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.isCrossDmSearchEnabled);
+                    break;
+                case /* discord_protos.discord_users.v1.PreloadedUserSettings.SearchProvider search_provider */ 37:
+                    message.searchProvider = reader.int32();
+                    break;
+                case /* optional google.protobuf.StringValue custom_search_url */ 38:
+                    message.customSearchUrl = StringValue.internalBinaryRead(reader, reader.uint32(), options, message.customSearchUrl);
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -3741,6 +3783,12 @@ class PreloadedUserSettings_TextAndImagesSettings$Type extends MessageType<Prelo
         /* optional google.protobuf.BoolValue is_cross_dm_search_enabled = 36; */
         if (message.isCrossDmSearchEnabled)
             BoolValue.internalBinaryWrite(message.isCrossDmSearchEnabled, writer.tag(36, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.discord_users.v1.PreloadedUserSettings.SearchProvider search_provider = 37; */
+        if (message.searchProvider !== 0)
+            writer.tag(37, WireType.Varint).int32(message.searchProvider);
+        /* optional google.protobuf.StringValue custom_search_url = 38; */
+        if (message.customSearchUrl)
+            StringValue.internalBinaryWrite(message.customSearchUrl, writer.tag(38, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
