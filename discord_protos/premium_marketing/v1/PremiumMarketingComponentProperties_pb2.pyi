@@ -583,6 +583,10 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_PIN_CHANNEL_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 731
         DISMISSIBLE_CONTENT_BOOST_PROGRESS_BAR_MOBILE_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 732
         DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_VC_GIFTING_STREAM_HEADER_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 733
+        DISMISSIBLE_CONTENT_RIOT_CONNECTION_DEPRECATION: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 734
+        DISMISSIBLE_CONTENT_RIOT_CONNECTION_DEPRECATION_DISABLE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 735
+        DISMISSIBLE_CONTENT_RIOT_CONNECTION_DEPRECATION_ADMIN: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 736
+        DISMISSIBLE_CONTENT_RIOT_CONNECTION_DEPRECATION_ADMIN_DISABLE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 737
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_HUB_WAITLIST_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1116,6 +1120,10 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_PIN_CHANNEL_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 731
     DISMISSIBLE_CONTENT_BOOST_PROGRESS_BAR_MOBILE_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 732
     DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_VC_GIFTING_STREAM_HEADER_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 733
+    DISMISSIBLE_CONTENT_RIOT_CONNECTION_DEPRECATION: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 734
+    DISMISSIBLE_CONTENT_RIOT_CONNECTION_DEPRECATION_DISABLE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 735
+    DISMISSIBLE_CONTENT_RIOT_CONNECTION_DEPRECATION_ADMIN: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 736
+    DISMISSIBLE_CONTENT_RIOT_CONNECTION_DEPRECATION_ADMIN_DISABLE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 737
 
     @_typing.final
     class FeatureCard(_message.Message):

@@ -2869,7 +2869,23 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_VC_GIFTING_STREAM_HEADER_NEW_BADGE = 733;
      */
-    SLAYER_STOREFRONT_VC_GIFTING_STREAM_HEADER_NEW_BADGE = 733
+    SLAYER_STOREFRONT_VC_GIFTING_STREAM_HEADER_NEW_BADGE = 733,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_RIOT_CONNECTION_DEPRECATION = 734;
+     */
+    RIOT_CONNECTION_DEPRECATION = 734,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_RIOT_CONNECTION_DEPRECATION_DISABLE = 735;
+     */
+    RIOT_CONNECTION_DEPRECATION_DISABLE = 735,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_RIOT_CONNECTION_DEPRECATION_ADMIN = 736;
+     */
+    RIOT_CONNECTION_DEPRECATION_ADMIN = 736,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_RIOT_CONNECTION_DEPRECATION_ADMIN_DISABLE = 737;
+     */
+    RIOT_CONNECTION_DEPRECATION_ADMIN_DISABLE = 737
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarketingComponentProperties> {
