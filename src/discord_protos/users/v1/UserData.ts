@@ -84,6 +84,10 @@ export interface UserData {
      * @generated from protobuf field: optional discord_protos.users.v1.UserData.UserBadges badges = 15
      */
     badges?: UserData_UserBadges;
+    /**
+     * @generated from protobuf field: optional discord_protos.users.v1.UserData.UserCountryData country_data = 16
+     */
+    countryData?: UserData_UserCountryData;
 }
 /**
  * @generated from protobuf message discord_protos.users.v1.UserData.LinkedUser
@@ -568,6 +572,33 @@ export interface UserData_UserBadges {
      * @generated from protobuf field: repeated discord_protos.users.v1.UserData.Badge badges = 1
      */
     badges: UserData_Badge[];
+}
+/**
+ * @generated from protobuf message discord_protos.users.v1.UserData.UserCountryData
+ */
+export interface UserData_UserCountryData {
+    /**
+     * @generated from protobuf field: string calculated_country = 1
+     */
+    calculatedCountry: string;
+    /**
+     * @generated from protobuf field: optional google.protobuf.Timestamp last_calculated_at = 2
+     */
+    lastCalculatedAt?: Timestamp;
+    /**
+     * @generated from protobuf field: optional google.protobuf.StringValue country_override = 3
+     */
+    countryOverride?: StringValue;
+    /**
+     * @generated from protobuf field: optional google.protobuf.Timestamp override_set_at = 4
+     */
+    overrideSetAt?: Timestamp;
+    /**
+     * @generated from protobuf field: map<string, float> country_scores = 5
+     */
+    countryScores: {
+        [key: string]: number;
+    };
 }
 /**
  * @generated from protobuf enum discord_protos.users.v1.UserData.UserLinkType
@@ -3021,7 +3052,8 @@ class UserData$Type extends MessageType<UserData> {
             { no: 12, name: "restricted_schedule", kind: "message", T: () => UserData_RestrictedSchedule },
             { no: 13, name: "age_assurance_data", kind: "message", T: () => UserData_AgeAssuranceData },
             { no: 14, name: "perks", kind: "message", T: () => UserData_Perks },
-            { no: 15, name: "badges", kind: "message", T: () => UserData_UserBadges }
+            { no: 15, name: "badges", kind: "message", T: () => UserData_UserBadges },
+            { no: 16, name: "country_data", kind: "message", T: () => UserData_UserCountryData }
         ]);
     }
     create(value?: PartialMessage<UserData>): UserData {
@@ -3082,6 +3114,9 @@ class UserData$Type extends MessageType<UserData> {
                     break;
                 case /* optional discord_protos.users.v1.UserData.UserBadges badges */ 15:
                     message.badges = UserData_UserBadges.internalBinaryRead(reader, reader.uint32(), options, message.badges);
+                    break;
+                case /* optional discord_protos.users.v1.UserData.UserCountryData country_data */ 16:
+                    message.countryData = UserData_UserCountryData.internalBinaryRead(reader, reader.uint32(), options, message.countryData);
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -3200,6 +3235,9 @@ class UserData$Type extends MessageType<UserData> {
         /* optional discord_protos.users.v1.UserData.UserBadges badges = 15; */
         if (message.badges)
             UserData_UserBadges.internalBinaryWrite(message.badges, writer.tag(15, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.users.v1.UserData.UserCountryData country_data = 16; */
+        if (message.countryData)
+            UserData_UserCountryData.internalBinaryWrite(message.countryData, writer.tag(16, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -5062,3 +5100,95 @@ class UserData_UserBadges$Type extends MessageType<UserData_UserBadges> {
  * @generated MessageType for protobuf message discord_protos.users.v1.UserData.UserBadges
  */
 export const UserData_UserBadges = new UserData_UserBadges$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class UserData_UserCountryData$Type extends MessageType<UserData_UserCountryData> {
+    constructor() {
+        super("discord_protos.users.v1.UserData.UserCountryData", [
+            { no: 1, name: "calculated_country", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "last_calculated_at", kind: "message", T: () => Timestamp },
+            { no: 3, name: "country_override", kind: "message", T: () => StringValue },
+            { no: 4, name: "override_set_at", kind: "message", T: () => Timestamp },
+            { no: 5, name: "country_scores", kind: "map", K: 9 /*ScalarType.STRING*/, V: { kind: "scalar", T: 2 /*ScalarType.FLOAT*/ } }
+        ]);
+    }
+    create(value?: PartialMessage<UserData_UserCountryData>): UserData_UserCountryData {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.calculatedCountry = "";
+        message.countryScores = {};
+        if (value !== undefined)
+            reflectionMergePartial<UserData_UserCountryData>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: UserData_UserCountryData): UserData_UserCountryData {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string calculated_country */ 1:
+                    message.calculatedCountry = reader.string();
+                    break;
+                case /* optional google.protobuf.Timestamp last_calculated_at */ 2:
+                    message.lastCalculatedAt = Timestamp.internalBinaryRead(reader, reader.uint32(), options, message.lastCalculatedAt);
+                    break;
+                case /* optional google.protobuf.StringValue country_override */ 3:
+                    message.countryOverride = StringValue.internalBinaryRead(reader, reader.uint32(), options, message.countryOverride);
+                    break;
+                case /* optional google.protobuf.Timestamp override_set_at */ 4:
+                    message.overrideSetAt = Timestamp.internalBinaryRead(reader, reader.uint32(), options, message.overrideSetAt);
+                    break;
+                case /* map<string, float> country_scores */ 5:
+                    this.binaryReadMap5(message.countryScores, reader, options);
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    private binaryReadMap5(map: UserData_UserCountryData["countryScores"], reader: IBinaryReader, options: BinaryReadOptions): void {
+        let len = reader.uint32(), end = reader.pos + len, key: keyof UserData_UserCountryData["countryScores"] | undefined, val: UserData_UserCountryData["countryScores"][any] | undefined;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case 1:
+                    key = reader.string();
+                    break;
+                case 2:
+                    val = reader.float();
+                    break;
+                default: throw new globalThis.Error("unknown map entry field for discord_protos.users.v1.UserData.UserCountryData.country_scores");
+            }
+        }
+        map[key ?? ""] = val ?? 0;
+    }
+    internalBinaryWrite(message: UserData_UserCountryData, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string calculated_country = 1; */
+        if (message.calculatedCountry !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.calculatedCountry);
+        /* optional google.protobuf.Timestamp last_calculated_at = 2; */
+        if (message.lastCalculatedAt)
+            Timestamp.internalBinaryWrite(message.lastCalculatedAt, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+        /* optional google.protobuf.StringValue country_override = 3; */
+        if (message.countryOverride)
+            StringValue.internalBinaryWrite(message.countryOverride, writer.tag(3, WireType.LengthDelimited).fork(), options).join();
+        /* optional google.protobuf.Timestamp override_set_at = 4; */
+        if (message.overrideSetAt)
+            Timestamp.internalBinaryWrite(message.overrideSetAt, writer.tag(4, WireType.LengthDelimited).fork(), options).join();
+        /* map<string, float> country_scores = 5; */
+        for (let k of globalThis.Object.keys(message.countryScores))
+            writer.tag(5, WireType.LengthDelimited).fork().tag(1, WireType.LengthDelimited).string(k).tag(2, WireType.Bit32).float(message.countryScores[k]).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.users.v1.UserData.UserCountryData
+ */
+export const UserData_UserCountryData = new UserData_UserCountryData$Type();

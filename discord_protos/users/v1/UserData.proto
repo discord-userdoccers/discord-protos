@@ -810,6 +810,14 @@ message UserData {
     repeated Badge badges = 1;
   }
 
+  message UserCountryData {
+    string calculated_country = 1;
+    optional google.protobuf.Timestamp last_calculated_at = 2;
+    optional google.protobuf.StringValue country_override = 3;
+    optional google.protobuf.Timestamp override_set_at = 4;
+    map<string, float> country_scores = 5;
+  }
+
   map<fixed64, LinkedUser> linked_users = 1;
   map<uint32, FeatureLimits> safety_feature_limits = 2;
   map<uint32, SafetyFlag> safety_flags = 3;
@@ -825,4 +833,5 @@ message UserData {
   optional AgeAssuranceData age_assurance_data = 13;
   optional Perks perks = 14;
   optional UserBadges badges = 15;
+  optional UserCountryData country_data = 16;
 }
