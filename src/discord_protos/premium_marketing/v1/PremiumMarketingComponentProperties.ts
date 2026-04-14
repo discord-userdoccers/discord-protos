@@ -289,6 +289,10 @@ export interface PremiumMarketingComponentProperties_AnnouncementModalVariant1Pr
      * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Disclaimer disclaimer = 15
      */
     disclaimer?: PremiumMarketingComponentProperties_Disclaimer;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle help_article = 18
+     */
+    helpArticle?: PremiumMarketingComponentProperties_HelpArticle;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PremiumTab
@@ -340,6 +344,10 @@ export interface PremiumMarketingComponentProperties_MarketingPageBanner {
      * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MarketingPageBannerButton button = 5
      */
     button?: PremiumMarketingComponentProperties_MarketingPageBannerButton;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle help_article = 6
+     */
+    helpArticle?: PremiumMarketingComponentProperties_HelpArticle;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PaymentModalBanner
@@ -399,6 +407,10 @@ export interface PremiumMarketingComponentProperties_MobileBottomSheet {
      * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.DismissibleContent dismissible_content = 6
      */
     dismissibleContent: PremiumMarketingComponentProperties_DismissibleContent;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle help_article = 7
+     */
+    helpArticle?: PremiumMarketingComponentProperties_HelpArticle;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Gradient
@@ -691,6 +703,10 @@ export interface PremiumMarketingComponentProperties_PremiumTabPopover {
      * @generated from protobuf field: string help_article_id = 5
      */
     helpArticleId: string;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle help_article = 6
+     */
+    helpArticle?: PremiumMarketingComponentProperties_HelpArticle;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Nagbar
@@ -3530,7 +3546,8 @@ class PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties$Ty
             { no: 12, name: "body", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 13, name: "hero_art_video_subtitles", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => PremiumMarketingComponentProperties_Subtitle },
             { no: 14, name: "storage", kind: "message", T: () => PremiumMarketingComponentProperties_Variant1Storage },
-            { no: 15, name: "disclaimer", kind: "message", T: () => PremiumMarketingComponentProperties_Disclaimer }
+            { no: 15, name: "disclaimer", kind: "message", T: () => PremiumMarketingComponentProperties_Disclaimer },
+            { no: 18, name: "help_article", kind: "message", T: () => PremiumMarketingComponentProperties_HelpArticle }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties>): PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties {
@@ -3601,6 +3618,9 @@ class PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties$Ty
                 case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Disclaimer disclaimer */ 15:
                     message.disclaimer = PremiumMarketingComponentProperties_Disclaimer.internalBinaryRead(reader, reader.uint32(), options, message.disclaimer);
                     break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle help_article */ 18:
+                    message.helpArticle = PremiumMarketingComponentProperties_HelpArticle.internalBinaryRead(reader, reader.uint32(), options, message.helpArticle);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -3658,6 +3678,9 @@ class PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties$Ty
         /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Disclaimer disclaimer = 15; */
         if (message.disclaimer)
             PremiumMarketingComponentProperties_Disclaimer.internalBinaryWrite(message.disclaimer, writer.tag(15, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle help_article = 18; */
+        if (message.helpArticle)
+            PremiumMarketingComponentProperties_HelpArticle.internalBinaryWrite(message.helpArticle, writer.tag(18, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -3786,7 +3809,8 @@ class PremiumMarketingComponentProperties_MarketingPageBanner$Type extends Messa
             { no: 2, name: "header", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 3, name: "body", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 4, name: "help_article_id", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 5, name: "button", kind: "message", T: () => PremiumMarketingComponentProperties_MarketingPageBannerButton }
+            { no: 5, name: "button", kind: "message", T: () => PremiumMarketingComponentProperties_MarketingPageBannerButton },
+            { no: 6, name: "help_article", kind: "message", T: () => PremiumMarketingComponentProperties_HelpArticle }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_MarketingPageBanner>): PremiumMarketingComponentProperties_MarketingPageBanner {
@@ -3819,6 +3843,9 @@ class PremiumMarketingComponentProperties_MarketingPageBanner$Type extends Messa
                 case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MarketingPageBannerButton button */ 5:
                     message.button = PremiumMarketingComponentProperties_MarketingPageBannerButton.internalBinaryRead(reader, reader.uint32(), options, message.button);
                     break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle help_article */ 6:
+                    message.helpArticle = PremiumMarketingComponentProperties_HelpArticle.internalBinaryRead(reader, reader.uint32(), options, message.helpArticle);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -3846,6 +3873,9 @@ class PremiumMarketingComponentProperties_MarketingPageBanner$Type extends Messa
         /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MarketingPageBannerButton button = 5; */
         if (message.button)
             PremiumMarketingComponentProperties_MarketingPageBannerButton.internalBinaryWrite(message.button, writer.tag(5, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle help_article = 6; */
+        if (message.helpArticle)
+            PremiumMarketingComponentProperties_HelpArticle.internalBinaryWrite(message.helpArticle, writer.tag(6, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -3983,7 +4013,8 @@ class PremiumMarketingComponentProperties_MobileBottomSheet$Type extends Message
             { no: 3, name: "body", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 4, name: "help_article_id", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 5, name: "button", kind: "message", T: () => PremiumMarketingComponentProperties_CTAButton },
-            { no: 6, name: "dismissible_content", kind: "enum", T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.DismissibleContent", PremiumMarketingComponentProperties_DismissibleContent, "DISMISSIBLE_CONTENT_"] }
+            { no: 6, name: "dismissible_content", kind: "enum", T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.DismissibleContent", PremiumMarketingComponentProperties_DismissibleContent, "DISMISSIBLE_CONTENT_"] },
+            { no: 7, name: "help_article", kind: "message", T: () => PremiumMarketingComponentProperties_HelpArticle }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_MobileBottomSheet>): PremiumMarketingComponentProperties_MobileBottomSheet {
@@ -4020,6 +4051,9 @@ class PremiumMarketingComponentProperties_MobileBottomSheet$Type extends Message
                 case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.DismissibleContent dismissible_content */ 6:
                     message.dismissibleContent = reader.int32();
                     break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle help_article */ 7:
+                    message.helpArticle = PremiumMarketingComponentProperties_HelpArticle.internalBinaryRead(reader, reader.uint32(), options, message.helpArticle);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -4050,6 +4084,9 @@ class PremiumMarketingComponentProperties_MobileBottomSheet$Type extends Message
         /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.DismissibleContent dismissible_content = 6; */
         if (message.dismissibleContent !== 0)
             writer.tag(6, WireType.Varint).int32(message.dismissibleContent);
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle help_article = 7; */
+        if (message.helpArticle)
+            PremiumMarketingComponentProperties_HelpArticle.internalBinaryWrite(message.helpArticle, writer.tag(7, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -4904,7 +4941,8 @@ class PremiumMarketingComponentProperties_PremiumTabPopover$Type extends Message
             { no: 2, name: "body", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 3, name: "asset", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset },
             { no: 4, name: "button", kind: "message", T: () => PremiumMarketingComponentProperties_PremiumTabPopoverCTAButton },
-            { no: 5, name: "help_article_id", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+            { no: 5, name: "help_article_id", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 6, name: "help_article", kind: "message", T: () => PremiumMarketingComponentProperties_HelpArticle }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_PremiumTabPopover>): PremiumMarketingComponentProperties_PremiumTabPopover {
@@ -4936,6 +4974,9 @@ class PremiumMarketingComponentProperties_PremiumTabPopover$Type extends Message
                 case /* string help_article_id */ 5:
                     message.helpArticleId = reader.string();
                     break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle help_article */ 6:
+                    message.helpArticle = PremiumMarketingComponentProperties_HelpArticle.internalBinaryRead(reader, reader.uint32(), options, message.helpArticle);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -4963,6 +5004,9 @@ class PremiumMarketingComponentProperties_PremiumTabPopover$Type extends Message
         /* string help_article_id = 5; */
         if (message.helpArticleId !== "")
             writer.tag(5, WireType.LengthDelimited).string(message.helpArticleId);
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle help_article = 6; */
+        if (message.helpArticle)
+            PremiumMarketingComponentProperties_HelpArticle.internalBinaryWrite(message.helpArticle, writer.tag(6, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

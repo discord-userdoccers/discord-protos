@@ -1321,6 +1321,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         HERO_ART_VIDEO_SUBTITLES_FIELD_NUMBER: _builtins.int
         STORAGE_FIELD_NUMBER: _builtins.int
         DISCLAIMER_FIELD_NUMBER: _builtins.int
+        HELP_ARTICLE_FIELD_NUMBER: _builtins.int
         header: _builtins.str
         subheader: _builtins.str
         video_link: _builtins.str
@@ -1341,6 +1342,8 @@ class PremiumMarketingComponentProperties(_message.Message):
         def storage(self) -> Global___PremiumMarketingComponentProperties.Variant1Storage: ...
         @_builtins.property
         def disclaimer(self) -> Global___PremiumMarketingComponentProperties.Disclaimer: ...
+        @_builtins.property
+        def help_article(self) -> Global___PremiumMarketingComponentProperties.HelpArticle: ...
         def __init__(
             self,
             *,
@@ -1359,21 +1362,26 @@ class PremiumMarketingComponentProperties(_message.Message):
             hero_art_video_subtitles: _abc.Iterable[Global___PremiumMarketingComponentProperties.Subtitle] | None = ...,
             storage: Global___PremiumMarketingComponentProperties.Variant1Storage | None = ...,
             disclaimer: Global___PremiumMarketingComponentProperties.Disclaimer | None = ...,
+            help_article: Global___PremiumMarketingComponentProperties.HelpArticle | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _typing.Literal["_button", b"_button", "_disclaimer", b"_disclaimer", "_storage", b"_storage", "button", b"button", "disclaimer", b"disclaimer", "storage", b"storage"]  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_button", b"_button", "_disclaimer", b"_disclaimer", "_help_article", b"_help_article", "_storage", b"_storage", "button", b"button", "disclaimer", b"disclaimer", "help_article", b"help_article", "storage", b"storage"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_button", b"_button", "_disclaimer", b"_disclaimer", "_storage", b"_storage", "body", b"body", "button", b"button", "disclaimer", b"disclaimer", "dismiss_key", b"dismiss_key", "feature_cards", b"feature_cards", "header", b"header", "help_article_id", b"help_article_id", "hero_art_image_link_dark_theme", b"hero_art_image_link_dark_theme", "hero_art_image_link_light_theme", b"hero_art_image_link_light_theme", "hero_art_video_link_light_theme", b"hero_art_video_link_light_theme", "hero_art_video_subtitles", b"hero_art_video_subtitles", "modal_top_pill", b"modal_top_pill", "storage", b"storage", "subheader", b"subheader", "video_link", b"video_link"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_button", b"_button", "_disclaimer", b"_disclaimer", "_help_article", b"_help_article", "_storage", b"_storage", "body", b"body", "button", b"button", "disclaimer", b"disclaimer", "dismiss_key", b"dismiss_key", "feature_cards", b"feature_cards", "header", b"header", "help_article", b"help_article", "help_article_id", b"help_article_id", "hero_art_image_link_dark_theme", b"hero_art_image_link_dark_theme", "hero_art_image_link_light_theme", b"hero_art_image_link_light_theme", "hero_art_video_link_light_theme", b"hero_art_video_link_light_theme", "hero_art_video_subtitles", b"hero_art_video_subtitles", "modal_top_pill", b"modal_top_pill", "storage", b"storage", "subheader", b"subheader", "video_link", b"video_link"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__button: _TypeAlias = _typing.Literal["button"]  # noqa: Y015
         _WhichOneofArgType__button: _TypeAlias = _typing.Literal["_button", b"_button"]  # noqa: Y015
         _WhichOneofReturnType__disclaimer: _TypeAlias = _typing.Literal["disclaimer"]  # noqa: Y015
         _WhichOneofArgType__disclaimer: _TypeAlias = _typing.Literal["_disclaimer", b"_disclaimer"]  # noqa: Y015
+        _WhichOneofReturnType__help_article: _TypeAlias = _typing.Literal["help_article"]  # noqa: Y015
+        _WhichOneofArgType__help_article: _TypeAlias = _typing.Literal["_help_article", b"_help_article"]  # noqa: Y015
         _WhichOneofReturnType__storage: _TypeAlias = _typing.Literal["storage"]  # noqa: Y015
         _WhichOneofArgType__storage: _TypeAlias = _typing.Literal["_storage", b"_storage"]  # noqa: Y015
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__button) -> _WhichOneofReturnType__button | None: ...
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__disclaimer) -> _WhichOneofReturnType__disclaimer | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__help_article) -> _WhichOneofReturnType__help_article | None: ...
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__storage) -> _WhichOneofReturnType__storage | None: ...
 
@@ -1420,12 +1428,15 @@ class PremiumMarketingComponentProperties(_message.Message):
         BODY_FIELD_NUMBER: _builtins.int
         HELP_ARTICLE_ID_FIELD_NUMBER: _builtins.int
         BUTTON_FIELD_NUMBER: _builtins.int
+        HELP_ARTICLE_FIELD_NUMBER: _builtins.int
         asset_url: _builtins.str
         header: _builtins.str
         body: _builtins.str
         help_article_id: _builtins.str
         @_builtins.property
         def button(self) -> Global___PremiumMarketingComponentProperties.MarketingPageBannerButton: ...
+        @_builtins.property
+        def help_article(self) -> Global___PremiumMarketingComponentProperties.HelpArticle: ...
         def __init__(
             self,
             *,
@@ -1434,14 +1445,20 @@ class PremiumMarketingComponentProperties(_message.Message):
             body: _builtins.str = ...,
             help_article_id: _builtins.str = ...,
             button: Global___PremiumMarketingComponentProperties.MarketingPageBannerButton | None = ...,
+            help_article: Global___PremiumMarketingComponentProperties.HelpArticle | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _typing.Literal["_button", b"_button", "button", b"button"]  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_button", b"_button", "_help_article", b"_help_article", "button", b"button", "help_article", b"help_article"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_button", b"_button", "asset_url", b"asset_url", "body", b"body", "button", b"button", "header", b"header", "help_article_id", b"help_article_id"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_button", b"_button", "_help_article", b"_help_article", "asset_url", b"asset_url", "body", b"body", "button", b"button", "header", b"header", "help_article", b"help_article", "help_article_id", b"help_article_id"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__button: _TypeAlias = _typing.Literal["button"]  # noqa: Y015
         _WhichOneofArgType__button: _TypeAlias = _typing.Literal["_button", b"_button"]  # noqa: Y015
+        _WhichOneofReturnType__help_article: _TypeAlias = _typing.Literal["help_article"]  # noqa: Y015
+        _WhichOneofArgType__help_article: _TypeAlias = _typing.Literal["_help_article", b"_help_article"]  # noqa: Y015
+        @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__button) -> _WhichOneofReturnType__button | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__help_article) -> _WhichOneofReturnType__help_article | None: ...
 
     @_typing.final
     class PaymentModalBanner(_message.Message):
@@ -1490,6 +1507,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         HELP_ARTICLE_ID_FIELD_NUMBER: _builtins.int
         BUTTON_FIELD_NUMBER: _builtins.int
         DISMISSIBLE_CONTENT_FIELD_NUMBER: _builtins.int
+        HELP_ARTICLE_FIELD_NUMBER: _builtins.int
         asset_url: _builtins.str
         header: _builtins.str
         body: _builtins.str
@@ -1497,6 +1515,8 @@ class PremiumMarketingComponentProperties(_message.Message):
         dismissible_content: Global___PremiumMarketingComponentProperties.DismissibleContent.ValueType
         @_builtins.property
         def button(self) -> Global___PremiumMarketingComponentProperties.CTAButton: ...
+        @_builtins.property
+        def help_article(self) -> Global___PremiumMarketingComponentProperties.HelpArticle: ...
         def __init__(
             self,
             *,
@@ -1506,14 +1526,20 @@ class PremiumMarketingComponentProperties(_message.Message):
             help_article_id: _builtins.str = ...,
             button: Global___PremiumMarketingComponentProperties.CTAButton | None = ...,
             dismissible_content: Global___PremiumMarketingComponentProperties.DismissibleContent.ValueType = ...,
+            help_article: Global___PremiumMarketingComponentProperties.HelpArticle | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _typing.Literal["_button", b"_button", "button", b"button"]  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_button", b"_button", "_help_article", b"_help_article", "button", b"button", "help_article", b"help_article"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_button", b"_button", "asset_url", b"asset_url", "body", b"body", "button", b"button", "dismissible_content", b"dismissible_content", "header", b"header", "help_article_id", b"help_article_id"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_button", b"_button", "_help_article", b"_help_article", "asset_url", b"asset_url", "body", b"body", "button", b"button", "dismissible_content", b"dismissible_content", "header", b"header", "help_article", b"help_article", "help_article_id", b"help_article_id"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__button: _TypeAlias = _typing.Literal["button"]  # noqa: Y015
         _WhichOneofArgType__button: _TypeAlias = _typing.Literal["_button", b"_button"]  # noqa: Y015
+        _WhichOneofReturnType__help_article: _TypeAlias = _typing.Literal["help_article"]  # noqa: Y015
+        _WhichOneofArgType__help_article: _TypeAlias = _typing.Literal["_help_article", b"_help_article"]  # noqa: Y015
+        @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__button) -> _WhichOneofReturnType__button | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__help_article) -> _WhichOneofReturnType__help_article | None: ...
 
     @_typing.final
     class Gradient(_message.Message):
@@ -1900,6 +1926,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         ASSET_FIELD_NUMBER: _builtins.int
         BUTTON_FIELD_NUMBER: _builtins.int
         HELP_ARTICLE_ID_FIELD_NUMBER: _builtins.int
+        HELP_ARTICLE_FIELD_NUMBER: _builtins.int
         header: _builtins.str
         body: _builtins.str
         help_article_id: _builtins.str
@@ -1907,6 +1934,8 @@ class PremiumMarketingComponentProperties(_message.Message):
         def asset(self) -> Global___PremiumMarketingComponentProperties.ThemeAwareAsset: ...
         @_builtins.property
         def button(self) -> Global___PremiumMarketingComponentProperties.PremiumTabPopoverCTAButton: ...
+        @_builtins.property
+        def help_article(self) -> Global___PremiumMarketingComponentProperties.HelpArticle: ...
         def __init__(
             self,
             *,
@@ -1915,19 +1944,24 @@ class PremiumMarketingComponentProperties(_message.Message):
             asset: Global___PremiumMarketingComponentProperties.ThemeAwareAsset | None = ...,
             button: Global___PremiumMarketingComponentProperties.PremiumTabPopoverCTAButton | None = ...,
             help_article_id: _builtins.str = ...,
+            help_article: Global___PremiumMarketingComponentProperties.HelpArticle | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_button", b"_button", "asset", b"asset", "button", b"button"]  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_button", b"_button", "_help_article", b"_help_article", "asset", b"asset", "button", b"button", "help_article", b"help_article"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_button", b"_button", "asset", b"asset", "body", b"body", "button", b"button", "header", b"header", "help_article_id", b"help_article_id"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_button", b"_button", "_help_article", b"_help_article", "asset", b"asset", "body", b"body", "button", b"button", "header", b"header", "help_article", b"help_article", "help_article_id", b"help_article_id"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__asset: _TypeAlias = _typing.Literal["asset"]  # noqa: Y015
         _WhichOneofArgType__asset: _TypeAlias = _typing.Literal["_asset", b"_asset"]  # noqa: Y015
         _WhichOneofReturnType__button: _TypeAlias = _typing.Literal["button"]  # noqa: Y015
         _WhichOneofArgType__button: _TypeAlias = _typing.Literal["_button", b"_button"]  # noqa: Y015
+        _WhichOneofReturnType__help_article: _TypeAlias = _typing.Literal["help_article"]  # noqa: Y015
+        _WhichOneofArgType__help_article: _TypeAlias = _typing.Literal["_help_article", b"_help_article"]  # noqa: Y015
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__asset) -> _WhichOneofReturnType__asset | None: ...
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__button) -> _WhichOneofReturnType__button | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__help_article) -> _WhichOneofReturnType__help_article | None: ...
 
     @_typing.final
     class Nagbar(_message.Message):

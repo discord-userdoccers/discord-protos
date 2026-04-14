@@ -64,6 +64,7 @@ message PremiumMarketingComponentProperties {
     repeated Subtitle hero_art_video_subtitles = 13;
     optional Variant1Storage storage = 14;
     optional Disclaimer disclaimer = 15;
+    optional HelpArticle help_article = 18;
   }
 
   message PremiumTab {
@@ -82,6 +83,7 @@ message PremiumMarketingComponentProperties {
     string body = 3;
     string help_article_id = 4;
     optional MarketingPageBannerButton button = 5;
+    optional HelpArticle help_article = 6;
   }
 
   message PaymentModalBanner {
@@ -640,6 +642,7 @@ message PremiumMarketingComponentProperties {
     string help_article_id = 4;
     optional CTAButton button = 5;
     DismissibleContent dismissible_content = 6;
+    optional HelpArticle help_article = 7;
   }
 
   message Gradient {
@@ -734,6 +737,7 @@ message PremiumMarketingComponentProperties {
     optional ThemeAwareAsset asset = 3;
     optional PremiumTabPopoverCTAButton button = 4;
     string help_article_id = 5;
+    optional HelpArticle help_article = 6;
   }
 
   message Nagbar {
