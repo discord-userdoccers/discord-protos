@@ -587,6 +587,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_RIOT_CONNECTION_DEPRECATION_DISABLE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 735
         DISMISSIBLE_CONTENT_RIOT_CONNECTION_DEPRECATION_ADMIN: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 736
         DISMISSIBLE_CONTENT_RIOT_CONNECTION_DEPRECATION_ADMIN_DISABLE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 737
+        DISMISSIBLE_CONTENT_CROISSANT_REHEAT_MOMENT: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 738
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_HUB_WAITLIST_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1124,6 +1125,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_RIOT_CONNECTION_DEPRECATION_DISABLE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 735
     DISMISSIBLE_CONTENT_RIOT_CONNECTION_DEPRECATION_ADMIN: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 736
     DISMISSIBLE_CONTENT_RIOT_CONNECTION_DEPRECATION_ADMIN_DISABLE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 737
+    DISMISSIBLE_CONTENT_CROISSANT_REHEAT_MOMENT: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 738
 
     @_typing.final
     class FeatureCard(_message.Message):

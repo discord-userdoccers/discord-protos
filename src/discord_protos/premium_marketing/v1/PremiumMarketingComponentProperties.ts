@@ -2901,7 +2901,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_RIOT_CONNECTION_DEPRECATION_ADMIN_DISABLE = 737;
      */
-    RIOT_CONNECTION_DEPRECATION_ADMIN_DISABLE = 737
+    RIOT_CONNECTION_DEPRECATION_ADMIN_DISABLE = 737,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CROISSANT_REHEAT_MOMENT = 738;
+     */
+    CROISSANT_REHEAT_MOMENT = 738
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarketingComponentProperties> {
