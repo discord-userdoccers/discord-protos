@@ -317,6 +317,7 @@ message Experiment {
     optional Override override = 3;
     bool is_sunset_rule = 4;
     Subtype subtype = 5;
+    string hash = 6;
   }
 
   enum Phase {
