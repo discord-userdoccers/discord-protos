@@ -2937,7 +2937,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_PREMIUM_GROUP_PRIMARY_REMINDER_NAGBAR = 740;
      */
-    PREMIUM_GROUP_PRIMARY_REMINDER_NAGBAR = 740
+    PREMIUM_GROUP_PRIMARY_REMINDER_NAGBAR = 740,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_COLLECTIBLES_SHOP_SLAYER_STOREFRONT_PROMOTIONAL_BANNER = 741;
+     */
+    COLLECTIBLES_SHOP_SLAYER_STOREFRONT_PROMOTIONAL_BANNER = 741
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarketingComponentProperties> {
