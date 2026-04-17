@@ -24,6 +24,7 @@ message PremiumMarketingComponentProperties {
   message SubscriptionButton {
     string copy = 1;
     ButtonAction button_action = 2;
+    string deeplink_section = 3;
   }
 
   message Subtitle {
@@ -76,6 +77,7 @@ message PremiumMarketingComponentProperties {
   message MarketingPageBannerButton {
     string copy = 1;
     ButtonAction button_action = 2;
+    string deeplink_section = 3;
   }
 
   message MarketingPageBanner {
@@ -96,6 +98,7 @@ message PremiumMarketingComponentProperties {
   message CTAButton {
     string copy = 1;
     ButtonAction button_action = 2;
+    string deeplink_section = 3;
   }
 
   enum DismissibleContent {
@@ -733,6 +736,7 @@ message PremiumMarketingComponentProperties {
   message PremiumTabPopoverCTAButton {
     string copy = 1;
     ButtonAction button_action = 2;
+    string deeplink_section = 3;
   }
 
   message PremiumTabPopover {
@@ -748,6 +752,7 @@ message PremiumMarketingComponentProperties {
     string body = 1;
     string cta_label = 2;
     ButtonAction cta_action = 3;
+    string deeplink_section = 4;
   }
 
   string content_identifier = 3;

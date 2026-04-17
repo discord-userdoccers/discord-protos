@@ -1163,15 +1163,18 @@ class PremiumMarketingComponentProperties(_message.Message):
 
         COPY_FIELD_NUMBER: _builtins.int
         BUTTON_ACTION_FIELD_NUMBER: _builtins.int
+        DEEPLINK_SECTION_FIELD_NUMBER: _builtins.int
         copy: _builtins.str
         button_action: Global___PremiumMarketingComponentProperties.ButtonAction.ValueType
+        deeplink_section: _builtins.str
         def __init__(
             self,
             *,
             copy: _builtins.str = ...,
             button_action: Global___PremiumMarketingComponentProperties.ButtonAction.ValueType = ...,
+            deeplink_section: _builtins.str = ...,
         ) -> None: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["button_action", b"button_action", "copy", b"copy"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["button_action", b"button_action", "copy", b"copy", "deeplink_section", b"deeplink_section"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
 
     @_typing.final
@@ -1417,15 +1420,18 @@ class PremiumMarketingComponentProperties(_message.Message):
 
         COPY_FIELD_NUMBER: _builtins.int
         BUTTON_ACTION_FIELD_NUMBER: _builtins.int
+        DEEPLINK_SECTION_FIELD_NUMBER: _builtins.int
         copy: _builtins.str
         button_action: Global___PremiumMarketingComponentProperties.ButtonAction.ValueType
+        deeplink_section: _builtins.str
         def __init__(
             self,
             *,
             copy: _builtins.str = ...,
             button_action: Global___PremiumMarketingComponentProperties.ButtonAction.ValueType = ...,
+            deeplink_section: _builtins.str = ...,
         ) -> None: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["button_action", b"button_action", "copy", b"copy"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["button_action", b"button_action", "copy", b"copy", "deeplink_section", b"deeplink_section"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
 
     @_typing.final
@@ -1495,15 +1501,18 @@ class PremiumMarketingComponentProperties(_message.Message):
 
         COPY_FIELD_NUMBER: _builtins.int
         BUTTON_ACTION_FIELD_NUMBER: _builtins.int
+        DEEPLINK_SECTION_FIELD_NUMBER: _builtins.int
         copy: _builtins.str
         button_action: Global___PremiumMarketingComponentProperties.ButtonAction.ValueType
+        deeplink_section: _builtins.str
         def __init__(
             self,
             *,
             copy: _builtins.str = ...,
             button_action: Global___PremiumMarketingComponentProperties.ButtonAction.ValueType = ...,
+            deeplink_section: _builtins.str = ...,
         ) -> None: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["button_action", b"button_action", "copy", b"copy"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["button_action", b"button_action", "copy", b"copy", "deeplink_section", b"deeplink_section"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
 
     @_typing.final
@@ -1915,15 +1924,18 @@ class PremiumMarketingComponentProperties(_message.Message):
 
         COPY_FIELD_NUMBER: _builtins.int
         BUTTON_ACTION_FIELD_NUMBER: _builtins.int
+        DEEPLINK_SECTION_FIELD_NUMBER: _builtins.int
         copy: _builtins.str
         button_action: Global___PremiumMarketingComponentProperties.ButtonAction.ValueType
+        deeplink_section: _builtins.str
         def __init__(
             self,
             *,
             copy: _builtins.str = ...,
             button_action: Global___PremiumMarketingComponentProperties.ButtonAction.ValueType = ...,
+            deeplink_section: _builtins.str = ...,
         ) -> None: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["button_action", b"button_action", "copy", b"copy"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["button_action", b"button_action", "copy", b"copy", "deeplink_section", b"deeplink_section"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
 
     @_typing.final
@@ -1979,17 +1991,20 @@ class PremiumMarketingComponentProperties(_message.Message):
         BODY_FIELD_NUMBER: _builtins.int
         CTA_LABEL_FIELD_NUMBER: _builtins.int
         CTA_ACTION_FIELD_NUMBER: _builtins.int
+        DEEPLINK_SECTION_FIELD_NUMBER: _builtins.int
         body: _builtins.str
         cta_label: _builtins.str
         cta_action: Global___PremiumMarketingComponentProperties.ButtonAction.ValueType
+        deeplink_section: _builtins.str
         def __init__(
             self,
             *,
             body: _builtins.str = ...,
             cta_label: _builtins.str = ...,
             cta_action: Global___PremiumMarketingComponentProperties.ButtonAction.ValueType = ...,
+            deeplink_section: _builtins.str = ...,
         ) -> None: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["body", b"body", "cta_action", b"cta_action", "cta_label", b"cta_label"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["body", b"body", "cta_action", b"cta_action", "cta_label", b"cta_label", "deeplink_section", b"deeplink_section"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
 
     CONTENT_IDENTIFIER_FIELD_NUMBER: _builtins.int

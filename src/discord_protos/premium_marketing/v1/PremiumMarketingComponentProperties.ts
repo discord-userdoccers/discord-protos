@@ -158,6 +158,10 @@ export interface PremiumMarketingComponentProperties_SubscriptionButton {
      * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction button_action = 2
      */
     buttonAction: PremiumMarketingComponentProperties_ButtonAction;
+    /**
+     * @generated from protobuf field: string deeplink_section = 3
+     */
+    deeplinkSection: string;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Subtitle
@@ -323,6 +327,10 @@ export interface PremiumMarketingComponentProperties_MarketingPageBannerButton {
      * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction button_action = 2
      */
     buttonAction: PremiumMarketingComponentProperties_ButtonAction;
+    /**
+     * @generated from protobuf field: string deeplink_section = 3
+     */
+    deeplinkSection: string;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MarketingPageBanner
@@ -382,6 +390,10 @@ export interface PremiumMarketingComponentProperties_CTAButton {
      * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction button_action = 2
      */
     buttonAction: PremiumMarketingComponentProperties_ButtonAction;
+    /**
+     * @generated from protobuf field: string deeplink_section = 3
+     */
+    deeplinkSection: string;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MobileBottomSheet
@@ -682,6 +694,10 @@ export interface PremiumMarketingComponentProperties_PremiumTabPopoverCTAButton 
      * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction button_action = 2
      */
     buttonAction: PremiumMarketingComponentProperties_ButtonAction;
+    /**
+     * @generated from protobuf field: string deeplink_section = 3
+     */
+    deeplinkSection: string;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PremiumTabPopover
@@ -728,6 +744,10 @@ export interface PremiumMarketingComponentProperties_Nagbar {
      * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction cta_action = 3
      */
     ctaAction: PremiumMarketingComponentProperties_ButtonAction;
+    /**
+     * @generated from protobuf field: string deeplink_section = 4
+     */
+    deeplinkSection: string;
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction
@@ -3211,13 +3231,15 @@ class PremiumMarketingComponentProperties_SubscriptionButton$Type extends Messag
     constructor() {
         super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.SubscriptionButton", [
             { no: 1, name: "copy", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 2, name: "button_action", kind: "enum", T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction", PremiumMarketingComponentProperties_ButtonAction, "BUTTON_ACTION_"] }
+            { no: 2, name: "button_action", kind: "enum", T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction", PremiumMarketingComponentProperties_ButtonAction, "BUTTON_ACTION_"] },
+            { no: 3, name: "deeplink_section", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_SubscriptionButton>): PremiumMarketingComponentProperties_SubscriptionButton {
         const message = globalThis.Object.create((this.messagePrototype!));
         message.copy = "";
         message.buttonAction = 0;
+        message.deeplinkSection = "";
         if (value !== undefined)
             reflectionMergePartial<PremiumMarketingComponentProperties_SubscriptionButton>(this, message, value);
         return message;
@@ -3232,6 +3254,9 @@ class PremiumMarketingComponentProperties_SubscriptionButton$Type extends Messag
                     break;
                 case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction button_action */ 2:
                     message.buttonAction = reader.int32();
+                    break;
+                case /* string deeplink_section */ 3:
+                    message.deeplinkSection = reader.string();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -3251,6 +3276,9 @@ class PremiumMarketingComponentProperties_SubscriptionButton$Type extends Messag
         /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction button_action = 2; */
         if (message.buttonAction !== 0)
             writer.tag(2, WireType.Varint).int32(message.buttonAction);
+        /* string deeplink_section = 3; */
+        if (message.deeplinkSection !== "")
+            writer.tag(3, WireType.LengthDelimited).string(message.deeplinkSection);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -3775,13 +3803,15 @@ class PremiumMarketingComponentProperties_MarketingPageBannerButton$Type extends
     constructor() {
         super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MarketingPageBannerButton", [
             { no: 1, name: "copy", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 2, name: "button_action", kind: "enum", T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction", PremiumMarketingComponentProperties_ButtonAction, "BUTTON_ACTION_"] }
+            { no: 2, name: "button_action", kind: "enum", T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction", PremiumMarketingComponentProperties_ButtonAction, "BUTTON_ACTION_"] },
+            { no: 3, name: "deeplink_section", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_MarketingPageBannerButton>): PremiumMarketingComponentProperties_MarketingPageBannerButton {
         const message = globalThis.Object.create((this.messagePrototype!));
         message.copy = "";
         message.buttonAction = 0;
+        message.deeplinkSection = "";
         if (value !== undefined)
             reflectionMergePartial<PremiumMarketingComponentProperties_MarketingPageBannerButton>(this, message, value);
         return message;
@@ -3796,6 +3826,9 @@ class PremiumMarketingComponentProperties_MarketingPageBannerButton$Type extends
                     break;
                 case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction button_action */ 2:
                     message.buttonAction = reader.int32();
+                    break;
+                case /* string deeplink_section */ 3:
+                    message.deeplinkSection = reader.string();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -3815,6 +3848,9 @@ class PremiumMarketingComponentProperties_MarketingPageBannerButton$Type extends
         /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction button_action = 2; */
         if (message.buttonAction !== 0)
             writer.tag(2, WireType.Varint).int32(message.buttonAction);
+        /* string deeplink_section = 3; */
+        if (message.deeplinkSection !== "")
+            writer.tag(3, WireType.LengthDelimited).string(message.deeplinkSection);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -3978,13 +4014,15 @@ class PremiumMarketingComponentProperties_CTAButton$Type extends MessageType<Pre
     constructor() {
         super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.CTAButton", [
             { no: 1, name: "copy", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 2, name: "button_action", kind: "enum", T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction", PremiumMarketingComponentProperties_ButtonAction, "BUTTON_ACTION_"] }
+            { no: 2, name: "button_action", kind: "enum", T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction", PremiumMarketingComponentProperties_ButtonAction, "BUTTON_ACTION_"] },
+            { no: 3, name: "deeplink_section", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_CTAButton>): PremiumMarketingComponentProperties_CTAButton {
         const message = globalThis.Object.create((this.messagePrototype!));
         message.copy = "";
         message.buttonAction = 0;
+        message.deeplinkSection = "";
         if (value !== undefined)
             reflectionMergePartial<PremiumMarketingComponentProperties_CTAButton>(this, message, value);
         return message;
@@ -3999,6 +4037,9 @@ class PremiumMarketingComponentProperties_CTAButton$Type extends MessageType<Pre
                     break;
                 case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction button_action */ 2:
                     message.buttonAction = reader.int32();
+                    break;
+                case /* string deeplink_section */ 3:
+                    message.deeplinkSection = reader.string();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -4018,6 +4059,9 @@ class PremiumMarketingComponentProperties_CTAButton$Type extends MessageType<Pre
         /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction button_action = 2; */
         if (message.buttonAction !== 0)
             writer.tag(2, WireType.Varint).int32(message.buttonAction);
+        /* string deeplink_section = 3; */
+        if (message.deeplinkSection !== "")
+            writer.tag(3, WireType.LengthDelimited).string(message.deeplinkSection);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -4907,13 +4951,15 @@ class PremiumMarketingComponentProperties_PremiumTabPopoverCTAButton$Type extend
     constructor() {
         super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PremiumTabPopoverCTAButton", [
             { no: 1, name: "copy", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 2, name: "button_action", kind: "enum", T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction", PremiumMarketingComponentProperties_ButtonAction, "BUTTON_ACTION_"] }
+            { no: 2, name: "button_action", kind: "enum", T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction", PremiumMarketingComponentProperties_ButtonAction, "BUTTON_ACTION_"] },
+            { no: 3, name: "deeplink_section", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_PremiumTabPopoverCTAButton>): PremiumMarketingComponentProperties_PremiumTabPopoverCTAButton {
         const message = globalThis.Object.create((this.messagePrototype!));
         message.copy = "";
         message.buttonAction = 0;
+        message.deeplinkSection = "";
         if (value !== undefined)
             reflectionMergePartial<PremiumMarketingComponentProperties_PremiumTabPopoverCTAButton>(this, message, value);
         return message;
@@ -4928,6 +4974,9 @@ class PremiumMarketingComponentProperties_PremiumTabPopoverCTAButton$Type extend
                     break;
                 case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction button_action */ 2:
                     message.buttonAction = reader.int32();
+                    break;
+                case /* string deeplink_section */ 3:
+                    message.deeplinkSection = reader.string();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -4947,6 +4996,9 @@ class PremiumMarketingComponentProperties_PremiumTabPopoverCTAButton$Type extend
         /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction button_action = 2; */
         if (message.buttonAction !== 0)
             writer.tag(2, WireType.Varint).int32(message.buttonAction);
+        /* string deeplink_section = 3; */
+        if (message.deeplinkSection !== "")
+            writer.tag(3, WireType.LengthDelimited).string(message.deeplinkSection);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -5047,7 +5099,8 @@ class PremiumMarketingComponentProperties_Nagbar$Type extends MessageType<Premiu
         super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Nagbar", [
             { no: 1, name: "body", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 2, name: "cta_label", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 3, name: "cta_action", kind: "enum", T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction", PremiumMarketingComponentProperties_ButtonAction, "BUTTON_ACTION_"] }
+            { no: 3, name: "cta_action", kind: "enum", T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction", PremiumMarketingComponentProperties_ButtonAction, "BUTTON_ACTION_"] },
+            { no: 4, name: "deeplink_section", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_Nagbar>): PremiumMarketingComponentProperties_Nagbar {
@@ -5055,6 +5108,7 @@ class PremiumMarketingComponentProperties_Nagbar$Type extends MessageType<Premiu
         message.body = "";
         message.ctaLabel = "";
         message.ctaAction = 0;
+        message.deeplinkSection = "";
         if (value !== undefined)
             reflectionMergePartial<PremiumMarketingComponentProperties_Nagbar>(this, message, value);
         return message;
@@ -5072,6 +5126,9 @@ class PremiumMarketingComponentProperties_Nagbar$Type extends MessageType<Premiu
                     break;
                 case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction cta_action */ 3:
                     message.ctaAction = reader.int32();
+                    break;
+                case /* string deeplink_section */ 4:
+                    message.deeplinkSection = reader.string();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -5094,6 +5151,9 @@ class PremiumMarketingComponentProperties_Nagbar$Type extends MessageType<Premiu
         /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction cta_action = 3; */
         if (message.ctaAction !== 0)
             writer.tag(3, WireType.Varint).int32(message.ctaAction);
+        /* string deeplink_section = 4; */
+        if (message.deeplinkSection !== "")
+            writer.tag(4, WireType.LengthDelimited).string(message.deeplinkSection);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
