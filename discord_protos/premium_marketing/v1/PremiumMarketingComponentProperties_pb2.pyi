@@ -1403,17 +1403,20 @@ class PremiumMarketingComponentProperties(_message.Message):
         BADGE_LABEL_FIELD_NUMBER: _builtins.int
         ACKNOWLEDGED_BADGE_LABEL_FIELD_NUMBER: _builtins.int
         SHOW_HOVER_GRADIENT_FIELD_NUMBER: _builtins.int
+        DEEPLINK_SECTION_FIELD_NUMBER: _builtins.int
         badge_label: _builtins.str
         acknowledged_badge_label: _builtins.str
         show_hover_gradient: _builtins.bool
+        deeplink_section: _builtins.str
         def __init__(
             self,
             *,
             badge_label: _builtins.str = ...,
             acknowledged_badge_label: _builtins.str = ...,
             show_hover_gradient: _builtins.bool = ...,
+            deeplink_section: _builtins.str = ...,
         ) -> None: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["acknowledged_badge_label", b"acknowledged_badge_label", "badge_label", b"badge_label", "show_hover_gradient", b"show_hover_gradient"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["acknowledged_badge_label", b"acknowledged_badge_label", "badge_label", b"badge_label", "deeplink_section", b"deeplink_section", "show_hover_gradient", b"show_hover_gradient"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
 
     @_typing.final

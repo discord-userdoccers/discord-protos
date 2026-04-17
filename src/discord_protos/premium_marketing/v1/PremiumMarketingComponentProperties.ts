@@ -314,6 +314,10 @@ export interface PremiumMarketingComponentProperties_PremiumTab {
      * @generated from protobuf field: bool show_hover_gradient = 3
      */
     showHoverGradient: boolean;
+    /**
+     * @generated from protobuf field: string deeplink_section = 4
+     */
+    deeplinkSection: string;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MarketingPageBannerButton
@@ -3745,7 +3749,8 @@ class PremiumMarketingComponentProperties_PremiumTab$Type extends MessageType<Pr
         super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PremiumTab", [
             { no: 1, name: "badge_label", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 2, name: "acknowledged_badge_label", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 3, name: "show_hover_gradient", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
+            { no: 3, name: "show_hover_gradient", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
+            { no: 4, name: "deeplink_section", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_PremiumTab>): PremiumMarketingComponentProperties_PremiumTab {
@@ -3753,6 +3758,7 @@ class PremiumMarketingComponentProperties_PremiumTab$Type extends MessageType<Pr
         message.badgeLabel = "";
         message.acknowledgedBadgeLabel = "";
         message.showHoverGradient = false;
+        message.deeplinkSection = "";
         if (value !== undefined)
             reflectionMergePartial<PremiumMarketingComponentProperties_PremiumTab>(this, message, value);
         return message;
@@ -3770,6 +3776,9 @@ class PremiumMarketingComponentProperties_PremiumTab$Type extends MessageType<Pr
                     break;
                 case /* bool show_hover_gradient */ 3:
                     message.showHoverGradient = reader.bool();
+                    break;
+                case /* string deeplink_section */ 4:
+                    message.deeplinkSection = reader.string();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -3792,6 +3801,9 @@ class PremiumMarketingComponentProperties_PremiumTab$Type extends MessageType<Pr
         /* bool show_hover_gradient = 3; */
         if (message.showHoverGradient !== false)
             writer.tag(3, WireType.Varint).bool(message.showHoverGradient);
+        /* string deeplink_section = 4; */
+        if (message.deeplinkSection !== "")
+            writer.tag(4, WireType.LengthDelimited).string(message.deeplinkSection);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
