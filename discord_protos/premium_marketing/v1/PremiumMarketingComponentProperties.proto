@@ -70,6 +70,7 @@ message PremiumMarketingComponentProperties {
   message PremiumTab {
     string badge_label = 1;
     string acknowledged_badge_label = 2;
+    bool show_hover_gradient = 3;
   }
 
   message MarketingPageBannerButton {
@@ -634,6 +635,8 @@ message PremiumMarketingComponentProperties {
     DISMISSIBLE_CONTENT_RIOT_CONNECTION_DEPRECATION_ADMIN = 736;
     DISMISSIBLE_CONTENT_RIOT_CONNECTION_DEPRECATION_ADMIN_DISABLE = 737;
     DISMISSIBLE_CONTENT_CROISSANT_REHEAT_MOMENT = 738;
+    DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_VC_GIFTING_PANEL_APP_WIDGET_CTA = 739;
+    DISMISSIBLE_CONTENT_PREMIUM_GROUP_PRIMARY_REMINDER_NAGBAR = 740;
   }
 
   message MobileBottomSheet {

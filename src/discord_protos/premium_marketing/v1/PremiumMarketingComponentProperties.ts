@@ -306,6 +306,10 @@ export interface PremiumMarketingComponentProperties_PremiumTab {
      * @generated from protobuf field: string acknowledged_badge_label = 2
      */
     acknowledgedBadgeLabel: string;
+    /**
+     * @generated from protobuf field: bool show_hover_gradient = 3
+     */
+    showHoverGradient: boolean;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MarketingPageBannerButton
@@ -2905,7 +2909,15 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CROISSANT_REHEAT_MOMENT = 738;
      */
-    CROISSANT_REHEAT_MOMENT = 738
+    CROISSANT_REHEAT_MOMENT = 738,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_VC_GIFTING_PANEL_APP_WIDGET_CTA = 739;
+     */
+    SLAYER_STOREFRONT_VC_GIFTING_PANEL_APP_WIDGET_CTA = 739,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_PREMIUM_GROUP_PRIMARY_REMINDER_NAGBAR = 740;
+     */
+    PREMIUM_GROUP_PRIMARY_REMINDER_NAGBAR = 740
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarketingComponentProperties> {
@@ -3700,13 +3712,15 @@ class PremiumMarketingComponentProperties_PremiumTab$Type extends MessageType<Pr
     constructor() {
         super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PremiumTab", [
             { no: 1, name: "badge_label", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 2, name: "acknowledged_badge_label", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+            { no: 2, name: "acknowledged_badge_label", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 3, name: "show_hover_gradient", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_PremiumTab>): PremiumMarketingComponentProperties_PremiumTab {
         const message = globalThis.Object.create((this.messagePrototype!));
         message.badgeLabel = "";
         message.acknowledgedBadgeLabel = "";
+        message.showHoverGradient = false;
         if (value !== undefined)
             reflectionMergePartial<PremiumMarketingComponentProperties_PremiumTab>(this, message, value);
         return message;
@@ -3721,6 +3735,9 @@ class PremiumMarketingComponentProperties_PremiumTab$Type extends MessageType<Pr
                     break;
                 case /* string acknowledged_badge_label */ 2:
                     message.acknowledgedBadgeLabel = reader.string();
+                    break;
+                case /* bool show_hover_gradient */ 3:
+                    message.showHoverGradient = reader.bool();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -3740,6 +3757,9 @@ class PremiumMarketingComponentProperties_PremiumTab$Type extends MessageType<Pr
         /* string acknowledged_badge_label = 2; */
         if (message.acknowledgedBadgeLabel !== "")
             writer.tag(2, WireType.LengthDelimited).string(message.acknowledgedBadgeLabel);
+        /* bool show_hover_gradient = 3; */
+        if (message.showHoverGradient !== false)
+            writer.tag(3, WireType.Varint).bool(message.showHoverGradient);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
