@@ -2945,7 +2945,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_COLLECTIBLES_SHOP_SLAYER_STOREFRONT_PROMOTIONAL_BANNER = 741;
      */
-    COLLECTIBLES_SHOP_SLAYER_STOREFRONT_PROMOTIONAL_BANNER = 741
+    COLLECTIBLES_SHOP_SLAYER_STOREFRONT_PROMOTIONAL_BANNER = 741,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_NOTIFICATION_NUDGE_POST_REACTION_BANNER = 742;
+     */
+    NOTIFICATION_NUDGE_POST_REACTION_BANNER = 742
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarketingComponentProperties> {
