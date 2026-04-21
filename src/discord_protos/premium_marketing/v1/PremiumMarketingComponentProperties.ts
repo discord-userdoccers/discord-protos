@@ -2949,7 +2949,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_NOTIFICATION_NUDGE_POST_REACTION_BANNER = 742;
      */
-    NOTIFICATION_NUDGE_POST_REACTION_BANNER = 742
+    NOTIFICATION_NUDGE_POST_REACTION_BANNER = 742,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_NEW_GIFTING_BADGES_COACHMARK = 743;
+     */
+    NEW_GIFTING_BADGES_COACHMARK = 743
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarketingComponentProperties> {
