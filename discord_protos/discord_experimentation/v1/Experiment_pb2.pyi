@@ -44,6 +44,23 @@ FILTER_CATEGORY_USER: FilterCategory.ValueType  # 3
 FILTER_CATEGORY_UTILITY: FilterCategory.ValueType  # 4
 Global___FilterCategory: _TypeAlias = FilterCategory  # noqa: Y015
 
+class _FilterEvaluationMode:
+    ValueType = _typing.NewType("ValueType", _builtins.int)
+    V: _TypeAlias = ValueType  # noqa: Y015
+
+class _FilterEvaluationModeEnumTypeWrapper(_enum_type_wrapper._EnumTypeWrapper[_FilterEvaluationMode.ValueType], _builtins.type):
+    DESCRIPTOR: _descriptor.EnumDescriptor
+    FILTER_EVALUATION_MODE_UNSPECIFIED: _FilterEvaluationMode.ValueType  # 0
+    FILTER_EVALUATION_MODE_LAZY: _FilterEvaluationMode.ValueType  # 1
+    FILTER_EVALUATION_MODE_STICKY: _FilterEvaluationMode.ValueType  # 2
+
+class FilterEvaluationMode(_FilterEvaluationMode, metaclass=_FilterEvaluationModeEnumTypeWrapper): ...
+
+FILTER_EVALUATION_MODE_UNSPECIFIED: FilterEvaluationMode.ValueType  # 0
+FILTER_EVALUATION_MODE_LAZY: FilterEvaluationMode.ValueType  # 1
+FILTER_EVALUATION_MODE_STICKY: FilterEvaluationMode.ValueType  # 2
+Global___FilterEvaluationMode: _TypeAlias = FilterEvaluationMode  # noqa: Y015
+
 @_typing.final
 class Experiment(_message.Message):
     DESCRIPTOR: _descriptor.Descriptor
@@ -1441,4 +1458,6 @@ class Experiment(_message.Message):
 Global___Experiment: _TypeAlias = Experiment  # noqa: Y015
 
 FILTER_CATEGORY_FIELD_NUMBER: _builtins.int
+FILTER_EVALUATION_MODE_FIELD_NUMBER: _builtins.int
 filter_category: _extension_dict._ExtensionFieldDescriptor[_descriptor_pb2.MessageOptions, Global___FilterCategory.ValueType]
+filter_evaluation_mode: _extension_dict._ExtensionFieldDescriptor[_descriptor_pb2.MessageOptions, Global___FilterEvaluationMode.ValueType]

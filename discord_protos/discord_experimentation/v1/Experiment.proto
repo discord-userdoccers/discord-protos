@@ -20,6 +20,16 @@ extend google.protobuf.MessageOptions {
   FilterCategory filter_category = 50000;
 }
 
+enum FilterEvaluationMode {
+  FILTER_EVALUATION_MODE_UNSPECIFIED = 0;
+  FILTER_EVALUATION_MODE_LAZY = 1;
+  FILTER_EVALUATION_MODE_STICKY = 2;
+}
+
+extend google.protobuf.MessageOptions {
+  FilterEvaluationMode filter_evaluation_mode = 50001;
+}
+
 message Experiment {
   enum UnitType {
     UNIT_TYPE_UNSPECIFIED = 0;
@@ -240,17 +250,20 @@ message Experiment {
 
   message GuildIds {
     option (discord_protos.discord_experimentation.v1.filter_category) = FILTER_CATEGORY_GUILD;
+    option (discord_protos.discord_experimentation.v1.filter_evaluation_mode) = FILTER_EVALUATION_MODE_LAZY;
     repeated fixed64 guild_ids = 1;
   }
 
   message GuildMemberCountRange {
     option (discord_protos.discord_experimentation.v1.filter_category) = FILTER_CATEGORY_GUILD;
+    option (discord_protos.discord_experimentation.v1.filter_evaluation_mode) = FILTER_EVALUATION_MODE_STICKY;
     optional google.protobuf.UInt32Value min_count = 1;
     optional google.protobuf.UInt32Value max_count = 2;
   }
 
   message GuildHasFeature {
     option (discord_protos.discord_experimentation.v1.filter_category) = FILTER_CATEGORY_GUILD;
+    option (discord_protos.discord_experimentation.v1.filter_evaluation_mode) = FILTER_EVALUATION_MODE_STICKY;
     repeated string features = 1 [packed = false];
   }
 

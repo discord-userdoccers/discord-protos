@@ -1156,6 +1156,23 @@ export enum FilterCategory {
      */
     UTILITY = 4
 }
+/**
+ * @generated from protobuf enum discord_protos.discord_experimentation.v1.FilterEvaluationMode
+ */
+export enum FilterEvaluationMode {
+    /**
+     * @generated from protobuf enum value: FILTER_EVALUATION_MODE_UNSPECIFIED = 0;
+     */
+    UNSPECIFIED = 0,
+    /**
+     * @generated from protobuf enum value: FILTER_EVALUATION_MODE_LAZY = 1;
+     */
+    LAZY = 1,
+    /**
+     * @generated from protobuf enum value: FILTER_EVALUATION_MODE_STICKY = 2;
+     */
+    STICKY = 2
+}
 // @generated message type with reflection information, may provide speed optimized methods
 class Experiment$Type extends MessageType<Experiment> {
     constructor() {
@@ -3499,7 +3516,7 @@ class Experiment_GuildIds$Type extends MessageType<Experiment_GuildIds> {
     constructor() {
         super("discord_protos.discord_experimentation.v1.Experiment.GuildIds", [
             { no: 1, name: "guild_ids", kind: "scalar", repeat: 1 /*RepeatType.PACKED*/, T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ }
-        ], { "discord_protos.discord_experimentation.v1.filter_category": "FILTER_CATEGORY_GUILD" });
+        ], { "discord_protos.discord_experimentation.v1.filter_category": "FILTER_CATEGORY_GUILD", "discord_protos.discord_experimentation.v1.filter_evaluation_mode": "FILTER_EVALUATION_MODE_LAZY" });
     }
     create(value?: PartialMessage<Experiment_GuildIds>): Experiment_GuildIds {
         const message = globalThis.Object.create((this.messagePrototype!));
@@ -3555,7 +3572,7 @@ class Experiment_GuildMemberCountRange$Type extends MessageType<Experiment_Guild
         super("discord_protos.discord_experimentation.v1.Experiment.GuildMemberCountRange", [
             { no: 1, name: "min_count", kind: "message", T: () => UInt32Value },
             { no: 2, name: "max_count", kind: "message", T: () => UInt32Value }
-        ], { "discord_protos.discord_experimentation.v1.filter_category": "FILTER_CATEGORY_GUILD" });
+        ], { "discord_protos.discord_experimentation.v1.filter_category": "FILTER_CATEGORY_GUILD", "discord_protos.discord_experimentation.v1.filter_evaluation_mode": "FILTER_EVALUATION_MODE_STICKY" });
     }
     create(value?: PartialMessage<Experiment_GuildMemberCountRange>): Experiment_GuildMemberCountRange {
         const message = globalThis.Object.create((this.messagePrototype!));
@@ -3607,7 +3624,7 @@ class Experiment_GuildHasFeature$Type extends MessageType<Experiment_GuildHasFea
     constructor() {
         super("discord_protos.discord_experimentation.v1.Experiment.GuildHasFeature", [
             { no: 1, name: "features", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 9 /*ScalarType.STRING*/ }
-        ], { "discord_protos.discord_experimentation.v1.filter_category": "FILTER_CATEGORY_GUILD" });
+        ], { "discord_protos.discord_experimentation.v1.filter_category": "FILTER_CATEGORY_GUILD", "discord_protos.discord_experimentation.v1.filter_evaluation_mode": "FILTER_EVALUATION_MODE_STICKY" });
     }
     create(value?: PartialMessage<Experiment_GuildHasFeature>): Experiment_GuildHasFeature {
         const message = globalThis.Object.create((this.messagePrototype!));
