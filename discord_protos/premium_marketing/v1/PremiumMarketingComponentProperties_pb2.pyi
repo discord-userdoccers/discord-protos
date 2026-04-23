@@ -457,7 +457,6 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_SEPTEMBER_MARKETING_MOMENT_ANNOUNCEMENT_MODAL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 599
         DISMISSIBLE_CONTENT_DO_NOT_DISTURB_REMINDER_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 600
         DISMISSIBLE_CONTENT_ACCOUNT_LINK_INVITE_FRIENDS: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 601
-        DISMISSIBLE_CONTENT_POST_ACCOUNT_CONNECTION_RTC_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 602
         DISMISSIBLE_CONTENT_HALLOWEEN_APP_ICONS_APPEARANCE_SETTINGS_WEB_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 603
         DISMISSIBLE_CONTENT_HALLOWEEN_APP_ICONS_APPEARANCE_SETTINGS_MOBILE_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 604
         DISMISSIBLE_CONTENT_HALLOWEEN_APP_ICONS_TRICK_ICON_WEB_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 605
@@ -595,6 +594,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_NEW_GIFTING_BADGES_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 743
         DISMISSIBLE_CONTENT_PREMIUM_GROUP_GIFT_SELECTION_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 744
         DISMISSIBLE_CONTENT_COLLECTIBLES_PROFILE_FRAMES_ANNOUNCEMENT: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 745
+        DISMISSIBLE_CONTENT_NOTIFICATION_NUDGE_NOTIFICATION_CENTER_BANNER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 746
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_HUB_WAITLIST_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1002,7 +1002,6 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_SEPTEMBER_MARKETING_MOMENT_ANNOUNCEMENT_MODAL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 599
     DISMISSIBLE_CONTENT_DO_NOT_DISTURB_REMINDER_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 600
     DISMISSIBLE_CONTENT_ACCOUNT_LINK_INVITE_FRIENDS: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 601
-    DISMISSIBLE_CONTENT_POST_ACCOUNT_CONNECTION_RTC_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 602
     DISMISSIBLE_CONTENT_HALLOWEEN_APP_ICONS_APPEARANCE_SETTINGS_WEB_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 603
     DISMISSIBLE_CONTENT_HALLOWEEN_APP_ICONS_APPEARANCE_SETTINGS_MOBILE_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 604
     DISMISSIBLE_CONTENT_HALLOWEEN_APP_ICONS_TRICK_ICON_WEB_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 605
@@ -1140,6 +1139,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_NEW_GIFTING_BADGES_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 743
     DISMISSIBLE_CONTENT_PREMIUM_GROUP_GIFT_SELECTION_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 744
     DISMISSIBLE_CONTENT_COLLECTIBLES_PROFILE_FRAMES_ANNOUNCEMENT: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 745
+    DISMISSIBLE_CONTENT_NOTIFICATION_NUDGE_NOTIFICATION_CENTER_BANNER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 746
 
     @_typing.final
     class FeatureCard(_message.Message):

@@ -2411,10 +2411,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     ACCOUNT_LINK_INVITE_FRIENDS = 601,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_POST_ACCOUNT_CONNECTION_RTC_POPOVER = 602;
-     */
-    POST_ACCOUNT_CONNECTION_RTC_POPOVER = 602,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_HALLOWEEN_APP_ICONS_APPEARANCE_SETTINGS_WEB_BADGE = 603;
      */
     HALLOWEEN_APP_ICONS_APPEARANCE_SETTINGS_WEB_BADGE = 603,
@@ -2961,7 +2957,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_COLLECTIBLES_PROFILE_FRAMES_ANNOUNCEMENT = 745;
      */
-    COLLECTIBLES_PROFILE_FRAMES_ANNOUNCEMENT = 745
+    COLLECTIBLES_PROFILE_FRAMES_ANNOUNCEMENT = 745,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_NOTIFICATION_NUDGE_NOTIFICATION_CENTER_BANNER = 746;
+     */
+    NOTIFICATION_NUDGE_NOTIFICATION_CENTER_BANNER = 746
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarketingComponentProperties> {
