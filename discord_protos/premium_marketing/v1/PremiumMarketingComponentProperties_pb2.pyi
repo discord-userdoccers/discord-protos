@@ -594,6 +594,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_NOTIFICATION_NUDGE_POST_REACTION_BANNER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 742
         DISMISSIBLE_CONTENT_NEW_GIFTING_BADGES_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 743
         DISMISSIBLE_CONTENT_PREMIUM_GROUP_GIFT_SELECTION_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 744
+        DISMISSIBLE_CONTENT_COLLECTIBLES_PROFILE_FRAMES_ANNOUNCEMENT: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 745
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_HUB_WAITLIST_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1138,6 +1139,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_NOTIFICATION_NUDGE_POST_REACTION_BANNER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 742
     DISMISSIBLE_CONTENT_NEW_GIFTING_BADGES_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 743
     DISMISSIBLE_CONTENT_PREMIUM_GROUP_GIFT_SELECTION_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 744
+    DISMISSIBLE_CONTENT_COLLECTIBLES_PROFILE_FRAMES_ANNOUNCEMENT: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 745
 
     @_typing.final
     class FeatureCard(_message.Message):

@@ -2957,7 +2957,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_PREMIUM_GROUP_GIFT_SELECTION_UPSELL = 744;
      */
-    PREMIUM_GROUP_GIFT_SELECTION_UPSELL = 744
+    PREMIUM_GROUP_GIFT_SELECTION_UPSELL = 744,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_COLLECTIBLES_PROFILE_FRAMES_ANNOUNCEMENT = 745;
+     */
+    COLLECTIBLES_PROFILE_FRAMES_ANNOUNCEMENT = 745
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarketingComponentProperties> {
