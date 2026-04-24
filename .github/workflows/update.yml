@@ -18,27 +18,27 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@0c366fd6a839edf440554fa01a7085ccba70ac98  # v6
       with:
         ref: ${{ github.head_ref }}
 
     - name: Install Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@c8813ba1bc76ebf779b911ad8ffccbf2e449cb48  # v6
       with:
         python-version: '3.11'
 
     - name: Install pnpm
-      uses: pnpm/action-setup@v5
+      uses: pnpm/action-setup@903f9c1a6ebcba6cf41d87230be49611ac97822e  # v6
 
     - name: Install Node.js
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@670825a89dc0abd596e7a3abd0f5e3f6e5faf37c  # v6.4
       with:
         node-version: 23
         cache: 'pnpm'
         registry-url: 'https://registry.npmjs.org/'
 
     - name: Install protoc
-      uses: arduino/setup-protoc@v3
+      uses: arduino/setup-protoc@3ea1d70ac22caff0b66ed6cb37d5b7aadebd4623  # v3
       with:
         version: '28.x'
 
@@ -84,20 +84,20 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@0c366fd6a839edf440554fa01a7085ccba70ac98  # v6
       with:
         ref: ${{ github.ref_name }}
 
     - name: Install Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@c8813ba1bc76ebf779b911ad8ffccbf2e449cb48  # v6
       with:
         python-version: '3.11'
 
     - name: Install pnpm
-      uses: pnpm/action-setup@v5
+      uses: pnpm/action-setup@903f9c1a6ebcba6cf41d87230be49611ac97822e  # v6
 
     - name: Install Node.js
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@670825a89dc0abd596e7a3abd0f5e3f6e5faf37c  # v6.4
       with:
         node-version: 23
         cache: 'pnpm'
@@ -118,7 +118,7 @@ jobs:
         python -m build --outdir pydist
 
     - name: Publish to PyPI
-      uses: pypa/gh-action-pypi-publish@release/v1
+      uses: pypa/gh-action-pypi-publish@cef221092ed1bacb1cc03d23a2d87d1d172e277b  # v1.14
       with:
         packages-dir: pydist
 
