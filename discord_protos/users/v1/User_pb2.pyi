@@ -1345,22 +1345,31 @@ class User(_message.Message):
 
         BANNED_UNTIL_FIELD_NUMBER: _builtins.int
         CLASSIFICATION_TYPES_FIELD_NUMBER: _builtins.int
+        BANNED_AT_FIELD_NUMBER: _builtins.int
         @_builtins.property
         def banned_until(self) -> _timestamp_pb2.Timestamp: ...
         @_builtins.property
         def classification_types(self) -> _containers.RepeatedScalarFieldContainer[Global___User.ClassificationType.ValueType]: ...
+        @_builtins.property
+        def banned_at(self) -> _timestamp_pb2.Timestamp: ...
         def __init__(
             self,
             *,
             banned_until: _timestamp_pb2.Timestamp | None = ...,
             classification_types: _abc.Iterable[Global___User.ClassificationType.ValueType] | None = ...,
+            banned_at: _timestamp_pb2.Timestamp | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _typing.Literal["_banned_until", b"_banned_until", "banned_until", b"banned_until"]  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_banned_at", b"_banned_at", "_banned_until", b"_banned_until", "banned_at", b"banned_at", "banned_until", b"banned_until"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_banned_until", b"_banned_until", "banned_until", b"banned_until", "classification_types", b"classification_types"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_banned_at", b"_banned_at", "_banned_until", b"_banned_until", "banned_at", b"banned_at", "banned_until", b"banned_until", "classification_types", b"classification_types"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        _WhichOneofReturnType__banned_at: _TypeAlias = _typing.Literal["banned_at"]  # noqa: Y015
+        _WhichOneofArgType__banned_at: _TypeAlias = _typing.Literal["_banned_at", b"_banned_at"]  # noqa: Y015
         _WhichOneofReturnType__banned_until: _TypeAlias = _typing.Literal["banned_until"]  # noqa: Y015
         _WhichOneofArgType__banned_until: _TypeAlias = _typing.Literal["_banned_until", b"_banned_until"]  # noqa: Y015
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__banned_at) -> _WhichOneofReturnType__banned_at | None: ...
+        @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__banned_until) -> _WhichOneofReturnType__banned_until | None: ...
 
     @_typing.final
@@ -1368,15 +1377,24 @@ class User(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
 
         CLASSIFICATION_TYPES_FIELD_NUMBER: _builtins.int
+        BANNED_AT_FIELD_NUMBER: _builtins.int
         @_builtins.property
         def classification_types(self) -> _containers.RepeatedScalarFieldContainer[Global___User.ClassificationType.ValueType]: ...
+        @_builtins.property
+        def banned_at(self) -> _timestamp_pb2.Timestamp: ...
         def __init__(
             self,
             *,
             classification_types: _abc.Iterable[Global___User.ClassificationType.ValueType] | None = ...,
+            banned_at: _timestamp_pb2.Timestamp | None = ...,
         ) -> None: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["classification_types", b"classification_types"]  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_banned_at", b"_banned_at", "banned_at", b"banned_at"]  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_banned_at", b"_banned_at", "banned_at", b"banned_at", "classification_types", b"classification_types"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        _WhichOneofReturnType__banned_at: _TypeAlias = _typing.Literal["banned_at"]  # noqa: Y015
+        _WhichOneofArgType__banned_at: _TypeAlias = _typing.Literal["_banned_at", b"_banned_at"]  # noqa: Y015
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__banned_at) -> _WhichOneofReturnType__banned_at | None: ...
 
     @_typing.final
     class SafetyState(_message.Message):

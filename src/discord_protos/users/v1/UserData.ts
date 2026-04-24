@@ -259,6 +259,10 @@ export interface UserData_TempBannedState {
      * @generated from protobuf field: repeated discord_protos.users.v1.UserData.ClassificationType classification_types = 2
      */
     classificationTypes: UserData_ClassificationType[];
+    /**
+     * @generated from protobuf field: optional google.protobuf.Timestamp banned_at = 3
+     */
+    bannedAt?: Timestamp;
 }
 /**
  * @generated from protobuf message discord_protos.users.v1.UserData.BannedState
@@ -268,6 +272,10 @@ export interface UserData_BannedState {
      * @generated from protobuf field: repeated discord_protos.users.v1.UserData.ClassificationType classification_types = 1
      */
     classificationTypes: UserData_ClassificationType[];
+    /**
+     * @generated from protobuf field: optional google.protobuf.Timestamp banned_at = 2
+     */
+    bannedAt?: Timestamp;
 }
 /**
  * @generated from protobuf message discord_protos.users.v1.UserData.SafetyState
@@ -3918,7 +3926,8 @@ class UserData_TempBannedState$Type extends MessageType<UserData_TempBannedState
     constructor() {
         super("discord_protos.users.v1.UserData.TempBannedState", [
             { no: 1, name: "banned_until", kind: "message", T: () => Timestamp },
-            { no: 2, name: "classification_types", kind: "enum", repeat: 1 /*RepeatType.PACKED*/, T: () => ["discord_protos.users.v1.UserData.ClassificationType", UserData_ClassificationType, "CLASSIFICATION_TYPE_"] }
+            { no: 2, name: "classification_types", kind: "enum", repeat: 1 /*RepeatType.PACKED*/, T: () => ["discord_protos.users.v1.UserData.ClassificationType", UserData_ClassificationType, "CLASSIFICATION_TYPE_"] },
+            { no: 3, name: "banned_at", kind: "message", T: () => Timestamp }
         ]);
     }
     create(value?: PartialMessage<UserData_TempBannedState>): UserData_TempBannedState {
@@ -3943,6 +3952,9 @@ class UserData_TempBannedState$Type extends MessageType<UserData_TempBannedState
                     else
                         message.classificationTypes.push(reader.int32());
                     break;
+                case /* optional google.protobuf.Timestamp banned_at */ 3:
+                    message.bannedAt = Timestamp.internalBinaryRead(reader, reader.uint32(), options, message.bannedAt);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -3965,6 +3977,9 @@ class UserData_TempBannedState$Type extends MessageType<UserData_TempBannedState
                 writer.int32(message.classificationTypes[i]);
             writer.join();
         }
+        /* optional google.protobuf.Timestamp banned_at = 3; */
+        if (message.bannedAt)
+            Timestamp.internalBinaryWrite(message.bannedAt, writer.tag(3, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -3979,7 +3994,8 @@ export const UserData_TempBannedState = new UserData_TempBannedState$Type();
 class UserData_BannedState$Type extends MessageType<UserData_BannedState> {
     constructor() {
         super("discord_protos.users.v1.UserData.BannedState", [
-            { no: 1, name: "classification_types", kind: "enum", repeat: 1 /*RepeatType.PACKED*/, T: () => ["discord_protos.users.v1.UserData.ClassificationType", UserData_ClassificationType, "CLASSIFICATION_TYPE_"] }
+            { no: 1, name: "classification_types", kind: "enum", repeat: 1 /*RepeatType.PACKED*/, T: () => ["discord_protos.users.v1.UserData.ClassificationType", UserData_ClassificationType, "CLASSIFICATION_TYPE_"] },
+            { no: 2, name: "banned_at", kind: "message", T: () => Timestamp }
         ]);
     }
     create(value?: PartialMessage<UserData_BannedState>): UserData_BannedState {
@@ -4001,6 +4017,9 @@ class UserData_BannedState$Type extends MessageType<UserData_BannedState> {
                     else
                         message.classificationTypes.push(reader.int32());
                     break;
+                case /* optional google.protobuf.Timestamp banned_at */ 2:
+                    message.bannedAt = Timestamp.internalBinaryRead(reader, reader.uint32(), options, message.bannedAt);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -4020,6 +4039,9 @@ class UserData_BannedState$Type extends MessageType<UserData_BannedState> {
                 writer.int32(message.classificationTypes[i]);
             writer.join();
         }
+        /* optional google.protobuf.Timestamp banned_at = 2; */
+        if (message.bannedAt)
+            Timestamp.internalBinaryWrite(message.bannedAt, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

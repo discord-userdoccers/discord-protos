@@ -549,10 +549,12 @@ message User {
   message TempBannedState {
     optional google.protobuf.Timestamp banned_until = 1;
     repeated ClassificationType classification_types = 2;
+    optional google.protobuf.Timestamp banned_at = 3;
   }
 
   message BannedState {
     repeated ClassificationType classification_types = 1;
+    optional google.protobuf.Timestamp banned_at = 2;
   }
 
   enum SafetyStateReason {
