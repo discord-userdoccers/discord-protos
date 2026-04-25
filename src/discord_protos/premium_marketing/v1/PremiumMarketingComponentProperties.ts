@@ -2961,7 +2961,19 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_NOTIFICATION_NUDGE_NOTIFICATION_CENTER_BANNER = 746;
      */
-    NOTIFICATION_NUDGE_NOTIFICATION_CENTER_BANNER = 746
+    NOTIFICATION_NUDGE_NOTIFICATION_CENTER_BANNER = 746,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GAME_SERVER_NEW_GAMES_COACHMARK = 747;
+     */
+    GAME_SERVER_NEW_GAMES_COACHMARK = 747,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_NOTIFICATION_NUDGE_GUILD_OPEN_PER_GUILD = 748;
+     */
+    NOTIFICATION_NUDGE_GUILD_OPEN_PER_GUILD = 748,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_NOTIFICATION_NUDGE_POST_CALL_DISCONNECT = 749;
+     */
+    NOTIFICATION_NUDGE_POST_CALL_DISCONNECT = 749
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarketingComponentProperties> {
