@@ -2973,7 +2973,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_NOTIFICATION_NUDGE_POST_CALL_DISCONNECT = 749;
      */
-    NOTIFICATION_NUDGE_POST_CALL_DISCONNECT = 749
+    NOTIFICATION_NUDGE_POST_CALL_DISCONNECT = 749,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_PROFILE_FRAME_USER_PROFILE_NEW_BADGE = 750;
+     */
+    PROFILE_FRAME_USER_PROFILE_NEW_BADGE = 750
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarketingComponentProperties> {

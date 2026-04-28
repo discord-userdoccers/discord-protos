@@ -598,6 +598,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_GAME_SERVER_NEW_GAMES_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 747
         DISMISSIBLE_CONTENT_NOTIFICATION_NUDGE_GUILD_OPEN_PER_GUILD: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 748
         DISMISSIBLE_CONTENT_NOTIFICATION_NUDGE_POST_CALL_DISCONNECT: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 749
+        DISMISSIBLE_CONTENT_PROFILE_FRAME_USER_PROFILE_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 750
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_HUB_WAITLIST_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1146,6 +1147,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_GAME_SERVER_NEW_GAMES_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 747
     DISMISSIBLE_CONTENT_NOTIFICATION_NUDGE_GUILD_OPEN_PER_GUILD: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 748
     DISMISSIBLE_CONTENT_NOTIFICATION_NUDGE_POST_CALL_DISCONNECT: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 749
+    DISMISSIBLE_CONTENT_PROFILE_FRAME_USER_PROFILE_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 750
 
     @_typing.final
     class FeatureCard(_message.Message):
