@@ -460,6 +460,14 @@ export interface UserData_AgeAssuranceData {
      * @generated from protobuf field: optional google.protobuf.Timestamp verified_at = 5
      */
     verifiedAt?: Timestamp;
+    /**
+     * @generated from protobuf field: discord_protos.users.v1.UserData.AgeAssuranceGroup estimated_age_group = 6
+     */
+    estimatedAgeGroup: UserData_AgeAssuranceGroup;
+    /**
+     * @generated from protobuf field: bool is_regional_adult = 7
+     */
+    isRegionalAdult: boolean;
 }
 /**
  * @generated from protobuf message discord_protos.users.v1.UserData.PerkConfigIncreasedFileUploadSize
@@ -3026,6 +3034,51 @@ export enum UserData_AgeAssuranceVendor {
     GOOGLE_WALLET = 5
 }
 /**
+ * @generated from protobuf enum discord_protos.users.v1.UserData.AgeAssuranceGroup
+ */
+export enum UserData_AgeAssuranceGroup {
+    /**
+     * @generated from protobuf enum value: AGE_ASSURANCE_GROUP_UNSPECIFIED = 0;
+     */
+    AGE_ASSURANCE_GROUP_UNSPECIFIED = 0,
+    /**
+     * @generated from protobuf enum value: AGE_ASSURANCE_GROUP_13 = 1;
+     */
+    AGE_ASSURANCE_GROUP_13 = 1,
+    /**
+     * @generated from protobuf enum value: AGE_ASSURANCE_GROUP_14 = 2;
+     */
+    AGE_ASSURANCE_GROUP_14 = 2,
+    /**
+     * @generated from protobuf enum value: AGE_ASSURANCE_GROUP_15 = 3;
+     */
+    AGE_ASSURANCE_GROUP_15 = 3,
+    /**
+     * @generated from protobuf enum value: AGE_ASSURANCE_GROUP_16 = 4;
+     */
+    AGE_ASSURANCE_GROUP_16 = 4,
+    /**
+     * @generated from protobuf enum value: AGE_ASSURANCE_GROUP_17 = 5;
+     */
+    AGE_ASSURANCE_GROUP_17 = 5,
+    /**
+     * @generated from protobuf enum value: AGE_ASSURANCE_GROUP_18_21 = 6;
+     */
+    AGE_ASSURANCE_GROUP_18_21 = 6,
+    /**
+     * @generated from protobuf enum value: AGE_ASSURANCE_GROUP_22_24 = 7;
+     */
+    AGE_ASSURANCE_GROUP_22_24 = 7,
+    /**
+     * @generated from protobuf enum value: AGE_ASSURANCE_GROUP_25_34 = 8;
+     */
+    AGE_ASSURANCE_GROUP_25_34 = 8,
+    /**
+     * @generated from protobuf enum value: AGE_ASSURANCE_GROUP_35_UP = 9;
+     */
+    AGE_ASSURANCE_GROUP_35_UP = 9
+}
+/**
  * @generated from protobuf enum discord_protos.users.v1.UserData.PerkSource
  */
 export enum UserData_PerkSource {
@@ -4580,7 +4633,9 @@ class UserData_AgeAssuranceData$Type extends MessageType<UserData_AgeAssuranceDa
             { no: 2, name: "method", kind: "enum", T: () => ["discord_protos.users.v1.UserData.AgeAssuranceMethod", UserData_AgeAssuranceMethod, "AGE_ASSURANCE_METHOD_"] },
             { no: 3, name: "method_version", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
             { no: 4, name: "vendor", kind: "enum", T: () => ["discord_protos.users.v1.UserData.AgeAssuranceVendor", UserData_AgeAssuranceVendor, "AGE_ASSURANCE_VENDOR_"] },
-            { no: 5, name: "verified_at", kind: "message", T: () => Timestamp }
+            { no: 5, name: "verified_at", kind: "message", T: () => Timestamp },
+            { no: 6, name: "estimated_age_group", kind: "enum", T: () => ["discord_protos.users.v1.UserData.AgeAssuranceGroup", UserData_AgeAssuranceGroup] },
+            { no: 7, name: "is_regional_adult", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
         ]);
     }
     create(value?: PartialMessage<UserData_AgeAssuranceData>): UserData_AgeAssuranceData {
@@ -4588,6 +4643,8 @@ class UserData_AgeAssuranceData$Type extends MessageType<UserData_AgeAssuranceDa
         message.method = 0;
         message.methodVersion = 0;
         message.vendor = 0;
+        message.estimatedAgeGroup = 0;
+        message.isRegionalAdult = false;
         if (value !== undefined)
             reflectionMergePartial<UserData_AgeAssuranceData>(this, message, value);
         return message;
@@ -4611,6 +4668,12 @@ class UserData_AgeAssuranceData$Type extends MessageType<UserData_AgeAssuranceDa
                     break;
                 case /* optional google.protobuf.Timestamp verified_at */ 5:
                     message.verifiedAt = Timestamp.internalBinaryRead(reader, reader.uint32(), options, message.verifiedAt);
+                    break;
+                case /* discord_protos.users.v1.UserData.AgeAssuranceGroup estimated_age_group */ 6:
+                    message.estimatedAgeGroup = reader.int32();
+                    break;
+                case /* bool is_regional_adult */ 7:
+                    message.isRegionalAdult = reader.bool();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -4639,6 +4702,12 @@ class UserData_AgeAssuranceData$Type extends MessageType<UserData_AgeAssuranceDa
         /* optional google.protobuf.Timestamp verified_at = 5; */
         if (message.verifiedAt)
             Timestamp.internalBinaryWrite(message.verifiedAt, writer.tag(5, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.users.v1.UserData.AgeAssuranceGroup estimated_age_group = 6; */
+        if (message.estimatedAgeGroup !== 0)
+            writer.tag(6, WireType.Varint).int32(message.estimatedAgeGroup);
+        /* bool is_regional_adult = 7; */
+        if (message.isRegionalAdult !== false)
+            writer.tag(7, WireType.Varint).bool(message.isRegionalAdult);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

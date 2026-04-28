@@ -755,12 +755,27 @@ message UserData {
     AGE_ASSURANCE_VENDOR_GOOGLE_WALLET = 5;
   }
 
+  enum AgeAssuranceGroup {
+    AGE_ASSURANCE_GROUP_UNSPECIFIED = 0;
+    AGE_ASSURANCE_GROUP_13 = 1;
+    AGE_ASSURANCE_GROUP_14 = 2;
+    AGE_ASSURANCE_GROUP_15 = 3;
+    AGE_ASSURANCE_GROUP_16 = 4;
+    AGE_ASSURANCE_GROUP_17 = 5;
+    AGE_ASSURANCE_GROUP_18_21 = 6;
+    AGE_ASSURANCE_GROUP_22_24 = 7;
+    AGE_ASSURANCE_GROUP_25_34 = 8;
+    AGE_ASSURANCE_GROUP_35_UP = 9;
+  }
+
   message AgeAssuranceData {
     optional google.protobuf.Timestamp estimated_date_of_birth = 1;
     AgeAssuranceMethod method = 2;
     int32 method_version = 3;
     AgeAssuranceVendor vendor = 4;
     optional google.protobuf.Timestamp verified_at = 5;
+    AgeAssuranceGroup estimated_age_group = 6;
+    bool is_regional_adult = 7;
   }
 
   enum PerkSource {

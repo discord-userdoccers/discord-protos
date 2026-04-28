@@ -14,10 +14,10 @@ import builtins as _builtins
 import sys
 import typing as _typing
 
-if sys.version_info >= (3, 10):
-    from typing import TypeAlias as _TypeAlias
+if sys.version_info >= (3, 11):
+    from typing import TypeAlias as _TypeAlias, Never as _Never
 else:
-    from typing_extensions import TypeAlias as _TypeAlias
+    from typing_extensions import TypeAlias as _TypeAlias, Never as _Never
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
@@ -1318,6 +1318,35 @@ class UserData(_message.Message):
     AGE_ASSURANCE_VENDOR_DISCORD: UserData.AgeAssuranceVendor.ValueType  # 4
     AGE_ASSURANCE_VENDOR_GOOGLE_WALLET: UserData.AgeAssuranceVendor.ValueType  # 5
 
+    class _AgeAssuranceGroup:
+        ValueType = _typing.NewType("ValueType", _builtins.int)
+        V: _TypeAlias = ValueType  # noqa: Y015
+
+    class _AgeAssuranceGroupEnumTypeWrapper(_enum_type_wrapper._EnumTypeWrapper[UserData._AgeAssuranceGroup.ValueType], _builtins.type):
+        DESCRIPTOR: _descriptor.EnumDescriptor
+        AGE_ASSURANCE_GROUP_UNSPECIFIED: UserData._AgeAssuranceGroup.ValueType  # 0
+        AGE_ASSURANCE_GROUP_13: UserData._AgeAssuranceGroup.ValueType  # 1
+        AGE_ASSURANCE_GROUP_14: UserData._AgeAssuranceGroup.ValueType  # 2
+        AGE_ASSURANCE_GROUP_15: UserData._AgeAssuranceGroup.ValueType  # 3
+        AGE_ASSURANCE_GROUP_16: UserData._AgeAssuranceGroup.ValueType  # 4
+        AGE_ASSURANCE_GROUP_17: UserData._AgeAssuranceGroup.ValueType  # 5
+        AGE_ASSURANCE_GROUP_18_21: UserData._AgeAssuranceGroup.ValueType  # 6
+        AGE_ASSURANCE_GROUP_22_24: UserData._AgeAssuranceGroup.ValueType  # 7
+        AGE_ASSURANCE_GROUP_25_34: UserData._AgeAssuranceGroup.ValueType  # 8
+        AGE_ASSURANCE_GROUP_35_UP: UserData._AgeAssuranceGroup.ValueType  # 9
+
+    class AgeAssuranceGroup(_AgeAssuranceGroup, metaclass=_AgeAssuranceGroupEnumTypeWrapper): ...
+    AGE_ASSURANCE_GROUP_UNSPECIFIED: UserData.AgeAssuranceGroup.ValueType  # 0
+    AGE_ASSURANCE_GROUP_13: UserData.AgeAssuranceGroup.ValueType  # 1
+    AGE_ASSURANCE_GROUP_14: UserData.AgeAssuranceGroup.ValueType  # 2
+    AGE_ASSURANCE_GROUP_15: UserData.AgeAssuranceGroup.ValueType  # 3
+    AGE_ASSURANCE_GROUP_16: UserData.AgeAssuranceGroup.ValueType  # 4
+    AGE_ASSURANCE_GROUP_17: UserData.AgeAssuranceGroup.ValueType  # 5
+    AGE_ASSURANCE_GROUP_18_21: UserData.AgeAssuranceGroup.ValueType  # 6
+    AGE_ASSURANCE_GROUP_22_24: UserData.AgeAssuranceGroup.ValueType  # 7
+    AGE_ASSURANCE_GROUP_25_34: UserData.AgeAssuranceGroup.ValueType  # 8
+    AGE_ASSURANCE_GROUP_35_UP: UserData.AgeAssuranceGroup.ValueType  # 9
+
     class _PerkSource:
         ValueType = _typing.NewType("ValueType", _builtins.int)
         V: _TypeAlias = ValueType  # noqa: Y015
@@ -1417,6 +1446,7 @@ class UserData(_message.Message):
             def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
             _ClearFieldArgType: _TypeAlias = _typing.Literal["key", b"key", "value", b"value"]  # noqa: Y015
             def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+            def WhichOneof(self, oneof_group: _Never) -> None: ...
 
         MAP_FIELD_NUMBER: _builtins.int
         @_builtins.property
@@ -1426,8 +1456,11 @@ class UserData(_message.Message):
             *,
             map: _abc.Mapping[_builtins.int, Global___UserData.RateLimitData] | None = ...,
         ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
         _ClearFieldArgType: _TypeAlias = _typing.Literal["map", b"map"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
 
     @_typing.final
     class SafetyFlag(_message.Message):
@@ -1460,8 +1493,11 @@ class UserData(_message.Message):
             *,
             quests_completed: _builtins.int = ...,
         ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
         _ClearFieldArgType: _TypeAlias = _typing.Literal["quests_completed", b"quests_completed"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
 
     @_typing.final
     class UserPrimaryGuild(_message.Message):
@@ -1596,6 +1632,11 @@ class UserData(_message.Message):
         def __init__(
             self,
         ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
 
     @_typing.final
     class RestrictedState(_message.Message):
@@ -1763,8 +1804,11 @@ class UserData(_message.Message):
             premium_subscription_type: Global___UserData.PremiumSubscriptionType.ValueType = ...,
             premium_subscription_group_role: Global___UserData.PremiumSubscriptionGroupRole.ValueType = ...,
         ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
         _ClearFieldArgType: _TypeAlias = _typing.Literal["premium_source", b"premium_source", "premium_subscription_group_role", b"premium_subscription_group_role", "premium_subscription_type", b"premium_subscription_type"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
 
     @_typing.final
     class DisplayNameStyles(_message.Message):
@@ -1784,8 +1828,11 @@ class UserData(_message.Message):
             effect_id: Global___UserData.DisplayNameEffect.ValueType = ...,
             colors: _abc.Iterable[_builtins.int] | None = ...,
         ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
         _ClearFieldArgType: _TypeAlias = _typing.Literal["colors", b"colors", "effect_id", b"effect_id", "font_id", b"font_id"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
 
     @_typing.final
     class StoreCountry(_message.Message):
@@ -1830,8 +1877,11 @@ class UserData(_message.Message):
             seconds: _builtins.int = ...,
             nanos: _builtins.int = ...,
         ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
         _ClearFieldArgType: _TypeAlias = _typing.Literal["hours", b"hours", "minutes", b"minutes", "nanos", b"nanos", "seconds", b"seconds"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
 
     @_typing.final
     class ScheduleRule(_message.Message):
@@ -1887,8 +1937,11 @@ class UserData(_message.Message):
             *,
             rules: _abc.Iterable[Global___UserData.ScheduleRule] | None = ...,
         ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
         _ClearFieldArgType: _TypeAlias = _typing.Literal["rules", b"rules"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
 
     @_typing.final
     class AgeAssuranceData(_message.Message):
@@ -1899,9 +1952,13 @@ class UserData(_message.Message):
         METHOD_VERSION_FIELD_NUMBER: _builtins.int
         VENDOR_FIELD_NUMBER: _builtins.int
         VERIFIED_AT_FIELD_NUMBER: _builtins.int
+        ESTIMATED_AGE_GROUP_FIELD_NUMBER: _builtins.int
+        IS_REGIONAL_ADULT_FIELD_NUMBER: _builtins.int
         method: Global___UserData.AgeAssuranceMethod.ValueType
         method_version: _builtins.int
         vendor: Global___UserData.AgeAssuranceVendor.ValueType
+        estimated_age_group: Global___UserData.AgeAssuranceGroup.ValueType
+        is_regional_adult: _builtins.bool
         @_builtins.property
         def estimated_date_of_birth(self) -> _timestamp_pb2.Timestamp: ...
         @_builtins.property
@@ -1914,10 +1971,12 @@ class UserData(_message.Message):
             method_version: _builtins.int = ...,
             vendor: Global___UserData.AgeAssuranceVendor.ValueType = ...,
             verified_at: _timestamp_pb2.Timestamp | None = ...,
+            estimated_age_group: Global___UserData.AgeAssuranceGroup.ValueType = ...,
+            is_regional_adult: _builtins.bool = ...,
         ) -> None: ...
         _HasFieldArgType: _TypeAlias = _typing.Literal["_estimated_date_of_birth", b"_estimated_date_of_birth", "_verified_at", b"_verified_at", "estimated_date_of_birth", b"estimated_date_of_birth", "verified_at", b"verified_at"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_estimated_date_of_birth", b"_estimated_date_of_birth", "_verified_at", b"_verified_at", "estimated_date_of_birth", b"estimated_date_of_birth", "method", b"method", "method_version", b"method_version", "vendor", b"vendor", "verified_at", b"verified_at"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_estimated_date_of_birth", b"_estimated_date_of_birth", "_verified_at", b"_verified_at", "estimated_age_group", b"estimated_age_group", "estimated_date_of_birth", b"estimated_date_of_birth", "is_regional_adult", b"is_regional_adult", "method", b"method", "method_version", b"method_version", "vendor", b"vendor", "verified_at", b"verified_at"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__estimated_date_of_birth: _TypeAlias = _typing.Literal["estimated_date_of_birth"]  # noqa: Y015
         _WhichOneofArgType__estimated_date_of_birth: _TypeAlias = _typing.Literal["_estimated_date_of_birth", b"_estimated_date_of_birth"]  # noqa: Y015
@@ -1939,8 +1998,11 @@ class UserData(_message.Message):
             *,
             max_size: _builtins.int = ...,
         ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
         _ClearFieldArgType: _TypeAlias = _typing.Literal["max_size", b"max_size"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
 
     @_typing.final
     class PerkConfigIncreasedGuildLimit(_message.Message):
@@ -1953,8 +2015,11 @@ class UserData(_message.Message):
             *,
             max_guilds: _builtins.int = ...,
         ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
         _ClearFieldArgType: _TypeAlias = _typing.Literal["max_guilds", b"max_guilds"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
 
     @_typing.final
     class PerkConfig(_message.Message):
@@ -2007,6 +2072,7 @@ class UserData(_message.Message):
             def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
             _ClearFieldArgType: _TypeAlias = _typing.Literal["key", b"key", "value", b"value"]  # noqa: Y015
             def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+            def WhichOneof(self, oneof_group: _Never) -> None: ...
 
         ACTIVE_PERKS_BITMASK_FIELD_NUMBER: _builtins.int
         CONFIG_BY_PERK_FIELD_NUMBER: _builtins.int
@@ -2113,8 +2179,11 @@ class UserData(_message.Message):
             *,
             badges: _abc.Iterable[Global___UserData.Badge] | None = ...,
         ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
         _ClearFieldArgType: _TypeAlias = _typing.Literal["badges", b"badges"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
 
     @_typing.final
     class UserCountryData(_message.Message):
@@ -2134,8 +2203,11 @@ class UserData(_message.Message):
                 key: _builtins.str = ...,
                 value: _builtins.float = ...,
             ) -> None: ...
+            _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+            def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
             _ClearFieldArgType: _TypeAlias = _typing.Literal["key", b"key", "value", b"value"]  # noqa: Y015
             def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+            def WhichOneof(self, oneof_group: _Never) -> None: ...
 
         CALCULATED_COUNTRY_FIELD_NUMBER: _builtins.int
         LAST_CALCULATED_AT_FIELD_NUMBER: _builtins.int
@@ -2196,6 +2268,7 @@ class UserData(_message.Message):
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
         _ClearFieldArgType: _TypeAlias = _typing.Literal["key", b"key", "value", b"value"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
 
     @_typing.final
     class SafetyFeatureLimitsEntry(_message.Message):
@@ -2216,6 +2289,7 @@ class UserData(_message.Message):
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
         _ClearFieldArgType: _TypeAlias = _typing.Literal["key", b"key", "value", b"value"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
 
     @_typing.final
     class SafetyFlagsEntry(_message.Message):
@@ -2236,6 +2310,7 @@ class UserData(_message.Message):
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
         _ClearFieldArgType: _TypeAlias = _typing.Literal["key", b"key", "value", b"value"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
 
     LINKED_USERS_FIELD_NUMBER: _builtins.int
     SAFETY_FEATURE_LIMITS_FIELD_NUMBER: _builtins.int
