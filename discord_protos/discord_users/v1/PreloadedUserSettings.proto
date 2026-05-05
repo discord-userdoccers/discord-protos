@@ -327,6 +327,7 @@ message PreloadedUserSettings {
     optional google.protobuf.BoolValue quests_3p_data_opted_out = 30;
     optional google.protobuf.BoolValue show_local_time = 31;
     ProfileVisibility profile_visibility = 32;
+    optional google.protobuf.BoolValue hide_friend_request_notes = 33;
   }
 
   message DebugSettings {
