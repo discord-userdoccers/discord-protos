@@ -2981,7 +2981,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_BOUNTIES_NUX_PROMO_SHEET = 751;
      */
-    BOUNTIES_NUX_PROMO_SHEET = 751
+    BOUNTIES_NUX_PROMO_SHEET = 751,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_ORBS_PURCHASE_COACHMARK = 752;
+     */
+    SLAYER_STOREFRONT_ORBS_PURCHASE_COACHMARK = 752
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarketingComponentProperties> {
