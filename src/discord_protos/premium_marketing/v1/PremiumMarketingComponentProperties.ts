@@ -2989,7 +2989,15 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CLIPS_PRIMARY_ENTRY_POINT_COACHMARK = 753;
      */
-    CLIPS_PRIMARY_ENTRY_POINT_COACHMARK = 753
+    CLIPS_PRIMARY_ENTRY_POINT_COACHMARK = 753,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GUILD_THEME_NUX = 754;
+     */
+    GUILD_THEME_NUX = 754,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GUILD_SETTINGS_GUILD_THEME_NEW_BADGE = 755;
+     */
+    GUILD_SETTINGS_GUILD_THEME_NEW_BADGE = 755
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarketingComponentProperties> {

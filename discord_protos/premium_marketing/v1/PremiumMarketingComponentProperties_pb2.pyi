@@ -602,6 +602,8 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_BOUNTIES_NUX_PROMO_SHEET: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 751
         DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_ORBS_PURCHASE_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 752
         DISMISSIBLE_CONTENT_CLIPS_PRIMARY_ENTRY_POINT_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 753
+        DISMISSIBLE_CONTENT_GUILD_THEME_NUX: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 754
+        DISMISSIBLE_CONTENT_GUILD_SETTINGS_GUILD_THEME_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 755
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_HUB_WAITLIST_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1154,6 +1156,8 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_BOUNTIES_NUX_PROMO_SHEET: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 751
     DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_ORBS_PURCHASE_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 752
     DISMISSIBLE_CONTENT_CLIPS_PRIMARY_ENTRY_POINT_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 753
+    DISMISSIBLE_CONTENT_GUILD_THEME_NUX: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 754
+    DISMISSIBLE_CONTENT_GUILD_SETTINGS_GUILD_THEME_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 755
 
     @_typing.final
     class FeatureCard(_message.Message):
