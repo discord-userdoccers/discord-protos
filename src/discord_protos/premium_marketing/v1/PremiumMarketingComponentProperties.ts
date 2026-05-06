@@ -2985,7 +2985,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_ORBS_PURCHASE_COACHMARK = 752;
      */
-    SLAYER_STOREFRONT_ORBS_PURCHASE_COACHMARK = 752
+    SLAYER_STOREFRONT_ORBS_PURCHASE_COACHMARK = 752,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CLIPS_PRIMARY_ENTRY_POINT_COACHMARK = 753;
+     */
+    CLIPS_PRIMARY_ENTRY_POINT_COACHMARK = 753
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarketingComponentProperties> {
