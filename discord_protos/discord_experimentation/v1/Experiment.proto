@@ -51,6 +51,7 @@ message Experiment {
     int32 start = 1;
     int32 stop = 2;
     Type type = 3;
+    fixed64 owning_experiment_id = 4;
   }
 
   message Variation {
@@ -417,4 +418,5 @@ message Experiment {
   repeated string growthbook_tags = 37 [packed = false];
   bool allocate_right_to_left = 38;
   bool is_managed = 39;
+  fixed64 number_line_id = 41;
 }
