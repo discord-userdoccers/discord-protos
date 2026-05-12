@@ -56,16 +56,16 @@ message PremiumMarketingComponentProperties {
     string help_article_id = 4;
     repeated FeatureCard feature_cards = 5;
     optional SubscriptionButton button = 6;
-    string dismiss_key = 7;
     string hero_art_video_link_light_theme = 8;
     string hero_art_image_link_dark_theme = 9;
     string hero_art_image_link_light_theme = 10;
     string modal_top_pill = 11;
-    string body = 12;
     repeated Subtitle hero_art_video_subtitles = 13;
     optional Variant1Storage storage = 14;
     optional Disclaimer disclaimer = 15;
     optional HelpArticle help_article = 18;
+    string dismiss_key = 7;
+    string body = 12;
   }
 
   message PremiumTab {

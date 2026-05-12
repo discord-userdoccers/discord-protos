@@ -258,10 +258,6 @@ export interface PremiumMarketingComponentProperties_AnnouncementModalVariant1Pr
      */
     button?: PremiumMarketingComponentProperties_SubscriptionButton;
     /**
-     * @generated from protobuf field: string dismiss_key = 7
-     */
-    dismissKey: string;
-    /**
      * @generated from protobuf field: string hero_art_video_link_light_theme = 8
      */
     heroArtVideoLinkLightTheme: string;
@@ -278,10 +274,6 @@ export interface PremiumMarketingComponentProperties_AnnouncementModalVariant1Pr
      */
     modalTopPill: string;
     /**
-     * @generated from protobuf field: string body = 12
-     */
-    body: string;
-    /**
      * @generated from protobuf field: repeated discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Subtitle hero_art_video_subtitles = 13
      */
     heroArtVideoSubtitles: PremiumMarketingComponentProperties_Subtitle[];
@@ -297,6 +289,14 @@ export interface PremiumMarketingComponentProperties_AnnouncementModalVariant1Pr
      * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle help_article = 18
      */
     helpArticle?: PremiumMarketingComponentProperties_HelpArticle;
+    /**
+     * @generated from protobuf field: string dismiss_key = 7
+     */
+    dismissKey: string;
+    /**
+     * @generated from protobuf field: string body = 12
+     */
+    body: string;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PremiumTab
@@ -3642,16 +3642,16 @@ class PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties$Ty
             { no: 4, name: "help_article_id", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 5, name: "feature_cards", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => PremiumMarketingComponentProperties_FeatureCard },
             { no: 6, name: "button", kind: "message", T: () => PremiumMarketingComponentProperties_SubscriptionButton },
-            { no: 7, name: "dismiss_key", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 8, name: "hero_art_video_link_light_theme", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 9, name: "hero_art_image_link_dark_theme", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 10, name: "hero_art_image_link_light_theme", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 11, name: "modal_top_pill", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 12, name: "body", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 13, name: "hero_art_video_subtitles", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => PremiumMarketingComponentProperties_Subtitle },
             { no: 14, name: "storage", kind: "message", T: () => PremiumMarketingComponentProperties_Variant1Storage },
             { no: 15, name: "disclaimer", kind: "message", T: () => PremiumMarketingComponentProperties_Disclaimer },
-            { no: 18, name: "help_article", kind: "message", T: () => PremiumMarketingComponentProperties_HelpArticle }
+            { no: 18, name: "help_article", kind: "message", T: () => PremiumMarketingComponentProperties_HelpArticle },
+            { no: 7, name: "dismiss_key", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 12, name: "body", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties>): PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties {
@@ -3661,13 +3661,13 @@ class PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties$Ty
         message.videoLink = "";
         message.helpArticleId = "";
         message.featureCards = [];
-        message.dismissKey = "";
         message.heroArtVideoLinkLightTheme = "";
         message.heroArtImageLinkDarkTheme = "";
         message.heroArtImageLinkLightTheme = "";
         message.modalTopPill = "";
-        message.body = "";
         message.heroArtVideoSubtitles = [];
+        message.dismissKey = "";
+        message.body = "";
         if (value !== undefined)
             reflectionMergePartial<PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties>(this, message, value);
         return message;
@@ -3695,9 +3695,6 @@ class PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties$Ty
                 case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.SubscriptionButton button */ 6:
                     message.button = PremiumMarketingComponentProperties_SubscriptionButton.internalBinaryRead(reader, reader.uint32(), options, message.button);
                     break;
-                case /* string dismiss_key */ 7:
-                    message.dismissKey = reader.string();
-                    break;
                 case /* string hero_art_video_link_light_theme */ 8:
                     message.heroArtVideoLinkLightTheme = reader.string();
                     break;
@@ -3710,9 +3707,6 @@ class PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties$Ty
                 case /* string modal_top_pill */ 11:
                     message.modalTopPill = reader.string();
                     break;
-                case /* string body */ 12:
-                    message.body = reader.string();
-                    break;
                 case /* repeated discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Subtitle hero_art_video_subtitles */ 13:
                     message.heroArtVideoSubtitles.push(PremiumMarketingComponentProperties_Subtitle.internalBinaryRead(reader, reader.uint32(), options));
                     break;
@@ -3724,6 +3718,12 @@ class PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties$Ty
                     break;
                 case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle help_article */ 18:
                     message.helpArticle = PremiumMarketingComponentProperties_HelpArticle.internalBinaryRead(reader, reader.uint32(), options, message.helpArticle);
+                    break;
+                case /* string dismiss_key */ 7:
+                    message.dismissKey = reader.string();
+                    break;
+                case /* string body */ 12:
+                    message.body = reader.string();
                     break;
                 default:
                     let u = options.readUnknownField;

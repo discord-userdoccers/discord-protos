@@ -1373,25 +1373,25 @@ class PremiumMarketingComponentProperties(_message.Message):
         HELP_ARTICLE_ID_FIELD_NUMBER: _builtins.int
         FEATURE_CARDS_FIELD_NUMBER: _builtins.int
         BUTTON_FIELD_NUMBER: _builtins.int
-        DISMISS_KEY_FIELD_NUMBER: _builtins.int
         HERO_ART_VIDEO_LINK_LIGHT_THEME_FIELD_NUMBER: _builtins.int
         HERO_ART_IMAGE_LINK_DARK_THEME_FIELD_NUMBER: _builtins.int
         HERO_ART_IMAGE_LINK_LIGHT_THEME_FIELD_NUMBER: _builtins.int
         MODAL_TOP_PILL_FIELD_NUMBER: _builtins.int
-        BODY_FIELD_NUMBER: _builtins.int
         HERO_ART_VIDEO_SUBTITLES_FIELD_NUMBER: _builtins.int
         STORAGE_FIELD_NUMBER: _builtins.int
         DISCLAIMER_FIELD_NUMBER: _builtins.int
         HELP_ARTICLE_FIELD_NUMBER: _builtins.int
+        DISMISS_KEY_FIELD_NUMBER: _builtins.int
+        BODY_FIELD_NUMBER: _builtins.int
         header: _builtins.str
         subheader: _builtins.str
         video_link: _builtins.str
         help_article_id: _builtins.str
-        dismiss_key: _builtins.str
         hero_art_video_link_light_theme: _builtins.str
         hero_art_image_link_dark_theme: _builtins.str
         hero_art_image_link_light_theme: _builtins.str
         modal_top_pill: _builtins.str
+        dismiss_key: _builtins.str
         body: _builtins.str
         @_builtins.property
         def feature_cards(self) -> _containers.RepeatedCompositeFieldContainer[Global___PremiumMarketingComponentProperties.FeatureCard]: ...
@@ -1414,16 +1414,16 @@ class PremiumMarketingComponentProperties(_message.Message):
             help_article_id: _builtins.str = ...,
             feature_cards: _abc.Iterable[Global___PremiumMarketingComponentProperties.FeatureCard] | None = ...,
             button: Global___PremiumMarketingComponentProperties.SubscriptionButton | None = ...,
-            dismiss_key: _builtins.str = ...,
             hero_art_video_link_light_theme: _builtins.str = ...,
             hero_art_image_link_dark_theme: _builtins.str = ...,
             hero_art_image_link_light_theme: _builtins.str = ...,
             modal_top_pill: _builtins.str = ...,
-            body: _builtins.str = ...,
             hero_art_video_subtitles: _abc.Iterable[Global___PremiumMarketingComponentProperties.Subtitle] | None = ...,
             storage: Global___PremiumMarketingComponentProperties.Variant1Storage | None = ...,
             disclaimer: Global___PremiumMarketingComponentProperties.Disclaimer | None = ...,
             help_article: Global___PremiumMarketingComponentProperties.HelpArticle | None = ...,
+            dismiss_key: _builtins.str = ...,
+            body: _builtins.str = ...,
         ) -> None: ...
         _HasFieldArgType: _TypeAlias = _typing.Literal["_button", b"_button", "_disclaimer", b"_disclaimer", "_help_article", b"_help_article", "_storage", b"_storage", "button", b"button", "disclaimer", b"disclaimer", "help_article", b"help_article", "storage", b"storage"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
