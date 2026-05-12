@@ -63,6 +63,12 @@ message PreloadedUserSettings {
     uint32 num_times_dismissed = 5;
   }
 
+  enum GuildThemeSourcePreference {
+    GUILD_THEME_SOURCE_PREFERENCE_UNSPECIFIED = 0;
+    GUILD_THEME_SOURCE_PREFERENCE_PERSONAL = 1;
+    GUILD_THEME_SOURCE_PREFERENCE_GUILD = 2;
+  }
+
   message GuildSettings {
     map<fixed64, ChannelSettings> channels = 1;
     uint32 hub_progress = 2;
@@ -76,6 +82,7 @@ message PreloadedUserSettings {
     optional CustomNotificationSoundConfig custom_notification_sound_config = 10;
     bool leaderboards_disabled = 11;
     map<int32, GuildDismissibleContentState> guild_dismissible_content_states = 12;
+    GuildThemeSourcePreference guild_theme_source_preference = 13;
   }
 
   message AllGuildSettings {
@@ -423,6 +430,7 @@ message PreloadedUserSettings {
     LaunchPadMode launch_pad_mode = 11;
     UIDensity ui_density = 12;
     SwipeRightToLeftMode swipe_right_to_left_mode = 13;
+    GuildThemeSourcePreference default_guild_theme_preference = 14;
   }
 
   message GuildFolder {

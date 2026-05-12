@@ -50,6 +50,21 @@ class PreloadedUserSettings(_message.Message):
     INBOX_TAB_BOOKMARKS: PreloadedUserSettings.InboxTab.ValueType  # 6
     INBOX_TAB_SCHEDULED: PreloadedUserSettings.InboxTab.ValueType  # 7
 
+    class _GuildThemeSourcePreference:
+        ValueType = _typing.NewType("ValueType", _builtins.int)
+        V: _TypeAlias = ValueType  # noqa: Y015
+
+    class _GuildThemeSourcePreferenceEnumTypeWrapper(_enum_type_wrapper._EnumTypeWrapper[PreloadedUserSettings._GuildThemeSourcePreference.ValueType], _builtins.type):
+        DESCRIPTOR: _descriptor.EnumDescriptor
+        GUILD_THEME_SOURCE_PREFERENCE_UNSPECIFIED: PreloadedUserSettings._GuildThemeSourcePreference.ValueType  # 0
+        GUILD_THEME_SOURCE_PREFERENCE_PERSONAL: PreloadedUserSettings._GuildThemeSourcePreference.ValueType  # 1
+        GUILD_THEME_SOURCE_PREFERENCE_GUILD: PreloadedUserSettings._GuildThemeSourcePreference.ValueType  # 2
+
+    class GuildThemeSourcePreference(_GuildThemeSourcePreference, metaclass=_GuildThemeSourcePreferenceEnumTypeWrapper): ...
+    GUILD_THEME_SOURCE_PREFERENCE_UNSPECIFIED: PreloadedUserSettings.GuildThemeSourcePreference.ValueType  # 0
+    GUILD_THEME_SOURCE_PREFERENCE_PERSONAL: PreloadedUserSettings.GuildThemeSourcePreference.ValueType  # 1
+    GUILD_THEME_SOURCE_PREFERENCE_GUILD: PreloadedUserSettings.GuildThemeSourcePreference.ValueType  # 2
+
     class _DmSpamFilterV2:
         ValueType = _typing.NewType("ValueType", _builtins.int)
         V: _TypeAlias = ValueType  # noqa: Y015
@@ -633,12 +648,14 @@ class PreloadedUserSettings(_message.Message):
         CUSTOM_NOTIFICATION_SOUND_CONFIG_FIELD_NUMBER: _builtins.int
         LEADERBOARDS_DISABLED_FIELD_NUMBER: _builtins.int
         GUILD_DISMISSIBLE_CONTENT_STATES_FIELD_NUMBER: _builtins.int
+        GUILD_THEME_SOURCE_PREFERENCE_FIELD_NUMBER: _builtins.int
         hub_progress: _builtins.int
         guild_onboarding_progress: _builtins.int
         dismissed_guild_content: _builtins.bytes
         disable_raid_alert_push: _builtins.bool
         disable_raid_alert_nag: _builtins.bool
         leaderboards_disabled: _builtins.bool
+        guild_theme_source_preference: Global___PreloadedUserSettings.GuildThemeSourcePreference.ValueType
         @_builtins.property
         def channels(self) -> _containers.MessageMap[_builtins.int, Global___PreloadedUserSettings.ChannelSettings]: ...
         @_builtins.property
@@ -666,10 +683,11 @@ class PreloadedUserSettings(_message.Message):
             custom_notification_sound_config: Global___PreloadedUserSettings.CustomNotificationSoundConfig | None = ...,
             leaderboards_disabled: _builtins.bool = ...,
             guild_dismissible_content_states: _abc.Mapping[_builtins.int, Global___PreloadedUserSettings.GuildDismissibleContentState] | None = ...,
+            guild_theme_source_preference: Global___PreloadedUserSettings.GuildThemeSourcePreference.ValueType = ...,
         ) -> None: ...
         _HasFieldArgType: _TypeAlias = _typing.Literal["_custom_notification_sound_config", b"_custom_notification_sound_config", "_guild_recents_dismissed_at", b"_guild_recents_dismissed_at", "_join_sound", b"_join_sound", "_mobile_redesign_channel_list_settings", b"_mobile_redesign_channel_list_settings", "custom_notification_sound_config", b"custom_notification_sound_config", "guild_recents_dismissed_at", b"guild_recents_dismissed_at", "join_sound", b"join_sound", "mobile_redesign_channel_list_settings", b"mobile_redesign_channel_list_settings"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_custom_notification_sound_config", b"_custom_notification_sound_config", "_guild_recents_dismissed_at", b"_guild_recents_dismissed_at", "_join_sound", b"_join_sound", "_mobile_redesign_channel_list_settings", b"_mobile_redesign_channel_list_settings", "channels", b"channels", "custom_notification_sound_config", b"custom_notification_sound_config", "disable_raid_alert_nag", b"disable_raid_alert_nag", "disable_raid_alert_push", b"disable_raid_alert_push", "dismissed_guild_content", b"dismissed_guild_content", "guild_dismissible_content_states", b"guild_dismissible_content_states", "guild_onboarding_progress", b"guild_onboarding_progress", "guild_recents_dismissed_at", b"guild_recents_dismissed_at", "hub_progress", b"hub_progress", "join_sound", b"join_sound", "leaderboards_disabled", b"leaderboards_disabled", "mobile_redesign_channel_list_settings", b"mobile_redesign_channel_list_settings"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_custom_notification_sound_config", b"_custom_notification_sound_config", "_guild_recents_dismissed_at", b"_guild_recents_dismissed_at", "_join_sound", b"_join_sound", "_mobile_redesign_channel_list_settings", b"_mobile_redesign_channel_list_settings", "channels", b"channels", "custom_notification_sound_config", b"custom_notification_sound_config", "disable_raid_alert_nag", b"disable_raid_alert_nag", "disable_raid_alert_push", b"disable_raid_alert_push", "dismissed_guild_content", b"dismissed_guild_content", "guild_dismissible_content_states", b"guild_dismissible_content_states", "guild_onboarding_progress", b"guild_onboarding_progress", "guild_recents_dismissed_at", b"guild_recents_dismissed_at", "guild_theme_source_preference", b"guild_theme_source_preference", "hub_progress", b"hub_progress", "join_sound", b"join_sound", "leaderboards_disabled", b"leaderboards_disabled", "mobile_redesign_channel_list_settings", b"mobile_redesign_channel_list_settings"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__custom_notification_sound_config: _TypeAlias = _typing.Literal["custom_notification_sound_config"]  # noqa: Y015
         _WhichOneofArgType__custom_notification_sound_config: _TypeAlias = _typing.Literal["_custom_notification_sound_config", b"_custom_notification_sound_config"]  # noqa: Y015
@@ -2029,6 +2047,7 @@ class PreloadedUserSettings(_message.Message):
         LAUNCH_PAD_MODE_FIELD_NUMBER: _builtins.int
         UI_DENSITY_FIELD_NUMBER: _builtins.int
         SWIPE_RIGHT_TO_LEFT_MODE_FIELD_NUMBER: _builtins.int
+        DEFAULT_GUILD_THEME_PREFERENCE_FIELD_NUMBER: _builtins.int
         theme: Global___PreloadedUserSettings.Theme.ValueType
         developer_mode: _builtins.bool
         mobile_redesign_disabled: _builtins.bool
@@ -2036,6 +2055,7 @@ class PreloadedUserSettings(_message.Message):
         launch_pad_mode: Global___PreloadedUserSettings.LaunchPadMode.ValueType
         ui_density: Global___PreloadedUserSettings.UIDensity.ValueType
         swipe_right_to_left_mode: Global___PreloadedUserSettings.SwipeRightToLeftMode.ValueType
+        default_guild_theme_preference: Global___PreloadedUserSettings.GuildThemeSourcePreference.ValueType
         @_builtins.property
         def client_theme_settings(self) -> Global___PreloadedUserSettings.ClientThemeSettings: ...
         @_builtins.property
@@ -2061,10 +2081,11 @@ class PreloadedUserSettings(_message.Message):
             launch_pad_mode: Global___PreloadedUserSettings.LaunchPadMode.ValueType = ...,
             ui_density: Global___PreloadedUserSettings.UIDensity.ValueType = ...,
             swipe_right_to_left_mode: Global___PreloadedUserSettings.SwipeRightToLeftMode.ValueType = ...,
+            default_guild_theme_preference: Global___PreloadedUserSettings.GuildThemeSourcePreference.ValueType = ...,
         ) -> None: ...
         _HasFieldArgType: _TypeAlias = _typing.Literal["_channel_list_layout", b"_channel_list_layout", "_client_theme_settings", b"_client_theme_settings", "_happening_now_cards_disabled", b"_happening_now_cards_disabled", "_message_previews", b"_message_previews", "_search_result_exact_count_enabled", b"_search_result_exact_count_enabled", "channel_list_layout", b"channel_list_layout", "client_theme_settings", b"client_theme_settings", "happening_now_cards_disabled", b"happening_now_cards_disabled", "message_previews", b"message_previews", "search_result_exact_count_enabled", b"search_result_exact_count_enabled"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_channel_list_layout", b"_channel_list_layout", "_client_theme_settings", b"_client_theme_settings", "_happening_now_cards_disabled", b"_happening_now_cards_disabled", "_message_previews", b"_message_previews", "_search_result_exact_count_enabled", b"_search_result_exact_count_enabled", "channel_list_layout", b"channel_list_layout", "client_theme_settings", b"client_theme_settings", "developer_mode", b"developer_mode", "happening_now_cards_disabled", b"happening_now_cards_disabled", "launch_pad_mode", b"launch_pad_mode", "message_previews", b"message_previews", "mobile_redesign_disabled", b"mobile_redesign_disabled", "search_result_exact_count_enabled", b"search_result_exact_count_enabled", "swipe_right_to_left_mode", b"swipe_right_to_left_mode", "theme", b"theme", "timestamp_hour_cycle", b"timestamp_hour_cycle", "ui_density", b"ui_density"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_channel_list_layout", b"_channel_list_layout", "_client_theme_settings", b"_client_theme_settings", "_happening_now_cards_disabled", b"_happening_now_cards_disabled", "_message_previews", b"_message_previews", "_search_result_exact_count_enabled", b"_search_result_exact_count_enabled", "channel_list_layout", b"channel_list_layout", "client_theme_settings", b"client_theme_settings", "default_guild_theme_preference", b"default_guild_theme_preference", "developer_mode", b"developer_mode", "happening_now_cards_disabled", b"happening_now_cards_disabled", "launch_pad_mode", b"launch_pad_mode", "message_previews", b"message_previews", "mobile_redesign_disabled", b"mobile_redesign_disabled", "search_result_exact_count_enabled", b"search_result_exact_count_enabled", "swipe_right_to_left_mode", b"swipe_right_to_left_mode", "theme", b"theme", "timestamp_hour_cycle", b"timestamp_hour_cycle", "ui_density", b"ui_density"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__channel_list_layout: _TypeAlias = _typing.Literal["channel_list_layout"]  # noqa: Y015
         _WhichOneofArgType__channel_list_layout: _TypeAlias = _typing.Literal["_channel_list_layout", b"_channel_list_layout"]  # noqa: Y015

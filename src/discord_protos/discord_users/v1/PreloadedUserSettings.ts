@@ -303,6 +303,10 @@ export interface PreloadedUserSettings_GuildSettings {
     guildDismissibleContentStates: {
         [key: number]: PreloadedUserSettings_GuildDismissibleContentState;
     };
+    /**
+     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.GuildThemeSourcePreference guild_theme_source_preference = 13
+     */
+    guildThemeSourcePreference: PreloadedUserSettings_GuildThemeSourcePreference;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.AllGuildSettings
@@ -1106,6 +1110,10 @@ export interface PreloadedUserSettings_AppearanceSettings {
      * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.SwipeRightToLeftMode swipe_right_to_left_mode = 13
      */
     swipeRightToLeftMode: PreloadedUserSettings_SwipeRightToLeftMode;
+    /**
+     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.GuildThemeSourcePreference default_guild_theme_preference = 14
+     */
+    defaultGuildThemePreference: PreloadedUserSettings_GuildThemeSourcePreference;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.GuildFolder
@@ -1426,6 +1434,23 @@ export enum PreloadedUserSettings_InboxTab {
      * @generated from protobuf enum value: INBOX_TAB_SCHEDULED = 7;
      */
     SCHEDULED = 7
+}
+/**
+ * @generated from protobuf enum discord_protos.discord_users.v1.PreloadedUserSettings.GuildThemeSourcePreference
+ */
+export enum PreloadedUserSettings_GuildThemeSourcePreference {
+    /**
+     * @generated from protobuf enum value: GUILD_THEME_SOURCE_PREFERENCE_UNSPECIFIED = 0;
+     */
+    UNSPECIFIED = 0,
+    /**
+     * @generated from protobuf enum value: GUILD_THEME_SOURCE_PREFERENCE_PERSONAL = 1;
+     */
+    PERSONAL = 1,
+    /**
+     * @generated from protobuf enum value: GUILD_THEME_SOURCE_PREFERENCE_GUILD = 2;
+     */
+    GUILD = 2
 }
 /**
  * @generated from protobuf enum discord_protos.discord_users.v1.PreloadedUserSettings.DmSpamFilterV2
@@ -2511,7 +2536,8 @@ class PreloadedUserSettings_GuildSettings$Type extends MessageType<PreloadedUser
             { no: 9, name: "disable_raid_alert_nag", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
             { no: 10, name: "custom_notification_sound_config", kind: "message", T: () => PreloadedUserSettings_CustomNotificationSoundConfig },
             { no: 11, name: "leaderboards_disabled", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
-            { no: 12, name: "guild_dismissible_content_states", kind: "map", K: 5 /*ScalarType.INT32*/, V: { kind: "message", T: () => PreloadedUserSettings_GuildDismissibleContentState } }
+            { no: 12, name: "guild_dismissible_content_states", kind: "map", K: 5 /*ScalarType.INT32*/, V: { kind: "message", T: () => PreloadedUserSettings_GuildDismissibleContentState } },
+            { no: 13, name: "guild_theme_source_preference", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.GuildThemeSourcePreference", PreloadedUserSettings_GuildThemeSourcePreference, "GUILD_THEME_SOURCE_PREFERENCE_"] }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_GuildSettings>): PreloadedUserSettings_GuildSettings {
@@ -2524,6 +2550,7 @@ class PreloadedUserSettings_GuildSettings$Type extends MessageType<PreloadedUser
         message.disableRaidAlertNag = false;
         message.leaderboardsDisabled = false;
         message.guildDismissibleContentStates = {};
+        message.guildThemeSourcePreference = 0;
         if (value !== undefined)
             reflectionMergePartial<PreloadedUserSettings_GuildSettings>(this, message, value);
         return message;
@@ -2568,6 +2595,9 @@ class PreloadedUserSettings_GuildSettings$Type extends MessageType<PreloadedUser
                     break;
                 case /* map<int32, discord_protos.discord_users.v1.PreloadedUserSettings.GuildDismissibleContentState> guild_dismissible_content_states */ 12:
                     this.binaryReadMap12(message.guildDismissibleContentStates, reader, options);
+                    break;
+                case /* discord_protos.discord_users.v1.PreloadedUserSettings.GuildThemeSourcePreference guild_theme_source_preference */ 13:
+                    message.guildThemeSourcePreference = reader.int32();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -2657,6 +2687,9 @@ class PreloadedUserSettings_GuildSettings$Type extends MessageType<PreloadedUser
             PreloadedUserSettings_GuildDismissibleContentState.internalBinaryWrite(message.guildDismissibleContentStates[k as any], writer, options);
             writer.join().join();
         }
+        /* discord_protos.discord_users.v1.PreloadedUserSettings.GuildThemeSourcePreference guild_theme_source_preference = 13; */
+        if (message.guildThemeSourcePreference !== 0)
+            writer.tag(13, WireType.Varint).int32(message.guildThemeSourcePreference);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -4774,7 +4807,8 @@ class PreloadedUserSettings_AppearanceSettings$Type extends MessageType<Preloade
             { no: 10, name: "happening_now_cards_disabled", kind: "message", T: () => BoolValue },
             { no: 11, name: "launch_pad_mode", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.LaunchPadMode", PreloadedUserSettings_LaunchPadMode, "LAUNCH_PAD_MODE_"] },
             { no: 12, name: "ui_density", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.UIDensity", PreloadedUserSettings_UIDensity] },
-            { no: 13, name: "swipe_right_to_left_mode", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.SwipeRightToLeftMode", PreloadedUserSettings_SwipeRightToLeftMode, "SWIPE_RIGHT_TO_LEFT_MODE_"] }
+            { no: 13, name: "swipe_right_to_left_mode", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.SwipeRightToLeftMode", PreloadedUserSettings_SwipeRightToLeftMode, "SWIPE_RIGHT_TO_LEFT_MODE_"] },
+            { no: 14, name: "default_guild_theme_preference", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.GuildThemeSourcePreference", PreloadedUserSettings_GuildThemeSourcePreference, "GUILD_THEME_SOURCE_PREFERENCE_"] }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_AppearanceSettings>): PreloadedUserSettings_AppearanceSettings {
@@ -4786,6 +4820,7 @@ class PreloadedUserSettings_AppearanceSettings$Type extends MessageType<Preloade
         message.launchPadMode = 0;
         message.uiDensity = 0;
         message.swipeRightToLeftMode = 0;
+        message.defaultGuildThemePreference = 0;
         if (value !== undefined)
             reflectionMergePartial<PreloadedUserSettings_AppearanceSettings>(this, message, value);
         return message;
@@ -4830,6 +4865,9 @@ class PreloadedUserSettings_AppearanceSettings$Type extends MessageType<Preloade
                     break;
                 case /* discord_protos.discord_users.v1.PreloadedUserSettings.SwipeRightToLeftMode swipe_right_to_left_mode */ 13:
                     message.swipeRightToLeftMode = reader.int32();
+                    break;
+                case /* discord_protos.discord_users.v1.PreloadedUserSettings.GuildThemeSourcePreference default_guild_theme_preference */ 14:
+                    message.defaultGuildThemePreference = reader.int32();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -4879,6 +4917,9 @@ class PreloadedUserSettings_AppearanceSettings$Type extends MessageType<Preloade
         /* discord_protos.discord_users.v1.PreloadedUserSettings.SwipeRightToLeftMode swipe_right_to_left_mode = 13; */
         if (message.swipeRightToLeftMode !== 0)
             writer.tag(13, WireType.Varint).int32(message.swipeRightToLeftMode);
+        /* discord_protos.discord_users.v1.PreloadedUserSettings.GuildThemeSourcePreference default_guild_theme_preference = 14; */
+        if (message.defaultGuildThemePreference !== 0)
+            writer.tag(14, WireType.Varint).int32(message.defaultGuildThemePreference);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
