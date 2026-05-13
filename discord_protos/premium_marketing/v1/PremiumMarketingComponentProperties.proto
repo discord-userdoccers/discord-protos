@@ -768,6 +768,7 @@ message PremiumMarketingComponentProperties {
     string cta_label = 2;
     ButtonAction cta_action = 3;
     string deeplink_section = 4;
+    optional HelpArticle help_article = 5;
   }
 
   string content_identifier = 3;

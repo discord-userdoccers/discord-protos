@@ -752,6 +752,10 @@ export interface PremiumMarketingComponentProperties_Nagbar {
      * @generated from protobuf field: string deeplink_section = 4
      */
     deeplinkSection: string;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle help_article = 5
+     */
+    helpArticle?: PremiumMarketingComponentProperties_HelpArticle;
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction
@@ -5168,7 +5172,8 @@ class PremiumMarketingComponentProperties_Nagbar$Type extends MessageType<Premiu
             { no: 1, name: "body", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 2, name: "cta_label", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 3, name: "cta_action", kind: "enum", T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction", PremiumMarketingComponentProperties_ButtonAction, "BUTTON_ACTION_"] },
-            { no: 4, name: "deeplink_section", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+            { no: 4, name: "deeplink_section", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 5, name: "help_article", kind: "message", T: () => PremiumMarketingComponentProperties_HelpArticle }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_Nagbar>): PremiumMarketingComponentProperties_Nagbar {
@@ -5198,6 +5203,9 @@ class PremiumMarketingComponentProperties_Nagbar$Type extends MessageType<Premiu
                 case /* string deeplink_section */ 4:
                     message.deeplinkSection = reader.string();
                     break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle help_article */ 5:
+                    message.helpArticle = PremiumMarketingComponentProperties_HelpArticle.internalBinaryRead(reader, reader.uint32(), options, message.helpArticle);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -5222,6 +5230,9 @@ class PremiumMarketingComponentProperties_Nagbar$Type extends MessageType<Premiu
         /* string deeplink_section = 4; */
         if (message.deeplinkSection !== "")
             writer.tag(4, WireType.LengthDelimited).string(message.deeplinkSection);
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle help_article = 5; */
+        if (message.helpArticle)
+            PremiumMarketingComponentProperties_HelpArticle.internalBinaryWrite(message.helpArticle, writer.tag(5, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

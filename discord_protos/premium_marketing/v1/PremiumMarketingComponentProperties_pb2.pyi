@@ -2071,10 +2071,13 @@ class PremiumMarketingComponentProperties(_message.Message):
         CTA_LABEL_FIELD_NUMBER: _builtins.int
         CTA_ACTION_FIELD_NUMBER: _builtins.int
         DEEPLINK_SECTION_FIELD_NUMBER: _builtins.int
+        HELP_ARTICLE_FIELD_NUMBER: _builtins.int
         body: _builtins.str
         cta_label: _builtins.str
         cta_action: Global___PremiumMarketingComponentProperties.ButtonAction.ValueType
         deeplink_section: _builtins.str
+        @_builtins.property
+        def help_article(self) -> Global___PremiumMarketingComponentProperties.HelpArticle: ...
         def __init__(
             self,
             *,
@@ -2082,12 +2085,15 @@ class PremiumMarketingComponentProperties(_message.Message):
             cta_label: _builtins.str = ...,
             cta_action: Global___PremiumMarketingComponentProperties.ButtonAction.ValueType = ...,
             deeplink_section: _builtins.str = ...,
+            help_article: Global___PremiumMarketingComponentProperties.HelpArticle | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_help_article", b"_help_article", "help_article", b"help_article"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["body", b"body", "cta_action", b"cta_action", "cta_label", b"cta_label", "deeplink_section", b"deeplink_section"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_help_article", b"_help_article", "body", b"body", "cta_action", b"cta_action", "cta_label", b"cta_label", "deeplink_section", b"deeplink_section", "help_article", b"help_article"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-        def WhichOneof(self, oneof_group: _Never) -> None: ...
+        _WhichOneofReturnType__help_article: _TypeAlias = _typing.Literal["help_article"]  # noqa: Y015
+        _WhichOneofArgType__help_article: _TypeAlias = _typing.Literal["_help_article", b"_help_article"]  # noqa: Y015
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__help_article) -> _WhichOneofReturnType__help_article | None: ...
 
     CONTENT_IDENTIFIER_FIELD_NUMBER: _builtins.int
     PLACEHOLDER_FIELD_NUMBER: _builtins.int
