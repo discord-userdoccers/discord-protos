@@ -824,6 +824,10 @@ export enum User_ClassificationType {
      */
     MALWARE_AND_MALICIOUS_CONDUCT_NON_DEDICATED_GUILD_SMITE = 3091,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_OFF_PLATFORM_BEHAVIORS_GUILD_SMITE = 3095;
+     */
+    OFF_PLATFORM_BEHAVIORS_GUILD_SMITE = 3095,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_EARLY_FRAUD_WARNING_LOW_RISK_SMITE = 3100;
      */
     EARLY_FRAUD_WARNING_LOW_RISK_SMITE = 3100,
