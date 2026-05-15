@@ -3001,7 +3001,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GUILD_SETTINGS_GUILD_THEME_NEW_BADGE = 755;
      */
-    GUILD_SETTINGS_GUILD_THEME_NEW_BADGE = 755
+    GUILD_SETTINGS_GUILD_THEME_NEW_BADGE = 755,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_XBOX_PERKS_RECONNECT_UPSELL = 756;
+     */
+    XBOX_PERKS_RECONNECT_UPSELL = 756
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarketingComponentProperties> {

@@ -604,6 +604,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_CLIPS_PRIMARY_ENTRY_POINT_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 753
         DISMISSIBLE_CONTENT_GUILD_THEME_NUX: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 754
         DISMISSIBLE_CONTENT_GUILD_SETTINGS_GUILD_THEME_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 755
+        DISMISSIBLE_CONTENT_XBOX_PERKS_RECONNECT_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 756
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_HUB_WAITLIST_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1158,6 +1159,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_CLIPS_PRIMARY_ENTRY_POINT_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 753
     DISMISSIBLE_CONTENT_GUILD_THEME_NUX: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 754
     DISMISSIBLE_CONTENT_GUILD_SETTINGS_GUILD_THEME_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 755
+    DISMISSIBLE_CONTENT_XBOX_PERKS_RECONNECT_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 756
 
     @_typing.final
     class FeatureCard(_message.Message):
