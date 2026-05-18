@@ -801,6 +801,10 @@ export interface PreloadedUserSettings_NotificationSettings {
      * @generated from protobuf field: optional google.protobuf.BoolValue enable_screen_downtime_schedule_notifications = 23
      */
     enableScreenDowntimeScheduleNotifications?: BoolValue;
+    /**
+     * @generated from protobuf field: optional google.protobuf.BoolValue notify_friends_on_profile_update = 24
+     */
+    notifyFriendsOnProfileUpdate?: BoolValue;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.PrivacySettings
@@ -3866,7 +3870,8 @@ class PreloadedUserSettings_NotificationSettings$Type extends MessageType<Preloa
             { no: 20, name: "enable_gdm_all_reaction_notifications", kind: "message", T: () => BoolValue },
             { no: 21, name: "enable_friend_gaming_activity_notifications", kind: "message", T: () => BoolValue },
             { no: 22, name: "enable_upcoming_server_event_notifications", kind: "message", T: () => BoolValue },
-            { no: 23, name: "enable_screen_downtime_schedule_notifications", kind: "message", T: () => BoolValue }
+            { no: 23, name: "enable_screen_downtime_schedule_notifications", kind: "message", T: () => BoolValue },
+            { no: 24, name: "notify_friends_on_profile_update", kind: "message", T: () => BoolValue }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_NotificationSettings>): PreloadedUserSettings_NotificationSettings {
@@ -3954,6 +3959,9 @@ class PreloadedUserSettings_NotificationSettings$Type extends MessageType<Preloa
                 case /* optional google.protobuf.BoolValue enable_screen_downtime_schedule_notifications */ 23:
                     message.enableScreenDowntimeScheduleNotifications = BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.enableScreenDowntimeScheduleNotifications);
                     break;
+                case /* optional google.protobuf.BoolValue notify_friends_on_profile_update */ 24:
+                    message.notifyFriendsOnProfileUpdate = BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.notifyFriendsOnProfileUpdate);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -4035,6 +4043,9 @@ class PreloadedUserSettings_NotificationSettings$Type extends MessageType<Preloa
         /* optional google.protobuf.BoolValue enable_screen_downtime_schedule_notifications = 23; */
         if (message.enableScreenDowntimeScheduleNotifications)
             BoolValue.internalBinaryWrite(message.enableScreenDowntimeScheduleNotifications, writer.tag(23, WireType.LengthDelimited).fork(), options).join();
+        /* optional google.protobuf.BoolValue notify_friends_on_profile_update = 24; */
+        if (message.notifyFriendsOnProfileUpdate)
+            BoolValue.internalBinaryWrite(message.notifyFriendsOnProfileUpdate, writer.tag(24, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
