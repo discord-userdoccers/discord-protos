@@ -772,6 +772,10 @@ export enum User_ClassificationType {
      */
     CSAM_SMITE = 3000,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSAM_SOLICITATION_OR_ADMISSION_SMITE = 3001;
+     */
+    CSAM_SOLICITATION_OR_ADMISSION_SMITE = 3001,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSAM_GUILD_SMITE = 3005;
      */
     CSAM_GUILD_SMITE = 3005,
