@@ -710,6 +710,12 @@ message PremiumMarketingComponentProperties {
     optional ThemeAwareAsset mobile_banner_asset = 12;
   }
 
+  enum AssetVariant {
+    ASSET_VARIANT_UNSPECIFIED = 0;
+    ASSET_VARIANT_NORMAL = 1;
+    ASSET_VARIANT_LARGE_TILTED = 2;
+  }
+
   message GiftCustomizationBanner {
     string asset_url = 1;
     string desktop_body = 2;
@@ -719,6 +725,7 @@ message PremiumMarketingComponentProperties {
     optional ThemeAwareAsset asset = 6;
     optional ThemeAwareAsset background_asset = 7;
     optional ThemeAwareAsset mobile_background_asset = 8;
+    AssetVariant asset_variant = 9;
   }
 
   message BillingSettingsNitroGiftBanner {

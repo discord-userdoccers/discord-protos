@@ -1163,6 +1163,21 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_XBOX_PERKS_RECONNECT_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 756
     DISMISSIBLE_CONTENT_STEELSERIES_LOGITECH_REHEAT: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 757
 
+    class _AssetVariant:
+        ValueType = _typing.NewType("ValueType", _builtins.int)
+        V: _TypeAlias = ValueType  # noqa: Y015
+
+    class _AssetVariantEnumTypeWrapper(_enum_type_wrapper._EnumTypeWrapper[PremiumMarketingComponentProperties._AssetVariant.ValueType], _builtins.type):
+        DESCRIPTOR: _descriptor.EnumDescriptor
+        ASSET_VARIANT_UNSPECIFIED: PremiumMarketingComponentProperties._AssetVariant.ValueType  # 0
+        ASSET_VARIANT_NORMAL: PremiumMarketingComponentProperties._AssetVariant.ValueType  # 1
+        ASSET_VARIANT_LARGE_TILTED: PremiumMarketingComponentProperties._AssetVariant.ValueType  # 2
+
+    class AssetVariant(_AssetVariant, metaclass=_AssetVariantEnumTypeWrapper): ...
+    ASSET_VARIANT_UNSPECIFIED: PremiumMarketingComponentProperties.AssetVariant.ValueType  # 0
+    ASSET_VARIANT_NORMAL: PremiumMarketingComponentProperties.AssetVariant.ValueType  # 1
+    ASSET_VARIANT_LARGE_TILTED: PremiumMarketingComponentProperties.AssetVariant.ValueType  # 2
+
     @_typing.final
     class FeatureCard(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
@@ -1826,10 +1841,12 @@ class PremiumMarketingComponentProperties(_message.Message):
         ASSET_FIELD_NUMBER: _builtins.int
         BACKGROUND_ASSET_FIELD_NUMBER: _builtins.int
         MOBILE_BACKGROUND_ASSET_FIELD_NUMBER: _builtins.int
+        ASSET_VARIANT_FIELD_NUMBER: _builtins.int
         asset_url: _builtins.str
         desktop_body: _builtins.str
         mobile_body: _builtins.str
         background_asset_url: _builtins.str
+        asset_variant: Global___PremiumMarketingComponentProperties.AssetVariant.ValueType
         @_builtins.property
         def gradient(self) -> Global___PremiumMarketingComponentProperties.Gradient: ...
         @_builtins.property
@@ -1849,10 +1866,11 @@ class PremiumMarketingComponentProperties(_message.Message):
             asset: Global___PremiumMarketingComponentProperties.ThemeAwareAsset | None = ...,
             background_asset: Global___PremiumMarketingComponentProperties.ThemeAwareAsset | None = ...,
             mobile_background_asset: Global___PremiumMarketingComponentProperties.ThemeAwareAsset | None = ...,
+            asset_variant: Global___PremiumMarketingComponentProperties.AssetVariant.ValueType = ...,
         ) -> None: ...
         _HasFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_background_asset", b"_background_asset", "_gradient", b"_gradient", "_mobile_background_asset", b"_mobile_background_asset", "asset", b"asset", "background_asset", b"background_asset", "gradient", b"gradient", "mobile_background_asset", b"mobile_background_asset"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_background_asset", b"_background_asset", "_gradient", b"_gradient", "_mobile_background_asset", b"_mobile_background_asset", "asset", b"asset", "asset_url", b"asset_url", "background_asset", b"background_asset", "background_asset_url", b"background_asset_url", "desktop_body", b"desktop_body", "gradient", b"gradient", "mobile_background_asset", b"mobile_background_asset", "mobile_body", b"mobile_body"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_background_asset", b"_background_asset", "_gradient", b"_gradient", "_mobile_background_asset", b"_mobile_background_asset", "asset", b"asset", "asset_url", b"asset_url", "asset_variant", b"asset_variant", "background_asset", b"background_asset", "background_asset_url", b"background_asset_url", "desktop_body", b"desktop_body", "gradient", b"gradient", "mobile_background_asset", b"mobile_background_asset", "mobile_body", b"mobile_body"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__asset: _TypeAlias = _typing.Literal["asset"]  # noqa: Y015
         _WhichOneofArgType__asset: _TypeAlias = _typing.Literal["_asset", b"_asset"]  # noqa: Y015

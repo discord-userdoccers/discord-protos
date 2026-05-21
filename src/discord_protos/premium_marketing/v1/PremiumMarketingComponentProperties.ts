@@ -597,6 +597,10 @@ export interface PremiumMarketingComponentProperties_GiftCustomizationBanner {
      * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset mobile_background_asset = 8
      */
     mobileBackgroundAsset?: PremiumMarketingComponentProperties_ThemeAwareAsset;
+    /**
+     * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant asset_variant = 9
+     */
+    assetVariant: PremiumMarketingComponentProperties_AssetVariant;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.BillingSettingsNitroGiftBanner
@@ -3011,6 +3015,23 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     STEELSERIES_LOGITECH_REHEAT = 757
 }
+/**
+ * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
+ */
+export enum PremiumMarketingComponentProperties_AssetVariant {
+    /**
+     * @generated from protobuf enum value: ASSET_VARIANT_UNSPECIFIED = 0;
+     */
+    UNSPECIFIED = 0,
+    /**
+     * @generated from protobuf enum value: ASSET_VARIANT_NORMAL = 1;
+     */
+    NORMAL = 1,
+    /**
+     * @generated from protobuf enum value: ASSET_VARIANT_LARGE_TILTED = 2;
+     */
+    LARGE_TILTED = 2
+}
 // @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarketingComponentProperties> {
     constructor() {
@@ -4651,7 +4672,8 @@ class PremiumMarketingComponentProperties_GiftCustomizationBanner$Type extends M
             { no: 5, name: "background_asset_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 6, name: "asset", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset },
             { no: 7, name: "background_asset", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset },
-            { no: 8, name: "mobile_background_asset", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset }
+            { no: 8, name: "mobile_background_asset", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset },
+            { no: 9, name: "asset_variant", kind: "enum", T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant", PremiumMarketingComponentProperties_AssetVariant, "ASSET_VARIANT_"] }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_GiftCustomizationBanner>): PremiumMarketingComponentProperties_GiftCustomizationBanner {
@@ -4660,6 +4682,7 @@ class PremiumMarketingComponentProperties_GiftCustomizationBanner$Type extends M
         message.desktopBody = "";
         message.mobileBody = "";
         message.backgroundAssetUrl = "";
+        message.assetVariant = 0;
         if (value !== undefined)
             reflectionMergePartial<PremiumMarketingComponentProperties_GiftCustomizationBanner>(this, message, value);
         return message;
@@ -4692,6 +4715,9 @@ class PremiumMarketingComponentProperties_GiftCustomizationBanner$Type extends M
                     break;
                 case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset mobile_background_asset */ 8:
                     message.mobileBackgroundAsset = PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryRead(reader, reader.uint32(), options, message.mobileBackgroundAsset);
+                    break;
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant asset_variant */ 9:
+                    message.assetVariant = reader.int32();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -4729,6 +4755,9 @@ class PremiumMarketingComponentProperties_GiftCustomizationBanner$Type extends M
         /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset mobile_background_asset = 8; */
         if (message.mobileBackgroundAsset)
             PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryWrite(message.mobileBackgroundAsset, writer.tag(8, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant asset_variant = 9; */
+        if (message.assetVariant !== 0)
+            writer.tag(9, WireType.Varint).int32(message.assetVariant);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
