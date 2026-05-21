@@ -2131,9 +2131,7 @@ class UserData(_message.Message):
 
         COMMON_FIELD_NUMBER: _builtins.int
         LEVEL_FIELD_NUMBER: _builtins.int
-        COMBAT_CLASS_FIELD_NUMBER: _builtins.int
         level: _builtins.int
-        combat_class: _builtins.str
         @_builtins.property
         def common(self) -> Global___UserData.BadgeCommon: ...
         def __init__(
@@ -2141,11 +2139,10 @@ class UserData(_message.Message):
             *,
             common: Global___UserData.BadgeCommon | None = ...,
             level: _builtins.int = ...,
-            combat_class: _builtins.str = ...,
         ) -> None: ...
         _HasFieldArgType: _TypeAlias = _typing.Literal["_common", b"_common", "common", b"common"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_common", b"_common", "combat_class", b"combat_class", "common", b"common", "level", b"level"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_common", b"_common", "common", b"common", "level", b"level"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__common: _TypeAlias = _typing.Literal["common"]  # noqa: Y015
         _WhichOneofArgType__common: _TypeAlias = _typing.Literal["_common", b"_common"]  # noqa: Y015

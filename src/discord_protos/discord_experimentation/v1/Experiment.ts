@@ -1090,7 +1090,11 @@ export enum Experiment_Surface {
     /**
      * @generated from protobuf enum value: SURFACE_SEO = 7;
      */
-    SEO = 7
+    SEO = 7,
+    /**
+     * @generated from protobuf enum value: SURFACE_MARKETING = 8;
+     */
+    MARKETING = 8
 }
 /**
  * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.ExposureTracking
