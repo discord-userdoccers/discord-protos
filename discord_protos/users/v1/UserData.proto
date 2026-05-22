@@ -816,6 +816,7 @@ message UserData {
   message AprilFools2026Badge {
     optional BadgeCommon common = 1;
     int32 level = 2;
+    string combat_class = 3;
   }
 
   message Badge {

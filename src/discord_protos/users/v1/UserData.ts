@@ -558,6 +558,10 @@ export interface UserData_AprilFools2026Badge {
      * @generated from protobuf field: int32 level = 2
      */
     level: number;
+    /**
+     * @generated from protobuf field: string combat_class = 3
+     */
+    combatClass: string;
 }
 /**
  * @generated from protobuf message discord_protos.users.v1.UserData.Badge
@@ -5041,12 +5045,14 @@ class UserData_AprilFools2026Badge$Type extends MessageType<UserData_AprilFools2
     constructor() {
         super("discord_protos.users.v1.UserData.AprilFools2026Badge", [
             { no: 1, name: "common", kind: "message", T: () => UserData_BadgeCommon },
-            { no: 2, name: "level", kind: "scalar", T: 5 /*ScalarType.INT32*/ }
+            { no: 2, name: "level", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
+            { no: 3, name: "combat_class", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
         ]);
     }
     create(value?: PartialMessage<UserData_AprilFools2026Badge>): UserData_AprilFools2026Badge {
         const message = globalThis.Object.create((this.messagePrototype!));
         message.level = 0;
+        message.combatClass = "";
         if (value !== undefined)
             reflectionMergePartial<UserData_AprilFools2026Badge>(this, message, value);
         return message;
@@ -5061,6 +5067,9 @@ class UserData_AprilFools2026Badge$Type extends MessageType<UserData_AprilFools2
                     break;
                 case /* int32 level */ 2:
                     message.level = reader.int32();
+                    break;
+                case /* string combat_class */ 3:
+                    message.combatClass = reader.string();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -5080,6 +5089,9 @@ class UserData_AprilFools2026Badge$Type extends MessageType<UserData_AprilFools2
         /* int32 level = 2; */
         if (message.level !== 0)
             writer.tag(2, WireType.Varint).int32(message.level);
+        /* string combat_class = 3; */
+        if (message.combatClass !== "")
+            writer.tag(3, WireType.LengthDelimited).string(message.combatClass);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
