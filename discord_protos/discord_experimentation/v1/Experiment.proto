@@ -314,6 +314,7 @@ message Experiment {
       UserIP user_ip = 28;
       InstallationIds installation_ids = 29;
     }
+    bool negate = 30;
   }
 
   message Override {

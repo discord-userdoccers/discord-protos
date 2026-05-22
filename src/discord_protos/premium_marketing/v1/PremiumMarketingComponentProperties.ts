@@ -3013,7 +3013,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_STEELSERIES_LOGITECH_REHEAT = 757;
      */
-    STEELSERIES_LOGITECH_REHEAT = 757
+    STEELSERIES_LOGITECH_REHEAT = 757,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_REFERRAL_PROGRAM_ENTRYPOINT_NITRO_BUTTON_NOTIFICATION = 758;
+     */
+    REFERRAL_PROGRAM_ENTRYPOINT_NITRO_BUTTON_NOTIFICATION = 758
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant

@@ -895,6 +895,10 @@ export interface Experiment_Filter {
     } | {
         oneofKind: undefined;
     };
+    /**
+     * @generated from protobuf field: bool negate = 30
+     */
+    negate: boolean;
 }
 /**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.Override
@@ -3888,12 +3892,14 @@ class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
             { no: 26, name: "guild_has_feature", kind: "message", oneof: "filter", T: () => Experiment_GuildHasFeature },
             { no: 27, name: "user_location", kind: "message", oneof: "filter", T: () => Experiment_UserLocation },
             { no: 28, name: "user_ip", kind: "message", oneof: "filter", T: () => Experiment_UserIP },
-            { no: 29, name: "installation_ids", kind: "message", oneof: "filter", T: () => Experiment_InstallationIds }
+            { no: 29, name: "installation_ids", kind: "message", oneof: "filter", T: () => Experiment_InstallationIds },
+            { no: 30, name: "negate", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
         ]);
     }
     create(value?: PartialMessage<Experiment_Filter>): Experiment_Filter {
         const message = globalThis.Object.create((this.messagePrototype!));
         message.filter = { oneofKind: undefined };
+        message.negate = false;
         if (value !== undefined)
             reflectionMergePartial<Experiment_Filter>(this, message, value);
         return message;
@@ -4059,6 +4065,9 @@ class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
                         installationIds: Experiment_InstallationIds.internalBinaryRead(reader, reader.uint32(), options, (message.filter as any).installationIds)
                     };
                     break;
+                case /* bool negate */ 30:
+                    message.negate = reader.bool();
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -4149,6 +4158,9 @@ class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
         /* discord_protos.discord_experimentation.v1.Experiment.InstallationIds installation_ids = 29; */
         if (message.filter.oneofKind === "installationIds")
             Experiment_InstallationIds.internalBinaryWrite(message.filter.installationIds, writer.tag(29, WireType.LengthDelimited).fork(), options).join();
+        /* bool negate = 30; */
+        if (message.negate !== false)
+            writer.tag(30, WireType.Varint).bool(message.negate);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
