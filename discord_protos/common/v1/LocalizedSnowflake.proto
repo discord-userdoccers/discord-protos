@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package discord_protos.common.v1;
+
+message LocalizedSnowflake {
+  fixed64 default = 1;
+  map<string, fixed64> localizations = 2;
+}

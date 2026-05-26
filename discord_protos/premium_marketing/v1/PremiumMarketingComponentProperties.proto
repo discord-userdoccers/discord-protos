@@ -3,12 +3,20 @@ syntax = "proto3";
 package discord_protos.premium_marketing.v1;
 
 message PremiumMarketingComponentProperties {
+  message LocalizedString {
+    string default = 1;
+    map<string, string> localizations = 2;
+  }
+
   message FeatureCard {
     string header = 1;
     string pill = 2;
     string body = 3;
     string image_link = 4;
     string image_link_light_theme = 5;
+    optional LocalizedString header_localized = 6;
+    optional LocalizedString pill_localized = 7;
+    optional LocalizedString body_localized = 8;
   }
 
   enum ButtonAction {
@@ -25,6 +33,7 @@ message PremiumMarketingComponentProperties {
     string copy = 1;
     ButtonAction button_action = 2;
     string deeplink_section = 3;
+    optional LocalizedString copy_localized = 4;
   }
 
   message Subtitle {
@@ -42,11 +51,13 @@ message PremiumMarketingComponentProperties {
   message HelpArticle {
     string id = 1;
     string link_text = 2;
+    optional LocalizedString link_text_localized = 3;
   }
 
   message Disclaimer {
     string disclaimer_text = 1;
     optional HelpArticle disclaimer_help_article = 2;
+    optional LocalizedString disclaimer_text_localized = 3;
   }
 
   message AnnouncementModalVariant1Properties {
@@ -64,6 +75,9 @@ message PremiumMarketingComponentProperties {
     optional Variant1Storage storage = 14;
     optional Disclaimer disclaimer = 15;
     optional HelpArticle help_article = 18;
+    optional LocalizedString header_localized = 19;
+    optional LocalizedString subheader_localized = 20;
+    optional LocalizedString modal_top_pill_localized = 21;
     string dismiss_key = 7;
     string body = 12;
   }
@@ -73,12 +87,15 @@ message PremiumMarketingComponentProperties {
     string acknowledged_badge_label = 2;
     bool show_hover_gradient = 3;
     string deeplink_section = 4;
+    optional LocalizedString badge_label_localized = 5;
+    optional LocalizedString acknowledged_badge_label_localized = 6;
   }
 
   message MarketingPageBannerButton {
     string copy = 1;
     ButtonAction button_action = 2;
     string deeplink_section = 3;
+    optional LocalizedString copy_localized = 4;
   }
 
   message MarketingPageBanner {
@@ -88,18 +105,23 @@ message PremiumMarketingComponentProperties {
     string help_article_id = 4;
     optional MarketingPageBannerButton button = 5;
     optional HelpArticle help_article = 6;
+    optional LocalizedString header_localized = 7;
+    optional LocalizedString body_localized = 8;
   }
 
   message PaymentModalBanner {
     string asset_url = 1;
     string header = 2;
     string body = 3;
+    optional LocalizedString header_localized = 4;
+    optional LocalizedString body_localized = 5;
   }
 
   message CTAButton {
     string copy = 1;
     ButtonAction button_action = 2;
     string deeplink_section = 3;
+    optional LocalizedString copy_localized = 4;
   }
 
   enum DismissibleContent {
@@ -668,6 +690,8 @@ message PremiumMarketingComponentProperties {
     optional CTAButton button = 5;
     DismissibleContent dismissible_content = 6;
     optional HelpArticle help_article = 7;
+    optional LocalizedString header_localized = 8;
+    optional LocalizedString body_localized = 9;
   }
 
   message Gradient {
@@ -694,6 +718,8 @@ message PremiumMarketingComponentProperties {
     string body = 2;
     string asset_url = 3;
     optional ThemeAwareAsset asset = 4;
+    optional LocalizedString header_localized = 5;
+    optional LocalizedString body_localized = 6;
   }
 
   message GiftPlanSelectionCardBanner {
@@ -709,6 +735,9 @@ message PremiumMarketingComponentProperties {
     optional ThemeAwareAsset background_asset = 10;
     optional ThemeAwareAsset card_asset = 11;
     optional ThemeAwareAsset mobile_banner_asset = 12;
+    optional LocalizedString header_localized = 13;
+    optional LocalizedString desktop_body_localized = 14;
+    optional LocalizedString mobile_body_localized = 15;
   }
 
   enum AssetVariant {
@@ -727,6 +756,8 @@ message PremiumMarketingComponentProperties {
     optional ThemeAwareAsset background_asset = 7;
     optional ThemeAwareAsset mobile_background_asset = 8;
     AssetVariant asset_variant = 9;
+    optional LocalizedString desktop_body_localized = 10;
+    optional LocalizedString mobile_body_localized = 11;
   }
 
   message BillingSettingsNitroGiftBanner {
@@ -739,10 +770,14 @@ message PremiumMarketingComponentProperties {
     string additional_terms = 7;
     optional ThemeAwareAsset asset = 8;
     optional ThemeAwareAsset background_asset = 9;
+    optional LocalizedString header_localized = 10;
+    optional LocalizedString body_localized = 11;
+    optional LocalizedString additional_terms_localized = 12;
   }
 
   message GiftReminderNagbar {
     string body = 1;
+    optional LocalizedString body_localized = 2;
   }
 
   message GiftReminderCoachmark {
@@ -750,18 +785,23 @@ message PremiumMarketingComponentProperties {
     string body = 2;
     string asset_url = 3;
     optional ThemeAwareAsset asset = 4;
+    optional LocalizedString header_localized = 5;
+    optional LocalizedString body_localized = 6;
   }
 
   message PremiumTabTooltip {
     string header = 1;
     string body = 2;
     optional ThemeAwareAsset asset = 3;
+    optional LocalizedString header_localized = 4;
+    optional LocalizedString body_localized = 5;
   }
 
   message PremiumTabPopoverCTAButton {
     string copy = 1;
     ButtonAction button_action = 2;
     string deeplink_section = 3;
+    optional LocalizedString copy_localized = 4;
   }
 
   message PremiumTabPopover {
@@ -771,6 +811,8 @@ message PremiumMarketingComponentProperties {
     optional PremiumTabPopoverCTAButton button = 4;
     string help_article_id = 5;
     optional HelpArticle help_article = 6;
+    optional LocalizedString header_localized = 7;
+    optional LocalizedString body_localized = 8;
   }
 
   message Nagbar {
@@ -779,6 +821,8 @@ message PremiumMarketingComponentProperties {
     ButtonAction cta_action = 3;
     string deeplink_section = 4;
     optional HelpArticle help_article = 5;
+    optional LocalizedString body_localized = 6;
+    optional LocalizedString cta_label_localized = 7;
   }
 
   string content_identifier = 3;

@@ -1181,6 +1181,47 @@ class PremiumMarketingComponentProperties(_message.Message):
     ASSET_VARIANT_LARGE_TILTED: PremiumMarketingComponentProperties.AssetVariant.ValueType  # 2
 
     @_typing.final
+    class LocalizedString(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        @_typing.final
+        class LocalizationsEntry(_message.Message):
+            DESCRIPTOR: _descriptor.Descriptor
+
+            KEY_FIELD_NUMBER: _builtins.int
+            VALUE_FIELD_NUMBER: _builtins.int
+            key: _builtins.str
+            value: _builtins.str
+            def __init__(
+                self,
+                *,
+                key: _builtins.str = ...,
+                value: _builtins.str = ...,
+            ) -> None: ...
+            _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+            def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+            _ClearFieldArgType: _TypeAlias = _typing.Literal["key", b"key", "value", b"value"]  # noqa: Y015
+            def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+            def WhichOneof(self, oneof_group: _Never) -> None: ...
+
+        DEFAULT_FIELD_NUMBER: _builtins.int
+        LOCALIZATIONS_FIELD_NUMBER: _builtins.int
+        default: _builtins.str
+        @_builtins.property
+        def localizations(self) -> _containers.ScalarMap[_builtins.str, _builtins.str]: ...
+        def __init__(
+            self,
+            *,
+            default: _builtins.str = ...,
+            localizations: _abc.Mapping[_builtins.str, _builtins.str] | None = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["default", b"default", "localizations", b"localizations"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
+
+    @_typing.final
     class FeatureCard(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
 
@@ -1189,11 +1230,20 @@ class PremiumMarketingComponentProperties(_message.Message):
         BODY_FIELD_NUMBER: _builtins.int
         IMAGE_LINK_FIELD_NUMBER: _builtins.int
         IMAGE_LINK_LIGHT_THEME_FIELD_NUMBER: _builtins.int
+        HEADER_LOCALIZED_FIELD_NUMBER: _builtins.int
+        PILL_LOCALIZED_FIELD_NUMBER: _builtins.int
+        BODY_LOCALIZED_FIELD_NUMBER: _builtins.int
         header: _builtins.str
         pill: _builtins.str
         body: _builtins.str
         image_link: _builtins.str
         image_link_light_theme: _builtins.str
+        @_builtins.property
+        def header_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
+        @_builtins.property
+        def pill_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
+        @_builtins.property
+        def body_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
         def __init__(
             self,
             *,
@@ -1202,12 +1252,26 @@ class PremiumMarketingComponentProperties(_message.Message):
             body: _builtins.str = ...,
             image_link: _builtins.str = ...,
             image_link_light_theme: _builtins.str = ...,
+            header_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
+            pill_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
+            body_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized", "_header_localized", b"_header_localized", "_pill_localized", b"_pill_localized", "body_localized", b"body_localized", "header_localized", b"header_localized", "pill_localized", b"pill_localized"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["body", b"body", "header", b"header", "image_link", b"image_link", "image_link_light_theme", b"image_link_light_theme", "pill", b"pill"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized", "_header_localized", b"_header_localized", "_pill_localized", b"_pill_localized", "body", b"body", "body_localized", b"body_localized", "header", b"header", "header_localized", b"header_localized", "image_link", b"image_link", "image_link_light_theme", b"image_link_light_theme", "pill", b"pill", "pill_localized", b"pill_localized"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-        def WhichOneof(self, oneof_group: _Never) -> None: ...
+        _WhichOneofReturnType__body_localized: _TypeAlias = _typing.Literal["body_localized"]  # noqa: Y015
+        _WhichOneofArgType__body_localized: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized"]  # noqa: Y015
+        _WhichOneofReturnType__header_localized: _TypeAlias = _typing.Literal["header_localized"]  # noqa: Y015
+        _WhichOneofArgType__header_localized: _TypeAlias = _typing.Literal["_header_localized", b"_header_localized"]  # noqa: Y015
+        _WhichOneofReturnType__pill_localized: _TypeAlias = _typing.Literal["pill_localized"]  # noqa: Y015
+        _WhichOneofArgType__pill_localized: _TypeAlias = _typing.Literal["_pill_localized", b"_pill_localized"]  # noqa: Y015
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__body_localized) -> _WhichOneofReturnType__body_localized | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__header_localized) -> _WhichOneofReturnType__header_localized | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__pill_localized) -> _WhichOneofReturnType__pill_localized | None: ...
 
     @_typing.final
     class SubscriptionButton(_message.Message):
@@ -1216,21 +1280,27 @@ class PremiumMarketingComponentProperties(_message.Message):
         COPY_FIELD_NUMBER: _builtins.int
         BUTTON_ACTION_FIELD_NUMBER: _builtins.int
         DEEPLINK_SECTION_FIELD_NUMBER: _builtins.int
+        COPY_LOCALIZED_FIELD_NUMBER: _builtins.int
         copy: _builtins.str
         button_action: Global___PremiumMarketingComponentProperties.ButtonAction.ValueType
         deeplink_section: _builtins.str
+        @_builtins.property
+        def copy_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
         def __init__(
             self,
             *,
             copy: _builtins.str = ...,
             button_action: Global___PremiumMarketingComponentProperties.ButtonAction.ValueType = ...,
             deeplink_section: _builtins.str = ...,
+            copy_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_copy_localized", b"_copy_localized", "copy_localized", b"copy_localized"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["button_action", b"button_action", "copy", b"copy", "deeplink_section", b"deeplink_section"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_copy_localized", b"_copy_localized", "button_action", b"button_action", "copy", b"copy", "copy_localized", b"copy_localized", "deeplink_section", b"deeplink_section"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-        def WhichOneof(self, oneof_group: _Never) -> None: ...
+        _WhichOneofReturnType__copy_localized: _TypeAlias = _typing.Literal["copy_localized"]  # noqa: Y015
+        _WhichOneofArgType__copy_localized: _TypeAlias = _typing.Literal["_copy_localized", b"_copy_localized"]  # noqa: Y015
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__copy_localized) -> _WhichOneofReturnType__copy_localized | None: ...
 
     @_typing.final
     class Subtitle(_message.Message):
@@ -1347,19 +1417,25 @@ class PremiumMarketingComponentProperties(_message.Message):
 
         ID_FIELD_NUMBER: _builtins.int
         LINK_TEXT_FIELD_NUMBER: _builtins.int
+        LINK_TEXT_LOCALIZED_FIELD_NUMBER: _builtins.int
         id: _builtins.str
         link_text: _builtins.str
+        @_builtins.property
+        def link_text_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
         def __init__(
             self,
             *,
             id: _builtins.str = ...,
             link_text: _builtins.str = ...,
+            link_text_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_link_text_localized", b"_link_text_localized", "link_text_localized", b"link_text_localized"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["id", b"id", "link_text", b"link_text"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_link_text_localized", b"_link_text_localized", "id", b"id", "link_text", b"link_text", "link_text_localized", b"link_text_localized"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-        def WhichOneof(self, oneof_group: _Never) -> None: ...
+        _WhichOneofReturnType__link_text_localized: _TypeAlias = _typing.Literal["link_text_localized"]  # noqa: Y015
+        _WhichOneofArgType__link_text_localized: _TypeAlias = _typing.Literal["_link_text_localized", b"_link_text_localized"]  # noqa: Y015
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__link_text_localized) -> _WhichOneofReturnType__link_text_localized | None: ...
 
     @_typing.final
     class Disclaimer(_message.Message):
@@ -1367,22 +1443,31 @@ class PremiumMarketingComponentProperties(_message.Message):
 
         DISCLAIMER_TEXT_FIELD_NUMBER: _builtins.int
         DISCLAIMER_HELP_ARTICLE_FIELD_NUMBER: _builtins.int
+        DISCLAIMER_TEXT_LOCALIZED_FIELD_NUMBER: _builtins.int
         disclaimer_text: _builtins.str
         @_builtins.property
         def disclaimer_help_article(self) -> Global___PremiumMarketingComponentProperties.HelpArticle: ...
+        @_builtins.property
+        def disclaimer_text_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
         def __init__(
             self,
             *,
             disclaimer_text: _builtins.str = ...,
             disclaimer_help_article: Global___PremiumMarketingComponentProperties.HelpArticle | None = ...,
+            disclaimer_text_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _typing.Literal["_disclaimer_help_article", b"_disclaimer_help_article", "disclaimer_help_article", b"disclaimer_help_article"]  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_disclaimer_help_article", b"_disclaimer_help_article", "_disclaimer_text_localized", b"_disclaimer_text_localized", "disclaimer_help_article", b"disclaimer_help_article", "disclaimer_text_localized", b"disclaimer_text_localized"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_disclaimer_help_article", b"_disclaimer_help_article", "disclaimer_help_article", b"disclaimer_help_article", "disclaimer_text", b"disclaimer_text"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_disclaimer_help_article", b"_disclaimer_help_article", "_disclaimer_text_localized", b"_disclaimer_text_localized", "disclaimer_help_article", b"disclaimer_help_article", "disclaimer_text", b"disclaimer_text", "disclaimer_text_localized", b"disclaimer_text_localized"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__disclaimer_help_article: _TypeAlias = _typing.Literal["disclaimer_help_article"]  # noqa: Y015
         _WhichOneofArgType__disclaimer_help_article: _TypeAlias = _typing.Literal["_disclaimer_help_article", b"_disclaimer_help_article"]  # noqa: Y015
+        _WhichOneofReturnType__disclaimer_text_localized: _TypeAlias = _typing.Literal["disclaimer_text_localized"]  # noqa: Y015
+        _WhichOneofArgType__disclaimer_text_localized: _TypeAlias = _typing.Literal["_disclaimer_text_localized", b"_disclaimer_text_localized"]  # noqa: Y015
+        @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__disclaimer_help_article) -> _WhichOneofReturnType__disclaimer_help_article | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__disclaimer_text_localized) -> _WhichOneofReturnType__disclaimer_text_localized | None: ...
 
     @_typing.final
     class AnnouncementModalVariant1Properties(_message.Message):
@@ -1402,6 +1487,9 @@ class PremiumMarketingComponentProperties(_message.Message):
         STORAGE_FIELD_NUMBER: _builtins.int
         DISCLAIMER_FIELD_NUMBER: _builtins.int
         HELP_ARTICLE_FIELD_NUMBER: _builtins.int
+        HEADER_LOCALIZED_FIELD_NUMBER: _builtins.int
+        SUBHEADER_LOCALIZED_FIELD_NUMBER: _builtins.int
+        MODAL_TOP_PILL_LOCALIZED_FIELD_NUMBER: _builtins.int
         DISMISS_KEY_FIELD_NUMBER: _builtins.int
         BODY_FIELD_NUMBER: _builtins.int
         header: _builtins.str
@@ -1426,6 +1514,12 @@ class PremiumMarketingComponentProperties(_message.Message):
         def disclaimer(self) -> Global___PremiumMarketingComponentProperties.Disclaimer: ...
         @_builtins.property
         def help_article(self) -> Global___PremiumMarketingComponentProperties.HelpArticle: ...
+        @_builtins.property
+        def header_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
+        @_builtins.property
+        def subheader_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
+        @_builtins.property
+        def modal_top_pill_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
         def __init__(
             self,
             *,
@@ -1443,29 +1537,44 @@ class PremiumMarketingComponentProperties(_message.Message):
             storage: Global___PremiumMarketingComponentProperties.Variant1Storage | None = ...,
             disclaimer: Global___PremiumMarketingComponentProperties.Disclaimer | None = ...,
             help_article: Global___PremiumMarketingComponentProperties.HelpArticle | None = ...,
+            header_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
+            subheader_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
+            modal_top_pill_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
             dismiss_key: _builtins.str = ...,
             body: _builtins.str = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _typing.Literal["_button", b"_button", "_disclaimer", b"_disclaimer", "_help_article", b"_help_article", "_storage", b"_storage", "button", b"button", "disclaimer", b"disclaimer", "help_article", b"help_article", "storage", b"storage"]  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_button", b"_button", "_disclaimer", b"_disclaimer", "_header_localized", b"_header_localized", "_help_article", b"_help_article", "_modal_top_pill_localized", b"_modal_top_pill_localized", "_storage", b"_storage", "_subheader_localized", b"_subheader_localized", "button", b"button", "disclaimer", b"disclaimer", "header_localized", b"header_localized", "help_article", b"help_article", "modal_top_pill_localized", b"modal_top_pill_localized", "storage", b"storage", "subheader_localized", b"subheader_localized"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_button", b"_button", "_disclaimer", b"_disclaimer", "_help_article", b"_help_article", "_storage", b"_storage", "body", b"body", "button", b"button", "disclaimer", b"disclaimer", "dismiss_key", b"dismiss_key", "feature_cards", b"feature_cards", "header", b"header", "help_article", b"help_article", "help_article_id", b"help_article_id", "hero_art_image_link_dark_theme", b"hero_art_image_link_dark_theme", "hero_art_image_link_light_theme", b"hero_art_image_link_light_theme", "hero_art_video_link_light_theme", b"hero_art_video_link_light_theme", "hero_art_video_subtitles", b"hero_art_video_subtitles", "modal_top_pill", b"modal_top_pill", "storage", b"storage", "subheader", b"subheader", "video_link", b"video_link"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_button", b"_button", "_disclaimer", b"_disclaimer", "_header_localized", b"_header_localized", "_help_article", b"_help_article", "_modal_top_pill_localized", b"_modal_top_pill_localized", "_storage", b"_storage", "_subheader_localized", b"_subheader_localized", "body", b"body", "button", b"button", "disclaimer", b"disclaimer", "dismiss_key", b"dismiss_key", "feature_cards", b"feature_cards", "header", b"header", "header_localized", b"header_localized", "help_article", b"help_article", "help_article_id", b"help_article_id", "hero_art_image_link_dark_theme", b"hero_art_image_link_dark_theme", "hero_art_image_link_light_theme", b"hero_art_image_link_light_theme", "hero_art_video_link_light_theme", b"hero_art_video_link_light_theme", "hero_art_video_subtitles", b"hero_art_video_subtitles", "modal_top_pill", b"modal_top_pill", "modal_top_pill_localized", b"modal_top_pill_localized", "storage", b"storage", "subheader", b"subheader", "subheader_localized", b"subheader_localized", "video_link", b"video_link"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__button: _TypeAlias = _typing.Literal["button"]  # noqa: Y015
         _WhichOneofArgType__button: _TypeAlias = _typing.Literal["_button", b"_button"]  # noqa: Y015
         _WhichOneofReturnType__disclaimer: _TypeAlias = _typing.Literal["disclaimer"]  # noqa: Y015
         _WhichOneofArgType__disclaimer: _TypeAlias = _typing.Literal["_disclaimer", b"_disclaimer"]  # noqa: Y015
+        _WhichOneofReturnType__header_localized: _TypeAlias = _typing.Literal["header_localized"]  # noqa: Y015
+        _WhichOneofArgType__header_localized: _TypeAlias = _typing.Literal["_header_localized", b"_header_localized"]  # noqa: Y015
         _WhichOneofReturnType__help_article: _TypeAlias = _typing.Literal["help_article"]  # noqa: Y015
         _WhichOneofArgType__help_article: _TypeAlias = _typing.Literal["_help_article", b"_help_article"]  # noqa: Y015
+        _WhichOneofReturnType__modal_top_pill_localized: _TypeAlias = _typing.Literal["modal_top_pill_localized"]  # noqa: Y015
+        _WhichOneofArgType__modal_top_pill_localized: _TypeAlias = _typing.Literal["_modal_top_pill_localized", b"_modal_top_pill_localized"]  # noqa: Y015
         _WhichOneofReturnType__storage: _TypeAlias = _typing.Literal["storage"]  # noqa: Y015
         _WhichOneofArgType__storage: _TypeAlias = _typing.Literal["_storage", b"_storage"]  # noqa: Y015
+        _WhichOneofReturnType__subheader_localized: _TypeAlias = _typing.Literal["subheader_localized"]  # noqa: Y015
+        _WhichOneofArgType__subheader_localized: _TypeAlias = _typing.Literal["_subheader_localized", b"_subheader_localized"]  # noqa: Y015
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__button) -> _WhichOneofReturnType__button | None: ...
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__disclaimer) -> _WhichOneofReturnType__disclaimer | None: ...
         @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__header_localized) -> _WhichOneofReturnType__header_localized | None: ...
+        @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__help_article) -> _WhichOneofReturnType__help_article | None: ...
         @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__modal_top_pill_localized) -> _WhichOneofReturnType__modal_top_pill_localized | None: ...
+        @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__storage) -> _WhichOneofReturnType__storage | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__subheader_localized) -> _WhichOneofReturnType__subheader_localized | None: ...
 
     @_typing.final
     class PremiumTab(_message.Message):
@@ -1475,10 +1584,16 @@ class PremiumMarketingComponentProperties(_message.Message):
         ACKNOWLEDGED_BADGE_LABEL_FIELD_NUMBER: _builtins.int
         SHOW_HOVER_GRADIENT_FIELD_NUMBER: _builtins.int
         DEEPLINK_SECTION_FIELD_NUMBER: _builtins.int
+        BADGE_LABEL_LOCALIZED_FIELD_NUMBER: _builtins.int
+        ACKNOWLEDGED_BADGE_LABEL_LOCALIZED_FIELD_NUMBER: _builtins.int
         badge_label: _builtins.str
         acknowledged_badge_label: _builtins.str
         show_hover_gradient: _builtins.bool
         deeplink_section: _builtins.str
+        @_builtins.property
+        def badge_label_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
+        @_builtins.property
+        def acknowledged_badge_label_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
         def __init__(
             self,
             *,
@@ -1486,12 +1601,21 @@ class PremiumMarketingComponentProperties(_message.Message):
             acknowledged_badge_label: _builtins.str = ...,
             show_hover_gradient: _builtins.bool = ...,
             deeplink_section: _builtins.str = ...,
+            badge_label_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
+            acknowledged_badge_label_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_acknowledged_badge_label_localized", b"_acknowledged_badge_label_localized", "_badge_label_localized", b"_badge_label_localized", "acknowledged_badge_label_localized", b"acknowledged_badge_label_localized", "badge_label_localized", b"badge_label_localized"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["acknowledged_badge_label", b"acknowledged_badge_label", "badge_label", b"badge_label", "deeplink_section", b"deeplink_section", "show_hover_gradient", b"show_hover_gradient"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_acknowledged_badge_label_localized", b"_acknowledged_badge_label_localized", "_badge_label_localized", b"_badge_label_localized", "acknowledged_badge_label", b"acknowledged_badge_label", "acknowledged_badge_label_localized", b"acknowledged_badge_label_localized", "badge_label", b"badge_label", "badge_label_localized", b"badge_label_localized", "deeplink_section", b"deeplink_section", "show_hover_gradient", b"show_hover_gradient"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-        def WhichOneof(self, oneof_group: _Never) -> None: ...
+        _WhichOneofReturnType__acknowledged_badge_label_localized: _TypeAlias = _typing.Literal["acknowledged_badge_label_localized"]  # noqa: Y015
+        _WhichOneofArgType__acknowledged_badge_label_localized: _TypeAlias = _typing.Literal["_acknowledged_badge_label_localized", b"_acknowledged_badge_label_localized"]  # noqa: Y015
+        _WhichOneofReturnType__badge_label_localized: _TypeAlias = _typing.Literal["badge_label_localized"]  # noqa: Y015
+        _WhichOneofArgType__badge_label_localized: _TypeAlias = _typing.Literal["_badge_label_localized", b"_badge_label_localized"]  # noqa: Y015
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__acknowledged_badge_label_localized) -> _WhichOneofReturnType__acknowledged_badge_label_localized | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__badge_label_localized) -> _WhichOneofReturnType__badge_label_localized | None: ...
 
     @_typing.final
     class MarketingPageBannerButton(_message.Message):
@@ -1500,21 +1624,27 @@ class PremiumMarketingComponentProperties(_message.Message):
         COPY_FIELD_NUMBER: _builtins.int
         BUTTON_ACTION_FIELD_NUMBER: _builtins.int
         DEEPLINK_SECTION_FIELD_NUMBER: _builtins.int
+        COPY_LOCALIZED_FIELD_NUMBER: _builtins.int
         copy: _builtins.str
         button_action: Global___PremiumMarketingComponentProperties.ButtonAction.ValueType
         deeplink_section: _builtins.str
+        @_builtins.property
+        def copy_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
         def __init__(
             self,
             *,
             copy: _builtins.str = ...,
             button_action: Global___PremiumMarketingComponentProperties.ButtonAction.ValueType = ...,
             deeplink_section: _builtins.str = ...,
+            copy_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_copy_localized", b"_copy_localized", "copy_localized", b"copy_localized"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["button_action", b"button_action", "copy", b"copy", "deeplink_section", b"deeplink_section"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_copy_localized", b"_copy_localized", "button_action", b"button_action", "copy", b"copy", "copy_localized", b"copy_localized", "deeplink_section", b"deeplink_section"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-        def WhichOneof(self, oneof_group: _Never) -> None: ...
+        _WhichOneofReturnType__copy_localized: _TypeAlias = _typing.Literal["copy_localized"]  # noqa: Y015
+        _WhichOneofArgType__copy_localized: _TypeAlias = _typing.Literal["_copy_localized", b"_copy_localized"]  # noqa: Y015
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__copy_localized) -> _WhichOneofReturnType__copy_localized | None: ...
 
     @_typing.final
     class MarketingPageBanner(_message.Message):
@@ -1526,6 +1656,8 @@ class PremiumMarketingComponentProperties(_message.Message):
         HELP_ARTICLE_ID_FIELD_NUMBER: _builtins.int
         BUTTON_FIELD_NUMBER: _builtins.int
         HELP_ARTICLE_FIELD_NUMBER: _builtins.int
+        HEADER_LOCALIZED_FIELD_NUMBER: _builtins.int
+        BODY_LOCALIZED_FIELD_NUMBER: _builtins.int
         asset_url: _builtins.str
         header: _builtins.str
         body: _builtins.str
@@ -1534,6 +1666,10 @@ class PremiumMarketingComponentProperties(_message.Message):
         def button(self) -> Global___PremiumMarketingComponentProperties.MarketingPageBannerButton: ...
         @_builtins.property
         def help_article(self) -> Global___PremiumMarketingComponentProperties.HelpArticle: ...
+        @_builtins.property
+        def header_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
+        @_builtins.property
+        def body_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
         def __init__(
             self,
             *,
@@ -1543,17 +1679,27 @@ class PremiumMarketingComponentProperties(_message.Message):
             help_article_id: _builtins.str = ...,
             button: Global___PremiumMarketingComponentProperties.MarketingPageBannerButton | None = ...,
             help_article: Global___PremiumMarketingComponentProperties.HelpArticle | None = ...,
+            header_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
+            body_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _typing.Literal["_button", b"_button", "_help_article", b"_help_article", "button", b"button", "help_article", b"help_article"]  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized", "_button", b"_button", "_header_localized", b"_header_localized", "_help_article", b"_help_article", "body_localized", b"body_localized", "button", b"button", "header_localized", b"header_localized", "help_article", b"help_article"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_button", b"_button", "_help_article", b"_help_article", "asset_url", b"asset_url", "body", b"body", "button", b"button", "header", b"header", "help_article", b"help_article", "help_article_id", b"help_article_id"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized", "_button", b"_button", "_header_localized", b"_header_localized", "_help_article", b"_help_article", "asset_url", b"asset_url", "body", b"body", "body_localized", b"body_localized", "button", b"button", "header", b"header", "header_localized", b"header_localized", "help_article", b"help_article", "help_article_id", b"help_article_id"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        _WhichOneofReturnType__body_localized: _TypeAlias = _typing.Literal["body_localized"]  # noqa: Y015
+        _WhichOneofArgType__body_localized: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized"]  # noqa: Y015
         _WhichOneofReturnType__button: _TypeAlias = _typing.Literal["button"]  # noqa: Y015
         _WhichOneofArgType__button: _TypeAlias = _typing.Literal["_button", b"_button"]  # noqa: Y015
+        _WhichOneofReturnType__header_localized: _TypeAlias = _typing.Literal["header_localized"]  # noqa: Y015
+        _WhichOneofArgType__header_localized: _TypeAlias = _typing.Literal["_header_localized", b"_header_localized"]  # noqa: Y015
         _WhichOneofReturnType__help_article: _TypeAlias = _typing.Literal["help_article"]  # noqa: Y015
         _WhichOneofArgType__help_article: _TypeAlias = _typing.Literal["_help_article", b"_help_article"]  # noqa: Y015
         @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__body_localized) -> _WhichOneofReturnType__body_localized | None: ...
+        @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__button) -> _WhichOneofReturnType__button | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__header_localized) -> _WhichOneofReturnType__header_localized | None: ...
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__help_article) -> _WhichOneofReturnType__help_article | None: ...
 
@@ -1564,21 +1710,36 @@ class PremiumMarketingComponentProperties(_message.Message):
         ASSET_URL_FIELD_NUMBER: _builtins.int
         HEADER_FIELD_NUMBER: _builtins.int
         BODY_FIELD_NUMBER: _builtins.int
+        HEADER_LOCALIZED_FIELD_NUMBER: _builtins.int
+        BODY_LOCALIZED_FIELD_NUMBER: _builtins.int
         asset_url: _builtins.str
         header: _builtins.str
         body: _builtins.str
+        @_builtins.property
+        def header_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
+        @_builtins.property
+        def body_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
         def __init__(
             self,
             *,
             asset_url: _builtins.str = ...,
             header: _builtins.str = ...,
             body: _builtins.str = ...,
+            header_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
+            body_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized", "_header_localized", b"_header_localized", "body_localized", b"body_localized", "header_localized", b"header_localized"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["asset_url", b"asset_url", "body", b"body", "header", b"header"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized", "_header_localized", b"_header_localized", "asset_url", b"asset_url", "body", b"body", "body_localized", b"body_localized", "header", b"header", "header_localized", b"header_localized"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-        def WhichOneof(self, oneof_group: _Never) -> None: ...
+        _WhichOneofReturnType__body_localized: _TypeAlias = _typing.Literal["body_localized"]  # noqa: Y015
+        _WhichOneofArgType__body_localized: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized"]  # noqa: Y015
+        _WhichOneofReturnType__header_localized: _TypeAlias = _typing.Literal["header_localized"]  # noqa: Y015
+        _WhichOneofArgType__header_localized: _TypeAlias = _typing.Literal["_header_localized", b"_header_localized"]  # noqa: Y015
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__body_localized) -> _WhichOneofReturnType__body_localized | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__header_localized) -> _WhichOneofReturnType__header_localized | None: ...
 
     @_typing.final
     class CTAButton(_message.Message):
@@ -1587,21 +1748,27 @@ class PremiumMarketingComponentProperties(_message.Message):
         COPY_FIELD_NUMBER: _builtins.int
         BUTTON_ACTION_FIELD_NUMBER: _builtins.int
         DEEPLINK_SECTION_FIELD_NUMBER: _builtins.int
+        COPY_LOCALIZED_FIELD_NUMBER: _builtins.int
         copy: _builtins.str
         button_action: Global___PremiumMarketingComponentProperties.ButtonAction.ValueType
         deeplink_section: _builtins.str
+        @_builtins.property
+        def copy_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
         def __init__(
             self,
             *,
             copy: _builtins.str = ...,
             button_action: Global___PremiumMarketingComponentProperties.ButtonAction.ValueType = ...,
             deeplink_section: _builtins.str = ...,
+            copy_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_copy_localized", b"_copy_localized", "copy_localized", b"copy_localized"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["button_action", b"button_action", "copy", b"copy", "deeplink_section", b"deeplink_section"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_copy_localized", b"_copy_localized", "button_action", b"button_action", "copy", b"copy", "copy_localized", b"copy_localized", "deeplink_section", b"deeplink_section"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-        def WhichOneof(self, oneof_group: _Never) -> None: ...
+        _WhichOneofReturnType__copy_localized: _TypeAlias = _typing.Literal["copy_localized"]  # noqa: Y015
+        _WhichOneofArgType__copy_localized: _TypeAlias = _typing.Literal["_copy_localized", b"_copy_localized"]  # noqa: Y015
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__copy_localized) -> _WhichOneofReturnType__copy_localized | None: ...
 
     @_typing.final
     class MobileBottomSheet(_message.Message):
@@ -1614,6 +1781,8 @@ class PremiumMarketingComponentProperties(_message.Message):
         BUTTON_FIELD_NUMBER: _builtins.int
         DISMISSIBLE_CONTENT_FIELD_NUMBER: _builtins.int
         HELP_ARTICLE_FIELD_NUMBER: _builtins.int
+        HEADER_LOCALIZED_FIELD_NUMBER: _builtins.int
+        BODY_LOCALIZED_FIELD_NUMBER: _builtins.int
         asset_url: _builtins.str
         header: _builtins.str
         body: _builtins.str
@@ -1623,6 +1792,10 @@ class PremiumMarketingComponentProperties(_message.Message):
         def button(self) -> Global___PremiumMarketingComponentProperties.CTAButton: ...
         @_builtins.property
         def help_article(self) -> Global___PremiumMarketingComponentProperties.HelpArticle: ...
+        @_builtins.property
+        def header_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
+        @_builtins.property
+        def body_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
         def __init__(
             self,
             *,
@@ -1633,17 +1806,27 @@ class PremiumMarketingComponentProperties(_message.Message):
             button: Global___PremiumMarketingComponentProperties.CTAButton | None = ...,
             dismissible_content: Global___PremiumMarketingComponentProperties.DismissibleContent.ValueType = ...,
             help_article: Global___PremiumMarketingComponentProperties.HelpArticle | None = ...,
+            header_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
+            body_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _typing.Literal["_button", b"_button", "_help_article", b"_help_article", "button", b"button", "help_article", b"help_article"]  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized", "_button", b"_button", "_header_localized", b"_header_localized", "_help_article", b"_help_article", "body_localized", b"body_localized", "button", b"button", "header_localized", b"header_localized", "help_article", b"help_article"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_button", b"_button", "_help_article", b"_help_article", "asset_url", b"asset_url", "body", b"body", "button", b"button", "dismissible_content", b"dismissible_content", "header", b"header", "help_article", b"help_article", "help_article_id", b"help_article_id"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized", "_button", b"_button", "_header_localized", b"_header_localized", "_help_article", b"_help_article", "asset_url", b"asset_url", "body", b"body", "body_localized", b"body_localized", "button", b"button", "dismissible_content", b"dismissible_content", "header", b"header", "header_localized", b"header_localized", "help_article", b"help_article", "help_article_id", b"help_article_id"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        _WhichOneofReturnType__body_localized: _TypeAlias = _typing.Literal["body_localized"]  # noqa: Y015
+        _WhichOneofArgType__body_localized: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized"]  # noqa: Y015
         _WhichOneofReturnType__button: _TypeAlias = _typing.Literal["button"]  # noqa: Y015
         _WhichOneofArgType__button: _TypeAlias = _typing.Literal["_button", b"_button"]  # noqa: Y015
+        _WhichOneofReturnType__header_localized: _TypeAlias = _typing.Literal["header_localized"]  # noqa: Y015
+        _WhichOneofArgType__header_localized: _TypeAlias = _typing.Literal["_header_localized", b"_header_localized"]  # noqa: Y015
         _WhichOneofReturnType__help_article: _TypeAlias = _typing.Literal["help_article"]  # noqa: Y015
         _WhichOneofArgType__help_article: _TypeAlias = _typing.Literal["_help_article", b"_help_article"]  # noqa: Y015
         @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__body_localized) -> _WhichOneofReturnType__body_localized | None: ...
+        @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__button) -> _WhichOneofReturnType__button | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__header_localized) -> _WhichOneofReturnType__header_localized | None: ...
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__help_article) -> _WhichOneofReturnType__help_article | None: ...
 
@@ -1731,11 +1914,17 @@ class PremiumMarketingComponentProperties(_message.Message):
         BODY_FIELD_NUMBER: _builtins.int
         ASSET_URL_FIELD_NUMBER: _builtins.int
         ASSET_FIELD_NUMBER: _builtins.int
+        HEADER_LOCALIZED_FIELD_NUMBER: _builtins.int
+        BODY_LOCALIZED_FIELD_NUMBER: _builtins.int
         header: _builtins.str
         body: _builtins.str
         asset_url: _builtins.str
         @_builtins.property
         def asset(self) -> Global___PremiumMarketingComponentProperties.ThemeAwareAsset: ...
+        @_builtins.property
+        def header_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
+        @_builtins.property
+        def body_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
         def __init__(
             self,
             *,
@@ -1743,14 +1932,25 @@ class PremiumMarketingComponentProperties(_message.Message):
             body: _builtins.str = ...,
             asset_url: _builtins.str = ...,
             asset: Global___PremiumMarketingComponentProperties.ThemeAwareAsset | None = ...,
+            header_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
+            body_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "asset", b"asset"]  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_body_localized", b"_body_localized", "_header_localized", b"_header_localized", "asset", b"asset", "body_localized", b"body_localized", "header_localized", b"header_localized"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "asset", b"asset", "asset_url", b"asset_url", "body", b"body", "header", b"header"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_body_localized", b"_body_localized", "_header_localized", b"_header_localized", "asset", b"asset", "asset_url", b"asset_url", "body", b"body", "body_localized", b"body_localized", "header", b"header", "header_localized", b"header_localized"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__asset: _TypeAlias = _typing.Literal["asset"]  # noqa: Y015
         _WhichOneofArgType__asset: _TypeAlias = _typing.Literal["_asset", b"_asset"]  # noqa: Y015
+        _WhichOneofReturnType__body_localized: _TypeAlias = _typing.Literal["body_localized"]  # noqa: Y015
+        _WhichOneofArgType__body_localized: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized"]  # noqa: Y015
+        _WhichOneofReturnType__header_localized: _TypeAlias = _typing.Literal["header_localized"]  # noqa: Y015
+        _WhichOneofArgType__header_localized: _TypeAlias = _typing.Literal["_header_localized", b"_header_localized"]  # noqa: Y015
+        @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__asset) -> _WhichOneofReturnType__asset | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__body_localized) -> _WhichOneofReturnType__body_localized | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__header_localized) -> _WhichOneofReturnType__header_localized | None: ...
 
     @_typing.final
     class GiftPlanSelectionCardBanner(_message.Message):
@@ -1768,6 +1968,9 @@ class PremiumMarketingComponentProperties(_message.Message):
         BACKGROUND_ASSET_FIELD_NUMBER: _builtins.int
         CARD_ASSET_FIELD_NUMBER: _builtins.int
         MOBILE_BANNER_ASSET_FIELD_NUMBER: _builtins.int
+        HEADER_LOCALIZED_FIELD_NUMBER: _builtins.int
+        DESKTOP_BODY_LOCALIZED_FIELD_NUMBER: _builtins.int
+        MOBILE_BODY_LOCALIZED_FIELD_NUMBER: _builtins.int
         header: _builtins.str
         desktop_body: _builtins.str
         mobile_body: _builtins.str
@@ -1786,6 +1989,12 @@ class PremiumMarketingComponentProperties(_message.Message):
         def card_asset(self) -> Global___PremiumMarketingComponentProperties.ThemeAwareAsset: ...
         @_builtins.property
         def mobile_banner_asset(self) -> Global___PremiumMarketingComponentProperties.ThemeAwareAsset: ...
+        @_builtins.property
+        def header_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
+        @_builtins.property
+        def desktop_body_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
+        @_builtins.property
+        def mobile_body_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
         def __init__(
             self,
             *,
@@ -1801,10 +2010,13 @@ class PremiumMarketingComponentProperties(_message.Message):
             background_asset: Global___PremiumMarketingComponentProperties.ThemeAwareAsset | None = ...,
             card_asset: Global___PremiumMarketingComponentProperties.ThemeAwareAsset | None = ...,
             mobile_banner_asset: Global___PremiumMarketingComponentProperties.ThemeAwareAsset | None = ...,
+            header_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
+            desktop_body_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
+            mobile_body_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _typing.Literal["_avatar_asset", b"_avatar_asset", "_background_asset", b"_background_asset", "_banner_asset", b"_banner_asset", "_card_asset", b"_card_asset", "_gradient", b"_gradient", "_mobile_banner_asset", b"_mobile_banner_asset", "avatar_asset", b"avatar_asset", "background_asset", b"background_asset", "banner_asset", b"banner_asset", "card_asset", b"card_asset", "gradient", b"gradient", "mobile_banner_asset", b"mobile_banner_asset"]  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_avatar_asset", b"_avatar_asset", "_background_asset", b"_background_asset", "_banner_asset", b"_banner_asset", "_card_asset", b"_card_asset", "_desktop_body_localized", b"_desktop_body_localized", "_gradient", b"_gradient", "_header_localized", b"_header_localized", "_mobile_banner_asset", b"_mobile_banner_asset", "_mobile_body_localized", b"_mobile_body_localized", "avatar_asset", b"avatar_asset", "background_asset", b"background_asset", "banner_asset", b"banner_asset", "card_asset", b"card_asset", "desktop_body_localized", b"desktop_body_localized", "gradient", b"gradient", "header_localized", b"header_localized", "mobile_banner_asset", b"mobile_banner_asset", "mobile_body_localized", b"mobile_body_localized"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_avatar_asset", b"_avatar_asset", "_background_asset", b"_background_asset", "_banner_asset", b"_banner_asset", "_card_asset", b"_card_asset", "_gradient", b"_gradient", "_mobile_banner_asset", b"_mobile_banner_asset", "avatar_asset", b"avatar_asset", "background_asset", b"background_asset", "background_asset_url", b"background_asset_url", "banner_asset", b"banner_asset", "banner_asset_url", b"banner_asset_url", "card_asset", b"card_asset", "card_asset_url", b"card_asset_url", "desktop_body", b"desktop_body", "gradient", b"gradient", "header", b"header", "mobile_banner_asset", b"mobile_banner_asset", "mobile_body", b"mobile_body"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_avatar_asset", b"_avatar_asset", "_background_asset", b"_background_asset", "_banner_asset", b"_banner_asset", "_card_asset", b"_card_asset", "_desktop_body_localized", b"_desktop_body_localized", "_gradient", b"_gradient", "_header_localized", b"_header_localized", "_mobile_banner_asset", b"_mobile_banner_asset", "_mobile_body_localized", b"_mobile_body_localized", "avatar_asset", b"avatar_asset", "background_asset", b"background_asset", "background_asset_url", b"background_asset_url", "banner_asset", b"banner_asset", "banner_asset_url", b"banner_asset_url", "card_asset", b"card_asset", "card_asset_url", b"card_asset_url", "desktop_body", b"desktop_body", "desktop_body_localized", b"desktop_body_localized", "gradient", b"gradient", "header", b"header", "header_localized", b"header_localized", "mobile_banner_asset", b"mobile_banner_asset", "mobile_body", b"mobile_body", "mobile_body_localized", b"mobile_body_localized"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__avatar_asset: _TypeAlias = _typing.Literal["avatar_asset"]  # noqa: Y015
         _WhichOneofArgType__avatar_asset: _TypeAlias = _typing.Literal["_avatar_asset", b"_avatar_asset"]  # noqa: Y015
@@ -1814,10 +2026,16 @@ class PremiumMarketingComponentProperties(_message.Message):
         _WhichOneofArgType__banner_asset: _TypeAlias = _typing.Literal["_banner_asset", b"_banner_asset"]  # noqa: Y015
         _WhichOneofReturnType__card_asset: _TypeAlias = _typing.Literal["card_asset"]  # noqa: Y015
         _WhichOneofArgType__card_asset: _TypeAlias = _typing.Literal["_card_asset", b"_card_asset"]  # noqa: Y015
+        _WhichOneofReturnType__desktop_body_localized: _TypeAlias = _typing.Literal["desktop_body_localized"]  # noqa: Y015
+        _WhichOneofArgType__desktop_body_localized: _TypeAlias = _typing.Literal["_desktop_body_localized", b"_desktop_body_localized"]  # noqa: Y015
         _WhichOneofReturnType__gradient: _TypeAlias = _typing.Literal["gradient"]  # noqa: Y015
         _WhichOneofArgType__gradient: _TypeAlias = _typing.Literal["_gradient", b"_gradient"]  # noqa: Y015
+        _WhichOneofReturnType__header_localized: _TypeAlias = _typing.Literal["header_localized"]  # noqa: Y015
+        _WhichOneofArgType__header_localized: _TypeAlias = _typing.Literal["_header_localized", b"_header_localized"]  # noqa: Y015
         _WhichOneofReturnType__mobile_banner_asset: _TypeAlias = _typing.Literal["mobile_banner_asset"]  # noqa: Y015
         _WhichOneofArgType__mobile_banner_asset: _TypeAlias = _typing.Literal["_mobile_banner_asset", b"_mobile_banner_asset"]  # noqa: Y015
+        _WhichOneofReturnType__mobile_body_localized: _TypeAlias = _typing.Literal["mobile_body_localized"]  # noqa: Y015
+        _WhichOneofArgType__mobile_body_localized: _TypeAlias = _typing.Literal["_mobile_body_localized", b"_mobile_body_localized"]  # noqa: Y015
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__avatar_asset) -> _WhichOneofReturnType__avatar_asset | None: ...
         @_typing.overload
@@ -1827,9 +2045,15 @@ class PremiumMarketingComponentProperties(_message.Message):
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__card_asset) -> _WhichOneofReturnType__card_asset | None: ...
         @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__desktop_body_localized) -> _WhichOneofReturnType__desktop_body_localized | None: ...
+        @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__gradient) -> _WhichOneofReturnType__gradient | None: ...
         @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__header_localized) -> _WhichOneofReturnType__header_localized | None: ...
+        @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__mobile_banner_asset) -> _WhichOneofReturnType__mobile_banner_asset | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__mobile_body_localized) -> _WhichOneofReturnType__mobile_body_localized | None: ...
 
     @_typing.final
     class GiftCustomizationBanner(_message.Message):
@@ -1844,6 +2068,8 @@ class PremiumMarketingComponentProperties(_message.Message):
         BACKGROUND_ASSET_FIELD_NUMBER: _builtins.int
         MOBILE_BACKGROUND_ASSET_FIELD_NUMBER: _builtins.int
         ASSET_VARIANT_FIELD_NUMBER: _builtins.int
+        DESKTOP_BODY_LOCALIZED_FIELD_NUMBER: _builtins.int
+        MOBILE_BODY_LOCALIZED_FIELD_NUMBER: _builtins.int
         asset_url: _builtins.str
         desktop_body: _builtins.str
         mobile_body: _builtins.str
@@ -1857,6 +2083,10 @@ class PremiumMarketingComponentProperties(_message.Message):
         def background_asset(self) -> Global___PremiumMarketingComponentProperties.ThemeAwareAsset: ...
         @_builtins.property
         def mobile_background_asset(self) -> Global___PremiumMarketingComponentProperties.ThemeAwareAsset: ...
+        @_builtins.property
+        def desktop_body_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
+        @_builtins.property
+        def mobile_body_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
         def __init__(
             self,
             *,
@@ -1869,27 +2099,37 @@ class PremiumMarketingComponentProperties(_message.Message):
             background_asset: Global___PremiumMarketingComponentProperties.ThemeAwareAsset | None = ...,
             mobile_background_asset: Global___PremiumMarketingComponentProperties.ThemeAwareAsset | None = ...,
             asset_variant: Global___PremiumMarketingComponentProperties.AssetVariant.ValueType = ...,
+            desktop_body_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
+            mobile_body_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_background_asset", b"_background_asset", "_gradient", b"_gradient", "_mobile_background_asset", b"_mobile_background_asset", "asset", b"asset", "background_asset", b"background_asset", "gradient", b"gradient", "mobile_background_asset", b"mobile_background_asset"]  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_background_asset", b"_background_asset", "_desktop_body_localized", b"_desktop_body_localized", "_gradient", b"_gradient", "_mobile_background_asset", b"_mobile_background_asset", "_mobile_body_localized", b"_mobile_body_localized", "asset", b"asset", "background_asset", b"background_asset", "desktop_body_localized", b"desktop_body_localized", "gradient", b"gradient", "mobile_background_asset", b"mobile_background_asset", "mobile_body_localized", b"mobile_body_localized"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_background_asset", b"_background_asset", "_gradient", b"_gradient", "_mobile_background_asset", b"_mobile_background_asset", "asset", b"asset", "asset_url", b"asset_url", "asset_variant", b"asset_variant", "background_asset", b"background_asset", "background_asset_url", b"background_asset_url", "desktop_body", b"desktop_body", "gradient", b"gradient", "mobile_background_asset", b"mobile_background_asset", "mobile_body", b"mobile_body"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_background_asset", b"_background_asset", "_desktop_body_localized", b"_desktop_body_localized", "_gradient", b"_gradient", "_mobile_background_asset", b"_mobile_background_asset", "_mobile_body_localized", b"_mobile_body_localized", "asset", b"asset", "asset_url", b"asset_url", "asset_variant", b"asset_variant", "background_asset", b"background_asset", "background_asset_url", b"background_asset_url", "desktop_body", b"desktop_body", "desktop_body_localized", b"desktop_body_localized", "gradient", b"gradient", "mobile_background_asset", b"mobile_background_asset", "mobile_body", b"mobile_body", "mobile_body_localized", b"mobile_body_localized"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__asset: _TypeAlias = _typing.Literal["asset"]  # noqa: Y015
         _WhichOneofArgType__asset: _TypeAlias = _typing.Literal["_asset", b"_asset"]  # noqa: Y015
         _WhichOneofReturnType__background_asset: _TypeAlias = _typing.Literal["background_asset"]  # noqa: Y015
         _WhichOneofArgType__background_asset: _TypeAlias = _typing.Literal["_background_asset", b"_background_asset"]  # noqa: Y015
+        _WhichOneofReturnType__desktop_body_localized: _TypeAlias = _typing.Literal["desktop_body_localized"]  # noqa: Y015
+        _WhichOneofArgType__desktop_body_localized: _TypeAlias = _typing.Literal["_desktop_body_localized", b"_desktop_body_localized"]  # noqa: Y015
         _WhichOneofReturnType__gradient: _TypeAlias = _typing.Literal["gradient"]  # noqa: Y015
         _WhichOneofArgType__gradient: _TypeAlias = _typing.Literal["_gradient", b"_gradient"]  # noqa: Y015
         _WhichOneofReturnType__mobile_background_asset: _TypeAlias = _typing.Literal["mobile_background_asset"]  # noqa: Y015
         _WhichOneofArgType__mobile_background_asset: _TypeAlias = _typing.Literal["_mobile_background_asset", b"_mobile_background_asset"]  # noqa: Y015
+        _WhichOneofReturnType__mobile_body_localized: _TypeAlias = _typing.Literal["mobile_body_localized"]  # noqa: Y015
+        _WhichOneofArgType__mobile_body_localized: _TypeAlias = _typing.Literal["_mobile_body_localized", b"_mobile_body_localized"]  # noqa: Y015
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__asset) -> _WhichOneofReturnType__asset | None: ...
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__background_asset) -> _WhichOneofReturnType__background_asset | None: ...
         @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__desktop_body_localized) -> _WhichOneofReturnType__desktop_body_localized | None: ...
+        @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__gradient) -> _WhichOneofReturnType__gradient | None: ...
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__mobile_background_asset) -> _WhichOneofReturnType__mobile_background_asset | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__mobile_body_localized) -> _WhichOneofReturnType__mobile_body_localized | None: ...
 
     @_typing.final
     class BillingSettingsNitroGiftBanner(_message.Message):
@@ -1904,6 +2144,9 @@ class PremiumMarketingComponentProperties(_message.Message):
         ADDITIONAL_TERMS_FIELD_NUMBER: _builtins.int
         ASSET_FIELD_NUMBER: _builtins.int
         BACKGROUND_ASSET_FIELD_NUMBER: _builtins.int
+        HEADER_LOCALIZED_FIELD_NUMBER: _builtins.int
+        BODY_LOCALIZED_FIELD_NUMBER: _builtins.int
+        ADDITIONAL_TERMS_LOCALIZED_FIELD_NUMBER: _builtins.int
         asset_url: _builtins.str
         header: _builtins.str
         body: _builtins.str
@@ -1916,6 +2159,12 @@ class PremiumMarketingComponentProperties(_message.Message):
         def asset(self) -> Global___PremiumMarketingComponentProperties.ThemeAwareAsset: ...
         @_builtins.property
         def background_asset(self) -> Global___PremiumMarketingComponentProperties.ThemeAwareAsset: ...
+        @_builtins.property
+        def header_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
+        @_builtins.property
+        def body_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
+        @_builtins.property
+        def additional_terms_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
         def __init__(
             self,
             *,
@@ -1928,40 +2177,61 @@ class PremiumMarketingComponentProperties(_message.Message):
             additional_terms: _builtins.str = ...,
             asset: Global___PremiumMarketingComponentProperties.ThemeAwareAsset | None = ...,
             background_asset: Global___PremiumMarketingComponentProperties.ThemeAwareAsset | None = ...,
+            header_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
+            body_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
+            additional_terms_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_background_asset", b"_background_asset", "_gradient", b"_gradient", "asset", b"asset", "background_asset", b"background_asset", "gradient", b"gradient"]  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_additional_terms_localized", b"_additional_terms_localized", "_asset", b"_asset", "_background_asset", b"_background_asset", "_body_localized", b"_body_localized", "_gradient", b"_gradient", "_header_localized", b"_header_localized", "additional_terms_localized", b"additional_terms_localized", "asset", b"asset", "background_asset", b"background_asset", "body_localized", b"body_localized", "gradient", b"gradient", "header_localized", b"header_localized"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_background_asset", b"_background_asset", "_gradient", b"_gradient", "additional_terms", b"additional_terms", "asset", b"asset", "asset_url", b"asset_url", "background_asset", b"background_asset", "background_asset_url", b"background_asset_url", "body", b"body", "gradient", b"gradient", "header", b"header", "text_color", b"text_color"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_additional_terms_localized", b"_additional_terms_localized", "_asset", b"_asset", "_background_asset", b"_background_asset", "_body_localized", b"_body_localized", "_gradient", b"_gradient", "_header_localized", b"_header_localized", "additional_terms", b"additional_terms", "additional_terms_localized", b"additional_terms_localized", "asset", b"asset", "asset_url", b"asset_url", "background_asset", b"background_asset", "background_asset_url", b"background_asset_url", "body", b"body", "body_localized", b"body_localized", "gradient", b"gradient", "header", b"header", "header_localized", b"header_localized", "text_color", b"text_color"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        _WhichOneofReturnType__additional_terms_localized: _TypeAlias = _typing.Literal["additional_terms_localized"]  # noqa: Y015
+        _WhichOneofArgType__additional_terms_localized: _TypeAlias = _typing.Literal["_additional_terms_localized", b"_additional_terms_localized"]  # noqa: Y015
         _WhichOneofReturnType__asset: _TypeAlias = _typing.Literal["asset"]  # noqa: Y015
         _WhichOneofArgType__asset: _TypeAlias = _typing.Literal["_asset", b"_asset"]  # noqa: Y015
         _WhichOneofReturnType__background_asset: _TypeAlias = _typing.Literal["background_asset"]  # noqa: Y015
         _WhichOneofArgType__background_asset: _TypeAlias = _typing.Literal["_background_asset", b"_background_asset"]  # noqa: Y015
+        _WhichOneofReturnType__body_localized: _TypeAlias = _typing.Literal["body_localized"]  # noqa: Y015
+        _WhichOneofArgType__body_localized: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized"]  # noqa: Y015
         _WhichOneofReturnType__gradient: _TypeAlias = _typing.Literal["gradient"]  # noqa: Y015
         _WhichOneofArgType__gradient: _TypeAlias = _typing.Literal["_gradient", b"_gradient"]  # noqa: Y015
+        _WhichOneofReturnType__header_localized: _TypeAlias = _typing.Literal["header_localized"]  # noqa: Y015
+        _WhichOneofArgType__header_localized: _TypeAlias = _typing.Literal["_header_localized", b"_header_localized"]  # noqa: Y015
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__additional_terms_localized) -> _WhichOneofReturnType__additional_terms_localized | None: ...
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__asset) -> _WhichOneofReturnType__asset | None: ...
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__background_asset) -> _WhichOneofReturnType__background_asset | None: ...
         @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__body_localized) -> _WhichOneofReturnType__body_localized | None: ...
+        @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__gradient) -> _WhichOneofReturnType__gradient | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__header_localized) -> _WhichOneofReturnType__header_localized | None: ...
 
     @_typing.final
     class GiftReminderNagbar(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
 
         BODY_FIELD_NUMBER: _builtins.int
+        BODY_LOCALIZED_FIELD_NUMBER: _builtins.int
         body: _builtins.str
+        @_builtins.property
+        def body_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
         def __init__(
             self,
             *,
             body: _builtins.str = ...,
+            body_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized", "body_localized", b"body_localized"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["body", b"body"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized", "body", b"body", "body_localized", b"body_localized"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-        def WhichOneof(self, oneof_group: _Never) -> None: ...
+        _WhichOneofReturnType__body_localized: _TypeAlias = _typing.Literal["body_localized"]  # noqa: Y015
+        _WhichOneofArgType__body_localized: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized"]  # noqa: Y015
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__body_localized) -> _WhichOneofReturnType__body_localized | None: ...
 
     @_typing.final
     class GiftReminderCoachmark(_message.Message):
@@ -1971,11 +2241,17 @@ class PremiumMarketingComponentProperties(_message.Message):
         BODY_FIELD_NUMBER: _builtins.int
         ASSET_URL_FIELD_NUMBER: _builtins.int
         ASSET_FIELD_NUMBER: _builtins.int
+        HEADER_LOCALIZED_FIELD_NUMBER: _builtins.int
+        BODY_LOCALIZED_FIELD_NUMBER: _builtins.int
         header: _builtins.str
         body: _builtins.str
         asset_url: _builtins.str
         @_builtins.property
         def asset(self) -> Global___PremiumMarketingComponentProperties.ThemeAwareAsset: ...
+        @_builtins.property
+        def header_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
+        @_builtins.property
+        def body_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
         def __init__(
             self,
             *,
@@ -1983,14 +2259,25 @@ class PremiumMarketingComponentProperties(_message.Message):
             body: _builtins.str = ...,
             asset_url: _builtins.str = ...,
             asset: Global___PremiumMarketingComponentProperties.ThemeAwareAsset | None = ...,
+            header_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
+            body_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "asset", b"asset"]  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_body_localized", b"_body_localized", "_header_localized", b"_header_localized", "asset", b"asset", "body_localized", b"body_localized", "header_localized", b"header_localized"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "asset", b"asset", "asset_url", b"asset_url", "body", b"body", "header", b"header"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_body_localized", b"_body_localized", "_header_localized", b"_header_localized", "asset", b"asset", "asset_url", b"asset_url", "body", b"body", "body_localized", b"body_localized", "header", b"header", "header_localized", b"header_localized"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__asset: _TypeAlias = _typing.Literal["asset"]  # noqa: Y015
         _WhichOneofArgType__asset: _TypeAlias = _typing.Literal["_asset", b"_asset"]  # noqa: Y015
+        _WhichOneofReturnType__body_localized: _TypeAlias = _typing.Literal["body_localized"]  # noqa: Y015
+        _WhichOneofArgType__body_localized: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized"]  # noqa: Y015
+        _WhichOneofReturnType__header_localized: _TypeAlias = _typing.Literal["header_localized"]  # noqa: Y015
+        _WhichOneofArgType__header_localized: _TypeAlias = _typing.Literal["_header_localized", b"_header_localized"]  # noqa: Y015
+        @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__asset) -> _WhichOneofReturnType__asset | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__body_localized) -> _WhichOneofReturnType__body_localized | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__header_localized) -> _WhichOneofReturnType__header_localized | None: ...
 
     @_typing.final
     class PremiumTabTooltip(_message.Message):
@@ -1999,24 +2286,41 @@ class PremiumMarketingComponentProperties(_message.Message):
         HEADER_FIELD_NUMBER: _builtins.int
         BODY_FIELD_NUMBER: _builtins.int
         ASSET_FIELD_NUMBER: _builtins.int
+        HEADER_LOCALIZED_FIELD_NUMBER: _builtins.int
+        BODY_LOCALIZED_FIELD_NUMBER: _builtins.int
         header: _builtins.str
         body: _builtins.str
         @_builtins.property
         def asset(self) -> Global___PremiumMarketingComponentProperties.ThemeAwareAsset: ...
+        @_builtins.property
+        def header_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
+        @_builtins.property
+        def body_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
         def __init__(
             self,
             *,
             header: _builtins.str = ...,
             body: _builtins.str = ...,
             asset: Global___PremiumMarketingComponentProperties.ThemeAwareAsset | None = ...,
+            header_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
+            body_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "asset", b"asset"]  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_body_localized", b"_body_localized", "_header_localized", b"_header_localized", "asset", b"asset", "body_localized", b"body_localized", "header_localized", b"header_localized"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "asset", b"asset", "body", b"body", "header", b"header"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_body_localized", b"_body_localized", "_header_localized", b"_header_localized", "asset", b"asset", "body", b"body", "body_localized", b"body_localized", "header", b"header", "header_localized", b"header_localized"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__asset: _TypeAlias = _typing.Literal["asset"]  # noqa: Y015
         _WhichOneofArgType__asset: _TypeAlias = _typing.Literal["_asset", b"_asset"]  # noqa: Y015
+        _WhichOneofReturnType__body_localized: _TypeAlias = _typing.Literal["body_localized"]  # noqa: Y015
+        _WhichOneofArgType__body_localized: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized"]  # noqa: Y015
+        _WhichOneofReturnType__header_localized: _TypeAlias = _typing.Literal["header_localized"]  # noqa: Y015
+        _WhichOneofArgType__header_localized: _TypeAlias = _typing.Literal["_header_localized", b"_header_localized"]  # noqa: Y015
+        @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__asset) -> _WhichOneofReturnType__asset | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__body_localized) -> _WhichOneofReturnType__body_localized | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__header_localized) -> _WhichOneofReturnType__header_localized | None: ...
 
     @_typing.final
     class PremiumTabPopoverCTAButton(_message.Message):
@@ -2025,21 +2329,27 @@ class PremiumMarketingComponentProperties(_message.Message):
         COPY_FIELD_NUMBER: _builtins.int
         BUTTON_ACTION_FIELD_NUMBER: _builtins.int
         DEEPLINK_SECTION_FIELD_NUMBER: _builtins.int
+        COPY_LOCALIZED_FIELD_NUMBER: _builtins.int
         copy: _builtins.str
         button_action: Global___PremiumMarketingComponentProperties.ButtonAction.ValueType
         deeplink_section: _builtins.str
+        @_builtins.property
+        def copy_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
         def __init__(
             self,
             *,
             copy: _builtins.str = ...,
             button_action: Global___PremiumMarketingComponentProperties.ButtonAction.ValueType = ...,
             deeplink_section: _builtins.str = ...,
+            copy_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_copy_localized", b"_copy_localized", "copy_localized", b"copy_localized"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["button_action", b"button_action", "copy", b"copy", "deeplink_section", b"deeplink_section"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_copy_localized", b"_copy_localized", "button_action", b"button_action", "copy", b"copy", "copy_localized", b"copy_localized", "deeplink_section", b"deeplink_section"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-        def WhichOneof(self, oneof_group: _Never) -> None: ...
+        _WhichOneofReturnType__copy_localized: _TypeAlias = _typing.Literal["copy_localized"]  # noqa: Y015
+        _WhichOneofArgType__copy_localized: _TypeAlias = _typing.Literal["_copy_localized", b"_copy_localized"]  # noqa: Y015
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__copy_localized) -> _WhichOneofReturnType__copy_localized | None: ...
 
     @_typing.final
     class PremiumTabPopover(_message.Message):
@@ -2051,6 +2361,8 @@ class PremiumMarketingComponentProperties(_message.Message):
         BUTTON_FIELD_NUMBER: _builtins.int
         HELP_ARTICLE_ID_FIELD_NUMBER: _builtins.int
         HELP_ARTICLE_FIELD_NUMBER: _builtins.int
+        HEADER_LOCALIZED_FIELD_NUMBER: _builtins.int
+        BODY_LOCALIZED_FIELD_NUMBER: _builtins.int
         header: _builtins.str
         body: _builtins.str
         help_article_id: _builtins.str
@@ -2060,6 +2372,10 @@ class PremiumMarketingComponentProperties(_message.Message):
         def button(self) -> Global___PremiumMarketingComponentProperties.PremiumTabPopoverCTAButton: ...
         @_builtins.property
         def help_article(self) -> Global___PremiumMarketingComponentProperties.HelpArticle: ...
+        @_builtins.property
+        def header_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
+        @_builtins.property
+        def body_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
         def __init__(
             self,
             *,
@@ -2069,21 +2385,31 @@ class PremiumMarketingComponentProperties(_message.Message):
             button: Global___PremiumMarketingComponentProperties.PremiumTabPopoverCTAButton | None = ...,
             help_article_id: _builtins.str = ...,
             help_article: Global___PremiumMarketingComponentProperties.HelpArticle | None = ...,
+            header_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
+            body_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_button", b"_button", "_help_article", b"_help_article", "asset", b"asset", "button", b"button", "help_article", b"help_article"]  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_body_localized", b"_body_localized", "_button", b"_button", "_header_localized", b"_header_localized", "_help_article", b"_help_article", "asset", b"asset", "body_localized", b"body_localized", "button", b"button", "header_localized", b"header_localized", "help_article", b"help_article"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_button", b"_button", "_help_article", b"_help_article", "asset", b"asset", "body", b"body", "button", b"button", "header", b"header", "help_article", b"help_article", "help_article_id", b"help_article_id"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_body_localized", b"_body_localized", "_button", b"_button", "_header_localized", b"_header_localized", "_help_article", b"_help_article", "asset", b"asset", "body", b"body", "body_localized", b"body_localized", "button", b"button", "header", b"header", "header_localized", b"header_localized", "help_article", b"help_article", "help_article_id", b"help_article_id"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__asset: _TypeAlias = _typing.Literal["asset"]  # noqa: Y015
         _WhichOneofArgType__asset: _TypeAlias = _typing.Literal["_asset", b"_asset"]  # noqa: Y015
+        _WhichOneofReturnType__body_localized: _TypeAlias = _typing.Literal["body_localized"]  # noqa: Y015
+        _WhichOneofArgType__body_localized: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized"]  # noqa: Y015
         _WhichOneofReturnType__button: _TypeAlias = _typing.Literal["button"]  # noqa: Y015
         _WhichOneofArgType__button: _TypeAlias = _typing.Literal["_button", b"_button"]  # noqa: Y015
+        _WhichOneofReturnType__header_localized: _TypeAlias = _typing.Literal["header_localized"]  # noqa: Y015
+        _WhichOneofArgType__header_localized: _TypeAlias = _typing.Literal["_header_localized", b"_header_localized"]  # noqa: Y015
         _WhichOneofReturnType__help_article: _TypeAlias = _typing.Literal["help_article"]  # noqa: Y015
         _WhichOneofArgType__help_article: _TypeAlias = _typing.Literal["_help_article", b"_help_article"]  # noqa: Y015
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__asset) -> _WhichOneofReturnType__asset | None: ...
         @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__body_localized) -> _WhichOneofReturnType__body_localized | None: ...
+        @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__button) -> _WhichOneofReturnType__button | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__header_localized) -> _WhichOneofReturnType__header_localized | None: ...
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__help_article) -> _WhichOneofReturnType__help_article | None: ...
 
@@ -2096,12 +2422,18 @@ class PremiumMarketingComponentProperties(_message.Message):
         CTA_ACTION_FIELD_NUMBER: _builtins.int
         DEEPLINK_SECTION_FIELD_NUMBER: _builtins.int
         HELP_ARTICLE_FIELD_NUMBER: _builtins.int
+        BODY_LOCALIZED_FIELD_NUMBER: _builtins.int
+        CTA_LABEL_LOCALIZED_FIELD_NUMBER: _builtins.int
         body: _builtins.str
         cta_label: _builtins.str
         cta_action: Global___PremiumMarketingComponentProperties.ButtonAction.ValueType
         deeplink_section: _builtins.str
         @_builtins.property
         def help_article(self) -> Global___PremiumMarketingComponentProperties.HelpArticle: ...
+        @_builtins.property
+        def body_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
+        @_builtins.property
+        def cta_label_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
         def __init__(
             self,
             *,
@@ -2110,13 +2442,24 @@ class PremiumMarketingComponentProperties(_message.Message):
             cta_action: Global___PremiumMarketingComponentProperties.ButtonAction.ValueType = ...,
             deeplink_section: _builtins.str = ...,
             help_article: Global___PremiumMarketingComponentProperties.HelpArticle | None = ...,
+            body_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
+            cta_label_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _typing.Literal["_help_article", b"_help_article", "help_article", b"help_article"]  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized", "_cta_label_localized", b"_cta_label_localized", "_help_article", b"_help_article", "body_localized", b"body_localized", "cta_label_localized", b"cta_label_localized", "help_article", b"help_article"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_help_article", b"_help_article", "body", b"body", "cta_action", b"cta_action", "cta_label", b"cta_label", "deeplink_section", b"deeplink_section", "help_article", b"help_article"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized", "_cta_label_localized", b"_cta_label_localized", "_help_article", b"_help_article", "body", b"body", "body_localized", b"body_localized", "cta_action", b"cta_action", "cta_label", b"cta_label", "cta_label_localized", b"cta_label_localized", "deeplink_section", b"deeplink_section", "help_article", b"help_article"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        _WhichOneofReturnType__body_localized: _TypeAlias = _typing.Literal["body_localized"]  # noqa: Y015
+        _WhichOneofArgType__body_localized: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized"]  # noqa: Y015
+        _WhichOneofReturnType__cta_label_localized: _TypeAlias = _typing.Literal["cta_label_localized"]  # noqa: Y015
+        _WhichOneofArgType__cta_label_localized: _TypeAlias = _typing.Literal["_cta_label_localized", b"_cta_label_localized"]  # noqa: Y015
         _WhichOneofReturnType__help_article: _TypeAlias = _typing.Literal["help_article"]  # noqa: Y015
         _WhichOneofArgType__help_article: _TypeAlias = _typing.Literal["_help_article", b"_help_article"]  # noqa: Y015
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__body_localized) -> _WhichOneofReturnType__body_localized | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__cta_label_localized) -> _WhichOneofReturnType__cta_label_localized | None: ...
+        @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__help_article) -> _WhichOneofReturnType__help_article | None: ...
 
     CONTENT_IDENTIFIER_FIELD_NUMBER: _builtins.int
