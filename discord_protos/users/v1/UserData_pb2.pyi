@@ -1237,6 +1237,10 @@ class UserData(_message.Message):
         DISPLAY_NAME_EFFECT_TOON: UserData._DisplayNameEffect.ValueType  # 4
         DISPLAY_NAME_EFFECT_POP: UserData._DisplayNameEffect.ValueType  # 5
         DISPLAY_NAME_EFFECT_GLOW: UserData._DisplayNameEffect.ValueType  # 6
+        DISPLAY_NAME_EFFECT_TEST_1: UserData._DisplayNameEffect.ValueType  # 1001
+        DISPLAY_NAME_EFFECT_TEST_2: UserData._DisplayNameEffect.ValueType  # 1002
+        DISPLAY_NAME_EFFECT_TEST_3: UserData._DisplayNameEffect.ValueType  # 1003
+        DISPLAY_NAME_EFFECT_TEST_4: UserData._DisplayNameEffect.ValueType  # 1004
 
     class DisplayNameEffect(_DisplayNameEffect, metaclass=_DisplayNameEffectEnumTypeWrapper): ...
     DISPLAY_NAME_EFFECT_UNSPECIFIED: UserData.DisplayNameEffect.ValueType  # 0
@@ -1246,6 +1250,10 @@ class UserData(_message.Message):
     DISPLAY_NAME_EFFECT_TOON: UserData.DisplayNameEffect.ValueType  # 4
     DISPLAY_NAME_EFFECT_POP: UserData.DisplayNameEffect.ValueType  # 5
     DISPLAY_NAME_EFFECT_GLOW: UserData.DisplayNameEffect.ValueType  # 6
+    DISPLAY_NAME_EFFECT_TEST_1: UserData.DisplayNameEffect.ValueType  # 1001
+    DISPLAY_NAME_EFFECT_TEST_2: UserData.DisplayNameEffect.ValueType  # 1002
+    DISPLAY_NAME_EFFECT_TEST_3: UserData.DisplayNameEffect.ValueType  # 1003
+    DISPLAY_NAME_EFFECT_TEST_4: UserData.DisplayNameEffect.ValueType  # 1004
 
     class _DayOfWeek:
         ValueType = _typing.NewType("ValueType", _builtins.int)

@@ -3188,7 +3188,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_REFERRAL_PROGRAM_ENTRYPOINT_NITRO_BUTTON_NOTIFICATION = 758;
      */
-    REFERRAL_PROGRAM_ENTRYPOINT_NITRO_BUTTON_NOTIFICATION = 758
+    REFERRAL_PROGRAM_ENTRYPOINT_NITRO_BUTTON_NOTIFICATION = 758,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_INVITE_NONFRIENDS_TO_GDM_COACHMARK = 759;
+     */
+    INVITE_NONFRIENDS_TO_GDM_COACHMARK = 759
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant

@@ -2928,7 +2928,23 @@ export enum UserData_DisplayNameEffect {
     /**
      * @generated from protobuf enum value: DISPLAY_NAME_EFFECT_GLOW = 6;
      */
-    GLOW = 6
+    GLOW = 6,
+    /**
+     * @generated from protobuf enum value: DISPLAY_NAME_EFFECT_TEST_1 = 1001;
+     */
+    TEST_1 = 1001,
+    /**
+     * @generated from protobuf enum value: DISPLAY_NAME_EFFECT_TEST_2 = 1002;
+     */
+    TEST_2 = 1002,
+    /**
+     * @generated from protobuf enum value: DISPLAY_NAME_EFFECT_TEST_3 = 1003;
+     */
+    TEST_3 = 1003,
+    /**
+     * @generated from protobuf enum value: DISPLAY_NAME_EFFECT_TEST_4 = 1004;
+     */
+    TEST_4 = 1004
 }
 /**
  * @generated from protobuf enum discord_protos.users.v1.UserData.DayOfWeek

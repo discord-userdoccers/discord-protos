@@ -1150,6 +1150,10 @@ class User(_message.Message):
         DISPLAY_NAME_EFFECT_TOON: User._DisplayNameEffect.ValueType  # 4
         DISPLAY_NAME_EFFECT_POP: User._DisplayNameEffect.ValueType  # 5
         DISPLAY_NAME_EFFECT_GLOW: User._DisplayNameEffect.ValueType  # 6
+        DISPLAY_NAME_EFFECT_TEST_1: User._DisplayNameEffect.ValueType  # 1001
+        DISPLAY_NAME_EFFECT_TEST_2: User._DisplayNameEffect.ValueType  # 1002
+        DISPLAY_NAME_EFFECT_TEST_3: User._DisplayNameEffect.ValueType  # 1003
+        DISPLAY_NAME_EFFECT_TEST_4: User._DisplayNameEffect.ValueType  # 1004
 
     class DisplayNameEffect(_DisplayNameEffect, metaclass=_DisplayNameEffectEnumTypeWrapper): ...
     DISPLAY_NAME_EFFECT_UNSPECIFIED: User.DisplayNameEffect.ValueType  # 0
@@ -1159,6 +1163,10 @@ class User(_message.Message):
     DISPLAY_NAME_EFFECT_TOON: User.DisplayNameEffect.ValueType  # 4
     DISPLAY_NAME_EFFECT_POP: User.DisplayNameEffect.ValueType  # 5
     DISPLAY_NAME_EFFECT_GLOW: User.DisplayNameEffect.ValueType  # 6
+    DISPLAY_NAME_EFFECT_TEST_1: User.DisplayNameEffect.ValueType  # 1001
+    DISPLAY_NAME_EFFECT_TEST_2: User.DisplayNameEffect.ValueType  # 1002
+    DISPLAY_NAME_EFFECT_TEST_3: User.DisplayNameEffect.ValueType  # 1003
+    DISPLAY_NAME_EFFECT_TEST_4: User.DisplayNameEffect.ValueType  # 1004
 
     @_typing.final
     class UserAvatarDecoration(_message.Message):

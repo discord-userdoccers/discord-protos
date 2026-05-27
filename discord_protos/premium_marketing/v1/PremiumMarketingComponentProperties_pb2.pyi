@@ -607,6 +607,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_XBOX_PERKS_RECONNECT_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 756
         DISMISSIBLE_CONTENT_STEELSERIES_LOGITECH_REHEAT: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 757
         DISMISSIBLE_CONTENT_REFERRAL_PROGRAM_ENTRYPOINT_NITRO_BUTTON_NOTIFICATION: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 758
+        DISMISSIBLE_CONTENT_INVITE_NONFRIENDS_TO_GDM_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 759
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_HUB_WAITLIST_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1164,6 +1165,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_XBOX_PERKS_RECONNECT_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 756
     DISMISSIBLE_CONTENT_STEELSERIES_LOGITECH_REHEAT: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 757
     DISMISSIBLE_CONTENT_REFERRAL_PROGRAM_ENTRYPOINT_NITRO_BUTTON_NOTIFICATION: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 758
+    DISMISSIBLE_CONTENT_INVITE_NONFRIENDS_TO_GDM_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 759
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)
