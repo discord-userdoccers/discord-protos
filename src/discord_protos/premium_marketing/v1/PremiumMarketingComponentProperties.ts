@@ -3196,7 +3196,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_PROFILE_FRAMES_NITRO_TAB_NEW_BADGE = 760;
      */
-    PROFILE_FRAMES_NITRO_TAB_NEW_BADGE = 760
+    PROFILE_FRAMES_NITRO_TAB_NEW_BADGE = 760,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_APP_WIDGET_V2_PROFILE_UPSELL_COACHMARK = 761;
+     */
+    APP_WIDGET_V2_PROFILE_UPSELL_COACHMARK = 761
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
