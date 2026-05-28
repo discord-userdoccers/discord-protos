@@ -3192,7 +3192,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_INVITE_NONFRIENDS_TO_GDM_COACHMARK = 759;
      */
-    INVITE_NONFRIENDS_TO_GDM_COACHMARK = 759
+    INVITE_NONFRIENDS_TO_GDM_COACHMARK = 759,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_PROFILE_FRAMES_NITRO_TAB_NEW_BADGE = 760;
+     */
+    PROFILE_FRAMES_NITRO_TAB_NEW_BADGE = 760
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
