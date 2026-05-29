@@ -382,6 +382,12 @@ message Experiment {
     CUSTOM_UNIT_PREFIX_SEO_URL_SLUG = 1;
   }
 
+  enum EligibilityPersistence {
+    ELIGIBILITY_PERSISTENCE_DEFAULT = 0;
+    ELIGIBILITY_PERSISTENCE_OFF = 1;
+    ELIGIBILITY_PERSISTENCE_OVERRIDES_ONLY = 2;
+  }
+
   fixed64 id = 1;
   string name = 2;
   optional google.protobuf.Timestamp created_at = 3;
@@ -421,4 +427,5 @@ message Experiment {
   bool allocate_right_to_left = 38;
   bool is_managed = 39;
   fixed64 number_line_id = 41;
+  EligibilityPersistence eligibility_persistence = 42;
 }

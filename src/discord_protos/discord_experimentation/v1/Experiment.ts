@@ -175,6 +175,10 @@ export interface Experiment {
      * @generated from protobuf field: fixed64 number_line_id = 41
      */
     numberLineId: bigint;
+    /**
+     * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.EligibilityPersistence eligibility_persistence = 42
+     */
+    eligibilityPersistence: Experiment_EligibilityPersistence;
 }
 /**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.Bucket
@@ -1148,6 +1152,23 @@ export enum Experiment_CustomUnitPrefix {
     SEO_URL_SLUG = 1
 }
 /**
+ * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.EligibilityPersistence
+ */
+export enum Experiment_EligibilityPersistence {
+    /**
+     * @generated from protobuf enum value: ELIGIBILITY_PERSISTENCE_DEFAULT = 0;
+     */
+    DEFAULT = 0,
+    /**
+     * @generated from protobuf enum value: ELIGIBILITY_PERSISTENCE_OFF = 1;
+     */
+    OFF = 1,
+    /**
+     * @generated from protobuf enum value: ELIGIBILITY_PERSISTENCE_OVERRIDES_ONLY = 2;
+     */
+    OVERRIDES_ONLY = 2
+}
+/**
  * @generated from protobuf enum discord_protos.discord_experimentation.v1.FilterCategory
  */
 export enum FilterCategory {
@@ -1231,7 +1252,8 @@ class Experiment$Type extends MessageType<Experiment> {
             { no: 37, name: "growthbook_tags", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 9 /*ScalarType.STRING*/ },
             { no: 38, name: "allocate_right_to_left", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
             { no: 39, name: "is_managed", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
-            { no: 41, name: "number_line_id", kind: "scalar", T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ }
+            { no: 41, name: "number_line_id", kind: "scalar", T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ },
+            { no: 42, name: "eligibility_persistence", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.EligibilityPersistence", Experiment_EligibilityPersistence, "ELIGIBILITY_PERSISTENCE_"] }
         ]);
     }
     create(value?: PartialMessage<Experiment>): Experiment {
@@ -1267,6 +1289,7 @@ class Experiment$Type extends MessageType<Experiment> {
         message.allocateRightToLeft = false;
         message.isManaged = false;
         message.numberLineId = 0n;
+        message.eligibilityPersistence = 0;
         if (value !== undefined)
             reflectionMergePartial<Experiment>(this, message, value);
         return message;
@@ -1400,6 +1423,9 @@ class Experiment$Type extends MessageType<Experiment> {
                     break;
                 case /* fixed64 number_line_id */ 41:
                     message.numberLineId = reader.fixed64().toBigInt();
+                    break;
+                case /* discord_protos.discord_experimentation.v1.Experiment.EligibilityPersistence eligibility_persistence */ 42:
+                    message.eligibilityPersistence = reader.int32();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -1538,6 +1564,9 @@ class Experiment$Type extends MessageType<Experiment> {
         /* fixed64 number_line_id = 41; */
         if (message.numberLineId !== 0n)
             writer.tag(41, WireType.Bit64).fixed64(message.numberLineId);
+        /* discord_protos.discord_experimentation.v1.Experiment.EligibilityPersistence eligibility_persistence = 42; */
+        if (message.eligibilityPersistence !== 0)
+            writer.tag(42, WireType.Varint).int32(message.eligibilityPersistence);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
