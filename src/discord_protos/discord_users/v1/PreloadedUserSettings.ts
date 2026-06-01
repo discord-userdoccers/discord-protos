@@ -1126,6 +1126,10 @@ export interface PreloadedUserSettings_AppearanceSettings {
      * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.GuildThemeSourcePreference default_guild_theme_preference = 14
      */
     defaultGuildThemePreference: PreloadedUserSettings_GuildThemeSourcePreference;
+    /**
+     * @generated from protobuf field: bool dark_sidebar = 15
+     */
+    darkSidebar: boolean;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.GuildFolder
@@ -4841,7 +4845,8 @@ class PreloadedUserSettings_AppearanceSettings$Type extends MessageType<Preloade
             { no: 11, name: "launch_pad_mode", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.LaunchPadMode", PreloadedUserSettings_LaunchPadMode, "LAUNCH_PAD_MODE_"] },
             { no: 12, name: "ui_density", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.UIDensity", PreloadedUserSettings_UIDensity] },
             { no: 13, name: "swipe_right_to_left_mode", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.SwipeRightToLeftMode", PreloadedUserSettings_SwipeRightToLeftMode, "SWIPE_RIGHT_TO_LEFT_MODE_"] },
-            { no: 14, name: "default_guild_theme_preference", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.GuildThemeSourcePreference", PreloadedUserSettings_GuildThemeSourcePreference, "GUILD_THEME_SOURCE_PREFERENCE_"] }
+            { no: 14, name: "default_guild_theme_preference", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.GuildThemeSourcePreference", PreloadedUserSettings_GuildThemeSourcePreference, "GUILD_THEME_SOURCE_PREFERENCE_"] },
+            { no: 15, name: "dark_sidebar", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_AppearanceSettings>): PreloadedUserSettings_AppearanceSettings {
@@ -4854,6 +4859,7 @@ class PreloadedUserSettings_AppearanceSettings$Type extends MessageType<Preloade
         message.uiDensity = 0;
         message.swipeRightToLeftMode = 0;
         message.defaultGuildThemePreference = 0;
+        message.darkSidebar = false;
         if (value !== undefined)
             reflectionMergePartial<PreloadedUserSettings_AppearanceSettings>(this, message, value);
         return message;
@@ -4901,6 +4907,9 @@ class PreloadedUserSettings_AppearanceSettings$Type extends MessageType<Preloade
                     break;
                 case /* discord_protos.discord_users.v1.PreloadedUserSettings.GuildThemeSourcePreference default_guild_theme_preference */ 14:
                     message.defaultGuildThemePreference = reader.int32();
+                    break;
+                case /* bool dark_sidebar */ 15:
+                    message.darkSidebar = reader.bool();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -4953,6 +4962,9 @@ class PreloadedUserSettings_AppearanceSettings$Type extends MessageType<Preloade
         /* discord_protos.discord_users.v1.PreloadedUserSettings.GuildThemeSourcePreference default_guild_theme_preference = 14; */
         if (message.defaultGuildThemePreference !== 0)
             writer.tag(14, WireType.Varint).int32(message.defaultGuildThemePreference);
+        /* bool dark_sidebar = 15; */
+        if (message.darkSidebar !== false)
+            writer.tag(15, WireType.Varint).bool(message.darkSidebar);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

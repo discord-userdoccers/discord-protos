@@ -2072,6 +2072,7 @@ class PreloadedUserSettings(_message.Message):
         UI_DENSITY_FIELD_NUMBER: _builtins.int
         SWIPE_RIGHT_TO_LEFT_MODE_FIELD_NUMBER: _builtins.int
         DEFAULT_GUILD_THEME_PREFERENCE_FIELD_NUMBER: _builtins.int
+        DARK_SIDEBAR_FIELD_NUMBER: _builtins.int
         theme: Global___PreloadedUserSettings.Theme.ValueType
         developer_mode: _builtins.bool
         mobile_redesign_disabled: _builtins.bool
@@ -2080,6 +2081,7 @@ class PreloadedUserSettings(_message.Message):
         ui_density: Global___PreloadedUserSettings.UIDensity.ValueType
         swipe_right_to_left_mode: Global___PreloadedUserSettings.SwipeRightToLeftMode.ValueType
         default_guild_theme_preference: Global___PreloadedUserSettings.GuildThemeSourcePreference.ValueType
+        dark_sidebar: _builtins.bool
         @_builtins.property
         def client_theme_settings(self) -> Global___PreloadedUserSettings.ClientThemeSettings: ...
         @_builtins.property
@@ -2106,10 +2108,11 @@ class PreloadedUserSettings(_message.Message):
             ui_density: Global___PreloadedUserSettings.UIDensity.ValueType = ...,
             swipe_right_to_left_mode: Global___PreloadedUserSettings.SwipeRightToLeftMode.ValueType = ...,
             default_guild_theme_preference: Global___PreloadedUserSettings.GuildThemeSourcePreference.ValueType = ...,
+            dark_sidebar: _builtins.bool = ...,
         ) -> None: ...
         _HasFieldArgType: _TypeAlias = _typing.Literal["_channel_list_layout", b"_channel_list_layout", "_client_theme_settings", b"_client_theme_settings", "_happening_now_cards_disabled", b"_happening_now_cards_disabled", "_message_previews", b"_message_previews", "_search_result_exact_count_enabled", b"_search_result_exact_count_enabled", "channel_list_layout", b"channel_list_layout", "client_theme_settings", b"client_theme_settings", "happening_now_cards_disabled", b"happening_now_cards_disabled", "message_previews", b"message_previews", "search_result_exact_count_enabled", b"search_result_exact_count_enabled"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_channel_list_layout", b"_channel_list_layout", "_client_theme_settings", b"_client_theme_settings", "_happening_now_cards_disabled", b"_happening_now_cards_disabled", "_message_previews", b"_message_previews", "_search_result_exact_count_enabled", b"_search_result_exact_count_enabled", "channel_list_layout", b"channel_list_layout", "client_theme_settings", b"client_theme_settings", "default_guild_theme_preference", b"default_guild_theme_preference", "developer_mode", b"developer_mode", "happening_now_cards_disabled", b"happening_now_cards_disabled", "launch_pad_mode", b"launch_pad_mode", "message_previews", b"message_previews", "mobile_redesign_disabled", b"mobile_redesign_disabled", "search_result_exact_count_enabled", b"search_result_exact_count_enabled", "swipe_right_to_left_mode", b"swipe_right_to_left_mode", "theme", b"theme", "timestamp_hour_cycle", b"timestamp_hour_cycle", "ui_density", b"ui_density"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_channel_list_layout", b"_channel_list_layout", "_client_theme_settings", b"_client_theme_settings", "_happening_now_cards_disabled", b"_happening_now_cards_disabled", "_message_previews", b"_message_previews", "_search_result_exact_count_enabled", b"_search_result_exact_count_enabled", "channel_list_layout", b"channel_list_layout", "client_theme_settings", b"client_theme_settings", "dark_sidebar", b"dark_sidebar", "default_guild_theme_preference", b"default_guild_theme_preference", "developer_mode", b"developer_mode", "happening_now_cards_disabled", b"happening_now_cards_disabled", "launch_pad_mode", b"launch_pad_mode", "message_previews", b"message_previews", "mobile_redesign_disabled", b"mobile_redesign_disabled", "search_result_exact_count_enabled", b"search_result_exact_count_enabled", "swipe_right_to_left_mode", b"swipe_right_to_left_mode", "theme", b"theme", "timestamp_hour_cycle", b"timestamp_hour_cycle", "ui_density", b"ui_density"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__channel_list_layout: _TypeAlias = _typing.Literal["channel_list_layout"]  # noqa: Y015
         _WhichOneofArgType__channel_list_layout: _TypeAlias = _typing.Literal["_channel_list_layout", b"_channel_list_layout"]  # noqa: Y015

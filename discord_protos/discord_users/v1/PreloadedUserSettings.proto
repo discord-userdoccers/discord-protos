@@ -434,6 +434,7 @@ message PreloadedUserSettings {
     UIDensity ui_density = 12;
     SwipeRightToLeftMode swipe_right_to_left_mode = 13;
     GuildThemeSourcePreference default_guild_theme_preference = 14;
+    bool dark_sidebar = 15;
   }
 
   message GuildFolder {
