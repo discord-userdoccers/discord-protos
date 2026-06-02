@@ -635,6 +635,7 @@ message User {
     DisplayNameFont font_id = 1;
     DisplayNameEffect effect_id = 2;
     repeated uint32 colors = 3;
+    optional google.protobuf.BoolValue animated = 4;
   }
 
   uint64 id = 1;

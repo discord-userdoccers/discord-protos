@@ -363,6 +363,10 @@ export interface UserData_DisplayNameStyles {
      * @generated from protobuf field: repeated uint32 colors = 3
      */
     colors: number[];
+    /**
+     * @generated from protobuf field: optional google.protobuf.BoolValue animated = 4
+     */
+    animated?: BoolValue;
 }
 /**
  * @generated from protobuf message discord_protos.users.v1.UserData.StoreCountry
@@ -4319,7 +4323,8 @@ class UserData_DisplayNameStyles$Type extends MessageType<UserData_DisplayNameSt
         super("discord_protos.users.v1.UserData.DisplayNameStyles", [
             { no: 1, name: "font_id", kind: "enum", T: () => ["discord_protos.users.v1.UserData.DisplayNameFont", UserData_DisplayNameFont, "DISPLAY_NAME_FONT_"] },
             { no: 2, name: "effect_id", kind: "enum", T: () => ["discord_protos.users.v1.UserData.DisplayNameEffect", UserData_DisplayNameEffect, "DISPLAY_NAME_EFFECT_"] },
-            { no: 3, name: "colors", kind: "scalar", repeat: 1 /*RepeatType.PACKED*/, T: 13 /*ScalarType.UINT32*/ }
+            { no: 3, name: "colors", kind: "scalar", repeat: 1 /*RepeatType.PACKED*/, T: 13 /*ScalarType.UINT32*/ },
+            { no: 4, name: "animated", kind: "message", T: () => BoolValue }
         ]);
     }
     create(value?: PartialMessage<UserData_DisplayNameStyles>): UserData_DisplayNameStyles {
@@ -4349,6 +4354,9 @@ class UserData_DisplayNameStyles$Type extends MessageType<UserData_DisplayNameSt
                     else
                         message.colors.push(reader.uint32());
                     break;
+                case /* optional google.protobuf.BoolValue animated */ 4:
+                    message.animated = BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.animated);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -4374,6 +4382,9 @@ class UserData_DisplayNameStyles$Type extends MessageType<UserData_DisplayNameSt
                 writer.uint32(message.colors[i]);
             writer.join();
         }
+        /* optional google.protobuf.BoolValue animated = 4; */
+        if (message.animated)
+            BoolValue.internalBinaryWrite(message.animated, writer.tag(4, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

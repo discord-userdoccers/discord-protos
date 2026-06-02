@@ -1472,22 +1472,28 @@ class User(_message.Message):
         FONT_ID_FIELD_NUMBER: _builtins.int
         EFFECT_ID_FIELD_NUMBER: _builtins.int
         COLORS_FIELD_NUMBER: _builtins.int
+        ANIMATED_FIELD_NUMBER: _builtins.int
         font_id: Global___User.DisplayNameFont.ValueType
         effect_id: Global___User.DisplayNameEffect.ValueType
         @_builtins.property
         def colors(self) -> _containers.RepeatedScalarFieldContainer[_builtins.int]: ...
+        @_builtins.property
+        def animated(self) -> _wrappers_pb2.BoolValue: ...
         def __init__(
             self,
             *,
             font_id: Global___User.DisplayNameFont.ValueType = ...,
             effect_id: Global___User.DisplayNameEffect.ValueType = ...,
             colors: _abc.Iterable[_builtins.int] | None = ...,
+            animated: _wrappers_pb2.BoolValue | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_animated", b"_animated", "animated", b"animated"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["colors", b"colors", "effect_id", b"effect_id", "font_id", b"font_id"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_animated", b"_animated", "animated", b"animated", "colors", b"colors", "effect_id", b"effect_id", "font_id", b"font_id"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-        def WhichOneof(self, oneof_group: _Never) -> None: ...
+        _WhichOneofReturnType__animated: _TypeAlias = _typing.Literal["animated"]  # noqa: Y015
+        _WhichOneofArgType__animated: _TypeAlias = _typing.Literal["_animated", b"_animated"]  # noqa: Y015
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__animated) -> _WhichOneofReturnType__animated | None: ...
 
     ID_FIELD_NUMBER: _builtins.int
     USERNAME_FIELD_NUMBER: _builtins.int
