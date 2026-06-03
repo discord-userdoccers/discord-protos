@@ -610,6 +610,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_INVITE_NONFRIENDS_TO_GDM_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 759
         DISMISSIBLE_CONTENT_PROFILE_FRAMES_NITRO_TAB_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 760
         DISMISSIBLE_CONTENT_APP_WIDGET_V2_PROFILE_UPSELL_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 761
+        DISMISSIBLE_CONTENT_PARENTAL_CONSENT_GRACE_WARNING: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 762
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_HUB_WAITLIST_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1170,6 +1171,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_INVITE_NONFRIENDS_TO_GDM_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 759
     DISMISSIBLE_CONTENT_PROFILE_FRAMES_NITRO_TAB_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 760
     DISMISSIBLE_CONTENT_APP_WIDGET_V2_PROFILE_UPSELL_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 761
+    DISMISSIBLE_CONTENT_PARENTAL_CONSENT_GRACE_WARNING: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 762
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)
