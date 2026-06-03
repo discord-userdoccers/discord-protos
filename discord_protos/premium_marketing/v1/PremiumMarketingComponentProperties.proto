@@ -8,6 +8,12 @@ message PremiumMarketingComponentProperties {
     map<string, string> localizations = 2;
   }
 
+  message HelpArticle {
+    string id = 1;
+    string link_text = 2;
+    optional LocalizedString link_text_localized = 3;
+  }
+
   message FeatureCard {
     string header = 1;
     string pill = 2;
@@ -17,6 +23,7 @@ message PremiumMarketingComponentProperties {
     optional LocalizedString header_localized = 6;
     optional LocalizedString pill_localized = 7;
     optional LocalizedString body_localized = 8;
+    optional HelpArticle help_article = 9;
   }
 
   enum ButtonAction {
@@ -46,12 +53,6 @@ message PremiumMarketingComponentProperties {
     map<string, string> hero_art_localized_video_links_dark_theme = 1;
     map<string, string> hero_art_localized_video_links_light_theme = 2;
     map<string, string> hero_art_video_subtitle_links = 3;
-  }
-
-  message HelpArticle {
-    string id = 1;
-    string link_text = 2;
-    optional LocalizedString link_text_localized = 3;
   }
 
   message Disclaimer {

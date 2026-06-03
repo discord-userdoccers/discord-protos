@@ -137,6 +137,23 @@ export interface PremiumMarketingComponentProperties_LocalizedString {
     };
 }
 /**
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle
+ */
+export interface PremiumMarketingComponentProperties_HelpArticle {
+    /**
+     * @generated from protobuf field: string id = 1
+     */
+    id: string;
+    /**
+     * @generated from protobuf field: string link_text = 2
+     */
+    linkText: string;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString link_text_localized = 3
+     */
+    linkTextLocalized?: PremiumMarketingComponentProperties_LocalizedString;
+}
+/**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.FeatureCard
  */
 export interface PremiumMarketingComponentProperties_FeatureCard {
@@ -172,6 +189,10 @@ export interface PremiumMarketingComponentProperties_FeatureCard {
      * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString body_localized = 8
      */
     bodyLocalized?: PremiumMarketingComponentProperties_LocalizedString;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle help_article = 9
+     */
+    helpArticle?: PremiumMarketingComponentProperties_HelpArticle;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.SubscriptionButton
@@ -233,23 +254,6 @@ export interface PremiumMarketingComponentProperties_Variant1Storage {
     heroArtVideoSubtitleLinks: {
         [key: string]: string;
     };
-}
-/**
- * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle
- */
-export interface PremiumMarketingComponentProperties_HelpArticle {
-    /**
-     * @generated from protobuf field: string id = 1
-     */
-    id: string;
-    /**
-     * @generated from protobuf field: string link_text = 2
-     */
-    linkText: string;
-    /**
-     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString link_text_localized = 3
-     */
-    linkTextLocalized?: PremiumMarketingComponentProperties_LocalizedString;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Disclaimer
@@ -3499,6 +3503,68 @@ class PremiumMarketingComponentProperties_LocalizedString$Type extends MessageTy
  */
 export const PremiumMarketingComponentProperties_LocalizedString = new PremiumMarketingComponentProperties_LocalizedString$Type();
 // @generated message type with reflection information, may provide speed optimized methods
+class PremiumMarketingComponentProperties_HelpArticle$Type extends MessageType<PremiumMarketingComponentProperties_HelpArticle> {
+    constructor() {
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle", [
+            { no: 1, name: "id", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "link_text", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 3, name: "link_text_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString }
+        ]);
+    }
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_HelpArticle>): PremiumMarketingComponentProperties_HelpArticle {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.id = "";
+        message.linkText = "";
+        if (value !== undefined)
+            reflectionMergePartial<PremiumMarketingComponentProperties_HelpArticle>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_HelpArticle): PremiumMarketingComponentProperties_HelpArticle {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string id */ 1:
+                    message.id = reader.string();
+                    break;
+                case /* string link_text */ 2:
+                    message.linkText = reader.string();
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString link_text_localized */ 3:
+                    message.linkTextLocalized = PremiumMarketingComponentProperties_LocalizedString.internalBinaryRead(reader, reader.uint32(), options, message.linkTextLocalized);
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_HelpArticle, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string id = 1; */
+        if (message.id !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.id);
+        /* string link_text = 2; */
+        if (message.linkText !== "")
+            writer.tag(2, WireType.LengthDelimited).string(message.linkText);
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString link_text_localized = 3; */
+        if (message.linkTextLocalized)
+            PremiumMarketingComponentProperties_LocalizedString.internalBinaryWrite(message.linkTextLocalized, writer.tag(3, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle
+ */
+export const PremiumMarketingComponentProperties_HelpArticle = new PremiumMarketingComponentProperties_HelpArticle$Type();
+// @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties_FeatureCard$Type extends MessageType<PremiumMarketingComponentProperties_FeatureCard> {
     constructor() {
         super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.FeatureCard", [
@@ -3509,7 +3575,8 @@ class PremiumMarketingComponentProperties_FeatureCard$Type extends MessageType<P
             { no: 5, name: "image_link_light_theme", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 6, name: "header_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
             { no: 7, name: "pill_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
-            { no: 8, name: "body_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString }
+            { no: 8, name: "body_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
+            { no: 9, name: "help_article", kind: "message", T: () => PremiumMarketingComponentProperties_HelpArticle }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_FeatureCard>): PremiumMarketingComponentProperties_FeatureCard {
@@ -3552,6 +3619,9 @@ class PremiumMarketingComponentProperties_FeatureCard$Type extends MessageType<P
                 case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString body_localized */ 8:
                     message.bodyLocalized = PremiumMarketingComponentProperties_LocalizedString.internalBinaryRead(reader, reader.uint32(), options, message.bodyLocalized);
                     break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle help_article */ 9:
+                    message.helpArticle = PremiumMarketingComponentProperties_HelpArticle.internalBinaryRead(reader, reader.uint32(), options, message.helpArticle);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -3588,6 +3658,9 @@ class PremiumMarketingComponentProperties_FeatureCard$Type extends MessageType<P
         /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString body_localized = 8; */
         if (message.bodyLocalized)
             PremiumMarketingComponentProperties_LocalizedString.internalBinaryWrite(message.bodyLocalized, writer.tag(8, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle help_article = 9; */
+        if (message.helpArticle)
+            PremiumMarketingComponentProperties_HelpArticle.internalBinaryWrite(message.helpArticle, writer.tag(9, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -3842,68 +3915,6 @@ class PremiumMarketingComponentProperties_Variant1Storage$Type extends MessageTy
  * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Variant1Storage
  */
 export const PremiumMarketingComponentProperties_Variant1Storage = new PremiumMarketingComponentProperties_Variant1Storage$Type();
-// @generated message type with reflection information, may provide speed optimized methods
-class PremiumMarketingComponentProperties_HelpArticle$Type extends MessageType<PremiumMarketingComponentProperties_HelpArticle> {
-    constructor() {
-        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle", [
-            { no: 1, name: "id", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 2, name: "link_text", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 3, name: "link_text_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString }
-        ]);
-    }
-    create(value?: PartialMessage<PremiumMarketingComponentProperties_HelpArticle>): PremiumMarketingComponentProperties_HelpArticle {
-        const message = globalThis.Object.create((this.messagePrototype!));
-        message.id = "";
-        message.linkText = "";
-        if (value !== undefined)
-            reflectionMergePartial<PremiumMarketingComponentProperties_HelpArticle>(this, message, value);
-        return message;
-    }
-    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_HelpArticle): PremiumMarketingComponentProperties_HelpArticle {
-        let message = target ?? this.create(), end = reader.pos + length;
-        while (reader.pos < end) {
-            let [fieldNo, wireType] = reader.tag();
-            switch (fieldNo) {
-                case /* string id */ 1:
-                    message.id = reader.string();
-                    break;
-                case /* string link_text */ 2:
-                    message.linkText = reader.string();
-                    break;
-                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString link_text_localized */ 3:
-                    message.linkTextLocalized = PremiumMarketingComponentProperties_LocalizedString.internalBinaryRead(reader, reader.uint32(), options, message.linkTextLocalized);
-                    break;
-                default:
-                    let u = options.readUnknownField;
-                    if (u === "throw")
-                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
-                    let d = reader.skip(wireType);
-                    if (u !== false)
-                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
-            }
-        }
-        return message;
-    }
-    internalBinaryWrite(message: PremiumMarketingComponentProperties_HelpArticle, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* string id = 1; */
-        if (message.id !== "")
-            writer.tag(1, WireType.LengthDelimited).string(message.id);
-        /* string link_text = 2; */
-        if (message.linkText !== "")
-            writer.tag(2, WireType.LengthDelimited).string(message.linkText);
-        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString link_text_localized = 3; */
-        if (message.linkTextLocalized)
-            PremiumMarketingComponentProperties_LocalizedString.internalBinaryWrite(message.linkTextLocalized, writer.tag(3, WireType.LengthDelimited).fork(), options).join();
-        let u = options.writeUnknownFields;
-        if (u !== false)
-            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
-        return writer;
-    }
-}
-/**
- * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle
- */
-export const PremiumMarketingComponentProperties_HelpArticle = new PremiumMarketingComponentProperties_HelpArticle$Type();
 // @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties_Disclaimer$Type extends MessageType<PremiumMarketingComponentProperties_Disclaimer> {
     constructor() {
