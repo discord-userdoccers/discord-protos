@@ -677,6 +677,19 @@ export interface Experiment_GuildIds {
     guildIds: bigint[];
 }
 /**
+ * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.GuildIdRange
+ */
+export interface Experiment_GuildIdRange {
+    /**
+     * @generated from protobuf field: optional discord_protos.discord_experimentation.v1.Experiment.Fixed64Value min_id = 1
+     */
+    minId?: Experiment_Fixed64Value;
+    /**
+     * @generated from protobuf field: optional discord_protos.discord_experimentation.v1.Experiment.Fixed64Value max_id = 2
+     */
+    maxId?: Experiment_Fixed64Value;
+}
+/**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.GuildMemberCountRange
  */
 export interface Experiment_GuildMemberCountRange {
@@ -866,6 +879,12 @@ export interface Experiment_Filter {
          * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.GuildIds guild_ids = 22
          */
         guildIds: Experiment_GuildIds;
+    } | {
+        oneofKind: "guildIdRange";
+        /**
+         * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.GuildIdRange guild_id_range = 23
+         */
+        guildIdRange: Experiment_GuildIdRange;
     } | {
         oneofKind: "guildMemberCountRange";
         /**
@@ -3628,6 +3647,59 @@ class Experiment_GuildIds$Type extends MessageType<Experiment_GuildIds> {
  */
 export const Experiment_GuildIds = new Experiment_GuildIds$Type();
 // @generated message type with reflection information, may provide speed optimized methods
+class Experiment_GuildIdRange$Type extends MessageType<Experiment_GuildIdRange> {
+    constructor() {
+        super("discord_protos.discord_experimentation.v1.Experiment.GuildIdRange", [
+            { no: 1, name: "min_id", kind: "message", T: () => Experiment_Fixed64Value },
+            { no: 2, name: "max_id", kind: "message", T: () => Experiment_Fixed64Value }
+        ], { "discord_protos.discord_experimentation.v1.filter_category": "FILTER_CATEGORY_GUILD", "discord_protos.discord_experimentation.v1.filter_evaluation_mode": "FILTER_EVALUATION_MODE_LAZY" });
+    }
+    create(value?: PartialMessage<Experiment_GuildIdRange>): Experiment_GuildIdRange {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        if (value !== undefined)
+            reflectionMergePartial<Experiment_GuildIdRange>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: Experiment_GuildIdRange): Experiment_GuildIdRange {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* optional discord_protos.discord_experimentation.v1.Experiment.Fixed64Value min_id */ 1:
+                    message.minId = Experiment_Fixed64Value.internalBinaryRead(reader, reader.uint32(), options, message.minId);
+                    break;
+                case /* optional discord_protos.discord_experimentation.v1.Experiment.Fixed64Value max_id */ 2:
+                    message.maxId = Experiment_Fixed64Value.internalBinaryRead(reader, reader.uint32(), options, message.maxId);
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: Experiment_GuildIdRange, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* optional discord_protos.discord_experimentation.v1.Experiment.Fixed64Value min_id = 1; */
+        if (message.minId)
+            Experiment_Fixed64Value.internalBinaryWrite(message.minId, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.discord_experimentation.v1.Experiment.Fixed64Value max_id = 2; */
+        if (message.maxId)
+            Experiment_Fixed64Value.internalBinaryWrite(message.maxId, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_experimentation.v1.Experiment.GuildIdRange
+ */
+export const Experiment_GuildIdRange = new Experiment_GuildIdRange$Type();
+// @generated message type with reflection information, may provide speed optimized methods
 class Experiment_GuildMemberCountRange$Type extends MessageType<Experiment_GuildMemberCountRange> {
     constructor() {
         super("discord_protos.discord_experimentation.v1.Experiment.GuildMemberCountRange", [
@@ -3917,6 +3989,7 @@ class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
             { no: 20, name: "user_premium_type", kind: "message", oneof: "filter", T: () => Experiment_UserPremiumType },
             { no: 21, name: "unit_id_matches_filter_snapshot", kind: "message", oneof: "filter", T: () => Experiment_UnitIdMatchesFilterSnapshot },
             { no: 22, name: "guild_ids", kind: "message", oneof: "filter", T: () => Experiment_GuildIds },
+            { no: 23, name: "guild_id_range", kind: "message", oneof: "filter", T: () => Experiment_GuildIdRange },
             { no: 25, name: "guild_member_count_range", kind: "message", oneof: "filter", T: () => Experiment_GuildMemberCountRange },
             { no: 26, name: "guild_has_feature", kind: "message", oneof: "filter", T: () => Experiment_GuildHasFeature },
             { no: 27, name: "user_location", kind: "message", oneof: "filter", T: () => Experiment_UserLocation },
@@ -4064,6 +4137,12 @@ class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
                         guildIds: Experiment_GuildIds.internalBinaryRead(reader, reader.uint32(), options, (message.filter as any).guildIds)
                     };
                     break;
+                case /* discord_protos.discord_experimentation.v1.Experiment.GuildIdRange guild_id_range */ 23:
+                    message.filter = {
+                        oneofKind: "guildIdRange",
+                        guildIdRange: Experiment_GuildIdRange.internalBinaryRead(reader, reader.uint32(), options, (message.filter as any).guildIdRange)
+                    };
+                    break;
                 case /* discord_protos.discord_experimentation.v1.Experiment.GuildMemberCountRange guild_member_count_range */ 25:
                     message.filter = {
                         oneofKind: "guildMemberCountRange",
@@ -4172,6 +4251,9 @@ class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
         /* discord_protos.discord_experimentation.v1.Experiment.GuildIds guild_ids = 22; */
         if (message.filter.oneofKind === "guildIds")
             Experiment_GuildIds.internalBinaryWrite(message.filter.guildIds, writer.tag(22, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.discord_experimentation.v1.Experiment.GuildIdRange guild_id_range = 23; */
+        if (message.filter.oneofKind === "guildIdRange")
+            Experiment_GuildIdRange.internalBinaryWrite(message.filter.guildIdRange, writer.tag(23, WireType.LengthDelimited).fork(), options).join();
         /* discord_protos.discord_experimentation.v1.Experiment.GuildMemberCountRange guild_member_count_range = 25; */
         if (message.filter.oneofKind === "guildMemberCountRange")
             Experiment_GuildMemberCountRange.internalBinaryWrite(message.filter.guildMemberCountRange, writer.tag(25, WireType.LengthDelimited).fork(), options).join();

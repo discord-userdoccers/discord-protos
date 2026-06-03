@@ -255,6 +255,13 @@ message Experiment {
     repeated fixed64 guild_ids = 1;
   }
 
+  message GuildIdRange {
+    option (discord_protos.discord_experimentation.v1.filter_category) = FILTER_CATEGORY_GUILD;
+    option (discord_protos.discord_experimentation.v1.filter_evaluation_mode) = FILTER_EVALUATION_MODE_LAZY;
+    optional Fixed64Value min_id = 1;
+    optional Fixed64Value max_id = 2;
+  }
+
   message GuildMemberCountRange {
     option (discord_protos.discord_experimentation.v1.filter_category) = FILTER_CATEGORY_GUILD;
     option (discord_protos.discord_experimentation.v1.filter_evaluation_mode) = FILTER_EVALUATION_MODE_STICKY;
@@ -308,6 +315,7 @@ message Experiment {
       UserPremiumType user_premium_type = 20;
       UnitIdMatchesFilterSnapshot unit_id_matches_filter_snapshot = 21;
       GuildIds guild_ids = 22;
+      GuildIdRange guild_id_range = 23;
       GuildMemberCountRange guild_member_count_range = 25;
       GuildHasFeature guild_has_feature = 26;
       UserLocation user_location = 27;
