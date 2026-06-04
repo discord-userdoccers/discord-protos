@@ -3208,7 +3208,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_PARENTAL_CONSENT_GRACE_WARNING = 762;
      */
-    PARENTAL_CONSENT_GRACE_WARNING = 762
+    PARENTAL_CONSENT_GRACE_WARNING = 762,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_APP_WIDGET_V2_PROFILE_UPSELL_SUGGESTED = 763;
+     */
+    APP_WIDGET_V2_PROFILE_UPSELL_SUGGESTED = 763
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
