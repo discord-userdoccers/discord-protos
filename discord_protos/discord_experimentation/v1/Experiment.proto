@@ -390,6 +390,18 @@ message Experiment {
     CUSTOM_UNIT_PREFIX_SEO_URL_SLUG = 1;
   }
 
+  enum Mode {
+    MODE_EXCLUSIVE = 0;
+    MODE_SYNCED = 1;
+    MODE_PRE_ALLOCATED = 2;
+  }
+
+  message NumberLineSettings {
+    Mode mode = 1;
+    fixed64 linked_id = 2;
+    bool shared_control = 3;
+  }
+
   enum EligibilityPersistence {
     ELIGIBILITY_PERSISTENCE_DEFAULT = 0;
     ELIGIBILITY_PERSISTENCE_OFF = 1;
@@ -434,6 +446,6 @@ message Experiment {
   repeated string growthbook_tags = 37 [packed = false];
   bool allocate_right_to_left = 38;
   bool is_managed = 39;
-  fixed64 number_line_id = 41;
+  optional NumberLineSettings number_line_settings = 43;
   EligibilityPersistence eligibility_persistence = 42;
 }

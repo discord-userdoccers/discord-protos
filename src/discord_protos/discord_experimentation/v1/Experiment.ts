@@ -172,9 +172,9 @@ export interface Experiment {
      */
     isManaged: boolean;
     /**
-     * @generated from protobuf field: fixed64 number_line_id = 41
+     * @generated from protobuf field: optional discord_protos.discord_experimentation.v1.Experiment.NumberLineSettings number_line_settings = 43
      */
-    numberLineId: bigint;
+    numberLineSettings?: Experiment_NumberLineSettings;
     /**
      * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.EligibilityPersistence eligibility_persistence = 42
      */
@@ -991,6 +991,23 @@ export interface Experiment_DebugConfig {
     decisionLogSampleRate: number;
 }
 /**
+ * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.NumberLineSettings
+ */
+export interface Experiment_NumberLineSettings {
+    /**
+     * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.Mode mode = 1
+     */
+    mode: Experiment_Mode;
+    /**
+     * @generated from protobuf field: fixed64 linked_id = 2
+     */
+    linkedId: bigint;
+    /**
+     * @generated from protobuf field: bool shared_control = 3
+     */
+    sharedControl: boolean;
+}
+/**
  * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.UnitType
  */
 export enum Experiment_UnitType {
@@ -1171,6 +1188,23 @@ export enum Experiment_CustomUnitPrefix {
     SEO_URL_SLUG = 1
 }
 /**
+ * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.Mode
+ */
+export enum Experiment_Mode {
+    /**
+     * @generated from protobuf enum value: MODE_EXCLUSIVE = 0;
+     */
+    EXCLUSIVE = 0,
+    /**
+     * @generated from protobuf enum value: MODE_SYNCED = 1;
+     */
+    SYNCED = 1,
+    /**
+     * @generated from protobuf enum value: MODE_PRE_ALLOCATED = 2;
+     */
+    PRE_ALLOCATED = 2
+}
+/**
  * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.EligibilityPersistence
  */
 export enum Experiment_EligibilityPersistence {
@@ -1271,7 +1305,7 @@ class Experiment$Type extends MessageType<Experiment> {
             { no: 37, name: "growthbook_tags", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 9 /*ScalarType.STRING*/ },
             { no: 38, name: "allocate_right_to_left", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
             { no: 39, name: "is_managed", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
-            { no: 41, name: "number_line_id", kind: "scalar", T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ },
+            { no: 43, name: "number_line_settings", kind: "message", T: () => Experiment_NumberLineSettings },
             { no: 42, name: "eligibility_persistence", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.EligibilityPersistence", Experiment_EligibilityPersistence, "ELIGIBILITY_PERSISTENCE_"] }
         ]);
     }
@@ -1307,7 +1341,6 @@ class Experiment$Type extends MessageType<Experiment> {
         message.growthbookTags = [];
         message.allocateRightToLeft = false;
         message.isManaged = false;
-        message.numberLineId = 0n;
         message.eligibilityPersistence = 0;
         if (value !== undefined)
             reflectionMergePartial<Experiment>(this, message, value);
@@ -1440,8 +1473,8 @@ class Experiment$Type extends MessageType<Experiment> {
                 case /* bool is_managed */ 39:
                     message.isManaged = reader.bool();
                     break;
-                case /* fixed64 number_line_id */ 41:
-                    message.numberLineId = reader.fixed64().toBigInt();
+                case /* optional discord_protos.discord_experimentation.v1.Experiment.NumberLineSettings number_line_settings */ 43:
+                    message.numberLineSettings = Experiment_NumberLineSettings.internalBinaryRead(reader, reader.uint32(), options, message.numberLineSettings);
                     break;
                 case /* discord_protos.discord_experimentation.v1.Experiment.EligibilityPersistence eligibility_persistence */ 42:
                     message.eligibilityPersistence = reader.int32();
@@ -1580,12 +1613,12 @@ class Experiment$Type extends MessageType<Experiment> {
         /* bool is_managed = 39; */
         if (message.isManaged !== false)
             writer.tag(39, WireType.Varint).bool(message.isManaged);
-        /* fixed64 number_line_id = 41; */
-        if (message.numberLineId !== 0n)
-            writer.tag(41, WireType.Bit64).fixed64(message.numberLineId);
         /* discord_protos.discord_experimentation.v1.Experiment.EligibilityPersistence eligibility_persistence = 42; */
         if (message.eligibilityPersistence !== 0)
             writer.tag(42, WireType.Varint).int32(message.eligibilityPersistence);
+        /* optional discord_protos.discord_experimentation.v1.Experiment.NumberLineSettings number_line_settings = 43; */
+        if (message.numberLineSettings)
+            Experiment_NumberLineSettings.internalBinaryWrite(message.numberLineSettings, writer.tag(43, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -4502,3 +4535,66 @@ class Experiment_DebugConfig$Type extends MessageType<Experiment_DebugConfig> {
  * @generated MessageType for protobuf message discord_protos.discord_experimentation.v1.Experiment.DebugConfig
  */
 export const Experiment_DebugConfig = new Experiment_DebugConfig$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class Experiment_NumberLineSettings$Type extends MessageType<Experiment_NumberLineSettings> {
+    constructor() {
+        super("discord_protos.discord_experimentation.v1.Experiment.NumberLineSettings", [
+            { no: 1, name: "mode", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.Mode", Experiment_Mode, "MODE_"] },
+            { no: 2, name: "linked_id", kind: "scalar", T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ },
+            { no: 3, name: "shared_control", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
+        ]);
+    }
+    create(value?: PartialMessage<Experiment_NumberLineSettings>): Experiment_NumberLineSettings {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.mode = 0;
+        message.linkedId = 0n;
+        message.sharedControl = false;
+        if (value !== undefined)
+            reflectionMergePartial<Experiment_NumberLineSettings>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: Experiment_NumberLineSettings): Experiment_NumberLineSettings {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* discord_protos.discord_experimentation.v1.Experiment.Mode mode */ 1:
+                    message.mode = reader.int32();
+                    break;
+                case /* fixed64 linked_id */ 2:
+                    message.linkedId = reader.fixed64().toBigInt();
+                    break;
+                case /* bool shared_control */ 3:
+                    message.sharedControl = reader.bool();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: Experiment_NumberLineSettings, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* discord_protos.discord_experimentation.v1.Experiment.Mode mode = 1; */
+        if (message.mode !== 0)
+            writer.tag(1, WireType.Varint).int32(message.mode);
+        /* fixed64 linked_id = 2; */
+        if (message.linkedId !== 0n)
+            writer.tag(2, WireType.Bit64).fixed64(message.linkedId);
+        /* bool shared_control = 3; */
+        if (message.sharedControl !== false)
+            writer.tag(3, WireType.Varint).bool(message.sharedControl);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_experimentation.v1.Experiment.NumberLineSettings
+ */
+export const Experiment_NumberLineSettings = new Experiment_NumberLineSettings$Type();
