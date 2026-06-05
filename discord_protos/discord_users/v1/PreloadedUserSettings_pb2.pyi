@@ -2726,6 +2726,23 @@ class PreloadedUserSettings(_message.Message):
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         def WhichOneof(self, oneof_group: _Never) -> None: ...
 
+    @_typing.final
+    class AppVersionSettings(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        IS_USING_OUTDATED_MOBILE_VERSION_FIELD_NUMBER: _builtins.int
+        is_using_outdated_mobile_version: _builtins.bool
+        def __init__(
+            self,
+            *,
+            is_using_outdated_mobile_version: _builtins.bool = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["is_using_outdated_mobile_version", b"is_using_outdated_mobile_version"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
+
     VERSIONS_FIELD_NUMBER: _builtins.int
     INBOX_FIELD_NUMBER: _builtins.int
     GUILDS_FIELD_NUMBER: _builtins.int
@@ -2751,6 +2768,7 @@ class PreloadedUserSettings(_message.Message):
     APPLICATIONS_FIELD_NUMBER: _builtins.int
     ADS_FIELD_NUMBER: _builtins.int
     IN_APP_FEEDBACK_SETTINGS_FIELD_NUMBER: _builtins.int
+    APP_VERSION_SETTINGS_FIELD_NUMBER: _builtins.int
     @_builtins.property
     def versions(self) -> Global___PreloadedUserSettings.Versions: ...
     @_builtins.property
@@ -2801,6 +2819,8 @@ class PreloadedUserSettings(_message.Message):
     def ads(self) -> Global___PreloadedUserSettings.AdsSettings: ...
     @_builtins.property
     def in_app_feedback_settings(self) -> Global___PreloadedUserSettings.InAppFeedbackSettings: ...
+    @_builtins.property
+    def app_version_settings(self) -> Global___PreloadedUserSettings.AppVersionSettings: ...
     def __init__(
         self,
         *,
@@ -2829,13 +2849,16 @@ class PreloadedUserSettings(_message.Message):
         applications: Global___PreloadedUserSettings.AllApplicationSettings | None = ...,
         ads: Global___PreloadedUserSettings.AdsSettings | None = ...,
         in_app_feedback_settings: Global___PreloadedUserSettings.InAppFeedbackSettings | None = ...,
+        app_version_settings: Global___PreloadedUserSettings.AppVersionSettings | None = ...,
     ) -> None: ...
-    _HasFieldArgType: _TypeAlias = _typing.Literal["_ads", b"_ads", "_appearance", b"_appearance", "_applications", b"_applications", "_audio_context_settings", b"_audio_context_settings", "_broadcast", b"_broadcast", "_clips", b"_clips", "_communities", b"_communities", "_debug", b"_debug", "_favorites", b"_favorites", "_for_later", b"_for_later", "_game_library", b"_game_library", "_guild_folders", b"_guild_folders", "_guilds", b"_guilds", "_icymi_settings", b"_icymi_settings", "_in_app_feedback_settings", b"_in_app_feedback_settings", "_inbox", b"_inbox", "_localization", b"_localization", "_notifications", b"_notifications", "_privacy", b"_privacy", "_safety_settings", b"_safety_settings", "_status", b"_status", "_text_and_images", b"_text_and_images", "_user_content", b"_user_content", "_versions", b"_versions", "_voice_and_video", b"_voice_and_video", "ads", b"ads", "appearance", b"appearance", "applications", b"applications", "audio_context_settings", b"audio_context_settings", "broadcast", b"broadcast", "clips", b"clips", "communities", b"communities", "debug", b"debug", "favorites", b"favorites", "for_later", b"for_later", "game_library", b"game_library", "guild_folders", b"guild_folders", "guilds", b"guilds", "icymi_settings", b"icymi_settings", "in_app_feedback_settings", b"in_app_feedback_settings", "inbox", b"inbox", "localization", b"localization", "notifications", b"notifications", "privacy", b"privacy", "safety_settings", b"safety_settings", "status", b"status", "text_and_images", b"text_and_images", "user_content", b"user_content", "versions", b"versions", "voice_and_video", b"voice_and_video"]  # noqa: Y015
+    _HasFieldArgType: _TypeAlias = _typing.Literal["_ads", b"_ads", "_app_version_settings", b"_app_version_settings", "_appearance", b"_appearance", "_applications", b"_applications", "_audio_context_settings", b"_audio_context_settings", "_broadcast", b"_broadcast", "_clips", b"_clips", "_communities", b"_communities", "_debug", b"_debug", "_favorites", b"_favorites", "_for_later", b"_for_later", "_game_library", b"_game_library", "_guild_folders", b"_guild_folders", "_guilds", b"_guilds", "_icymi_settings", b"_icymi_settings", "_in_app_feedback_settings", b"_in_app_feedback_settings", "_inbox", b"_inbox", "_localization", b"_localization", "_notifications", b"_notifications", "_privacy", b"_privacy", "_safety_settings", b"_safety_settings", "_status", b"_status", "_text_and_images", b"_text_and_images", "_user_content", b"_user_content", "_versions", b"_versions", "_voice_and_video", b"_voice_and_video", "ads", b"ads", "app_version_settings", b"app_version_settings", "appearance", b"appearance", "applications", b"applications", "audio_context_settings", b"audio_context_settings", "broadcast", b"broadcast", "clips", b"clips", "communities", b"communities", "debug", b"debug", "favorites", b"favorites", "for_later", b"for_later", "game_library", b"game_library", "guild_folders", b"guild_folders", "guilds", b"guilds", "icymi_settings", b"icymi_settings", "in_app_feedback_settings", b"in_app_feedback_settings", "inbox", b"inbox", "localization", b"localization", "notifications", b"notifications", "privacy", b"privacy", "safety_settings", b"safety_settings", "status", b"status", "text_and_images", b"text_and_images", "user_content", b"user_content", "versions", b"versions", "voice_and_video", b"voice_and_video"]  # noqa: Y015
     def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["_ads", b"_ads", "_appearance", b"_appearance", "_applications", b"_applications", "_audio_context_settings", b"_audio_context_settings", "_broadcast", b"_broadcast", "_clips", b"_clips", "_communities", b"_communities", "_debug", b"_debug", "_favorites", b"_favorites", "_for_later", b"_for_later", "_game_library", b"_game_library", "_guild_folders", b"_guild_folders", "_guilds", b"_guilds", "_icymi_settings", b"_icymi_settings", "_in_app_feedback_settings", b"_in_app_feedback_settings", "_inbox", b"_inbox", "_localization", b"_localization", "_notifications", b"_notifications", "_privacy", b"_privacy", "_safety_settings", b"_safety_settings", "_status", b"_status", "_text_and_images", b"_text_and_images", "_user_content", b"_user_content", "_versions", b"_versions", "_voice_and_video", b"_voice_and_video", "ads", b"ads", "appearance", b"appearance", "applications", b"applications", "audio_context_settings", b"audio_context_settings", "broadcast", b"broadcast", "clips", b"clips", "communities", b"communities", "debug", b"debug", "favorites", b"favorites", "for_later", b"for_later", "game_library", b"game_library", "guild_folders", b"guild_folders", "guilds", b"guilds", "icymi_settings", b"icymi_settings", "in_app_feedback_settings", b"in_app_feedback_settings", "inbox", b"inbox", "localization", b"localization", "notifications", b"notifications", "privacy", b"privacy", "safety_settings", b"safety_settings", "status", b"status", "text_and_images", b"text_and_images", "user_content", b"user_content", "versions", b"versions", "voice_and_video", b"voice_and_video"]  # noqa: Y015
+    _ClearFieldArgType: _TypeAlias = _typing.Literal["_ads", b"_ads", "_app_version_settings", b"_app_version_settings", "_appearance", b"_appearance", "_applications", b"_applications", "_audio_context_settings", b"_audio_context_settings", "_broadcast", b"_broadcast", "_clips", b"_clips", "_communities", b"_communities", "_debug", b"_debug", "_favorites", b"_favorites", "_for_later", b"_for_later", "_game_library", b"_game_library", "_guild_folders", b"_guild_folders", "_guilds", b"_guilds", "_icymi_settings", b"_icymi_settings", "_in_app_feedback_settings", b"_in_app_feedback_settings", "_inbox", b"_inbox", "_localization", b"_localization", "_notifications", b"_notifications", "_privacy", b"_privacy", "_safety_settings", b"_safety_settings", "_status", b"_status", "_text_and_images", b"_text_and_images", "_user_content", b"_user_content", "_versions", b"_versions", "_voice_and_video", b"_voice_and_video", "ads", b"ads", "app_version_settings", b"app_version_settings", "appearance", b"appearance", "applications", b"applications", "audio_context_settings", b"audio_context_settings", "broadcast", b"broadcast", "clips", b"clips", "communities", b"communities", "debug", b"debug", "favorites", b"favorites", "for_later", b"for_later", "game_library", b"game_library", "guild_folders", b"guild_folders", "guilds", b"guilds", "icymi_settings", b"icymi_settings", "in_app_feedback_settings", b"in_app_feedback_settings", "inbox", b"inbox", "localization", b"localization", "notifications", b"notifications", "privacy", b"privacy", "safety_settings", b"safety_settings", "status", b"status", "text_and_images", b"text_and_images", "user_content", b"user_content", "versions", b"versions", "voice_and_video", b"voice_and_video"]  # noqa: Y015
     def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
     _WhichOneofReturnType__ads: _TypeAlias = _typing.Literal["ads"]  # noqa: Y015
     _WhichOneofArgType__ads: _TypeAlias = _typing.Literal["_ads", b"_ads"]  # noqa: Y015
+    _WhichOneofReturnType__app_version_settings: _TypeAlias = _typing.Literal["app_version_settings"]  # noqa: Y015
+    _WhichOneofArgType__app_version_settings: _TypeAlias = _typing.Literal["_app_version_settings", b"_app_version_settings"]  # noqa: Y015
     _WhichOneofReturnType__appearance: _TypeAlias = _typing.Literal["appearance"]  # noqa: Y015
     _WhichOneofArgType__appearance: _TypeAlias = _typing.Literal["_appearance", b"_appearance"]  # noqa: Y015
     _WhichOneofReturnType__applications: _TypeAlias = _typing.Literal["applications"]  # noqa: Y015
@@ -2886,6 +2909,8 @@ class PreloadedUserSettings(_message.Message):
     _WhichOneofArgType__voice_and_video: _TypeAlias = _typing.Literal["_voice_and_video", b"_voice_and_video"]  # noqa: Y015
     @_typing.overload
     def WhichOneof(self, oneof_group: _WhichOneofArgType__ads) -> _WhichOneofReturnType__ads | None: ...
+    @_typing.overload
+    def WhichOneof(self, oneof_group: _WhichOneofArgType__app_version_settings) -> _WhichOneofReturnType__app_version_settings | None: ...
     @_typing.overload
     def WhichOneof(self, oneof_group: _WhichOneofArgType__appearance) -> _WhichOneofReturnType__appearance | None: ...
     @_typing.overload

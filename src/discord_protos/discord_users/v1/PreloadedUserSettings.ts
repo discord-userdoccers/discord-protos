@@ -122,6 +122,10 @@ export interface PreloadedUserSettings {
      * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.InAppFeedbackSettings in_app_feedback_settings = 25
      */
     inAppFeedbackSettings?: PreloadedUserSettings_InAppFeedbackSettings;
+    /**
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.AppVersionSettings app_version_settings = 26
+     */
+    appVersionSettings?: PreloadedUserSettings_AppVersionSettings;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.Versions
@@ -1415,6 +1419,15 @@ export interface PreloadedUserSettings_InAppFeedbackSettings {
     };
 }
 /**
+ * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.AppVersionSettings
+ */
+export interface PreloadedUserSettings_AppVersionSettings {
+    /**
+     * @generated from protobuf field: bool is_using_outdated_mobile_version = 1
+     */
+    isUsingOutdatedMobileVersion: boolean;
+}
+/**
  * @generated from protobuf enum discord_protos.discord_users.v1.PreloadedUserSettings.InboxTab
  */
 export enum PreloadedUserSettings_InboxTab {
@@ -1879,7 +1892,8 @@ class PreloadedUserSettings$Type extends MessageType<PreloadedUserSettings> {
             { no: 22, name: "icymi_settings", kind: "message", T: () => PreloadedUserSettings_ICYMISettings },
             { no: 23, name: "applications", kind: "message", T: () => PreloadedUserSettings_AllApplicationSettings },
             { no: 24, name: "ads", kind: "message", T: () => PreloadedUserSettings_AdsSettings },
-            { no: 25, name: "in_app_feedback_settings", kind: "message", T: () => PreloadedUserSettings_InAppFeedbackSettings }
+            { no: 25, name: "in_app_feedback_settings", kind: "message", T: () => PreloadedUserSettings_InAppFeedbackSettings },
+            { no: 26, name: "app_version_settings", kind: "message", T: () => PreloadedUserSettings_AppVersionSettings }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings>): PreloadedUserSettings {
@@ -1968,6 +1982,9 @@ class PreloadedUserSettings$Type extends MessageType<PreloadedUserSettings> {
                 case /* optional discord_protos.discord_users.v1.PreloadedUserSettings.InAppFeedbackSettings in_app_feedback_settings */ 25:
                     message.inAppFeedbackSettings = PreloadedUserSettings_InAppFeedbackSettings.internalBinaryRead(reader, reader.uint32(), options, message.inAppFeedbackSettings);
                     break;
+                case /* optional discord_protos.discord_users.v1.PreloadedUserSettings.AppVersionSettings app_version_settings */ 26:
+                    message.appVersionSettings = PreloadedUserSettings_AppVersionSettings.internalBinaryRead(reader, reader.uint32(), options, message.appVersionSettings);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -2055,6 +2072,9 @@ class PreloadedUserSettings$Type extends MessageType<PreloadedUserSettings> {
         /* optional discord_protos.discord_users.v1.PreloadedUserSettings.InAppFeedbackSettings in_app_feedback_settings = 25; */
         if (message.inAppFeedbackSettings)
             PreloadedUserSettings_InAppFeedbackSettings.internalBinaryWrite(message.inAppFeedbackSettings, writer.tag(25, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.discord_users.v1.PreloadedUserSettings.AppVersionSettings app_version_settings = 26; */
+        if (message.appVersionSettings)
+            PreloadedUserSettings_AppVersionSettings.internalBinaryWrite(message.appVersionSettings, writer.tag(26, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -6248,3 +6268,50 @@ class PreloadedUserSettings_InAppFeedbackSettings$Type extends MessageType<Prelo
  * @generated MessageType for protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.InAppFeedbackSettings
  */
 export const PreloadedUserSettings_InAppFeedbackSettings = new PreloadedUserSettings_InAppFeedbackSettings$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PreloadedUserSettings_AppVersionSettings$Type extends MessageType<PreloadedUserSettings_AppVersionSettings> {
+    constructor() {
+        super("discord_protos.discord_users.v1.PreloadedUserSettings.AppVersionSettings", [
+            { no: 1, name: "is_using_outdated_mobile_version", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
+        ]);
+    }
+    create(value?: PartialMessage<PreloadedUserSettings_AppVersionSettings>): PreloadedUserSettings_AppVersionSettings {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.isUsingOutdatedMobileVersion = false;
+        if (value !== undefined)
+            reflectionMergePartial<PreloadedUserSettings_AppVersionSettings>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PreloadedUserSettings_AppVersionSettings): PreloadedUserSettings_AppVersionSettings {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* bool is_using_outdated_mobile_version */ 1:
+                    message.isUsingOutdatedMobileVersion = reader.bool();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PreloadedUserSettings_AppVersionSettings, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* bool is_using_outdated_mobile_version = 1; */
+        if (message.isUsingOutdatedMobileVersion !== false)
+            writer.tag(1, WireType.Varint).bool(message.isUsingOutdatedMobileVersion);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.AppVersionSettings
+ */
+export const PreloadedUserSettings_AppVersionSettings = new PreloadedUserSettings_AppVersionSettings$Type();

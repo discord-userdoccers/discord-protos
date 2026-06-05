@@ -563,6 +563,10 @@ message PreloadedUserSettings {
     map<int32, InAppFeedbackState> in_app_feedback_states = 1;
   }
 
+  message AppVersionSettings {
+    bool is_using_outdated_mobile_version = 1;
+  }
+
   optional Versions versions = 1;
   optional InboxSettings inbox = 2;
   optional AllGuildSettings guilds = 3;
@@ -588,4 +592,5 @@ message PreloadedUserSettings {
   optional AllApplicationSettings applications = 23;
   optional AdsSettings ads = 24;
   optional InAppFeedbackSettings in_app_feedback_settings = 25;
+  optional AppVersionSettings app_version_settings = 26;
 }
