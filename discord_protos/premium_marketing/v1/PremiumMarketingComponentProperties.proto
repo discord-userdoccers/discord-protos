@@ -832,6 +832,7 @@ message PremiumMarketingComponentProperties {
   }
 
   string content_identifier = 3;
+  bool is_default_base = 18;
   oneof properties {
     string placeholder = 1;
     AnnouncementModalVariant1Properties announcement_modal_variant_1 = 2;

@@ -19,6 +19,10 @@ export interface PremiumMarketingComponentProperties {
      */
     contentIdentifier: string;
     /**
+     * @generated from protobuf field: bool is_default_base = 18
+     */
+    isDefaultBase: boolean;
+    /**
      * @generated from protobuf oneof: properties
      */
     properties: {
@@ -3236,6 +3240,7 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
     constructor() {
         super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties", [
             { no: 3, name: "content_identifier", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 18, name: "is_default_base", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
             { no: 1, name: "placeholder", kind: "scalar", oneof: "properties", T: 9 /*ScalarType.STRING*/ },
             { no: 2, name: "announcement_modal_variant_1", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties },
             { no: 4, name: "premium_tab", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_PremiumTab },
@@ -3257,6 +3262,7 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
     create(value?: PartialMessage<PremiumMarketingComponentProperties>): PremiumMarketingComponentProperties {
         const message = globalThis.Object.create((this.messagePrototype!));
         message.contentIdentifier = "";
+        message.isDefaultBase = false;
         message.properties = { oneofKind: undefined };
         if (value !== undefined)
             reflectionMergePartial<PremiumMarketingComponentProperties>(this, message, value);
@@ -3269,6 +3275,9 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
             switch (fieldNo) {
                 case /* string content_identifier */ 3:
                     message.contentIdentifier = reader.string();
+                    break;
+                case /* bool is_default_base */ 18:
+                    message.isDefaultBase = reader.bool();
                     break;
                 case /* string placeholder */ 1:
                     message.properties = {
@@ -3429,6 +3438,9 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
         /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Nagbar nagbar = 17; */
         if (message.properties.oneofKind === "nagbar")
             PremiumMarketingComponentProperties_Nagbar.internalBinaryWrite(message.properties.nagbar, writer.tag(17, WireType.LengthDelimited).fork(), options).join();
+        /* bool is_default_base = 18; */
+        if (message.isDefaultBase !== false)
+            writer.tag(18, WireType.Varint).bool(message.isDefaultBase);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
