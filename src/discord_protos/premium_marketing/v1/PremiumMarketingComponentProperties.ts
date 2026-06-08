@@ -679,6 +679,10 @@ export interface PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner
      * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString mobile_body_localized = 15
      */
     mobileBodyLocalized?: PremiumMarketingComponentProperties_LocalizedString;
+    /**
+     * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant asset_variant = 16
+     */
+    assetVariant: PremiumMarketingComponentProperties_AssetVariant;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftCustomizationBanner
@@ -3216,7 +3220,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_APP_WIDGET_V2_PROFILE_UPSELL_SUGGESTED = 763;
      */
-    APP_WIDGET_V2_PROFILE_UPSELL_SUGGESTED = 763
+    APP_WIDGET_V2_PROFILE_UPSELL_SUGGESTED = 763,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GUILD_THEME_NUX_FOLLOWUP = 764;
+     */
+    GUILD_THEME_NUX_FOLLOWUP = 764
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
@@ -4986,7 +4994,8 @@ class PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner$Type exten
             { no: 12, name: "mobile_banner_asset", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset },
             { no: 13, name: "header_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
             { no: 14, name: "desktop_body_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
-            { no: 15, name: "mobile_body_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString }
+            { no: 15, name: "mobile_body_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
+            { no: 16, name: "asset_variant", kind: "enum", T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant", PremiumMarketingComponentProperties_AssetVariant, "ASSET_VARIANT_"] }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner>): PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner {
@@ -4997,6 +5006,7 @@ class PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner$Type exten
         message.bannerAssetUrl = "";
         message.backgroundAssetUrl = "";
         message.cardAssetUrl = "";
+        message.assetVariant = 0;
         if (value !== undefined)
             reflectionMergePartial<PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner>(this, message, value);
         return message;
@@ -5050,6 +5060,9 @@ class PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner$Type exten
                     break;
                 case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString mobile_body_localized */ 15:
                     message.mobileBodyLocalized = PremiumMarketingComponentProperties_LocalizedString.internalBinaryRead(reader, reader.uint32(), options, message.mobileBodyLocalized);
+                    break;
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant asset_variant */ 16:
+                    message.assetVariant = reader.int32();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -5108,6 +5121,9 @@ class PremiumMarketingComponentProperties_GiftPlanSelectionCardBanner$Type exten
         /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString mobile_body_localized = 15; */
         if (message.mobileBodyLocalized)
             PremiumMarketingComponentProperties_LocalizedString.internalBinaryWrite(message.mobileBodyLocalized, writer.tag(15, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant asset_variant = 16; */
+        if (message.assetVariant !== 0)
+            writer.tag(16, WireType.Varint).int32(message.assetVariant);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

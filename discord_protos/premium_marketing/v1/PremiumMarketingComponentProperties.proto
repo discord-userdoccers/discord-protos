@@ -686,6 +686,7 @@ message PremiumMarketingComponentProperties {
     DISMISSIBLE_CONTENT_APP_WIDGET_V2_PROFILE_UPSELL_COACHMARK = 761;
     DISMISSIBLE_CONTENT_PARENTAL_CONSENT_GRACE_WARNING = 762;
     DISMISSIBLE_CONTENT_APP_WIDGET_V2_PROFILE_UPSELL_SUGGESTED = 763;
+    DISMISSIBLE_CONTENT_GUILD_THEME_NUX_FOLLOWUP = 764;
   }
 
   message MobileBottomSheet {
@@ -728,6 +729,12 @@ message PremiumMarketingComponentProperties {
     optional LocalizedString body_localized = 6;
   }
 
+  enum AssetVariant {
+    ASSET_VARIANT_UNSPECIFIED = 0;
+    ASSET_VARIANT_NORMAL = 1;
+    ASSET_VARIANT_LARGE_TILTED = 2;
+  }
+
   message GiftPlanSelectionCardBanner {
     string header = 1;
     string desktop_body = 2;
@@ -744,12 +751,7 @@ message PremiumMarketingComponentProperties {
     optional LocalizedString header_localized = 13;
     optional LocalizedString desktop_body_localized = 14;
     optional LocalizedString mobile_body_localized = 15;
-  }
-
-  enum AssetVariant {
-    ASSET_VARIANT_UNSPECIFIED = 0;
-    ASSET_VARIANT_NORMAL = 1;
-    ASSET_VARIANT_LARGE_TILTED = 2;
+    AssetVariant asset_variant = 16;
   }
 
   message GiftCustomizationBanner {
