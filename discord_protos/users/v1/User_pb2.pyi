@@ -1152,6 +1152,8 @@ class User(_message.Message):
         DISPLAY_NAME_EFFECT_TOON: User._DisplayNameEffect.ValueType  # 4
         DISPLAY_NAME_EFFECT_POP: User._DisplayNameEffect.ValueType  # 5
         DISPLAY_NAME_EFFECT_GLOW: User._DisplayNameEffect.ValueType  # 6
+        DISPLAY_NAME_EFFECT_PRISM: User._DisplayNameEffect.ValueType  # 7
+        DISPLAY_NAME_EFFECT_GUMMY: User._DisplayNameEffect.ValueType  # 8
         DISPLAY_NAME_EFFECT_TEST_1: User._DisplayNameEffect.ValueType  # 1001
         DISPLAY_NAME_EFFECT_TEST_2: User._DisplayNameEffect.ValueType  # 1002
         DISPLAY_NAME_EFFECT_TEST_3: User._DisplayNameEffect.ValueType  # 1003
@@ -1165,6 +1167,8 @@ class User(_message.Message):
     DISPLAY_NAME_EFFECT_TOON: User.DisplayNameEffect.ValueType  # 4
     DISPLAY_NAME_EFFECT_POP: User.DisplayNameEffect.ValueType  # 5
     DISPLAY_NAME_EFFECT_GLOW: User.DisplayNameEffect.ValueType  # 6
+    DISPLAY_NAME_EFFECT_PRISM: User.DisplayNameEffect.ValueType  # 7
+    DISPLAY_NAME_EFFECT_GUMMY: User.DisplayNameEffect.ValueType  # 8
     DISPLAY_NAME_EFFECT_TEST_1: User.DisplayNameEffect.ValueType  # 1001
     DISPLAY_NAME_EFFECT_TEST_2: User.DisplayNameEffect.ValueType  # 1002
     DISPLAY_NAME_EFFECT_TEST_3: User.DisplayNameEffect.ValueType  # 1003

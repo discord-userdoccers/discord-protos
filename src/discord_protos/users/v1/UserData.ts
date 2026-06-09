@@ -2938,6 +2938,14 @@ export enum UserData_DisplayNameEffect {
      */
     GLOW = 6,
     /**
+     * @generated from protobuf enum value: DISPLAY_NAME_EFFECT_PRISM = 7;
+     */
+    PRISM = 7,
+    /**
+     * @generated from protobuf enum value: DISPLAY_NAME_EFFECT_GUMMY = 8;
+     */
+    GUMMY = 8,
+    /**
      * @generated from protobuf enum value: DISPLAY_NAME_EFFECT_TEST_1 = 1001;
      */
     TEST_1 = 1001,
