@@ -803,8 +803,10 @@ class PreloadedUserSettings(_message.Message):
         SAFETY_USER_SENTIMENT_NOTICE_DISMISSED_AT_FIELD_NUMBER: _builtins.int
         LAST_RECEIVED_CHANGELOG_ID_FIELD_NUMBER: _builtins.int
         RECURRING_DISMISSIBLE_CONTENT_STATES_FIELD_NUMBER: _builtins.int
+        LAST_GIFT_INTENT_DISMISSED_AT_MS_FIELD_NUMBER: _builtins.int
         dismissed_contents: _builtins.bytes
         last_received_changelog_id: _builtins.int
+        last_gift_intent_dismissed_at_ms: _builtins.int
         @_builtins.property
         def last_dismissed_outbound_promotion_start_date(self) -> _wrappers_pb2.StringValue: ...
         @_builtins.property
@@ -825,10 +827,11 @@ class PreloadedUserSettings(_message.Message):
             safety_user_sentiment_notice_dismissed_at: _timestamp_pb2.Timestamp | None = ...,
             last_received_changelog_id: _builtins.int = ...,
             recurring_dismissible_content_states: _abc.Mapping[_builtins.int, Global___PreloadedUserSettings.RecurringDismissibleContentState] | None = ...,
+            last_gift_intent_dismissed_at_ms: _builtins.int = ...,
         ) -> None: ...
         _HasFieldArgType: _TypeAlias = _typing.Literal["_guild_onboarding_upsell_dismissed_at", b"_guild_onboarding_upsell_dismissed_at", "_last_dismissed_outbound_promotion_start_date", b"_last_dismissed_outbound_promotion_start_date", "_premium_tier_0_modal_dismissed_at", b"_premium_tier_0_modal_dismissed_at", "_safety_user_sentiment_notice_dismissed_at", b"_safety_user_sentiment_notice_dismissed_at", "guild_onboarding_upsell_dismissed_at", b"guild_onboarding_upsell_dismissed_at", "last_dismissed_outbound_promotion_start_date", b"last_dismissed_outbound_promotion_start_date", "premium_tier_0_modal_dismissed_at", b"premium_tier_0_modal_dismissed_at", "safety_user_sentiment_notice_dismissed_at", b"safety_user_sentiment_notice_dismissed_at"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_guild_onboarding_upsell_dismissed_at", b"_guild_onboarding_upsell_dismissed_at", "_last_dismissed_outbound_promotion_start_date", b"_last_dismissed_outbound_promotion_start_date", "_premium_tier_0_modal_dismissed_at", b"_premium_tier_0_modal_dismissed_at", "_safety_user_sentiment_notice_dismissed_at", b"_safety_user_sentiment_notice_dismissed_at", "dismissed_contents", b"dismissed_contents", "guild_onboarding_upsell_dismissed_at", b"guild_onboarding_upsell_dismissed_at", "last_dismissed_outbound_promotion_start_date", b"last_dismissed_outbound_promotion_start_date", "last_received_changelog_id", b"last_received_changelog_id", "premium_tier_0_modal_dismissed_at", b"premium_tier_0_modal_dismissed_at", "recurring_dismissible_content_states", b"recurring_dismissible_content_states", "safety_user_sentiment_notice_dismissed_at", b"safety_user_sentiment_notice_dismissed_at"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_guild_onboarding_upsell_dismissed_at", b"_guild_onboarding_upsell_dismissed_at", "_last_dismissed_outbound_promotion_start_date", b"_last_dismissed_outbound_promotion_start_date", "_premium_tier_0_modal_dismissed_at", b"_premium_tier_0_modal_dismissed_at", "_safety_user_sentiment_notice_dismissed_at", b"_safety_user_sentiment_notice_dismissed_at", "dismissed_contents", b"dismissed_contents", "guild_onboarding_upsell_dismissed_at", b"guild_onboarding_upsell_dismissed_at", "last_dismissed_outbound_promotion_start_date", b"last_dismissed_outbound_promotion_start_date", "last_gift_intent_dismissed_at_ms", b"last_gift_intent_dismissed_at_ms", "last_received_changelog_id", b"last_received_changelog_id", "premium_tier_0_modal_dismissed_at", b"premium_tier_0_modal_dismissed_at", "recurring_dismissible_content_states", b"recurring_dismissible_content_states", "safety_user_sentiment_notice_dismissed_at", b"safety_user_sentiment_notice_dismissed_at"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__guild_onboarding_upsell_dismissed_at: _TypeAlias = _typing.Literal["guild_onboarding_upsell_dismissed_at"]  # noqa: Y015
         _WhichOneofArgType__guild_onboarding_upsell_dismissed_at: _TypeAlias = _typing.Literal["_guild_onboarding_upsell_dismissed_at", b"_guild_onboarding_upsell_dismissed_at"]  # noqa: Y015

@@ -104,6 +104,7 @@ message PreloadedUserSettings {
     optional google.protobuf.Timestamp safety_user_sentiment_notice_dismissed_at = 5;
     fixed64 last_received_changelog_id = 6;
     map<int32, RecurringDismissibleContentState> recurring_dismissible_content_states = 7;
+    fixed64 last_gift_intent_dismissed_at_ms = 8;
   }
 
   message VideoFilterBackgroundBlur {

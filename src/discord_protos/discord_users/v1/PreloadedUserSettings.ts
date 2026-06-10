@@ -378,6 +378,10 @@ export interface PreloadedUserSettings_UserContentSettings {
     recurringDismissibleContentStates: {
         [key: number]: PreloadedUserSettings_RecurringDismissibleContentState;
     };
+    /**
+     * @generated from protobuf field: fixed64 last_gift_intent_dismissed_at_ms = 8
+     */
+    lastGiftIntentDismissedAtMs: bigint;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.VideoFilterBackgroundBlur
@@ -2884,7 +2888,8 @@ class PreloadedUserSettings_UserContentSettings$Type extends MessageType<Preload
             { no: 4, name: "guild_onboarding_upsell_dismissed_at", kind: "message", T: () => Timestamp },
             { no: 5, name: "safety_user_sentiment_notice_dismissed_at", kind: "message", T: () => Timestamp },
             { no: 6, name: "last_received_changelog_id", kind: "scalar", T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ },
-            { no: 7, name: "recurring_dismissible_content_states", kind: "map", K: 5 /*ScalarType.INT32*/, V: { kind: "message", T: () => PreloadedUserSettings_RecurringDismissibleContentState } }
+            { no: 7, name: "recurring_dismissible_content_states", kind: "map", K: 5 /*ScalarType.INT32*/, V: { kind: "message", T: () => PreloadedUserSettings_RecurringDismissibleContentState } },
+            { no: 8, name: "last_gift_intent_dismissed_at_ms", kind: "scalar", T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_UserContentSettings>): PreloadedUserSettings_UserContentSettings {
@@ -2892,6 +2897,7 @@ class PreloadedUserSettings_UserContentSettings$Type extends MessageType<Preload
         message.dismissedContents = new Uint8Array(0);
         message.lastReceivedChangelogId = 0n;
         message.recurringDismissibleContentStates = {};
+        message.lastGiftIntentDismissedAtMs = 0n;
         if (value !== undefined)
             reflectionMergePartial<PreloadedUserSettings_UserContentSettings>(this, message, value);
         return message;
@@ -2921,6 +2927,9 @@ class PreloadedUserSettings_UserContentSettings$Type extends MessageType<Preload
                     break;
                 case /* map<int32, discord_protos.discord_users.v1.PreloadedUserSettings.RecurringDismissibleContentState> recurring_dismissible_content_states */ 7:
                     this.binaryReadMap7(message.recurringDismissibleContentStates, reader, options);
+                    break;
+                case /* fixed64 last_gift_intent_dismissed_at_ms */ 8:
+                    message.lastGiftIntentDismissedAtMs = reader.fixed64().toBigInt();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -2975,6 +2984,9 @@ class PreloadedUserSettings_UserContentSettings$Type extends MessageType<Preload
             PreloadedUserSettings_RecurringDismissibleContentState.internalBinaryWrite(message.recurringDismissibleContentStates[k as any], writer, options);
             writer.join().join();
         }
+        /* fixed64 last_gift_intent_dismissed_at_ms = 8; */
+        if (message.lastGiftIntentDismissedAtMs !== 0n)
+            writer.tag(8, WireType.Bit64).fixed64(message.lastGiftIntentDismissedAtMs);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
