@@ -3449,7 +3449,7 @@ class Experiment_UnitIdInExperiment$Type extends MessageType<Experiment_UnitIdIn
         super("discord_protos.discord_experimentation.v1.Experiment.UnitIdInExperiment", [
             { no: 1, name: "experiment_id", kind: "scalar", T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ },
             { no: 2, name: "variation_ids", kind: "scalar", repeat: 1 /*RepeatType.PACKED*/, T: 5 /*ScalarType.INT32*/ }
-        ], { "discord_protos.discord_experimentation.v1.filter_category": "FILTER_CATEGORY_UTILITY" });
+        ], { "discord_protos.discord_experimentation.v1.filter_category": "FILTER_CATEGORY_UTILITY", "discord_protos.discord_experimentation.v1.filter_evaluation_mode": "FILTER_EVALUATION_MODE_LAZY" });
     }
     create(value?: PartialMessage<Experiment_UnitIdInExperiment>): Experiment_UnitIdInExperiment {
         const message = globalThis.Object.create((this.messagePrototype!));

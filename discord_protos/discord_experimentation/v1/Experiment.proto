@@ -234,6 +234,7 @@ message Experiment {
 
   message UnitIdInExperiment {
     option (discord_protos.discord_experimentation.v1.filter_category) = FILTER_CATEGORY_UTILITY;
+    option (discord_protos.discord_experimentation.v1.filter_evaluation_mode) = FILTER_EVALUATION_MODE_LAZY;
     fixed64 experiment_id = 1;
     repeated int32 variation_ids = 2;
   }
