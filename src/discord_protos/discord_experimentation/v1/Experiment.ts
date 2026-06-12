@@ -196,10 +196,6 @@ export interface Experiment_Bucket {
      * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.Type type = 3
      */
     type: Experiment_Type;
-    /**
-     * @generated from protobuf field: fixed64 owning_experiment_id = 4
-     */
-    owningExperimentId: bigint;
 }
 /**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.Variation
@@ -229,6 +225,10 @@ export interface Experiment_Variation {
      * @generated from protobuf field: optional google.protobuf.StringValue configuration = 6
      */
     configuration?: StringValue;
+    /**
+     * @generated from protobuf field: fixed64 owning_experiment_id = 7
+     */
+    owningExperimentId: bigint;
 }
 /**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.PlatformVersionSpecifier
@@ -1635,8 +1635,7 @@ class Experiment_Bucket$Type extends MessageType<Experiment_Bucket> {
         super("discord_protos.discord_experimentation.v1.Experiment.Bucket", [
             { no: 1, name: "start", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
             { no: 2, name: "stop", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
-            { no: 3, name: "type", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.Type", Experiment_Type, "TYPE_"] },
-            { no: 4, name: "owning_experiment_id", kind: "scalar", T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ }
+            { no: 3, name: "type", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.Type", Experiment_Type, "TYPE_"] }
         ]);
     }
     create(value?: PartialMessage<Experiment_Bucket>): Experiment_Bucket {
@@ -1644,7 +1643,6 @@ class Experiment_Bucket$Type extends MessageType<Experiment_Bucket> {
         message.start = 0;
         message.stop = 0;
         message.type = 0;
-        message.owningExperimentId = 0n;
         if (value !== undefined)
             reflectionMergePartial<Experiment_Bucket>(this, message, value);
         return message;
@@ -1662,9 +1660,6 @@ class Experiment_Bucket$Type extends MessageType<Experiment_Bucket> {
                     break;
                 case /* discord_protos.discord_experimentation.v1.Experiment.Type type */ 3:
                     message.type = reader.int32();
-                    break;
-                case /* fixed64 owning_experiment_id */ 4:
-                    message.owningExperimentId = reader.fixed64().toBigInt();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -1687,9 +1682,6 @@ class Experiment_Bucket$Type extends MessageType<Experiment_Bucket> {
         /* discord_protos.discord_experimentation.v1.Experiment.Type type = 3; */
         if (message.type !== 0)
             writer.tag(3, WireType.Varint).int32(message.type);
-        /* fixed64 owning_experiment_id = 4; */
-        if (message.owningExperimentId !== 0n)
-            writer.tag(4, WireType.Bit64).fixed64(message.owningExperimentId);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -1709,7 +1701,8 @@ class Experiment_Variation$Type extends MessageType<Experiment_Variation> {
             { no: 3, name: "target_allocation", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
             { no: 4, name: "buckets", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => Experiment_Bucket },
             { no: 5, name: "type", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.Type", Experiment_Type, "TYPE_"] },
-            { no: 6, name: "configuration", kind: "message", T: () => StringValue }
+            { no: 6, name: "configuration", kind: "message", T: () => StringValue },
+            { no: 7, name: "owning_experiment_id", kind: "scalar", T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ }
         ]);
     }
     create(value?: PartialMessage<Experiment_Variation>): Experiment_Variation {
@@ -1719,6 +1712,7 @@ class Experiment_Variation$Type extends MessageType<Experiment_Variation> {
         message.targetAllocation = 0;
         message.buckets = [];
         message.type = 0;
+        message.owningExperimentId = 0n;
         if (value !== undefined)
             reflectionMergePartial<Experiment_Variation>(this, message, value);
         return message;
@@ -1745,6 +1739,9 @@ class Experiment_Variation$Type extends MessageType<Experiment_Variation> {
                     break;
                 case /* optional google.protobuf.StringValue configuration */ 6:
                     message.configuration = StringValue.internalBinaryRead(reader, reader.uint32(), options, message.configuration);
+                    break;
+                case /* fixed64 owning_experiment_id */ 7:
+                    message.owningExperimentId = reader.fixed64().toBigInt();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -1776,6 +1773,9 @@ class Experiment_Variation$Type extends MessageType<Experiment_Variation> {
         /* optional google.protobuf.StringValue configuration = 6; */
         if (message.configuration)
             StringValue.internalBinaryWrite(message.configuration, writer.tag(6, WireType.LengthDelimited).fork(), options).join();
+        /* fixed64 owning_experiment_id = 7; */
+        if (message.owningExperimentId !== 0n)
+            writer.tag(7, WireType.Bit64).fixed64(message.owningExperimentId);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

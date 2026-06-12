@@ -51,7 +51,6 @@ message Experiment {
     int32 start = 1;
     int32 stop = 2;
     Type type = 3;
-    fixed64 owning_experiment_id = 4;
   }
 
   message Variation {
@@ -61,6 +60,7 @@ message Experiment {
     repeated Bucket buckets = 4;
     Type type = 5;
     optional google.protobuf.StringValue configuration = 6;
+    fixed64 owning_experiment_id = 7;
   }
 
   message PlatformVersionSpecifier {
