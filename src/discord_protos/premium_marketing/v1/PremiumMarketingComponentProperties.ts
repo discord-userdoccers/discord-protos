@@ -3228,7 +3228,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GIFT_CARD_MOBILE_CONSUMPTION_UNAVAILABLE_HALFSHEET = 765;
      */
-    GIFT_CARD_MOBILE_CONSUMPTION_UNAVAILABLE_HALFSHEET = 765
+    GIFT_CARD_MOBILE_CONSUMPTION_UNAVAILABLE_HALFSHEET = 765,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_BOUNTIES_SWIPE_UP_NUX = 766;
+     */
+    BOUNTIES_SWIPE_UP_NUX = 766
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
