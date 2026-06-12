@@ -3232,7 +3232,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_BOUNTIES_SWIPE_UP_NUX = 766;
      */
-    BOUNTIES_SWIPE_UP_NUX = 766
+    BOUNTIES_SWIPE_UP_NUX = 766,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_IN_APP_NOTIFICATION_EXPAND_NUX = 767;
+     */
+    IN_APP_NOTIFICATION_EXPAND_NUX = 767
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
