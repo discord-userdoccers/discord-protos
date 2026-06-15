@@ -2903,7 +2903,11 @@ export enum UserData_DisplayNameFont {
     /**
      * @generated from protobuf enum value: DISPLAY_NAME_FONT_ZILLA_SLAB = 12;
      */
-    ZILLA_SLAB = 12
+    ZILLA_SLAB = 12,
+    /**
+     * @generated from protobuf enum value: DISPLAY_NAME_FONT_PLAYPEN_SANS = 13;
+     */
+    PLAYPEN_SANS = 13
 }
 /**
  * @generated from protobuf enum discord_protos.users.v1.UserData.DisplayNameEffect

@@ -1123,6 +1123,7 @@ class User(_message.Message):
         DISPLAY_NAME_FONT_RIBES: User._DisplayNameFont.ValueType  # 9
         DISPLAY_NAME_FONT_SINISTRE: User._DisplayNameFont.ValueType  # 10
         DISPLAY_NAME_FONT_ZILLA_SLAB: User._DisplayNameFont.ValueType  # 12
+        DISPLAY_NAME_FONT_PLAYPEN_SANS: User._DisplayNameFont.ValueType  # 13
 
     class DisplayNameFont(_DisplayNameFont, metaclass=_DisplayNameFontEnumTypeWrapper): ...
     DISPLAY_NAME_FONT_UNSPECIFIED: User.DisplayNameFont.ValueType  # 0
@@ -1138,6 +1139,7 @@ class User(_message.Message):
     DISPLAY_NAME_FONT_RIBES: User.DisplayNameFont.ValueType  # 9
     DISPLAY_NAME_FONT_SINISTRE: User.DisplayNameFont.ValueType  # 10
     DISPLAY_NAME_FONT_ZILLA_SLAB: User.DisplayNameFont.ValueType  # 12
+    DISPLAY_NAME_FONT_PLAYPEN_SANS: User.DisplayNameFont.ValueType  # 13
 
     class _DisplayNameEffect:
         ValueType = _typing.NewType("ValueType", _builtins.int)

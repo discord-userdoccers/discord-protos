@@ -616,6 +616,7 @@ message User {
     DISPLAY_NAME_FONT_RIBES = 9;
     DISPLAY_NAME_FONT_SINISTRE = 10;
     DISPLAY_NAME_FONT_ZILLA_SLAB = 12;
+    DISPLAY_NAME_FONT_PLAYPEN_SANS = 13;
   }
 
   enum DisplayNameEffect {
