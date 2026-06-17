@@ -148,6 +148,10 @@ export interface Experiment {
      */
     isAutomatedChange: boolean;
     /**
+     * @generated from protobuf field: bool suppress_editor_mention = 44
+     */
+    suppressEditorMention: boolean;
+    /**
      * @generated from protobuf field: optional google.protobuf.Timestamp archive_at = 33
      */
     archiveAt?: Timestamp;
@@ -1299,6 +1303,7 @@ class Experiment$Type extends MessageType<Experiment> {
             { no: 30, name: "debug_config", kind: "message", T: () => Experiment_DebugConfig },
             { no: 31, name: "expected_end_date", kind: "message", T: () => Timestamp },
             { no: 32, name: "is_automated_change", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
+            { no: 44, name: "suppress_editor_mention", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
             { no: 33, name: "archive_at", kind: "message", T: () => Timestamp },
             { no: 35, name: "guild_experiment_version", kind: "message", T: () => Int32Value },
             { no: 36, name: "custom_unit_prefix", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.CustomUnitPrefix", Experiment_CustomUnitPrefix, "CUSTOM_UNIT_PREFIX_"] },
@@ -1337,6 +1342,7 @@ class Experiment$Type extends MessageType<Experiment> {
         message.fieldNumbersToCopy = [];
         message.engineFeatureFlags = [];
         message.isAutomatedChange = false;
+        message.suppressEditorMention = false;
         message.customUnitPrefix = 0;
         message.growthbookTags = [];
         message.allocateRightToLeft = false;
@@ -1454,6 +1460,9 @@ class Experiment$Type extends MessageType<Experiment> {
                     break;
                 case /* bool is_automated_change */ 32:
                     message.isAutomatedChange = reader.bool();
+                    break;
+                case /* bool suppress_editor_mention */ 44:
+                    message.suppressEditorMention = reader.bool();
                     break;
                 case /* optional google.protobuf.Timestamp archive_at */ 33:
                     message.archiveAt = Timestamp.internalBinaryRead(reader, reader.uint32(), options, message.archiveAt);
@@ -1619,6 +1628,9 @@ class Experiment$Type extends MessageType<Experiment> {
         /* optional discord_protos.discord_experimentation.v1.Experiment.NumberLineSettings number_line_settings = 43; */
         if (message.numberLineSettings)
             Experiment_NumberLineSettings.internalBinaryWrite(message.numberLineSettings, writer.tag(43, WireType.LengthDelimited).fork(), options).join();
+        /* bool suppress_editor_mention = 44; */
+        if (message.suppressEditorMention !== false)
+            writer.tag(44, WireType.Varint).bool(message.suppressEditorMention);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
