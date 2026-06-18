@@ -2209,10 +2209,13 @@ class PreloadedUserSettings(_message.Message):
         TYPE_FIELD_NUMBER: _builtins.int
         POSITION_FIELD_NUMBER: _builtins.int
         PARENT_ID_FIELD_NUMBER: _builtins.int
+        CHANNEL_TYPE_FIELD_NUMBER: _builtins.int
         nickname: _builtins.str
         type: Global___PreloadedUserSettings.FavoriteChannelType.ValueType
         position: _builtins.int
         parent_id: _builtins.int
+        @_builtins.property
+        def channel_type(self) -> _wrappers_pb2.UInt32Value: ...
         def __init__(
             self,
             *,
@@ -2220,12 +2223,15 @@ class PreloadedUserSettings(_message.Message):
             type: Global___PreloadedUserSettings.FavoriteChannelType.ValueType = ...,
             position: _builtins.int = ...,
             parent_id: _builtins.int = ...,
+            channel_type: _wrappers_pb2.UInt32Value | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_channel_type", b"_channel_type", "channel_type", b"channel_type"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["nickname", b"nickname", "parent_id", b"parent_id", "position", b"position", "type", b"type"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_channel_type", b"_channel_type", "channel_type", b"channel_type", "nickname", b"nickname", "parent_id", b"parent_id", "position", b"position", "type", b"type"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-        def WhichOneof(self, oneof_group: _Never) -> None: ...
+        _WhichOneofReturnType__channel_type: _TypeAlias = _typing.Literal["channel_type"]  # noqa: Y015
+        _WhichOneofArgType__channel_type: _TypeAlias = _typing.Literal["_channel_type", b"_channel_type"]  # noqa: Y015
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__channel_type) -> _WhichOneofReturnType__channel_type | None: ...
 
     @_typing.final
     class Favorites(_message.Message):

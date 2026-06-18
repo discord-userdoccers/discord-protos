@@ -461,6 +461,7 @@ message PreloadedUserSettings {
     FavoriteChannelType type = 2;
     uint32 position = 3;
     fixed64 parent_id = 4;
+    optional google.protobuf.UInt32Value channel_type = 5;
   }
 
   message Favorites {

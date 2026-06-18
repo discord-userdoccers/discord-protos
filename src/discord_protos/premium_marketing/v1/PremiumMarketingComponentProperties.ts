@@ -3240,7 +3240,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_PREMIUM_OFFER_TAB_BADGE_POPOVER = 768;
      */
-    PREMIUM_OFFER_TAB_BADGE_POPOVER = 768
+    PREMIUM_OFFER_TAB_BADGE_POPOVER = 768,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_HOME_DRAWER_SWIPE_PEEK_NUX = 769;
+     */
+    HOME_DRAWER_SWIPE_PEEK_NUX = 769
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant

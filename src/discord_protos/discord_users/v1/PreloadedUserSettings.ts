@@ -1193,6 +1193,10 @@ export interface PreloadedUserSettings_FavoriteChannel {
      * @generated from protobuf field: fixed64 parent_id = 4
      */
     parentId: bigint;
+    /**
+     * @generated from protobuf field: optional google.protobuf.UInt32Value channel_type = 5
+     */
+    channelType?: UInt32Value;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.Favorites
@@ -5153,7 +5157,8 @@ class PreloadedUserSettings_FavoriteChannel$Type extends MessageType<PreloadedUs
             { no: 1, name: "nickname", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 2, name: "type", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.FavoriteChannelType", PreloadedUserSettings_FavoriteChannelType, "FAVORITE_CHANNEL_TYPE_"] },
             { no: 3, name: "position", kind: "scalar", T: 13 /*ScalarType.UINT32*/ },
-            { no: 4, name: "parent_id", kind: "scalar", T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ }
+            { no: 4, name: "parent_id", kind: "scalar", T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ },
+            { no: 5, name: "channel_type", kind: "message", T: () => UInt32Value }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_FavoriteChannel>): PreloadedUserSettings_FavoriteChannel {
@@ -5183,6 +5188,9 @@ class PreloadedUserSettings_FavoriteChannel$Type extends MessageType<PreloadedUs
                 case /* fixed64 parent_id */ 4:
                     message.parentId = reader.fixed64().toBigInt();
                     break;
+                case /* optional google.protobuf.UInt32Value channel_type */ 5:
+                    message.channelType = UInt32Value.internalBinaryRead(reader, reader.uint32(), options, message.channelType);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -5207,6 +5215,9 @@ class PreloadedUserSettings_FavoriteChannel$Type extends MessageType<PreloadedUs
         /* fixed64 parent_id = 4; */
         if (message.parentId !== 0n)
             writer.tag(4, WireType.Bit64).fixed64(message.parentId);
+        /* optional google.protobuf.UInt32Value channel_type = 5; */
+        if (message.channelType)
+            UInt32Value.internalBinaryWrite(message.channelType, writer.tag(5, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

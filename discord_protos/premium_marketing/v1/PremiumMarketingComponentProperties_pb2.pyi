@@ -617,6 +617,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_BOUNTIES_SWIPE_UP_NUX: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 766
         DISMISSIBLE_CONTENT_IN_APP_NOTIFICATION_EXPAND_NUX: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 767
         DISMISSIBLE_CONTENT_PREMIUM_OFFER_TAB_BADGE_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 768
+        DISMISSIBLE_CONTENT_HOME_DRAWER_SWIPE_PEEK_NUX: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 769
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_HUB_WAITLIST_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1184,6 +1185,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_BOUNTIES_SWIPE_UP_NUX: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 766
     DISMISSIBLE_CONTENT_IN_APP_NOTIFICATION_EXPAND_NUX: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 767
     DISMISSIBLE_CONTENT_PREMIUM_OFFER_TAB_BADGE_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 768
+    DISMISSIBLE_CONTENT_HOME_DRAWER_SWIPE_PEEK_NUX: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 769
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)
