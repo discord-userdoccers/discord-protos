@@ -1211,6 +1211,9 @@ class UserData(_message.Message):
         DISPLAY_NAME_FONT_SINISTRE: UserData._DisplayNameFont.ValueType  # 10
         DISPLAY_NAME_FONT_ZILLA_SLAB: UserData._DisplayNameFont.ValueType  # 12
         DISPLAY_NAME_FONT_PLAYPEN_SANS: UserData._DisplayNameFont.ValueType  # 13
+        DISPLAY_NAME_FONT_ORBITRON: UserData._DisplayNameFont.ValueType  # 14
+        DISPLAY_NAME_FONT_NEW_ROCKER: UserData._DisplayNameFont.ValueType  # 15
+        DISPLAY_NAME_FONT_KALAM: UserData._DisplayNameFont.ValueType  # 16
 
     class DisplayNameFont(_DisplayNameFont, metaclass=_DisplayNameFontEnumTypeWrapper): ...
     DISPLAY_NAME_FONT_UNSPECIFIED: UserData.DisplayNameFont.ValueType  # 0
@@ -1227,6 +1230,9 @@ class UserData(_message.Message):
     DISPLAY_NAME_FONT_SINISTRE: UserData.DisplayNameFont.ValueType  # 10
     DISPLAY_NAME_FONT_ZILLA_SLAB: UserData.DisplayNameFont.ValueType  # 12
     DISPLAY_NAME_FONT_PLAYPEN_SANS: UserData.DisplayNameFont.ValueType  # 13
+    DISPLAY_NAME_FONT_ORBITRON: UserData.DisplayNameFont.ValueType  # 14
+    DISPLAY_NAME_FONT_NEW_ROCKER: UserData.DisplayNameFont.ValueType  # 15
+    DISPLAY_NAME_FONT_KALAM: UserData.DisplayNameFont.ValueType  # 16
 
     class _DisplayNameEffect:
         ValueType = _typing.NewType("ValueType", _builtins.int)

@@ -2445,7 +2445,19 @@ export enum User_DisplayNameFont {
     /**
      * @generated from protobuf enum value: DISPLAY_NAME_FONT_PLAYPEN_SANS = 13;
      */
-    PLAYPEN_SANS = 13
+    PLAYPEN_SANS = 13,
+    /**
+     * @generated from protobuf enum value: DISPLAY_NAME_FONT_ORBITRON = 14;
+     */
+    ORBITRON = 14,
+    /**
+     * @generated from protobuf enum value: DISPLAY_NAME_FONT_NEW_ROCKER = 15;
+     */
+    NEW_ROCKER = 15,
+    /**
+     * @generated from protobuf enum value: DISPLAY_NAME_FONT_KALAM = 16;
+     */
+    KALAM = 16
 }
 /**
  * @generated from protobuf enum discord_protos.users.v1.User.DisplayNameEffect
