@@ -10,6 +10,7 @@ import { UnknownFieldHandler } from "@protobuf-ts/runtime";
 import type { PartialMessage } from "@protobuf-ts/runtime";
 import { reflectionMergePartial } from "@protobuf-ts/runtime";
 import { MessageType } from "@protobuf-ts/runtime";
+import { UInt64Value } from "../../google/protobuf/wrappers";
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties
  */
@@ -218,6 +219,10 @@ export interface PremiumMarketingComponentProperties_SubscriptionButton {
      * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString copy_localized = 4
      */
     copyLocalized?: PremiumMarketingComponentProperties_LocalizedString;
+    /**
+     * @generated from protobuf field: optional google.protobuf.UInt64Value navigable_storefront_application_id = 5
+     */
+    navigableStorefrontApplicationId?: UInt64Value;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Subtitle
@@ -406,6 +411,10 @@ export interface PremiumMarketingComponentProperties_MarketingPageBannerButton {
      * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString copy_localized = 4
      */
     copyLocalized?: PremiumMarketingComponentProperties_LocalizedString;
+    /**
+     * @generated from protobuf field: optional google.protobuf.UInt64Value navigable_storefront_application_id = 5
+     */
+    navigableStorefrontApplicationId?: UInt64Value;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MarketingPageBanner
@@ -489,6 +498,10 @@ export interface PremiumMarketingComponentProperties_CTAButton {
      * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString copy_localized = 4
      */
     copyLocalized?: PremiumMarketingComponentProperties_LocalizedString;
+    /**
+     * @generated from protobuf field: optional google.protobuf.UInt64Value navigable_storefront_application_id = 5
+     */
+    navigableStorefrontApplicationId?: UInt64Value;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MobileBottomSheet
@@ -873,6 +886,10 @@ export interface PremiumMarketingComponentProperties_PremiumTabPopoverCTAButton 
      * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString copy_localized = 4
      */
     copyLocalized?: PremiumMarketingComponentProperties_LocalizedString;
+    /**
+     * @generated from protobuf field: optional google.protobuf.UInt64Value navigable_storefront_application_id = 5
+     */
+    navigableStorefrontApplicationId?: UInt64Value;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PremiumTabPopover
@@ -943,6 +960,10 @@ export interface PremiumMarketingComponentProperties_Nagbar {
      * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString cta_label_localized = 7
      */
     ctaLabelLocalized?: PremiumMarketingComponentProperties_LocalizedString;
+    /**
+     * @generated from protobuf field: optional google.protobuf.UInt64Value navigable_storefront_application_id = 8
+     */
+    navigableStorefrontApplicationId?: UInt64Value;
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction
@@ -975,7 +996,11 @@ export enum PremiumMarketingComponentProperties_ButtonAction {
     /**
      * @generated from protobuf enum value: BUTTON_ACTION_OPEN_PREMIUM_GROUP_PAYMENT_MODAL = 6;
      */
-    OPEN_PREMIUM_GROUP_PAYMENT_MODAL = 6
+    OPEN_PREMIUM_GROUP_PAYMENT_MODAL = 6,
+    /**
+     * @generated from protobuf enum value: BUTTON_ACTION_OPEN_SOCIAL_LAYER_STOREFRONT = 7;
+     */
+    OPEN_SOCIAL_LAYER_STOREFRONT = 7
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.DismissibleContent
@@ -3734,7 +3759,8 @@ class PremiumMarketingComponentProperties_SubscriptionButton$Type extends Messag
             { no: 1, name: "copy", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 2, name: "button_action", kind: "enum", T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction", PremiumMarketingComponentProperties_ButtonAction, "BUTTON_ACTION_"] },
             { no: 3, name: "deeplink_section", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 4, name: "copy_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString }
+            { no: 4, name: "copy_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
+            { no: 5, name: "navigable_storefront_application_id", kind: "message", T: () => UInt64Value }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_SubscriptionButton>): PremiumMarketingComponentProperties_SubscriptionButton {
@@ -3763,6 +3789,9 @@ class PremiumMarketingComponentProperties_SubscriptionButton$Type extends Messag
                 case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString copy_localized */ 4:
                     message.copyLocalized = PremiumMarketingComponentProperties_LocalizedString.internalBinaryRead(reader, reader.uint32(), options, message.copyLocalized);
                     break;
+                case /* optional google.protobuf.UInt64Value navigable_storefront_application_id */ 5:
+                    message.navigableStorefrontApplicationId = UInt64Value.internalBinaryRead(reader, reader.uint32(), options, message.navigableStorefrontApplicationId);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -3787,6 +3816,9 @@ class PremiumMarketingComponentProperties_SubscriptionButton$Type extends Messag
         /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString copy_localized = 4; */
         if (message.copyLocalized)
             PremiumMarketingComponentProperties_LocalizedString.internalBinaryWrite(message.copyLocalized, writer.tag(4, WireType.LengthDelimited).fork(), options).join();
+        /* optional google.protobuf.UInt64Value navigable_storefront_application_id = 5; */
+        if (message.navigableStorefrontApplicationId)
+            UInt64Value.internalBinaryWrite(message.navigableStorefrontApplicationId, writer.tag(5, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -4308,7 +4340,8 @@ class PremiumMarketingComponentProperties_MarketingPageBannerButton$Type extends
             { no: 1, name: "copy", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 2, name: "button_action", kind: "enum", T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction", PremiumMarketingComponentProperties_ButtonAction, "BUTTON_ACTION_"] },
             { no: 3, name: "deeplink_section", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 4, name: "copy_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString }
+            { no: 4, name: "copy_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
+            { no: 5, name: "navigable_storefront_application_id", kind: "message", T: () => UInt64Value }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_MarketingPageBannerButton>): PremiumMarketingComponentProperties_MarketingPageBannerButton {
@@ -4337,6 +4370,9 @@ class PremiumMarketingComponentProperties_MarketingPageBannerButton$Type extends
                 case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString copy_localized */ 4:
                     message.copyLocalized = PremiumMarketingComponentProperties_LocalizedString.internalBinaryRead(reader, reader.uint32(), options, message.copyLocalized);
                     break;
+                case /* optional google.protobuf.UInt64Value navigable_storefront_application_id */ 5:
+                    message.navigableStorefrontApplicationId = UInt64Value.internalBinaryRead(reader, reader.uint32(), options, message.navigableStorefrontApplicationId);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -4361,6 +4397,9 @@ class PremiumMarketingComponentProperties_MarketingPageBannerButton$Type extends
         /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString copy_localized = 4; */
         if (message.copyLocalized)
             PremiumMarketingComponentProperties_LocalizedString.internalBinaryWrite(message.copyLocalized, writer.tag(4, WireType.LengthDelimited).fork(), options).join();
+        /* optional google.protobuf.UInt64Value navigable_storefront_application_id = 5; */
+        if (message.navigableStorefrontApplicationId)
+            UInt64Value.internalBinaryWrite(message.navigableStorefrontApplicationId, writer.tag(5, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -4554,7 +4593,8 @@ class PremiumMarketingComponentProperties_CTAButton$Type extends MessageType<Pre
             { no: 1, name: "copy", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 2, name: "button_action", kind: "enum", T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction", PremiumMarketingComponentProperties_ButtonAction, "BUTTON_ACTION_"] },
             { no: 3, name: "deeplink_section", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 4, name: "copy_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString }
+            { no: 4, name: "copy_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
+            { no: 5, name: "navigable_storefront_application_id", kind: "message", T: () => UInt64Value }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_CTAButton>): PremiumMarketingComponentProperties_CTAButton {
@@ -4583,6 +4623,9 @@ class PremiumMarketingComponentProperties_CTAButton$Type extends MessageType<Pre
                 case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString copy_localized */ 4:
                     message.copyLocalized = PremiumMarketingComponentProperties_LocalizedString.internalBinaryRead(reader, reader.uint32(), options, message.copyLocalized);
                     break;
+                case /* optional google.protobuf.UInt64Value navigable_storefront_application_id */ 5:
+                    message.navigableStorefrontApplicationId = UInt64Value.internalBinaryRead(reader, reader.uint32(), options, message.navigableStorefrontApplicationId);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -4607,6 +4650,9 @@ class PremiumMarketingComponentProperties_CTAButton$Type extends MessageType<Pre
         /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString copy_localized = 4; */
         if (message.copyLocalized)
             PremiumMarketingComponentProperties_LocalizedString.internalBinaryWrite(message.copyLocalized, writer.tag(4, WireType.LengthDelimited).fork(), options).join();
+        /* optional google.protobuf.UInt64Value navigable_storefront_application_id = 5; */
+        if (message.navigableStorefrontApplicationId)
+            UInt64Value.internalBinaryWrite(message.navigableStorefrontApplicationId, writer.tag(5, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -5633,7 +5679,8 @@ class PremiumMarketingComponentProperties_PremiumTabPopoverCTAButton$Type extend
             { no: 1, name: "copy", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 2, name: "button_action", kind: "enum", T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction", PremiumMarketingComponentProperties_ButtonAction, "BUTTON_ACTION_"] },
             { no: 3, name: "deeplink_section", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 4, name: "copy_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString }
+            { no: 4, name: "copy_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
+            { no: 5, name: "navigable_storefront_application_id", kind: "message", T: () => UInt64Value }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_PremiumTabPopoverCTAButton>): PremiumMarketingComponentProperties_PremiumTabPopoverCTAButton {
@@ -5662,6 +5709,9 @@ class PremiumMarketingComponentProperties_PremiumTabPopoverCTAButton$Type extend
                 case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString copy_localized */ 4:
                     message.copyLocalized = PremiumMarketingComponentProperties_LocalizedString.internalBinaryRead(reader, reader.uint32(), options, message.copyLocalized);
                     break;
+                case /* optional google.protobuf.UInt64Value navigable_storefront_application_id */ 5:
+                    message.navigableStorefrontApplicationId = UInt64Value.internalBinaryRead(reader, reader.uint32(), options, message.navigableStorefrontApplicationId);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -5686,6 +5736,9 @@ class PremiumMarketingComponentProperties_PremiumTabPopoverCTAButton$Type extend
         /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString copy_localized = 4; */
         if (message.copyLocalized)
             PremiumMarketingComponentProperties_LocalizedString.internalBinaryWrite(message.copyLocalized, writer.tag(4, WireType.LengthDelimited).fork(), options).join();
+        /* optional google.protobuf.UInt64Value navigable_storefront_application_id = 5; */
+        if (message.navigableStorefrontApplicationId)
+            UInt64Value.internalBinaryWrite(message.navigableStorefrontApplicationId, writer.tag(5, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -5804,7 +5857,8 @@ class PremiumMarketingComponentProperties_Nagbar$Type extends MessageType<Premiu
             { no: 4, name: "deeplink_section", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 5, name: "help_article", kind: "message", T: () => PremiumMarketingComponentProperties_HelpArticle },
             { no: 6, name: "body_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
-            { no: 7, name: "cta_label_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString }
+            { no: 7, name: "cta_label_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
+            { no: 8, name: "navigable_storefront_application_id", kind: "message", T: () => UInt64Value }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_Nagbar>): PremiumMarketingComponentProperties_Nagbar {
@@ -5843,6 +5897,9 @@ class PremiumMarketingComponentProperties_Nagbar$Type extends MessageType<Premiu
                 case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString cta_label_localized */ 7:
                     message.ctaLabelLocalized = PremiumMarketingComponentProperties_LocalizedString.internalBinaryRead(reader, reader.uint32(), options, message.ctaLabelLocalized);
                     break;
+                case /* optional google.protobuf.UInt64Value navigable_storefront_application_id */ 8:
+                    message.navigableStorefrontApplicationId = UInt64Value.internalBinaryRead(reader, reader.uint32(), options, message.navigableStorefrontApplicationId);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -5876,6 +5933,9 @@ class PremiumMarketingComponentProperties_Nagbar$Type extends MessageType<Premiu
         /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString cta_label_localized = 7; */
         if (message.ctaLabelLocalized)
             PremiumMarketingComponentProperties_LocalizedString.internalBinaryWrite(message.ctaLabelLocalized, writer.tag(7, WireType.LengthDelimited).fork(), options).join();
+        /* optional google.protobuf.UInt64Value navigable_storefront_application_id = 8; */
+        if (message.navigableStorefrontApplicationId)
+            UInt64Value.internalBinaryWrite(message.navigableStorefrontApplicationId, writer.tag(8, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

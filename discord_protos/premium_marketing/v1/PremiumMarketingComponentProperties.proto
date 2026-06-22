@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "google/protobuf/wrappers.proto";
+
 package discord_protos.premium_marketing.v1;
 
 message PremiumMarketingComponentProperties {
@@ -34,6 +36,7 @@ message PremiumMarketingComponentProperties {
     BUTTON_ACTION_OPEN_TIER_2_PAYMENT_MODAL_CUSTOM_CONFIRMATION_FOOTER = 4;
     BUTTON_ACTION_OPEN_PLAN_SELECTION_MODAL = 5;
     BUTTON_ACTION_OPEN_PREMIUM_GROUP_PAYMENT_MODAL = 6;
+    BUTTON_ACTION_OPEN_SOCIAL_LAYER_STOREFRONT = 7;
   }
 
   message SubscriptionButton {
@@ -41,6 +44,7 @@ message PremiumMarketingComponentProperties {
     ButtonAction button_action = 2;
     string deeplink_section = 3;
     optional LocalizedString copy_localized = 4;
+    optional google.protobuf.UInt64Value navigable_storefront_application_id = 5;
   }
 
   message Subtitle {
@@ -97,6 +101,7 @@ message PremiumMarketingComponentProperties {
     ButtonAction button_action = 2;
     string deeplink_section = 3;
     optional LocalizedString copy_localized = 4;
+    optional google.protobuf.UInt64Value navigable_storefront_application_id = 5;
   }
 
   message MarketingPageBanner {
@@ -123,6 +128,7 @@ message PremiumMarketingComponentProperties {
     ButtonAction button_action = 2;
     string deeplink_section = 3;
     optional LocalizedString copy_localized = 4;
+    optional google.protobuf.UInt64Value navigable_storefront_application_id = 5;
   }
 
   enum DismissibleContent {
@@ -817,6 +823,7 @@ message PremiumMarketingComponentProperties {
     ButtonAction button_action = 2;
     string deeplink_section = 3;
     optional LocalizedString copy_localized = 4;
+    optional google.protobuf.UInt64Value navigable_storefront_application_id = 5;
   }
 
   message PremiumTabPopover {
@@ -838,6 +845,7 @@ message PremiumMarketingComponentProperties {
     optional HelpArticle help_article = 5;
     optional LocalizedString body_localized = 6;
     optional LocalizedString cta_label_localized = 7;
+    optional google.protobuf.UInt64Value navigable_storefront_application_id = 8;
   }
 
   string content_identifier = 3;
