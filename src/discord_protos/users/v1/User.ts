@@ -852,6 +852,10 @@ export enum User_ClassificationType {
      */
     HARASSMENT_AND_NONIMMINENT_AND_OR_NON_PHYSICAL_THREATS_GUILD_SMITE = 3125,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_QUARANTINE_SMITE = 3200;
+     */
+    QUARANTINE_SMITE = 3200,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK = 4000;
      */
     PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK = 4000,
