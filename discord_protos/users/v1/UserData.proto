@@ -867,4 +867,5 @@ message UserData {
   optional Perks perks = 14;
   optional UserBadges badges = 15;
   optional UserCountryData country_data = 16;
+  bool is_pending_required_action = 17;
 }

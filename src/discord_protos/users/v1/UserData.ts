@@ -88,6 +88,10 @@ export interface UserData {
      * @generated from protobuf field: optional discord_protos.users.v1.UserData.UserCountryData country_data = 16
      */
     countryData?: UserData_UserCountryData;
+    /**
+     * @generated from protobuf field: bool is_pending_required_action = 17
+     */
+    isPendingRequiredAction: boolean;
 }
 /**
  * @generated from protobuf message discord_protos.users.v1.UserData.LinkedUser
@@ -3178,7 +3182,8 @@ class UserData$Type extends MessageType<UserData> {
             { no: 13, name: "age_assurance_data", kind: "message", T: () => UserData_AgeAssuranceData },
             { no: 14, name: "perks", kind: "message", T: () => UserData_Perks },
             { no: 15, name: "badges", kind: "message", T: () => UserData_UserBadges },
-            { no: 16, name: "country_data", kind: "message", T: () => UserData_UserCountryData }
+            { no: 16, name: "country_data", kind: "message", T: () => UserData_UserCountryData },
+            { no: 17, name: "is_pending_required_action", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
         ]);
     }
     create(value?: PartialMessage<UserData>): UserData {
@@ -3186,6 +3191,7 @@ class UserData$Type extends MessageType<UserData> {
         message.linkedUsers = {};
         message.safetyFeatureLimits = {};
         message.safetyFlags = {};
+        message.isPendingRequiredAction = false;
         if (value !== undefined)
             reflectionMergePartial<UserData>(this, message, value);
         return message;
@@ -3242,6 +3248,9 @@ class UserData$Type extends MessageType<UserData> {
                     break;
                 case /* optional discord_protos.users.v1.UserData.UserCountryData country_data */ 16:
                     message.countryData = UserData_UserCountryData.internalBinaryRead(reader, reader.uint32(), options, message.countryData);
+                    break;
+                case /* bool is_pending_required_action */ 17:
+                    message.isPendingRequiredAction = reader.bool();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -3363,6 +3372,9 @@ class UserData$Type extends MessageType<UserData> {
         /* optional discord_protos.users.v1.UserData.UserCountryData country_data = 16; */
         if (message.countryData)
             UserData_UserCountryData.internalBinaryWrite(message.countryData, writer.tag(16, WireType.LengthDelimited).fork(), options).join();
+        /* bool is_pending_required_action = 17; */
+        if (message.isPendingRequiredAction !== false)
+            writer.tag(17, WireType.Varint).bool(message.isPendingRequiredAction);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
