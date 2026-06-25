@@ -92,6 +92,10 @@ export interface UserData {
      * @generated from protobuf field: bool is_pending_required_action = 17
      */
     isPendingRequiredAction: boolean;
+    /**
+     * @generated from protobuf field: optional discord_protos.users.v1.UserData.AnonymizationInfo anonymization_info = 18
+     */
+    anonymizationInfo?: UserData_AnonymizationInfo;
 }
 /**
  * @generated from protobuf message discord_protos.users.v1.UserData.LinkedUser
@@ -623,6 +627,19 @@ export interface UserData_UserCountryData {
     countryScores: {
         [key: string]: number;
     };
+}
+/**
+ * @generated from protobuf message discord_protos.users.v1.UserData.AnonymizationInfo
+ */
+export interface UserData_AnonymizationInfo {
+    /**
+     * @generated from protobuf field: discord_protos.users.v1.UserData.AnonymizationStatus status = 1
+     */
+    status: UserData_AnonymizationStatus;
+    /**
+     * @generated from protobuf field: optional google.protobuf.UInt64Value anon_user_id = 2
+     */
+    anonUserId?: UInt64Value;
 }
 /**
  * @generated from protobuf enum discord_protos.users.v1.UserData.UserLinkType
@@ -3163,6 +3180,27 @@ export enum UserData_PerkSource {
      */
     SOURCE_THIRDPARTY_CROISSANT = 2
 }
+/**
+ * @generated from protobuf enum discord_protos.users.v1.UserData.AnonymizationStatus
+ */
+export enum UserData_AnonymizationStatus {
+    /**
+     * @generated from protobuf enum value: ANONYMIZATION_STATUS_UNSPECIFIED = 0;
+     */
+    UNSPECIFIED = 0,
+    /**
+     * @generated from protobuf enum value: ANONYMIZATION_STATUS_TO_BE_ANONYMIZED_USER = 1;
+     */
+    TO_BE_ANONYMIZED_USER = 1,
+    /**
+     * @generated from protobuf enum value: ANONYMIZATION_STATUS_INACCESSIBLE_ANONYMIZED_USER = 2;
+     */
+    INACCESSIBLE_ANONYMIZED_USER = 2,
+    /**
+     * @generated from protobuf enum value: ANONYMIZATION_STATUS_ANONYMOUS_USER = 3;
+     */
+    ANONYMOUS_USER = 3
+}
 // @generated message type with reflection information, may provide speed optimized methods
 class UserData$Type extends MessageType<UserData> {
     constructor() {
@@ -3183,7 +3221,8 @@ class UserData$Type extends MessageType<UserData> {
             { no: 14, name: "perks", kind: "message", T: () => UserData_Perks },
             { no: 15, name: "badges", kind: "message", T: () => UserData_UserBadges },
             { no: 16, name: "country_data", kind: "message", T: () => UserData_UserCountryData },
-            { no: 17, name: "is_pending_required_action", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
+            { no: 17, name: "is_pending_required_action", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
+            { no: 18, name: "anonymization_info", kind: "message", T: () => UserData_AnonymizationInfo }
         ]);
     }
     create(value?: PartialMessage<UserData>): UserData {
@@ -3251,6 +3290,9 @@ class UserData$Type extends MessageType<UserData> {
                     break;
                 case /* bool is_pending_required_action */ 17:
                     message.isPendingRequiredAction = reader.bool();
+                    break;
+                case /* optional discord_protos.users.v1.UserData.AnonymizationInfo anonymization_info */ 18:
+                    message.anonymizationInfo = UserData_AnonymizationInfo.internalBinaryRead(reader, reader.uint32(), options, message.anonymizationInfo);
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -3375,6 +3417,9 @@ class UserData$Type extends MessageType<UserData> {
         /* bool is_pending_required_action = 17; */
         if (message.isPendingRequiredAction !== false)
             writer.tag(17, WireType.Varint).bool(message.isPendingRequiredAction);
+        /* optional discord_protos.users.v1.UserData.AnonymizationInfo anonymization_info = 18; */
+        if (message.anonymizationInfo)
+            UserData_AnonymizationInfo.internalBinaryWrite(message.anonymizationInfo, writer.tag(18, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -5366,3 +5411,57 @@ class UserData_UserCountryData$Type extends MessageType<UserData_UserCountryData
  * @generated MessageType for protobuf message discord_protos.users.v1.UserData.UserCountryData
  */
 export const UserData_UserCountryData = new UserData_UserCountryData$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class UserData_AnonymizationInfo$Type extends MessageType<UserData_AnonymizationInfo> {
+    constructor() {
+        super("discord_protos.users.v1.UserData.AnonymizationInfo", [
+            { no: 1, name: "status", kind: "enum", T: () => ["discord_protos.users.v1.UserData.AnonymizationStatus", UserData_AnonymizationStatus, "ANONYMIZATION_STATUS_"] },
+            { no: 2, name: "anon_user_id", kind: "message", T: () => UInt64Value }
+        ]);
+    }
+    create(value?: PartialMessage<UserData_AnonymizationInfo>): UserData_AnonymizationInfo {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.status = 0;
+        if (value !== undefined)
+            reflectionMergePartial<UserData_AnonymizationInfo>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: UserData_AnonymizationInfo): UserData_AnonymizationInfo {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* discord_protos.users.v1.UserData.AnonymizationStatus status */ 1:
+                    message.status = reader.int32();
+                    break;
+                case /* optional google.protobuf.UInt64Value anon_user_id */ 2:
+                    message.anonUserId = UInt64Value.internalBinaryRead(reader, reader.uint32(), options, message.anonUserId);
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: UserData_AnonymizationInfo, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* discord_protos.users.v1.UserData.AnonymizationStatus status = 1; */
+        if (message.status !== 0)
+            writer.tag(1, WireType.Varint).int32(message.status);
+        /* optional google.protobuf.UInt64Value anon_user_id = 2; */
+        if (message.anonUserId)
+            UInt64Value.internalBinaryWrite(message.anonUserId, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.users.v1.UserData.AnonymizationInfo
+ */
+export const UserData_AnonymizationInfo = new UserData_AnonymizationInfo$Type();

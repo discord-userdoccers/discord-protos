@@ -1392,6 +1392,23 @@ class UserData(_message.Message):
     PERK_SOURCE_SOURCE_NITRO: UserData.PerkSource.ValueType  # 1
     PERK_SOURCE_SOURCE_THIRDPARTY_CROISSANT: UserData.PerkSource.ValueType  # 2
 
+    class _AnonymizationStatus:
+        ValueType = _typing.NewType("ValueType", _builtins.int)
+        V: _TypeAlias = ValueType  # noqa: Y015
+
+    class _AnonymizationStatusEnumTypeWrapper(_enum_type_wrapper._EnumTypeWrapper[UserData._AnonymizationStatus.ValueType], _builtins.type):
+        DESCRIPTOR: _descriptor.EnumDescriptor
+        ANONYMIZATION_STATUS_UNSPECIFIED: UserData._AnonymizationStatus.ValueType  # 0
+        ANONYMIZATION_STATUS_TO_BE_ANONYMIZED_USER: UserData._AnonymizationStatus.ValueType  # 1
+        ANONYMIZATION_STATUS_INACCESSIBLE_ANONYMIZED_USER: UserData._AnonymizationStatus.ValueType  # 2
+        ANONYMIZATION_STATUS_ANONYMOUS_USER: UserData._AnonymizationStatus.ValueType  # 3
+
+    class AnonymizationStatus(_AnonymizationStatus, metaclass=_AnonymizationStatusEnumTypeWrapper): ...
+    ANONYMIZATION_STATUS_UNSPECIFIED: UserData.AnonymizationStatus.ValueType  # 0
+    ANONYMIZATION_STATUS_TO_BE_ANONYMIZED_USER: UserData.AnonymizationStatus.ValueType  # 1
+    ANONYMIZATION_STATUS_INACCESSIBLE_ANONYMIZED_USER: UserData.AnonymizationStatus.ValueType  # 2
+    ANONYMIZATION_STATUS_ANONYMOUS_USER: UserData.AnonymizationStatus.ValueType  # 3
+
     @_typing.final
     class LinkedUser(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
@@ -2286,6 +2303,29 @@ class UserData(_message.Message):
         def WhichOneof(self, oneof_group: _WhichOneofArgType__override_set_at) -> _WhichOneofReturnType__override_set_at | None: ...
 
     @_typing.final
+    class AnonymizationInfo(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        STATUS_FIELD_NUMBER: _builtins.int
+        ANON_USER_ID_FIELD_NUMBER: _builtins.int
+        status: Global___UserData.AnonymizationStatus.ValueType
+        @_builtins.property
+        def anon_user_id(self) -> _wrappers_pb2.UInt64Value: ...
+        def __init__(
+            self,
+            *,
+            status: Global___UserData.AnonymizationStatus.ValueType = ...,
+            anon_user_id: _wrappers_pb2.UInt64Value | None = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_anon_user_id", b"_anon_user_id", "anon_user_id", b"anon_user_id"]  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_anon_user_id", b"_anon_user_id", "anon_user_id", b"anon_user_id", "status", b"status"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        _WhichOneofReturnType__anon_user_id: _TypeAlias = _typing.Literal["anon_user_id"]  # noqa: Y015
+        _WhichOneofArgType__anon_user_id: _TypeAlias = _typing.Literal["_anon_user_id", b"_anon_user_id"]  # noqa: Y015
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__anon_user_id) -> _WhichOneofReturnType__anon_user_id | None: ...
+
+    @_typing.final
     class LinkedUsersEntry(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
 
@@ -2365,6 +2405,7 @@ class UserData(_message.Message):
     BADGES_FIELD_NUMBER: _builtins.int
     COUNTRY_DATA_FIELD_NUMBER: _builtins.int
     IS_PENDING_REQUIRED_ACTION_FIELD_NUMBER: _builtins.int
+    ANONYMIZATION_INFO_FIELD_NUMBER: _builtins.int
     is_pending_required_action: _builtins.bool
     @_builtins.property
     def linked_users(self) -> _containers.MessageMap[_builtins.int, Global___UserData.LinkedUser]: ...
@@ -2398,6 +2439,8 @@ class UserData(_message.Message):
     def badges(self) -> Global___UserData.UserBadges: ...
     @_builtins.property
     def country_data(self) -> Global___UserData.UserCountryData: ...
+    @_builtins.property
+    def anonymization_info(self) -> Global___UserData.AnonymizationInfo: ...
     def __init__(
         self,
         *,
@@ -2418,13 +2461,16 @@ class UserData(_message.Message):
         badges: Global___UserData.UserBadges | None = ...,
         country_data: Global___UserData.UserCountryData | None = ...,
         is_pending_required_action: _builtins.bool = ...,
+        anonymization_info: Global___UserData.AnonymizationInfo | None = ...,
     ) -> None: ...
-    _HasFieldArgType: _TypeAlias = _typing.Literal["_age_assurance_data", b"_age_assurance_data", "_badges", b"_badges", "_collectibles", b"_collectibles", "_country_data", b"_country_data", "_cross_platform_restriction", b"_cross_platform_restriction", "_display_name_styles", b"_display_name_styles", "_perks", b"_perks", "_premium_state", b"_premium_state", "_primary_guild", b"_primary_guild", "_quest", b"_quest", "_restricted_schedule", b"_restricted_schedule", "_safety_state", b"_safety_state", "_store_country", b"_store_country", "age_assurance_data", b"age_assurance_data", "badges", b"badges", "collectibles", b"collectibles", "country_data", b"country_data", "cross_platform_restriction", b"cross_platform_restriction", "display_name_styles", b"display_name_styles", "perks", b"perks", "premium_state", b"premium_state", "primary_guild", b"primary_guild", "quest", b"quest", "restricted_schedule", b"restricted_schedule", "safety_state", b"safety_state", "store_country", b"store_country"]  # noqa: Y015
+    _HasFieldArgType: _TypeAlias = _typing.Literal["_age_assurance_data", b"_age_assurance_data", "_anonymization_info", b"_anonymization_info", "_badges", b"_badges", "_collectibles", b"_collectibles", "_country_data", b"_country_data", "_cross_platform_restriction", b"_cross_platform_restriction", "_display_name_styles", b"_display_name_styles", "_perks", b"_perks", "_premium_state", b"_premium_state", "_primary_guild", b"_primary_guild", "_quest", b"_quest", "_restricted_schedule", b"_restricted_schedule", "_safety_state", b"_safety_state", "_store_country", b"_store_country", "age_assurance_data", b"age_assurance_data", "anonymization_info", b"anonymization_info", "badges", b"badges", "collectibles", b"collectibles", "country_data", b"country_data", "cross_platform_restriction", b"cross_platform_restriction", "display_name_styles", b"display_name_styles", "perks", b"perks", "premium_state", b"premium_state", "primary_guild", b"primary_guild", "quest", b"quest", "restricted_schedule", b"restricted_schedule", "safety_state", b"safety_state", "store_country", b"store_country"]  # noqa: Y015
     def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["_age_assurance_data", b"_age_assurance_data", "_badges", b"_badges", "_collectibles", b"_collectibles", "_country_data", b"_country_data", "_cross_platform_restriction", b"_cross_platform_restriction", "_display_name_styles", b"_display_name_styles", "_perks", b"_perks", "_premium_state", b"_premium_state", "_primary_guild", b"_primary_guild", "_quest", b"_quest", "_restricted_schedule", b"_restricted_schedule", "_safety_state", b"_safety_state", "_store_country", b"_store_country", "age_assurance_data", b"age_assurance_data", "badges", b"badges", "collectibles", b"collectibles", "country_data", b"country_data", "cross_platform_restriction", b"cross_platform_restriction", "display_name_styles", b"display_name_styles", "is_pending_required_action", b"is_pending_required_action", "linked_users", b"linked_users", "perks", b"perks", "premium_state", b"premium_state", "primary_guild", b"primary_guild", "quest", b"quest", "restricted_schedule", b"restricted_schedule", "safety_feature_limits", b"safety_feature_limits", "safety_flags", b"safety_flags", "safety_state", b"safety_state", "store_country", b"store_country"]  # noqa: Y015
+    _ClearFieldArgType: _TypeAlias = _typing.Literal["_age_assurance_data", b"_age_assurance_data", "_anonymization_info", b"_anonymization_info", "_badges", b"_badges", "_collectibles", b"_collectibles", "_country_data", b"_country_data", "_cross_platform_restriction", b"_cross_platform_restriction", "_display_name_styles", b"_display_name_styles", "_perks", b"_perks", "_premium_state", b"_premium_state", "_primary_guild", b"_primary_guild", "_quest", b"_quest", "_restricted_schedule", b"_restricted_schedule", "_safety_state", b"_safety_state", "_store_country", b"_store_country", "age_assurance_data", b"age_assurance_data", "anonymization_info", b"anonymization_info", "badges", b"badges", "collectibles", b"collectibles", "country_data", b"country_data", "cross_platform_restriction", b"cross_platform_restriction", "display_name_styles", b"display_name_styles", "is_pending_required_action", b"is_pending_required_action", "linked_users", b"linked_users", "perks", b"perks", "premium_state", b"premium_state", "primary_guild", b"primary_guild", "quest", b"quest", "restricted_schedule", b"restricted_schedule", "safety_feature_limits", b"safety_feature_limits", "safety_flags", b"safety_flags", "safety_state", b"safety_state", "store_country", b"store_country"]  # noqa: Y015
     def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
     _WhichOneofReturnType__age_assurance_data: _TypeAlias = _typing.Literal["age_assurance_data"]  # noqa: Y015
     _WhichOneofArgType__age_assurance_data: _TypeAlias = _typing.Literal["_age_assurance_data", b"_age_assurance_data"]  # noqa: Y015
+    _WhichOneofReturnType__anonymization_info: _TypeAlias = _typing.Literal["anonymization_info"]  # noqa: Y015
+    _WhichOneofArgType__anonymization_info: _TypeAlias = _typing.Literal["_anonymization_info", b"_anonymization_info"]  # noqa: Y015
     _WhichOneofReturnType__badges: _TypeAlias = _typing.Literal["badges"]  # noqa: Y015
     _WhichOneofArgType__badges: _TypeAlias = _typing.Literal["_badges", b"_badges"]  # noqa: Y015
     _WhichOneofReturnType__collectibles: _TypeAlias = _typing.Literal["collectibles"]  # noqa: Y015
@@ -2451,6 +2497,8 @@ class UserData(_message.Message):
     _WhichOneofArgType__store_country: _TypeAlias = _typing.Literal["_store_country", b"_store_country"]  # noqa: Y015
     @_typing.overload
     def WhichOneof(self, oneof_group: _WhichOneofArgType__age_assurance_data) -> _WhichOneofReturnType__age_assurance_data | None: ...
+    @_typing.overload
+    def WhichOneof(self, oneof_group: _WhichOneofArgType__anonymization_info) -> _WhichOneofReturnType__anonymization_info | None: ...
     @_typing.overload
     def WhichOneof(self, oneof_group: _WhichOneofArgType__badges) -> _WhichOneofReturnType__badges | None: ...
     @_typing.overload

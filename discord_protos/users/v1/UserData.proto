@@ -851,6 +851,18 @@ message UserData {
     map<string, float> country_scores = 5;
   }
 
+  enum AnonymizationStatus {
+    ANONYMIZATION_STATUS_UNSPECIFIED = 0;
+    ANONYMIZATION_STATUS_TO_BE_ANONYMIZED_USER = 1;
+    ANONYMIZATION_STATUS_INACCESSIBLE_ANONYMIZED_USER = 2;
+    ANONYMIZATION_STATUS_ANONYMOUS_USER = 3;
+  }
+
+  message AnonymizationInfo {
+    AnonymizationStatus status = 1;
+    optional google.protobuf.UInt64Value anon_user_id = 2;
+  }
+
   map<fixed64, LinkedUser> linked_users = 1;
   map<uint32, FeatureLimits> safety_feature_limits = 2;
   map<uint32, SafetyFlag> safety_flags = 3;
@@ -868,4 +880,5 @@ message UserData {
   optional UserBadges badges = 15;
   optional UserCountryData country_data = 16;
   bool is_pending_required_action = 17;
+  optional AnonymizationInfo anonymization_info = 18;
 }
