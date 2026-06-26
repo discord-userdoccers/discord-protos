@@ -856,6 +856,14 @@ export enum User_ClassificationType {
      */
     QUARANTINE_SMITE = 3200,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_REQUIRE_VERIFIED_PHONE_SMITE = 3201;
+     */
+    REQUIRE_VERIFIED_PHONE_SMITE = 3201,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_REQUIRE_REVERIFIED_PHONE_SMITE = 3202;
+     */
+    REQUIRE_REVERIFIED_PHONE_SMITE = 3202,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK = 4000;
      */
     PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK = 4000,
