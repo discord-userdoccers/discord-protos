@@ -3301,7 +3301,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_FLYWHEEL_MOBILE_PROFILE_COACHMARK = 777;
      */
-    DISPLAY_NAME_STYLES_FLYWHEEL_MOBILE_PROFILE_COACHMARK = 777
+    DISPLAY_NAME_STYLES_FLYWHEEL_MOBILE_PROFILE_COACHMARK = 777,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_MOBILE_REFRESH_CHAT_INPUT_PLUS_BUTTON_COACHMARK = 778;
+     */
+    MOBILE_REFRESH_CHAT_INPUT_PLUS_BUTTON_COACHMARK = 778
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
