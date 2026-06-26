@@ -623,6 +623,12 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_HOME_DRAWER_SWIPE_PEEK_NUX: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 769
         DISMISSIBLE_CONTENT_FILE_UPLOAD_POWERUP_ROLLBACK_NOTIFICATION: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 770
         DISMISSIBLE_CONTENT_FILE_UPLOAD_POWERUP_ROLLBACK_MODAL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 771
+        DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_FLYWHEEL_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 772
+        DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_FLYWHEEL_EDIT_PROFILE_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 773
+        DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_FLYWHEEL_NEW_BADGE_PROFILE_PAGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 774
+        DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_FLYWHEEL_MOBILE_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 775
+        DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_FLYWHEEL_MOBILE_NEW_BADGE_PROFILE_PAGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 776
+        DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_FLYWHEEL_MOBILE_PROFILE_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 777
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_HUB_WAITLIST_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1193,6 +1199,12 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_HOME_DRAWER_SWIPE_PEEK_NUX: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 769
     DISMISSIBLE_CONTENT_FILE_UPLOAD_POWERUP_ROLLBACK_NOTIFICATION: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 770
     DISMISSIBLE_CONTENT_FILE_UPLOAD_POWERUP_ROLLBACK_MODAL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 771
+    DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_FLYWHEEL_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 772
+    DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_FLYWHEEL_EDIT_PROFILE_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 773
+    DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_FLYWHEEL_NEW_BADGE_PROFILE_PAGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 774
+    DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_FLYWHEEL_MOBILE_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 775
+    DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_FLYWHEEL_MOBILE_NEW_BADGE_PROFILE_PAGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 776
+    DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_FLYWHEEL_MOBILE_PROFILE_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 777
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)

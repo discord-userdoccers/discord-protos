@@ -3277,7 +3277,31 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_FILE_UPLOAD_POWERUP_ROLLBACK_MODAL = 771;
      */
-    FILE_UPLOAD_POWERUP_ROLLBACK_MODAL = 771
+    FILE_UPLOAD_POWERUP_ROLLBACK_MODAL = 771,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_FLYWHEEL_COACHMARK = 772;
+     */
+    DISPLAY_NAME_STYLES_FLYWHEEL_COACHMARK = 772,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_FLYWHEEL_EDIT_PROFILE_NEW_BADGE = 773;
+     */
+    DISPLAY_NAME_STYLES_FLYWHEEL_EDIT_PROFILE_NEW_BADGE = 773,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_FLYWHEEL_NEW_BADGE_PROFILE_PAGE = 774;
+     */
+    DISPLAY_NAME_STYLES_FLYWHEEL_NEW_BADGE_PROFILE_PAGE = 774,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_FLYWHEEL_MOBILE_COACHMARK = 775;
+     */
+    DISPLAY_NAME_STYLES_FLYWHEEL_MOBILE_COACHMARK = 775,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_FLYWHEEL_MOBILE_NEW_BADGE_PROFILE_PAGE = 776;
+     */
+    DISPLAY_NAME_STYLES_FLYWHEEL_MOBILE_NEW_BADGE_PROFILE_PAGE = 776,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_FLYWHEEL_MOBILE_PROFILE_COACHMARK = 777;
+     */
+    DISPLAY_NAME_STYLES_FLYWHEEL_MOBILE_PROFILE_COACHMARK = 777
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
