@@ -1280,6 +1280,14 @@ export enum UserData_ClassificationType {
      */
     REQUIRE_REVERIFIED_PHONE_SMITE = 3202,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_REQUIRE_VERIFIED_EMAIL_SMITE = 3203;
+     */
+    REQUIRE_VERIFIED_EMAIL_SMITE = 3203,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_REQUIRE_REVERIFIED_EMAIL_SMITE = 3204;
+     */
+    REQUIRE_REVERIFIED_EMAIL_SMITE = 3204,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK = 4000;
      */
     PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK = 4000,
