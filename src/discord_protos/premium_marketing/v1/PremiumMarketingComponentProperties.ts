@@ -3305,7 +3305,15 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_MOBILE_REFRESH_CHAT_INPUT_PLUS_BUTTON_COACHMARK = 778;
      */
-    MOBILE_REFRESH_CHAT_INPUT_PLUS_BUTTON_COACHMARK = 778
+    MOBILE_REFRESH_CHAT_INPUT_PLUS_BUTTON_COACHMARK = 778,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_MONTHLY_TO_YEARLY_UPSELL_STICKY_BAR = 779;
+     */
+    MONTHLY_TO_YEARLY_UPSELL_STICKY_BAR = 779,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_MONTHLY_TO_YEARLY_UPSELL_NITRO_TAB_POPOVER = 780;
+     */
+    MONTHLY_TO_YEARLY_UPSELL_NITRO_TAB_POPOVER = 780
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant

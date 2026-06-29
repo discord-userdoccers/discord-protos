@@ -630,6 +630,8 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_FLYWHEEL_MOBILE_NEW_BADGE_PROFILE_PAGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 776
         DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_FLYWHEEL_MOBILE_PROFILE_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 777
         DISMISSIBLE_CONTENT_MOBILE_REFRESH_CHAT_INPUT_PLUS_BUTTON_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 778
+        DISMISSIBLE_CONTENT_MONTHLY_TO_YEARLY_UPSELL_STICKY_BAR: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 779
+        DISMISSIBLE_CONTENT_MONTHLY_TO_YEARLY_UPSELL_NITRO_TAB_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 780
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_HUB_WAITLIST_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1207,6 +1209,8 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_FLYWHEEL_MOBILE_NEW_BADGE_PROFILE_PAGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 776
     DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_FLYWHEEL_MOBILE_PROFILE_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 777
     DISMISSIBLE_CONTENT_MOBILE_REFRESH_CHAT_INPUT_PLUS_BUTTON_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 778
+    DISMISSIBLE_CONTENT_MONTHLY_TO_YEARLY_UPSELL_STICKY_BAR: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 779
+    DISMISSIBLE_CONTENT_MONTHLY_TO_YEARLY_UPSELL_NITRO_TAB_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 780
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)
