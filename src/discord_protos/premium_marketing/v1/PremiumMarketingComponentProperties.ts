@@ -3313,7 +3313,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_MONTHLY_TO_YEARLY_UPSELL_NITRO_TAB_POPOVER = 780;
      */
-    MONTHLY_TO_YEARLY_UPSELL_NITRO_TAB_POPOVER = 780
+    MONTHLY_TO_YEARLY_UPSELL_NITRO_TAB_POPOVER = 780,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_BADGE_DIRECTORY_NUX_POPOVER = 781;
+     */
+    BADGE_DIRECTORY_NUX_POPOVER = 781
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
