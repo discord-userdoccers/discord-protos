@@ -880,6 +880,14 @@ export enum User_ClassificationType {
      */
     USER_TEMP_BAN_SMITE = 3206,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_USER_FRIEND_REQUEST_DISABLED_SMITE = 3207;
+     */
+    USER_FRIEND_REQUEST_DISABLED_SMITE = 3207,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_USER_LIMITED_ACCESS_FRIEND_REQUEST_TIER4_SMITE = 3208;
+     */
+    USER_LIMITED_ACCESS_FRIEND_REQUEST_TIER4_SMITE = 3208,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK = 4000;
      */
     PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK = 4000,
