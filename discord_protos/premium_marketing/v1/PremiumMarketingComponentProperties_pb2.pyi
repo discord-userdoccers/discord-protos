@@ -633,6 +633,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_MONTHLY_TO_YEARLY_UPSELL_STICKY_BAR: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 779
         DISMISSIBLE_CONTENT_MONTHLY_TO_YEARLY_UPSELL_NITRO_TAB_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 780
         DISMISSIBLE_CONTENT_BADGE_DIRECTORY_NUX_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 781
+        DISMISSIBLE_CONTENT_GUILD_POWERUP_NEW_PERK_AVAILABLE_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 782
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_HUB_WAITLIST_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1213,6 +1214,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_MONTHLY_TO_YEARLY_UPSELL_STICKY_BAR: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 779
     DISMISSIBLE_CONTENT_MONTHLY_TO_YEARLY_UPSELL_NITRO_TAB_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 780
     DISMISSIBLE_CONTENT_BADGE_DIRECTORY_NUX_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 781
+    DISMISSIBLE_CONTENT_GUILD_POWERUP_NEW_PERK_AVAILABLE_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 782
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)

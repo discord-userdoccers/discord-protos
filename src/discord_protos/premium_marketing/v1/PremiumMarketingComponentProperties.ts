@@ -3317,7 +3317,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_BADGE_DIRECTORY_NUX_POPOVER = 781;
      */
-    BADGE_DIRECTORY_NUX_POPOVER = 781
+    BADGE_DIRECTORY_NUX_POPOVER = 781,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GUILD_POWERUP_NEW_PERK_AVAILABLE_BADGE = 782;
+     */
+    GUILD_POWERUP_NEW_PERK_AVAILABLE_BADGE = 782
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
