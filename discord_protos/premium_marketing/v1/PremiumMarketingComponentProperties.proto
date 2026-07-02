@@ -869,6 +869,24 @@ message PremiumMarketingComponentProperties {
     optional LocalizedString body_localized = 3;
   }
 
+  message BillingSettingsBannerCTAButton {
+    string copy = 1;
+    ButtonAction button_action = 2;
+    string deeplink_section = 3;
+    optional LocalizedString copy_localized = 4;
+    optional google.protobuf.UInt64Value navigable_storefront_application_id = 5;
+  }
+
+  message BillingSettingsBanner {
+    string header = 1;
+    string body = 2;
+    optional ThemeAwareAsset asset = 3;
+    optional BillingSettingsBannerCTAButton button = 4;
+    optional LocalizedString header_localized = 5;
+    optional LocalizedString body_localized = 6;
+    optional HelpArticle help_article = 7;
+  }
+
   string content_identifier = 3;
   bool is_default_base = 18;
   oneof properties {
@@ -889,6 +907,7 @@ message PremiumMarketingComponentProperties {
     PremiumTabPopover premium_tab_popover = 16;
     Nagbar nagbar = 17;
     PlanSelectCardBanner plan_select_card_banner = 19;
+    BillingSettingsBanner billing_settings_banner = 20;
   }
 
 }
