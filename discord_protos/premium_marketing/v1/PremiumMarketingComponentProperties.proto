@@ -711,6 +711,10 @@ message PremiumMarketingComponentProperties {
     DISMISSIBLE_CONTENT_MONTHLY_TO_YEARLY_UPSELL_NITRO_TAB_POPOVER = 780;
     DISMISSIBLE_CONTENT_BADGE_DIRECTORY_NUX_POPOVER = 781;
     DISMISSIBLE_CONTENT_GUILD_POWERUP_NEW_PERK_AVAILABLE_BADGE = 782;
+    DISMISSIBLE_CONTENT_BATTLENET_CONNECTION_DEPRECATION = 783;
+    DISMISSIBLE_CONTENT_BATTLENET_CONNECTION_DEPRECATION_DISABLE = 784;
+    DISMISSIBLE_CONTENT_BATTLENET_CONNECTION_DEPRECATION_LINKED_ROLES = 785;
+    DISMISSIBLE_CONTENT_BATTLENET_CONNECTION_DEPRECATION_LINKED_ROLES_DISABLE = 786;
   }
 
   message MobileBottomSheet {
@@ -859,6 +863,12 @@ message PremiumMarketingComponentProperties {
     optional google.protobuf.UInt64Value navigable_storefront_application_id = 8;
   }
 
+  message PlanSelectCardBanner {
+    optional ThemeAwareAsset asset = 1;
+    string body = 2;
+    optional LocalizedString body_localized = 3;
+  }
+
   string content_identifier = 3;
   bool is_default_base = 18;
   oneof properties {
@@ -878,6 +888,7 @@ message PremiumMarketingComponentProperties {
     PremiumTabTooltip premium_tab_tooltip = 15;
     PremiumTabPopover premium_tab_popover = 16;
     Nagbar nagbar = 17;
+    PlanSelectCardBanner plan_select_card_banner = 19;
   }
 
 }

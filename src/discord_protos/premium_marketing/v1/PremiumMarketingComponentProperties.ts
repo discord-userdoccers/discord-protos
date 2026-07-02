@@ -123,6 +123,12 @@ export interface PremiumMarketingComponentProperties {
          */
         nagbar: PremiumMarketingComponentProperties_Nagbar;
     } | {
+        oneofKind: "planSelectCardBanner";
+        /**
+         * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PlanSelectCardBanner plan_select_card_banner = 19
+         */
+        planSelectCardBanner: PremiumMarketingComponentProperties_PlanSelectCardBanner;
+    } | {
         oneofKind: undefined;
     };
 }
@@ -964,6 +970,23 @@ export interface PremiumMarketingComponentProperties_Nagbar {
      * @generated from protobuf field: optional google.protobuf.UInt64Value navigable_storefront_application_id = 8
      */
     navigableStorefrontApplicationId?: UInt64Value;
+}
+/**
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PlanSelectCardBanner
+ */
+export interface PremiumMarketingComponentProperties_PlanSelectCardBanner {
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset = 1
+     */
+    asset?: PremiumMarketingComponentProperties_ThemeAwareAsset;
+    /**
+     * @generated from protobuf field: string body = 2
+     */
+    body: string;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString body_localized = 3
+     */
+    bodyLocalized?: PremiumMarketingComponentProperties_LocalizedString;
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction
@@ -3321,7 +3344,23 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GUILD_POWERUP_NEW_PERK_AVAILABLE_BADGE = 782;
      */
-    GUILD_POWERUP_NEW_PERK_AVAILABLE_BADGE = 782
+    GUILD_POWERUP_NEW_PERK_AVAILABLE_BADGE = 782,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_BATTLENET_CONNECTION_DEPRECATION = 783;
+     */
+    BATTLENET_CONNECTION_DEPRECATION = 783,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_BATTLENET_CONNECTION_DEPRECATION_DISABLE = 784;
+     */
+    BATTLENET_CONNECTION_DEPRECATION_DISABLE = 784,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_BATTLENET_CONNECTION_DEPRECATION_LINKED_ROLES = 785;
+     */
+    BATTLENET_CONNECTION_DEPRECATION_LINKED_ROLES = 785,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_BATTLENET_CONNECTION_DEPRECATION_LINKED_ROLES_DISABLE = 786;
+     */
+    BATTLENET_CONNECTION_DEPRECATION_LINKED_ROLES_DISABLE = 786
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
@@ -3361,7 +3400,8 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
             { no: 14, name: "gift_reminder_coachmark", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_GiftReminderCoachmark },
             { no: 15, name: "premium_tab_tooltip", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_PremiumTabTooltip },
             { no: 16, name: "premium_tab_popover", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_PremiumTabPopover },
-            { no: 17, name: "nagbar", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_Nagbar }
+            { no: 17, name: "nagbar", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_Nagbar },
+            { no: 19, name: "plan_select_card_banner", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_PlanSelectCardBanner }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties>): PremiumMarketingComponentProperties {
@@ -3480,6 +3520,12 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
                         nagbar: PremiumMarketingComponentProperties_Nagbar.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).nagbar)
                     };
                     break;
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PlanSelectCardBanner plan_select_card_banner */ 19:
+                    message.properties = {
+                        oneofKind: "planSelectCardBanner",
+                        planSelectCardBanner: PremiumMarketingComponentProperties_PlanSelectCardBanner.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).planSelectCardBanner)
+                    };
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -3546,6 +3592,9 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
         /* bool is_default_base = 18; */
         if (message.isDefaultBase !== false)
             writer.tag(18, WireType.Varint).bool(message.isDefaultBase);
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PlanSelectCardBanner plan_select_card_banner = 19; */
+        if (message.properties.oneofKind === "planSelectCardBanner")
+            PremiumMarketingComponentProperties_PlanSelectCardBanner.internalBinaryWrite(message.properties.planSelectCardBanner, writer.tag(19, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -5990,3 +6039,64 @@ class PremiumMarketingComponentProperties_Nagbar$Type extends MessageType<Premiu
  * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Nagbar
  */
 export const PremiumMarketingComponentProperties_Nagbar = new PremiumMarketingComponentProperties_Nagbar$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PremiumMarketingComponentProperties_PlanSelectCardBanner$Type extends MessageType<PremiumMarketingComponentProperties_PlanSelectCardBanner> {
+    constructor() {
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PlanSelectCardBanner", [
+            { no: 1, name: "asset", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset },
+            { no: 2, name: "body", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 3, name: "body_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString }
+        ]);
+    }
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_PlanSelectCardBanner>): PremiumMarketingComponentProperties_PlanSelectCardBanner {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.body = "";
+        if (value !== undefined)
+            reflectionMergePartial<PremiumMarketingComponentProperties_PlanSelectCardBanner>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_PlanSelectCardBanner): PremiumMarketingComponentProperties_PlanSelectCardBanner {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset */ 1:
+                    message.asset = PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryRead(reader, reader.uint32(), options, message.asset);
+                    break;
+                case /* string body */ 2:
+                    message.body = reader.string();
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString body_localized */ 3:
+                    message.bodyLocalized = PremiumMarketingComponentProperties_LocalizedString.internalBinaryRead(reader, reader.uint32(), options, message.bodyLocalized);
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_PlanSelectCardBanner, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset = 1; */
+        if (message.asset)
+            PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryWrite(message.asset, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        /* string body = 2; */
+        if (message.body !== "")
+            writer.tag(2, WireType.LengthDelimited).string(message.body);
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString body_localized = 3; */
+        if (message.bodyLocalized)
+            PremiumMarketingComponentProperties_LocalizedString.internalBinaryWrite(message.bodyLocalized, writer.tag(3, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PlanSelectCardBanner
+ */
+export const PremiumMarketingComponentProperties_PlanSelectCardBanner = new PremiumMarketingComponentProperties_PlanSelectCardBanner$Type();

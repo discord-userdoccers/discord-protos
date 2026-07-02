@@ -872,6 +872,14 @@ export enum User_ClassificationType {
      */
     REQUIRE_REVERIFIED_EMAIL_SMITE = 3204,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_USER_INVALIDATE_SESSIONS_SMITE = 3205;
+     */
+    USER_INVALIDATE_SESSIONS_SMITE = 3205,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_USER_TEMP_BAN_SMITE = 3206;
+     */
+    USER_TEMP_BAN_SMITE = 3206,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK = 4000;
      */
     PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK = 4000,
