@@ -638,6 +638,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_BATTLENET_CONNECTION_DEPRECATION_DISABLE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 784
         DISMISSIBLE_CONTENT_BATTLENET_CONNECTION_DEPRECATION_LINKED_ROLES: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 785
         DISMISSIBLE_CONTENT_BATTLENET_CONNECTION_DEPRECATION_LINKED_ROLES_DISABLE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 786
+        DISMISSIBLE_CONTENT_GUILD_THEME_MEMBER_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 787
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_HUB_WAITLIST_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1223,6 +1224,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_BATTLENET_CONNECTION_DEPRECATION_DISABLE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 784
     DISMISSIBLE_CONTENT_BATTLENET_CONNECTION_DEPRECATION_LINKED_ROLES: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 785
     DISMISSIBLE_CONTENT_BATTLENET_CONNECTION_DEPRECATION_LINKED_ROLES_DISABLE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 786
+    DISMISSIBLE_CONTENT_GUILD_THEME_MEMBER_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 787
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)

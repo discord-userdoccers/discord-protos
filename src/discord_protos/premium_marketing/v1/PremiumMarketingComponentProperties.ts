@@ -3424,7 +3424,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_BATTLENET_CONNECTION_DEPRECATION_LINKED_ROLES_DISABLE = 786;
      */
-    BATTLENET_CONNECTION_DEPRECATION_LINKED_ROLES_DISABLE = 786
+    BATTLENET_CONNECTION_DEPRECATION_LINKED_ROLES_DISABLE = 786,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GUILD_THEME_MEMBER_COACHMARK = 787;
+     */
+    GUILD_THEME_MEMBER_COACHMARK = 787
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
