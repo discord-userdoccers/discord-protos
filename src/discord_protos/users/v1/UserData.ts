@@ -1312,6 +1312,18 @@ export enum UserData_ClassificationType {
      */
     USER_LIMITED_ACCESS_FRIEND_REQUEST_TIER4_SMITE = 3208,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_USERNAME_MANGLE_FULL_SMITE = 3209;
+     */
+    USERNAME_MANGLE_FULL_SMITE = 3209,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_GUILD_VOICE_AND_VIDEO_RESTRICTED_SMITE = 3210;
+     */
+    GUILD_VOICE_AND_VIDEO_RESTRICTED_SMITE = 3210,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_USER_WARNED_SPAM_GENERAL_SMITE = 3211;
+     */
+    USER_WARNED_SPAM_GENERAL_SMITE = 3211,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK = 4000;
      */
     PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK = 4000,
