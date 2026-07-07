@@ -3428,7 +3428,15 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GUILD_THEME_MEMBER_COACHMARK = 787;
      */
-    GUILD_THEME_MEMBER_COACHMARK = 787
+    GUILD_THEME_MEMBER_COACHMARK = 787,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_AUTOCLIPPING_ACCOUNT_PANEL_COACHMARK = 788;
+     */
+    AUTOCLIPPING_ACCOUNT_PANEL_COACHMARK = 788,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_AUTOCLIPPING_VIDEO_CALL_TILE = 789;
+     */
+    AUTOCLIPPING_VIDEO_CALL_TILE = 789
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
