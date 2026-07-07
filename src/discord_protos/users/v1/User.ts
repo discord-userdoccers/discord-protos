@@ -832,6 +832,10 @@ export enum User_ClassificationType {
      */
     MALWARE_AND_MALICIOUS_CONDUCT_NON_DEDICATED_GUILD_SMITE = 3091,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_PHISHING_GUILD_SMITE = 3092;
+     */
+    PHISHING_GUILD_SMITE = 3092,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_OFF_PLATFORM_BEHAVIORS_GUILD_SMITE = 3095;
      */
     OFF_PLATFORM_BEHAVIORS_GUILD_SMITE = 3095,
@@ -1483,6 +1487,10 @@ export enum User_ClassificationType {
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_PHISHING_ADMIN = 5540;
      */
     PHISHING_ADMIN = 5540,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_PHISHING_GUILD_ADMIN = 5545;
+     */
+    PHISHING_GUILD_ADMIN = 5545,
     /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_MALWARE_AND_MALICIOUS_CONDUCT_ADMIN = 5550;
      */
