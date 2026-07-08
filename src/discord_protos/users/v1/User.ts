@@ -908,6 +908,14 @@ export enum User_ClassificationType {
      */
     USER_WARNED_SPAM_GENERAL_SMITE = 3211,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_USER_WARNED_SPAM_SMITE = 3212;
+     */
+    USER_WARNED_SPAM_SMITE = 3212,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_USER_REMOVE_EMAIL_VERIFICATION_SMITE = 3213;
+     */
+    USER_REMOVE_EMAIL_VERIFICATION_SMITE = 3213,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK = 4000;
      */
     PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK = 4000,
