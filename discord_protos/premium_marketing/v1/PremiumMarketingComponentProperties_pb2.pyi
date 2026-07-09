@@ -49,6 +49,21 @@ class PremiumMarketingComponentProperties(_message.Message):
     BUTTON_ACTION_OPEN_PREMIUM_GROUP_PAYMENT_MODAL: PremiumMarketingComponentProperties.ButtonAction.ValueType  # 6
     BUTTON_ACTION_OPEN_SOCIAL_LAYER_STOREFRONT: PremiumMarketingComponentProperties.ButtonAction.ValueType  # 7
 
+    class _MarketingPageBannerButtonVariant:
+        ValueType = _typing.NewType("ValueType", _builtins.int)
+        V: _TypeAlias = ValueType  # noqa: Y015
+
+    class _MarketingPageBannerButtonVariantEnumTypeWrapper(_enum_type_wrapper._EnumTypeWrapper[PremiumMarketingComponentProperties._MarketingPageBannerButtonVariant.ValueType], _builtins.type):
+        DESCRIPTOR: _descriptor.EnumDescriptor
+        MARKETING_PAGE_BANNER_BUTTON_VARIANT_UNSPECIFIED: PremiumMarketingComponentProperties._MarketingPageBannerButtonVariant.ValueType  # 0
+        MARKETING_PAGE_BANNER_BUTTON_VARIANT_EXPRESSIVE: PremiumMarketingComponentProperties._MarketingPageBannerButtonVariant.ValueType  # 1
+        MARKETING_PAGE_BANNER_BUTTON_VARIANT_PRIMARY: PremiumMarketingComponentProperties._MarketingPageBannerButtonVariant.ValueType  # 2
+
+    class MarketingPageBannerButtonVariant(_MarketingPageBannerButtonVariant, metaclass=_MarketingPageBannerButtonVariantEnumTypeWrapper): ...
+    MARKETING_PAGE_BANNER_BUTTON_VARIANT_UNSPECIFIED: PremiumMarketingComponentProperties.MarketingPageBannerButtonVariant.ValueType  # 0
+    MARKETING_PAGE_BANNER_BUTTON_VARIANT_EXPRESSIVE: PremiumMarketingComponentProperties.MarketingPageBannerButtonVariant.ValueType  # 1
+    MARKETING_PAGE_BANNER_BUTTON_VARIANT_PRIMARY: PremiumMarketingComponentProperties.MarketingPageBannerButtonVariant.ValueType  # 2
+
     class _DismissibleContent:
         ValueType = _typing.NewType("ValueType", _builtins.int)
         V: _TypeAlias = ValueType  # noqa: Y015
@@ -1751,10 +1766,12 @@ class PremiumMarketingComponentProperties(_message.Message):
         HELP_ARTICLE_FIELD_NUMBER: _builtins.int
         HEADER_LOCALIZED_FIELD_NUMBER: _builtins.int
         BODY_LOCALIZED_FIELD_NUMBER: _builtins.int
+        BUTTON_VARIANT_FIELD_NUMBER: _builtins.int
         asset_url: _builtins.str
         header: _builtins.str
         body: _builtins.str
         help_article_id: _builtins.str
+        button_variant: Global___PremiumMarketingComponentProperties.MarketingPageBannerButtonVariant.ValueType
         @_builtins.property
         def button(self) -> Global___PremiumMarketingComponentProperties.MarketingPageBannerButton: ...
         @_builtins.property
@@ -1774,10 +1791,11 @@ class PremiumMarketingComponentProperties(_message.Message):
             help_article: Global___PremiumMarketingComponentProperties.HelpArticle | None = ...,
             header_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
             body_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
+            button_variant: Global___PremiumMarketingComponentProperties.MarketingPageBannerButtonVariant.ValueType = ...,
         ) -> None: ...
         _HasFieldArgType: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized", "_button", b"_button", "_header_localized", b"_header_localized", "_help_article", b"_help_article", "body_localized", b"body_localized", "button", b"button", "header_localized", b"header_localized", "help_article", b"help_article"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized", "_button", b"_button", "_header_localized", b"_header_localized", "_help_article", b"_help_article", "asset_url", b"asset_url", "body", b"body", "body_localized", b"body_localized", "button", b"button", "header", b"header", "header_localized", b"header_localized", "help_article", b"help_article", "help_article_id", b"help_article_id"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized", "_button", b"_button", "_header_localized", b"_header_localized", "_help_article", b"_help_article", "asset_url", b"asset_url", "body", b"body", "body_localized", b"body_localized", "button", b"button", "button_variant", b"button_variant", "header", b"header", "header_localized", b"header_localized", "help_article", b"help_article", "help_article_id", b"help_article_id"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__body_localized: _TypeAlias = _typing.Literal["body_localized"]  # noqa: Y015
         _WhichOneofArgType__body_localized: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized"]  # noqa: Y015

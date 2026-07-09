@@ -464,6 +464,10 @@ export interface PremiumMarketingComponentProperties_MarketingPageBanner {
      * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString body_localized = 8
      */
     bodyLocalized?: PremiumMarketingComponentProperties_LocalizedString;
+    /**
+     * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MarketingPageBannerButtonVariant button_variant = 9
+     */
+    buttonVariant: PremiumMarketingComponentProperties_MarketingPageBannerButtonVariant;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PaymentModalBanner
@@ -1088,6 +1092,23 @@ export enum PremiumMarketingComponentProperties_ButtonAction {
      * @generated from protobuf enum value: BUTTON_ACTION_OPEN_SOCIAL_LAYER_STOREFRONT = 7;
      */
     OPEN_SOCIAL_LAYER_STOREFRONT = 7
+}
+/**
+ * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MarketingPageBannerButtonVariant
+ */
+export enum PremiumMarketingComponentProperties_MarketingPageBannerButtonVariant {
+    /**
+     * @generated from protobuf enum value: MARKETING_PAGE_BANNER_BUTTON_VARIANT_UNSPECIFIED = 0;
+     */
+    UNSPECIFIED = 0,
+    /**
+     * @generated from protobuf enum value: MARKETING_PAGE_BANNER_BUTTON_VARIANT_EXPRESSIVE = 1;
+     */
+    EXPRESSIVE = 1,
+    /**
+     * @generated from protobuf enum value: MARKETING_PAGE_BANNER_BUTTON_VARIANT_PRIMARY = 2;
+     */
+    PRIMARY = 2
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.DismissibleContent
@@ -4604,7 +4625,8 @@ class PremiumMarketingComponentProperties_MarketingPageBanner$Type extends Messa
             { no: 5, name: "button", kind: "message", T: () => PremiumMarketingComponentProperties_MarketingPageBannerButton },
             { no: 6, name: "help_article", kind: "message", T: () => PremiumMarketingComponentProperties_HelpArticle },
             { no: 7, name: "header_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
-            { no: 8, name: "body_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString }
+            { no: 8, name: "body_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
+            { no: 9, name: "button_variant", kind: "enum", T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MarketingPageBannerButtonVariant", PremiumMarketingComponentProperties_MarketingPageBannerButtonVariant, "MARKETING_PAGE_BANNER_BUTTON_VARIANT_"] }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_MarketingPageBanner>): PremiumMarketingComponentProperties_MarketingPageBanner {
@@ -4613,6 +4635,7 @@ class PremiumMarketingComponentProperties_MarketingPageBanner$Type extends Messa
         message.header = "";
         message.body = "";
         message.helpArticleId = "";
+        message.buttonVariant = 0;
         if (value !== undefined)
             reflectionMergePartial<PremiumMarketingComponentProperties_MarketingPageBanner>(this, message, value);
         return message;
@@ -4645,6 +4668,9 @@ class PremiumMarketingComponentProperties_MarketingPageBanner$Type extends Messa
                     break;
                 case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString body_localized */ 8:
                     message.bodyLocalized = PremiumMarketingComponentProperties_LocalizedString.internalBinaryRead(reader, reader.uint32(), options, message.bodyLocalized);
+                    break;
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MarketingPageBannerButtonVariant button_variant */ 9:
+                    message.buttonVariant = reader.int32();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -4682,6 +4708,9 @@ class PremiumMarketingComponentProperties_MarketingPageBanner$Type extends Messa
         /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString body_localized = 8; */
         if (message.bodyLocalized)
             PremiumMarketingComponentProperties_LocalizedString.internalBinaryWrite(message.bodyLocalized, writer.tag(8, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MarketingPageBannerButtonVariant button_variant = 9; */
+        if (message.buttonVariant !== 0)
+            writer.tag(9, WireType.Varint).int32(message.buttonVariant);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

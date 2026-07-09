@@ -104,6 +104,12 @@ message PremiumMarketingComponentProperties {
     optional google.protobuf.UInt64Value navigable_storefront_application_id = 5;
   }
 
+  enum MarketingPageBannerButtonVariant {
+    MARKETING_PAGE_BANNER_BUTTON_VARIANT_UNSPECIFIED = 0;
+    MARKETING_PAGE_BANNER_BUTTON_VARIANT_EXPRESSIVE = 1;
+    MARKETING_PAGE_BANNER_BUTTON_VARIANT_PRIMARY = 2;
+  }
+
   message MarketingPageBanner {
     string asset_url = 1;
     string header = 2;
@@ -113,6 +119,7 @@ message PremiumMarketingComponentProperties {
     optional HelpArticle help_article = 6;
     optional LocalizedString header_localized = 7;
     optional LocalizedString body_localized = 8;
+    MarketingPageBannerButtonVariant button_variant = 9;
   }
 
   message PaymentModalBanner {
