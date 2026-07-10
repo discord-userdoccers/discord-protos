@@ -817,6 +817,7 @@ message UserData {
     PERK_SOURCE_SOURCE_UNSPECIFIED = 0;
     PERK_SOURCE_SOURCE_NITRO = 1;
     PERK_SOURCE_SOURCE_THIRDPARTY_CROISSANT = 2;
+    PERK_SOURCE_SOURCE_BOT = 3;
   }
 
   message PerkConfigIncreasedFileUploadSize {

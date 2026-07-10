@@ -1424,11 +1424,13 @@ class UserData(_message.Message):
         PERK_SOURCE_SOURCE_UNSPECIFIED: UserData._PerkSource.ValueType  # 0
         PERK_SOURCE_SOURCE_NITRO: UserData._PerkSource.ValueType  # 1
         PERK_SOURCE_SOURCE_THIRDPARTY_CROISSANT: UserData._PerkSource.ValueType  # 2
+        PERK_SOURCE_SOURCE_BOT: UserData._PerkSource.ValueType  # 3
 
     class PerkSource(_PerkSource, metaclass=_PerkSourceEnumTypeWrapper): ...
     PERK_SOURCE_SOURCE_UNSPECIFIED: UserData.PerkSource.ValueType  # 0
     PERK_SOURCE_SOURCE_NITRO: UserData.PerkSource.ValueType  # 1
     PERK_SOURCE_SOURCE_THIRDPARTY_CROISSANT: UserData.PerkSource.ValueType  # 2
+    PERK_SOURCE_SOURCE_BOT: UserData.PerkSource.ValueType  # 3
 
     class _AnonymizationStatus:
         ValueType = _typing.NewType("ValueType", _builtins.int)

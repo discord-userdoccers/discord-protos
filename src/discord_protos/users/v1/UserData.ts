@@ -3254,7 +3254,11 @@ export enum UserData_PerkSource {
     /**
      * @generated from protobuf enum value: PERK_SOURCE_SOURCE_THIRDPARTY_CROISSANT = 2;
      */
-    SOURCE_THIRDPARTY_CROISSANT = 2
+    SOURCE_THIRDPARTY_CROISSANT = 2,
+    /**
+     * @generated from protobuf enum value: PERK_SOURCE_SOURCE_BOT = 3;
+     */
+    SOURCE_BOT = 3
 }
 /**
  * @generated from protobuf enum discord_protos.users.v1.UserData.AnonymizationStatus
