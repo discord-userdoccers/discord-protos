@@ -3465,7 +3465,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_TOPICAL_NAVIGATION_HEADER_COACHMARK = 791;
      */
-    TOPICAL_NAVIGATION_HEADER_COACHMARK = 791
+    TOPICAL_NAVIGATION_HEADER_COACHMARK = 791,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_PREMIUM_MARKETING_MOMENT_DESKTOP_ANNOUNCEMENT_MODAL = 792;
+     */
+    PREMIUM_MARKETING_MOMENT_DESKTOP_ANNOUNCEMENT_MODAL = 792
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
