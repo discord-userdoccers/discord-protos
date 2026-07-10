@@ -657,6 +657,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_AUTOCLIPPING_ACCOUNT_PANEL_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 788
         DISMISSIBLE_CONTENT_AUTOCLIPPING_VIDEO_CALL_TILE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 789
         DISMISSIBLE_CONTENT_YOU_BAR_DM_SWIPE_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 790
+        DISMISSIBLE_CONTENT_TOPICAL_NAVIGATION_HEADER_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 791
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_HUB_WAITLIST_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1246,6 +1247,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_AUTOCLIPPING_ACCOUNT_PANEL_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 788
     DISMISSIBLE_CONTENT_AUTOCLIPPING_VIDEO_CALL_TILE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 789
     DISMISSIBLE_CONTENT_YOU_BAR_DM_SWIPE_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 790
+    DISMISSIBLE_CONTENT_TOPICAL_NAVIGATION_HEADER_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 791
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)
