@@ -3192,7 +3192,15 @@ export enum UserData_AgeAssuranceVendor {
     /**
      * @generated from protobuf enum value: AGE_ASSURANCE_VENDOR_GOOGLE_WALLET = 5;
      */
-    GOOGLE_WALLET = 5
+    GOOGLE_WALLET = 5,
+    /**
+     * @generated from protobuf enum value: AGE_ASSURANCE_VENDOR_APPLE_APP_STORE = 6;
+     */
+    APPLE_APP_STORE = 6,
+    /**
+     * @generated from protobuf enum value: AGE_ASSURANCE_VENDOR_GOOGLE_PLAY = 7;
+     */
+    GOOGLE_PLAY = 7
 }
 /**
  * @generated from protobuf enum discord_protos.users.v1.UserData.AgeAssuranceGroup
