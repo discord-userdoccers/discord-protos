@@ -3469,7 +3469,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_PREMIUM_MARKETING_MOMENT_DESKTOP_ANNOUNCEMENT_MODAL = 792;
      */
-    PREMIUM_MARKETING_MOMENT_DESKTOP_ANNOUNCEMENT_MODAL = 792
+    PREMIUM_MARKETING_MOMENT_DESKTOP_ANNOUNCEMENT_MODAL = 792,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_BADGE_DIRECTORY_NEW_BADGE_INDICATOR = 793;
+     */
+    BADGE_DIRECTORY_NEW_BADGE_INDICATOR = 793
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
