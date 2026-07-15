@@ -3477,7 +3477,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_NITRO_GDM_CAP_COACHMARK = 794;
      */
-    NITRO_GDM_CAP_COACHMARK = 794
+    NITRO_GDM_CAP_COACHMARK = 794,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_BOUNTIES_RECURRING_SWIPE_UP_NUX = 795;
+     */
+    BOUNTIES_RECURRING_SWIPE_UP_NUX = 795
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
