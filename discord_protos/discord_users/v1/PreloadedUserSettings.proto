@@ -462,6 +462,7 @@ message PreloadedUserSettings {
     uint32 position = 3;
     fixed64 parent_id = 4;
     optional google.protobuf.UInt32Value channel_type = 5;
+    bool collapsed = 6;
   }
 
   message Favorites {

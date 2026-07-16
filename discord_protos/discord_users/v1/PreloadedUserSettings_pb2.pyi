@@ -2210,10 +2210,12 @@ class PreloadedUserSettings(_message.Message):
         POSITION_FIELD_NUMBER: _builtins.int
         PARENT_ID_FIELD_NUMBER: _builtins.int
         CHANNEL_TYPE_FIELD_NUMBER: _builtins.int
+        COLLAPSED_FIELD_NUMBER: _builtins.int
         nickname: _builtins.str
         type: Global___PreloadedUserSettings.FavoriteChannelType.ValueType
         position: _builtins.int
         parent_id: _builtins.int
+        collapsed: _builtins.bool
         @_builtins.property
         def channel_type(self) -> _wrappers_pb2.UInt32Value: ...
         def __init__(
@@ -2224,10 +2226,11 @@ class PreloadedUserSettings(_message.Message):
             position: _builtins.int = ...,
             parent_id: _builtins.int = ...,
             channel_type: _wrappers_pb2.UInt32Value | None = ...,
+            collapsed: _builtins.bool = ...,
         ) -> None: ...
         _HasFieldArgType: _TypeAlias = _typing.Literal["_channel_type", b"_channel_type", "channel_type", b"channel_type"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_channel_type", b"_channel_type", "channel_type", b"channel_type", "nickname", b"nickname", "parent_id", b"parent_id", "position", b"position", "type", b"type"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_channel_type", b"_channel_type", "channel_type", b"channel_type", "collapsed", b"collapsed", "nickname", b"nickname", "parent_id", b"parent_id", "position", b"position", "type", b"type"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__channel_type: _TypeAlias = _typing.Literal["channel_type"]  # noqa: Y015
         _WhichOneofArgType__channel_type: _TypeAlias = _typing.Literal["_channel_type", b"_channel_type"]  # noqa: Y015

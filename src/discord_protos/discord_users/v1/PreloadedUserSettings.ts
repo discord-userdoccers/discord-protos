@@ -1197,6 +1197,10 @@ export interface PreloadedUserSettings_FavoriteChannel {
      * @generated from protobuf field: optional google.protobuf.UInt32Value channel_type = 5
      */
     channelType?: UInt32Value;
+    /**
+     * @generated from protobuf field: bool collapsed = 6
+     */
+    collapsed: boolean;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.Favorites
@@ -5158,7 +5162,8 @@ class PreloadedUserSettings_FavoriteChannel$Type extends MessageType<PreloadedUs
             { no: 2, name: "type", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.FavoriteChannelType", PreloadedUserSettings_FavoriteChannelType, "FAVORITE_CHANNEL_TYPE_"] },
             { no: 3, name: "position", kind: "scalar", T: 13 /*ScalarType.UINT32*/ },
             { no: 4, name: "parent_id", kind: "scalar", T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ },
-            { no: 5, name: "channel_type", kind: "message", T: () => UInt32Value }
+            { no: 5, name: "channel_type", kind: "message", T: () => UInt32Value },
+            { no: 6, name: "collapsed", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_FavoriteChannel>): PreloadedUserSettings_FavoriteChannel {
@@ -5167,6 +5172,7 @@ class PreloadedUserSettings_FavoriteChannel$Type extends MessageType<PreloadedUs
         message.type = 0;
         message.position = 0;
         message.parentId = 0n;
+        message.collapsed = false;
         if (value !== undefined)
             reflectionMergePartial<PreloadedUserSettings_FavoriteChannel>(this, message, value);
         return message;
@@ -5190,6 +5196,9 @@ class PreloadedUserSettings_FavoriteChannel$Type extends MessageType<PreloadedUs
                     break;
                 case /* optional google.protobuf.UInt32Value channel_type */ 5:
                     message.channelType = UInt32Value.internalBinaryRead(reader, reader.uint32(), options, message.channelType);
+                    break;
+                case /* bool collapsed */ 6:
+                    message.collapsed = reader.bool();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -5218,6 +5227,9 @@ class PreloadedUserSettings_FavoriteChannel$Type extends MessageType<PreloadedUs
         /* optional google.protobuf.UInt32Value channel_type = 5; */
         if (message.channelType)
             UInt32Value.internalBinaryWrite(message.channelType, writer.tag(5, WireType.LengthDelimited).fork(), options).join();
+        /* bool collapsed = 6; */
+        if (message.collapsed !== false)
+            writer.tag(6, WireType.Varint).bool(message.collapsed);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
