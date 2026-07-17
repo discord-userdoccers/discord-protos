@@ -662,6 +662,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_BADGE_DIRECTORY_NEW_BADGE_INDICATOR: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 793
         DISMISSIBLE_CONTENT_NITRO_GDM_CAP_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 794
         DISMISSIBLE_CONTENT_BOUNTIES_RECURRING_SWIPE_UP_NUX: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 795
+        DISMISSIBLE_CONTENT_SHOP_THIS_LOOK_WEB_MARKETING: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 796
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_HUB_WAITLIST_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1256,6 +1257,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_BADGE_DIRECTORY_NEW_BADGE_INDICATOR: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 793
     DISMISSIBLE_CONTENT_NITRO_GDM_CAP_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 794
     DISMISSIBLE_CONTENT_BOUNTIES_RECURRING_SWIPE_UP_NUX: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 795
+    DISMISSIBLE_CONTENT_SHOP_THIS_LOOK_WEB_MARKETING: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 796
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)

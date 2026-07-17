@@ -3481,7 +3481,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_BOUNTIES_RECURRING_SWIPE_UP_NUX = 795;
      */
-    BOUNTIES_RECURRING_SWIPE_UP_NUX = 795
+    BOUNTIES_RECURRING_SWIPE_UP_NUX = 795,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_SHOP_THIS_LOOK_WEB_MARKETING = 796;
+     */
+    SHOP_THIS_LOOK_WEB_MARKETING = 796
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
