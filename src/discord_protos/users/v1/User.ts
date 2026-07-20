@@ -1828,6 +1828,10 @@ export enum User_ClassificationType {
      */
     QUEST_REWARD_ABUSE_ADMIN = 5950,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_QUEST_REWARD_ABUSE_POST_WARNING_ADMIN = 5980;
+     */
+    QUEST_REWARD_ABUSE_POST_WARNING_ADMIN = 5980,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_HIGH_RISK_DANGEROUS_AND_REGULATED_GOODS_GUILD_RETOOL = 7005;
      */
     HIGH_RISK_DANGEROUS_AND_REGULATED_GOODS_GUILD_RETOOL = 7005,
