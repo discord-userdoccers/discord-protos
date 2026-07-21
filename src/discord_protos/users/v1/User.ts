@@ -920,6 +920,30 @@ export enum User_ClassificationType {
      */
     USER_REMOVE_EMAIL_VERIFICATION_SMITE = 3213,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_USER_WARNED_SELFBOT_SMITE = 3214;
+     */
+    USER_WARNED_SELFBOT_SMITE = 3214,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_USER_DISABLED_FOR_SUSPICIOUS_ACTIVITY_WITHOUT_NOTIFICATION_SMITE = 3215;
+     */
+    USER_DISABLED_FOR_SUSPICIOUS_ACTIVITY_WITHOUT_NOTIFICATION_SMITE = 3215,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_REQUIRE_VERIFIED_PHONE_THEN_EMAIL_SMITE = 3216;
+     */
+    REQUIRE_VERIFIED_PHONE_THEN_EMAIL_SMITE = 3216,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_USER_DISABLED_FOR_SUSPICIOUS_ACTIVITY_SMITE = 3217;
+     */
+    USER_DISABLED_FOR_SUSPICIOUS_ACTIVITY_SMITE = 3217,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_SPAMMER_SMITE = 3218;
+     */
+    SPAMMER_SMITE = 3218,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_USER_DELETE_SPAM_SILENT_SMITE = 3219;
+     */
+    USER_DELETE_SPAM_SILENT_SMITE = 3219,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK = 4000;
      */
     PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK = 4000,

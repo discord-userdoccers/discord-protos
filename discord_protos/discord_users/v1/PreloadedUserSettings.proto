@@ -226,6 +226,7 @@ message PreloadedUserSettings {
     optional google.protobuf.BoolValue is_cross_dm_search_enabled = 36;
     SearchProvider search_provider = 37;
     optional google.protobuf.StringValue custom_search_url = 38;
+    optional google.protobuf.BoolValue include_game_mentions_in_autocomplete = 39;
   }
 
   enum ReactionNotificationType {
