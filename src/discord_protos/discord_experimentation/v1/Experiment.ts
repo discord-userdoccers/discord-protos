@@ -164,6 +164,10 @@ export interface Experiment {
      */
     customUnitPrefix: Experiment_CustomUnitPrefix;
     /**
+     * @generated from protobuf field: repeated discord_protos.discord_experimentation.v1.Experiment.ExposurePointId exposure_points = 45
+     */
+    exposurePoints: Experiment_ExposurePointId[];
+    /**
      * @generated from protobuf field: repeated string growthbook_tags = 37 [packed = false]
      */
     growthbookTags: string[];
@@ -1192,6 +1196,23 @@ export enum Experiment_CustomUnitPrefix {
     SEO_URL_SLUG = 1
 }
 /**
+ * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.ExposurePointId
+ */
+export enum Experiment_ExposurePointId {
+    /**
+     * @generated from protobuf enum value: EXPOSURE_POINT_ID_UNSPECIFIED = 0;
+     */
+    UNSPECIFIED = 0,
+    /**
+     * @generated from protobuf enum value: EXPOSURE_POINT_ID_SEO_INSTALLATION_PAGE_LOAD = 1;
+     */
+    SEO_INSTALLATION_PAGE_LOAD = 1,
+    /**
+     * @generated from protobuf enum value: EXPOSURE_POINT_ID_MARKETING_INSTALLATION_PAGE_LOAD = 2;
+     */
+    MARKETING_INSTALLATION_PAGE_LOAD = 2
+}
+/**
  * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.Mode
  */
 export enum Experiment_Mode {
@@ -1307,6 +1328,7 @@ class Experiment$Type extends MessageType<Experiment> {
             { no: 33, name: "archive_at", kind: "message", T: () => Timestamp },
             { no: 35, name: "guild_experiment_version", kind: "message", T: () => Int32Value },
             { no: 36, name: "custom_unit_prefix", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.CustomUnitPrefix", Experiment_CustomUnitPrefix, "CUSTOM_UNIT_PREFIX_"] },
+            { no: 45, name: "exposure_points", kind: "enum", repeat: 1 /*RepeatType.PACKED*/, T: () => ["discord_protos.discord_experimentation.v1.Experiment.ExposurePointId", Experiment_ExposurePointId, "EXPOSURE_POINT_ID_"] },
             { no: 37, name: "growthbook_tags", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 9 /*ScalarType.STRING*/ },
             { no: 38, name: "allocate_right_to_left", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
             { no: 39, name: "is_managed", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
@@ -1344,6 +1366,7 @@ class Experiment$Type extends MessageType<Experiment> {
         message.isAutomatedChange = false;
         message.suppressEditorMention = false;
         message.customUnitPrefix = 0;
+        message.exposurePoints = [];
         message.growthbookTags = [];
         message.allocateRightToLeft = false;
         message.isManaged = false;
@@ -1472,6 +1495,13 @@ class Experiment$Type extends MessageType<Experiment> {
                     break;
                 case /* discord_protos.discord_experimentation.v1.Experiment.CustomUnitPrefix custom_unit_prefix */ 36:
                     message.customUnitPrefix = reader.int32();
+                    break;
+                case /* repeated discord_protos.discord_experimentation.v1.Experiment.ExposurePointId exposure_points */ 45:
+                    if (wireType === WireType.LengthDelimited)
+                        for (let e = reader.int32() + reader.pos; reader.pos < e;)
+                            message.exposurePoints.push(reader.int32());
+                    else
+                        message.exposurePoints.push(reader.int32());
                     break;
                 case /* repeated string growthbook_tags = 37 [packed = false] */ 37:
                     message.growthbookTags.push(reader.string());
@@ -1631,6 +1661,13 @@ class Experiment$Type extends MessageType<Experiment> {
         /* bool suppress_editor_mention = 44; */
         if (message.suppressEditorMention !== false)
             writer.tag(44, WireType.Varint).bool(message.suppressEditorMention);
+        /* repeated discord_protos.discord_experimentation.v1.Experiment.ExposurePointId exposure_points = 45; */
+        if (message.exposurePoints.length) {
+            writer.tag(45, WireType.LengthDelimited).fork();
+            for (let i = 0; i < message.exposurePoints.length; i++)
+                writer.int32(message.exposurePoints[i]);
+            writer.join();
+        }
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

@@ -391,6 +391,12 @@ message Experiment {
     CUSTOM_UNIT_PREFIX_SEO_URL_SLUG = 1;
   }
 
+  enum ExposurePointId {
+    EXPOSURE_POINT_ID_UNSPECIFIED = 0;
+    EXPOSURE_POINT_ID_SEO_INSTALLATION_PAGE_LOAD = 1;
+    EXPOSURE_POINT_ID_MARKETING_INSTALLATION_PAGE_LOAD = 2;
+  }
+
   enum Mode {
     MODE_EXCLUSIVE = 0;
     MODE_SYNCED = 1;
@@ -445,6 +451,7 @@ message Experiment {
   optional google.protobuf.Timestamp archive_at = 33;
   optional google.protobuf.Int32Value guild_experiment_version = 35;
   CustomUnitPrefix custom_unit_prefix = 36;
+  repeated ExposurePointId exposure_points = 45;
   repeated string growthbook_tags = 37 [packed = false];
   bool allocate_right_to_left = 38;
   bool is_managed = 39;
