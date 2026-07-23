@@ -885,6 +885,7 @@ message PremiumMarketingComponentProperties {
     optional ThemeAwareAsset asset = 1;
     string body = 2;
     optional LocalizedString body_localized = 3;
+    optional HelpArticle help_article = 4;
   }
 
   message BillingSettingsBannerCTAButton {

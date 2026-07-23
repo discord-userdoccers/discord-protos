@@ -2623,30 +2623,38 @@ class PremiumMarketingComponentProperties(_message.Message):
         ASSET_FIELD_NUMBER: _builtins.int
         BODY_FIELD_NUMBER: _builtins.int
         BODY_LOCALIZED_FIELD_NUMBER: _builtins.int
+        HELP_ARTICLE_FIELD_NUMBER: _builtins.int
         body: _builtins.str
         @_builtins.property
         def asset(self) -> Global___PremiumMarketingComponentProperties.ThemeAwareAsset: ...
         @_builtins.property
         def body_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
+        @_builtins.property
+        def help_article(self) -> Global___PremiumMarketingComponentProperties.HelpArticle: ...
         def __init__(
             self,
             *,
             asset: Global___PremiumMarketingComponentProperties.ThemeAwareAsset | None = ...,
             body: _builtins.str = ...,
             body_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
+            help_article: Global___PremiumMarketingComponentProperties.HelpArticle | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_body_localized", b"_body_localized", "asset", b"asset", "body_localized", b"body_localized"]  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_body_localized", b"_body_localized", "_help_article", b"_help_article", "asset", b"asset", "body_localized", b"body_localized", "help_article", b"help_article"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_body_localized", b"_body_localized", "asset", b"asset", "body", b"body", "body_localized", b"body_localized"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_body_localized", b"_body_localized", "_help_article", b"_help_article", "asset", b"asset", "body", b"body", "body_localized", b"body_localized", "help_article", b"help_article"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__asset: _TypeAlias = _typing.Literal["asset"]  # noqa: Y015
         _WhichOneofArgType__asset: _TypeAlias = _typing.Literal["_asset", b"_asset"]  # noqa: Y015
         _WhichOneofReturnType__body_localized: _TypeAlias = _typing.Literal["body_localized"]  # noqa: Y015
         _WhichOneofArgType__body_localized: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized"]  # noqa: Y015
+        _WhichOneofReturnType__help_article: _TypeAlias = _typing.Literal["help_article"]  # noqa: Y015
+        _WhichOneofArgType__help_article: _TypeAlias = _typing.Literal["_help_article", b"_help_article"]  # noqa: Y015
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__asset) -> _WhichOneofReturnType__asset | None: ...
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__body_localized) -> _WhichOneofReturnType__body_localized | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__help_article) -> _WhichOneofReturnType__help_article | None: ...
 
     @_typing.final
     class BillingSettingsBannerCTAButton(_message.Message):

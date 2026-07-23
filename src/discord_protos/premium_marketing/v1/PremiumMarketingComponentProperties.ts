@@ -997,6 +997,10 @@ export interface PremiumMarketingComponentProperties_PlanSelectCardBanner {
      * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString body_localized = 3
      */
     bodyLocalized?: PremiumMarketingComponentProperties_LocalizedString;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle help_article = 4
+     */
+    helpArticle?: PremiumMarketingComponentProperties_HelpArticle;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.BillingSettingsBannerCTAButton
@@ -6192,7 +6196,8 @@ class PremiumMarketingComponentProperties_PlanSelectCardBanner$Type extends Mess
         super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PlanSelectCardBanner", [
             { no: 1, name: "asset", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset },
             { no: 2, name: "body", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 3, name: "body_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString }
+            { no: 3, name: "body_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
+            { no: 4, name: "help_article", kind: "message", T: () => PremiumMarketingComponentProperties_HelpArticle }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_PlanSelectCardBanner>): PremiumMarketingComponentProperties_PlanSelectCardBanner {
@@ -6216,6 +6221,9 @@ class PremiumMarketingComponentProperties_PlanSelectCardBanner$Type extends Mess
                 case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString body_localized */ 3:
                     message.bodyLocalized = PremiumMarketingComponentProperties_LocalizedString.internalBinaryRead(reader, reader.uint32(), options, message.bodyLocalized);
                     break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle help_article */ 4:
+                    message.helpArticle = PremiumMarketingComponentProperties_HelpArticle.internalBinaryRead(reader, reader.uint32(), options, message.helpArticle);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -6237,6 +6245,9 @@ class PremiumMarketingComponentProperties_PlanSelectCardBanner$Type extends Mess
         /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString body_localized = 3; */
         if (message.bodyLocalized)
             PremiumMarketingComponentProperties_LocalizedString.internalBinaryWrite(message.bodyLocalized, writer.tag(3, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle help_article = 4; */
+        if (message.helpArticle)
+            PremiumMarketingComponentProperties_HelpArticle.internalBinaryWrite(message.helpArticle, writer.tag(4, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
