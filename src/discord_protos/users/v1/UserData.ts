@@ -1360,6 +1360,10 @@ export enum UserData_ClassificationType {
      */
     USER_DELETE_SPAM_SILENT_SMITE = 3219,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_IMPERSONATION_SMITE = 3220;
+     */
+    BOT_DELETE_IMPERSONATION_SMITE = 3220,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK = 4000;
      */
     PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK = 4000,
