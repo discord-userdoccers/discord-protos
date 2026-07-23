@@ -3493,7 +3493,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_COLLECTIBLES_SHOP_GAME_SERVER_HOSTING_BANNER = 797;
      */
-    COLLECTIBLES_SHOP_GAME_SERVER_HOSTING_BANNER = 797
+    COLLECTIBLES_SHOP_GAME_SERVER_HOSTING_BANNER = 797,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_USER_PROFILE_WIDGETS_BOARD_MOBILE_EDIT_NOTICE = 798;
+     */
+    USER_PROFILE_WIDGETS_BOARD_MOBILE_EDIT_NOTICE = 798
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
