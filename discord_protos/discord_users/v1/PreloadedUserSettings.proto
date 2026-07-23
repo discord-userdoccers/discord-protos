@@ -22,6 +22,7 @@ message PreloadedUserSettings {
     INBOX_TAB_GAME_INVITES = 5;
     INBOX_TAB_BOOKMARKS = 6;
     INBOX_TAB_SCHEDULED = 7;
+    INBOX_TAB_REMINDERS = 8;
   }
 
   message InboxSettings {

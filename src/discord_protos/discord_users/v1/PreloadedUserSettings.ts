@@ -1478,7 +1478,11 @@ export enum PreloadedUserSettings_InboxTab {
     /**
      * @generated from protobuf enum value: INBOX_TAB_SCHEDULED = 7;
      */
-    SCHEDULED = 7
+    SCHEDULED = 7,
+    /**
+     * @generated from protobuf enum value: INBOX_TAB_REMINDERS = 8;
+     */
+    REMINDERS = 8
 }
 /**
  * @generated from protobuf enum discord_protos.discord_users.v1.PreloadedUserSettings.GuildThemeSourcePreference

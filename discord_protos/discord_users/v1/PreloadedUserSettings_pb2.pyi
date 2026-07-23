@@ -39,6 +39,7 @@ class PreloadedUserSettings(_message.Message):
         INBOX_TAB_GAME_INVITES: PreloadedUserSettings._InboxTab.ValueType  # 5
         INBOX_TAB_BOOKMARKS: PreloadedUserSettings._InboxTab.ValueType  # 6
         INBOX_TAB_SCHEDULED: PreloadedUserSettings._InboxTab.ValueType  # 7
+        INBOX_TAB_REMINDERS: PreloadedUserSettings._InboxTab.ValueType  # 8
 
     class InboxTab(_InboxTab, metaclass=_InboxTabEnumTypeWrapper): ...
     INBOX_TAB_UNSPECIFIED: PreloadedUserSettings.InboxTab.ValueType  # 0
@@ -49,6 +50,7 @@ class PreloadedUserSettings(_message.Message):
     INBOX_TAB_GAME_INVITES: PreloadedUserSettings.InboxTab.ValueType  # 5
     INBOX_TAB_BOOKMARKS: PreloadedUserSettings.InboxTab.ValueType  # 6
     INBOX_TAB_SCHEDULED: PreloadedUserSettings.InboxTab.ValueType  # 7
+    INBOX_TAB_REMINDERS: PreloadedUserSettings.InboxTab.ValueType  # 8
 
     class _GuildThemeSourcePreference:
         ValueType = _typing.NewType("ValueType", _builtins.int)
