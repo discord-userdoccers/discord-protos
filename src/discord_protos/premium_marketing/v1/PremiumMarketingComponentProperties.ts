@@ -135,6 +135,12 @@ export interface PremiumMarketingComponentProperties {
          */
         billingSettingsBanner: PremiumMarketingComponentProperties_BillingSettingsBanner;
     } | {
+        oneofKind: "shopNagbar";
+        /**
+         * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ShopNagbar shop_nagbar = 21
+         */
+        shopNagbar: PremiumMarketingComponentProperties_ShopNagbar;
+    } | {
         oneofKind: undefined;
     };
 }
@@ -1059,6 +1065,43 @@ export interface PremiumMarketingComponentProperties_BillingSettingsBanner {
      * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle help_article = 7
      */
     helpArticle?: PremiumMarketingComponentProperties_HelpArticle;
+}
+/**
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ShopNagbar
+ */
+export interface PremiumMarketingComponentProperties_ShopNagbar {
+    /**
+     * @generated from protobuf field: string body = 1
+     */
+    body: string;
+    /**
+     * @generated from protobuf field: string cta_label = 2
+     */
+    ctaLabel: string;
+    /**
+     * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction cta_action = 3
+     */
+    ctaAction: PremiumMarketingComponentProperties_ButtonAction;
+    /**
+     * @generated from protobuf field: string deeplink_section = 4
+     */
+    deeplinkSection: string;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle help_article = 5
+     */
+    helpArticle?: PremiumMarketingComponentProperties_HelpArticle;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString body_localized = 6
+     */
+    bodyLocalized?: PremiumMarketingComponentProperties_LocalizedString;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString cta_label_localized = 7
+     */
+    ctaLabelLocalized?: PremiumMarketingComponentProperties_LocalizedString;
+    /**
+     * @generated from protobuf field: optional google.protobuf.UInt64Value navigable_storefront_application_id = 8
+     */
+    navigableStorefrontApplicationId?: UInt64Value;
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction
@@ -3539,7 +3582,8 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
             { no: 16, name: "premium_tab_popover", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_PremiumTabPopover },
             { no: 17, name: "nagbar", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_Nagbar },
             { no: 19, name: "plan_select_card_banner", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_PlanSelectCardBanner },
-            { no: 20, name: "billing_settings_banner", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_BillingSettingsBanner }
+            { no: 20, name: "billing_settings_banner", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_BillingSettingsBanner },
+            { no: 21, name: "shop_nagbar", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_ShopNagbar }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties>): PremiumMarketingComponentProperties {
@@ -3670,6 +3714,12 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
                         billingSettingsBanner: PremiumMarketingComponentProperties_BillingSettingsBanner.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).billingSettingsBanner)
                     };
                     break;
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ShopNagbar shop_nagbar */ 21:
+                    message.properties = {
+                        oneofKind: "shopNagbar",
+                        shopNagbar: PremiumMarketingComponentProperties_ShopNagbar.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).shopNagbar)
+                    };
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -3742,6 +3792,9 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
         /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.BillingSettingsBanner billing_settings_banner = 20; */
         if (message.properties.oneofKind === "billingSettingsBanner")
             PremiumMarketingComponentProperties_BillingSettingsBanner.internalBinaryWrite(message.properties.billingSettingsBanner, writer.tag(20, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ShopNagbar shop_nagbar = 21; */
+        if (message.properties.oneofKind === "shopNagbar")
+            PremiumMarketingComponentProperties_ShopNagbar.internalBinaryWrite(message.properties.shopNagbar, writer.tag(21, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -6429,3 +6482,102 @@ class PremiumMarketingComponentProperties_BillingSettingsBanner$Type extends Mes
  * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.BillingSettingsBanner
  */
 export const PremiumMarketingComponentProperties_BillingSettingsBanner = new PremiumMarketingComponentProperties_BillingSettingsBanner$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PremiumMarketingComponentProperties_ShopNagbar$Type extends MessageType<PremiumMarketingComponentProperties_ShopNagbar> {
+    constructor() {
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ShopNagbar", [
+            { no: 1, name: "body", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "cta_label", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 3, name: "cta_action", kind: "enum", T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction", PremiumMarketingComponentProperties_ButtonAction, "BUTTON_ACTION_"] },
+            { no: 4, name: "deeplink_section", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 5, name: "help_article", kind: "message", T: () => PremiumMarketingComponentProperties_HelpArticle },
+            { no: 6, name: "body_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
+            { no: 7, name: "cta_label_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
+            { no: 8, name: "navigable_storefront_application_id", kind: "message", T: () => UInt64Value }
+        ]);
+    }
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_ShopNagbar>): PremiumMarketingComponentProperties_ShopNagbar {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.body = "";
+        message.ctaLabel = "";
+        message.ctaAction = 0;
+        message.deeplinkSection = "";
+        if (value !== undefined)
+            reflectionMergePartial<PremiumMarketingComponentProperties_ShopNagbar>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_ShopNagbar): PremiumMarketingComponentProperties_ShopNagbar {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string body */ 1:
+                    message.body = reader.string();
+                    break;
+                case /* string cta_label */ 2:
+                    message.ctaLabel = reader.string();
+                    break;
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction cta_action */ 3:
+                    message.ctaAction = reader.int32();
+                    break;
+                case /* string deeplink_section */ 4:
+                    message.deeplinkSection = reader.string();
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle help_article */ 5:
+                    message.helpArticle = PremiumMarketingComponentProperties_HelpArticle.internalBinaryRead(reader, reader.uint32(), options, message.helpArticle);
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString body_localized */ 6:
+                    message.bodyLocalized = PremiumMarketingComponentProperties_LocalizedString.internalBinaryRead(reader, reader.uint32(), options, message.bodyLocalized);
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString cta_label_localized */ 7:
+                    message.ctaLabelLocalized = PremiumMarketingComponentProperties_LocalizedString.internalBinaryRead(reader, reader.uint32(), options, message.ctaLabelLocalized);
+                    break;
+                case /* optional google.protobuf.UInt64Value navigable_storefront_application_id */ 8:
+                    message.navigableStorefrontApplicationId = UInt64Value.internalBinaryRead(reader, reader.uint32(), options, message.navigableStorefrontApplicationId);
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_ShopNagbar, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string body = 1; */
+        if (message.body !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.body);
+        /* string cta_label = 2; */
+        if (message.ctaLabel !== "")
+            writer.tag(2, WireType.LengthDelimited).string(message.ctaLabel);
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction cta_action = 3; */
+        if (message.ctaAction !== 0)
+            writer.tag(3, WireType.Varint).int32(message.ctaAction);
+        /* string deeplink_section = 4; */
+        if (message.deeplinkSection !== "")
+            writer.tag(4, WireType.LengthDelimited).string(message.deeplinkSection);
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle help_article = 5; */
+        if (message.helpArticle)
+            PremiumMarketingComponentProperties_HelpArticle.internalBinaryWrite(message.helpArticle, writer.tag(5, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString body_localized = 6; */
+        if (message.bodyLocalized)
+            PremiumMarketingComponentProperties_LocalizedString.internalBinaryWrite(message.bodyLocalized, writer.tag(6, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString cta_label_localized = 7; */
+        if (message.ctaLabelLocalized)
+            PremiumMarketingComponentProperties_LocalizedString.internalBinaryWrite(message.ctaLabelLocalized, writer.tag(7, WireType.LengthDelimited).fork(), options).join();
+        /* optional google.protobuf.UInt64Value navigable_storefront_application_id = 8; */
+        if (message.navigableStorefrontApplicationId)
+            UInt64Value.internalBinaryWrite(message.navigableStorefrontApplicationId, writer.tag(8, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ShopNagbar
+ */
+export const PremiumMarketingComponentProperties_ShopNagbar = new PremiumMarketingComponentProperties_ShopNagbar$Type();

@@ -907,6 +907,17 @@ message PremiumMarketingComponentProperties {
     optional HelpArticle help_article = 7;
   }
 
+  message ShopNagbar {
+    string body = 1;
+    string cta_label = 2;
+    ButtonAction cta_action = 3;
+    string deeplink_section = 4;
+    optional HelpArticle help_article = 5;
+    optional LocalizedString body_localized = 6;
+    optional LocalizedString cta_label_localized = 7;
+    optional google.protobuf.UInt64Value navigable_storefront_application_id = 8;
+  }
+
   string content_identifier = 3;
   bool is_default_base = 18;
   oneof properties {
@@ -928,6 +939,7 @@ message PremiumMarketingComponentProperties {
     Nagbar nagbar = 17;
     PlanSelectCardBanner plan_select_card_banner = 19;
     BillingSettingsBanner billing_settings_banner = 20;
+    ShopNagbar shop_nagbar = 21;
   }
 
 }
