@@ -3540,7 +3540,19 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_USER_PROFILE_WIDGETS_BOARD_MOBILE_EDIT_NOTICE = 798;
      */
-    USER_PROFILE_WIDGETS_BOARD_MOBILE_EDIT_NOTICE = 798
+    USER_PROFILE_WIDGETS_BOARD_MOBILE_EDIT_NOTICE = 798,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CUSTOM_TYPING_INDICATOR_MOBILE_NEW_BADGE_PROFILE_PAGE = 799;
+     */
+    CUSTOM_TYPING_INDICATOR_MOBILE_NEW_BADGE_PROFILE_PAGE = 799,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CUSTOM_TYPING_INDICATOR_MOBILE_PROFILE_COACHMARK = 800;
+     */
+    CUSTOM_TYPING_INDICATOR_MOBILE_PROFILE_COACHMARK = 800,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CUSTOM_TYPING_INDICATOR_MOBILE_COACHMARK = 801;
+     */
+    CUSTOM_TYPING_INDICATOR_MOBILE_COACHMARK = 801
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant

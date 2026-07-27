@@ -665,6 +665,9 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_SHOP_THIS_LOOK_WEB_MARKETING: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 796
         DISMISSIBLE_CONTENT_COLLECTIBLES_SHOP_GAME_SERVER_HOSTING_BANNER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 797
         DISMISSIBLE_CONTENT_USER_PROFILE_WIDGETS_BOARD_MOBILE_EDIT_NOTICE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 798
+        DISMISSIBLE_CONTENT_CUSTOM_TYPING_INDICATOR_MOBILE_NEW_BADGE_PROFILE_PAGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 799
+        DISMISSIBLE_CONTENT_CUSTOM_TYPING_INDICATOR_MOBILE_PROFILE_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 800
+        DISMISSIBLE_CONTENT_CUSTOM_TYPING_INDICATOR_MOBILE_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 801
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_HUB_WAITLIST_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1262,6 +1265,9 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_SHOP_THIS_LOOK_WEB_MARKETING: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 796
     DISMISSIBLE_CONTENT_COLLECTIBLES_SHOP_GAME_SERVER_HOSTING_BANNER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 797
     DISMISSIBLE_CONTENT_USER_PROFILE_WIDGETS_BOARD_MOBILE_EDIT_NOTICE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 798
+    DISMISSIBLE_CONTENT_CUSTOM_TYPING_INDICATOR_MOBILE_NEW_BADGE_PROFILE_PAGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 799
+    DISMISSIBLE_CONTENT_CUSTOM_TYPING_INDICATOR_MOBILE_PROFILE_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 800
+    DISMISSIBLE_CONTENT_CUSTOM_TYPING_INDICATOR_MOBILE_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 801
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)
