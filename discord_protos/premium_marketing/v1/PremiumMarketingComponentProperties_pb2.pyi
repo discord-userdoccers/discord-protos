@@ -1412,7 +1412,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         def WhichOneof(self, oneof_group: _WhichOneofArgType__pill_localized) -> _WhichOneofReturnType__pill_localized | None: ...
 
     @_typing.final
-    class SubscriptionButton(_message.Message):
+    class CTAButton(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
 
         COPY_FIELD_NUMBER: _builtins.int
@@ -1626,7 +1626,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         @_builtins.property
         def feature_cards(self) -> _containers.RepeatedCompositeFieldContainer[Global___PremiumMarketingComponentProperties.FeatureCard]: ...
         @_builtins.property
-        def button(self) -> Global___PremiumMarketingComponentProperties.SubscriptionButton: ...
+        def button(self) -> Global___PremiumMarketingComponentProperties.CTAButton: ...
         @_builtins.property
         def hero_art_video_subtitles(self) -> _containers.RepeatedCompositeFieldContainer[Global___PremiumMarketingComponentProperties.Subtitle]: ...
         @_builtins.property
@@ -1649,7 +1649,7 @@ class PremiumMarketingComponentProperties(_message.Message):
             video_link: _builtins.str = ...,
             help_article_id: _builtins.str = ...,
             feature_cards: _abc.Iterable[Global___PremiumMarketingComponentProperties.FeatureCard] | None = ...,
-            button: Global___PremiumMarketingComponentProperties.SubscriptionButton | None = ...,
+            button: Global___PremiumMarketingComponentProperties.CTAButton | None = ...,
             hero_art_video_link_light_theme: _builtins.str = ...,
             hero_art_image_link_dark_theme: _builtins.str = ...,
             hero_art_image_link_light_theme: _builtins.str = ...,
@@ -1739,44 +1739,6 @@ class PremiumMarketingComponentProperties(_message.Message):
         def WhichOneof(self, oneof_group: _WhichOneofArgType__badge_label_localized) -> _WhichOneofReturnType__badge_label_localized | None: ...
 
     @_typing.final
-    class MarketingPageBannerButton(_message.Message):
-        DESCRIPTOR: _descriptor.Descriptor
-
-        COPY_FIELD_NUMBER: _builtins.int
-        BUTTON_ACTION_FIELD_NUMBER: _builtins.int
-        DEEPLINK_SECTION_FIELD_NUMBER: _builtins.int
-        COPY_LOCALIZED_FIELD_NUMBER: _builtins.int
-        NAVIGABLE_STOREFRONT_APPLICATION_ID_FIELD_NUMBER: _builtins.int
-        copy: _builtins.str
-        button_action: Global___PremiumMarketingComponentProperties.ButtonAction.ValueType
-        deeplink_section: _builtins.str
-        @_builtins.property
-        def copy_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
-        @_builtins.property
-        def navigable_storefront_application_id(self) -> _wrappers_pb2.UInt64Value: ...
-        def __init__(
-            self,
-            *,
-            copy: _builtins.str = ...,
-            button_action: Global___PremiumMarketingComponentProperties.ButtonAction.ValueType = ...,
-            deeplink_section: _builtins.str = ...,
-            copy_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
-            navigable_storefront_application_id: _wrappers_pb2.UInt64Value | None = ...,
-        ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _typing.Literal["_copy_localized", b"_copy_localized", "_navigable_storefront_application_id", b"_navigable_storefront_application_id", "copy_localized", b"copy_localized", "navigable_storefront_application_id", b"navigable_storefront_application_id"]  # noqa: Y015
-        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_copy_localized", b"_copy_localized", "_navigable_storefront_application_id", b"_navigable_storefront_application_id", "button_action", b"button_action", "copy", b"copy", "copy_localized", b"copy_localized", "deeplink_section", b"deeplink_section", "navigable_storefront_application_id", b"navigable_storefront_application_id"]  # noqa: Y015
-        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-        _WhichOneofReturnType__copy_localized: _TypeAlias = _typing.Literal["copy_localized"]  # noqa: Y015
-        _WhichOneofArgType__copy_localized: _TypeAlias = _typing.Literal["_copy_localized", b"_copy_localized"]  # noqa: Y015
-        _WhichOneofReturnType__navigable_storefront_application_id: _TypeAlias = _typing.Literal["navigable_storefront_application_id"]  # noqa: Y015
-        _WhichOneofArgType__navigable_storefront_application_id: _TypeAlias = _typing.Literal["_navigable_storefront_application_id", b"_navigable_storefront_application_id"]  # noqa: Y015
-        @_typing.overload
-        def WhichOneof(self, oneof_group: _WhichOneofArgType__copy_localized) -> _WhichOneofReturnType__copy_localized | None: ...
-        @_typing.overload
-        def WhichOneof(self, oneof_group: _WhichOneofArgType__navigable_storefront_application_id) -> _WhichOneofReturnType__navigable_storefront_application_id | None: ...
-
-    @_typing.final
     class MarketingPageBanner(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
 
@@ -1795,7 +1757,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         help_article_id: _builtins.str
         button_variant: Global___PremiumMarketingComponentProperties.MarketingPageBannerButtonVariant.ValueType
         @_builtins.property
-        def button(self) -> Global___PremiumMarketingComponentProperties.MarketingPageBannerButton: ...
+        def button(self) -> Global___PremiumMarketingComponentProperties.CTAButton: ...
         @_builtins.property
         def help_article(self) -> Global___PremiumMarketingComponentProperties.HelpArticle: ...
         @_builtins.property
@@ -1809,7 +1771,7 @@ class PremiumMarketingComponentProperties(_message.Message):
             header: _builtins.str = ...,
             body: _builtins.str = ...,
             help_article_id: _builtins.str = ...,
-            button: Global___PremiumMarketingComponentProperties.MarketingPageBannerButton | None = ...,
+            button: Global___PremiumMarketingComponentProperties.CTAButton | None = ...,
             help_article: Global___PremiumMarketingComponentProperties.HelpArticle | None = ...,
             header_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
             body_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
@@ -1873,44 +1835,6 @@ class PremiumMarketingComponentProperties(_message.Message):
         def WhichOneof(self, oneof_group: _WhichOneofArgType__body_localized) -> _WhichOneofReturnType__body_localized | None: ...
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__header_localized) -> _WhichOneofReturnType__header_localized | None: ...
-
-    @_typing.final
-    class CTAButton(_message.Message):
-        DESCRIPTOR: _descriptor.Descriptor
-
-        COPY_FIELD_NUMBER: _builtins.int
-        BUTTON_ACTION_FIELD_NUMBER: _builtins.int
-        DEEPLINK_SECTION_FIELD_NUMBER: _builtins.int
-        COPY_LOCALIZED_FIELD_NUMBER: _builtins.int
-        NAVIGABLE_STOREFRONT_APPLICATION_ID_FIELD_NUMBER: _builtins.int
-        copy: _builtins.str
-        button_action: Global___PremiumMarketingComponentProperties.ButtonAction.ValueType
-        deeplink_section: _builtins.str
-        @_builtins.property
-        def copy_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
-        @_builtins.property
-        def navigable_storefront_application_id(self) -> _wrappers_pb2.UInt64Value: ...
-        def __init__(
-            self,
-            *,
-            copy: _builtins.str = ...,
-            button_action: Global___PremiumMarketingComponentProperties.ButtonAction.ValueType = ...,
-            deeplink_section: _builtins.str = ...,
-            copy_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
-            navigable_storefront_application_id: _wrappers_pb2.UInt64Value | None = ...,
-        ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _typing.Literal["_copy_localized", b"_copy_localized", "_navigable_storefront_application_id", b"_navigable_storefront_application_id", "copy_localized", b"copy_localized", "navigable_storefront_application_id", b"navigable_storefront_application_id"]  # noqa: Y015
-        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_copy_localized", b"_copy_localized", "_navigable_storefront_application_id", b"_navigable_storefront_application_id", "button_action", b"button_action", "copy", b"copy", "copy_localized", b"copy_localized", "deeplink_section", b"deeplink_section", "navigable_storefront_application_id", b"navigable_storefront_application_id"]  # noqa: Y015
-        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-        _WhichOneofReturnType__copy_localized: _TypeAlias = _typing.Literal["copy_localized"]  # noqa: Y015
-        _WhichOneofArgType__copy_localized: _TypeAlias = _typing.Literal["_copy_localized", b"_copy_localized"]  # noqa: Y015
-        _WhichOneofReturnType__navigable_storefront_application_id: _TypeAlias = _typing.Literal["navigable_storefront_application_id"]  # noqa: Y015
-        _WhichOneofArgType__navigable_storefront_application_id: _TypeAlias = _typing.Literal["_navigable_storefront_application_id", b"_navigable_storefront_application_id"]  # noqa: Y015
-        @_typing.overload
-        def WhichOneof(self, oneof_group: _WhichOneofArgType__copy_localized) -> _WhichOneofReturnType__copy_localized | None: ...
-        @_typing.overload
-        def WhichOneof(self, oneof_group: _WhichOneofArgType__navigable_storefront_application_id) -> _WhichOneofReturnType__navigable_storefront_application_id | None: ...
 
     @_typing.final
     class MobileBottomSheet(_message.Message):
@@ -2468,44 +2392,6 @@ class PremiumMarketingComponentProperties(_message.Message):
         def WhichOneof(self, oneof_group: _WhichOneofArgType__header_localized) -> _WhichOneofReturnType__header_localized | None: ...
 
     @_typing.final
-    class PremiumTabPopoverCTAButton(_message.Message):
-        DESCRIPTOR: _descriptor.Descriptor
-
-        COPY_FIELD_NUMBER: _builtins.int
-        BUTTON_ACTION_FIELD_NUMBER: _builtins.int
-        DEEPLINK_SECTION_FIELD_NUMBER: _builtins.int
-        COPY_LOCALIZED_FIELD_NUMBER: _builtins.int
-        NAVIGABLE_STOREFRONT_APPLICATION_ID_FIELD_NUMBER: _builtins.int
-        copy: _builtins.str
-        button_action: Global___PremiumMarketingComponentProperties.ButtonAction.ValueType
-        deeplink_section: _builtins.str
-        @_builtins.property
-        def copy_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
-        @_builtins.property
-        def navigable_storefront_application_id(self) -> _wrappers_pb2.UInt64Value: ...
-        def __init__(
-            self,
-            *,
-            copy: _builtins.str = ...,
-            button_action: Global___PremiumMarketingComponentProperties.ButtonAction.ValueType = ...,
-            deeplink_section: _builtins.str = ...,
-            copy_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
-            navigable_storefront_application_id: _wrappers_pb2.UInt64Value | None = ...,
-        ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _typing.Literal["_copy_localized", b"_copy_localized", "_navigable_storefront_application_id", b"_navigable_storefront_application_id", "copy_localized", b"copy_localized", "navigable_storefront_application_id", b"navigable_storefront_application_id"]  # noqa: Y015
-        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_copy_localized", b"_copy_localized", "_navigable_storefront_application_id", b"_navigable_storefront_application_id", "button_action", b"button_action", "copy", b"copy", "copy_localized", b"copy_localized", "deeplink_section", b"deeplink_section", "navigable_storefront_application_id", b"navigable_storefront_application_id"]  # noqa: Y015
-        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-        _WhichOneofReturnType__copy_localized: _TypeAlias = _typing.Literal["copy_localized"]  # noqa: Y015
-        _WhichOneofArgType__copy_localized: _TypeAlias = _typing.Literal["_copy_localized", b"_copy_localized"]  # noqa: Y015
-        _WhichOneofReturnType__navigable_storefront_application_id: _TypeAlias = _typing.Literal["navigable_storefront_application_id"]  # noqa: Y015
-        _WhichOneofArgType__navigable_storefront_application_id: _TypeAlias = _typing.Literal["_navigable_storefront_application_id", b"_navigable_storefront_application_id"]  # noqa: Y015
-        @_typing.overload
-        def WhichOneof(self, oneof_group: _WhichOneofArgType__copy_localized) -> _WhichOneofReturnType__copy_localized | None: ...
-        @_typing.overload
-        def WhichOneof(self, oneof_group: _WhichOneofArgType__navigable_storefront_application_id) -> _WhichOneofReturnType__navigable_storefront_application_id | None: ...
-
-    @_typing.final
     class PremiumTabPopover(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
 
@@ -2523,7 +2409,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         @_builtins.property
         def asset(self) -> Global___PremiumMarketingComponentProperties.ThemeAwareAsset: ...
         @_builtins.property
-        def button(self) -> Global___PremiumMarketingComponentProperties.PremiumTabPopoverCTAButton: ...
+        def button(self) -> Global___PremiumMarketingComponentProperties.CTAButton: ...
         @_builtins.property
         def help_article(self) -> Global___PremiumMarketingComponentProperties.HelpArticle: ...
         @_builtins.property
@@ -2536,7 +2422,7 @@ class PremiumMarketingComponentProperties(_message.Message):
             header: _builtins.str = ...,
             body: _builtins.str = ...,
             asset: Global___PremiumMarketingComponentProperties.ThemeAwareAsset | None = ...,
-            button: Global___PremiumMarketingComponentProperties.PremiumTabPopoverCTAButton | None = ...,
+            button: Global___PremiumMarketingComponentProperties.CTAButton | None = ...,
             help_article_id: _builtins.str = ...,
             help_article: Global___PremiumMarketingComponentProperties.HelpArticle | None = ...,
             header_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
@@ -2665,44 +2551,6 @@ class PremiumMarketingComponentProperties(_message.Message):
         def WhichOneof(self, oneof_group: _WhichOneofArgType__help_article) -> _WhichOneofReturnType__help_article | None: ...
 
     @_typing.final
-    class BillingSettingsBannerCTAButton(_message.Message):
-        DESCRIPTOR: _descriptor.Descriptor
-
-        COPY_FIELD_NUMBER: _builtins.int
-        BUTTON_ACTION_FIELD_NUMBER: _builtins.int
-        DEEPLINK_SECTION_FIELD_NUMBER: _builtins.int
-        COPY_LOCALIZED_FIELD_NUMBER: _builtins.int
-        NAVIGABLE_STOREFRONT_APPLICATION_ID_FIELD_NUMBER: _builtins.int
-        copy: _builtins.str
-        button_action: Global___PremiumMarketingComponentProperties.ButtonAction.ValueType
-        deeplink_section: _builtins.str
-        @_builtins.property
-        def copy_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
-        @_builtins.property
-        def navigable_storefront_application_id(self) -> _wrappers_pb2.UInt64Value: ...
-        def __init__(
-            self,
-            *,
-            copy: _builtins.str = ...,
-            button_action: Global___PremiumMarketingComponentProperties.ButtonAction.ValueType = ...,
-            deeplink_section: _builtins.str = ...,
-            copy_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
-            navigable_storefront_application_id: _wrappers_pb2.UInt64Value | None = ...,
-        ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _typing.Literal["_copy_localized", b"_copy_localized", "_navigable_storefront_application_id", b"_navigable_storefront_application_id", "copy_localized", b"copy_localized", "navigable_storefront_application_id", b"navigable_storefront_application_id"]  # noqa: Y015
-        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_copy_localized", b"_copy_localized", "_navigable_storefront_application_id", b"_navigable_storefront_application_id", "button_action", b"button_action", "copy", b"copy", "copy_localized", b"copy_localized", "deeplink_section", b"deeplink_section", "navigable_storefront_application_id", b"navigable_storefront_application_id"]  # noqa: Y015
-        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-        _WhichOneofReturnType__copy_localized: _TypeAlias = _typing.Literal["copy_localized"]  # noqa: Y015
-        _WhichOneofArgType__copy_localized: _TypeAlias = _typing.Literal["_copy_localized", b"_copy_localized"]  # noqa: Y015
-        _WhichOneofReturnType__navigable_storefront_application_id: _TypeAlias = _typing.Literal["navigable_storefront_application_id"]  # noqa: Y015
-        _WhichOneofArgType__navigable_storefront_application_id: _TypeAlias = _typing.Literal["_navigable_storefront_application_id", b"_navigable_storefront_application_id"]  # noqa: Y015
-        @_typing.overload
-        def WhichOneof(self, oneof_group: _WhichOneofArgType__copy_localized) -> _WhichOneofReturnType__copy_localized | None: ...
-        @_typing.overload
-        def WhichOneof(self, oneof_group: _WhichOneofArgType__navigable_storefront_application_id) -> _WhichOneofReturnType__navigable_storefront_application_id | None: ...
-
-    @_typing.final
     class BillingSettingsBanner(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
 
@@ -2718,7 +2566,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         @_builtins.property
         def asset(self) -> Global___PremiumMarketingComponentProperties.ThemeAwareAsset: ...
         @_builtins.property
-        def button(self) -> Global___PremiumMarketingComponentProperties.BillingSettingsBannerCTAButton: ...
+        def button(self) -> Global___PremiumMarketingComponentProperties.CTAButton: ...
         @_builtins.property
         def header_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
         @_builtins.property
@@ -2731,7 +2579,7 @@ class PremiumMarketingComponentProperties(_message.Message):
             header: _builtins.str = ...,
             body: _builtins.str = ...,
             asset: Global___PremiumMarketingComponentProperties.ThemeAwareAsset | None = ...,
-            button: Global___PremiumMarketingComponentProperties.BillingSettingsBannerCTAButton | None = ...,
+            button: Global___PremiumMarketingComponentProperties.CTAButton | None = ...,
             header_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
             body_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
             help_article: Global___PremiumMarketingComponentProperties.HelpArticle | None = ...,

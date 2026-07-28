@@ -39,7 +39,7 @@ message PremiumMarketingComponentProperties {
     BUTTON_ACTION_OPEN_SOCIAL_LAYER_STOREFRONT = 7;
   }
 
-  message SubscriptionButton {
+  message CTAButton {
     string copy = 1;
     ButtonAction button_action = 2;
     string deeplink_section = 3;
@@ -71,7 +71,7 @@ message PremiumMarketingComponentProperties {
     string video_link = 3;
     string help_article_id = 4;
     repeated FeatureCard feature_cards = 5;
-    optional SubscriptionButton button = 6;
+    optional CTAButton button = 6;
     string hero_art_video_link_light_theme = 8;
     string hero_art_image_link_dark_theme = 9;
     string hero_art_image_link_light_theme = 10;
@@ -96,14 +96,6 @@ message PremiumMarketingComponentProperties {
     optional LocalizedString acknowledged_badge_label_localized = 6;
   }
 
-  message MarketingPageBannerButton {
-    string copy = 1;
-    ButtonAction button_action = 2;
-    string deeplink_section = 3;
-    optional LocalizedString copy_localized = 4;
-    optional google.protobuf.UInt64Value navigable_storefront_application_id = 5;
-  }
-
   enum MarketingPageBannerButtonVariant {
     MARKETING_PAGE_BANNER_BUTTON_VARIANT_UNSPECIFIED = 0;
     MARKETING_PAGE_BANNER_BUTTON_VARIANT_EXPRESSIVE = 1;
@@ -115,7 +107,7 @@ message PremiumMarketingComponentProperties {
     string header = 2;
     string body = 3;
     string help_article_id = 4;
-    optional MarketingPageBannerButton button = 5;
+    optional CTAButton button = 5;
     optional HelpArticle help_article = 6;
     optional LocalizedString header_localized = 7;
     optional LocalizedString body_localized = 8;
@@ -128,14 +120,6 @@ message PremiumMarketingComponentProperties {
     string body = 3;
     optional LocalizedString header_localized = 4;
     optional LocalizedString body_localized = 5;
-  }
-
-  message CTAButton {
-    string copy = 1;
-    ButtonAction button_action = 2;
-    string deeplink_section = 3;
-    optional LocalizedString copy_localized = 4;
-    optional google.protobuf.UInt64Value navigable_storefront_application_id = 5;
   }
 
   enum DismissibleContent {
@@ -855,19 +839,11 @@ message PremiumMarketingComponentProperties {
     optional LocalizedString body_localized = 5;
   }
 
-  message PremiumTabPopoverCTAButton {
-    string copy = 1;
-    ButtonAction button_action = 2;
-    string deeplink_section = 3;
-    optional LocalizedString copy_localized = 4;
-    optional google.protobuf.UInt64Value navigable_storefront_application_id = 5;
-  }
-
   message PremiumTabPopover {
     string header = 1;
     string body = 2;
     optional ThemeAwareAsset asset = 3;
-    optional PremiumTabPopoverCTAButton button = 4;
+    optional CTAButton button = 4;
     string help_article_id = 5;
     optional HelpArticle help_article = 6;
     optional LocalizedString header_localized = 7;
@@ -892,19 +868,11 @@ message PremiumMarketingComponentProperties {
     optional HelpArticle help_article = 4;
   }
 
-  message BillingSettingsBannerCTAButton {
-    string copy = 1;
-    ButtonAction button_action = 2;
-    string deeplink_section = 3;
-    optional LocalizedString copy_localized = 4;
-    optional google.protobuf.UInt64Value navigable_storefront_application_id = 5;
-  }
-
   message BillingSettingsBanner {
     string header = 1;
     string body = 2;
     optional ThemeAwareAsset asset = 3;
-    optional BillingSettingsBannerCTAButton button = 4;
+    optional CTAButton button = 4;
     optional LocalizedString header_localized = 5;
     optional LocalizedString body_localized = 6;
     optional HelpArticle help_article = 7;
