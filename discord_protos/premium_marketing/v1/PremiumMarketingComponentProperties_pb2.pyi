@@ -2668,6 +2668,44 @@ class PremiumMarketingComponentProperties(_message.Message):
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__navigable_storefront_application_id) -> _WhichOneofReturnType__navigable_storefront_application_id | None: ...
 
+    @_typing.final
+    class AdminEditorTestComponent(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        DEPRECATED_FIELD_FIELD_NUMBER: _builtins.int
+        LOCALIZED_TEXT_FIELD_FIELD_NUMBER: _builtins.int
+        PLAIN_TEXT_FIELD_FIELD_NUMBER: _builtins.int
+        TEXTAREA_FIELD_FIELD_NUMBER: _builtins.int
+        CHECKBOX_FIELD_FIELD_NUMBER: _builtins.int
+        deprecated_field: _builtins.str
+        plain_text_field: _builtins.str
+        checkbox_field: _builtins.bool
+        @_builtins.property
+        def localized_text_field(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
+        @_builtins.property
+        def textarea_field(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
+        def __init__(
+            self,
+            *,
+            deprecated_field: _builtins.str = ...,
+            localized_text_field: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
+            plain_text_field: _builtins.str = ...,
+            textarea_field: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
+            checkbox_field: _builtins.bool = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_localized_text_field", b"_localized_text_field", "_textarea_field", b"_textarea_field", "localized_text_field", b"localized_text_field", "textarea_field", b"textarea_field"]  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_localized_text_field", b"_localized_text_field", "_textarea_field", b"_textarea_field", "checkbox_field", b"checkbox_field", "deprecated_field", b"deprecated_field", "localized_text_field", b"localized_text_field", "plain_text_field", b"plain_text_field", "textarea_field", b"textarea_field"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        _WhichOneofReturnType__localized_text_field: _TypeAlias = _typing.Literal["localized_text_field"]  # noqa: Y015
+        _WhichOneofArgType__localized_text_field: _TypeAlias = _typing.Literal["_localized_text_field", b"_localized_text_field"]  # noqa: Y015
+        _WhichOneofReturnType__textarea_field: _TypeAlias = _typing.Literal["textarea_field"]  # noqa: Y015
+        _WhichOneofArgType__textarea_field: _TypeAlias = _typing.Literal["_textarea_field", b"_textarea_field"]  # noqa: Y015
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__localized_text_field) -> _WhichOneofReturnType__localized_text_field | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__textarea_field) -> _WhichOneofReturnType__textarea_field | None: ...
+
     CONTENT_IDENTIFIER_FIELD_NUMBER: _builtins.int
     IS_DEFAULT_BASE_FIELD_NUMBER: _builtins.int
     PLACEHOLDER_FIELD_NUMBER: _builtins.int
@@ -2689,6 +2727,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     PLAN_SELECT_CARD_BANNER_FIELD_NUMBER: _builtins.int
     BILLING_SETTINGS_BANNER_FIELD_NUMBER: _builtins.int
     SHOP_NAGBAR_FIELD_NUMBER: _builtins.int
+    ADMIN_EDITOR_TEST_COMPONENT_FIELD_NUMBER: _builtins.int
     content_identifier: _builtins.str
     is_default_base: _builtins.bool
     placeholder: _builtins.str
@@ -2728,6 +2767,8 @@ class PremiumMarketingComponentProperties(_message.Message):
     def billing_settings_banner(self) -> Global___PremiumMarketingComponentProperties.BillingSettingsBanner: ...
     @_builtins.property
     def shop_nagbar(self) -> Global___PremiumMarketingComponentProperties.ShopNagbar: ...
+    @_builtins.property
+    def admin_editor_test_component(self) -> Global___PremiumMarketingComponentProperties.AdminEditorTestComponent: ...
     def __init__(
         self,
         *,
@@ -2752,12 +2793,13 @@ class PremiumMarketingComponentProperties(_message.Message):
         plan_select_card_banner: Global___PremiumMarketingComponentProperties.PlanSelectCardBanner | None = ...,
         billing_settings_banner: Global___PremiumMarketingComponentProperties.BillingSettingsBanner | None = ...,
         shop_nagbar: Global___PremiumMarketingComponentProperties.ShopNagbar | None = ...,
+        admin_editor_test_component: Global___PremiumMarketingComponentProperties.AdminEditorTestComponent | None = ...,
     ) -> None: ...
-    _HasFieldArgType: _TypeAlias = _typing.Literal["announcement_modal_variant_1", b"announcement_modal_variant_1", "billing_settings_banner", b"billing_settings_banner", "billing_settings_nitro_gift_banner", b"billing_settings_nitro_gift_banner", "gift_customization_banner", b"gift_customization_banner", "gift_icon", b"gift_icon", "gift_icon_coachmark", b"gift_icon_coachmark", "gift_plan_selection_card_banner", b"gift_plan_selection_card_banner", "gift_reminder_coachmark", b"gift_reminder_coachmark", "gift_reminder_nagbar", b"gift_reminder_nagbar", "marketing_page_banner", b"marketing_page_banner", "mobile_bottom_sheet", b"mobile_bottom_sheet", "nagbar", b"nagbar", "payment_modal_banner", b"payment_modal_banner", "placeholder", b"placeholder", "plan_select_card_banner", b"plan_select_card_banner", "premium_tab", b"premium_tab", "premium_tab_popover", b"premium_tab_popover", "premium_tab_tooltip", b"premium_tab_tooltip", "properties", b"properties", "shop_nagbar", b"shop_nagbar"]  # noqa: Y015
+    _HasFieldArgType: _TypeAlias = _typing.Literal["admin_editor_test_component", b"admin_editor_test_component", "announcement_modal_variant_1", b"announcement_modal_variant_1", "billing_settings_banner", b"billing_settings_banner", "billing_settings_nitro_gift_banner", b"billing_settings_nitro_gift_banner", "gift_customization_banner", b"gift_customization_banner", "gift_icon", b"gift_icon", "gift_icon_coachmark", b"gift_icon_coachmark", "gift_plan_selection_card_banner", b"gift_plan_selection_card_banner", "gift_reminder_coachmark", b"gift_reminder_coachmark", "gift_reminder_nagbar", b"gift_reminder_nagbar", "marketing_page_banner", b"marketing_page_banner", "mobile_bottom_sheet", b"mobile_bottom_sheet", "nagbar", b"nagbar", "payment_modal_banner", b"payment_modal_banner", "placeholder", b"placeholder", "plan_select_card_banner", b"plan_select_card_banner", "premium_tab", b"premium_tab", "premium_tab_popover", b"premium_tab_popover", "premium_tab_tooltip", b"premium_tab_tooltip", "properties", b"properties", "shop_nagbar", b"shop_nagbar"]  # noqa: Y015
     def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["announcement_modal_variant_1", b"announcement_modal_variant_1", "billing_settings_banner", b"billing_settings_banner", "billing_settings_nitro_gift_banner", b"billing_settings_nitro_gift_banner", "content_identifier", b"content_identifier", "gift_customization_banner", b"gift_customization_banner", "gift_icon", b"gift_icon", "gift_icon_coachmark", b"gift_icon_coachmark", "gift_plan_selection_card_banner", b"gift_plan_selection_card_banner", "gift_reminder_coachmark", b"gift_reminder_coachmark", "gift_reminder_nagbar", b"gift_reminder_nagbar", "is_default_base", b"is_default_base", "marketing_page_banner", b"marketing_page_banner", "mobile_bottom_sheet", b"mobile_bottom_sheet", "nagbar", b"nagbar", "payment_modal_banner", b"payment_modal_banner", "placeholder", b"placeholder", "plan_select_card_banner", b"plan_select_card_banner", "premium_tab", b"premium_tab", "premium_tab_popover", b"premium_tab_popover", "premium_tab_tooltip", b"premium_tab_tooltip", "properties", b"properties", "shop_nagbar", b"shop_nagbar"]  # noqa: Y015
+    _ClearFieldArgType: _TypeAlias = _typing.Literal["admin_editor_test_component", b"admin_editor_test_component", "announcement_modal_variant_1", b"announcement_modal_variant_1", "billing_settings_banner", b"billing_settings_banner", "billing_settings_nitro_gift_banner", b"billing_settings_nitro_gift_banner", "content_identifier", b"content_identifier", "gift_customization_banner", b"gift_customization_banner", "gift_icon", b"gift_icon", "gift_icon_coachmark", b"gift_icon_coachmark", "gift_plan_selection_card_banner", b"gift_plan_selection_card_banner", "gift_reminder_coachmark", b"gift_reminder_coachmark", "gift_reminder_nagbar", b"gift_reminder_nagbar", "is_default_base", b"is_default_base", "marketing_page_banner", b"marketing_page_banner", "mobile_bottom_sheet", b"mobile_bottom_sheet", "nagbar", b"nagbar", "payment_modal_banner", b"payment_modal_banner", "placeholder", b"placeholder", "plan_select_card_banner", b"plan_select_card_banner", "premium_tab", b"premium_tab", "premium_tab_popover", b"premium_tab_popover", "premium_tab_tooltip", b"premium_tab_tooltip", "properties", b"properties", "shop_nagbar", b"shop_nagbar"]  # noqa: Y015
     def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-    _WhichOneofReturnType_properties: _TypeAlias = _typing.Literal["placeholder", "announcement_modal_variant_1", "premium_tab", "marketing_page_banner", "payment_modal_banner", "mobile_bottom_sheet", "gift_icon", "gift_icon_coachmark", "gift_plan_selection_card_banner", "gift_customization_banner", "billing_settings_nitro_gift_banner", "gift_reminder_nagbar", "gift_reminder_coachmark", "premium_tab_tooltip", "premium_tab_popover", "nagbar", "plan_select_card_banner", "billing_settings_banner", "shop_nagbar"]  # noqa: Y015
+    _WhichOneofReturnType_properties: _TypeAlias = _typing.Literal["placeholder", "announcement_modal_variant_1", "premium_tab", "marketing_page_banner", "payment_modal_banner", "mobile_bottom_sheet", "gift_icon", "gift_icon_coachmark", "gift_plan_selection_card_banner", "gift_customization_banner", "billing_settings_nitro_gift_banner", "gift_reminder_nagbar", "gift_reminder_coachmark", "premium_tab_tooltip", "premium_tab_popover", "nagbar", "plan_select_card_banner", "billing_settings_banner", "shop_nagbar", "admin_editor_test_component"]  # noqa: Y015
     _WhichOneofArgType_properties: _TypeAlias = _typing.Literal["properties", b"properties"]  # noqa: Y015
     def WhichOneof(self, oneof_group: _WhichOneofArgType_properties) -> _WhichOneofReturnType_properties | None: ...
 

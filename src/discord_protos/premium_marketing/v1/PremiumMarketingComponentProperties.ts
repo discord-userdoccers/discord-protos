@@ -141,6 +141,12 @@ export interface PremiumMarketingComponentProperties {
          */
         shopNagbar: PremiumMarketingComponentProperties_ShopNagbar;
     } | {
+        oneofKind: "adminEditorTestComponent";
+        /**
+         * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AdminEditorTestComponent admin_editor_test_component = 22
+         */
+        adminEditorTestComponent: PremiumMarketingComponentProperties_AdminEditorTestComponent;
+    } | {
         oneofKind: undefined;
     };
 }
@@ -1002,6 +1008,31 @@ export interface PremiumMarketingComponentProperties_ShopNagbar {
      * @generated from protobuf field: optional google.protobuf.UInt64Value navigable_storefront_application_id = 8
      */
     navigableStorefrontApplicationId?: UInt64Value;
+}
+/**
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AdminEditorTestComponent
+ */
+export interface PremiumMarketingComponentProperties_AdminEditorTestComponent {
+    /**
+     * @generated from protobuf field: string deprecated_field = 1
+     */
+    deprecatedField: string;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString localized_text_field = 2
+     */
+    localizedTextField?: PremiumMarketingComponentProperties_LocalizedString;
+    /**
+     * @generated from protobuf field: string plain_text_field = 3
+     */
+    plainTextField: string;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString textarea_field = 4
+     */
+    textareaField?: PremiumMarketingComponentProperties_LocalizedString;
+    /**
+     * @generated from protobuf field: bool checkbox_field = 5
+     */
+    checkboxField: boolean;
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction
@@ -3499,7 +3530,8 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
             { no: 17, name: "nagbar", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_Nagbar },
             { no: 19, name: "plan_select_card_banner", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_PlanSelectCardBanner },
             { no: 20, name: "billing_settings_banner", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_BillingSettingsBanner },
-            { no: 21, name: "shop_nagbar", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_ShopNagbar }
+            { no: 21, name: "shop_nagbar", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_ShopNagbar },
+            { no: 22, name: "admin_editor_test_component", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_AdminEditorTestComponent }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties>): PremiumMarketingComponentProperties {
@@ -3636,6 +3668,12 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
                         shopNagbar: PremiumMarketingComponentProperties_ShopNagbar.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).shopNagbar)
                     };
                     break;
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AdminEditorTestComponent admin_editor_test_component */ 22:
+                    message.properties = {
+                        oneofKind: "adminEditorTestComponent",
+                        adminEditorTestComponent: PremiumMarketingComponentProperties_AdminEditorTestComponent.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).adminEditorTestComponent)
+                    };
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -3711,6 +3749,9 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
         /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ShopNagbar shop_nagbar = 21; */
         if (message.properties.oneofKind === "shopNagbar")
             PremiumMarketingComponentProperties_ShopNagbar.internalBinaryWrite(message.properties.shopNagbar, writer.tag(21, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AdminEditorTestComponent admin_editor_test_component = 22; */
+        if (message.properties.oneofKind === "adminEditorTestComponent")
+            PremiumMarketingComponentProperties_AdminEditorTestComponent.internalBinaryWrite(message.properties.adminEditorTestComponent, writer.tag(22, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -6189,3 +6230,80 @@ class PremiumMarketingComponentProperties_ShopNagbar$Type extends MessageType<Pr
  * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ShopNagbar
  */
 export const PremiumMarketingComponentProperties_ShopNagbar = new PremiumMarketingComponentProperties_ShopNagbar$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PremiumMarketingComponentProperties_AdminEditorTestComponent$Type extends MessageType<PremiumMarketingComponentProperties_AdminEditorTestComponent> {
+    constructor() {
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AdminEditorTestComponent", [
+            { no: 1, name: "deprecated_field", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "localized_text_field", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
+            { no: 3, name: "plain_text_field", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 4, name: "textarea_field", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
+            { no: 5, name: "checkbox_field", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
+        ]);
+    }
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_AdminEditorTestComponent>): PremiumMarketingComponentProperties_AdminEditorTestComponent {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.deprecatedField = "";
+        message.plainTextField = "";
+        message.checkboxField = false;
+        if (value !== undefined)
+            reflectionMergePartial<PremiumMarketingComponentProperties_AdminEditorTestComponent>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_AdminEditorTestComponent): PremiumMarketingComponentProperties_AdminEditorTestComponent {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string deprecated_field */ 1:
+                    message.deprecatedField = reader.string();
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString localized_text_field */ 2:
+                    message.localizedTextField = PremiumMarketingComponentProperties_LocalizedString.internalBinaryRead(reader, reader.uint32(), options, message.localizedTextField);
+                    break;
+                case /* string plain_text_field */ 3:
+                    message.plainTextField = reader.string();
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString textarea_field */ 4:
+                    message.textareaField = PremiumMarketingComponentProperties_LocalizedString.internalBinaryRead(reader, reader.uint32(), options, message.textareaField);
+                    break;
+                case /* bool checkbox_field */ 5:
+                    message.checkboxField = reader.bool();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_AdminEditorTestComponent, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string deprecated_field = 1; */
+        if (message.deprecatedField !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.deprecatedField);
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString localized_text_field = 2; */
+        if (message.localizedTextField)
+            PremiumMarketingComponentProperties_LocalizedString.internalBinaryWrite(message.localizedTextField, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+        /* string plain_text_field = 3; */
+        if (message.plainTextField !== "")
+            writer.tag(3, WireType.LengthDelimited).string(message.plainTextField);
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString textarea_field = 4; */
+        if (message.textareaField)
+            PremiumMarketingComponentProperties_LocalizedString.internalBinaryWrite(message.textareaField, writer.tag(4, WireType.LengthDelimited).fork(), options).join();
+        /* bool checkbox_field = 5; */
+        if (message.checkboxField !== false)
+            writer.tag(5, WireType.Varint).bool(message.checkboxField);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AdminEditorTestComponent
+ */
+export const PremiumMarketingComponentProperties_AdminEditorTestComponent = new PremiumMarketingComponentProperties_AdminEditorTestComponent$Type();

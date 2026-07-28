@@ -890,6 +890,14 @@ message PremiumMarketingComponentProperties {
     optional google.protobuf.UInt64Value navigable_storefront_application_id = 8;
   }
 
+  message AdminEditorTestComponent {
+    string deprecated_field = 1;
+    optional LocalizedString localized_text_field = 2;
+    string plain_text_field = 3;
+    optional LocalizedString textarea_field = 4;
+    bool checkbox_field = 5;
+  }
+
   string content_identifier = 3;
   bool is_default_base = 18;
   oneof properties {
@@ -912,6 +920,7 @@ message PremiumMarketingComponentProperties {
     PlanSelectCardBanner plan_select_card_banner = 19;
     BillingSettingsBanner billing_settings_banner = 20;
     ShopNagbar shop_nagbar = 21;
+    AdminEditorTestComponent admin_editor_test_component = 22;
   }
 
 }
