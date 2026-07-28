@@ -1511,6 +1511,7 @@ class Experiment(_message.Message):
     EXPOSURE_TRACKING_FIELD_NUMBER: _builtins.int
     ASSIGNMENT_MODE_FIELD_NUMBER: _builtins.int
     ENABLE_EDIT_RAW_JSON_UI_FIELD_NUMBER: _builtins.int
+    DYNAMIC_CONFIG_SIZE_LIMIT_OVERRIDE_FIELD_NUMBER: _builtins.int
     WINNING_VARIATION_ID_FIELD_NUMBER: _builtins.int
     EXTRA_OUTCOME_CONTEXT_FIELD_NUMBER: _builtins.int
     TYPE_FIELD_NUMBER: _builtins.int
@@ -1571,6 +1572,8 @@ class Experiment(_message.Message):
     @_builtins.property
     def surfaces(self) -> _containers.RepeatedScalarFieldContainer[Global___Experiment.Surface.ValueType]: ...
     @_builtins.property
+    def dynamic_config_size_limit_override(self) -> _wrappers_pb2.Int32Value: ...
+    @_builtins.property
     def field_numbers_to_copy(self) -> _containers.RepeatedScalarFieldContainer[_builtins.int]: ...
     @_builtins.property
     def engine_feature_flags(self) -> _containers.RepeatedScalarFieldContainer[_builtins.str]: ...
@@ -1614,6 +1617,7 @@ class Experiment(_message.Message):
         exposure_tracking: Global___Experiment.ExposureTracking.ValueType = ...,
         assignment_mode: Global___Experiment.AssignmentMode.ValueType = ...,
         enable_edit_raw_json_ui: _builtins.bool = ...,
+        dynamic_config_size_limit_override: _wrappers_pb2.Int32Value | None = ...,
         winning_variation_id: _builtins.int = ...,
         extra_outcome_context: _builtins.str = ...,
         type: Global___Experiment.Type.ValueType = ...,
@@ -1634,9 +1638,9 @@ class Experiment(_message.Message):
         number_line_settings: Global___Experiment.NumberLineSettings | None = ...,
         eligibility_persistence: Global___Experiment.EligibilityPersistence.ValueType = ...,
     ) -> None: ...
-    _HasFieldArgType: _TypeAlias = _typing.Literal["_archive_at", b"_archive_at", "_created_at", b"_created_at", "_debug_config", b"_debug_config", "_edited_at", b"_edited_at", "_expected_end_date", b"_expected_end_date", "_guild_experiment_version", b"_guild_experiment_version", "_hypothesis", b"_hypothesis", "_number_line_settings", b"_number_line_settings", "_tech_spec_link", b"_tech_spec_link", "archive_at", b"archive_at", "created_at", b"created_at", "debug_config", b"debug_config", "edited_at", b"edited_at", "expected_end_date", b"expected_end_date", "guild_experiment_version", b"guild_experiment_version", "hypothesis", b"hypothesis", "number_line_settings", b"number_line_settings", "tech_spec_link", b"tech_spec_link"]  # noqa: Y015
+    _HasFieldArgType: _TypeAlias = _typing.Literal["_archive_at", b"_archive_at", "_created_at", b"_created_at", "_debug_config", b"_debug_config", "_dynamic_config_size_limit_override", b"_dynamic_config_size_limit_override", "_edited_at", b"_edited_at", "_expected_end_date", b"_expected_end_date", "_guild_experiment_version", b"_guild_experiment_version", "_hypothesis", b"_hypothesis", "_number_line_settings", b"_number_line_settings", "_tech_spec_link", b"_tech_spec_link", "archive_at", b"archive_at", "created_at", b"created_at", "debug_config", b"debug_config", "dynamic_config_size_limit_override", b"dynamic_config_size_limit_override", "edited_at", b"edited_at", "expected_end_date", b"expected_end_date", "guild_experiment_version", b"guild_experiment_version", "hypothesis", b"hypothesis", "number_line_settings", b"number_line_settings", "tech_spec_link", b"tech_spec_link"]  # noqa: Y015
     def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["_archive_at", b"_archive_at", "_created_at", b"_created_at", "_debug_config", b"_debug_config", "_edited_at", b"_edited_at", "_expected_end_date", b"_expected_end_date", "_guild_experiment_version", b"_guild_experiment_version", "_hypothesis", b"_hypothesis", "_number_line_settings", b"_number_line_settings", "_tech_spec_link", b"_tech_spec_link", "allocate_right_to_left", b"allocate_right_to_left", "archive_at", b"archive_at", "assignment_mode", b"assignment_mode", "cached_notification_channel_id", b"cached_notification_channel_id", "created_at", b"created_at", "creator_id", b"creator_id", "custom_unit_prefix", b"custom_unit_prefix", "debug_config", b"debug_config", "description", b"description", "edited_at", b"edited_at", "editor_id", b"editor_id", "eligibility_persistence", b"eligibility_persistence", "enable_edit_raw_json_ui", b"enable_edit_raw_json_ui", "engine_feature_flags", b"engine_feature_flags", "expected_end_date", b"expected_end_date", "exposure_points", b"exposure_points", "exposure_tracking", b"exposure_tracking", "extra_outcome_context", b"extra_outcome_context", "field_numbers_to_copy", b"field_numbers_to_copy", "growthbook_tags", b"growthbook_tags", "guild_experiment_version", b"guild_experiment_version", "hash_key", b"hash_key", "hypothesis", b"hypothesis", "id", b"id", "is_automated_change", b"is_automated_change", "is_managed", b"is_managed", "is_template", b"is_template", "name", b"name", "number_line_settings", b"number_line_settings", "owning_team_id", b"owning_team_id", "phase", b"phase", "revision", b"revision", "rules", b"rules", "suppress_editor_mention", b"suppress_editor_mention", "surfaces", b"surfaces", "tech_spec_link", b"tech_spec_link", "title", b"title", "type", b"type", "unit_type", b"unit_type", "variations", b"variations", "version", b"version", "winning_variation_id", b"winning_variation_id"]  # noqa: Y015
+    _ClearFieldArgType: _TypeAlias = _typing.Literal["_archive_at", b"_archive_at", "_created_at", b"_created_at", "_debug_config", b"_debug_config", "_dynamic_config_size_limit_override", b"_dynamic_config_size_limit_override", "_edited_at", b"_edited_at", "_expected_end_date", b"_expected_end_date", "_guild_experiment_version", b"_guild_experiment_version", "_hypothesis", b"_hypothesis", "_number_line_settings", b"_number_line_settings", "_tech_spec_link", b"_tech_spec_link", "allocate_right_to_left", b"allocate_right_to_left", "archive_at", b"archive_at", "assignment_mode", b"assignment_mode", "cached_notification_channel_id", b"cached_notification_channel_id", "created_at", b"created_at", "creator_id", b"creator_id", "custom_unit_prefix", b"custom_unit_prefix", "debug_config", b"debug_config", "description", b"description", "dynamic_config_size_limit_override", b"dynamic_config_size_limit_override", "edited_at", b"edited_at", "editor_id", b"editor_id", "eligibility_persistence", b"eligibility_persistence", "enable_edit_raw_json_ui", b"enable_edit_raw_json_ui", "engine_feature_flags", b"engine_feature_flags", "expected_end_date", b"expected_end_date", "exposure_points", b"exposure_points", "exposure_tracking", b"exposure_tracking", "extra_outcome_context", b"extra_outcome_context", "field_numbers_to_copy", b"field_numbers_to_copy", "growthbook_tags", b"growthbook_tags", "guild_experiment_version", b"guild_experiment_version", "hash_key", b"hash_key", "hypothesis", b"hypothesis", "id", b"id", "is_automated_change", b"is_automated_change", "is_managed", b"is_managed", "is_template", b"is_template", "name", b"name", "number_line_settings", b"number_line_settings", "owning_team_id", b"owning_team_id", "phase", b"phase", "revision", b"revision", "rules", b"rules", "suppress_editor_mention", b"suppress_editor_mention", "surfaces", b"surfaces", "tech_spec_link", b"tech_spec_link", "title", b"title", "type", b"type", "unit_type", b"unit_type", "variations", b"variations", "version", b"version", "winning_variation_id", b"winning_variation_id"]  # noqa: Y015
     def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
     _WhichOneofReturnType__archive_at: _TypeAlias = _typing.Literal["archive_at"]  # noqa: Y015
     _WhichOneofArgType__archive_at: _TypeAlias = _typing.Literal["_archive_at", b"_archive_at"]  # noqa: Y015
@@ -1644,6 +1648,8 @@ class Experiment(_message.Message):
     _WhichOneofArgType__created_at: _TypeAlias = _typing.Literal["_created_at", b"_created_at"]  # noqa: Y015
     _WhichOneofReturnType__debug_config: _TypeAlias = _typing.Literal["debug_config"]  # noqa: Y015
     _WhichOneofArgType__debug_config: _TypeAlias = _typing.Literal["_debug_config", b"_debug_config"]  # noqa: Y015
+    _WhichOneofReturnType__dynamic_config_size_limit_override: _TypeAlias = _typing.Literal["dynamic_config_size_limit_override"]  # noqa: Y015
+    _WhichOneofArgType__dynamic_config_size_limit_override: _TypeAlias = _typing.Literal["_dynamic_config_size_limit_override", b"_dynamic_config_size_limit_override"]  # noqa: Y015
     _WhichOneofReturnType__edited_at: _TypeAlias = _typing.Literal["edited_at"]  # noqa: Y015
     _WhichOneofArgType__edited_at: _TypeAlias = _typing.Literal["_edited_at", b"_edited_at"]  # noqa: Y015
     _WhichOneofReturnType__expected_end_date: _TypeAlias = _typing.Literal["expected_end_date"]  # noqa: Y015
@@ -1662,6 +1668,8 @@ class Experiment(_message.Message):
     def WhichOneof(self, oneof_group: _WhichOneofArgType__created_at) -> _WhichOneofReturnType__created_at | None: ...
     @_typing.overload
     def WhichOneof(self, oneof_group: _WhichOneofArgType__debug_config) -> _WhichOneofReturnType__debug_config | None: ...
+    @_typing.overload
+    def WhichOneof(self, oneof_group: _WhichOneofArgType__dynamic_config_size_limit_override) -> _WhichOneofReturnType__dynamic_config_size_limit_override | None: ...
     @_typing.overload
     def WhichOneof(self, oneof_group: _WhichOneofArgType__edited_at) -> _WhichOneofReturnType__edited_at | None: ...
     @_typing.overload

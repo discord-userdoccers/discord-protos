@@ -3452,7 +3452,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CUSTOM_TYPING_INDICATOR_MOBILE_COACHMARK = 801;
      */
-    CUSTOM_TYPING_INDICATOR_MOBILE_COACHMARK = 801
+    CUSTOM_TYPING_INDICATOR_MOBILE_COACHMARK = 801,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_COD_3PP_POPOVER = 802;
+     */
+    COD_3PP_POPOVER = 802
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant

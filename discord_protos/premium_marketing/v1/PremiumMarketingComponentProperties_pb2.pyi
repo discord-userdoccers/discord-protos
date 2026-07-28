@@ -668,6 +668,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_CUSTOM_TYPING_INDICATOR_MOBILE_NEW_BADGE_PROFILE_PAGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 799
         DISMISSIBLE_CONTENT_CUSTOM_TYPING_INDICATOR_MOBILE_PROFILE_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 800
         DISMISSIBLE_CONTENT_CUSTOM_TYPING_INDICATOR_MOBILE_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 801
+        DISMISSIBLE_CONTENT_COD_3PP_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 802
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_HUB_WAITLIST_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1268,6 +1269,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_CUSTOM_TYPING_INDICATOR_MOBILE_NEW_BADGE_PROFILE_PAGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 799
     DISMISSIBLE_CONTENT_CUSTOM_TYPING_INDICATOR_MOBILE_PROFILE_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 800
     DISMISSIBLE_CONTENT_CUSTOM_TYPING_INDICATOR_MOBILE_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 801
+    DISMISSIBLE_CONTENT_COD_3PP_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 802
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)

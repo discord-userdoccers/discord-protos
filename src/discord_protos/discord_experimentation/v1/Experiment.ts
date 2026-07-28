@@ -112,6 +112,10 @@ export interface Experiment {
      */
     enableEditRawJsonUi: boolean;
     /**
+     * @generated from protobuf field: optional google.protobuf.Int32Value dynamic_config_size_limit_override = 46
+     */
+    dynamicConfigSizeLimitOverride?: Int32Value;
+    /**
      * @generated from protobuf field: int32 winning_variation_id = 24
      */
     winningVariationId: number;
@@ -1315,6 +1319,7 @@ class Experiment$Type extends MessageType<Experiment> {
             { no: 22, name: "exposure_tracking", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.ExposureTracking", Experiment_ExposureTracking, "EXPOSURE_TRACKING_"] },
             { no: 25, name: "assignment_mode", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.AssignmentMode", Experiment_AssignmentMode, "ASSIGNMENT_MODE_"] },
             { no: 23, name: "enable_edit_raw_json_ui", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
+            { no: 46, name: "dynamic_config_size_limit_override", kind: "message", T: () => Int32Value },
             { no: 24, name: "winning_variation_id", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
             { no: 34, name: "extra_outcome_context", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 26, name: "type", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.Type", Experiment_Type, "TYPE_"] },
@@ -1452,6 +1457,9 @@ class Experiment$Type extends MessageType<Experiment> {
                     break;
                 case /* bool enable_edit_raw_json_ui */ 23:
                     message.enableEditRawJsonUi = reader.bool();
+                    break;
+                case /* optional google.protobuf.Int32Value dynamic_config_size_limit_override */ 46:
+                    message.dynamicConfigSizeLimitOverride = Int32Value.internalBinaryRead(reader, reader.uint32(), options, message.dynamicConfigSizeLimitOverride);
                     break;
                 case /* int32 winning_variation_id */ 24:
                     message.winningVariationId = reader.int32();
@@ -1668,6 +1676,9 @@ class Experiment$Type extends MessageType<Experiment> {
                 writer.int32(message.exposurePoints[i]);
             writer.join();
         }
+        /* optional google.protobuf.Int32Value dynamic_config_size_limit_override = 46; */
+        if (message.dynamicConfigSizeLimitOverride)
+            Int32Value.internalBinaryWrite(message.dynamicConfigSizeLimitOverride, writer.tag(46, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

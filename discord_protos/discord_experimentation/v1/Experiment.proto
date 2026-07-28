@@ -438,6 +438,7 @@ message Experiment {
   ExposureTracking exposure_tracking = 22;
   AssignmentMode assignment_mode = 25;
   bool enable_edit_raw_json_ui = 23;
+  optional google.protobuf.Int32Value dynamic_config_size_limit_override = 46;
   int32 winning_variation_id = 24;
   string extra_outcome_context = 34;
   Type type = 26;
