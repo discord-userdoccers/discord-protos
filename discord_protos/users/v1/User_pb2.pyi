@@ -165,6 +165,7 @@ class User(_message.Message):
         CLASSIFICATION_TYPE_SPAM_SMITE: User._ClassificationType.ValueType  # 3030
         CLASSIFICATION_TYPE_SPAM_CEILING_SMITE: User._ClassificationType.ValueType  # 3120
         CLASSIFICATION_TYPE_VOLUMETRIC_ABUSE_SMITE: User._ClassificationType.ValueType  # 3130
+        CLASSIFICATION_TYPE_MISLEADING_ABUSE_REPORTS_SMITE: User._ClassificationType.ValueType  # 3140
         CLASSIFICATION_TYPE_CHARGEBACK_HIGH_RISK_SMITE: User._ClassificationType.ValueType  # 3040
         CLASSIFICATION_TYPE_CHARGEBACK_LOW_RISK_SMITE: User._ClassificationType.ValueType  # 3050
         CLASSIFICATION_TYPE_NON_CONSENSUAL_SEXUALLY_EXPLICIT_CONTENT_GUILD_SMITE: User._ClassificationType.ValueType  # 3065
@@ -700,6 +701,7 @@ class User(_message.Message):
     CLASSIFICATION_TYPE_SPAM_SMITE: User.ClassificationType.ValueType  # 3030
     CLASSIFICATION_TYPE_SPAM_CEILING_SMITE: User.ClassificationType.ValueType  # 3120
     CLASSIFICATION_TYPE_VOLUMETRIC_ABUSE_SMITE: User.ClassificationType.ValueType  # 3130
+    CLASSIFICATION_TYPE_MISLEADING_ABUSE_REPORTS_SMITE: User.ClassificationType.ValueType  # 3140
     CLASSIFICATION_TYPE_CHARGEBACK_HIGH_RISK_SMITE: User.ClassificationType.ValueType  # 3040
     CLASSIFICATION_TYPE_CHARGEBACK_LOW_RISK_SMITE: User.ClassificationType.ValueType  # 3050
     CLASSIFICATION_TYPE_NON_CONSENSUAL_SEXUALLY_EXPLICIT_CONTENT_GUILD_SMITE: User.ClassificationType.ValueType  # 3065

@@ -808,6 +808,10 @@ export enum User_ClassificationType {
      */
     VOLUMETRIC_ABUSE_SMITE = 3130,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_MISLEADING_ABUSE_REPORTS_SMITE = 3140;
+     */
+    MISLEADING_ABUSE_REPORTS_SMITE = 3140,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_CHARGEBACK_HIGH_RISK_SMITE = 3040;
      */
     CHARGEBACK_HIGH_RISK_SMITE = 3040,
