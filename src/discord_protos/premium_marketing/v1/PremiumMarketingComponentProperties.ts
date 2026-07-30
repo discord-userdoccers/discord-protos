@@ -1033,6 +1033,10 @@ export interface PremiumMarketingComponentProperties_AdminEditorTestComponent {
      * @generated from protobuf field: bool checkbox_field = 5
      */
     checkboxField: boolean;
+    /**
+     * @generated from protobuf field: string asset_field = 6
+     */
+    assetField: string;
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction
@@ -3487,7 +3491,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_COD_3PP_POPOVER = 802;
      */
-    COD_3PP_POPOVER = 802
+    COD_3PP_POPOVER = 802,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_PREMIUM_SHOP_NAGBAR_NOTICE = 803;
+     */
+    PREMIUM_SHOP_NAGBAR_NOTICE = 803
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
@@ -6238,7 +6246,8 @@ class PremiumMarketingComponentProperties_AdminEditorTestComponent$Type extends 
             { no: 2, name: "localized_text_field", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
             { no: 3, name: "plain_text_field", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 4, name: "textarea_field", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
-            { no: 5, name: "checkbox_field", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
+            { no: 5, name: "checkbox_field", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
+            { no: 6, name: "asset_field", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_AdminEditorTestComponent>): PremiumMarketingComponentProperties_AdminEditorTestComponent {
@@ -6246,6 +6255,7 @@ class PremiumMarketingComponentProperties_AdminEditorTestComponent$Type extends 
         message.deprecatedField = "";
         message.plainTextField = "";
         message.checkboxField = false;
+        message.assetField = "";
         if (value !== undefined)
             reflectionMergePartial<PremiumMarketingComponentProperties_AdminEditorTestComponent>(this, message, value);
         return message;
@@ -6269,6 +6279,9 @@ class PremiumMarketingComponentProperties_AdminEditorTestComponent$Type extends 
                     break;
                 case /* bool checkbox_field */ 5:
                     message.checkboxField = reader.bool();
+                    break;
+                case /* string asset_field */ 6:
+                    message.assetField = reader.string();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -6297,6 +6310,9 @@ class PremiumMarketingComponentProperties_AdminEditorTestComponent$Type extends 
         /* bool checkbox_field = 5; */
         if (message.checkboxField !== false)
             writer.tag(5, WireType.Varint).bool(message.checkboxField);
+        /* string asset_field = 6; */
+        if (message.assetField !== "")
+            writer.tag(6, WireType.LengthDelimited).string(message.assetField);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

@@ -669,6 +669,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_CUSTOM_TYPING_INDICATOR_MOBILE_PROFILE_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 800
         DISMISSIBLE_CONTENT_CUSTOM_TYPING_INDICATOR_MOBILE_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 801
         DISMISSIBLE_CONTENT_COD_3PP_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 802
+        DISMISSIBLE_CONTENT_PREMIUM_SHOP_NAGBAR_NOTICE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 803
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_HUB_WAITLIST_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1270,6 +1271,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_CUSTOM_TYPING_INDICATOR_MOBILE_PROFILE_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 800
     DISMISSIBLE_CONTENT_CUSTOM_TYPING_INDICATOR_MOBILE_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 801
     DISMISSIBLE_CONTENT_COD_3PP_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 802
+    DISMISSIBLE_CONTENT_PREMIUM_SHOP_NAGBAR_NOTICE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 803
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)
@@ -2677,9 +2679,11 @@ class PremiumMarketingComponentProperties(_message.Message):
         PLAIN_TEXT_FIELD_FIELD_NUMBER: _builtins.int
         TEXTAREA_FIELD_FIELD_NUMBER: _builtins.int
         CHECKBOX_FIELD_FIELD_NUMBER: _builtins.int
+        ASSET_FIELD_FIELD_NUMBER: _builtins.int
         deprecated_field: _builtins.str
         plain_text_field: _builtins.str
         checkbox_field: _builtins.bool
+        asset_field: _builtins.str
         @_builtins.property
         def localized_text_field(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
         @_builtins.property
@@ -2692,10 +2696,11 @@ class PremiumMarketingComponentProperties(_message.Message):
             plain_text_field: _builtins.str = ...,
             textarea_field: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
             checkbox_field: _builtins.bool = ...,
+            asset_field: _builtins.str = ...,
         ) -> None: ...
         _HasFieldArgType: _TypeAlias = _typing.Literal["_localized_text_field", b"_localized_text_field", "_textarea_field", b"_textarea_field", "localized_text_field", b"localized_text_field", "textarea_field", b"textarea_field"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_localized_text_field", b"_localized_text_field", "_textarea_field", b"_textarea_field", "checkbox_field", b"checkbox_field", "deprecated_field", b"deprecated_field", "localized_text_field", b"localized_text_field", "plain_text_field", b"plain_text_field", "textarea_field", b"textarea_field"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_localized_text_field", b"_localized_text_field", "_textarea_field", b"_textarea_field", "asset_field", b"asset_field", "checkbox_field", b"checkbox_field", "deprecated_field", b"deprecated_field", "localized_text_field", b"localized_text_field", "plain_text_field", b"plain_text_field", "textarea_field", b"textarea_field"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__localized_text_field: _TypeAlias = _typing.Literal["localized_text_field"]  # noqa: Y015
         _WhichOneofArgType__localized_text_field: _TypeAlias = _typing.Literal["_localized_text_field", b"_localized_text_field"]  # noqa: Y015

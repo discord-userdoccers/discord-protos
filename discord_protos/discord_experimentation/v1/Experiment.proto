@@ -293,6 +293,11 @@ message Experiment {
     repeated fixed64 installation_ids = 1;
   }
 
+  message UserStoreCountry {
+    option (discord_protos.discord_experimentation.v1.filter_category) = FILTER_CATEGORY_USER;
+    repeated string iso_countries = 1 [packed = false];
+  }
+
   message Filter {
     oneof filter {
       ClientPlatform client_version = 2;
@@ -322,6 +327,7 @@ message Experiment {
       UserLocation user_location = 27;
       UserIP user_ip = 28;
       InstallationIds installation_ids = 29;
+      UserStoreCountry user_store_country = 31;
     }
     bool negate = 30;
   }

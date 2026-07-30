@@ -759,6 +759,15 @@ export interface Experiment_InstallationIds {
     installationIds: bigint[];
 }
 /**
+ * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.UserStoreCountry
+ */
+export interface Experiment_UserStoreCountry {
+    /**
+     * @generated from protobuf field: repeated string iso_countries = 1 [packed = false]
+     */
+    isoCountries: string[];
+}
+/**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.Filter
  */
 export interface Experiment_Filter {
@@ -927,6 +936,12 @@ export interface Experiment_Filter {
          * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.InstallationIds installation_ids = 29
          */
         installationIds: Experiment_InstallationIds;
+    } | {
+        oneofKind: "userStoreCountry";
+        /**
+         * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.UserStoreCountry user_store_country = 31
+         */
+        userStoreCountry: Experiment_UserStoreCountry;
     } | {
         oneofKind: undefined;
     };
@@ -4058,6 +4073,53 @@ class Experiment_InstallationIds$Type extends MessageType<Experiment_Installatio
  */
 export const Experiment_InstallationIds = new Experiment_InstallationIds$Type();
 // @generated message type with reflection information, may provide speed optimized methods
+class Experiment_UserStoreCountry$Type extends MessageType<Experiment_UserStoreCountry> {
+    constructor() {
+        super("discord_protos.discord_experimentation.v1.Experiment.UserStoreCountry", [
+            { no: 1, name: "iso_countries", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 9 /*ScalarType.STRING*/ }
+        ], { "discord_protos.discord_experimentation.v1.filter_category": "FILTER_CATEGORY_USER" });
+    }
+    create(value?: PartialMessage<Experiment_UserStoreCountry>): Experiment_UserStoreCountry {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.isoCountries = [];
+        if (value !== undefined)
+            reflectionMergePartial<Experiment_UserStoreCountry>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: Experiment_UserStoreCountry): Experiment_UserStoreCountry {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* repeated string iso_countries = 1 [packed = false] */ 1:
+                    message.isoCountries.push(reader.string());
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: Experiment_UserStoreCountry, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* repeated string iso_countries = 1 [packed = false]; */
+        for (let i = 0; i < message.isoCountries.length; i++)
+            writer.tag(1, WireType.LengthDelimited).string(message.isoCountries[i]);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_experimentation.v1.Experiment.UserStoreCountry
+ */
+export const Experiment_UserStoreCountry = new Experiment_UserStoreCountry$Type();
+// @generated message type with reflection information, may provide speed optimized methods
 class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
     constructor() {
         super("discord_protos.discord_experimentation.v1.Experiment.Filter", [
@@ -4088,6 +4150,7 @@ class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
             { no: 27, name: "user_location", kind: "message", oneof: "filter", T: () => Experiment_UserLocation },
             { no: 28, name: "user_ip", kind: "message", oneof: "filter", T: () => Experiment_UserIP },
             { no: 29, name: "installation_ids", kind: "message", oneof: "filter", T: () => Experiment_InstallationIds },
+            { no: 31, name: "user_store_country", kind: "message", oneof: "filter", T: () => Experiment_UserStoreCountry },
             { no: 30, name: "negate", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
         ]);
     }
@@ -4266,6 +4329,12 @@ class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
                         installationIds: Experiment_InstallationIds.internalBinaryRead(reader, reader.uint32(), options, (message.filter as any).installationIds)
                     };
                     break;
+                case /* discord_protos.discord_experimentation.v1.Experiment.UserStoreCountry user_store_country */ 31:
+                    message.filter = {
+                        oneofKind: "userStoreCountry",
+                        userStoreCountry: Experiment_UserStoreCountry.internalBinaryRead(reader, reader.uint32(), options, (message.filter as any).userStoreCountry)
+                    };
+                    break;
                 case /* bool negate */ 30:
                     message.negate = reader.bool();
                     break;
@@ -4365,6 +4434,9 @@ class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
         /* bool negate = 30; */
         if (message.negate !== false)
             writer.tag(30, WireType.Varint).bool(message.negate);
+        /* discord_protos.discord_experimentation.v1.Experiment.UserStoreCountry user_store_country = 31; */
+        if (message.filter.oneofKind === "userStoreCountry")
+            Experiment_UserStoreCountry.internalBinaryWrite(message.filter.userStoreCountry, writer.tag(31, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

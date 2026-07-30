@@ -722,6 +722,7 @@ message PremiumMarketingComponentProperties {
     DISMISSIBLE_CONTENT_CUSTOM_TYPING_INDICATOR_MOBILE_PROFILE_COACHMARK = 800;
     DISMISSIBLE_CONTENT_CUSTOM_TYPING_INDICATOR_MOBILE_COACHMARK = 801;
     DISMISSIBLE_CONTENT_COD_3PP_POPOVER = 802;
+    DISMISSIBLE_CONTENT_PREMIUM_SHOP_NAGBAR_NOTICE = 803;
   }
 
   message MobileBottomSheet {
@@ -896,6 +897,7 @@ message PremiumMarketingComponentProperties {
     string plain_text_field = 3;
     optional LocalizedString textarea_field = 4;
     bool checkbox_field = 5;
+    string asset_field = 6;
   }
 
   string content_identifier = 3;
