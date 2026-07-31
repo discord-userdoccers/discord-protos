@@ -671,6 +671,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_COD_3PP_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 802
         DISMISSIBLE_CONTENT_PREMIUM_SHOP_NAGBAR_NOTICE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 803
         DISMISSIBLE_CONTENT_FOR_LATER_REACTION_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 804
+        DISMISSIBLE_CONTENT_SOUNDBOARD_DESKTOP_NUX: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 805
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_HUB_WAITLIST_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1274,6 +1275,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_COD_3PP_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 802
     DISMISSIBLE_CONTENT_PREMIUM_SHOP_NAGBAR_NOTICE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 803
     DISMISSIBLE_CONTENT_FOR_LATER_REACTION_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 804
+    DISMISSIBLE_CONTENT_SOUNDBOARD_DESKTOP_NUX: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 805
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)

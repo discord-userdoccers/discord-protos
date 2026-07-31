@@ -3499,7 +3499,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_FOR_LATER_REACTION_COACHMARK = 804;
      */
-    FOR_LATER_REACTION_COACHMARK = 804
+    FOR_LATER_REACTION_COACHMARK = 804,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_SOUNDBOARD_DESKTOP_NUX = 805;
+     */
+    SOUNDBOARD_DESKTOP_NUX = 805
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
