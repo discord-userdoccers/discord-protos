@@ -3495,7 +3495,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_PREMIUM_SHOP_NAGBAR_NOTICE = 803;
      */
-    PREMIUM_SHOP_NAGBAR_NOTICE = 803
+    PREMIUM_SHOP_NAGBAR_NOTICE = 803,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_FOR_LATER_REACTION_COACHMARK = 804;
+     */
+    FOR_LATER_REACTION_COACHMARK = 804
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
