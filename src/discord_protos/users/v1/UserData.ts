@@ -1368,6 +1368,18 @@ export enum UserData_ClassificationType {
      */
     BOT_DELETE_IMPERSONATION_SMITE = 3220,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_UNSOLICITED_ACCOUNT_CHANGES_SMITE = 3221;
+     */
+    BOT_DELETE_UNSOLICITED_ACCOUNT_CHANGES_SMITE = 3221,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_TOKEN_SOLICITATION_SMITE = 3222;
+     */
+    BOT_DELETE_TOKEN_SOLICITATION_SMITE = 3222,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_CUSTOM_SMITE = 3224;
+     */
+    BOT_DELETE_CUSTOM_SMITE = 3224,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK = 4000;
      */
     PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK = 4000,
