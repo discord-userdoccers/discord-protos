@@ -968,6 +968,14 @@ export enum User_ClassificationType {
      */
     USER_DELETE_SPAM_SMITE = 3225,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_USER_DELETE_CYBERCRIME_SMITE = 3226;
+     */
+    USER_DELETE_CYBERCRIME_SMITE = 3226,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_USER_DELETE_SELFBOT_SMITE = 3227;
+     */
+    USER_DELETE_SELFBOT_SMITE = 3227,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK = 4000;
      */
     PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK = 4000,
