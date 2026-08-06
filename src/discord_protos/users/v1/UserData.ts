@@ -1392,6 +1392,14 @@ export enum UserData_ClassificationType {
      */
     USER_DELETE_SELFBOT_SMITE = 3227,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_DM_AND_FR_SPAM_SMITE = 3228;
+     */
+    DM_AND_FR_SPAM_SMITE = 3228,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_SELF_BOTTING_SMITE = 3230;
+     */
+    SELF_BOTTING_SMITE = 3230,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK = 4000;
      */
     PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK = 4000,

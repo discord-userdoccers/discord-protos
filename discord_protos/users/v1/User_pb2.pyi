@@ -207,6 +207,8 @@ class User(_message.Message):
         CLASSIFICATION_TYPE_USER_DELETE_SPAM_SMITE: User._ClassificationType.ValueType  # 3225
         CLASSIFICATION_TYPE_USER_DELETE_CYBERCRIME_SMITE: User._ClassificationType.ValueType  # 3226
         CLASSIFICATION_TYPE_USER_DELETE_SELFBOT_SMITE: User._ClassificationType.ValueType  # 3227
+        CLASSIFICATION_TYPE_DM_AND_FR_SPAM_SMITE: User._ClassificationType.ValueType  # 3228
+        CLASSIFICATION_TYPE_SELF_BOTTING_SMITE: User._ClassificationType.ValueType  # 3230
         CLASSIFICATION_TYPE_PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK: User._ClassificationType.ValueType  # 4000
         CLASSIFICATION_TYPE_PRESENCE_IN_VIOLATIVE_GUILD_MEDIUM_RISK: User._ClassificationType.ValueType  # 4010
         CLASSIFICATION_TYPE_OWNER_OF_VIOLATIVE_GUILD_VERY_HIGH_RISK: User._ClassificationType.ValueType  # 4100
@@ -749,6 +751,8 @@ class User(_message.Message):
     CLASSIFICATION_TYPE_USER_DELETE_SPAM_SMITE: User.ClassificationType.ValueType  # 3225
     CLASSIFICATION_TYPE_USER_DELETE_CYBERCRIME_SMITE: User.ClassificationType.ValueType  # 3226
     CLASSIFICATION_TYPE_USER_DELETE_SELFBOT_SMITE: User.ClassificationType.ValueType  # 3227
+    CLASSIFICATION_TYPE_DM_AND_FR_SPAM_SMITE: User.ClassificationType.ValueType  # 3228
+    CLASSIFICATION_TYPE_SELF_BOTTING_SMITE: User.ClassificationType.ValueType  # 3230
     CLASSIFICATION_TYPE_PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK: User.ClassificationType.ValueType  # 4000
     CLASSIFICATION_TYPE_PRESENCE_IN_VIOLATIVE_GUILD_MEDIUM_RISK: User.ClassificationType.ValueType  # 4010
     CLASSIFICATION_TYPE_OWNER_OF_VIOLATIVE_GUILD_VERY_HIGH_RISK: User.ClassificationType.ValueType  # 4100
