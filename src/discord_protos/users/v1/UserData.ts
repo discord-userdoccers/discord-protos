@@ -3247,7 +3247,11 @@ export enum UserData_AgeAssuranceMethod {
     /**
      * @generated from protobuf enum value: AGE_ASSURANCE_METHOD_GOOGLE_WALLET = 9;
      */
-    GOOGLE_WALLET = 9
+    GOOGLE_WALLET = 9,
+    /**
+     * @generated from protobuf enum value: AGE_ASSURANCE_METHOD_NEW_METHOD = 10;
+     */
+    NEW_METHOD = 10
 }
 /**
  * @generated from protobuf enum discord_protos.users.v1.UserData.AgeAssuranceVendor
