@@ -1037,6 +1037,10 @@ export interface PremiumMarketingComponentProperties_AdminEditorTestComponent {
      * @generated from protobuf field: string asset_field = 6
      */
     assetField: string;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset themed_asset_field = 7
+     */
+    themedAssetField?: PremiumMarketingComponentProperties_ThemeAwareAsset;
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction
@@ -6255,7 +6259,8 @@ class PremiumMarketingComponentProperties_AdminEditorTestComponent$Type extends 
             { no: 3, name: "plain_text_field", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 4, name: "textarea_field", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
             { no: 5, name: "checkbox_field", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
-            { no: 6, name: "asset_field", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+            { no: 6, name: "asset_field", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 7, name: "themed_asset_field", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_AdminEditorTestComponent>): PremiumMarketingComponentProperties_AdminEditorTestComponent {
@@ -6291,6 +6296,9 @@ class PremiumMarketingComponentProperties_AdminEditorTestComponent$Type extends 
                 case /* string asset_field */ 6:
                     message.assetField = reader.string();
                     break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset themed_asset_field */ 7:
+                    message.themedAssetField = PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryRead(reader, reader.uint32(), options, message.themedAssetField);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -6321,6 +6329,9 @@ class PremiumMarketingComponentProperties_AdminEditorTestComponent$Type extends 
         /* string asset_field = 6; */
         if (message.assetField !== "")
             writer.tag(6, WireType.LengthDelimited).string(message.assetField);
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset themed_asset_field = 7; */
+        if (message.themedAssetField)
+            PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryWrite(message.themedAssetField, writer.tag(7, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

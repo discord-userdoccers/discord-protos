@@ -900,6 +900,7 @@ message PremiumMarketingComponentProperties {
     optional LocalizedString textarea_field = 4;
     bool checkbox_field = 5;
     string asset_field = 6;
+    optional ThemeAwareAsset themed_asset_field = 7;
   }
 
   string content_identifier = 3;

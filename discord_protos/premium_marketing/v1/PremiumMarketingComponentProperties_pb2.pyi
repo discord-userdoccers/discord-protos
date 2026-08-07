@@ -2684,6 +2684,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         TEXTAREA_FIELD_FIELD_NUMBER: _builtins.int
         CHECKBOX_FIELD_FIELD_NUMBER: _builtins.int
         ASSET_FIELD_FIELD_NUMBER: _builtins.int
+        THEMED_ASSET_FIELD_FIELD_NUMBER: _builtins.int
         deprecated_field: _builtins.str
         plain_text_field: _builtins.str
         checkbox_field: _builtins.bool
@@ -2692,6 +2693,8 @@ class PremiumMarketingComponentProperties(_message.Message):
         def localized_text_field(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
         @_builtins.property
         def textarea_field(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
+        @_builtins.property
+        def themed_asset_field(self) -> Global___PremiumMarketingComponentProperties.ThemeAwareAsset: ...
         def __init__(
             self,
             *,
@@ -2701,19 +2704,24 @@ class PremiumMarketingComponentProperties(_message.Message):
             textarea_field: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
             checkbox_field: _builtins.bool = ...,
             asset_field: _builtins.str = ...,
+            themed_asset_field: Global___PremiumMarketingComponentProperties.ThemeAwareAsset | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _typing.Literal["_localized_text_field", b"_localized_text_field", "_textarea_field", b"_textarea_field", "localized_text_field", b"localized_text_field", "textarea_field", b"textarea_field"]  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_localized_text_field", b"_localized_text_field", "_textarea_field", b"_textarea_field", "_themed_asset_field", b"_themed_asset_field", "localized_text_field", b"localized_text_field", "textarea_field", b"textarea_field", "themed_asset_field", b"themed_asset_field"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_localized_text_field", b"_localized_text_field", "_textarea_field", b"_textarea_field", "asset_field", b"asset_field", "checkbox_field", b"checkbox_field", "deprecated_field", b"deprecated_field", "localized_text_field", b"localized_text_field", "plain_text_field", b"plain_text_field", "textarea_field", b"textarea_field"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_localized_text_field", b"_localized_text_field", "_textarea_field", b"_textarea_field", "_themed_asset_field", b"_themed_asset_field", "asset_field", b"asset_field", "checkbox_field", b"checkbox_field", "deprecated_field", b"deprecated_field", "localized_text_field", b"localized_text_field", "plain_text_field", b"plain_text_field", "textarea_field", b"textarea_field", "themed_asset_field", b"themed_asset_field"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__localized_text_field: _TypeAlias = _typing.Literal["localized_text_field"]  # noqa: Y015
         _WhichOneofArgType__localized_text_field: _TypeAlias = _typing.Literal["_localized_text_field", b"_localized_text_field"]  # noqa: Y015
         _WhichOneofReturnType__textarea_field: _TypeAlias = _typing.Literal["textarea_field"]  # noqa: Y015
         _WhichOneofArgType__textarea_field: _TypeAlias = _typing.Literal["_textarea_field", b"_textarea_field"]  # noqa: Y015
+        _WhichOneofReturnType__themed_asset_field: _TypeAlias = _typing.Literal["themed_asset_field"]  # noqa: Y015
+        _WhichOneofArgType__themed_asset_field: _TypeAlias = _typing.Literal["_themed_asset_field", b"_themed_asset_field"]  # noqa: Y015
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__localized_text_field) -> _WhichOneofReturnType__localized_text_field | None: ...
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__textarea_field) -> _WhichOneofReturnType__textarea_field | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__themed_asset_field) -> _WhichOneofReturnType__themed_asset_field | None: ...
 
     CONTENT_IDENTIFIER_FIELD_NUMBER: _builtins.int
     IS_DEFAULT_BASE_FIELD_NUMBER: _builtins.int
