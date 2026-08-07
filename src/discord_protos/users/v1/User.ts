@@ -960,6 +960,10 @@ export enum User_ClassificationType {
      */
     BOT_DELETE_TOKEN_SOLICITATION_SMITE = 3222,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_PLATFORM_BAN_EVASION_SMITE = 3223;
+     */
+    BOT_DELETE_PLATFORM_BAN_EVASION_SMITE = 3223,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_CUSTOM_SMITE = 3224;
      */
     BOT_DELETE_CUSTOM_SMITE = 3224,
@@ -983,6 +987,14 @@ export enum User_ClassificationType {
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_SELF_BOTTING_SMITE = 3230;
      */
     SELF_BOTTING_SMITE = 3230,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_CSAM_SMITE = 3231;
+     */
+    BOT_DELETE_CSAM_SMITE = 3231,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_NCAIM_SMITE = 3232;
+     */
+    BOT_DELETE_NCAIM_SMITE = 3232,
     /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK = 4000;
      */
