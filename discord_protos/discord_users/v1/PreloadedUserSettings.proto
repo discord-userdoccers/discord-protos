@@ -309,6 +309,11 @@ message PreloadedUserSettings {
     PROFILE_VISIBILITY_FRIENDS_AND_ALL_GUILDS = 3;
   }
 
+  enum AdTopic {
+    AD_TOPIC_UNSPECIFIED = 0;
+    AD_TOPIC_FANTASY_SPORTS = 1;
+  }
+
   message PrivacySettings {
     optional google.protobuf.BoolValue allow_activity_party_privacy_friends = 1;
     optional google.protobuf.BoolValue allow_activity_party_privacy_voice_channel = 2;
@@ -341,6 +346,7 @@ message PreloadedUserSettings {
     optional google.protobuf.BoolValue show_local_time = 31;
     ProfileVisibility profile_visibility = 32;
     optional google.protobuf.BoolValue hide_friend_request_notes = 33;
+    repeated AdTopic ad_topic_opt_outs = 34;
   }
 
   message DebugSettings {

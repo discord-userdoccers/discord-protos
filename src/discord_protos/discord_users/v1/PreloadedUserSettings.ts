@@ -950,6 +950,10 @@ export interface PreloadedUserSettings_PrivacySettings {
      * @generated from protobuf field: optional google.protobuf.BoolValue hide_friend_request_notes = 33
      */
     hideFriendRequestNotes?: BoolValue;
+    /**
+     * @generated from protobuf field: repeated discord_protos.discord_users.v1.PreloadedUserSettings.AdTopic ad_topic_opt_outs = 34
+     */
+    adTopicOptOuts: PreloadedUserSettings_AdTopic[];
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.DebugSettings
@@ -1715,6 +1719,19 @@ export enum PreloadedUserSettings_ProfileVisibility {
      * @generated from protobuf enum value: PROFILE_VISIBILITY_FRIENDS_AND_ALL_GUILDS = 3;
      */
     FRIENDS_AND_ALL_GUILDS = 3
+}
+/**
+ * @generated from protobuf enum discord_protos.discord_users.v1.PreloadedUserSettings.AdTopic
+ */
+export enum PreloadedUserSettings_AdTopic {
+    /**
+     * @generated from protobuf enum value: AD_TOPIC_UNSPECIFIED = 0;
+     */
+    UNSPECIFIED = 0,
+    /**
+     * @generated from protobuf enum value: AD_TOPIC_FANTASY_SPORTS = 1;
+     */
+    FANTASY_SPORTS = 1
 }
 /**
  * @generated from protobuf enum discord_protos.discord_users.v1.PreloadedUserSettings.Theme
@@ -4160,7 +4177,8 @@ class PreloadedUserSettings_PrivacySettings$Type extends MessageType<PreloadedUs
             { no: 30, name: "quests_3p_data_opted_out", kind: "message", jsonName: "quests3pDataOptedOut", T: () => BoolValue },
             { no: 31, name: "show_local_time", kind: "message", T: () => BoolValue },
             { no: 32, name: "profile_visibility", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.ProfileVisibility", PreloadedUserSettings_ProfileVisibility, "PROFILE_VISIBILITY_"] },
-            { no: 33, name: "hide_friend_request_notes", kind: "message", T: () => BoolValue }
+            { no: 33, name: "hide_friend_request_notes", kind: "message", T: () => BoolValue },
+            { no: 34, name: "ad_topic_opt_outs", kind: "enum", repeat: 1 /*RepeatType.PACKED*/, T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.AdTopic", PreloadedUserSettings_AdTopic, "AD_TOPIC_"] }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_PrivacySettings>): PreloadedUserSettings_PrivacySettings {
@@ -4176,6 +4194,7 @@ class PreloadedUserSettings_PrivacySettings$Type extends MessageType<PreloadedUs
         message.slayerSdkReceiveDmsInGame = 0;
         message.defaultGuildsActivityRestrictedV2 = 0;
         message.profileVisibility = 0;
+        message.adTopicOptOuts = [];
         if (value !== undefined)
             reflectionMergePartial<PreloadedUserSettings_PrivacySettings>(this, message, value);
         return message;
@@ -4293,6 +4312,13 @@ class PreloadedUserSettings_PrivacySettings$Type extends MessageType<PreloadedUs
                     break;
                 case /* optional google.protobuf.BoolValue hide_friend_request_notes */ 33:
                     message.hideFriendRequestNotes = BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.hideFriendRequestNotes);
+                    break;
+                case /* repeated discord_protos.discord_users.v1.PreloadedUserSettings.AdTopic ad_topic_opt_outs */ 34:
+                    if (wireType === WireType.LengthDelimited)
+                        for (let e = reader.int32() + reader.pos; reader.pos < e;)
+                            message.adTopicOptOuts.push(reader.int32());
+                    else
+                        message.adTopicOptOuts.push(reader.int32());
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -4415,6 +4441,13 @@ class PreloadedUserSettings_PrivacySettings$Type extends MessageType<PreloadedUs
         /* optional google.protobuf.BoolValue hide_friend_request_notes = 33; */
         if (message.hideFriendRequestNotes)
             BoolValue.internalBinaryWrite(message.hideFriendRequestNotes, writer.tag(33, WireType.LengthDelimited).fork(), options).join();
+        /* repeated discord_protos.discord_users.v1.PreloadedUserSettings.AdTopic ad_topic_opt_outs = 34; */
+        if (message.adTopicOptOuts.length) {
+            writer.tag(34, WireType.LengthDelimited).fork();
+            for (let i = 0; i < message.adTopicOptOuts.length; i++)
+                writer.int32(message.adTopicOptOuts[i]);
+            writer.join();
+        }
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
