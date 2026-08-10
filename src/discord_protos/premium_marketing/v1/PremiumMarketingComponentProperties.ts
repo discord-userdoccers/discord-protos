@@ -3507,7 +3507,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_SOUNDBOARD_DESKTOP_NUX = 805;
      */
-    SOUNDBOARD_DESKTOP_NUX = 805
+    SOUNDBOARD_DESKTOP_NUX = 805,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_BADGE_CUSTOMIZATION_COACHMARK = 806;
+     */
+    BADGE_CUSTOMIZATION_COACHMARK = 806
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
