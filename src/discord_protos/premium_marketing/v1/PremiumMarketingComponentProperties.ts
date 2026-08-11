@@ -1041,6 +1041,10 @@ export interface PremiumMarketingComponentProperties_AdminEditorTestComponent {
      * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset themed_asset_field = 7
      */
     themedAssetField?: PremiumMarketingComponentProperties_ThemeAwareAsset;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle help_article_field = 8
+     */
+    helpArticleField?: PremiumMarketingComponentProperties_HelpArticle;
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction
@@ -3515,7 +3519,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_FAVORITES_GUILD_SUGGESTIONS = 807;
      */
-    FAVORITES_GUILD_SUGGESTIONS = 807
+    FAVORITES_GUILD_SUGGESTIONS = 807,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_USER_PROFILE_PERSONAL_WIDGET_COACHMARK = 808;
+     */
+    USER_PROFILE_PERSONAL_WIDGET_COACHMARK = 808
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
@@ -6268,7 +6276,8 @@ class PremiumMarketingComponentProperties_AdminEditorTestComponent$Type extends 
             { no: 4, name: "textarea_field", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
             { no: 5, name: "checkbox_field", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
             { no: 6, name: "asset_field", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 7, name: "themed_asset_field", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset }
+            { no: 7, name: "themed_asset_field", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset },
+            { no: 8, name: "help_article_field", kind: "message", T: () => PremiumMarketingComponentProperties_HelpArticle }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_AdminEditorTestComponent>): PremiumMarketingComponentProperties_AdminEditorTestComponent {
@@ -6307,6 +6316,9 @@ class PremiumMarketingComponentProperties_AdminEditorTestComponent$Type extends 
                 case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset themed_asset_field */ 7:
                     message.themedAssetField = PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryRead(reader, reader.uint32(), options, message.themedAssetField);
                     break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle help_article_field */ 8:
+                    message.helpArticleField = PremiumMarketingComponentProperties_HelpArticle.internalBinaryRead(reader, reader.uint32(), options, message.helpArticleField);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -6340,6 +6352,9 @@ class PremiumMarketingComponentProperties_AdminEditorTestComponent$Type extends 
         /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset themed_asset_field = 7; */
         if (message.themedAssetField)
             PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryWrite(message.themedAssetField, writer.tag(7, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle help_article_field = 8; */
+        if (message.helpArticleField)
+            PremiumMarketingComponentProperties_HelpArticle.internalBinaryWrite(message.helpArticleField, writer.tag(8, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

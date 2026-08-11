@@ -727,6 +727,7 @@ message PremiumMarketingComponentProperties {
     DISMISSIBLE_CONTENT_SOUNDBOARD_DESKTOP_NUX = 805;
     DISMISSIBLE_CONTENT_BADGE_CUSTOMIZATION_COACHMARK = 806;
     DISMISSIBLE_CONTENT_FAVORITES_GUILD_SUGGESTIONS = 807;
+    DISMISSIBLE_CONTENT_USER_PROFILE_PERSONAL_WIDGET_COACHMARK = 808;
   }
 
   message MobileBottomSheet {
@@ -903,6 +904,7 @@ message PremiumMarketingComponentProperties {
     bool checkbox_field = 5;
     string asset_field = 6;
     optional ThemeAwareAsset themed_asset_field = 7;
+    optional HelpArticle help_article_field = 8;
   }
 
   string content_identifier = 3;

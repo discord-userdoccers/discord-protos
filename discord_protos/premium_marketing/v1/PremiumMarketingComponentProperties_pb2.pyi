@@ -674,6 +674,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_SOUNDBOARD_DESKTOP_NUX: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 805
         DISMISSIBLE_CONTENT_BADGE_CUSTOMIZATION_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 806
         DISMISSIBLE_CONTENT_FAVORITES_GUILD_SUGGESTIONS: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 807
+        DISMISSIBLE_CONTENT_USER_PROFILE_PERSONAL_WIDGET_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 808
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_HUB_WAITLIST_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1280,6 +1281,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_SOUNDBOARD_DESKTOP_NUX: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 805
     DISMISSIBLE_CONTENT_BADGE_CUSTOMIZATION_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 806
     DISMISSIBLE_CONTENT_FAVORITES_GUILD_SUGGESTIONS: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 807
+    DISMISSIBLE_CONTENT_USER_PROFILE_PERSONAL_WIDGET_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 808
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)
@@ -2689,6 +2691,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         CHECKBOX_FIELD_FIELD_NUMBER: _builtins.int
         ASSET_FIELD_FIELD_NUMBER: _builtins.int
         THEMED_ASSET_FIELD_FIELD_NUMBER: _builtins.int
+        HELP_ARTICLE_FIELD_FIELD_NUMBER: _builtins.int
         deprecated_field: _builtins.str
         plain_text_field: _builtins.str
         checkbox_field: _builtins.bool
@@ -2699,6 +2702,8 @@ class PremiumMarketingComponentProperties(_message.Message):
         def textarea_field(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
         @_builtins.property
         def themed_asset_field(self) -> Global___PremiumMarketingComponentProperties.ThemeAwareAsset: ...
+        @_builtins.property
+        def help_article_field(self) -> Global___PremiumMarketingComponentProperties.HelpArticle: ...
         def __init__(
             self,
             *,
@@ -2709,17 +2714,22 @@ class PremiumMarketingComponentProperties(_message.Message):
             checkbox_field: _builtins.bool = ...,
             asset_field: _builtins.str = ...,
             themed_asset_field: Global___PremiumMarketingComponentProperties.ThemeAwareAsset | None = ...,
+            help_article_field: Global___PremiumMarketingComponentProperties.HelpArticle | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _typing.Literal["_localized_text_field", b"_localized_text_field", "_textarea_field", b"_textarea_field", "_themed_asset_field", b"_themed_asset_field", "localized_text_field", b"localized_text_field", "textarea_field", b"textarea_field", "themed_asset_field", b"themed_asset_field"]  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_help_article_field", b"_help_article_field", "_localized_text_field", b"_localized_text_field", "_textarea_field", b"_textarea_field", "_themed_asset_field", b"_themed_asset_field", "help_article_field", b"help_article_field", "localized_text_field", b"localized_text_field", "textarea_field", b"textarea_field", "themed_asset_field", b"themed_asset_field"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_localized_text_field", b"_localized_text_field", "_textarea_field", b"_textarea_field", "_themed_asset_field", b"_themed_asset_field", "asset_field", b"asset_field", "checkbox_field", b"checkbox_field", "deprecated_field", b"deprecated_field", "localized_text_field", b"localized_text_field", "plain_text_field", b"plain_text_field", "textarea_field", b"textarea_field", "themed_asset_field", b"themed_asset_field"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_help_article_field", b"_help_article_field", "_localized_text_field", b"_localized_text_field", "_textarea_field", b"_textarea_field", "_themed_asset_field", b"_themed_asset_field", "asset_field", b"asset_field", "checkbox_field", b"checkbox_field", "deprecated_field", b"deprecated_field", "help_article_field", b"help_article_field", "localized_text_field", b"localized_text_field", "plain_text_field", b"plain_text_field", "textarea_field", b"textarea_field", "themed_asset_field", b"themed_asset_field"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        _WhichOneofReturnType__help_article_field: _TypeAlias = _typing.Literal["help_article_field"]  # noqa: Y015
+        _WhichOneofArgType__help_article_field: _TypeAlias = _typing.Literal["_help_article_field", b"_help_article_field"]  # noqa: Y015
         _WhichOneofReturnType__localized_text_field: _TypeAlias = _typing.Literal["localized_text_field"]  # noqa: Y015
         _WhichOneofArgType__localized_text_field: _TypeAlias = _typing.Literal["_localized_text_field", b"_localized_text_field"]  # noqa: Y015
         _WhichOneofReturnType__textarea_field: _TypeAlias = _typing.Literal["textarea_field"]  # noqa: Y015
         _WhichOneofArgType__textarea_field: _TypeAlias = _typing.Literal["_textarea_field", b"_textarea_field"]  # noqa: Y015
         _WhichOneofReturnType__themed_asset_field: _TypeAlias = _typing.Literal["themed_asset_field"]  # noqa: Y015
         _WhichOneofArgType__themed_asset_field: _TypeAlias = _typing.Literal["_themed_asset_field", b"_themed_asset_field"]  # noqa: Y015
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__help_article_field) -> _WhichOneofReturnType__help_article_field | None: ...
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__localized_text_field) -> _WhichOneofReturnType__localized_text_field | None: ...
         @_typing.overload
