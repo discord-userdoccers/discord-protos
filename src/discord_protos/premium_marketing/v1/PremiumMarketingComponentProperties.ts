@@ -3511,7 +3511,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_BADGE_CUSTOMIZATION_COACHMARK = 806;
      */
-    BADGE_CUSTOMIZATION_COACHMARK = 806
+    BADGE_CUSTOMIZATION_COACHMARK = 806,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_FAVORITES_GUILD_SUGGESTIONS = 807;
+     */
+    FAVORITES_GUILD_SUGGESTIONS = 807
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
