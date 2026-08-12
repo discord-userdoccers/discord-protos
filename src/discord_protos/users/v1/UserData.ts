@@ -480,6 +480,10 @@ export interface UserData_AgeAssuranceData {
      * @generated from protobuf field: bool is_regional_adult = 7
      */
     isRegionalAdult: boolean;
+    /**
+     * @generated from protobuf field: optional google.protobuf.Timestamp cooldown_reset_at = 8
+     */
+    cooldownResetAt?: Timestamp;
 }
 /**
  * @generated from protobuf message discord_protos.users.v1.UserData.PerkConfigIncreasedFileUploadSize
@@ -4939,7 +4943,8 @@ class UserData_AgeAssuranceData$Type extends MessageType<UserData_AgeAssuranceDa
             { no: 4, name: "vendor", kind: "enum", T: () => ["discord_protos.users.v1.UserData.AgeAssuranceVendor", UserData_AgeAssuranceVendor, "AGE_ASSURANCE_VENDOR_"] },
             { no: 5, name: "verified_at", kind: "message", T: () => Timestamp },
             { no: 6, name: "estimated_age_group", kind: "enum", T: () => ["discord_protos.users.v1.UserData.AgeAssuranceGroup", UserData_AgeAssuranceGroup] },
-            { no: 7, name: "is_regional_adult", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
+            { no: 7, name: "is_regional_adult", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
+            { no: 8, name: "cooldown_reset_at", kind: "message", T: () => Timestamp }
         ]);
     }
     create(value?: PartialMessage<UserData_AgeAssuranceData>): UserData_AgeAssuranceData {
@@ -4979,6 +4984,9 @@ class UserData_AgeAssuranceData$Type extends MessageType<UserData_AgeAssuranceDa
                 case /* bool is_regional_adult */ 7:
                     message.isRegionalAdult = reader.bool();
                     break;
+                case /* optional google.protobuf.Timestamp cooldown_reset_at */ 8:
+                    message.cooldownResetAt = Timestamp.internalBinaryRead(reader, reader.uint32(), options, message.cooldownResetAt);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -5012,6 +5020,9 @@ class UserData_AgeAssuranceData$Type extends MessageType<UserData_AgeAssuranceDa
         /* bool is_regional_adult = 7; */
         if (message.isRegionalAdult !== false)
             writer.tag(7, WireType.Varint).bool(message.isRegionalAdult);
+        /* optional google.protobuf.Timestamp cooldown_reset_at = 8; */
+        if (message.cooldownResetAt)
+            Timestamp.internalBinaryWrite(message.cooldownResetAt, writer.tag(8, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

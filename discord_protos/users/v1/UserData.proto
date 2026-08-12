@@ -835,6 +835,7 @@ message UserData {
     optional google.protobuf.Timestamp verified_at = 5;
     AgeAssuranceGroup estimated_age_group = 6;
     bool is_regional_adult = 7;
+    optional google.protobuf.Timestamp cooldown_reset_at = 8;
   }
 
   enum PerkSource {
