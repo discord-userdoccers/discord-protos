@@ -3523,7 +3523,15 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_USER_PROFILE_PERSONAL_WIDGET_COACHMARK = 808;
      */
-    USER_PROFILE_PERSONAL_WIDGET_COACHMARK = 808
+    USER_PROFILE_PERSONAL_WIDGET_COACHMARK = 808,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GAME_SERVER_HOSTING_IN_SHOP_DETECTION_COACHMARK = 809;
+     */
+    GAME_SERVER_HOSTING_IN_SHOP_DETECTION_COACHMARK = 809,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GAME_SERVER_HOSTING_IN_SHOP_DETECTION_NEW_BADGE = 810;
+     */
+    GAME_SERVER_HOSTING_IN_SHOP_DETECTION_NEW_BADGE = 810
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
