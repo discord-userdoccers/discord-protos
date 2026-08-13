@@ -2696,6 +2696,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         ASSET_FIELD_FIELD_NUMBER: _builtins.int
         THEMED_ASSET_FIELD_FIELD_NUMBER: _builtins.int
         HELP_ARTICLE_FIELD_FIELD_NUMBER: _builtins.int
+        CTA_FIELD_FIELD_NUMBER: _builtins.int
         deprecated_field: _builtins.str
         plain_text_field: _builtins.str
         checkbox_field: _builtins.bool
@@ -2708,6 +2709,8 @@ class PremiumMarketingComponentProperties(_message.Message):
         def themed_asset_field(self) -> Global___PremiumMarketingComponentProperties.ThemeAwareAsset: ...
         @_builtins.property
         def help_article_field(self) -> Global___PremiumMarketingComponentProperties.HelpArticle: ...
+        @_builtins.property
+        def cta_field(self) -> Global___PremiumMarketingComponentProperties.CTAButton: ...
         def __init__(
             self,
             *,
@@ -2719,11 +2722,14 @@ class PremiumMarketingComponentProperties(_message.Message):
             asset_field: _builtins.str = ...,
             themed_asset_field: Global___PremiumMarketingComponentProperties.ThemeAwareAsset | None = ...,
             help_article_field: Global___PremiumMarketingComponentProperties.HelpArticle | None = ...,
+            cta_field: Global___PremiumMarketingComponentProperties.CTAButton | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _typing.Literal["_help_article_field", b"_help_article_field", "_localized_text_field", b"_localized_text_field", "_textarea_field", b"_textarea_field", "_themed_asset_field", b"_themed_asset_field", "help_article_field", b"help_article_field", "localized_text_field", b"localized_text_field", "textarea_field", b"textarea_field", "themed_asset_field", b"themed_asset_field"]  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_cta_field", b"_cta_field", "_help_article_field", b"_help_article_field", "_localized_text_field", b"_localized_text_field", "_textarea_field", b"_textarea_field", "_themed_asset_field", b"_themed_asset_field", "cta_field", b"cta_field", "help_article_field", b"help_article_field", "localized_text_field", b"localized_text_field", "textarea_field", b"textarea_field", "themed_asset_field", b"themed_asset_field"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_help_article_field", b"_help_article_field", "_localized_text_field", b"_localized_text_field", "_textarea_field", b"_textarea_field", "_themed_asset_field", b"_themed_asset_field", "asset_field", b"asset_field", "checkbox_field", b"checkbox_field", "deprecated_field", b"deprecated_field", "help_article_field", b"help_article_field", "localized_text_field", b"localized_text_field", "plain_text_field", b"plain_text_field", "textarea_field", b"textarea_field", "themed_asset_field", b"themed_asset_field"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_cta_field", b"_cta_field", "_help_article_field", b"_help_article_field", "_localized_text_field", b"_localized_text_field", "_textarea_field", b"_textarea_field", "_themed_asset_field", b"_themed_asset_field", "asset_field", b"asset_field", "checkbox_field", b"checkbox_field", "cta_field", b"cta_field", "deprecated_field", b"deprecated_field", "help_article_field", b"help_article_field", "localized_text_field", b"localized_text_field", "plain_text_field", b"plain_text_field", "textarea_field", b"textarea_field", "themed_asset_field", b"themed_asset_field"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        _WhichOneofReturnType__cta_field: _TypeAlias = _typing.Literal["cta_field"]  # noqa: Y015
+        _WhichOneofArgType__cta_field: _TypeAlias = _typing.Literal["_cta_field", b"_cta_field"]  # noqa: Y015
         _WhichOneofReturnType__help_article_field: _TypeAlias = _typing.Literal["help_article_field"]  # noqa: Y015
         _WhichOneofArgType__help_article_field: _TypeAlias = _typing.Literal["_help_article_field", b"_help_article_field"]  # noqa: Y015
         _WhichOneofReturnType__localized_text_field: _TypeAlias = _typing.Literal["localized_text_field"]  # noqa: Y015
@@ -2732,6 +2738,8 @@ class PremiumMarketingComponentProperties(_message.Message):
         _WhichOneofArgType__textarea_field: _TypeAlias = _typing.Literal["_textarea_field", b"_textarea_field"]  # noqa: Y015
         _WhichOneofReturnType__themed_asset_field: _TypeAlias = _typing.Literal["themed_asset_field"]  # noqa: Y015
         _WhichOneofArgType__themed_asset_field: _TypeAlias = _typing.Literal["_themed_asset_field", b"_themed_asset_field"]  # noqa: Y015
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__cta_field) -> _WhichOneofReturnType__cta_field | None: ...
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__help_article_field) -> _WhichOneofReturnType__help_article_field | None: ...
         @_typing.overload

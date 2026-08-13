@@ -907,6 +907,7 @@ message PremiumMarketingComponentProperties {
     string asset_field = 6;
     optional ThemeAwareAsset themed_asset_field = 7;
     optional HelpArticle help_article_field = 8;
+    optional CTAButton cta_field = 9;
   }
 
   string content_identifier = 3;
