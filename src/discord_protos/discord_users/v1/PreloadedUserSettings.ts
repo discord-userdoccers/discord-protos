@@ -1729,9 +1729,9 @@ export enum PreloadedUserSettings_AdTopic {
      */
     UNSPECIFIED = 0,
     /**
-     * @generated from protobuf enum value: AD_TOPIC_FANTASY_SPORTS = 1;
+     * @generated from protobuf enum value: AD_TOPIC_REAL_MONEY_GAMING = 1;
      */
-    FANTASY_SPORTS = 1
+    REAL_MONEY_GAMING = 1
 }
 /**
  * @generated from protobuf enum discord_protos.discord_users.v1.PreloadedUserSettings.Theme

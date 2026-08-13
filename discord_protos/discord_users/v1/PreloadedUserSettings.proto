@@ -311,7 +311,7 @@ message PreloadedUserSettings {
 
   enum AdTopic {
     AD_TOPIC_UNSPECIFIED = 0;
-    AD_TOPIC_FANTASY_SPORTS = 1;
+    AD_TOPIC_REAL_MONEY_GAMING = 1;
   }
 
   message PrivacySettings {

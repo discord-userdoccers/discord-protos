@@ -253,11 +253,11 @@ class PreloadedUserSettings(_message.Message):
     class _AdTopicEnumTypeWrapper(_enum_type_wrapper._EnumTypeWrapper[PreloadedUserSettings._AdTopic.ValueType], _builtins.type):
         DESCRIPTOR: _descriptor.EnumDescriptor
         AD_TOPIC_UNSPECIFIED: PreloadedUserSettings._AdTopic.ValueType  # 0
-        AD_TOPIC_FANTASY_SPORTS: PreloadedUserSettings._AdTopic.ValueType  # 1
+        AD_TOPIC_REAL_MONEY_GAMING: PreloadedUserSettings._AdTopic.ValueType  # 1
 
     class AdTopic(_AdTopic, metaclass=_AdTopicEnumTypeWrapper): ...
     AD_TOPIC_UNSPECIFIED: PreloadedUserSettings.AdTopic.ValueType  # 0
-    AD_TOPIC_FANTASY_SPORTS: PreloadedUserSettings.AdTopic.ValueType  # 1
+    AD_TOPIC_REAL_MONEY_GAMING: PreloadedUserSettings.AdTopic.ValueType  # 1
 
     class _Theme:
         ValueType = _typing.NewType("ValueType", _builtins.int)
