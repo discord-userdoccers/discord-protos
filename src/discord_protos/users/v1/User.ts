@@ -996,6 +996,14 @@ export enum User_ClassificationType {
      */
     BOT_DELETE_NCAIM_SMITE = 3232,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_SPAM_SMITE = 3235;
+     */
+    BOT_DELETE_SPAM_SMITE = 3235,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_SPAM_SILENT_SMITE = 3236;
+     */
+    BOT_DELETE_SPAM_SILENT_SMITE = 3236,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK = 4000;
      */
     PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK = 4000,
