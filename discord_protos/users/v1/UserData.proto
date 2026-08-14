@@ -908,6 +908,36 @@ message UserData {
     optional google.protobuf.UInt64Value anon_user_id = 2;
   }
 
+  message TypingIndicatorEmoji {
+    oneof emoji {
+      fixed64 custom_emoji_id = 1;
+      string unicode_emoji = 2;
+    }
+  }
+
+  enum TypingIndicatorAnimation {
+    TYPING_INDICATOR_ANIMATION_UNSPECIFIED = 0;
+    TYPING_INDICATOR_ANIMATION_PULSE = 1;
+    TYPING_INDICATOR_ANIMATION_RING = 2;
+    TYPING_INDICATOR_ANIMATION_WAVE = 3;
+  }
+
+  enum TypingSuggestion {
+    TYPING_SUGGESTION_UNSPECIFIED = 0;
+    TYPING_SUGGESTION_YAPPING = 1;
+    TYPING_SUGGESTION_VENTING = 2;
+    TYPING_SUGGESTION_OVERSHARING = 3;
+    TYPING_SUGGESTION_BARKING = 4;
+    TYPING_SUGGESTION_BABBLING = 5;
+    TYPING_SUGGESTION_DAYDREAMING = 6;
+  }
+
+  message UserTypingIndicatorStyle {
+    repeated TypingIndicatorEmoji emojis = 1;
+    TypingIndicatorAnimation animation = 2;
+    TypingSuggestion typing_suggestion = 3;
+  }
+
   map<fixed64, LinkedUser> linked_users = 1;
   map<uint32, FeatureLimits> safety_feature_limits = 2;
   map<uint32, SafetyFlag> safety_flags = 3;
@@ -926,4 +956,5 @@ message UserData {
   optional UserCountryData country_data = 16;
   bool is_pending_required_action = 17;
   optional AnonymizationInfo anonymization_info = 18;
+  optional UserTypingIndicatorStyle typing_indicator_style = 19;
 }

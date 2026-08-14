@@ -96,6 +96,10 @@ export interface UserData {
      * @generated from protobuf field: optional discord_protos.users.v1.UserData.AnonymizationInfo anonymization_info = 18
      */
     anonymizationInfo?: UserData_AnonymizationInfo;
+    /**
+     * @generated from protobuf field: optional discord_protos.users.v1.UserData.UserTypingIndicatorStyle typing_indicator_style = 19
+     */
+    typingIndicatorStyle?: UserData_UserTypingIndicatorStyle;
 }
 /**
  * @generated from protobuf message discord_protos.users.v1.UserData.LinkedUser
@@ -644,6 +648,46 @@ export interface UserData_AnonymizationInfo {
      * @generated from protobuf field: optional google.protobuf.UInt64Value anon_user_id = 2
      */
     anonUserId?: UInt64Value;
+}
+/**
+ * @generated from protobuf message discord_protos.users.v1.UserData.TypingIndicatorEmoji
+ */
+export interface UserData_TypingIndicatorEmoji {
+    /**
+     * @generated from protobuf oneof: emoji
+     */
+    emoji: {
+        oneofKind: "customEmojiId";
+        /**
+         * @generated from protobuf field: fixed64 custom_emoji_id = 1
+         */
+        customEmojiId: bigint;
+    } | {
+        oneofKind: "unicodeEmoji";
+        /**
+         * @generated from protobuf field: string unicode_emoji = 2
+         */
+        unicodeEmoji: string;
+    } | {
+        oneofKind: undefined;
+    };
+}
+/**
+ * @generated from protobuf message discord_protos.users.v1.UserData.UserTypingIndicatorStyle
+ */
+export interface UserData_UserTypingIndicatorStyle {
+    /**
+     * @generated from protobuf field: repeated discord_protos.users.v1.UserData.TypingIndicatorEmoji emojis = 1
+     */
+    emojis: UserData_TypingIndicatorEmoji[];
+    /**
+     * @generated from protobuf field: discord_protos.users.v1.UserData.TypingIndicatorAnimation animation = 2
+     */
+    animation: UserData_TypingIndicatorAnimation;
+    /**
+     * @generated from protobuf field: discord_protos.users.v1.UserData.TypingSuggestion typing_suggestion = 3
+     */
+    typingSuggestion: UserData_TypingSuggestion;
 }
 /**
  * @generated from protobuf enum discord_protos.users.v1.UserData.UserLinkType
@@ -3381,6 +3425,60 @@ export enum UserData_AnonymizationStatus {
      */
     ANONYMOUS_USER = 3
 }
+/**
+ * @generated from protobuf enum discord_protos.users.v1.UserData.TypingIndicatorAnimation
+ */
+export enum UserData_TypingIndicatorAnimation {
+    /**
+     * @generated from protobuf enum value: TYPING_INDICATOR_ANIMATION_UNSPECIFIED = 0;
+     */
+    UNSPECIFIED = 0,
+    /**
+     * @generated from protobuf enum value: TYPING_INDICATOR_ANIMATION_PULSE = 1;
+     */
+    PULSE = 1,
+    /**
+     * @generated from protobuf enum value: TYPING_INDICATOR_ANIMATION_RING = 2;
+     */
+    RING = 2,
+    /**
+     * @generated from protobuf enum value: TYPING_INDICATOR_ANIMATION_WAVE = 3;
+     */
+    WAVE = 3
+}
+/**
+ * @generated from protobuf enum discord_protos.users.v1.UserData.TypingSuggestion
+ */
+export enum UserData_TypingSuggestion {
+    /**
+     * @generated from protobuf enum value: TYPING_SUGGESTION_UNSPECIFIED = 0;
+     */
+    UNSPECIFIED = 0,
+    /**
+     * @generated from protobuf enum value: TYPING_SUGGESTION_YAPPING = 1;
+     */
+    YAPPING = 1,
+    /**
+     * @generated from protobuf enum value: TYPING_SUGGESTION_VENTING = 2;
+     */
+    VENTING = 2,
+    /**
+     * @generated from protobuf enum value: TYPING_SUGGESTION_OVERSHARING = 3;
+     */
+    OVERSHARING = 3,
+    /**
+     * @generated from protobuf enum value: TYPING_SUGGESTION_BARKING = 4;
+     */
+    BARKING = 4,
+    /**
+     * @generated from protobuf enum value: TYPING_SUGGESTION_BABBLING = 5;
+     */
+    BABBLING = 5,
+    /**
+     * @generated from protobuf enum value: TYPING_SUGGESTION_DAYDREAMING = 6;
+     */
+    DAYDREAMING = 6
+}
 // @generated message type with reflection information, may provide speed optimized methods
 class UserData$Type extends MessageType<UserData> {
     constructor() {
@@ -3402,7 +3500,8 @@ class UserData$Type extends MessageType<UserData> {
             { no: 15, name: "badges", kind: "message", T: () => UserData_UserBadges },
             { no: 16, name: "country_data", kind: "message", T: () => UserData_UserCountryData },
             { no: 17, name: "is_pending_required_action", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
-            { no: 18, name: "anonymization_info", kind: "message", T: () => UserData_AnonymizationInfo }
+            { no: 18, name: "anonymization_info", kind: "message", T: () => UserData_AnonymizationInfo },
+            { no: 19, name: "typing_indicator_style", kind: "message", T: () => UserData_UserTypingIndicatorStyle }
         ]);
     }
     create(value?: PartialMessage<UserData>): UserData {
@@ -3473,6 +3572,9 @@ class UserData$Type extends MessageType<UserData> {
                     break;
                 case /* optional discord_protos.users.v1.UserData.AnonymizationInfo anonymization_info */ 18:
                     message.anonymizationInfo = UserData_AnonymizationInfo.internalBinaryRead(reader, reader.uint32(), options, message.anonymizationInfo);
+                    break;
+                case /* optional discord_protos.users.v1.UserData.UserTypingIndicatorStyle typing_indicator_style */ 19:
+                    message.typingIndicatorStyle = UserData_UserTypingIndicatorStyle.internalBinaryRead(reader, reader.uint32(), options, message.typingIndicatorStyle);
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -3600,6 +3702,9 @@ class UserData$Type extends MessageType<UserData> {
         /* optional discord_protos.users.v1.UserData.AnonymizationInfo anonymization_info = 18; */
         if (message.anonymizationInfo)
             UserData_AnonymizationInfo.internalBinaryWrite(message.anonymizationInfo, writer.tag(18, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.users.v1.UserData.UserTypingIndicatorStyle typing_indicator_style = 19; */
+        if (message.typingIndicatorStyle)
+            UserData_UserTypingIndicatorStyle.internalBinaryWrite(message.typingIndicatorStyle, writer.tag(19, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -5652,3 +5757,126 @@ class UserData_AnonymizationInfo$Type extends MessageType<UserData_Anonymization
  * @generated MessageType for protobuf message discord_protos.users.v1.UserData.AnonymizationInfo
  */
 export const UserData_AnonymizationInfo = new UserData_AnonymizationInfo$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class UserData_TypingIndicatorEmoji$Type extends MessageType<UserData_TypingIndicatorEmoji> {
+    constructor() {
+        super("discord_protos.users.v1.UserData.TypingIndicatorEmoji", [
+            { no: 1, name: "custom_emoji_id", kind: "scalar", oneof: "emoji", T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ },
+            { no: 2, name: "unicode_emoji", kind: "scalar", oneof: "emoji", T: 9 /*ScalarType.STRING*/ }
+        ]);
+    }
+    create(value?: PartialMessage<UserData_TypingIndicatorEmoji>): UserData_TypingIndicatorEmoji {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.emoji = { oneofKind: undefined };
+        if (value !== undefined)
+            reflectionMergePartial<UserData_TypingIndicatorEmoji>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: UserData_TypingIndicatorEmoji): UserData_TypingIndicatorEmoji {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* fixed64 custom_emoji_id */ 1:
+                    message.emoji = {
+                        oneofKind: "customEmojiId",
+                        customEmojiId: reader.fixed64().toBigInt()
+                    };
+                    break;
+                case /* string unicode_emoji */ 2:
+                    message.emoji = {
+                        oneofKind: "unicodeEmoji",
+                        unicodeEmoji: reader.string()
+                    };
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: UserData_TypingIndicatorEmoji, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* fixed64 custom_emoji_id = 1; */
+        if (message.emoji.oneofKind === "customEmojiId")
+            writer.tag(1, WireType.Bit64).fixed64(message.emoji.customEmojiId);
+        /* string unicode_emoji = 2; */
+        if (message.emoji.oneofKind === "unicodeEmoji")
+            writer.tag(2, WireType.LengthDelimited).string(message.emoji.unicodeEmoji);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.users.v1.UserData.TypingIndicatorEmoji
+ */
+export const UserData_TypingIndicatorEmoji = new UserData_TypingIndicatorEmoji$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class UserData_UserTypingIndicatorStyle$Type extends MessageType<UserData_UserTypingIndicatorStyle> {
+    constructor() {
+        super("discord_protos.users.v1.UserData.UserTypingIndicatorStyle", [
+            { no: 1, name: "emojis", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => UserData_TypingIndicatorEmoji },
+            { no: 2, name: "animation", kind: "enum", T: () => ["discord_protos.users.v1.UserData.TypingIndicatorAnimation", UserData_TypingIndicatorAnimation, "TYPING_INDICATOR_ANIMATION_"] },
+            { no: 3, name: "typing_suggestion", kind: "enum", T: () => ["discord_protos.users.v1.UserData.TypingSuggestion", UserData_TypingSuggestion, "TYPING_SUGGESTION_"] }
+        ]);
+    }
+    create(value?: PartialMessage<UserData_UserTypingIndicatorStyle>): UserData_UserTypingIndicatorStyle {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.emojis = [];
+        message.animation = 0;
+        message.typingSuggestion = 0;
+        if (value !== undefined)
+            reflectionMergePartial<UserData_UserTypingIndicatorStyle>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: UserData_UserTypingIndicatorStyle): UserData_UserTypingIndicatorStyle {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* repeated discord_protos.users.v1.UserData.TypingIndicatorEmoji emojis */ 1:
+                    message.emojis.push(UserData_TypingIndicatorEmoji.internalBinaryRead(reader, reader.uint32(), options));
+                    break;
+                case /* discord_protos.users.v1.UserData.TypingIndicatorAnimation animation */ 2:
+                    message.animation = reader.int32();
+                    break;
+                case /* discord_protos.users.v1.UserData.TypingSuggestion typing_suggestion */ 3:
+                    message.typingSuggestion = reader.int32();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: UserData_UserTypingIndicatorStyle, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* repeated discord_protos.users.v1.UserData.TypingIndicatorEmoji emojis = 1; */
+        for (let i = 0; i < message.emojis.length; i++)
+            UserData_TypingIndicatorEmoji.internalBinaryWrite(message.emojis[i], writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.users.v1.UserData.TypingIndicatorAnimation animation = 2; */
+        if (message.animation !== 0)
+            writer.tag(2, WireType.Varint).int32(message.animation);
+        /* discord_protos.users.v1.UserData.TypingSuggestion typing_suggestion = 3; */
+        if (message.typingSuggestion !== 0)
+            writer.tag(3, WireType.Varint).int32(message.typingSuggestion);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.users.v1.UserData.UserTypingIndicatorStyle
+ */
+export const UserData_UserTypingIndicatorStyle = new UserData_UserTypingIndicatorStyle$Type();

@@ -1497,6 +1497,46 @@ class UserData(_message.Message):
     ANONYMIZATION_STATUS_INACCESSIBLE_ANONYMIZED_USER: UserData.AnonymizationStatus.ValueType  # 2
     ANONYMIZATION_STATUS_ANONYMOUS_USER: UserData.AnonymizationStatus.ValueType  # 3
 
+    class _TypingIndicatorAnimation:
+        ValueType = _typing.NewType("ValueType", _builtins.int)
+        V: _TypeAlias = ValueType  # noqa: Y015
+
+    class _TypingIndicatorAnimationEnumTypeWrapper(_enum_type_wrapper._EnumTypeWrapper[UserData._TypingIndicatorAnimation.ValueType], _builtins.type):
+        DESCRIPTOR: _descriptor.EnumDescriptor
+        TYPING_INDICATOR_ANIMATION_UNSPECIFIED: UserData._TypingIndicatorAnimation.ValueType  # 0
+        TYPING_INDICATOR_ANIMATION_PULSE: UserData._TypingIndicatorAnimation.ValueType  # 1
+        TYPING_INDICATOR_ANIMATION_RING: UserData._TypingIndicatorAnimation.ValueType  # 2
+        TYPING_INDICATOR_ANIMATION_WAVE: UserData._TypingIndicatorAnimation.ValueType  # 3
+
+    class TypingIndicatorAnimation(_TypingIndicatorAnimation, metaclass=_TypingIndicatorAnimationEnumTypeWrapper): ...
+    TYPING_INDICATOR_ANIMATION_UNSPECIFIED: UserData.TypingIndicatorAnimation.ValueType  # 0
+    TYPING_INDICATOR_ANIMATION_PULSE: UserData.TypingIndicatorAnimation.ValueType  # 1
+    TYPING_INDICATOR_ANIMATION_RING: UserData.TypingIndicatorAnimation.ValueType  # 2
+    TYPING_INDICATOR_ANIMATION_WAVE: UserData.TypingIndicatorAnimation.ValueType  # 3
+
+    class _TypingSuggestion:
+        ValueType = _typing.NewType("ValueType", _builtins.int)
+        V: _TypeAlias = ValueType  # noqa: Y015
+
+    class _TypingSuggestionEnumTypeWrapper(_enum_type_wrapper._EnumTypeWrapper[UserData._TypingSuggestion.ValueType], _builtins.type):
+        DESCRIPTOR: _descriptor.EnumDescriptor
+        TYPING_SUGGESTION_UNSPECIFIED: UserData._TypingSuggestion.ValueType  # 0
+        TYPING_SUGGESTION_YAPPING: UserData._TypingSuggestion.ValueType  # 1
+        TYPING_SUGGESTION_VENTING: UserData._TypingSuggestion.ValueType  # 2
+        TYPING_SUGGESTION_OVERSHARING: UserData._TypingSuggestion.ValueType  # 3
+        TYPING_SUGGESTION_BARKING: UserData._TypingSuggestion.ValueType  # 4
+        TYPING_SUGGESTION_BABBLING: UserData._TypingSuggestion.ValueType  # 5
+        TYPING_SUGGESTION_DAYDREAMING: UserData._TypingSuggestion.ValueType  # 6
+
+    class TypingSuggestion(_TypingSuggestion, metaclass=_TypingSuggestionEnumTypeWrapper): ...
+    TYPING_SUGGESTION_UNSPECIFIED: UserData.TypingSuggestion.ValueType  # 0
+    TYPING_SUGGESTION_YAPPING: UserData.TypingSuggestion.ValueType  # 1
+    TYPING_SUGGESTION_VENTING: UserData.TypingSuggestion.ValueType  # 2
+    TYPING_SUGGESTION_OVERSHARING: UserData.TypingSuggestion.ValueType  # 3
+    TYPING_SUGGESTION_BARKING: UserData.TypingSuggestion.ValueType  # 4
+    TYPING_SUGGESTION_BABBLING: UserData.TypingSuggestion.ValueType  # 5
+    TYPING_SUGGESTION_DAYDREAMING: UserData.TypingSuggestion.ValueType  # 6
+
     @_typing.final
     class LinkedUser(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
@@ -2422,6 +2462,52 @@ class UserData(_message.Message):
         def WhichOneof(self, oneof_group: _WhichOneofArgType__anon_user_id) -> _WhichOneofReturnType__anon_user_id | None: ...
 
     @_typing.final
+    class TypingIndicatorEmoji(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        CUSTOM_EMOJI_ID_FIELD_NUMBER: _builtins.int
+        UNICODE_EMOJI_FIELD_NUMBER: _builtins.int
+        custom_emoji_id: _builtins.int
+        unicode_emoji: _builtins.str
+        def __init__(
+            self,
+            *,
+            custom_emoji_id: _builtins.int = ...,
+            unicode_emoji: _builtins.str = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _typing.Literal["custom_emoji_id", b"custom_emoji_id", "emoji", b"emoji", "unicode_emoji", b"unicode_emoji"]  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["custom_emoji_id", b"custom_emoji_id", "emoji", b"emoji", "unicode_emoji", b"unicode_emoji"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        _WhichOneofReturnType_emoji: _TypeAlias = _typing.Literal["custom_emoji_id", "unicode_emoji"]  # noqa: Y015
+        _WhichOneofArgType_emoji: _TypeAlias = _typing.Literal["emoji", b"emoji"]  # noqa: Y015
+        def WhichOneof(self, oneof_group: _WhichOneofArgType_emoji) -> _WhichOneofReturnType_emoji | None: ...
+
+    @_typing.final
+    class UserTypingIndicatorStyle(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        EMOJIS_FIELD_NUMBER: _builtins.int
+        ANIMATION_FIELD_NUMBER: _builtins.int
+        TYPING_SUGGESTION_FIELD_NUMBER: _builtins.int
+        animation: Global___UserData.TypingIndicatorAnimation.ValueType
+        typing_suggestion: Global___UserData.TypingSuggestion.ValueType
+        @_builtins.property
+        def emojis(self) -> _containers.RepeatedCompositeFieldContainer[Global___UserData.TypingIndicatorEmoji]: ...
+        def __init__(
+            self,
+            *,
+            emojis: _abc.Iterable[Global___UserData.TypingIndicatorEmoji] | None = ...,
+            animation: Global___UserData.TypingIndicatorAnimation.ValueType = ...,
+            typing_suggestion: Global___UserData.TypingSuggestion.ValueType = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["animation", b"animation", "emojis", b"emojis", "typing_suggestion", b"typing_suggestion"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
+
+    @_typing.final
     class LinkedUsersEntry(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
 
@@ -2502,6 +2588,7 @@ class UserData(_message.Message):
     COUNTRY_DATA_FIELD_NUMBER: _builtins.int
     IS_PENDING_REQUIRED_ACTION_FIELD_NUMBER: _builtins.int
     ANONYMIZATION_INFO_FIELD_NUMBER: _builtins.int
+    TYPING_INDICATOR_STYLE_FIELD_NUMBER: _builtins.int
     is_pending_required_action: _builtins.bool
     @_builtins.property
     def linked_users(self) -> _containers.MessageMap[_builtins.int, Global___UserData.LinkedUser]: ...
@@ -2537,6 +2624,8 @@ class UserData(_message.Message):
     def country_data(self) -> Global___UserData.UserCountryData: ...
     @_builtins.property
     def anonymization_info(self) -> Global___UserData.AnonymizationInfo: ...
+    @_builtins.property
+    def typing_indicator_style(self) -> Global___UserData.UserTypingIndicatorStyle: ...
     def __init__(
         self,
         *,
@@ -2558,10 +2647,11 @@ class UserData(_message.Message):
         country_data: Global___UserData.UserCountryData | None = ...,
         is_pending_required_action: _builtins.bool = ...,
         anonymization_info: Global___UserData.AnonymizationInfo | None = ...,
+        typing_indicator_style: Global___UserData.UserTypingIndicatorStyle | None = ...,
     ) -> None: ...
-    _HasFieldArgType: _TypeAlias = _typing.Literal["_age_assurance_data", b"_age_assurance_data", "_anonymization_info", b"_anonymization_info", "_badges", b"_badges", "_collectibles", b"_collectibles", "_country_data", b"_country_data", "_cross_platform_restriction", b"_cross_platform_restriction", "_display_name_styles", b"_display_name_styles", "_perks", b"_perks", "_premium_state", b"_premium_state", "_primary_guild", b"_primary_guild", "_quest", b"_quest", "_restricted_schedule", b"_restricted_schedule", "_safety_state", b"_safety_state", "_store_country", b"_store_country", "age_assurance_data", b"age_assurance_data", "anonymization_info", b"anonymization_info", "badges", b"badges", "collectibles", b"collectibles", "country_data", b"country_data", "cross_platform_restriction", b"cross_platform_restriction", "display_name_styles", b"display_name_styles", "perks", b"perks", "premium_state", b"premium_state", "primary_guild", b"primary_guild", "quest", b"quest", "restricted_schedule", b"restricted_schedule", "safety_state", b"safety_state", "store_country", b"store_country"]  # noqa: Y015
+    _HasFieldArgType: _TypeAlias = _typing.Literal["_age_assurance_data", b"_age_assurance_data", "_anonymization_info", b"_anonymization_info", "_badges", b"_badges", "_collectibles", b"_collectibles", "_country_data", b"_country_data", "_cross_platform_restriction", b"_cross_platform_restriction", "_display_name_styles", b"_display_name_styles", "_perks", b"_perks", "_premium_state", b"_premium_state", "_primary_guild", b"_primary_guild", "_quest", b"_quest", "_restricted_schedule", b"_restricted_schedule", "_safety_state", b"_safety_state", "_store_country", b"_store_country", "_typing_indicator_style", b"_typing_indicator_style", "age_assurance_data", b"age_assurance_data", "anonymization_info", b"anonymization_info", "badges", b"badges", "collectibles", b"collectibles", "country_data", b"country_data", "cross_platform_restriction", b"cross_platform_restriction", "display_name_styles", b"display_name_styles", "perks", b"perks", "premium_state", b"premium_state", "primary_guild", b"primary_guild", "quest", b"quest", "restricted_schedule", b"restricted_schedule", "safety_state", b"safety_state", "store_country", b"store_country", "typing_indicator_style", b"typing_indicator_style"]  # noqa: Y015
     def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["_age_assurance_data", b"_age_assurance_data", "_anonymization_info", b"_anonymization_info", "_badges", b"_badges", "_collectibles", b"_collectibles", "_country_data", b"_country_data", "_cross_platform_restriction", b"_cross_platform_restriction", "_display_name_styles", b"_display_name_styles", "_perks", b"_perks", "_premium_state", b"_premium_state", "_primary_guild", b"_primary_guild", "_quest", b"_quest", "_restricted_schedule", b"_restricted_schedule", "_safety_state", b"_safety_state", "_store_country", b"_store_country", "age_assurance_data", b"age_assurance_data", "anonymization_info", b"anonymization_info", "badges", b"badges", "collectibles", b"collectibles", "country_data", b"country_data", "cross_platform_restriction", b"cross_platform_restriction", "display_name_styles", b"display_name_styles", "is_pending_required_action", b"is_pending_required_action", "linked_users", b"linked_users", "perks", b"perks", "premium_state", b"premium_state", "primary_guild", b"primary_guild", "quest", b"quest", "restricted_schedule", b"restricted_schedule", "safety_feature_limits", b"safety_feature_limits", "safety_flags", b"safety_flags", "safety_state", b"safety_state", "store_country", b"store_country"]  # noqa: Y015
+    _ClearFieldArgType: _TypeAlias = _typing.Literal["_age_assurance_data", b"_age_assurance_data", "_anonymization_info", b"_anonymization_info", "_badges", b"_badges", "_collectibles", b"_collectibles", "_country_data", b"_country_data", "_cross_platform_restriction", b"_cross_platform_restriction", "_display_name_styles", b"_display_name_styles", "_perks", b"_perks", "_premium_state", b"_premium_state", "_primary_guild", b"_primary_guild", "_quest", b"_quest", "_restricted_schedule", b"_restricted_schedule", "_safety_state", b"_safety_state", "_store_country", b"_store_country", "_typing_indicator_style", b"_typing_indicator_style", "age_assurance_data", b"age_assurance_data", "anonymization_info", b"anonymization_info", "badges", b"badges", "collectibles", b"collectibles", "country_data", b"country_data", "cross_platform_restriction", b"cross_platform_restriction", "display_name_styles", b"display_name_styles", "is_pending_required_action", b"is_pending_required_action", "linked_users", b"linked_users", "perks", b"perks", "premium_state", b"premium_state", "primary_guild", b"primary_guild", "quest", b"quest", "restricted_schedule", b"restricted_schedule", "safety_feature_limits", b"safety_feature_limits", "safety_flags", b"safety_flags", "safety_state", b"safety_state", "store_country", b"store_country", "typing_indicator_style", b"typing_indicator_style"]  # noqa: Y015
     def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
     _WhichOneofReturnType__age_assurance_data: _TypeAlias = _typing.Literal["age_assurance_data"]  # noqa: Y015
     _WhichOneofArgType__age_assurance_data: _TypeAlias = _typing.Literal["_age_assurance_data", b"_age_assurance_data"]  # noqa: Y015
@@ -2591,6 +2681,8 @@ class UserData(_message.Message):
     _WhichOneofArgType__safety_state: _TypeAlias = _typing.Literal["_safety_state", b"_safety_state"]  # noqa: Y015
     _WhichOneofReturnType__store_country: _TypeAlias = _typing.Literal["store_country"]  # noqa: Y015
     _WhichOneofArgType__store_country: _TypeAlias = _typing.Literal["_store_country", b"_store_country"]  # noqa: Y015
+    _WhichOneofReturnType__typing_indicator_style: _TypeAlias = _typing.Literal["typing_indicator_style"]  # noqa: Y015
+    _WhichOneofArgType__typing_indicator_style: _TypeAlias = _typing.Literal["_typing_indicator_style", b"_typing_indicator_style"]  # noqa: Y015
     @_typing.overload
     def WhichOneof(self, oneof_group: _WhichOneofArgType__age_assurance_data) -> _WhichOneofReturnType__age_assurance_data | None: ...
     @_typing.overload
@@ -2619,5 +2711,7 @@ class UserData(_message.Message):
     def WhichOneof(self, oneof_group: _WhichOneofArgType__safety_state) -> _WhichOneofReturnType__safety_state | None: ...
     @_typing.overload
     def WhichOneof(self, oneof_group: _WhichOneofArgType__store_country) -> _WhichOneofReturnType__store_country | None: ...
+    @_typing.overload
+    def WhichOneof(self, oneof_group: _WhichOneofArgType__typing_indicator_style) -> _WhichOneofReturnType__typing_indicator_style | None: ...
 
 Global___UserData: _TypeAlias = UserData  # noqa: Y015
