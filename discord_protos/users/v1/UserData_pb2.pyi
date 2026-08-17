@@ -248,6 +248,8 @@ class UserData(_message.Message):
         CLASSIFICATION_TYPE_BOT_DELETE_NCAIM_SMITE: UserData._ClassificationType.ValueType  # 3232
         CLASSIFICATION_TYPE_BOT_DELETE_SPAM_SMITE: UserData._ClassificationType.ValueType  # 3235
         CLASSIFICATION_TYPE_BOT_DELETE_SPAM_SILENT_SMITE: UserData._ClassificationType.ValueType  # 3236
+        CLASSIFICATION_TYPE_APP_GROWTH_HALT_SINGLE_SPAM_SMITE: UserData._ClassificationType.ValueType  # 3233
+        CLASSIFICATION_TYPE_APP_GROWTH_HALT_SINGLE_4PA_SMITE: UserData._ClassificationType.ValueType  # 3234
         CLASSIFICATION_TYPE_PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK: UserData._ClassificationType.ValueType  # 4000
         CLASSIFICATION_TYPE_PRESENCE_IN_VIOLATIVE_GUILD_MEDIUM_RISK: UserData._ClassificationType.ValueType  # 4010
         CLASSIFICATION_TYPE_OWNER_OF_VIOLATIVE_GUILD_VERY_HIGH_RISK: UserData._ClassificationType.ValueType  # 4100
@@ -797,6 +799,8 @@ class UserData(_message.Message):
     CLASSIFICATION_TYPE_BOT_DELETE_NCAIM_SMITE: UserData.ClassificationType.ValueType  # 3232
     CLASSIFICATION_TYPE_BOT_DELETE_SPAM_SMITE: UserData.ClassificationType.ValueType  # 3235
     CLASSIFICATION_TYPE_BOT_DELETE_SPAM_SILENT_SMITE: UserData.ClassificationType.ValueType  # 3236
+    CLASSIFICATION_TYPE_APP_GROWTH_HALT_SINGLE_SPAM_SMITE: UserData.ClassificationType.ValueType  # 3233
+    CLASSIFICATION_TYPE_APP_GROWTH_HALT_SINGLE_4PA_SMITE: UserData.ClassificationType.ValueType  # 3234
     CLASSIFICATION_TYPE_PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK: UserData.ClassificationType.ValueType  # 4000
     CLASSIFICATION_TYPE_PRESENCE_IN_VIOLATIVE_GUILD_MEDIUM_RISK: UserData.ClassificationType.ValueType  # 4010
     CLASSIFICATION_TYPE_OWNER_OF_VIOLATIVE_GUILD_VERY_HIGH_RISK: UserData.ClassificationType.ValueType  # 4100

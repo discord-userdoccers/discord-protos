@@ -1004,6 +1004,14 @@ export enum User_ClassificationType {
      */
     BOT_DELETE_SPAM_SILENT_SMITE = 3236,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_GROWTH_HALT_SINGLE_SPAM_SMITE = 3233;
+     */
+    APP_GROWTH_HALT_SINGLE_SPAM_SMITE = 3233,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_GROWTH_HALT_SINGLE_4PA_SMITE = 3234;
+     */
+    APP_GROWTH_HALT_SINGLE_4PA_SMITE = 3234,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK = 4000;
      */
     PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK = 4000,
