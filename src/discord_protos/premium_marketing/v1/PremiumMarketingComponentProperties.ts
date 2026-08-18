@@ -3535,7 +3535,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GAME_SERVER_HOSTING_IN_SHOP_DETECTION_NEW_BADGE = 810;
      */
-    GAME_SERVER_HOSTING_IN_SHOP_DETECTION_NEW_BADGE = 810
+    GAME_SERVER_HOSTING_IN_SHOP_DETECTION_NEW_BADGE = 810,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_COD_3PP_NAGBAR_NOTICE = 811;
+     */
+    COD_3PP_NAGBAR_NOTICE = 811
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
