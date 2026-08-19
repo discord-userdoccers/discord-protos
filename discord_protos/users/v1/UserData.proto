@@ -934,6 +934,7 @@ message UserData {
     TYPING_SUGGESTION_BARKING = 4;
     TYPING_SUGGESTION_BABBLING = 5;
     TYPING_SUGGESTION_DAYDREAMING = 6;
+    TYPING_SUGGESTION_MEOWING = 7;
   }
 
   message UserTypingIndicatorStyle {

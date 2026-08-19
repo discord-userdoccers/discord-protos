@@ -1535,6 +1535,7 @@ class UserData(_message.Message):
         TYPING_SUGGESTION_BARKING: UserData._TypingSuggestion.ValueType  # 4
         TYPING_SUGGESTION_BABBLING: UserData._TypingSuggestion.ValueType  # 5
         TYPING_SUGGESTION_DAYDREAMING: UserData._TypingSuggestion.ValueType  # 6
+        TYPING_SUGGESTION_MEOWING: UserData._TypingSuggestion.ValueType  # 7
 
     class TypingSuggestion(_TypingSuggestion, metaclass=_TypingSuggestionEnumTypeWrapper): ...
     TYPING_SUGGESTION_UNSPECIFIED: UserData.TypingSuggestion.ValueType  # 0
@@ -1544,6 +1545,7 @@ class UserData(_message.Message):
     TYPING_SUGGESTION_BARKING: UserData.TypingSuggestion.ValueType  # 4
     TYPING_SUGGESTION_BABBLING: UserData.TypingSuggestion.ValueType  # 5
     TYPING_SUGGESTION_DAYDREAMING: UserData.TypingSuggestion.ValueType  # 6
+    TYPING_SUGGESTION_MEOWING: UserData.TypingSuggestion.ValueType  # 7
 
     @_typing.final
     class LinkedUser(_message.Message):
