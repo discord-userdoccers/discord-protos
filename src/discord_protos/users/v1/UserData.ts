@@ -671,6 +671,10 @@ export interface UserData_TypingIndicatorEmoji {
     } | {
         oneofKind: undefined;
     };
+    /**
+     * @generated from protobuf field: bool animated = 3
+     */
+    animated: boolean;
 }
 /**
  * @generated from protobuf message discord_protos.users.v1.UserData.UserTypingIndicatorStyle
@@ -1475,6 +1479,14 @@ export enum UserData_ClassificationType {
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_GROWTH_HALT_SINGLE_4PA_SMITE = 3234;
      */
     APP_GROWTH_HALT_SINGLE_4PA_SMITE = 3234,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BAD_BOT_QUARANTINE_SINGLE_SMITE = 3237;
+     */
+    BAD_BOT_QUARANTINE_SINGLE_SMITE = 3237,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BAD_BOT_QUARANTINE_PROPAGATE_SMITE = 3238;
+     */
+    BAD_BOT_QUARANTINE_PROPAGATE_SMITE = 3238,
     /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK = 4000;
      */
@@ -5782,12 +5794,14 @@ class UserData_TypingIndicatorEmoji$Type extends MessageType<UserData_TypingIndi
     constructor() {
         super("discord_protos.users.v1.UserData.TypingIndicatorEmoji", [
             { no: 1, name: "custom_emoji_id", kind: "scalar", oneof: "emoji", T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ },
-            { no: 2, name: "unicode_emoji", kind: "scalar", oneof: "emoji", T: 9 /*ScalarType.STRING*/ }
+            { no: 2, name: "unicode_emoji", kind: "scalar", oneof: "emoji", T: 9 /*ScalarType.STRING*/ },
+            { no: 3, name: "animated", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
         ]);
     }
     create(value?: PartialMessage<UserData_TypingIndicatorEmoji>): UserData_TypingIndicatorEmoji {
         const message = globalThis.Object.create((this.messagePrototype!));
         message.emoji = { oneofKind: undefined };
+        message.animated = false;
         if (value !== undefined)
             reflectionMergePartial<UserData_TypingIndicatorEmoji>(this, message, value);
         return message;
@@ -5809,6 +5823,9 @@ class UserData_TypingIndicatorEmoji$Type extends MessageType<UserData_TypingIndi
                         unicodeEmoji: reader.string()
                     };
                     break;
+                case /* bool animated */ 3:
+                    message.animated = reader.bool();
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -5827,6 +5844,9 @@ class UserData_TypingIndicatorEmoji$Type extends MessageType<UserData_TypingIndi
         /* string unicode_emoji = 2; */
         if (message.emoji.oneofKind === "unicodeEmoji")
             writer.tag(2, WireType.LengthDelimited).string(message.emoji.unicodeEmoji);
+        /* bool animated = 3; */
+        if (message.animated !== false)
+            writer.tag(3, WireType.Varint).bool(message.animated);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

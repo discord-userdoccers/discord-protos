@@ -250,6 +250,8 @@ class UserData(_message.Message):
         CLASSIFICATION_TYPE_BOT_DELETE_SPAM_SILENT_SMITE: UserData._ClassificationType.ValueType  # 3236
         CLASSIFICATION_TYPE_APP_GROWTH_HALT_SINGLE_SPAM_SMITE: UserData._ClassificationType.ValueType  # 3233
         CLASSIFICATION_TYPE_APP_GROWTH_HALT_SINGLE_4PA_SMITE: UserData._ClassificationType.ValueType  # 3234
+        CLASSIFICATION_TYPE_BAD_BOT_QUARANTINE_SINGLE_SMITE: UserData._ClassificationType.ValueType  # 3237
+        CLASSIFICATION_TYPE_BAD_BOT_QUARANTINE_PROPAGATE_SMITE: UserData._ClassificationType.ValueType  # 3238
         CLASSIFICATION_TYPE_PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK: UserData._ClassificationType.ValueType  # 4000
         CLASSIFICATION_TYPE_PRESENCE_IN_VIOLATIVE_GUILD_MEDIUM_RISK: UserData._ClassificationType.ValueType  # 4010
         CLASSIFICATION_TYPE_OWNER_OF_VIOLATIVE_GUILD_VERY_HIGH_RISK: UserData._ClassificationType.ValueType  # 4100
@@ -801,6 +803,8 @@ class UserData(_message.Message):
     CLASSIFICATION_TYPE_BOT_DELETE_SPAM_SILENT_SMITE: UserData.ClassificationType.ValueType  # 3236
     CLASSIFICATION_TYPE_APP_GROWTH_HALT_SINGLE_SPAM_SMITE: UserData.ClassificationType.ValueType  # 3233
     CLASSIFICATION_TYPE_APP_GROWTH_HALT_SINGLE_4PA_SMITE: UserData.ClassificationType.ValueType  # 3234
+    CLASSIFICATION_TYPE_BAD_BOT_QUARANTINE_SINGLE_SMITE: UserData.ClassificationType.ValueType  # 3237
+    CLASSIFICATION_TYPE_BAD_BOT_QUARANTINE_PROPAGATE_SMITE: UserData.ClassificationType.ValueType  # 3238
     CLASSIFICATION_TYPE_PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK: UserData.ClassificationType.ValueType  # 4000
     CLASSIFICATION_TYPE_PRESENCE_IN_VIOLATIVE_GUILD_MEDIUM_RISK: UserData.ClassificationType.ValueType  # 4010
     CLASSIFICATION_TYPE_OWNER_OF_VIOLATIVE_GUILD_VERY_HIGH_RISK: UserData.ClassificationType.ValueType  # 4100
@@ -2477,17 +2481,20 @@ class UserData(_message.Message):
 
         CUSTOM_EMOJI_ID_FIELD_NUMBER: _builtins.int
         UNICODE_EMOJI_FIELD_NUMBER: _builtins.int
+        ANIMATED_FIELD_NUMBER: _builtins.int
         custom_emoji_id: _builtins.int
         unicode_emoji: _builtins.str
+        animated: _builtins.bool
         def __init__(
             self,
             *,
             custom_emoji_id: _builtins.int = ...,
             unicode_emoji: _builtins.str = ...,
+            animated: _builtins.bool = ...,
         ) -> None: ...
         _HasFieldArgType: _TypeAlias = _typing.Literal["custom_emoji_id", b"custom_emoji_id", "emoji", b"emoji", "unicode_emoji", b"unicode_emoji"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["custom_emoji_id", b"custom_emoji_id", "emoji", b"emoji", "unicode_emoji", b"unicode_emoji"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["animated", b"animated", "custom_emoji_id", b"custom_emoji_id", "emoji", b"emoji", "unicode_emoji", b"unicode_emoji"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType_emoji: _TypeAlias = _typing.Literal["custom_emoji_id", "unicode_emoji"]  # noqa: Y015
         _WhichOneofArgType_emoji: _TypeAlias = _typing.Literal["emoji", b"emoji"]  # noqa: Y015

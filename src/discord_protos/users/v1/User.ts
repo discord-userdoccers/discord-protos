@@ -1012,6 +1012,14 @@ export enum User_ClassificationType {
      */
     APP_GROWTH_HALT_SINGLE_4PA_SMITE = 3234,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BAD_BOT_QUARANTINE_SINGLE_SMITE = 3237;
+     */
+    BAD_BOT_QUARANTINE_SINGLE_SMITE = 3237,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BAD_BOT_QUARANTINE_PROPAGATE_SMITE = 3238;
+     */
+    BAD_BOT_QUARANTINE_PROPAGATE_SMITE = 3238,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK = 4000;
      */
     PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK = 4000,
