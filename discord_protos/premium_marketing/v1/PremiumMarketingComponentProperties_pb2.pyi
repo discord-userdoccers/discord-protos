@@ -678,6 +678,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_GAME_SERVER_HOSTING_IN_SHOP_DETECTION_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 809
         DISMISSIBLE_CONTENT_GAME_SERVER_HOSTING_IN_SHOP_DETECTION_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 810
         DISMISSIBLE_CONTENT_COD_3PP_NAGBAR_NOTICE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 811
+        DISMISSIBLE_CONTENT_TINY_BRONCO: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 812
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_HUB_WAITLIST_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1288,6 +1289,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_GAME_SERVER_HOSTING_IN_SHOP_DETECTION_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 809
     DISMISSIBLE_CONTENT_GAME_SERVER_HOSTING_IN_SHOP_DETECTION_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 810
     DISMISSIBLE_CONTENT_COD_3PP_NAGBAR_NOTICE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 811
+    DISMISSIBLE_CONTENT_TINY_BRONCO: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 812
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)
