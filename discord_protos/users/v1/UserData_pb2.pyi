@@ -1407,6 +1407,7 @@ class UserData(_message.Message):
         AGE_ASSURANCE_METHOD_ML_AGE_INFERENCE: UserData._AgeAssuranceMethod.ValueType  # 8
         AGE_ASSURANCE_METHOD_GOOGLE_WALLET: UserData._AgeAssuranceMethod.ValueType  # 9
         AGE_ASSURANCE_METHOD_NEW_METHOD: UserData._AgeAssuranceMethod.ValueType  # 10
+        AGE_ASSURANCE_METHOD_MANUAL_REVIEW: UserData._AgeAssuranceMethod.ValueType  # 11
 
     class AgeAssuranceMethod(_AgeAssuranceMethod, metaclass=_AgeAssuranceMethodEnumTypeWrapper): ...
     AGE_ASSURANCE_METHOD_UNSPECIFIED: UserData.AgeAssuranceMethod.ValueType  # 0
@@ -1420,6 +1421,7 @@ class UserData(_message.Message):
     AGE_ASSURANCE_METHOD_ML_AGE_INFERENCE: UserData.AgeAssuranceMethod.ValueType  # 8
     AGE_ASSURANCE_METHOD_GOOGLE_WALLET: UserData.AgeAssuranceMethod.ValueType  # 9
     AGE_ASSURANCE_METHOD_NEW_METHOD: UserData.AgeAssuranceMethod.ValueType  # 10
+    AGE_ASSURANCE_METHOD_MANUAL_REVIEW: UserData.AgeAssuranceMethod.ValueType  # 11
 
     class _AgeAssuranceVendor:
         ValueType = _typing.NewType("ValueType", _builtins.int)

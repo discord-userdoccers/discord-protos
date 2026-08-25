@@ -3327,7 +3327,11 @@ export enum UserData_AgeAssuranceMethod {
     /**
      * @generated from protobuf enum value: AGE_ASSURANCE_METHOD_NEW_METHOD = 10;
      */
-    NEW_METHOD = 10
+    NEW_METHOD = 10,
+    /**
+     * @generated from protobuf enum value: AGE_ASSURANCE_METHOD_MANUAL_REVIEW = 11;
+     */
+    MANUAL_REVIEW = 11
 }
 /**
  * @generated from protobuf enum discord_protos.users.v1.UserData.AgeAssuranceVendor
