@@ -2291,7 +2291,9 @@ class PreloadedUserSettings(_message.Message):
         FAVORITE_CHANNELS_FIELD_NUMBER: _builtins.int
         MUTED_FIELD_NUMBER: _builtins.int
         GUILD_VISIBLE_FIELD_NUMBER: _builtins.int
+        AUTO_ADD_JOINED_THREADS_FIELD_NUMBER: _builtins.int
         muted: _builtins.bool
+        auto_add_joined_threads: _builtins.bool
         @_builtins.property
         def favorite_channels(self) -> _containers.MessageMap[_builtins.int, Global___PreloadedUserSettings.FavoriteChannel]: ...
         @_builtins.property
@@ -2302,10 +2304,11 @@ class PreloadedUserSettings(_message.Message):
             favorite_channels: _abc.Mapping[_builtins.int, Global___PreloadedUserSettings.FavoriteChannel] | None = ...,
             muted: _builtins.bool = ...,
             guild_visible: _wrappers_pb2.BoolValue | None = ...,
+            auto_add_joined_threads: _builtins.bool = ...,
         ) -> None: ...
         _HasFieldArgType: _TypeAlias = _typing.Literal["_guild_visible", b"_guild_visible", "guild_visible", b"guild_visible"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_guild_visible", b"_guild_visible", "favorite_channels", b"favorite_channels", "guild_visible", b"guild_visible", "muted", b"muted"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_guild_visible", b"_guild_visible", "auto_add_joined_threads", b"auto_add_joined_threads", "favorite_channels", b"favorite_channels", "guild_visible", b"guild_visible", "muted", b"muted"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__guild_visible: _TypeAlias = _typing.Literal["guild_visible"]  # noqa: Y015
         _WhichOneofArgType__guild_visible: _TypeAlias = _typing.Literal["_guild_visible", b"_guild_visible"]  # noqa: Y015

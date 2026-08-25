@@ -477,6 +477,7 @@ message PreloadedUserSettings {
     map<fixed64, FavoriteChannel> favorite_channels = 1;
     bool muted = 2;
     optional google.protobuf.BoolValue guild_visible = 3;
+    bool auto_add_joined_threads = 4;
   }
 
   message AudioContextSetting {

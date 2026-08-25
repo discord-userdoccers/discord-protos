@@ -1228,6 +1228,10 @@ export interface PreloadedUserSettings_Favorites {
      * @generated from protobuf field: optional google.protobuf.BoolValue guild_visible = 3
      */
     guildVisible?: BoolValue;
+    /**
+     * @generated from protobuf field: bool auto_add_joined_threads = 4
+     */
+    autoAddJoinedThreads: boolean;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.AudioContextSetting
@@ -5294,13 +5298,15 @@ class PreloadedUserSettings_Favorites$Type extends MessageType<PreloadedUserSett
         super("discord_protos.discord_users.v1.PreloadedUserSettings.Favorites", [
             { no: 1, name: "favorite_channels", kind: "map", K: 6 /*ScalarType.FIXED64*/, V: { kind: "message", T: () => PreloadedUserSettings_FavoriteChannel } },
             { no: 2, name: "muted", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
-            { no: 3, name: "guild_visible", kind: "message", T: () => BoolValue }
+            { no: 3, name: "guild_visible", kind: "message", T: () => BoolValue },
+            { no: 4, name: "auto_add_joined_threads", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_Favorites>): PreloadedUserSettings_Favorites {
         const message = globalThis.Object.create((this.messagePrototype!));
         message.favoriteChannels = {};
         message.muted = false;
+        message.autoAddJoinedThreads = false;
         if (value !== undefined)
             reflectionMergePartial<PreloadedUserSettings_Favorites>(this, message, value);
         return message;
@@ -5318,6 +5324,9 @@ class PreloadedUserSettings_Favorites$Type extends MessageType<PreloadedUserSett
                     break;
                 case /* optional google.protobuf.BoolValue guild_visible */ 3:
                     message.guildVisible = BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.guildVisible);
+                    break;
+                case /* bool auto_add_joined_threads */ 4:
+                    message.autoAddJoinedThreads = reader.bool();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -5360,6 +5369,9 @@ class PreloadedUserSettings_Favorites$Type extends MessageType<PreloadedUserSett
         /* optional google.protobuf.BoolValue guild_visible = 3; */
         if (message.guildVisible)
             BoolValue.internalBinaryWrite(message.guildVisible, writer.tag(3, WireType.LengthDelimited).fork(), options).join();
+        /* bool auto_add_joined_threads = 4; */
+        if (message.autoAddJoinedThreads !== false)
+            writer.tag(4, WireType.Varint).bool(message.autoAddJoinedThreads);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
