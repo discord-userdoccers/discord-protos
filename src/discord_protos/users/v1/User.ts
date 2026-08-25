@@ -1932,6 +1932,58 @@ export enum User_ClassificationType {
      */
     QUEST_REWARD_ABUSE_POST_WARNING_ADMIN = 5980,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_IMPERSONATION_ADMIN = 5990;
+     */
+    BOT_DELETE_IMPERSONATION_ADMIN = 5990,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_UNSOLICITED_ACCOUNT_CHANGES_ADMIN = 6000;
+     */
+    BOT_DELETE_UNSOLICITED_ACCOUNT_CHANGES_ADMIN = 6000,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_TOKEN_SOLICITATION_ADMIN = 6010;
+     */
+    BOT_DELETE_TOKEN_SOLICITATION_ADMIN = 6010,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_PLATFORM_BAN_EVASION_ADMIN = 6020;
+     */
+    BOT_DELETE_PLATFORM_BAN_EVASION_ADMIN = 6020,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_CUSTOM_ADMIN = 6030;
+     */
+    BOT_DELETE_CUSTOM_ADMIN = 6030,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_CSAM_ADMIN = 6040;
+     */
+    BOT_DELETE_CSAM_ADMIN = 6040,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_NCAIM_ADMIN = 6050;
+     */
+    BOT_DELETE_NCAIM_ADMIN = 6050,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_SPAM_ADMIN = 6060;
+     */
+    BOT_DELETE_SPAM_ADMIN = 6060,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_SPAM_SILENT_ADMIN = 6070;
+     */
+    BOT_DELETE_SPAM_SILENT_ADMIN = 6070,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_GROWTH_HALT_SINGLE_SPAM_ADMIN = 6080;
+     */
+    APP_GROWTH_HALT_SINGLE_SPAM_ADMIN = 6080,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_GROWTH_HALT_SINGLE_4PA_ADMIN = 6090;
+     */
+    APP_GROWTH_HALT_SINGLE_4PA_ADMIN = 6090,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BAD_BOT_QUARANTINE_SINGLE_ADMIN = 6100;
+     */
+    BAD_BOT_QUARANTINE_SINGLE_ADMIN = 6100,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BAD_BOT_QUARANTINE_PROPAGATE_ADMIN = 6110;
+     */
+    BAD_BOT_QUARANTINE_PROPAGATE_ADMIN = 6110,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_HIGH_RISK_DANGEROUS_AND_REGULATED_GOODS_GUILD_RETOOL = 7005;
      */
     HIGH_RISK_DANGEROUS_AND_REGULATED_GOODS_GUILD_RETOOL = 7005,
