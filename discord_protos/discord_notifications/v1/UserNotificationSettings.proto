@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+import "google/protobuf/wrappers.proto";
+
+import "google/protobuf/timestamp.proto";
+
+package discord_protos.discord_notifications.v1;
+
+message UserNotificationSettings {
+  message EmailNotificationSettings {
+    map<string, bool> categories = 1;
+  }
+
+  message MuteNotificationSettings {
+    optional google.protobuf.Timestamp end_time = 1;
+    optional google.protobuf.Int32Value selected_time_window = 2;
+  }
+
+  message ChannelNotificationSettings {
+    fixed64 channel_id = 1;
+    uint32 message_notifications = 7;
+    optional MuteNotificationSettings mute = 3;
+    bool collapsed = 4;
+  }
+
+  message GuildNotificationSettings {
+    bool suppress_everyone = 1;
+    uint32 message_notifications = 2;
+    bool mobile_push = 3;
+    optional MuteNotificationSettings mute = 4;
+    repeated ChannelNotificationSettings channel_overrides = 5;
+    bool suppress_roles = 6;
+    uint32 version = 7;
+    bool hide_muted_channels = 8;
+    bool mute_scheduled_events = 9;
+    uint32 notify_highlights = 10;
+  }
+
+  message Versions {
+    uint32 client_version = 1;
+    uint32 server_version = 2;
+    uint32 data_version = 3;
+  }
+
+  message DeclarativeNotifSetting {
+    bool toggle = 1;
+    uint32 radio = 2;
+  }
+
+  message DeclarativeSettings {
+    optional Versions versions = 1;
+    map<uint32, DeclarativeNotifSetting> values = 2;
+  }
+
+  message UserNotificationSettingsData {
+    map<fixed64, bool> muted_games = 1;
+    optional DeclarativeSettings declarative_settings = 2;
+  }
+
+  fixed64 user_id = 1;
+  optional EmailNotificationSettings email_settings = 2;
+  optional google.protobuf.UInt64Value flags = 6;
+  map<fixed64, GuildNotificationSettings> guilds = 4;
+  uint32 version = 5;
+  optional UserNotificationSettingsData data = 7;
+}
