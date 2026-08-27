@@ -2,7 +2,7 @@
 
 from enum import Enum as _Enum
 
-__version__ = '1.2.304'
+__version__ = '1.2.305'
 
 from .discord_users.v1.PreloadedUserSettings_pb2 import *
 from .users.v1.User_pb2 import *
@@ -13,6 +13,7 @@ from .discord_experimentation.v1.Experiment_pb2 import *
 from .discord_users.v1.FrecencyUserSettings_pb2 import *
 from .discord_kkv_store_value_models.v1.ApplicationUserRoleConnection_pb2 import *
 from .discord_kkv_store_value_models.v1.AcknowledgedApplicationDisclosures_pb2 import *
+from .discord_notifications.v1.UserNotificationSettings_pb2 import *
 from .common.v1.LocalizedSnowflake_pb2 import *
 from .premium_marketing.v1.PremiumMarketingComponentProperties_pb2 import *
 
@@ -28,6 +29,7 @@ __all__ = (
     'FrecencyUserSettings',
     'ApplicationUserRoleConnection',
     'AcknowledgedApplicationDisclosures',
+    'UserNotificationSettings',
     'LocalizedSnowflake',
     'PremiumMarketingComponentProperties',
 )

@@ -1124,7 +1124,11 @@ export enum Experiment_Phase {
     /**
      * @generated from protobuf enum value: PHASE_AA_MODE = 7;
      */
-    AA_MODE = 7
+    AA_MODE = 7,
+    /**
+     * @generated from protobuf enum value: PHASE_PAUSED = 8;
+     */
+    PAUSED = 8
 }
 /**
  * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.Surface

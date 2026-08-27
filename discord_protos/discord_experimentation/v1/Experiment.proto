@@ -357,6 +357,7 @@ message Experiment {
     PHASE_ROLLING_OUT = 4;
     PHASE_ARCHIVED = 6;
     PHASE_AA_MODE = 7;
+    PHASE_PAUSED = 8;
   }
 
   enum Surface {

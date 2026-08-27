@@ -128,6 +128,7 @@ class Experiment(_message.Message):
         PHASE_ROLLING_OUT: Experiment._Phase.ValueType  # 4
         PHASE_ARCHIVED: Experiment._Phase.ValueType  # 6
         PHASE_AA_MODE: Experiment._Phase.ValueType  # 7
+        PHASE_PAUSED: Experiment._Phase.ValueType  # 8
 
     class Phase(_Phase, metaclass=_PhaseEnumTypeWrapper): ...
     PHASE_UNSPECIFIED: Experiment.Phase.ValueType  # 0
@@ -136,6 +137,7 @@ class Experiment(_message.Message):
     PHASE_ROLLING_OUT: Experiment.Phase.ValueType  # 4
     PHASE_ARCHIVED: Experiment.Phase.ValueType  # 6
     PHASE_AA_MODE: Experiment.Phase.ValueType  # 7
+    PHASE_PAUSED: Experiment.Phase.ValueType  # 8
 
     class _Surface:
         ValueType = _typing.NewType("ValueType", _builtins.int)
