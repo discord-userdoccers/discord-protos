@@ -488,6 +488,10 @@ export interface UserData_AgeAssuranceData {
      * @generated from protobuf field: optional google.protobuf.Timestamp cooldown_reset_at = 8
      */
     cooldownResetAt?: Timestamp;
+    /**
+     * @generated from protobuf field: optional google.protobuf.Timestamp excluded_from_prediction_since = 9
+     */
+    excludedFromPredictionSince?: Timestamp;
 }
 /**
  * @generated from protobuf message discord_protos.users.v1.UserData.PerkConfigIncreasedFileUploadSize
@@ -5137,7 +5141,8 @@ class UserData_AgeAssuranceData$Type extends MessageType<UserData_AgeAssuranceDa
             { no: 5, name: "verified_at", kind: "message", T: () => Timestamp },
             { no: 6, name: "estimated_age_group", kind: "enum", T: () => ["discord_protos.users.v1.UserData.AgeAssuranceGroup", UserData_AgeAssuranceGroup] },
             { no: 7, name: "is_regional_adult", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
-            { no: 8, name: "cooldown_reset_at", kind: "message", T: () => Timestamp }
+            { no: 8, name: "cooldown_reset_at", kind: "message", T: () => Timestamp },
+            { no: 9, name: "excluded_from_prediction_since", kind: "message", T: () => Timestamp }
         ]);
     }
     create(value?: PartialMessage<UserData_AgeAssuranceData>): UserData_AgeAssuranceData {
@@ -5180,6 +5185,9 @@ class UserData_AgeAssuranceData$Type extends MessageType<UserData_AgeAssuranceDa
                 case /* optional google.protobuf.Timestamp cooldown_reset_at */ 8:
                     message.cooldownResetAt = Timestamp.internalBinaryRead(reader, reader.uint32(), options, message.cooldownResetAt);
                     break;
+                case /* optional google.protobuf.Timestamp excluded_from_prediction_since */ 9:
+                    message.excludedFromPredictionSince = Timestamp.internalBinaryRead(reader, reader.uint32(), options, message.excludedFromPredictionSince);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -5216,6 +5224,9 @@ class UserData_AgeAssuranceData$Type extends MessageType<UserData_AgeAssuranceDa
         /* optional google.protobuf.Timestamp cooldown_reset_at = 8; */
         if (message.cooldownResetAt)
             Timestamp.internalBinaryWrite(message.cooldownResetAt, writer.tag(8, WireType.LengthDelimited).fork(), options).join();
+        /* optional google.protobuf.Timestamp excluded_from_prediction_since = 9; */
+        if (message.excludedFromPredictionSince)
+            Timestamp.internalBinaryWrite(message.excludedFromPredictionSince, writer.tag(9, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

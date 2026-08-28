@@ -2178,6 +2178,7 @@ class UserData(_message.Message):
         ESTIMATED_AGE_GROUP_FIELD_NUMBER: _builtins.int
         IS_REGIONAL_ADULT_FIELD_NUMBER: _builtins.int
         COOLDOWN_RESET_AT_FIELD_NUMBER: _builtins.int
+        EXCLUDED_FROM_PREDICTION_SINCE_FIELD_NUMBER: _builtins.int
         method: Global___UserData.AgeAssuranceMethod.ValueType
         method_version: _builtins.int
         vendor: Global___UserData.AgeAssuranceVendor.ValueType
@@ -2189,6 +2190,8 @@ class UserData(_message.Message):
         def verified_at(self) -> _timestamp_pb2.Timestamp: ...
         @_builtins.property
         def cooldown_reset_at(self) -> _timestamp_pb2.Timestamp: ...
+        @_builtins.property
+        def excluded_from_prediction_since(self) -> _timestamp_pb2.Timestamp: ...
         def __init__(
             self,
             *,
@@ -2200,21 +2203,26 @@ class UserData(_message.Message):
             estimated_age_group: Global___UserData.AgeAssuranceGroup.ValueType = ...,
             is_regional_adult: _builtins.bool = ...,
             cooldown_reset_at: _timestamp_pb2.Timestamp | None = ...,
+            excluded_from_prediction_since: _timestamp_pb2.Timestamp | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _typing.Literal["_cooldown_reset_at", b"_cooldown_reset_at", "_estimated_date_of_birth", b"_estimated_date_of_birth", "_verified_at", b"_verified_at", "cooldown_reset_at", b"cooldown_reset_at", "estimated_date_of_birth", b"estimated_date_of_birth", "verified_at", b"verified_at"]  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_cooldown_reset_at", b"_cooldown_reset_at", "_estimated_date_of_birth", b"_estimated_date_of_birth", "_excluded_from_prediction_since", b"_excluded_from_prediction_since", "_verified_at", b"_verified_at", "cooldown_reset_at", b"cooldown_reset_at", "estimated_date_of_birth", b"estimated_date_of_birth", "excluded_from_prediction_since", b"excluded_from_prediction_since", "verified_at", b"verified_at"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_cooldown_reset_at", b"_cooldown_reset_at", "_estimated_date_of_birth", b"_estimated_date_of_birth", "_verified_at", b"_verified_at", "cooldown_reset_at", b"cooldown_reset_at", "estimated_age_group", b"estimated_age_group", "estimated_date_of_birth", b"estimated_date_of_birth", "is_regional_adult", b"is_regional_adult", "method", b"method", "method_version", b"method_version", "vendor", b"vendor", "verified_at", b"verified_at"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_cooldown_reset_at", b"_cooldown_reset_at", "_estimated_date_of_birth", b"_estimated_date_of_birth", "_excluded_from_prediction_since", b"_excluded_from_prediction_since", "_verified_at", b"_verified_at", "cooldown_reset_at", b"cooldown_reset_at", "estimated_age_group", b"estimated_age_group", "estimated_date_of_birth", b"estimated_date_of_birth", "excluded_from_prediction_since", b"excluded_from_prediction_since", "is_regional_adult", b"is_regional_adult", "method", b"method", "method_version", b"method_version", "vendor", b"vendor", "verified_at", b"verified_at"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__cooldown_reset_at: _TypeAlias = _typing.Literal["cooldown_reset_at"]  # noqa: Y015
         _WhichOneofArgType__cooldown_reset_at: _TypeAlias = _typing.Literal["_cooldown_reset_at", b"_cooldown_reset_at"]  # noqa: Y015
         _WhichOneofReturnType__estimated_date_of_birth: _TypeAlias = _typing.Literal["estimated_date_of_birth"]  # noqa: Y015
         _WhichOneofArgType__estimated_date_of_birth: _TypeAlias = _typing.Literal["_estimated_date_of_birth", b"_estimated_date_of_birth"]  # noqa: Y015
+        _WhichOneofReturnType__excluded_from_prediction_since: _TypeAlias = _typing.Literal["excluded_from_prediction_since"]  # noqa: Y015
+        _WhichOneofArgType__excluded_from_prediction_since: _TypeAlias = _typing.Literal["_excluded_from_prediction_since", b"_excluded_from_prediction_since"]  # noqa: Y015
         _WhichOneofReturnType__verified_at: _TypeAlias = _typing.Literal["verified_at"]  # noqa: Y015
         _WhichOneofArgType__verified_at: _TypeAlias = _typing.Literal["_verified_at", b"_verified_at"]  # noqa: Y015
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__cooldown_reset_at) -> _WhichOneofReturnType__cooldown_reset_at | None: ...
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__estimated_date_of_birth) -> _WhichOneofReturnType__estimated_date_of_birth | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__excluded_from_prediction_since) -> _WhichOneofReturnType__excluded_from_prediction_since | None: ...
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__verified_at) -> _WhichOneofReturnType__verified_at | None: ...
 
