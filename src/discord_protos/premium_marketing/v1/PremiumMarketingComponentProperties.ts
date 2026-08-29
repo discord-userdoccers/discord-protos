@@ -3547,7 +3547,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_USER_PROFILE_PERSONAL_WIDGET_NEW_BADGE = 813;
      */
-    USER_PROFILE_PERSONAL_WIDGET_NEW_BADGE = 813
+    USER_PROFILE_PERSONAL_WIDGET_NEW_BADGE = 813,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_SCHEDULED_MESSAGES_DRAFT_COACHMARK = 814;
+     */
+    SCHEDULED_MESSAGES_DRAFT_COACHMARK = 814
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant

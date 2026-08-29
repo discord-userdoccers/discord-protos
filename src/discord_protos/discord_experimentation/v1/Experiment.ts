@@ -172,6 +172,10 @@ export interface Experiment {
      */
     exposurePoints: Experiment_ExposurePointId[];
     /**
+     * @generated from protobuf field: string dynamic_config_model = 47
+     */
+    dynamicConfigModel: string;
+    /**
      * @generated from protobuf field: repeated string growthbook_tags = 37 [packed = false]
      */
     growthbookTags: string[];
@@ -1353,6 +1357,7 @@ class Experiment$Type extends MessageType<Experiment> {
             { no: 35, name: "guild_experiment_version", kind: "message", T: () => Int32Value },
             { no: 36, name: "custom_unit_prefix", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.CustomUnitPrefix", Experiment_CustomUnitPrefix, "CUSTOM_UNIT_PREFIX_"] },
             { no: 45, name: "exposure_points", kind: "enum", repeat: 1 /*RepeatType.PACKED*/, T: () => ["discord_protos.discord_experimentation.v1.Experiment.ExposurePointId", Experiment_ExposurePointId, "EXPOSURE_POINT_ID_"] },
+            { no: 47, name: "dynamic_config_model", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 37, name: "growthbook_tags", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 9 /*ScalarType.STRING*/ },
             { no: 38, name: "allocate_right_to_left", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
             { no: 39, name: "is_managed", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
@@ -1391,6 +1396,7 @@ class Experiment$Type extends MessageType<Experiment> {
         message.suppressEditorMention = false;
         message.customUnitPrefix = 0;
         message.exposurePoints = [];
+        message.dynamicConfigModel = "";
         message.growthbookTags = [];
         message.allocateRightToLeft = false;
         message.isManaged = false;
@@ -1529,6 +1535,9 @@ class Experiment$Type extends MessageType<Experiment> {
                             message.exposurePoints.push(reader.int32());
                     else
                         message.exposurePoints.push(reader.int32());
+                    break;
+                case /* string dynamic_config_model */ 47:
+                    message.dynamicConfigModel = reader.string();
                     break;
                 case /* repeated string growthbook_tags = 37 [packed = false] */ 37:
                     message.growthbookTags.push(reader.string());
@@ -1698,6 +1707,9 @@ class Experiment$Type extends MessageType<Experiment> {
         /* optional google.protobuf.Int32Value dynamic_config_size_limit_override = 46; */
         if (message.dynamicConfigSizeLimitOverride)
             Int32Value.internalBinaryWrite(message.dynamicConfigSizeLimitOverride, writer.tag(46, WireType.LengthDelimited).fork(), options).join();
+        /* string dynamic_config_model = 47; */
+        if (message.dynamicConfigModel !== "")
+            writer.tag(47, WireType.LengthDelimited).string(message.dynamicConfigModel);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
