@@ -982,4 +982,5 @@ message UserData {
   bool is_pending_required_action = 17;
   optional AnonymizationInfo anonymization_info = 18;
   optional UserTypingIndicatorStyle typing_indicator_style = 19;
+  bool disable_staff_discount = 20;
 }

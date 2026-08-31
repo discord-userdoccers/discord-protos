@@ -100,6 +100,10 @@ export interface UserData {
      * @generated from protobuf field: optional discord_protos.users.v1.UserData.UserTypingIndicatorStyle typing_indicator_style = 19
      */
     typingIndicatorStyle?: UserData_UserTypingIndicatorStyle;
+    /**
+     * @generated from protobuf field: bool disable_staff_discount = 20
+     */
+    disableStaffDiscount: boolean;
 }
 /**
  * @generated from protobuf message discord_protos.users.v1.UserData.LinkedUser
@@ -3601,7 +3605,8 @@ class UserData$Type extends MessageType<UserData> {
             { no: 16, name: "country_data", kind: "message", T: () => UserData_UserCountryData },
             { no: 17, name: "is_pending_required_action", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
             { no: 18, name: "anonymization_info", kind: "message", T: () => UserData_AnonymizationInfo },
-            { no: 19, name: "typing_indicator_style", kind: "message", T: () => UserData_UserTypingIndicatorStyle }
+            { no: 19, name: "typing_indicator_style", kind: "message", T: () => UserData_UserTypingIndicatorStyle },
+            { no: 20, name: "disable_staff_discount", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
         ]);
     }
     create(value?: PartialMessage<UserData>): UserData {
@@ -3610,6 +3615,7 @@ class UserData$Type extends MessageType<UserData> {
         message.safetyFeatureLimits = {};
         message.safetyFlags = {};
         message.isPendingRequiredAction = false;
+        message.disableStaffDiscount = false;
         if (value !== undefined)
             reflectionMergePartial<UserData>(this, message, value);
         return message;
@@ -3675,6 +3681,9 @@ class UserData$Type extends MessageType<UserData> {
                     break;
                 case /* optional discord_protos.users.v1.UserData.UserTypingIndicatorStyle typing_indicator_style */ 19:
                     message.typingIndicatorStyle = UserData_UserTypingIndicatorStyle.internalBinaryRead(reader, reader.uint32(), options, message.typingIndicatorStyle);
+                    break;
+                case /* bool disable_staff_discount */ 20:
+                    message.disableStaffDiscount = reader.bool();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -3805,6 +3814,9 @@ class UserData$Type extends MessageType<UserData> {
         /* optional discord_protos.users.v1.UserData.UserTypingIndicatorStyle typing_indicator_style = 19; */
         if (message.typingIndicatorStyle)
             UserData_UserTypingIndicatorStyle.internalBinaryWrite(message.typingIndicatorStyle, writer.tag(19, WireType.LengthDelimited).fork(), options).join();
+        /* bool disable_staff_discount = 20; */
+        if (message.disableStaffDiscount !== false)
+            writer.tag(20, WireType.Varint).bool(message.disableStaffDiscount);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
