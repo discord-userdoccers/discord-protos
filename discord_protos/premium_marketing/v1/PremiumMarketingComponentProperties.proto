@@ -914,6 +914,43 @@ message PremiumMarketingComponentProperties {
     optional CTAButton cta_field = 9;
   }
 
+  message GuildHeaderCoachmark {
+    optional ThemeAwareAsset asset = 1;
+    optional CTAButton button = 2;
+    optional HelpArticle help_article = 3;
+    optional LocalizedString header_localized = 4;
+    optional LocalizedString body_localized = 5;
+    string header = 6;
+    string body = 7;
+  }
+
+  message GuildBoostCheckoutBanner {
+    optional ThemeAwareAsset asset = 1;
+    optional LocalizedString header_localized = 2;
+    optional LocalizedString body_localized = 3;
+    optional HelpArticle help_article = 4;
+    string header = 5;
+    string body = 6;
+  }
+
+  message GuildBoostMarketingPageBanner {
+    optional ThemeAwareAsset asset = 1;
+    optional LocalizedString header_localized = 2;
+    optional LocalizedString body_localized = 3;
+    optional HelpArticle help_article = 4;
+    string header = 5;
+    string body = 6;
+  }
+
+  message GuildBoostTabBanner {
+    optional ThemeAwareAsset asset = 1;
+    optional LocalizedString header_localized = 2;
+    optional LocalizedString body_localized = 3;
+    optional HelpArticle help_article = 4;
+    string header = 5;
+    string body = 6;
+  }
+
   string content_identifier = 3;
   bool is_default_base = 18;
   oneof properties {
@@ -937,6 +974,10 @@ message PremiumMarketingComponentProperties {
     BillingSettingsBanner billing_settings_banner = 20;
     ShopNagbar shop_nagbar = 21;
     AdminEditorTestComponent admin_editor_test_component = 22;
+    GuildHeaderCoachmark guild_header_coachmark = 23;
+    GuildBoostCheckoutBanner guild_boost_checkout_banner = 24;
+    GuildBoostMarketingPageBanner guild_boost_marketing_page_banner = 25;
+    GuildBoostTabBanner guild_boost_tab_banner = 26;
   }
 
 }
