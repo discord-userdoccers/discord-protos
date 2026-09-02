@@ -707,6 +707,10 @@ message User {
     optional google.protobuf.BoolValue animated = 4;
   }
 
+  message VadColors {
+    repeated uint32 colors = 1;
+  }
+
   uint64 id = 1;
   string username = 2;
   string discriminator = 3;
@@ -719,4 +723,5 @@ message User {
   optional UserCollectibles collectibles = 11;
   optional SafetyState safety_state = 12;
   optional DisplayNameStyles display_name_styles = 13;
+  optional VadColors vad_colors = 14;
 }

@@ -3695,7 +3695,19 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_SCHEDULED_MESSAGES_DRAFT_COACHMARK = 814;
      */
-    SCHEDULED_MESSAGES_DRAFT_COACHMARK = 814
+    SCHEDULED_MESSAGES_DRAFT_COACHMARK = 814,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_NITRO_FILE_UPLOAD_1GB_ANNOUNCEMENT = 815;
+     */
+    NITRO_FILE_UPLOAD_1GB_ANNOUNCEMENT = 815,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_NITRO_FILE_UPLOAD_1GB_UPSELL = 816;
+     */
+    NITRO_FILE_UPLOAD_1GB_UPSELL = 816,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_NITRO_FILE_UPLOAD_1GB_NEW_BADGE = 817;
+     */
+    NITRO_FILE_UPLOAD_1GB_NEW_BADGE = 817
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant

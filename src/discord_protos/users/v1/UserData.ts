@@ -104,6 +104,10 @@ export interface UserData {
      * @generated from protobuf field: bool disable_staff_discount = 20
      */
     disableStaffDiscount: boolean;
+    /**
+     * @generated from protobuf field: optional discord_protos.users.v1.UserData.VadColors vad_colors = 21
+     */
+    vadColors?: UserData_VadColors;
 }
 /**
  * @generated from protobuf message discord_protos.users.v1.UserData.LinkedUser
@@ -700,6 +704,15 @@ export interface UserData_UserTypingIndicatorStyle {
      * @generated from protobuf field: discord_protos.users.v1.UserData.TypingSuggestion typing_suggestion = 3
      */
     typingSuggestion: UserData_TypingSuggestion;
+}
+/**
+ * @generated from protobuf message discord_protos.users.v1.UserData.VadColors
+ */
+export interface UserData_VadColors {
+    /**
+     * @generated from protobuf field: repeated uint32 colors = 1
+     */
+    colors: number[];
 }
 /**
  * @generated from protobuf enum discord_protos.users.v1.UserData.UserLinkType
@@ -3606,7 +3619,8 @@ class UserData$Type extends MessageType<UserData> {
             { no: 17, name: "is_pending_required_action", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
             { no: 18, name: "anonymization_info", kind: "message", T: () => UserData_AnonymizationInfo },
             { no: 19, name: "typing_indicator_style", kind: "message", T: () => UserData_UserTypingIndicatorStyle },
-            { no: 20, name: "disable_staff_discount", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
+            { no: 20, name: "disable_staff_discount", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
+            { no: 21, name: "vad_colors", kind: "message", T: () => UserData_VadColors }
         ]);
     }
     create(value?: PartialMessage<UserData>): UserData {
@@ -3684,6 +3698,9 @@ class UserData$Type extends MessageType<UserData> {
                     break;
                 case /* bool disable_staff_discount */ 20:
                     message.disableStaffDiscount = reader.bool();
+                    break;
+                case /* optional discord_protos.users.v1.UserData.VadColors vad_colors */ 21:
+                    message.vadColors = UserData_VadColors.internalBinaryRead(reader, reader.uint32(), options, message.vadColors);
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -3817,6 +3834,9 @@ class UserData$Type extends MessageType<UserData> {
         /* bool disable_staff_discount = 20; */
         if (message.disableStaffDiscount !== false)
             writer.tag(20, WireType.Varint).bool(message.disableStaffDiscount);
+        /* optional discord_protos.users.v1.UserData.VadColors vad_colors = 21; */
+        if (message.vadColors)
+            UserData_VadColors.internalBinaryWrite(message.vadColors, writer.tag(21, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -6007,3 +6027,58 @@ class UserData_UserTypingIndicatorStyle$Type extends MessageType<UserData_UserTy
  * @generated MessageType for protobuf message discord_protos.users.v1.UserData.UserTypingIndicatorStyle
  */
 export const UserData_UserTypingIndicatorStyle = new UserData_UserTypingIndicatorStyle$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class UserData_VadColors$Type extends MessageType<UserData_VadColors> {
+    constructor() {
+        super("discord_protos.users.v1.UserData.VadColors", [
+            { no: 1, name: "colors", kind: "scalar", repeat: 1 /*RepeatType.PACKED*/, T: 13 /*ScalarType.UINT32*/ }
+        ]);
+    }
+    create(value?: PartialMessage<UserData_VadColors>): UserData_VadColors {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.colors = [];
+        if (value !== undefined)
+            reflectionMergePartial<UserData_VadColors>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: UserData_VadColors): UserData_VadColors {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* repeated uint32 colors */ 1:
+                    if (wireType === WireType.LengthDelimited)
+                        for (let e = reader.int32() + reader.pos; reader.pos < e;)
+                            message.colors.push(reader.uint32());
+                    else
+                        message.colors.push(reader.uint32());
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: UserData_VadColors, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* repeated uint32 colors = 1; */
+        if (message.colors.length) {
+            writer.tag(1, WireType.LengthDelimited).fork();
+            for (let i = 0; i < message.colors.length; i++)
+                writer.uint32(message.colors[i]);
+            writer.join();
+        }
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.users.v1.UserData.VadColors
+ */
+export const UserData_VadColors = new UserData_VadColors$Type();

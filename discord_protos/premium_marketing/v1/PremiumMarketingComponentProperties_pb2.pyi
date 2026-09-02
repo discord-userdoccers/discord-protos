@@ -681,6 +681,9 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_TINY_BRONCO: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 812
         DISMISSIBLE_CONTENT_USER_PROFILE_PERSONAL_WIDGET_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 813
         DISMISSIBLE_CONTENT_SCHEDULED_MESSAGES_DRAFT_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 814
+        DISMISSIBLE_CONTENT_NITRO_FILE_UPLOAD_1GB_ANNOUNCEMENT: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 815
+        DISMISSIBLE_CONTENT_NITRO_FILE_UPLOAD_1GB_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 816
+        DISMISSIBLE_CONTENT_NITRO_FILE_UPLOAD_1GB_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 817
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_HUB_WAITLIST_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1294,6 +1297,9 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_TINY_BRONCO: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 812
     DISMISSIBLE_CONTENT_USER_PROFILE_PERSONAL_WIDGET_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 813
     DISMISSIBLE_CONTENT_SCHEDULED_MESSAGES_DRAFT_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 814
+    DISMISSIBLE_CONTENT_NITRO_FILE_UPLOAD_1GB_ANNOUNCEMENT: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 815
+    DISMISSIBLE_CONTENT_NITRO_FILE_UPLOAD_1GB_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 816
+    DISMISSIBLE_CONTENT_NITRO_FILE_UPLOAD_1GB_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 817
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)

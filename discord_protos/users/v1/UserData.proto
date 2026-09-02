@@ -963,6 +963,10 @@ message UserData {
     TypingSuggestion typing_suggestion = 3;
   }
 
+  message VadColors {
+    repeated uint32 colors = 1;
+  }
+
   map<fixed64, LinkedUser> linked_users = 1;
   map<uint32, FeatureLimits> safety_feature_limits = 2;
   map<uint32, SafetyFlag> safety_flags = 3;
@@ -983,4 +987,5 @@ message UserData {
   optional AnonymizationInfo anonymization_info = 18;
   optional UserTypingIndicatorStyle typing_indicator_style = 19;
   bool disable_staff_discount = 20;
+  optional VadColors vad_colors = 21;
 }

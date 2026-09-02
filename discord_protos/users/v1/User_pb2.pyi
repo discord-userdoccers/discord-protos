@@ -1633,6 +1633,24 @@ class User(_message.Message):
         _WhichOneofArgType__animated: _TypeAlias = _typing.Literal["_animated", b"_animated"]  # noqa: Y015
         def WhichOneof(self, oneof_group: _WhichOneofArgType__animated) -> _WhichOneofReturnType__animated | None: ...
 
+    @_typing.final
+    class VadColors(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        COLORS_FIELD_NUMBER: _builtins.int
+        @_builtins.property
+        def colors(self) -> _containers.RepeatedScalarFieldContainer[_builtins.int]: ...
+        def __init__(
+            self,
+            *,
+            colors: _abc.Iterable[_builtins.int] | None = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["colors", b"colors"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
+
     ID_FIELD_NUMBER: _builtins.int
     USERNAME_FIELD_NUMBER: _builtins.int
     DISCRIMINATOR_FIELD_NUMBER: _builtins.int
@@ -1645,6 +1663,7 @@ class User(_message.Message):
     COLLECTIBLES_FIELD_NUMBER: _builtins.int
     SAFETY_STATE_FIELD_NUMBER: _builtins.int
     DISPLAY_NAME_STYLES_FIELD_NUMBER: _builtins.int
+    VAD_COLORS_FIELD_NUMBER: _builtins.int
     id: _builtins.int
     username: _builtins.str
     discriminator: _builtins.str
@@ -1664,6 +1683,8 @@ class User(_message.Message):
     def safety_state(self) -> Global___User.SafetyState: ...
     @_builtins.property
     def display_name_styles(self) -> Global___User.DisplayNameStyles: ...
+    @_builtins.property
+    def vad_colors(self) -> Global___User.VadColors: ...
     def __init__(
         self,
         *,
@@ -1679,10 +1700,11 @@ class User(_message.Message):
         collectibles: Global___User.UserCollectibles | None = ...,
         safety_state: Global___User.SafetyState | None = ...,
         display_name_styles: Global___User.DisplayNameStyles | None = ...,
+        vad_colors: Global___User.VadColors | None = ...,
     ) -> None: ...
-    _HasFieldArgType: _TypeAlias = _typing.Literal["_avatar", b"_avatar", "_avatar_decoration_data", b"_avatar_decoration_data", "_collectibles", b"_collectibles", "_display_name_styles", b"_display_name_styles", "_global_name", b"_global_name", "_primary_guild", b"_primary_guild", "_safety_state", b"_safety_state", "avatar", b"avatar", "avatar_decoration_data", b"avatar_decoration_data", "collectibles", b"collectibles", "display_name_styles", b"display_name_styles", "global_name", b"global_name", "primary_guild", b"primary_guild", "safety_state", b"safety_state"]  # noqa: Y015
+    _HasFieldArgType: _TypeAlias = _typing.Literal["_avatar", b"_avatar", "_avatar_decoration_data", b"_avatar_decoration_data", "_collectibles", b"_collectibles", "_display_name_styles", b"_display_name_styles", "_global_name", b"_global_name", "_primary_guild", b"_primary_guild", "_safety_state", b"_safety_state", "_vad_colors", b"_vad_colors", "avatar", b"avatar", "avatar_decoration_data", b"avatar_decoration_data", "collectibles", b"collectibles", "display_name_styles", b"display_name_styles", "global_name", b"global_name", "primary_guild", b"primary_guild", "safety_state", b"safety_state", "vad_colors", b"vad_colors"]  # noqa: Y015
     def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["_avatar", b"_avatar", "_avatar_decoration_data", b"_avatar_decoration_data", "_collectibles", b"_collectibles", "_display_name_styles", b"_display_name_styles", "_global_name", b"_global_name", "_primary_guild", b"_primary_guild", "_safety_state", b"_safety_state", "avatar", b"avatar", "avatar_decoration_data", b"avatar_decoration_data", "bot", b"bot", "collectibles", b"collectibles", "discriminator", b"discriminator", "display_name_styles", b"display_name_styles", "global_name", b"global_name", "id", b"id", "primary_guild", b"primary_guild", "public_flags", b"public_flags", "safety_state", b"safety_state", "username", b"username"]  # noqa: Y015
+    _ClearFieldArgType: _TypeAlias = _typing.Literal["_avatar", b"_avatar", "_avatar_decoration_data", b"_avatar_decoration_data", "_collectibles", b"_collectibles", "_display_name_styles", b"_display_name_styles", "_global_name", b"_global_name", "_primary_guild", b"_primary_guild", "_safety_state", b"_safety_state", "_vad_colors", b"_vad_colors", "avatar", b"avatar", "avatar_decoration_data", b"avatar_decoration_data", "bot", b"bot", "collectibles", b"collectibles", "discriminator", b"discriminator", "display_name_styles", b"display_name_styles", "global_name", b"global_name", "id", b"id", "primary_guild", b"primary_guild", "public_flags", b"public_flags", "safety_state", b"safety_state", "username", b"username", "vad_colors", b"vad_colors"]  # noqa: Y015
     def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
     _WhichOneofReturnType__avatar: _TypeAlias = _typing.Literal["avatar"]  # noqa: Y015
     _WhichOneofArgType__avatar: _TypeAlias = _typing.Literal["_avatar", b"_avatar"]  # noqa: Y015
@@ -1698,6 +1720,8 @@ class User(_message.Message):
     _WhichOneofArgType__primary_guild: _TypeAlias = _typing.Literal["_primary_guild", b"_primary_guild"]  # noqa: Y015
     _WhichOneofReturnType__safety_state: _TypeAlias = _typing.Literal["safety_state"]  # noqa: Y015
     _WhichOneofArgType__safety_state: _TypeAlias = _typing.Literal["_safety_state", b"_safety_state"]  # noqa: Y015
+    _WhichOneofReturnType__vad_colors: _TypeAlias = _typing.Literal["vad_colors"]  # noqa: Y015
+    _WhichOneofArgType__vad_colors: _TypeAlias = _typing.Literal["_vad_colors", b"_vad_colors"]  # noqa: Y015
     @_typing.overload
     def WhichOneof(self, oneof_group: _WhichOneofArgType__avatar) -> _WhichOneofReturnType__avatar | None: ...
     @_typing.overload
@@ -1712,5 +1736,7 @@ class User(_message.Message):
     def WhichOneof(self, oneof_group: _WhichOneofArgType__primary_guild) -> _WhichOneofReturnType__primary_guild | None: ...
     @_typing.overload
     def WhichOneof(self, oneof_group: _WhichOneofArgType__safety_state) -> _WhichOneofReturnType__safety_state | None: ...
+    @_typing.overload
+    def WhichOneof(self, oneof_group: _WhichOneofArgType__vad_colors) -> _WhichOneofReturnType__vad_colors | None: ...
 
 Global___User: _TypeAlias = User  # noqa: Y015

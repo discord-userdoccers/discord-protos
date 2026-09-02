@@ -2565,6 +2565,24 @@ class UserData(_message.Message):
         def WhichOneof(self, oneof_group: _Never) -> None: ...
 
     @_typing.final
+    class VadColors(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        COLORS_FIELD_NUMBER: _builtins.int
+        @_builtins.property
+        def colors(self) -> _containers.RepeatedScalarFieldContainer[_builtins.int]: ...
+        def __init__(
+            self,
+            *,
+            colors: _abc.Iterable[_builtins.int] | None = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["colors", b"colors"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
+
+    @_typing.final
     class LinkedUsersEntry(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
 
@@ -2647,6 +2665,7 @@ class UserData(_message.Message):
     ANONYMIZATION_INFO_FIELD_NUMBER: _builtins.int
     TYPING_INDICATOR_STYLE_FIELD_NUMBER: _builtins.int
     DISABLE_STAFF_DISCOUNT_FIELD_NUMBER: _builtins.int
+    VAD_COLORS_FIELD_NUMBER: _builtins.int
     is_pending_required_action: _builtins.bool
     disable_staff_discount: _builtins.bool
     @_builtins.property
@@ -2685,6 +2704,8 @@ class UserData(_message.Message):
     def anonymization_info(self) -> Global___UserData.AnonymizationInfo: ...
     @_builtins.property
     def typing_indicator_style(self) -> Global___UserData.UserTypingIndicatorStyle: ...
+    @_builtins.property
+    def vad_colors(self) -> Global___UserData.VadColors: ...
     def __init__(
         self,
         *,
@@ -2708,10 +2729,11 @@ class UserData(_message.Message):
         anonymization_info: Global___UserData.AnonymizationInfo | None = ...,
         typing_indicator_style: Global___UserData.UserTypingIndicatorStyle | None = ...,
         disable_staff_discount: _builtins.bool = ...,
+        vad_colors: Global___UserData.VadColors | None = ...,
     ) -> None: ...
-    _HasFieldArgType: _TypeAlias = _typing.Literal["_age_assurance_data", b"_age_assurance_data", "_anonymization_info", b"_anonymization_info", "_badges", b"_badges", "_collectibles", b"_collectibles", "_country_data", b"_country_data", "_cross_platform_restriction", b"_cross_platform_restriction", "_display_name_styles", b"_display_name_styles", "_perks", b"_perks", "_premium_state", b"_premium_state", "_primary_guild", b"_primary_guild", "_quest", b"_quest", "_restricted_schedule", b"_restricted_schedule", "_safety_state", b"_safety_state", "_store_country", b"_store_country", "_typing_indicator_style", b"_typing_indicator_style", "age_assurance_data", b"age_assurance_data", "anonymization_info", b"anonymization_info", "badges", b"badges", "collectibles", b"collectibles", "country_data", b"country_data", "cross_platform_restriction", b"cross_platform_restriction", "display_name_styles", b"display_name_styles", "perks", b"perks", "premium_state", b"premium_state", "primary_guild", b"primary_guild", "quest", b"quest", "restricted_schedule", b"restricted_schedule", "safety_state", b"safety_state", "store_country", b"store_country", "typing_indicator_style", b"typing_indicator_style"]  # noqa: Y015
+    _HasFieldArgType: _TypeAlias = _typing.Literal["_age_assurance_data", b"_age_assurance_data", "_anonymization_info", b"_anonymization_info", "_badges", b"_badges", "_collectibles", b"_collectibles", "_country_data", b"_country_data", "_cross_platform_restriction", b"_cross_platform_restriction", "_display_name_styles", b"_display_name_styles", "_perks", b"_perks", "_premium_state", b"_premium_state", "_primary_guild", b"_primary_guild", "_quest", b"_quest", "_restricted_schedule", b"_restricted_schedule", "_safety_state", b"_safety_state", "_store_country", b"_store_country", "_typing_indicator_style", b"_typing_indicator_style", "_vad_colors", b"_vad_colors", "age_assurance_data", b"age_assurance_data", "anonymization_info", b"anonymization_info", "badges", b"badges", "collectibles", b"collectibles", "country_data", b"country_data", "cross_platform_restriction", b"cross_platform_restriction", "display_name_styles", b"display_name_styles", "perks", b"perks", "premium_state", b"premium_state", "primary_guild", b"primary_guild", "quest", b"quest", "restricted_schedule", b"restricted_schedule", "safety_state", b"safety_state", "store_country", b"store_country", "typing_indicator_style", b"typing_indicator_style", "vad_colors", b"vad_colors"]  # noqa: Y015
     def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["_age_assurance_data", b"_age_assurance_data", "_anonymization_info", b"_anonymization_info", "_badges", b"_badges", "_collectibles", b"_collectibles", "_country_data", b"_country_data", "_cross_platform_restriction", b"_cross_platform_restriction", "_display_name_styles", b"_display_name_styles", "_perks", b"_perks", "_premium_state", b"_premium_state", "_primary_guild", b"_primary_guild", "_quest", b"_quest", "_restricted_schedule", b"_restricted_schedule", "_safety_state", b"_safety_state", "_store_country", b"_store_country", "_typing_indicator_style", b"_typing_indicator_style", "age_assurance_data", b"age_assurance_data", "anonymization_info", b"anonymization_info", "badges", b"badges", "collectibles", b"collectibles", "country_data", b"country_data", "cross_platform_restriction", b"cross_platform_restriction", "disable_staff_discount", b"disable_staff_discount", "display_name_styles", b"display_name_styles", "is_pending_required_action", b"is_pending_required_action", "linked_users", b"linked_users", "perks", b"perks", "premium_state", b"premium_state", "primary_guild", b"primary_guild", "quest", b"quest", "restricted_schedule", b"restricted_schedule", "safety_feature_limits", b"safety_feature_limits", "safety_flags", b"safety_flags", "safety_state", b"safety_state", "store_country", b"store_country", "typing_indicator_style", b"typing_indicator_style"]  # noqa: Y015
+    _ClearFieldArgType: _TypeAlias = _typing.Literal["_age_assurance_data", b"_age_assurance_data", "_anonymization_info", b"_anonymization_info", "_badges", b"_badges", "_collectibles", b"_collectibles", "_country_data", b"_country_data", "_cross_platform_restriction", b"_cross_platform_restriction", "_display_name_styles", b"_display_name_styles", "_perks", b"_perks", "_premium_state", b"_premium_state", "_primary_guild", b"_primary_guild", "_quest", b"_quest", "_restricted_schedule", b"_restricted_schedule", "_safety_state", b"_safety_state", "_store_country", b"_store_country", "_typing_indicator_style", b"_typing_indicator_style", "_vad_colors", b"_vad_colors", "age_assurance_data", b"age_assurance_data", "anonymization_info", b"anonymization_info", "badges", b"badges", "collectibles", b"collectibles", "country_data", b"country_data", "cross_platform_restriction", b"cross_platform_restriction", "disable_staff_discount", b"disable_staff_discount", "display_name_styles", b"display_name_styles", "is_pending_required_action", b"is_pending_required_action", "linked_users", b"linked_users", "perks", b"perks", "premium_state", b"premium_state", "primary_guild", b"primary_guild", "quest", b"quest", "restricted_schedule", b"restricted_schedule", "safety_feature_limits", b"safety_feature_limits", "safety_flags", b"safety_flags", "safety_state", b"safety_state", "store_country", b"store_country", "typing_indicator_style", b"typing_indicator_style", "vad_colors", b"vad_colors"]  # noqa: Y015
     def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
     _WhichOneofReturnType__age_assurance_data: _TypeAlias = _typing.Literal["age_assurance_data"]  # noqa: Y015
     _WhichOneofArgType__age_assurance_data: _TypeAlias = _typing.Literal["_age_assurance_data", b"_age_assurance_data"]  # noqa: Y015
@@ -2743,6 +2765,8 @@ class UserData(_message.Message):
     _WhichOneofArgType__store_country: _TypeAlias = _typing.Literal["_store_country", b"_store_country"]  # noqa: Y015
     _WhichOneofReturnType__typing_indicator_style: _TypeAlias = _typing.Literal["typing_indicator_style"]  # noqa: Y015
     _WhichOneofArgType__typing_indicator_style: _TypeAlias = _typing.Literal["_typing_indicator_style", b"_typing_indicator_style"]  # noqa: Y015
+    _WhichOneofReturnType__vad_colors: _TypeAlias = _typing.Literal["vad_colors"]  # noqa: Y015
+    _WhichOneofArgType__vad_colors: _TypeAlias = _typing.Literal["_vad_colors", b"_vad_colors"]  # noqa: Y015
     @_typing.overload
     def WhichOneof(self, oneof_group: _WhichOneofArgType__age_assurance_data) -> _WhichOneofReturnType__age_assurance_data | None: ...
     @_typing.overload
@@ -2773,5 +2797,7 @@ class UserData(_message.Message):
     def WhichOneof(self, oneof_group: _WhichOneofArgType__store_country) -> _WhichOneofReturnType__store_country | None: ...
     @_typing.overload
     def WhichOneof(self, oneof_group: _WhichOneofArgType__typing_indicator_style) -> _WhichOneofReturnType__typing_indicator_style | None: ...
+    @_typing.overload
+    def WhichOneof(self, oneof_group: _WhichOneofArgType__vad_colors) -> _WhichOneofReturnType__vad_colors | None: ...
 
 Global___UserData: _TypeAlias = UserData  # noqa: Y015

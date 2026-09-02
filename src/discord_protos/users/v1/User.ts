@@ -67,6 +67,10 @@ export interface User {
      * @generated from protobuf field: optional discord_protos.users.v1.User.DisplayNameStyles display_name_styles = 13
      */
     displayNameStyles?: User_DisplayNameStyles;
+    /**
+     * @generated from protobuf field: optional discord_protos.users.v1.User.VadColors vad_colors = 14
+     */
+    vadColors?: User_VadColors;
 }
 /**
  * @generated from protobuf message discord_protos.users.v1.User.UserAvatarDecoration
@@ -266,6 +270,15 @@ export interface User_DisplayNameStyles {
      * @generated from protobuf field: optional google.protobuf.BoolValue animated = 4
      */
     animated?: BoolValue;
+}
+/**
+ * @generated from protobuf message discord_protos.users.v1.User.VadColors
+ */
+export interface User_VadColors {
+    /**
+     * @generated from protobuf field: repeated uint32 colors = 1
+     */
+    colors: number[];
 }
 /**
  * @generated from protobuf enum discord_protos.users.v1.User.ClassificationType
@@ -2779,7 +2792,8 @@ class User$Type extends MessageType<User> {
             { no: 10, name: "primary_guild", kind: "message", T: () => User_UserPrimaryGuild },
             { no: 11, name: "collectibles", kind: "message", T: () => User_UserCollectibles },
             { no: 12, name: "safety_state", kind: "message", T: () => User_SafetyState },
-            { no: 13, name: "display_name_styles", kind: "message", T: () => User_DisplayNameStyles }
+            { no: 13, name: "display_name_styles", kind: "message", T: () => User_DisplayNameStyles },
+            { no: 14, name: "vad_colors", kind: "message", T: () => User_VadColors }
         ]);
     }
     create(value?: PartialMessage<User>): User {
@@ -2834,6 +2848,9 @@ class User$Type extends MessageType<User> {
                 case /* optional discord_protos.users.v1.User.DisplayNameStyles display_name_styles */ 13:
                     message.displayNameStyles = User_DisplayNameStyles.internalBinaryRead(reader, reader.uint32(), options, message.displayNameStyles);
                     break;
+                case /* optional discord_protos.users.v1.User.VadColors vad_colors */ 14:
+                    message.vadColors = User_VadColors.internalBinaryRead(reader, reader.uint32(), options, message.vadColors);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -2882,6 +2899,9 @@ class User$Type extends MessageType<User> {
         /* optional discord_protos.users.v1.User.DisplayNameStyles display_name_styles = 13; */
         if (message.displayNameStyles)
             User_DisplayNameStyles.internalBinaryWrite(message.displayNameStyles, writer.tag(13, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.users.v1.User.VadColors vad_colors = 14; */
+        if (message.vadColors)
+            User_VadColors.internalBinaryWrite(message.vadColors, writer.tag(14, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -3603,3 +3623,58 @@ class User_DisplayNameStyles$Type extends MessageType<User_DisplayNameStyles> {
  * @generated MessageType for protobuf message discord_protos.users.v1.User.DisplayNameStyles
  */
 export const User_DisplayNameStyles = new User_DisplayNameStyles$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class User_VadColors$Type extends MessageType<User_VadColors> {
+    constructor() {
+        super("discord_protos.users.v1.User.VadColors", [
+            { no: 1, name: "colors", kind: "scalar", repeat: 1 /*RepeatType.PACKED*/, T: 13 /*ScalarType.UINT32*/ }
+        ]);
+    }
+    create(value?: PartialMessage<User_VadColors>): User_VadColors {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.colors = [];
+        if (value !== undefined)
+            reflectionMergePartial<User_VadColors>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: User_VadColors): User_VadColors {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* repeated uint32 colors */ 1:
+                    if (wireType === WireType.LengthDelimited)
+                        for (let e = reader.int32() + reader.pos; reader.pos < e;)
+                            message.colors.push(reader.uint32());
+                    else
+                        message.colors.push(reader.uint32());
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: User_VadColors, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* repeated uint32 colors = 1; */
+        if (message.colors.length) {
+            writer.tag(1, WireType.LengthDelimited).fork();
+            for (let i = 0; i < message.colors.length; i++)
+                writer.uint32(message.colors[i]);
+            writer.join();
+        }
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.users.v1.User.VadColors
+ */
+export const User_VadColors = new User_VadColors$Type();
