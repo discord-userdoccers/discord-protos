@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package discord_protos.qos_token.v1;
+
+message Claims {
+  fixed64 user_id = 1;
+  fixed64 issued_at = 2;
+  bool is_staff = 3;
+}

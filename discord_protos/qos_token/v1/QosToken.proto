@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package discord_protos.qos_token.v1;
+
+message QosToken {
+  message ClientProvidedQosData {
+    bool is_active = 1;
+  }
+
+  message DerivedQosData {
+    bytes claims = 1;
+  }
+
+  optional ClientProvidedQosData client_provided = 1;
+  optional DerivedQosData derived = 2;
+}
