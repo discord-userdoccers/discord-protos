@@ -3727,7 +3727,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_TINY_BRONCO_NOTICE = 821;
      */
-    TINY_BRONCO_NOTICE = 821
+    TINY_BRONCO_NOTICE = 821,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_BADGES_USER_PROFILE_NEW_BADGE = 822;
+     */
+    BADGES_USER_PROFILE_NEW_BADGE = 822
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
