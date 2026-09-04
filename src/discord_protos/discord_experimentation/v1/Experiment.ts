@@ -10,6 +10,7 @@ import { WireType } from "@protobuf-ts/runtime";
 import type { PartialMessage } from "@protobuf-ts/runtime";
 import { reflectionMergePartial } from "@protobuf-ts/runtime";
 import { MessageType } from "@protobuf-ts/runtime";
+import { Duration } from "../../google/protobuf/duration";
 import { UInt64Value } from "../../google/protobuf/wrappers";
 import { UInt32Value } from "../../google/protobuf/wrappers";
 import { Int32Value } from "../../google/protobuf/wrappers";
@@ -195,6 +196,10 @@ export interface Experiment {
      * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.EligibilityPersistence eligibility_persistence = 42
      */
     eligibilityPersistence: Experiment_EligibilityPersistence;
+    /**
+     * @generated from protobuf field: optional discord_protos.discord_experimentation.v1.Experiment.LifecyclePlan lifecycle_plan = 48
+     */
+    lifecyclePlan?: Experiment_LifecyclePlan;
 }
 /**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.Bucket
@@ -1039,6 +1044,70 @@ export interface Experiment_NumberLineSettings {
     sharedControl: boolean;
 }
 /**
+ * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.RampStep
+ */
+export interface Experiment_RampStep {
+    /**
+     * @generated from protobuf field: int32 target_basis_points = 1
+     */
+    targetBasisPoints: number;
+    /**
+     * @generated from protobuf field: optional google.protobuf.Duration hold_duration = 2
+     */
+    holdDuration?: Duration;
+    /**
+     * @generated from protobuf field: bool require_manual_approval = 3
+     */
+    requireManualApproval: boolean;
+    /**
+     * @generated from protobuf field: optional google.protobuf.Timestamp started_at = 4
+     */
+    startedAt?: Timestamp;
+    /**
+     * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.StepStatus status = 5
+     */
+    status: Experiment_StepStatus;
+}
+/**
+ * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.MeasurementPlan
+ */
+export interface Experiment_MeasurementPlan {
+    /**
+     * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.PlanStatus status = 1
+     */
+    status: Experiment_PlanStatus;
+    /**
+     * @generated from protobuf field: repeated discord_protos.discord_experimentation.v1.Experiment.RampStep ramp_steps = 2
+     */
+    rampSteps: Experiment_RampStep[];
+}
+/**
+ * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.RolloutPlan
+ */
+export interface Experiment_RolloutPlan {
+    /**
+     * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.PlanStatus status = 1
+     */
+    status: Experiment_PlanStatus;
+    /**
+     * @generated from protobuf field: repeated discord_protos.discord_experimentation.v1.Experiment.RampStep ramp_steps = 2
+     */
+    rampSteps: Experiment_RampStep[];
+}
+/**
+ * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.LifecyclePlan
+ */
+export interface Experiment_LifecyclePlan {
+    /**
+     * @generated from protobuf field: optional discord_protos.discord_experimentation.v1.Experiment.MeasurementPlan measurement_plan = 1
+     */
+    measurementPlan?: Experiment_MeasurementPlan;
+    /**
+     * @generated from protobuf field: optional discord_protos.discord_experimentation.v1.Experiment.RolloutPlan rollout_plan = 2
+     */
+    rolloutPlan?: Experiment_RolloutPlan;
+}
+/**
  * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.UnitType
  */
 export enum Experiment_UnitType {
@@ -1237,7 +1306,11 @@ export enum Experiment_ExposurePointId {
     /**
      * @generated from protobuf enum value: EXPOSURE_POINT_ID_MARKETING_INSTALLATION_PAGE_LOAD = 2;
      */
-    MARKETING_INSTALLATION_PAGE_LOAD = 2
+    MARKETING_INSTALLATION_PAGE_LOAD = 2,
+    /**
+     * @generated from protobuf enum value: EXPOSURE_POINT_ID_INVITE_GUILD_RESOLVE = 3;
+     */
+    INVITE_GUILD_RESOLVE = 3
 }
 /**
  * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.Mode
@@ -1272,6 +1345,64 @@ export enum Experiment_EligibilityPersistence {
      * @generated from protobuf enum value: ELIGIBILITY_PERSISTENCE_OVERRIDES_ONLY = 2;
      */
     OVERRIDES_ONLY = 2
+}
+/**
+ * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.PlanStatus
+ */
+export enum Experiment_PlanStatus {
+    /**
+     * @generated from protobuf enum value: PLAN_STATUS_UNSPECIFIED = 0;
+     */
+    UNSPECIFIED = 0,
+    /**
+     * @generated from protobuf enum value: PLAN_STATUS_DRAFT = 1;
+     */
+    DRAFT = 1,
+    /**
+     * @generated from protobuf enum value: PLAN_STATUS_ACTIVE = 2;
+     */
+    ACTIVE = 2,
+    /**
+     * @generated from protobuf enum value: PLAN_STATUS_PAUSED_MANUAL = 3;
+     */
+    PAUSED_MANUAL = 3,
+    /**
+     * @generated from protobuf enum value: PLAN_STATUS_PAUSED_HEALTH_CHECK = 4;
+     */
+    PAUSED_HEALTH_CHECK = 4,
+    /**
+     * @generated from protobuf enum value: PLAN_STATUS_COMPLETED = 5;
+     */
+    COMPLETED = 5,
+    /**
+     * @generated from protobuf enum value: PLAN_STATUS_CANCELED = 6;
+     */
+    CANCELED = 6
+}
+/**
+ * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.StepStatus
+ */
+export enum Experiment_StepStatus {
+    /**
+     * @generated from protobuf enum value: STEP_STATUS_UNSPECIFIED = 0;
+     */
+    UNSPECIFIED = 0,
+    /**
+     * @generated from protobuf enum value: STEP_STATUS_PENDING = 1;
+     */
+    PENDING = 1,
+    /**
+     * @generated from protobuf enum value: STEP_STATUS_IN_PROGRESS = 2;
+     */
+    IN_PROGRESS = 2,
+    /**
+     * @generated from protobuf enum value: STEP_STATUS_AWAITING_MANUAL_APPROVAL = 3;
+     */
+    AWAITING_MANUAL_APPROVAL = 3,
+    /**
+     * @generated from protobuf enum value: STEP_STATUS_COMPLETED = 4;
+     */
+    COMPLETED = 4
 }
 /**
  * @generated from protobuf enum discord_protos.discord_experimentation.v1.FilterCategory
@@ -1362,7 +1493,8 @@ class Experiment$Type extends MessageType<Experiment> {
             { no: 38, name: "allocate_right_to_left", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
             { no: 39, name: "is_managed", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
             { no: 43, name: "number_line_settings", kind: "message", T: () => Experiment_NumberLineSettings },
-            { no: 42, name: "eligibility_persistence", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.EligibilityPersistence", Experiment_EligibilityPersistence, "ELIGIBILITY_PERSISTENCE_"] }
+            { no: 42, name: "eligibility_persistence", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.EligibilityPersistence", Experiment_EligibilityPersistence, "ELIGIBILITY_PERSISTENCE_"] },
+            { no: 48, name: "lifecycle_plan", kind: "message", T: () => Experiment_LifecyclePlan }
         ]);
     }
     create(value?: PartialMessage<Experiment>): Experiment {
@@ -1554,6 +1686,9 @@ class Experiment$Type extends MessageType<Experiment> {
                 case /* discord_protos.discord_experimentation.v1.Experiment.EligibilityPersistence eligibility_persistence */ 42:
                     message.eligibilityPersistence = reader.int32();
                     break;
+                case /* optional discord_protos.discord_experimentation.v1.Experiment.LifecyclePlan lifecycle_plan */ 48:
+                    message.lifecyclePlan = Experiment_LifecyclePlan.internalBinaryRead(reader, reader.uint32(), options, message.lifecyclePlan);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -1710,6 +1845,9 @@ class Experiment$Type extends MessageType<Experiment> {
         /* string dynamic_config_model = 47; */
         if (message.dynamicConfigModel !== "")
             writer.tag(47, WireType.LengthDelimited).string(message.dynamicConfigModel);
+        /* optional discord_protos.discord_experimentation.v1.Experiment.LifecyclePlan lifecycle_plan = 48; */
+        if (message.lifecyclePlan)
+            Experiment_LifecyclePlan.internalBinaryWrite(message.lifecyclePlan, writer.tag(48, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -4746,3 +4884,243 @@ class Experiment_NumberLineSettings$Type extends MessageType<Experiment_NumberLi
  * @generated MessageType for protobuf message discord_protos.discord_experimentation.v1.Experiment.NumberLineSettings
  */
 export const Experiment_NumberLineSettings = new Experiment_NumberLineSettings$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class Experiment_RampStep$Type extends MessageType<Experiment_RampStep> {
+    constructor() {
+        super("discord_protos.discord_experimentation.v1.Experiment.RampStep", [
+            { no: 1, name: "target_basis_points", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
+            { no: 2, name: "hold_duration", kind: "message", T: () => Duration },
+            { no: 3, name: "require_manual_approval", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
+            { no: 4, name: "started_at", kind: "message", T: () => Timestamp },
+            { no: 5, name: "status", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.StepStatus", Experiment_StepStatus, "STEP_STATUS_"] }
+        ]);
+    }
+    create(value?: PartialMessage<Experiment_RampStep>): Experiment_RampStep {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.targetBasisPoints = 0;
+        message.requireManualApproval = false;
+        message.status = 0;
+        if (value !== undefined)
+            reflectionMergePartial<Experiment_RampStep>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: Experiment_RampStep): Experiment_RampStep {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* int32 target_basis_points */ 1:
+                    message.targetBasisPoints = reader.int32();
+                    break;
+                case /* optional google.protobuf.Duration hold_duration */ 2:
+                    message.holdDuration = Duration.internalBinaryRead(reader, reader.uint32(), options, message.holdDuration);
+                    break;
+                case /* bool require_manual_approval */ 3:
+                    message.requireManualApproval = reader.bool();
+                    break;
+                case /* optional google.protobuf.Timestamp started_at */ 4:
+                    message.startedAt = Timestamp.internalBinaryRead(reader, reader.uint32(), options, message.startedAt);
+                    break;
+                case /* discord_protos.discord_experimentation.v1.Experiment.StepStatus status */ 5:
+                    message.status = reader.int32();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: Experiment_RampStep, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* int32 target_basis_points = 1; */
+        if (message.targetBasisPoints !== 0)
+            writer.tag(1, WireType.Varint).int32(message.targetBasisPoints);
+        /* optional google.protobuf.Duration hold_duration = 2; */
+        if (message.holdDuration)
+            Duration.internalBinaryWrite(message.holdDuration, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+        /* bool require_manual_approval = 3; */
+        if (message.requireManualApproval !== false)
+            writer.tag(3, WireType.Varint).bool(message.requireManualApproval);
+        /* optional google.protobuf.Timestamp started_at = 4; */
+        if (message.startedAt)
+            Timestamp.internalBinaryWrite(message.startedAt, writer.tag(4, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.discord_experimentation.v1.Experiment.StepStatus status = 5; */
+        if (message.status !== 0)
+            writer.tag(5, WireType.Varint).int32(message.status);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_experimentation.v1.Experiment.RampStep
+ */
+export const Experiment_RampStep = new Experiment_RampStep$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class Experiment_MeasurementPlan$Type extends MessageType<Experiment_MeasurementPlan> {
+    constructor() {
+        super("discord_protos.discord_experimentation.v1.Experiment.MeasurementPlan", [
+            { no: 1, name: "status", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.PlanStatus", Experiment_PlanStatus, "PLAN_STATUS_"] },
+            { no: 2, name: "ramp_steps", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => Experiment_RampStep }
+        ]);
+    }
+    create(value?: PartialMessage<Experiment_MeasurementPlan>): Experiment_MeasurementPlan {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.status = 0;
+        message.rampSteps = [];
+        if (value !== undefined)
+            reflectionMergePartial<Experiment_MeasurementPlan>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: Experiment_MeasurementPlan): Experiment_MeasurementPlan {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* discord_protos.discord_experimentation.v1.Experiment.PlanStatus status */ 1:
+                    message.status = reader.int32();
+                    break;
+                case /* repeated discord_protos.discord_experimentation.v1.Experiment.RampStep ramp_steps */ 2:
+                    message.rampSteps.push(Experiment_RampStep.internalBinaryRead(reader, reader.uint32(), options));
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: Experiment_MeasurementPlan, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* discord_protos.discord_experimentation.v1.Experiment.PlanStatus status = 1; */
+        if (message.status !== 0)
+            writer.tag(1, WireType.Varint).int32(message.status);
+        /* repeated discord_protos.discord_experimentation.v1.Experiment.RampStep ramp_steps = 2; */
+        for (let i = 0; i < message.rampSteps.length; i++)
+            Experiment_RampStep.internalBinaryWrite(message.rampSteps[i], writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_experimentation.v1.Experiment.MeasurementPlan
+ */
+export const Experiment_MeasurementPlan = new Experiment_MeasurementPlan$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class Experiment_RolloutPlan$Type extends MessageType<Experiment_RolloutPlan> {
+    constructor() {
+        super("discord_protos.discord_experimentation.v1.Experiment.RolloutPlan", [
+            { no: 1, name: "status", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.PlanStatus", Experiment_PlanStatus, "PLAN_STATUS_"] },
+            { no: 2, name: "ramp_steps", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => Experiment_RampStep }
+        ]);
+    }
+    create(value?: PartialMessage<Experiment_RolloutPlan>): Experiment_RolloutPlan {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.status = 0;
+        message.rampSteps = [];
+        if (value !== undefined)
+            reflectionMergePartial<Experiment_RolloutPlan>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: Experiment_RolloutPlan): Experiment_RolloutPlan {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* discord_protos.discord_experimentation.v1.Experiment.PlanStatus status */ 1:
+                    message.status = reader.int32();
+                    break;
+                case /* repeated discord_protos.discord_experimentation.v1.Experiment.RampStep ramp_steps */ 2:
+                    message.rampSteps.push(Experiment_RampStep.internalBinaryRead(reader, reader.uint32(), options));
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: Experiment_RolloutPlan, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* discord_protos.discord_experimentation.v1.Experiment.PlanStatus status = 1; */
+        if (message.status !== 0)
+            writer.tag(1, WireType.Varint).int32(message.status);
+        /* repeated discord_protos.discord_experimentation.v1.Experiment.RampStep ramp_steps = 2; */
+        for (let i = 0; i < message.rampSteps.length; i++)
+            Experiment_RampStep.internalBinaryWrite(message.rampSteps[i], writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_experimentation.v1.Experiment.RolloutPlan
+ */
+export const Experiment_RolloutPlan = new Experiment_RolloutPlan$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class Experiment_LifecyclePlan$Type extends MessageType<Experiment_LifecyclePlan> {
+    constructor() {
+        super("discord_protos.discord_experimentation.v1.Experiment.LifecyclePlan", [
+            { no: 1, name: "measurement_plan", kind: "message", T: () => Experiment_MeasurementPlan },
+            { no: 2, name: "rollout_plan", kind: "message", T: () => Experiment_RolloutPlan }
+        ]);
+    }
+    create(value?: PartialMessage<Experiment_LifecyclePlan>): Experiment_LifecyclePlan {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        if (value !== undefined)
+            reflectionMergePartial<Experiment_LifecyclePlan>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: Experiment_LifecyclePlan): Experiment_LifecyclePlan {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* optional discord_protos.discord_experimentation.v1.Experiment.MeasurementPlan measurement_plan */ 1:
+                    message.measurementPlan = Experiment_MeasurementPlan.internalBinaryRead(reader, reader.uint32(), options, message.measurementPlan);
+                    break;
+                case /* optional discord_protos.discord_experimentation.v1.Experiment.RolloutPlan rollout_plan */ 2:
+                    message.rolloutPlan = Experiment_RolloutPlan.internalBinaryRead(reader, reader.uint32(), options, message.rolloutPlan);
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: Experiment_LifecyclePlan, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* optional discord_protos.discord_experimentation.v1.Experiment.MeasurementPlan measurement_plan = 1; */
+        if (message.measurementPlan)
+            Experiment_MeasurementPlan.internalBinaryWrite(message.measurementPlan, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.discord_experimentation.v1.Experiment.RolloutPlan rollout_plan = 2; */
+        if (message.rolloutPlan)
+            Experiment_RolloutPlan.internalBinaryWrite(message.rolloutPlan, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_experimentation.v1.Experiment.LifecyclePlan
+ */
+export const Experiment_LifecyclePlan = new Experiment_LifecyclePlan$Type();

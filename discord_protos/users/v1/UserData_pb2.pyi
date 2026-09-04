@@ -1437,6 +1437,7 @@ class UserData(_message.Message):
         AGE_ASSURANCE_METHOD_NEW_METHOD: UserData._AgeAssuranceMethod.ValueType  # 10
         AGE_ASSURANCE_METHOD_MANUAL_REVIEW: UserData._AgeAssuranceMethod.ValueType  # 11
         AGE_ASSURANCE_METHOD_OS_SIGNAL_CONFIRMED: UserData._AgeAssuranceMethod.ValueType  # 12
+        AGE_ASSURANCE_METHOD_TNS_DETERMINATION: UserData._AgeAssuranceMethod.ValueType  # 13
 
     class AgeAssuranceMethod(_AgeAssuranceMethod, metaclass=_AgeAssuranceMethodEnumTypeWrapper): ...
     AGE_ASSURANCE_METHOD_UNSPECIFIED: UserData.AgeAssuranceMethod.ValueType  # 0
@@ -1452,6 +1453,7 @@ class UserData(_message.Message):
     AGE_ASSURANCE_METHOD_NEW_METHOD: UserData.AgeAssuranceMethod.ValueType  # 10
     AGE_ASSURANCE_METHOD_MANUAL_REVIEW: UserData.AgeAssuranceMethod.ValueType  # 11
     AGE_ASSURANCE_METHOD_OS_SIGNAL_CONFIRMED: UserData.AgeAssuranceMethod.ValueType  # 12
+    AGE_ASSURANCE_METHOD_TNS_DETERMINATION: UserData.AgeAssuranceMethod.ValueType  # 13
 
     class _AgeAssuranceVendor:
         ValueType = _typing.NewType("ValueType", _builtins.int)

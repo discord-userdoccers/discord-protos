@@ -4,6 +4,8 @@ import "google/protobuf/descriptor.proto";
 
 import "google/protobuf/wrappers.proto";
 
+import "google/protobuf/duration.proto";
+
 import "google/protobuf/timestamp.proto";
 
 package discord_protos.discord_experimentation.v1;
@@ -402,6 +404,7 @@ message Experiment {
     EXPOSURE_POINT_ID_UNSPECIFIED = 0;
     EXPOSURE_POINT_ID_SEO_INSTALLATION_PAGE_LOAD = 1;
     EXPOSURE_POINT_ID_MARKETING_INSTALLATION_PAGE_LOAD = 2;
+    EXPOSURE_POINT_ID_INVITE_GUILD_RESOLVE = 3;
   }
 
   enum Mode {
@@ -420,6 +423,47 @@ message Experiment {
     ELIGIBILITY_PERSISTENCE_DEFAULT = 0;
     ELIGIBILITY_PERSISTENCE_OFF = 1;
     ELIGIBILITY_PERSISTENCE_OVERRIDES_ONLY = 2;
+  }
+
+  enum PlanStatus {
+    PLAN_STATUS_UNSPECIFIED = 0;
+    PLAN_STATUS_DRAFT = 1;
+    PLAN_STATUS_ACTIVE = 2;
+    PLAN_STATUS_PAUSED_MANUAL = 3;
+    PLAN_STATUS_PAUSED_HEALTH_CHECK = 4;
+    PLAN_STATUS_COMPLETED = 5;
+    PLAN_STATUS_CANCELED = 6;
+  }
+
+  enum StepStatus {
+    STEP_STATUS_UNSPECIFIED = 0;
+    STEP_STATUS_PENDING = 1;
+    STEP_STATUS_IN_PROGRESS = 2;
+    STEP_STATUS_AWAITING_MANUAL_APPROVAL = 3;
+    STEP_STATUS_COMPLETED = 4;
+  }
+
+  message RampStep {
+    int32 target_basis_points = 1;
+    optional google.protobuf.Duration hold_duration = 2;
+    bool require_manual_approval = 3;
+    optional google.protobuf.Timestamp started_at = 4;
+    StepStatus status = 5;
+  }
+
+  message MeasurementPlan {
+    PlanStatus status = 1;
+    repeated RampStep ramp_steps = 2;
+  }
+
+  message RolloutPlan {
+    PlanStatus status = 1;
+    repeated RampStep ramp_steps = 2;
+  }
+
+  message LifecyclePlan {
+    optional MeasurementPlan measurement_plan = 1;
+    optional RolloutPlan rollout_plan = 2;
   }
 
   fixed64 id = 1;
@@ -466,4 +510,5 @@ message Experiment {
   bool is_managed = 39;
   optional NumberLineSettings number_line_settings = 43;
   EligibilityPersistence eligibility_persistence = 42;
+  optional LifecyclePlan lifecycle_plan = 48;
 }

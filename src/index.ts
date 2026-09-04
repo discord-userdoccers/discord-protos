@@ -52,6 +52,7 @@ export * from "./discord_protos/users/v1/User";
 export * from "./discord_protos/users/v1/MediumUser";
 export * from "./discord_protos/users/v1/UserData";
 export * from "./discord_protos/users/v1/GuildShardingConfig";
+export * from "./discord_protos/users/v1/AgreementsHistory";
 export * from "./discord_protos/discord_experimentation/v1/Experiment";
 export * from "./discord_protos/discord_users/v1/FrecencyUserSettings";
 export * from "./discord_protos/discord_kkv_store_value_models/v1/ApplicationUserRoleConnection";

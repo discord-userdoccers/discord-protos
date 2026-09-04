@@ -6,6 +6,7 @@ isort:skip_file
 from collections import abc as _abc
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import descriptor_pb2 as _descriptor_pb2
+from google.protobuf import duration_pb2 as _duration_pb2
 from google.protobuf import message as _message
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf import wrappers_pb2 as _wrappers_pb2
@@ -218,11 +219,13 @@ class Experiment(_message.Message):
         EXPOSURE_POINT_ID_UNSPECIFIED: Experiment._ExposurePointId.ValueType  # 0
         EXPOSURE_POINT_ID_SEO_INSTALLATION_PAGE_LOAD: Experiment._ExposurePointId.ValueType  # 1
         EXPOSURE_POINT_ID_MARKETING_INSTALLATION_PAGE_LOAD: Experiment._ExposurePointId.ValueType  # 2
+        EXPOSURE_POINT_ID_INVITE_GUILD_RESOLVE: Experiment._ExposurePointId.ValueType  # 3
 
     class ExposurePointId(_ExposurePointId, metaclass=_ExposurePointIdEnumTypeWrapper): ...
     EXPOSURE_POINT_ID_UNSPECIFIED: Experiment.ExposurePointId.ValueType  # 0
     EXPOSURE_POINT_ID_SEO_INSTALLATION_PAGE_LOAD: Experiment.ExposurePointId.ValueType  # 1
     EXPOSURE_POINT_ID_MARKETING_INSTALLATION_PAGE_LOAD: Experiment.ExposurePointId.ValueType  # 2
+    EXPOSURE_POINT_ID_INVITE_GUILD_RESOLVE: Experiment.ExposurePointId.ValueType  # 3
 
     class _Mode:
         ValueType = _typing.NewType("ValueType", _builtins.int)
@@ -253,6 +256,48 @@ class Experiment(_message.Message):
     ELIGIBILITY_PERSISTENCE_DEFAULT: Experiment.EligibilityPersistence.ValueType  # 0
     ELIGIBILITY_PERSISTENCE_OFF: Experiment.EligibilityPersistence.ValueType  # 1
     ELIGIBILITY_PERSISTENCE_OVERRIDES_ONLY: Experiment.EligibilityPersistence.ValueType  # 2
+
+    class _PlanStatus:
+        ValueType = _typing.NewType("ValueType", _builtins.int)
+        V: _TypeAlias = ValueType  # noqa: Y015
+
+    class _PlanStatusEnumTypeWrapper(_enum_type_wrapper._EnumTypeWrapper[Experiment._PlanStatus.ValueType], _builtins.type):
+        DESCRIPTOR: _descriptor.EnumDescriptor
+        PLAN_STATUS_UNSPECIFIED: Experiment._PlanStatus.ValueType  # 0
+        PLAN_STATUS_DRAFT: Experiment._PlanStatus.ValueType  # 1
+        PLAN_STATUS_ACTIVE: Experiment._PlanStatus.ValueType  # 2
+        PLAN_STATUS_PAUSED_MANUAL: Experiment._PlanStatus.ValueType  # 3
+        PLAN_STATUS_PAUSED_HEALTH_CHECK: Experiment._PlanStatus.ValueType  # 4
+        PLAN_STATUS_COMPLETED: Experiment._PlanStatus.ValueType  # 5
+        PLAN_STATUS_CANCELED: Experiment._PlanStatus.ValueType  # 6
+
+    class PlanStatus(_PlanStatus, metaclass=_PlanStatusEnumTypeWrapper): ...
+    PLAN_STATUS_UNSPECIFIED: Experiment.PlanStatus.ValueType  # 0
+    PLAN_STATUS_DRAFT: Experiment.PlanStatus.ValueType  # 1
+    PLAN_STATUS_ACTIVE: Experiment.PlanStatus.ValueType  # 2
+    PLAN_STATUS_PAUSED_MANUAL: Experiment.PlanStatus.ValueType  # 3
+    PLAN_STATUS_PAUSED_HEALTH_CHECK: Experiment.PlanStatus.ValueType  # 4
+    PLAN_STATUS_COMPLETED: Experiment.PlanStatus.ValueType  # 5
+    PLAN_STATUS_CANCELED: Experiment.PlanStatus.ValueType  # 6
+
+    class _StepStatus:
+        ValueType = _typing.NewType("ValueType", _builtins.int)
+        V: _TypeAlias = ValueType  # noqa: Y015
+
+    class _StepStatusEnumTypeWrapper(_enum_type_wrapper._EnumTypeWrapper[Experiment._StepStatus.ValueType], _builtins.type):
+        DESCRIPTOR: _descriptor.EnumDescriptor
+        STEP_STATUS_UNSPECIFIED: Experiment._StepStatus.ValueType  # 0
+        STEP_STATUS_PENDING: Experiment._StepStatus.ValueType  # 1
+        STEP_STATUS_IN_PROGRESS: Experiment._StepStatus.ValueType  # 2
+        STEP_STATUS_AWAITING_MANUAL_APPROVAL: Experiment._StepStatus.ValueType  # 3
+        STEP_STATUS_COMPLETED: Experiment._StepStatus.ValueType  # 4
+
+    class StepStatus(_StepStatus, metaclass=_StepStatusEnumTypeWrapper): ...
+    STEP_STATUS_UNSPECIFIED: Experiment.StepStatus.ValueType  # 0
+    STEP_STATUS_PENDING: Experiment.StepStatus.ValueType  # 1
+    STEP_STATUS_IN_PROGRESS: Experiment.StepStatus.ValueType  # 2
+    STEP_STATUS_AWAITING_MANUAL_APPROVAL: Experiment.StepStatus.ValueType  # 3
+    STEP_STATUS_COMPLETED: Experiment.StepStatus.ValueType  # 4
 
     @_typing.final
     class Bucket(_message.Message):
@@ -1512,6 +1557,115 @@ class Experiment(_message.Message):
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         def WhichOneof(self, oneof_group: _Never) -> None: ...
 
+    @_typing.final
+    class RampStep(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        TARGET_BASIS_POINTS_FIELD_NUMBER: _builtins.int
+        HOLD_DURATION_FIELD_NUMBER: _builtins.int
+        REQUIRE_MANUAL_APPROVAL_FIELD_NUMBER: _builtins.int
+        STARTED_AT_FIELD_NUMBER: _builtins.int
+        STATUS_FIELD_NUMBER: _builtins.int
+        target_basis_points: _builtins.int
+        require_manual_approval: _builtins.bool
+        status: Global___Experiment.StepStatus.ValueType
+        @_builtins.property
+        def hold_duration(self) -> _duration_pb2.Duration: ...
+        @_builtins.property
+        def started_at(self) -> _timestamp_pb2.Timestamp: ...
+        def __init__(
+            self,
+            *,
+            target_basis_points: _builtins.int = ...,
+            hold_duration: _duration_pb2.Duration | None = ...,
+            require_manual_approval: _builtins.bool = ...,
+            started_at: _timestamp_pb2.Timestamp | None = ...,
+            status: Global___Experiment.StepStatus.ValueType = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_hold_duration", b"_hold_duration", "_started_at", b"_started_at", "hold_duration", b"hold_duration", "started_at", b"started_at"]  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_hold_duration", b"_hold_duration", "_started_at", b"_started_at", "hold_duration", b"hold_duration", "require_manual_approval", b"require_manual_approval", "started_at", b"started_at", "status", b"status", "target_basis_points", b"target_basis_points"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        _WhichOneofReturnType__hold_duration: _TypeAlias = _typing.Literal["hold_duration"]  # noqa: Y015
+        _WhichOneofArgType__hold_duration: _TypeAlias = _typing.Literal["_hold_duration", b"_hold_duration"]  # noqa: Y015
+        _WhichOneofReturnType__started_at: _TypeAlias = _typing.Literal["started_at"]  # noqa: Y015
+        _WhichOneofArgType__started_at: _TypeAlias = _typing.Literal["_started_at", b"_started_at"]  # noqa: Y015
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__hold_duration) -> _WhichOneofReturnType__hold_duration | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__started_at) -> _WhichOneofReturnType__started_at | None: ...
+
+    @_typing.final
+    class MeasurementPlan(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        STATUS_FIELD_NUMBER: _builtins.int
+        RAMP_STEPS_FIELD_NUMBER: _builtins.int
+        status: Global___Experiment.PlanStatus.ValueType
+        @_builtins.property
+        def ramp_steps(self) -> _containers.RepeatedCompositeFieldContainer[Global___Experiment.RampStep]: ...
+        def __init__(
+            self,
+            *,
+            status: Global___Experiment.PlanStatus.ValueType = ...,
+            ramp_steps: _abc.Iterable[Global___Experiment.RampStep] | None = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["ramp_steps", b"ramp_steps", "status", b"status"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
+
+    @_typing.final
+    class RolloutPlan(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        STATUS_FIELD_NUMBER: _builtins.int
+        RAMP_STEPS_FIELD_NUMBER: _builtins.int
+        status: Global___Experiment.PlanStatus.ValueType
+        @_builtins.property
+        def ramp_steps(self) -> _containers.RepeatedCompositeFieldContainer[Global___Experiment.RampStep]: ...
+        def __init__(
+            self,
+            *,
+            status: Global___Experiment.PlanStatus.ValueType = ...,
+            ramp_steps: _abc.Iterable[Global___Experiment.RampStep] | None = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["ramp_steps", b"ramp_steps", "status", b"status"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
+
+    @_typing.final
+    class LifecyclePlan(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        MEASUREMENT_PLAN_FIELD_NUMBER: _builtins.int
+        ROLLOUT_PLAN_FIELD_NUMBER: _builtins.int
+        @_builtins.property
+        def measurement_plan(self) -> Global___Experiment.MeasurementPlan: ...
+        @_builtins.property
+        def rollout_plan(self) -> Global___Experiment.RolloutPlan: ...
+        def __init__(
+            self,
+            *,
+            measurement_plan: Global___Experiment.MeasurementPlan | None = ...,
+            rollout_plan: Global___Experiment.RolloutPlan | None = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_measurement_plan", b"_measurement_plan", "_rollout_plan", b"_rollout_plan", "measurement_plan", b"measurement_plan", "rollout_plan", b"rollout_plan"]  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_measurement_plan", b"_measurement_plan", "_rollout_plan", b"_rollout_plan", "measurement_plan", b"measurement_plan", "rollout_plan", b"rollout_plan"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        _WhichOneofReturnType__measurement_plan: _TypeAlias = _typing.Literal["measurement_plan"]  # noqa: Y015
+        _WhichOneofArgType__measurement_plan: _TypeAlias = _typing.Literal["_measurement_plan", b"_measurement_plan"]  # noqa: Y015
+        _WhichOneofReturnType__rollout_plan: _TypeAlias = _typing.Literal["rollout_plan"]  # noqa: Y015
+        _WhichOneofArgType__rollout_plan: _TypeAlias = _typing.Literal["_rollout_plan", b"_rollout_plan"]  # noqa: Y015
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__measurement_plan) -> _WhichOneofReturnType__measurement_plan | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__rollout_plan) -> _WhichOneofReturnType__rollout_plan | None: ...
+
     ID_FIELD_NUMBER: _builtins.int
     NAME_FIELD_NUMBER: _builtins.int
     CREATED_AT_FIELD_NUMBER: _builtins.int
@@ -1556,6 +1710,7 @@ class Experiment(_message.Message):
     IS_MANAGED_FIELD_NUMBER: _builtins.int
     NUMBER_LINE_SETTINGS_FIELD_NUMBER: _builtins.int
     ELIGIBILITY_PERSISTENCE_FIELD_NUMBER: _builtins.int
+    LIFECYCLE_PLAN_FIELD_NUMBER: _builtins.int
     id: _builtins.int
     name: _builtins.str
     creator_id: _builtins.int
@@ -1617,6 +1772,8 @@ class Experiment(_message.Message):
     def growthbook_tags(self) -> _containers.RepeatedScalarFieldContainer[_builtins.str]: ...
     @_builtins.property
     def number_line_settings(self) -> Global___Experiment.NumberLineSettings: ...
+    @_builtins.property
+    def lifecycle_plan(self) -> Global___Experiment.LifecyclePlan: ...
     def __init__(
         self,
         *,
@@ -1664,10 +1821,11 @@ class Experiment(_message.Message):
         is_managed: _builtins.bool = ...,
         number_line_settings: Global___Experiment.NumberLineSettings | None = ...,
         eligibility_persistence: Global___Experiment.EligibilityPersistence.ValueType = ...,
+        lifecycle_plan: Global___Experiment.LifecyclePlan | None = ...,
     ) -> None: ...
-    _HasFieldArgType: _TypeAlias = _typing.Literal["_archive_at", b"_archive_at", "_created_at", b"_created_at", "_debug_config", b"_debug_config", "_dynamic_config_size_limit_override", b"_dynamic_config_size_limit_override", "_edited_at", b"_edited_at", "_expected_end_date", b"_expected_end_date", "_guild_experiment_version", b"_guild_experiment_version", "_hypothesis", b"_hypothesis", "_number_line_settings", b"_number_line_settings", "_tech_spec_link", b"_tech_spec_link", "archive_at", b"archive_at", "created_at", b"created_at", "debug_config", b"debug_config", "dynamic_config_size_limit_override", b"dynamic_config_size_limit_override", "edited_at", b"edited_at", "expected_end_date", b"expected_end_date", "guild_experiment_version", b"guild_experiment_version", "hypothesis", b"hypothesis", "number_line_settings", b"number_line_settings", "tech_spec_link", b"tech_spec_link"]  # noqa: Y015
+    _HasFieldArgType: _TypeAlias = _typing.Literal["_archive_at", b"_archive_at", "_created_at", b"_created_at", "_debug_config", b"_debug_config", "_dynamic_config_size_limit_override", b"_dynamic_config_size_limit_override", "_edited_at", b"_edited_at", "_expected_end_date", b"_expected_end_date", "_guild_experiment_version", b"_guild_experiment_version", "_hypothesis", b"_hypothesis", "_lifecycle_plan", b"_lifecycle_plan", "_number_line_settings", b"_number_line_settings", "_tech_spec_link", b"_tech_spec_link", "archive_at", b"archive_at", "created_at", b"created_at", "debug_config", b"debug_config", "dynamic_config_size_limit_override", b"dynamic_config_size_limit_override", "edited_at", b"edited_at", "expected_end_date", b"expected_end_date", "guild_experiment_version", b"guild_experiment_version", "hypothesis", b"hypothesis", "lifecycle_plan", b"lifecycle_plan", "number_line_settings", b"number_line_settings", "tech_spec_link", b"tech_spec_link"]  # noqa: Y015
     def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["_archive_at", b"_archive_at", "_created_at", b"_created_at", "_debug_config", b"_debug_config", "_dynamic_config_size_limit_override", b"_dynamic_config_size_limit_override", "_edited_at", b"_edited_at", "_expected_end_date", b"_expected_end_date", "_guild_experiment_version", b"_guild_experiment_version", "_hypothesis", b"_hypothesis", "_number_line_settings", b"_number_line_settings", "_tech_spec_link", b"_tech_spec_link", "allocate_right_to_left", b"allocate_right_to_left", "archive_at", b"archive_at", "assignment_mode", b"assignment_mode", "cached_notification_channel_id", b"cached_notification_channel_id", "created_at", b"created_at", "creator_id", b"creator_id", "custom_unit_prefix", b"custom_unit_prefix", "debug_config", b"debug_config", "description", b"description", "dynamic_config_model", b"dynamic_config_model", "dynamic_config_size_limit_override", b"dynamic_config_size_limit_override", "edited_at", b"edited_at", "editor_id", b"editor_id", "eligibility_persistence", b"eligibility_persistence", "enable_edit_raw_json_ui", b"enable_edit_raw_json_ui", "engine_feature_flags", b"engine_feature_flags", "expected_end_date", b"expected_end_date", "exposure_points", b"exposure_points", "exposure_tracking", b"exposure_tracking", "extra_outcome_context", b"extra_outcome_context", "field_numbers_to_copy", b"field_numbers_to_copy", "growthbook_tags", b"growthbook_tags", "guild_experiment_version", b"guild_experiment_version", "hash_key", b"hash_key", "hypothesis", b"hypothesis", "id", b"id", "is_automated_change", b"is_automated_change", "is_managed", b"is_managed", "is_template", b"is_template", "name", b"name", "number_line_settings", b"number_line_settings", "owning_team_id", b"owning_team_id", "phase", b"phase", "revision", b"revision", "rules", b"rules", "suppress_editor_mention", b"suppress_editor_mention", "surfaces", b"surfaces", "tech_spec_link", b"tech_spec_link", "title", b"title", "type", b"type", "unit_type", b"unit_type", "variations", b"variations", "version", b"version", "winning_variation_id", b"winning_variation_id"]  # noqa: Y015
+    _ClearFieldArgType: _TypeAlias = _typing.Literal["_archive_at", b"_archive_at", "_created_at", b"_created_at", "_debug_config", b"_debug_config", "_dynamic_config_size_limit_override", b"_dynamic_config_size_limit_override", "_edited_at", b"_edited_at", "_expected_end_date", b"_expected_end_date", "_guild_experiment_version", b"_guild_experiment_version", "_hypothesis", b"_hypothesis", "_lifecycle_plan", b"_lifecycle_plan", "_number_line_settings", b"_number_line_settings", "_tech_spec_link", b"_tech_spec_link", "allocate_right_to_left", b"allocate_right_to_left", "archive_at", b"archive_at", "assignment_mode", b"assignment_mode", "cached_notification_channel_id", b"cached_notification_channel_id", "created_at", b"created_at", "creator_id", b"creator_id", "custom_unit_prefix", b"custom_unit_prefix", "debug_config", b"debug_config", "description", b"description", "dynamic_config_model", b"dynamic_config_model", "dynamic_config_size_limit_override", b"dynamic_config_size_limit_override", "edited_at", b"edited_at", "editor_id", b"editor_id", "eligibility_persistence", b"eligibility_persistence", "enable_edit_raw_json_ui", b"enable_edit_raw_json_ui", "engine_feature_flags", b"engine_feature_flags", "expected_end_date", b"expected_end_date", "exposure_points", b"exposure_points", "exposure_tracking", b"exposure_tracking", "extra_outcome_context", b"extra_outcome_context", "field_numbers_to_copy", b"field_numbers_to_copy", "growthbook_tags", b"growthbook_tags", "guild_experiment_version", b"guild_experiment_version", "hash_key", b"hash_key", "hypothesis", b"hypothesis", "id", b"id", "is_automated_change", b"is_automated_change", "is_managed", b"is_managed", "is_template", b"is_template", "lifecycle_plan", b"lifecycle_plan", "name", b"name", "number_line_settings", b"number_line_settings", "owning_team_id", b"owning_team_id", "phase", b"phase", "revision", b"revision", "rules", b"rules", "suppress_editor_mention", b"suppress_editor_mention", "surfaces", b"surfaces", "tech_spec_link", b"tech_spec_link", "title", b"title", "type", b"type", "unit_type", b"unit_type", "variations", b"variations", "version", b"version", "winning_variation_id", b"winning_variation_id"]  # noqa: Y015
     def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
     _WhichOneofReturnType__archive_at: _TypeAlias = _typing.Literal["archive_at"]  # noqa: Y015
     _WhichOneofArgType__archive_at: _TypeAlias = _typing.Literal["_archive_at", b"_archive_at"]  # noqa: Y015
@@ -1685,6 +1843,8 @@ class Experiment(_message.Message):
     _WhichOneofArgType__guild_experiment_version: _TypeAlias = _typing.Literal["_guild_experiment_version", b"_guild_experiment_version"]  # noqa: Y015
     _WhichOneofReturnType__hypothesis: _TypeAlias = _typing.Literal["hypothesis"]  # noqa: Y015
     _WhichOneofArgType__hypothesis: _TypeAlias = _typing.Literal["_hypothesis", b"_hypothesis"]  # noqa: Y015
+    _WhichOneofReturnType__lifecycle_plan: _TypeAlias = _typing.Literal["lifecycle_plan"]  # noqa: Y015
+    _WhichOneofArgType__lifecycle_plan: _TypeAlias = _typing.Literal["_lifecycle_plan", b"_lifecycle_plan"]  # noqa: Y015
     _WhichOneofReturnType__number_line_settings: _TypeAlias = _typing.Literal["number_line_settings"]  # noqa: Y015
     _WhichOneofArgType__number_line_settings: _TypeAlias = _typing.Literal["_number_line_settings", b"_number_line_settings"]  # noqa: Y015
     _WhichOneofReturnType__tech_spec_link: _TypeAlias = _typing.Literal["tech_spec_link"]  # noqa: Y015
@@ -1705,6 +1865,8 @@ class Experiment(_message.Message):
     def WhichOneof(self, oneof_group: _WhichOneofArgType__guild_experiment_version) -> _WhichOneofReturnType__guild_experiment_version | None: ...
     @_typing.overload
     def WhichOneof(self, oneof_group: _WhichOneofArgType__hypothesis) -> _WhichOneofReturnType__hypothesis | None: ...
+    @_typing.overload
+    def WhichOneof(self, oneof_group: _WhichOneofArgType__lifecycle_plan) -> _WhichOneofReturnType__lifecycle_plan | None: ...
     @_typing.overload
     def WhichOneof(self, oneof_group: _WhichOneofArgType__number_line_settings) -> _WhichOneofReturnType__number_line_settings | None: ...
     @_typing.overload

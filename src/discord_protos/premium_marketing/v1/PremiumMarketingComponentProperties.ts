@@ -1229,7 +1229,11 @@ export enum PremiumMarketingComponentProperties_ButtonAction {
     /**
      * @generated from protobuf enum value: BUTTON_ACTION_OPEN_SOCIAL_LAYER_STOREFRONT = 7;
      */
-    OPEN_SOCIAL_LAYER_STOREFRONT = 7
+    OPEN_SOCIAL_LAYER_STOREFRONT = 7,
+    /**
+     * @generated from protobuf enum value: BUTTON_ACTION_OPEN_GUILD_BOOST_CHECKOUT = 8;
+     */
+    OPEN_GUILD_BOOST_CHECKOUT = 8
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MarketingPageBannerButtonVariant
@@ -3707,7 +3711,23 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_NITRO_FILE_UPLOAD_1GB_NEW_BADGE = 817;
      */
-    NITRO_FILE_UPLOAD_1GB_NEW_BADGE = 817
+    NITRO_FILE_UPLOAD_1GB_NEW_BADGE = 817,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GUILD_HEADER_COACHMARK = 818;
+     */
+    GUILD_HEADER_COACHMARK = 818,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GUILD_BOOST_TAB_BANNER = 819;
+     */
+    GUILD_BOOST_TAB_BANNER = 819,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_TINY_BRONCO_SETTINGS = 820;
+     */
+    TINY_BRONCO_SETTINGS = 820,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_TINY_BRONCO_NOTICE = 821;
+     */
+    TINY_BRONCO_NOTICE = 821
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant

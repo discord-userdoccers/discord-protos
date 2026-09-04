@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+import "google/protobuf/wrappers.proto";
+
+import "google/protobuf/timestamp.proto";
+
+package discord_protos.users.v1;
+
+message AgreementsHistory {
+  message AgreementAcceptance {
+    optional google.protobuf.Timestamp accepted_at = 1;
+    optional google.protobuf.StringValue version = 2;
+  }
+
+  repeated AgreementAcceptance terms = 1;
+  repeated AgreementAcceptance privacy = 2;
+}

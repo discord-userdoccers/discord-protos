@@ -38,6 +38,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         BUTTON_ACTION_OPEN_PLAN_SELECTION_MODAL: PremiumMarketingComponentProperties._ButtonAction.ValueType  # 5
         BUTTON_ACTION_OPEN_PREMIUM_GROUP_PAYMENT_MODAL: PremiumMarketingComponentProperties._ButtonAction.ValueType  # 6
         BUTTON_ACTION_OPEN_SOCIAL_LAYER_STOREFRONT: PremiumMarketingComponentProperties._ButtonAction.ValueType  # 7
+        BUTTON_ACTION_OPEN_GUILD_BOOST_CHECKOUT: PremiumMarketingComponentProperties._ButtonAction.ValueType  # 8
 
     class ButtonAction(_ButtonAction, metaclass=_ButtonActionEnumTypeWrapper): ...
     BUTTON_ACTION_UNSPECIFIED: PremiumMarketingComponentProperties.ButtonAction.ValueType  # 0
@@ -48,6 +49,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     BUTTON_ACTION_OPEN_PLAN_SELECTION_MODAL: PremiumMarketingComponentProperties.ButtonAction.ValueType  # 5
     BUTTON_ACTION_OPEN_PREMIUM_GROUP_PAYMENT_MODAL: PremiumMarketingComponentProperties.ButtonAction.ValueType  # 6
     BUTTON_ACTION_OPEN_SOCIAL_LAYER_STOREFRONT: PremiumMarketingComponentProperties.ButtonAction.ValueType  # 7
+    BUTTON_ACTION_OPEN_GUILD_BOOST_CHECKOUT: PremiumMarketingComponentProperties.ButtonAction.ValueType  # 8
 
     class _MarketingPageBannerButtonVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)
@@ -684,6 +686,10 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_NITRO_FILE_UPLOAD_1GB_ANNOUNCEMENT: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 815
         DISMISSIBLE_CONTENT_NITRO_FILE_UPLOAD_1GB_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 816
         DISMISSIBLE_CONTENT_NITRO_FILE_UPLOAD_1GB_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 817
+        DISMISSIBLE_CONTENT_GUILD_HEADER_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 818
+        DISMISSIBLE_CONTENT_GUILD_BOOST_TAB_BANNER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 819
+        DISMISSIBLE_CONTENT_TINY_BRONCO_SETTINGS: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 820
+        DISMISSIBLE_CONTENT_TINY_BRONCO_NOTICE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 821
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_HUB_WAITLIST_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1300,6 +1306,10 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_NITRO_FILE_UPLOAD_1GB_ANNOUNCEMENT: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 815
     DISMISSIBLE_CONTENT_NITRO_FILE_UPLOAD_1GB_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 816
     DISMISSIBLE_CONTENT_NITRO_FILE_UPLOAD_1GB_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 817
+    DISMISSIBLE_CONTENT_GUILD_HEADER_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 818
+    DISMISSIBLE_CONTENT_GUILD_BOOST_TAB_BANNER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 819
+    DISMISSIBLE_CONTENT_TINY_BRONCO_SETTINGS: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 820
+    DISMISSIBLE_CONTENT_TINY_BRONCO_NOTICE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 821
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)

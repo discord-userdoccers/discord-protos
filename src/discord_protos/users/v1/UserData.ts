@@ -3412,7 +3412,11 @@ export enum UserData_AgeAssuranceMethod {
     /**
      * @generated from protobuf enum value: AGE_ASSURANCE_METHOD_OS_SIGNAL_CONFIRMED = 12;
      */
-    OS_SIGNAL_CONFIRMED = 12
+    OS_SIGNAL_CONFIRMED = 12,
+    /**
+     * @generated from protobuf enum value: AGE_ASSURANCE_METHOD_TNS_DETERMINATION = 13;
+     */
+    TNS_DETERMINATION = 13
 }
 /**
  * @generated from protobuf enum discord_protos.users.v1.UserData.AgeAssuranceVendor
