@@ -63,6 +63,7 @@ message Experiment {
     Type type = 5;
     optional google.protobuf.StringValue configuration = 6;
     fixed64 owning_experiment_id = 7;
+    int32 owning_slot_id = 8;
   }
 
   message PlatformVersionSpecifier {

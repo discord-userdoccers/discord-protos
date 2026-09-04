@@ -250,6 +250,10 @@ export interface Experiment_Variation {
      * @generated from protobuf field: fixed64 owning_experiment_id = 7
      */
     owningExperimentId: bigint;
+    /**
+     * @generated from protobuf field: int32 owning_slot_id = 8
+     */
+    owningSlotId: number;
 }
 /**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.PlatformVersionSpecifier
@@ -1931,7 +1935,8 @@ class Experiment_Variation$Type extends MessageType<Experiment_Variation> {
             { no: 4, name: "buckets", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => Experiment_Bucket },
             { no: 5, name: "type", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.Type", Experiment_Type, "TYPE_"] },
             { no: 6, name: "configuration", kind: "message", T: () => StringValue },
-            { no: 7, name: "owning_experiment_id", kind: "scalar", T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ }
+            { no: 7, name: "owning_experiment_id", kind: "scalar", T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ },
+            { no: 8, name: "owning_slot_id", kind: "scalar", T: 5 /*ScalarType.INT32*/ }
         ]);
     }
     create(value?: PartialMessage<Experiment_Variation>): Experiment_Variation {
@@ -1942,6 +1947,7 @@ class Experiment_Variation$Type extends MessageType<Experiment_Variation> {
         message.buckets = [];
         message.type = 0;
         message.owningExperimentId = 0n;
+        message.owningSlotId = 0;
         if (value !== undefined)
             reflectionMergePartial<Experiment_Variation>(this, message, value);
         return message;
@@ -1971,6 +1977,9 @@ class Experiment_Variation$Type extends MessageType<Experiment_Variation> {
                     break;
                 case /* fixed64 owning_experiment_id */ 7:
                     message.owningExperimentId = reader.fixed64().toBigInt();
+                    break;
+                case /* int32 owning_slot_id */ 8:
+                    message.owningSlotId = reader.int32();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -2005,6 +2014,9 @@ class Experiment_Variation$Type extends MessageType<Experiment_Variation> {
         /* fixed64 owning_experiment_id = 7; */
         if (message.owningExperimentId !== 0n)
             writer.tag(7, WireType.Bit64).fixed64(message.owningExperimentId);
+        /* int32 owning_slot_id = 8; */
+        if (message.owningSlotId !== 0)
+            writer.tag(8, WireType.Varint).int32(message.owningSlotId);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

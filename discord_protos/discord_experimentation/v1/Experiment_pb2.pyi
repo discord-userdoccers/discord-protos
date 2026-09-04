@@ -333,11 +333,13 @@ class Experiment(_message.Message):
         TYPE_FIELD_NUMBER: _builtins.int
         CONFIGURATION_FIELD_NUMBER: _builtins.int
         OWNING_EXPERIMENT_ID_FIELD_NUMBER: _builtins.int
+        OWNING_SLOT_ID_FIELD_NUMBER: _builtins.int
         id: _builtins.int
         label: _builtins.str
         target_allocation: _builtins.int
         type: Global___Experiment.Type.ValueType
         owning_experiment_id: _builtins.int
+        owning_slot_id: _builtins.int
         @_builtins.property
         def buckets(self) -> _containers.RepeatedCompositeFieldContainer[Global___Experiment.Bucket]: ...
         @_builtins.property
@@ -352,10 +354,11 @@ class Experiment(_message.Message):
             type: Global___Experiment.Type.ValueType = ...,
             configuration: _wrappers_pb2.StringValue | None = ...,
             owning_experiment_id: _builtins.int = ...,
+            owning_slot_id: _builtins.int = ...,
         ) -> None: ...
         _HasFieldArgType: _TypeAlias = _typing.Literal["_configuration", b"_configuration", "configuration", b"configuration"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_configuration", b"_configuration", "buckets", b"buckets", "configuration", b"configuration", "id", b"id", "label", b"label", "owning_experiment_id", b"owning_experiment_id", "target_allocation", b"target_allocation", "type", b"type"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_configuration", b"_configuration", "buckets", b"buckets", "configuration", b"configuration", "id", b"id", "label", b"label", "owning_experiment_id", b"owning_experiment_id", "owning_slot_id", b"owning_slot_id", "target_allocation", b"target_allocation", "type", b"type"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__configuration: _TypeAlias = _typing.Literal["configuration"]  # noqa: Y015
         _WhichOneofArgType__configuration: _TypeAlias = _typing.Literal["_configuration", b"_configuration"]  # noqa: Y015
