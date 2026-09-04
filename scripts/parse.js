@@ -317,6 +317,9 @@ function createProtoFile(proto) {
     if (lines.some((line) => line.includes("google.protobuf.Timestamp"))) {
         lines.splice(1, 0, `import "google/protobuf/timestamp.proto";\n`);
     }
+    if (lines.some((line) => line.includes("google.protobuf.Duration"))) {
+        lines.splice(1, 0, `import "google/protobuf/duration.proto";\n`);
+    }
     if (lines.some((line) => line.match(/google\.protobuf\.\w+Value/))) {
         lines.splice(1, 0, `import "google/protobuf/wrappers.proto";\n`);
     }
