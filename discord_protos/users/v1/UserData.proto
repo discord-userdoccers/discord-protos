@@ -867,6 +867,7 @@ message UserData {
     PERK_SOURCE_SOURCE_NITRO = 1;
     PERK_SOURCE_SOURCE_THIRDPARTY_CROISSANT = 2;
     PERK_SOURCE_SOURCE_BOT = 3;
+    PERK_SOURCE_SOURCE_HEXAGON_CAMPAIGN = 4;
   }
 
   message PerkConfigIncreasedFileUploadSize {
@@ -877,10 +878,28 @@ message UserData {
     uint32 max_guilds = 1;
   }
 
+  message PerkConfigDisplayNameStyles {
+    bool is_restricted_to_allowed_options = 1;
+    repeated DisplayNameStyles allowed_styles = 2;
+  }
+
+  message PerkConfigClientThemes {
+    bool is_restricted_to_allowed_options = 1;
+    repeated uint32 allowed_preset_ids = 2;
+  }
+
+  message PerkConfigAppIcons {
+    bool is_restricted_to_allowed_options = 1;
+    repeated string allowed_icon_ids = 2 [packed = false];
+  }
+
   message PerkConfig {
     oneof kind {
       PerkConfigIncreasedFileUploadSize increased_file_upload_size = 2;
       PerkConfigIncreasedGuildLimit increased_guild_limit = 3;
+      PerkConfigDisplayNameStyles display_name_styles = 4;
+      PerkConfigClientThemes client_themes = 5;
+      PerkConfigAppIcons app_icons = 6;
     }
     repeated PerkSource source = 1;
   }

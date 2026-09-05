@@ -520,6 +520,45 @@ export interface UserData_PerkConfigIncreasedGuildLimit {
     maxGuilds: number;
 }
 /**
+ * @generated from protobuf message discord_protos.users.v1.UserData.PerkConfigDisplayNameStyles
+ */
+export interface UserData_PerkConfigDisplayNameStyles {
+    /**
+     * @generated from protobuf field: bool is_restricted_to_allowed_options = 1
+     */
+    isRestrictedToAllowedOptions: boolean;
+    /**
+     * @generated from protobuf field: repeated discord_protos.users.v1.UserData.DisplayNameStyles allowed_styles = 2
+     */
+    allowedStyles: UserData_DisplayNameStyles[];
+}
+/**
+ * @generated from protobuf message discord_protos.users.v1.UserData.PerkConfigClientThemes
+ */
+export interface UserData_PerkConfigClientThemes {
+    /**
+     * @generated from protobuf field: bool is_restricted_to_allowed_options = 1
+     */
+    isRestrictedToAllowedOptions: boolean;
+    /**
+     * @generated from protobuf field: repeated uint32 allowed_preset_ids = 2
+     */
+    allowedPresetIds: number[];
+}
+/**
+ * @generated from protobuf message discord_protos.users.v1.UserData.PerkConfigAppIcons
+ */
+export interface UserData_PerkConfigAppIcons {
+    /**
+     * @generated from protobuf field: bool is_restricted_to_allowed_options = 1
+     */
+    isRestrictedToAllowedOptions: boolean;
+    /**
+     * @generated from protobuf field: repeated string allowed_icon_ids = 2 [packed = false]
+     */
+    allowedIconIds: string[];
+}
+/**
  * @generated from protobuf message discord_protos.users.v1.UserData.PerkConfig
  */
 export interface UserData_PerkConfig {
@@ -538,6 +577,24 @@ export interface UserData_PerkConfig {
          * @generated from protobuf field: discord_protos.users.v1.UserData.PerkConfigIncreasedGuildLimit increased_guild_limit = 3
          */
         increasedGuildLimit: UserData_PerkConfigIncreasedGuildLimit;
+    } | {
+        oneofKind: "displayNameStyles";
+        /**
+         * @generated from protobuf field: discord_protos.users.v1.UserData.PerkConfigDisplayNameStyles display_name_styles = 4
+         */
+        displayNameStyles: UserData_PerkConfigDisplayNameStyles;
+    } | {
+        oneofKind: "clientThemes";
+        /**
+         * @generated from protobuf field: discord_protos.users.v1.UserData.PerkConfigClientThemes client_themes = 5
+         */
+        clientThemes: UserData_PerkConfigClientThemes;
+    } | {
+        oneofKind: "appIcons";
+        /**
+         * @generated from protobuf field: discord_protos.users.v1.UserData.PerkConfigAppIcons app_icons = 6
+         */
+        appIcons: UserData_PerkConfigAppIcons;
     } | {
         oneofKind: undefined;
     };
@@ -3519,7 +3576,11 @@ export enum UserData_PerkSource {
     /**
      * @generated from protobuf enum value: PERK_SOURCE_SOURCE_BOT = 3;
      */
-    SOURCE_BOT = 3
+    SOURCE_BOT = 3,
+    /**
+     * @generated from protobuf enum value: PERK_SOURCE_SOURCE_HEXAGON_CAMPAIGN = 4;
+     */
+    SOURCE_HEXAGON_CAMPAIGN = 4
 }
 /**
  * @generated from protobuf enum discord_protos.users.v1.UserData.AnonymizationStatus
@@ -5376,11 +5437,187 @@ class UserData_PerkConfigIncreasedGuildLimit$Type extends MessageType<UserData_P
  */
 export const UserData_PerkConfigIncreasedGuildLimit = new UserData_PerkConfigIncreasedGuildLimit$Type();
 // @generated message type with reflection information, may provide speed optimized methods
+class UserData_PerkConfigDisplayNameStyles$Type extends MessageType<UserData_PerkConfigDisplayNameStyles> {
+    constructor() {
+        super("discord_protos.users.v1.UserData.PerkConfigDisplayNameStyles", [
+            { no: 1, name: "is_restricted_to_allowed_options", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
+            { no: 2, name: "allowed_styles", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => UserData_DisplayNameStyles }
+        ]);
+    }
+    create(value?: PartialMessage<UserData_PerkConfigDisplayNameStyles>): UserData_PerkConfigDisplayNameStyles {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.isRestrictedToAllowedOptions = false;
+        message.allowedStyles = [];
+        if (value !== undefined)
+            reflectionMergePartial<UserData_PerkConfigDisplayNameStyles>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: UserData_PerkConfigDisplayNameStyles): UserData_PerkConfigDisplayNameStyles {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* bool is_restricted_to_allowed_options */ 1:
+                    message.isRestrictedToAllowedOptions = reader.bool();
+                    break;
+                case /* repeated discord_protos.users.v1.UserData.DisplayNameStyles allowed_styles */ 2:
+                    message.allowedStyles.push(UserData_DisplayNameStyles.internalBinaryRead(reader, reader.uint32(), options));
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: UserData_PerkConfigDisplayNameStyles, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* bool is_restricted_to_allowed_options = 1; */
+        if (message.isRestrictedToAllowedOptions !== false)
+            writer.tag(1, WireType.Varint).bool(message.isRestrictedToAllowedOptions);
+        /* repeated discord_protos.users.v1.UserData.DisplayNameStyles allowed_styles = 2; */
+        for (let i = 0; i < message.allowedStyles.length; i++)
+            UserData_DisplayNameStyles.internalBinaryWrite(message.allowedStyles[i], writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.users.v1.UserData.PerkConfigDisplayNameStyles
+ */
+export const UserData_PerkConfigDisplayNameStyles = new UserData_PerkConfigDisplayNameStyles$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class UserData_PerkConfigClientThemes$Type extends MessageType<UserData_PerkConfigClientThemes> {
+    constructor() {
+        super("discord_protos.users.v1.UserData.PerkConfigClientThemes", [
+            { no: 1, name: "is_restricted_to_allowed_options", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
+            { no: 2, name: "allowed_preset_ids", kind: "scalar", repeat: 1 /*RepeatType.PACKED*/, T: 13 /*ScalarType.UINT32*/ }
+        ]);
+    }
+    create(value?: PartialMessage<UserData_PerkConfigClientThemes>): UserData_PerkConfigClientThemes {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.isRestrictedToAllowedOptions = false;
+        message.allowedPresetIds = [];
+        if (value !== undefined)
+            reflectionMergePartial<UserData_PerkConfigClientThemes>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: UserData_PerkConfigClientThemes): UserData_PerkConfigClientThemes {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* bool is_restricted_to_allowed_options */ 1:
+                    message.isRestrictedToAllowedOptions = reader.bool();
+                    break;
+                case /* repeated uint32 allowed_preset_ids */ 2:
+                    if (wireType === WireType.LengthDelimited)
+                        for (let e = reader.int32() + reader.pos; reader.pos < e;)
+                            message.allowedPresetIds.push(reader.uint32());
+                    else
+                        message.allowedPresetIds.push(reader.uint32());
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: UserData_PerkConfigClientThemes, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* bool is_restricted_to_allowed_options = 1; */
+        if (message.isRestrictedToAllowedOptions !== false)
+            writer.tag(1, WireType.Varint).bool(message.isRestrictedToAllowedOptions);
+        /* repeated uint32 allowed_preset_ids = 2; */
+        if (message.allowedPresetIds.length) {
+            writer.tag(2, WireType.LengthDelimited).fork();
+            for (let i = 0; i < message.allowedPresetIds.length; i++)
+                writer.uint32(message.allowedPresetIds[i]);
+            writer.join();
+        }
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.users.v1.UserData.PerkConfigClientThemes
+ */
+export const UserData_PerkConfigClientThemes = new UserData_PerkConfigClientThemes$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class UserData_PerkConfigAppIcons$Type extends MessageType<UserData_PerkConfigAppIcons> {
+    constructor() {
+        super("discord_protos.users.v1.UserData.PerkConfigAppIcons", [
+            { no: 1, name: "is_restricted_to_allowed_options", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
+            { no: 2, name: "allowed_icon_ids", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 9 /*ScalarType.STRING*/ }
+        ]);
+    }
+    create(value?: PartialMessage<UserData_PerkConfigAppIcons>): UserData_PerkConfigAppIcons {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.isRestrictedToAllowedOptions = false;
+        message.allowedIconIds = [];
+        if (value !== undefined)
+            reflectionMergePartial<UserData_PerkConfigAppIcons>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: UserData_PerkConfigAppIcons): UserData_PerkConfigAppIcons {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* bool is_restricted_to_allowed_options */ 1:
+                    message.isRestrictedToAllowedOptions = reader.bool();
+                    break;
+                case /* repeated string allowed_icon_ids = 2 [packed = false] */ 2:
+                    message.allowedIconIds.push(reader.string());
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: UserData_PerkConfigAppIcons, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* bool is_restricted_to_allowed_options = 1; */
+        if (message.isRestrictedToAllowedOptions !== false)
+            writer.tag(1, WireType.Varint).bool(message.isRestrictedToAllowedOptions);
+        /* repeated string allowed_icon_ids = 2 [packed = false]; */
+        for (let i = 0; i < message.allowedIconIds.length; i++)
+            writer.tag(2, WireType.LengthDelimited).string(message.allowedIconIds[i]);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.users.v1.UserData.PerkConfigAppIcons
+ */
+export const UserData_PerkConfigAppIcons = new UserData_PerkConfigAppIcons$Type();
+// @generated message type with reflection information, may provide speed optimized methods
 class UserData_PerkConfig$Type extends MessageType<UserData_PerkConfig> {
     constructor() {
         super("discord_protos.users.v1.UserData.PerkConfig", [
             { no: 2, name: "increased_file_upload_size", kind: "message", oneof: "kind", T: () => UserData_PerkConfigIncreasedFileUploadSize },
             { no: 3, name: "increased_guild_limit", kind: "message", oneof: "kind", T: () => UserData_PerkConfigIncreasedGuildLimit },
+            { no: 4, name: "display_name_styles", kind: "message", oneof: "kind", T: () => UserData_PerkConfigDisplayNameStyles },
+            { no: 5, name: "client_themes", kind: "message", oneof: "kind", T: () => UserData_PerkConfigClientThemes },
+            { no: 6, name: "app_icons", kind: "message", oneof: "kind", T: () => UserData_PerkConfigAppIcons },
             { no: 1, name: "source", kind: "enum", repeat: 1 /*RepeatType.PACKED*/, T: () => ["discord_protos.users.v1.UserData.PerkSource", UserData_PerkSource, "PERK_SOURCE_"] }
         ]);
     }
@@ -5407,6 +5644,24 @@ class UserData_PerkConfig$Type extends MessageType<UserData_PerkConfig> {
                     message.kind = {
                         oneofKind: "increasedGuildLimit",
                         increasedGuildLimit: UserData_PerkConfigIncreasedGuildLimit.internalBinaryRead(reader, reader.uint32(), options, (message.kind as any).increasedGuildLimit)
+                    };
+                    break;
+                case /* discord_protos.users.v1.UserData.PerkConfigDisplayNameStyles display_name_styles */ 4:
+                    message.kind = {
+                        oneofKind: "displayNameStyles",
+                        displayNameStyles: UserData_PerkConfigDisplayNameStyles.internalBinaryRead(reader, reader.uint32(), options, (message.kind as any).displayNameStyles)
+                    };
+                    break;
+                case /* discord_protos.users.v1.UserData.PerkConfigClientThemes client_themes */ 5:
+                    message.kind = {
+                        oneofKind: "clientThemes",
+                        clientThemes: UserData_PerkConfigClientThemes.internalBinaryRead(reader, reader.uint32(), options, (message.kind as any).clientThemes)
+                    };
+                    break;
+                case /* discord_protos.users.v1.UserData.PerkConfigAppIcons app_icons */ 6:
+                    message.kind = {
+                        oneofKind: "appIcons",
+                        appIcons: UserData_PerkConfigAppIcons.internalBinaryRead(reader, reader.uint32(), options, (message.kind as any).appIcons)
                     };
                     break;
                 case /* repeated discord_protos.users.v1.UserData.PerkSource source */ 1:
@@ -5441,6 +5696,15 @@ class UserData_PerkConfig$Type extends MessageType<UserData_PerkConfig> {
         /* discord_protos.users.v1.UserData.PerkConfigIncreasedGuildLimit increased_guild_limit = 3; */
         if (message.kind.oneofKind === "increasedGuildLimit")
             UserData_PerkConfigIncreasedGuildLimit.internalBinaryWrite(message.kind.increasedGuildLimit, writer.tag(3, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.users.v1.UserData.PerkConfigDisplayNameStyles display_name_styles = 4; */
+        if (message.kind.oneofKind === "displayNameStyles")
+            UserData_PerkConfigDisplayNameStyles.internalBinaryWrite(message.kind.displayNameStyles, writer.tag(4, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.users.v1.UserData.PerkConfigClientThemes client_themes = 5; */
+        if (message.kind.oneofKind === "clientThemes")
+            UserData_PerkConfigClientThemes.internalBinaryWrite(message.kind.clientThemes, writer.tag(5, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.users.v1.UserData.PerkConfigAppIcons app_icons = 6; */
+        if (message.kind.oneofKind === "appIcons")
+            UserData_PerkConfigAppIcons.internalBinaryWrite(message.kind.appIcons, writer.tag(6, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

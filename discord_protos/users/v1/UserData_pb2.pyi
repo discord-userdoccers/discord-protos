@@ -1519,12 +1519,14 @@ class UserData(_message.Message):
         PERK_SOURCE_SOURCE_NITRO: UserData._PerkSource.ValueType  # 1
         PERK_SOURCE_SOURCE_THIRDPARTY_CROISSANT: UserData._PerkSource.ValueType  # 2
         PERK_SOURCE_SOURCE_BOT: UserData._PerkSource.ValueType  # 3
+        PERK_SOURCE_SOURCE_HEXAGON_CAMPAIGN: UserData._PerkSource.ValueType  # 4
 
     class PerkSource(_PerkSource, metaclass=_PerkSourceEnumTypeWrapper): ...
     PERK_SOURCE_SOURCE_UNSPECIFIED: UserData.PerkSource.ValueType  # 0
     PERK_SOURCE_SOURCE_NITRO: UserData.PerkSource.ValueType  # 1
     PERK_SOURCE_SOURCE_THIRDPARTY_CROISSANT: UserData.PerkSource.ValueType  # 2
     PERK_SOURCE_SOURCE_BOT: UserData.PerkSource.ValueType  # 3
+    PERK_SOURCE_SOURCE_HEXAGON_CAMPAIGN: UserData.PerkSource.ValueType  # 4
 
     class _AnonymizationStatus:
         ValueType = _typing.NewType("ValueType", _builtins.int)
@@ -2267,16 +2269,88 @@ class UserData(_message.Message):
         def WhichOneof(self, oneof_group: _Never) -> None: ...
 
     @_typing.final
+    class PerkConfigDisplayNameStyles(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        IS_RESTRICTED_TO_ALLOWED_OPTIONS_FIELD_NUMBER: _builtins.int
+        ALLOWED_STYLES_FIELD_NUMBER: _builtins.int
+        is_restricted_to_allowed_options: _builtins.bool
+        @_builtins.property
+        def allowed_styles(self) -> _containers.RepeatedCompositeFieldContainer[Global___UserData.DisplayNameStyles]: ...
+        def __init__(
+            self,
+            *,
+            is_restricted_to_allowed_options: _builtins.bool = ...,
+            allowed_styles: _abc.Iterable[Global___UserData.DisplayNameStyles] | None = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["allowed_styles", b"allowed_styles", "is_restricted_to_allowed_options", b"is_restricted_to_allowed_options"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
+
+    @_typing.final
+    class PerkConfigClientThemes(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        IS_RESTRICTED_TO_ALLOWED_OPTIONS_FIELD_NUMBER: _builtins.int
+        ALLOWED_PRESET_IDS_FIELD_NUMBER: _builtins.int
+        is_restricted_to_allowed_options: _builtins.bool
+        @_builtins.property
+        def allowed_preset_ids(self) -> _containers.RepeatedScalarFieldContainer[_builtins.int]: ...
+        def __init__(
+            self,
+            *,
+            is_restricted_to_allowed_options: _builtins.bool = ...,
+            allowed_preset_ids: _abc.Iterable[_builtins.int] | None = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["allowed_preset_ids", b"allowed_preset_ids", "is_restricted_to_allowed_options", b"is_restricted_to_allowed_options"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
+
+    @_typing.final
+    class PerkConfigAppIcons(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        IS_RESTRICTED_TO_ALLOWED_OPTIONS_FIELD_NUMBER: _builtins.int
+        ALLOWED_ICON_IDS_FIELD_NUMBER: _builtins.int
+        is_restricted_to_allowed_options: _builtins.bool
+        @_builtins.property
+        def allowed_icon_ids(self) -> _containers.RepeatedScalarFieldContainer[_builtins.str]: ...
+        def __init__(
+            self,
+            *,
+            is_restricted_to_allowed_options: _builtins.bool = ...,
+            allowed_icon_ids: _abc.Iterable[_builtins.str] | None = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["allowed_icon_ids", b"allowed_icon_ids", "is_restricted_to_allowed_options", b"is_restricted_to_allowed_options"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
+
+    @_typing.final
     class PerkConfig(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
 
         INCREASED_FILE_UPLOAD_SIZE_FIELD_NUMBER: _builtins.int
         INCREASED_GUILD_LIMIT_FIELD_NUMBER: _builtins.int
+        DISPLAY_NAME_STYLES_FIELD_NUMBER: _builtins.int
+        CLIENT_THEMES_FIELD_NUMBER: _builtins.int
+        APP_ICONS_FIELD_NUMBER: _builtins.int
         SOURCE_FIELD_NUMBER: _builtins.int
         @_builtins.property
         def increased_file_upload_size(self) -> Global___UserData.PerkConfigIncreasedFileUploadSize: ...
         @_builtins.property
         def increased_guild_limit(self) -> Global___UserData.PerkConfigIncreasedGuildLimit: ...
+        @_builtins.property
+        def display_name_styles(self) -> Global___UserData.PerkConfigDisplayNameStyles: ...
+        @_builtins.property
+        def client_themes(self) -> Global___UserData.PerkConfigClientThemes: ...
+        @_builtins.property
+        def app_icons(self) -> Global___UserData.PerkConfigAppIcons: ...
         @_builtins.property
         def source(self) -> _containers.RepeatedScalarFieldContainer[Global___UserData.PerkSource.ValueType]: ...
         def __init__(
@@ -2284,13 +2358,16 @@ class UserData(_message.Message):
             *,
             increased_file_upload_size: Global___UserData.PerkConfigIncreasedFileUploadSize | None = ...,
             increased_guild_limit: Global___UserData.PerkConfigIncreasedGuildLimit | None = ...,
+            display_name_styles: Global___UserData.PerkConfigDisplayNameStyles | None = ...,
+            client_themes: Global___UserData.PerkConfigClientThemes | None = ...,
+            app_icons: Global___UserData.PerkConfigAppIcons | None = ...,
             source: _abc.Iterable[Global___UserData.PerkSource.ValueType] | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _typing.Literal["increased_file_upload_size", b"increased_file_upload_size", "increased_guild_limit", b"increased_guild_limit", "kind", b"kind"]  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["app_icons", b"app_icons", "client_themes", b"client_themes", "display_name_styles", b"display_name_styles", "increased_file_upload_size", b"increased_file_upload_size", "increased_guild_limit", b"increased_guild_limit", "kind", b"kind"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["increased_file_upload_size", b"increased_file_upload_size", "increased_guild_limit", b"increased_guild_limit", "kind", b"kind", "source", b"source"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["app_icons", b"app_icons", "client_themes", b"client_themes", "display_name_styles", b"display_name_styles", "increased_file_upload_size", b"increased_file_upload_size", "increased_guild_limit", b"increased_guild_limit", "kind", b"kind", "source", b"source"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-        _WhichOneofReturnType_kind: _TypeAlias = _typing.Literal["increased_file_upload_size", "increased_guild_limit"]  # noqa: Y015
+        _WhichOneofReturnType_kind: _TypeAlias = _typing.Literal["increased_file_upload_size", "increased_guild_limit", "display_name_styles", "client_themes", "app_icons"]  # noqa: Y015
         _WhichOneofArgType_kind: _TypeAlias = _typing.Literal["kind", b"kind"]  # noqa: Y015
         def WhichOneof(self, oneof_group: _WhichOneofArgType_kind) -> _WhichOneofReturnType_kind | None: ...
 

@@ -57,6 +57,8 @@ export * from "./discord_protos/discord_experimentation/v1/Experiment";
 export * from "./discord_protos/discord_users/v1/FrecencyUserSettings";
 export * from "./discord_protos/discord_kkv_store_value_models/v1/ApplicationUserRoleConnection";
 export * from "./discord_protos/discord_kkv_store_value_models/v1/AcknowledgedApplicationDisclosures";
+export * from "./discord_protos/qos_token/v1/QosToken";
+export * from "./discord_protos/qos_token/v1/Claims";
 export * from "./discord_protos/discord_notifications/v1/UserNotificationSettings";
 export * from "./discord_protos/common/v1/LocalizedSnowflake";
 export * from "./discord_protos/premium_marketing/v1/PremiumMarketingComponentProperties";
