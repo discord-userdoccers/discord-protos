@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+package discord_protos.discord_experimentation.v1.Bucket;
+
+message AllocationExposureMode {
+}

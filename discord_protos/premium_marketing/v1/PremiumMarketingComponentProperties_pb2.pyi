@@ -691,6 +691,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_TINY_BRONCO_SETTINGS: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 820
         DISMISSIBLE_CONTENT_TINY_BRONCO_NOTICE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 821
         DISMISSIBLE_CONTENT_BADGES_USER_PROFILE_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 822
+        DISMISSIBLE_CONTENT_PREMIUM_GIFT_QUANTITY_STEPPER_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 823
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_HUB_WAITLIST_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1312,6 +1313,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_TINY_BRONCO_SETTINGS: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 820
     DISMISSIBLE_CONTENT_TINY_BRONCO_NOTICE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 821
     DISMISSIBLE_CONTENT_BADGES_USER_PROFILE_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 822
+    DISMISSIBLE_CONTENT_PREMIUM_GIFT_QUANTITY_STEPPER_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 823
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)

@@ -217,6 +217,14 @@ export interface Experiment_Bucket {
      * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.Type type = 3
      */
     type: Experiment_Type;
+    /**
+     * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.Enum assignment_mode = 5
+     */
+    assignmentMode: Experiment_Enum;
+    /**
+     * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.Enum exposure_mode = 6
+     */
+    exposureMode: Experiment_Enum;
 }
 /**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.Variation
@@ -1162,6 +1170,27 @@ export enum Experiment_Type {
     PRESERVED = 4
 }
 /**
+ * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.Enum
+ */
+export enum Experiment_Enum {
+    /**
+     * @generated from protobuf enum value: ENUM_UNSPECIFIED = 0;
+     */
+    UNSPECIFIED = 0,
+    /**
+     * @generated from protobuf enum value: ENUM_FULL = 1;
+     */
+    FULL = 1,
+    /**
+     * @generated from protobuf enum value: ENUM_FORCE_CONTROL = 2;
+     */
+    FORCE_CONTROL = 2,
+    /**
+     * @generated from protobuf enum value: ENUM_OFF = 3;
+     */
+    OFF = 3
+}
+/**
  * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.Subtype
  */
 export enum Experiment_Subtype {
@@ -1868,7 +1897,9 @@ class Experiment_Bucket$Type extends MessageType<Experiment_Bucket> {
         super("discord_protos.discord_experimentation.v1.Experiment.Bucket", [
             { no: 1, name: "start", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
             { no: 2, name: "stop", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
-            { no: 3, name: "type", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.Type", Experiment_Type, "TYPE_"] }
+            { no: 3, name: "type", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.Type", Experiment_Type, "TYPE_"] },
+            { no: 5, name: "assignment_mode", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.Enum", Experiment_Enum, "ENUM_"] },
+            { no: 6, name: "exposure_mode", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.Enum", Experiment_Enum, "ENUM_"] }
         ]);
     }
     create(value?: PartialMessage<Experiment_Bucket>): Experiment_Bucket {
@@ -1876,6 +1907,8 @@ class Experiment_Bucket$Type extends MessageType<Experiment_Bucket> {
         message.start = 0;
         message.stop = 0;
         message.type = 0;
+        message.assignmentMode = 0;
+        message.exposureMode = 0;
         if (value !== undefined)
             reflectionMergePartial<Experiment_Bucket>(this, message, value);
         return message;
@@ -1893,6 +1926,12 @@ class Experiment_Bucket$Type extends MessageType<Experiment_Bucket> {
                     break;
                 case /* discord_protos.discord_experimentation.v1.Experiment.Type type */ 3:
                     message.type = reader.int32();
+                    break;
+                case /* discord_protos.discord_experimentation.v1.Experiment.Enum assignment_mode */ 5:
+                    message.assignmentMode = reader.int32();
+                    break;
+                case /* discord_protos.discord_experimentation.v1.Experiment.Enum exposure_mode */ 6:
+                    message.exposureMode = reader.int32();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -1915,6 +1954,12 @@ class Experiment_Bucket$Type extends MessageType<Experiment_Bucket> {
         /* discord_protos.discord_experimentation.v1.Experiment.Type type = 3; */
         if (message.type !== 0)
             writer.tag(3, WireType.Varint).int32(message.type);
+        /* discord_protos.discord_experimentation.v1.Experiment.Enum assignment_mode = 5; */
+        if (message.assignmentMode !== 0)
+            writer.tag(5, WireType.Varint).int32(message.assignmentMode);
+        /* discord_protos.discord_experimentation.v1.Experiment.Enum exposure_mode = 6; */
+        if (message.exposureMode !== 0)
+            writer.tag(6, WireType.Varint).int32(message.exposureMode);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

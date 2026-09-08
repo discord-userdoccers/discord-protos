@@ -104,6 +104,23 @@ class Experiment(_message.Message):
     TYPE_BURNED: Experiment.Type.ValueType  # 3
     TYPE_PRESERVED: Experiment.Type.ValueType  # 4
 
+    class _Enum:
+        ValueType = _typing.NewType("ValueType", _builtins.int)
+        V: _TypeAlias = ValueType  # noqa: Y015
+
+    class _EnumEnumTypeWrapper(_enum_type_wrapper._EnumTypeWrapper[Experiment._Enum.ValueType], _builtins.type):
+        DESCRIPTOR: _descriptor.EnumDescriptor
+        ENUM_UNSPECIFIED: Experiment._Enum.ValueType  # 0
+        ENUM_FULL: Experiment._Enum.ValueType  # 1
+        ENUM_FORCE_CONTROL: Experiment._Enum.ValueType  # 2
+        ENUM_OFF: Experiment._Enum.ValueType  # 3
+
+    class Enum(_Enum, metaclass=_EnumEnumTypeWrapper): ...
+    ENUM_UNSPECIFIED: Experiment.Enum.ValueType  # 0
+    ENUM_FULL: Experiment.Enum.ValueType  # 1
+    ENUM_FORCE_CONTROL: Experiment.Enum.ValueType  # 2
+    ENUM_OFF: Experiment.Enum.ValueType  # 3
+
     class _Subtype:
         ValueType = _typing.NewType("ValueType", _builtins.int)
         V: _TypeAlias = ValueType  # noqa: Y015
@@ -306,19 +323,25 @@ class Experiment(_message.Message):
         START_FIELD_NUMBER: _builtins.int
         STOP_FIELD_NUMBER: _builtins.int
         TYPE_FIELD_NUMBER: _builtins.int
+        ASSIGNMENT_MODE_FIELD_NUMBER: _builtins.int
+        EXPOSURE_MODE_FIELD_NUMBER: _builtins.int
         start: _builtins.int
         stop: _builtins.int
         type: Global___Experiment.Type.ValueType
+        assignment_mode: Global___Experiment.Enum.ValueType
+        exposure_mode: Global___Experiment.Enum.ValueType
         def __init__(
             self,
             *,
             start: _builtins.int = ...,
             stop: _builtins.int = ...,
             type: Global___Experiment.Type.ValueType = ...,
+            assignment_mode: Global___Experiment.Enum.ValueType = ...,
+            exposure_mode: Global___Experiment.Enum.ValueType = ...,
         ) -> None: ...
         _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["start", b"start", "stop", b"stop", "type", b"type"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["assignment_mode", b"assignment_mode", "exposure_mode", b"exposure_mode", "start", b"start", "stop", b"stop", "type", b"type"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         def WhichOneof(self, oneof_group: _Never) -> None: ...
 

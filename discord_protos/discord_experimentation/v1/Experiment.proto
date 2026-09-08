@@ -49,10 +49,19 @@ message Experiment {
     TYPE_PRESERVED = 4;
   }
 
+  enum Enum {
+    ENUM_UNSPECIFIED = 0;
+    ENUM_FULL = 1;
+    ENUM_FORCE_CONTROL = 2;
+    ENUM_OFF = 3;
+  }
+
   message Bucket {
     int32 start = 1;
     int32 stop = 2;
     Type type = 3;
+    Enum assignment_mode = 5;
+    Enum exposure_mode = 6;
   }
 
   message Variation {
