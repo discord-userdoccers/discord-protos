@@ -793,6 +793,14 @@ export enum User_ClassificationType {
      */
     CHILD_SEXUAL_EXPLOITATION_MATERIAL_NON_DEDICATED_GUILD_SAFETY_DISPATCH = 1016,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSAM_CONDUCT_SAFETY_DISPATCH = 1020;
+     */
+    CSAM_CONDUCT_SAFETY_DISPATCH = 1020,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSAM_CONDUCT_NON_DEDICATED_GUILD_SAFETY_DISPATCH = 1026;
+     */
+    CSAM_CONDUCT_NON_DEDICATED_GUILD_SAFETY_DISPATCH = 1026,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSAM_SMITE = 3000;
      */
     CSAM_SMITE = 3000,
@@ -2020,6 +2028,18 @@ export enum User_ClassificationType {
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_CHILD_SEXUAL_EXPLOITATION_MATERIAL_NON_DEDICATED_GUILD_ADMIN = 6136;
      */
     CHILD_SEXUAL_EXPLOITATION_MATERIAL_NON_DEDICATED_GUILD_ADMIN = 6136,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSAM_CONDUCT_ADMIN = 6140;
+     */
+    CSAM_CONDUCT_ADMIN = 6140,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSAM_CONDUCT_GUILD_ADMIN = 6145;
+     */
+    CSAM_CONDUCT_GUILD_ADMIN = 6145,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSAM_CONDUCT_NON_DEDICATED_GUILD_ADMIN = 6146;
+     */
+    CSAM_CONDUCT_NON_DEDICATED_GUILD_ADMIN = 6146,
     /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_HIGH_RISK_DANGEROUS_AND_REGULATED_GOODS_GUILD_RETOOL = 7005;
      */
