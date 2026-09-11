@@ -3743,7 +3743,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_REFERRAL_PROGRAM_INCENTIVE_POPOVER = 825;
      */
-    REFERRAL_PROGRAM_INCENTIVE_POPOVER = 825
+    REFERRAL_PROGRAM_INCENTIVE_POPOVER = 825,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_BADGE_CUSTOMIZATION_WEB_COACHMARK = 826;
+     */
+    BADGE_CUSTOMIZATION_WEB_COACHMARK = 826
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
