@@ -695,6 +695,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_GUILD_BOOST_TAB_HIGHLIGHT: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 824
         DISMISSIBLE_CONTENT_REFERRAL_PROGRAM_INCENTIVE_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 825
         DISMISSIBLE_CONTENT_BADGE_CUSTOMIZATION_WEB_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 826
+        DISMISSIBLE_CONTENT_YOUTUBE_3P_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 827
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_HUB_WAITLIST_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1320,6 +1321,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_GUILD_BOOST_TAB_HIGHLIGHT: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 824
     DISMISSIBLE_CONTENT_REFERRAL_PROGRAM_INCENTIVE_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 825
     DISMISSIBLE_CONTENT_BADGE_CUSTOMIZATION_WEB_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 826
+    DISMISSIBLE_CONTENT_YOUTUBE_3P_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 827
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)
