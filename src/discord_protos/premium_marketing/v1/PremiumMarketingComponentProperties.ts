@@ -3751,7 +3751,15 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_YOUTUBE_3P_POPOVER = 827;
      */
-    YOUTUBE_3P_POPOVER = 827
+    YOUTUBE_3P_POPOVER = 827,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GUILD_THEME_POWERUP_ROLLBACK_NOTIFICATION = 828;
+     */
+    GUILD_THEME_POWERUP_ROLLBACK_NOTIFICATION = 828,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GUILD_THEME_POWERUP_ROLLBACK_MODAL = 829;
+     */
+    GUILD_THEME_POWERUP_ROLLBACK_MODAL = 829
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
