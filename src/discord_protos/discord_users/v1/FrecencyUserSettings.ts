@@ -204,6 +204,10 @@ export interface FrecencyUserSettings_FavoriteSoundboardSounds {
      * @generated from protobuf field: repeated fixed64 sound_ids = 1
      */
     soundIds: bigint[];
+    /**
+     * @generated from protobuf field: repeated fixed64 ordered_sound_ids = 2
+     */
+    orderedSoundIds: bigint[];
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.FrecencyUserSettings.ApplicationFrecency
@@ -999,12 +1003,14 @@ export const FrecencyUserSettings_ApplicationCommandFrecency = new FrecencyUserS
 class FrecencyUserSettings_FavoriteSoundboardSounds$Type extends MessageType<FrecencyUserSettings_FavoriteSoundboardSounds> {
     constructor() {
         super("discord_protos.discord_users.v1.FrecencyUserSettings.FavoriteSoundboardSounds", [
-            { no: 1, name: "sound_ids", kind: "scalar", repeat: 1 /*RepeatType.PACKED*/, T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ }
+            { no: 1, name: "sound_ids", kind: "scalar", repeat: 1 /*RepeatType.PACKED*/, T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ },
+            { no: 2, name: "ordered_sound_ids", kind: "scalar", repeat: 1 /*RepeatType.PACKED*/, T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ }
         ]);
     }
     create(value?: PartialMessage<FrecencyUserSettings_FavoriteSoundboardSounds>): FrecencyUserSettings_FavoriteSoundboardSounds {
         const message = globalThis.Object.create((this.messagePrototype!));
         message.soundIds = [];
+        message.orderedSoundIds = [];
         if (value !== undefined)
             reflectionMergePartial<FrecencyUserSettings_FavoriteSoundboardSounds>(this, message, value);
         return message;
@@ -1020,6 +1026,13 @@ class FrecencyUserSettings_FavoriteSoundboardSounds$Type extends MessageType<Fre
                             message.soundIds.push(reader.fixed64().toBigInt());
                     else
                         message.soundIds.push(reader.fixed64().toBigInt());
+                    break;
+                case /* repeated fixed64 ordered_sound_ids */ 2:
+                    if (wireType === WireType.LengthDelimited)
+                        for (let e = reader.int32() + reader.pos; reader.pos < e;)
+                            message.orderedSoundIds.push(reader.fixed64().toBigInt());
+                    else
+                        message.orderedSoundIds.push(reader.fixed64().toBigInt());
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -1038,6 +1051,13 @@ class FrecencyUserSettings_FavoriteSoundboardSounds$Type extends MessageType<Fre
             writer.tag(1, WireType.LengthDelimited).fork();
             for (let i = 0; i < message.soundIds.length; i++)
                 writer.fixed64(message.soundIds[i]);
+            writer.join();
+        }
+        /* repeated fixed64 ordered_sound_ids = 2; */
+        if (message.orderedSoundIds.length) {
+            writer.tag(2, WireType.LengthDelimited).fork();
+            for (let i = 0; i < message.orderedSoundIds.length; i++)
+                writer.fixed64(message.orderedSoundIds[i]);
             writer.join();
         }
         let u = options.writeUnknownFields;

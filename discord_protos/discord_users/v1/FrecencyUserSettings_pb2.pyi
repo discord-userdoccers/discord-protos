@@ -317,16 +317,20 @@ class FrecencyUserSettings(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
 
         SOUND_IDS_FIELD_NUMBER: _builtins.int
+        ORDERED_SOUND_IDS_FIELD_NUMBER: _builtins.int
         @_builtins.property
         def sound_ids(self) -> _containers.RepeatedScalarFieldContainer[_builtins.int]: ...
+        @_builtins.property
+        def ordered_sound_ids(self) -> _containers.RepeatedScalarFieldContainer[_builtins.int]: ...
         def __init__(
             self,
             *,
             sound_ids: _abc.Iterable[_builtins.int] | None = ...,
+            ordered_sound_ids: _abc.Iterable[_builtins.int] | None = ...,
         ) -> None: ...
         _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["sound_ids", b"sound_ids"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["ordered_sound_ids", b"ordered_sound_ids", "sound_ids", b"sound_ids"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         def WhichOneof(self, oneof_group: _Never) -> None: ...
 

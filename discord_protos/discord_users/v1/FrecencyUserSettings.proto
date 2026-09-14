@@ -57,6 +57,7 @@ message FrecencyUserSettings {
 
   message FavoriteSoundboardSounds {
     repeated fixed64 sound_ids = 1;
+    repeated fixed64 ordered_sound_ids = 2;
   }
 
   message ApplicationFrecency {
