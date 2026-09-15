@@ -3603,7 +3603,15 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GUILD_THEME_POWERUP_ROLLBACK_MODAL = 829;
      */
-    GUILD_THEME_POWERUP_ROLLBACK_MODAL = 829
+    GUILD_THEME_POWERUP_ROLLBACK_MODAL = 829,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_VIRTUAL_CURRENCY_PROFILE_ONBOARDING_COACHMARK = 830;
+     */
+    VIRTUAL_CURRENCY_PROFILE_ONBOARDING_COACHMARK = 830,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_ORB_WALLET_PROFILE_INTRODUCTION_COACHMARK = 831;
+     */
+    ORB_WALLET_PROFILE_INTRODUCTION_COACHMARK = 831
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant

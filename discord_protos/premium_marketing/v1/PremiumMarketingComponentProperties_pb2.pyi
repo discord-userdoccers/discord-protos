@@ -659,6 +659,8 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_YOUTUBE_3P_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 827
         DISMISSIBLE_CONTENT_GUILD_THEME_POWERUP_ROLLBACK_NOTIFICATION: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 828
         DISMISSIBLE_CONTENT_GUILD_THEME_POWERUP_ROLLBACK_MODAL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 829
+        DISMISSIBLE_CONTENT_VIRTUAL_CURRENCY_PROFILE_ONBOARDING_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 830
+        DISMISSIBLE_CONTENT_ORB_WALLET_PROFILE_INTRODUCTION_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 831
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_UNSPECIFIED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1248,6 +1250,8 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_YOUTUBE_3P_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 827
     DISMISSIBLE_CONTENT_GUILD_THEME_POWERUP_ROLLBACK_NOTIFICATION: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 828
     DISMISSIBLE_CONTENT_GUILD_THEME_POWERUP_ROLLBACK_MODAL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 829
+    DISMISSIBLE_CONTENT_VIRTUAL_CURRENCY_PROFILE_ONBOARDING_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 830
+    DISMISSIBLE_CONTENT_ORB_WALLET_PROFILE_INTRODUCTION_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 831
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)
