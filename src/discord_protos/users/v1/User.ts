@@ -845,6 +845,22 @@ export enum User_ClassificationType {
      */
     GROOMING_AND_ENTICEMENT_SAFETY_DISPATCH = 1080,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_SEX_TRAFFICKING_SAFETY_DISPATCH = 1090;
+     */
+    SEX_TRAFFICKING_SAFETY_DISPATCH = 1090,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_SEX_TRAFFICKING_NON_DEDICATED_GUILD_SAFETY_DISPATCH = 1096;
+     */
+    SEX_TRAFFICKING_NON_DEDICATED_GUILD_SAFETY_DISPATCH = 1096,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSEM_ILLUSTRATED_SAFETY_DISPATCH = 1100;
+     */
+    CSEM_ILLUSTRATED_SAFETY_DISPATCH = 1100,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSEM_ILLUSTRATED_NON_DEDICATED_GUILD_SAFETY_DISPATCH = 1106;
+     */
+    CSEM_ILLUSTRATED_NON_DEDICATED_GUILD_SAFETY_DISPATCH = 1106,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSAM_SMITE = 3000;
      */
     CSAM_SMITE = 3000,
@@ -2156,6 +2172,30 @@ export enum User_ClassificationType {
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_GROOMING_AND_ENTICEMENT_NON_DEDICATED_GUILD_ADMIN = 6206;
      */
     GROOMING_AND_ENTICEMENT_NON_DEDICATED_GUILD_ADMIN = 6206,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_SEX_TRAFFICKING_ADMIN = 6210;
+     */
+    SEX_TRAFFICKING_ADMIN = 6210,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_SEX_TRAFFICKING_GUILD_ADMIN = 6215;
+     */
+    SEX_TRAFFICKING_GUILD_ADMIN = 6215,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_SEX_TRAFFICKING_NON_DEDICATED_GUILD_ADMIN = 6216;
+     */
+    SEX_TRAFFICKING_NON_DEDICATED_GUILD_ADMIN = 6216,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSEM_ILLUSTRATED_ADMIN = 6220;
+     */
+    CSEM_ILLUSTRATED_ADMIN = 6220,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSEM_ILLUSTRATED_GUILD_ADMIN = 6225;
+     */
+    CSEM_ILLUSTRATED_GUILD_ADMIN = 6225,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSEM_ILLUSTRATED_NON_DEDICATED_GUILD_ADMIN = 6226;
+     */
+    CSEM_ILLUSTRATED_NON_DEDICATED_GUILD_ADMIN = 6226,
     /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_HIGH_RISK_DANGEROUS_AND_REGULATED_GOODS_GUILD_RETOOL = 7005;
      */
