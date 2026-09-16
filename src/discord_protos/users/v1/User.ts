@@ -861,6 +861,18 @@ export enum User_ClassificationType {
      */
     CSEM_ILLUSTRATED_NON_DEDICATED_GUILD_SAFETY_DISPATCH = 1106,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSEM_NUDITY_SAFETY_DISPATCH = 1110;
+     */
+    CSEM_NUDITY_SAFETY_DISPATCH = 1110,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSEM_NUDITY_NON_DEDICATED_GUILD_SAFETY_DISPATCH = 1116;
+     */
+    CSEM_NUDITY_NON_DEDICATED_GUILD_SAFETY_DISPATCH = 1116,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_ADMISSION_OF_SEXUAL_EXPLOITATION_OF_A_CHILD_SAFETY_DISPATCH = 1120;
+     */
+    ADMISSION_OF_SEXUAL_EXPLOITATION_OF_A_CHILD_SAFETY_DISPATCH = 1120,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSAM_SMITE = 3000;
      */
     CSAM_SMITE = 3000,
@@ -2196,6 +2208,22 @@ export enum User_ClassificationType {
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSEM_ILLUSTRATED_NON_DEDICATED_GUILD_ADMIN = 6226;
      */
     CSEM_ILLUSTRATED_NON_DEDICATED_GUILD_ADMIN = 6226,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSEM_NUDITY_ADMIN = 6230;
+     */
+    CSEM_NUDITY_ADMIN = 6230,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSEM_NUDITY_GUILD_ADMIN = 6235;
+     */
+    CSEM_NUDITY_GUILD_ADMIN = 6235,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSEM_NUDITY_NON_DEDICATED_GUILD_ADMIN = 6236;
+     */
+    CSEM_NUDITY_NON_DEDICATED_GUILD_ADMIN = 6236,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_ADMISSION_OF_SEXUAL_EXPLOITATION_OF_A_CHILD_ADMIN = 6240;
+     */
+    ADMISSION_OF_SEXUAL_EXPLOITATION_OF_A_CHILD_ADMIN = 6240,
     /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_HIGH_RISK_DANGEROUS_AND_REGULATED_GOODS_GUILD_RETOOL = 7005;
      */
