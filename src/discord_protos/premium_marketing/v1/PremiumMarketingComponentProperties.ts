@@ -3611,7 +3611,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_ORB_WALLET_PROFILE_INTRODUCTION_COACHMARK = 831;
      */
-    ORB_WALLET_PROFILE_INTRODUCTION_COACHMARK = 831
+    ORB_WALLET_PROFILE_INTRODUCTION_COACHMARK = 831,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_MOBILE_SHOP_BROWSE_ALL_NITRO_UPSELL = 832;
+     */
+    MOBILE_SHOP_BROWSE_ALL_NITRO_UPSELL = 832
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
