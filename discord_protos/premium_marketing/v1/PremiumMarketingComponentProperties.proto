@@ -892,6 +892,7 @@ message PremiumMarketingComponentProperties {
     optional ThemeAwareAsset themed_asset_field = 7;
     optional HelpArticle help_article_field = 8;
     optional CTAButton cta_field = 9;
+    optional Gradient gradient_field = 10;
   }
 
   message GuildHeaderCoachmark {

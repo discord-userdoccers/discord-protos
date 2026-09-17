@@ -1073,6 +1073,10 @@ export interface PremiumMarketingComponentProperties_AdminEditorTestComponent {
      * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.CTAButton cta_field = 9
      */
     ctaField?: PremiumMarketingComponentProperties_CTAButton;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Gradient gradient_field = 10
+     */
+    gradientField?: PremiumMarketingComponentProperties_Gradient;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GuildHeaderCoachmark
@@ -6410,7 +6414,8 @@ class PremiumMarketingComponentProperties_AdminEditorTestComponent$Type extends 
             { no: 6, name: "asset_field", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 7, name: "themed_asset_field", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset },
             { no: 8, name: "help_article_field", kind: "message", T: () => PremiumMarketingComponentProperties_HelpArticle },
-            { no: 9, name: "cta_field", kind: "message", T: () => PremiumMarketingComponentProperties_CTAButton }
+            { no: 9, name: "cta_field", kind: "message", T: () => PremiumMarketingComponentProperties_CTAButton },
+            { no: 10, name: "gradient_field", kind: "message", T: () => PremiumMarketingComponentProperties_Gradient }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_AdminEditorTestComponent>): PremiumMarketingComponentProperties_AdminEditorTestComponent {
@@ -6455,6 +6460,9 @@ class PremiumMarketingComponentProperties_AdminEditorTestComponent$Type extends 
                 case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.CTAButton cta_field */ 9:
                     message.ctaField = PremiumMarketingComponentProperties_CTAButton.internalBinaryRead(reader, reader.uint32(), options, message.ctaField);
                     break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Gradient gradient_field */ 10:
+                    message.gradientField = PremiumMarketingComponentProperties_Gradient.internalBinaryRead(reader, reader.uint32(), options, message.gradientField);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -6494,6 +6502,9 @@ class PremiumMarketingComponentProperties_AdminEditorTestComponent$Type extends 
         /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.CTAButton cta_field = 9; */
         if (message.ctaField)
             PremiumMarketingComponentProperties_CTAButton.internalBinaryWrite(message.ctaField, writer.tag(9, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Gradient gradient_field = 10; */
+        if (message.gradientField)
+            PremiumMarketingComponentProperties_Gradient.internalBinaryWrite(message.gradientField, writer.tag(10, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

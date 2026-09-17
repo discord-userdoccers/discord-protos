@@ -716,6 +716,10 @@ export interface PreloadedUserSettings_TextAndImagesSettings {
      * @generated from protobuf field: optional google.protobuf.BoolValue include_game_mentions_in_autocomplete = 39
      */
     includeGameMentionsInAutocomplete?: BoolValue;
+    /**
+     * @generated from protobuf field: optional google.protobuf.BoolValue inline_emoji_suggestions_enabled = 40
+     */
+    inlineEmojiSuggestionsEnabled?: BoolValue;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.NotificationSettings
@@ -3659,7 +3663,8 @@ class PreloadedUserSettings_TextAndImagesSettings$Type extends MessageType<Prelo
             { no: 36, name: "is_cross_dm_search_enabled", kind: "message", T: () => BoolValue },
             { no: 37, name: "search_provider", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.SearchProvider", PreloadedUserSettings_SearchProvider, "SEARCH_PROVIDER_"] },
             { no: 38, name: "custom_search_url", kind: "message", T: () => StringValue },
-            { no: 39, name: "include_game_mentions_in_autocomplete", kind: "message", T: () => BoolValue }
+            { no: 39, name: "include_game_mentions_in_autocomplete", kind: "message", T: () => BoolValue },
+            { no: 40, name: "inline_emoji_suggestions_enabled", kind: "message", T: () => BoolValue }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_TextAndImagesSettings>): PreloadedUserSettings_TextAndImagesSettings {
@@ -3792,6 +3797,9 @@ class PreloadedUserSettings_TextAndImagesSettings$Type extends MessageType<Prelo
                 case /* optional google.protobuf.BoolValue include_game_mentions_in_autocomplete */ 39:
                     message.includeGameMentionsInAutocomplete = BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.includeGameMentionsInAutocomplete);
                     break;
+                case /* optional google.protobuf.BoolValue inline_emoji_suggestions_enabled */ 40:
+                    message.inlineEmojiSuggestionsEnabled = BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.inlineEmojiSuggestionsEnabled);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -3918,6 +3926,9 @@ class PreloadedUserSettings_TextAndImagesSettings$Type extends MessageType<Prelo
         /* optional google.protobuf.BoolValue include_game_mentions_in_autocomplete = 39; */
         if (message.includeGameMentionsInAutocomplete)
             BoolValue.internalBinaryWrite(message.includeGameMentionsInAutocomplete, writer.tag(39, WireType.LengthDelimited).fork(), options).join();
+        /* optional google.protobuf.BoolValue inline_emoji_suggestions_enabled = 40; */
+        if (message.inlineEmojiSuggestionsEnabled)
+            BoolValue.internalBinaryWrite(message.inlineEmojiSuggestionsEnabled, writer.tag(40, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
