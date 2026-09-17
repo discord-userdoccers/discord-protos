@@ -407,14 +407,11 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_VOICE_FILTER_EARLY_ACCESS_PREMIUM_TAB_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 550
         DISMISSIBLE_CONTENT_CLIENT_THEMES_APPEARANCE_SETTINGS_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 551
         DISMISSIBLE_CONTENT_CUSTOM_THEME_ENTRYPOINT_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 552
-        DISMISSIBLE_CONTENT_MOBILE_BOGO_PROMOTION_ACTION_SHEET: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 553
         DISMISSIBLE_CONTENT_CUSTOM_THEME_ENTRYPOINT_GRADIENT: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 554
         DISMISSIBLE_CONTENT_TIERLESS_BOOSTING_SYSTEM_MESSAGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 555
         DISMISSIBLE_CONTENT_GOOGLE_PLAY_PRICE_CHANGE_ACTION_SHEET: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 556
         DISMISSIBLE_CONTENT_REFERRAL_PROGRAM_NITRO_TAB_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 557
         DISMISSIBLE_CONTENT_ACTIVITIES_VOICE_LAUNCHER_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 558
-        DISMISSIBLE_CONTENT_BOGO_2025_NITRO_TAB_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 559
-        DISMISSIBLE_CONTENT_BOGO_2025_ANNOUNCEMENT_MODAL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 560
         DISMISSIBLE_CONTENT_NITRO_PRIVATE_BROWSING_SURVEY: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 563
         DISMISSIBLE_CONTENT_GUILD_POWERUP_NEW_PERK_AVAILABLE_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 564
         DISMISSIBLE_CONTENT_VANITY_URL_POWERUP_EDUCATIONAL_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 565
@@ -999,14 +996,11 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_VOICE_FILTER_EARLY_ACCESS_PREMIUM_TAB_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 550
     DISMISSIBLE_CONTENT_CLIENT_THEMES_APPEARANCE_SETTINGS_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 551
     DISMISSIBLE_CONTENT_CUSTOM_THEME_ENTRYPOINT_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 552
-    DISMISSIBLE_CONTENT_MOBILE_BOGO_PROMOTION_ACTION_SHEET: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 553
     DISMISSIBLE_CONTENT_CUSTOM_THEME_ENTRYPOINT_GRADIENT: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 554
     DISMISSIBLE_CONTENT_TIERLESS_BOOSTING_SYSTEM_MESSAGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 555
     DISMISSIBLE_CONTENT_GOOGLE_PLAY_PRICE_CHANGE_ACTION_SHEET: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 556
     DISMISSIBLE_CONTENT_REFERRAL_PROGRAM_NITRO_TAB_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 557
     DISMISSIBLE_CONTENT_ACTIVITIES_VOICE_LAUNCHER_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 558
-    DISMISSIBLE_CONTENT_BOGO_2025_NITRO_TAB_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 559
-    DISMISSIBLE_CONTENT_BOGO_2025_ANNOUNCEMENT_MODAL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 560
     DISMISSIBLE_CONTENT_NITRO_PRIVATE_BROWSING_SURVEY: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 563
     DISMISSIBLE_CONTENT_GUILD_POWERUP_NEW_PERK_AVAILABLE_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 564
     DISMISSIBLE_CONTENT_VANITY_URL_POWERUP_EDUCATIONAL_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 565
@@ -1269,6 +1263,21 @@ class PremiumMarketingComponentProperties(_message.Message):
     ASSET_VARIANT_UNSPECIFIED: PremiumMarketingComponentProperties.AssetVariant.ValueType  # 0
     ASSET_VARIANT_NORMAL: PremiumMarketingComponentProperties.AssetVariant.ValueType  # 1
     ASSET_VARIANT_LARGE_TILTED: PremiumMarketingComponentProperties.AssetVariant.ValueType  # 2
+
+    class _AdminEditorTestSelectOption:
+        ValueType = _typing.NewType("ValueType", _builtins.int)
+        V: _TypeAlias = ValueType  # noqa: Y015
+
+    class _AdminEditorTestSelectOptionEnumTypeWrapper(_enum_type_wrapper._EnumTypeWrapper[PremiumMarketingComponentProperties._AdminEditorTestSelectOption.ValueType], _builtins.type):
+        DESCRIPTOR: _descriptor.EnumDescriptor
+        ADMIN_EDITOR_TEST_SELECT_OPTION_UNSPECIFIED: PremiumMarketingComponentProperties._AdminEditorTestSelectOption.ValueType  # 0
+        ADMIN_EDITOR_TEST_SELECT_OPTION_FIRST: PremiumMarketingComponentProperties._AdminEditorTestSelectOption.ValueType  # 1
+        ADMIN_EDITOR_TEST_SELECT_OPTION_SECOND: PremiumMarketingComponentProperties._AdminEditorTestSelectOption.ValueType  # 2
+
+    class AdminEditorTestSelectOption(_AdminEditorTestSelectOption, metaclass=_AdminEditorTestSelectOptionEnumTypeWrapper): ...
+    ADMIN_EDITOR_TEST_SELECT_OPTION_UNSPECIFIED: PremiumMarketingComponentProperties.AdminEditorTestSelectOption.ValueType  # 0
+    ADMIN_EDITOR_TEST_SELECT_OPTION_FIRST: PremiumMarketingComponentProperties.AdminEditorTestSelectOption.ValueType  # 1
+    ADMIN_EDITOR_TEST_SELECT_OPTION_SECOND: PremiumMarketingComponentProperties.AdminEditorTestSelectOption.ValueType  # 2
 
     @_typing.final
     class LocalizedString(_message.Message):
@@ -2666,10 +2675,12 @@ class PremiumMarketingComponentProperties(_message.Message):
         HELP_ARTICLE_FIELD_FIELD_NUMBER: _builtins.int
         CTA_FIELD_FIELD_NUMBER: _builtins.int
         GRADIENT_FIELD_FIELD_NUMBER: _builtins.int
+        SELECT_FIELD_FIELD_NUMBER: _builtins.int
         deprecated_field: _builtins.str
         plain_text_field: _builtins.str
         checkbox_field: _builtins.bool
         asset_field: _builtins.str
+        select_field: Global___PremiumMarketingComponentProperties.AdminEditorTestSelectOption.ValueType
         @_builtins.property
         def localized_text_field(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
         @_builtins.property
@@ -2695,10 +2706,11 @@ class PremiumMarketingComponentProperties(_message.Message):
             help_article_field: Global___PremiumMarketingComponentProperties.HelpArticle | None = ...,
             cta_field: Global___PremiumMarketingComponentProperties.CTAButton | None = ...,
             gradient_field: Global___PremiumMarketingComponentProperties.Gradient | None = ...,
+            select_field: Global___PremiumMarketingComponentProperties.AdminEditorTestSelectOption.ValueType = ...,
         ) -> None: ...
         _HasFieldArgType: _TypeAlias = _typing.Literal["_cta_field", b"_cta_field", "_gradient_field", b"_gradient_field", "_help_article_field", b"_help_article_field", "_localized_text_field", b"_localized_text_field", "_textarea_field", b"_textarea_field", "_themed_asset_field", b"_themed_asset_field", "cta_field", b"cta_field", "gradient_field", b"gradient_field", "help_article_field", b"help_article_field", "localized_text_field", b"localized_text_field", "textarea_field", b"textarea_field", "themed_asset_field", b"themed_asset_field"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_cta_field", b"_cta_field", "_gradient_field", b"_gradient_field", "_help_article_field", b"_help_article_field", "_localized_text_field", b"_localized_text_field", "_textarea_field", b"_textarea_field", "_themed_asset_field", b"_themed_asset_field", "asset_field", b"asset_field", "checkbox_field", b"checkbox_field", "cta_field", b"cta_field", "deprecated_field", b"deprecated_field", "gradient_field", b"gradient_field", "help_article_field", b"help_article_field", "localized_text_field", b"localized_text_field", "plain_text_field", b"plain_text_field", "textarea_field", b"textarea_field", "themed_asset_field", b"themed_asset_field"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_cta_field", b"_cta_field", "_gradient_field", b"_gradient_field", "_help_article_field", b"_help_article_field", "_localized_text_field", b"_localized_text_field", "_textarea_field", b"_textarea_field", "_themed_asset_field", b"_themed_asset_field", "asset_field", b"asset_field", "checkbox_field", b"checkbox_field", "cta_field", b"cta_field", "deprecated_field", b"deprecated_field", "gradient_field", b"gradient_field", "help_article_field", b"help_article_field", "localized_text_field", b"localized_text_field", "plain_text_field", b"plain_text_field", "select_field", b"select_field", "textarea_field", b"textarea_field", "themed_asset_field", b"themed_asset_field"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__cta_field: _TypeAlias = _typing.Literal["cta_field"]  # noqa: Y015
         _WhichOneofArgType__cta_field: _TypeAlias = _typing.Literal["_cta_field", b"_cta_field"]  # noqa: Y015

@@ -1077,6 +1077,10 @@ export interface PremiumMarketingComponentProperties_AdminEditorTestComponent {
      * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Gradient gradient_field = 10
      */
     gradientField?: PremiumMarketingComponentProperties_Gradient;
+    /**
+     * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AdminEditorTestSelectOption select_field = 11
+     */
+    selectField: PremiumMarketingComponentProperties_AdminEditorTestSelectOption;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GuildHeaderCoachmark
@@ -2601,10 +2605,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     CUSTOM_THEME_ENTRYPOINT_NEW_BADGE = 552,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_MOBILE_BOGO_PROMOTION_ACTION_SHEET = 553;
-     */
-    MOBILE_BOGO_PROMOTION_ACTION_SHEET = 553,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CUSTOM_THEME_ENTRYPOINT_GRADIENT = 554;
      */
     CUSTOM_THEME_ENTRYPOINT_GRADIENT = 554,
@@ -2624,14 +2624,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_ACTIVITIES_VOICE_LAUNCHER_BADGE = 558;
      */
     ACTIVITIES_VOICE_LAUNCHER_BADGE = 558,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_BOGO_2025_NITRO_TAB_BADGE = 559;
-     */
-    BOGO_2025_NITRO_TAB_BADGE = 559,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_BOGO_2025_ANNOUNCEMENT_MODAL = 560;
-     */
-    BOGO_2025_ANNOUNCEMENT_MODAL = 560,
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_NITRO_PRIVATE_BROWSING_SURVEY = 563;
      */
@@ -3637,6 +3629,23 @@ export enum PremiumMarketingComponentProperties_AssetVariant {
      * @generated from protobuf enum value: ASSET_VARIANT_LARGE_TILTED = 2;
      */
     LARGE_TILTED = 2
+}
+/**
+ * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AdminEditorTestSelectOption
+ */
+export enum PremiumMarketingComponentProperties_AdminEditorTestSelectOption {
+    /**
+     * @generated from protobuf enum value: ADMIN_EDITOR_TEST_SELECT_OPTION_UNSPECIFIED = 0;
+     */
+    UNSPECIFIED = 0,
+    /**
+     * @generated from protobuf enum value: ADMIN_EDITOR_TEST_SELECT_OPTION_FIRST = 1;
+     */
+    FIRST = 1,
+    /**
+     * @generated from protobuf enum value: ADMIN_EDITOR_TEST_SELECT_OPTION_SECOND = 2;
+     */
+    SECOND = 2
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarketingComponentProperties> {
@@ -6415,7 +6424,8 @@ class PremiumMarketingComponentProperties_AdminEditorTestComponent$Type extends 
             { no: 7, name: "themed_asset_field", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset },
             { no: 8, name: "help_article_field", kind: "message", T: () => PremiumMarketingComponentProperties_HelpArticle },
             { no: 9, name: "cta_field", kind: "message", T: () => PremiumMarketingComponentProperties_CTAButton },
-            { no: 10, name: "gradient_field", kind: "message", T: () => PremiumMarketingComponentProperties_Gradient }
+            { no: 10, name: "gradient_field", kind: "message", T: () => PremiumMarketingComponentProperties_Gradient },
+            { no: 11, name: "select_field", kind: "enum", T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AdminEditorTestSelectOption", PremiumMarketingComponentProperties_AdminEditorTestSelectOption, "ADMIN_EDITOR_TEST_SELECT_OPTION_"] }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_AdminEditorTestComponent>): PremiumMarketingComponentProperties_AdminEditorTestComponent {
@@ -6424,6 +6434,7 @@ class PremiumMarketingComponentProperties_AdminEditorTestComponent$Type extends 
         message.plainTextField = "";
         message.checkboxField = false;
         message.assetField = "";
+        message.selectField = 0;
         if (value !== undefined)
             reflectionMergePartial<PremiumMarketingComponentProperties_AdminEditorTestComponent>(this, message, value);
         return message;
@@ -6462,6 +6473,9 @@ class PremiumMarketingComponentProperties_AdminEditorTestComponent$Type extends 
                     break;
                 case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Gradient gradient_field */ 10:
                     message.gradientField = PremiumMarketingComponentProperties_Gradient.internalBinaryRead(reader, reader.uint32(), options, message.gradientField);
+                    break;
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AdminEditorTestSelectOption select_field */ 11:
+                    message.selectField = reader.int32();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -6505,6 +6519,9 @@ class PremiumMarketingComponentProperties_AdminEditorTestComponent$Type extends 
         /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Gradient gradient_field = 10; */
         if (message.gradientField)
             PremiumMarketingComponentProperties_Gradient.internalBinaryWrite(message.gradientField, writer.tag(10, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AdminEditorTestSelectOption select_field = 11; */
+        if (message.selectField !== 0)
+            writer.tag(11, WireType.Varint).int32(message.selectField);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
