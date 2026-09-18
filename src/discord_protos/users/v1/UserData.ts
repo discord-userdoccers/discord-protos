@@ -1406,6 +1406,34 @@ export enum UserData_ClassificationType {
      */
     ADMISSION_OF_SEXUAL_EXPLOITATION_OF_A_CHILD_SAFETY_DISPATCH = 1120,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_RIHAB_SG_CSAM_SAFETY_DISPATCH = 1130;
+     */
+    RIHAB_SG_CSAM_SAFETY_DISPATCH = 1130,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_SG_CSAM_CONDUCT_SAFETY_DISPATCH = 1140;
+     */
+    SG_CSAM_CONDUCT_SAFETY_DISPATCH = 1140,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_SG_CSAM_CONDUCT_NON_DEDICATED_GUILD_SAFETY_DISPATCH = 1146;
+     */
+    SG_CSAM_CONDUCT_NON_DEDICATED_GUILD_SAFETY_DISPATCH = 1146,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_SG_CSEM_CONDUCT_SAFETY_DISPATCH = 1150;
+     */
+    SG_CSEM_CONDUCT_SAFETY_DISPATCH = 1150,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_SG_CSEM_CONDUCT_NON_DEDICATED_GUILD_SAFETY_DISPATCH = 1156;
+     */
+    SG_CSEM_CONDUCT_NON_DEDICATED_GUILD_SAFETY_DISPATCH = 1156,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_RISKY_AND_HARMFUL_TEEN_BEHAVIOR_SAFETY_DISPATCH = 1160;
+     */
+    RISKY_AND_HARMFUL_TEEN_BEHAVIOR_SAFETY_DISPATCH = 1160,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_RISKY_AND_HARMFUL_TEEN_BEHAVIOR_NON_DEDICATED_GUILD_SAFETY_DISPATCH = 1166;
+     */
+    RISKY_AND_HARMFUL_TEEN_BEHAVIOR_NON_DEDICATED_GUILD_SAFETY_DISPATCH = 1166,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSAM_SMITE = 3000;
      */
     CSAM_SMITE = 3000,
@@ -2757,6 +2785,54 @@ export enum UserData_ClassificationType {
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_ADMISSION_OF_SEXUAL_EXPLOITATION_OF_A_CHILD_ADMIN = 6240;
      */
     ADMISSION_OF_SEXUAL_EXPLOITATION_OF_A_CHILD_ADMIN = 6240,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_RIHAB_SG_CSAM_ADMIN = 6250;
+     */
+    RIHAB_SG_CSAM_ADMIN = 6250,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_RIHAB_SG_CSAM_GUILD_ADMIN = 6255;
+     */
+    RIHAB_SG_CSAM_GUILD_ADMIN = 6255,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_RIHAB_SG_CSAM_NON_DEDICATED_GUILD_ADMIN = 6256;
+     */
+    RIHAB_SG_CSAM_NON_DEDICATED_GUILD_ADMIN = 6256,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_SG_CSAM_CONDUCT_ADMIN = 6260;
+     */
+    SG_CSAM_CONDUCT_ADMIN = 6260,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_SG_CSAM_CONDUCT_GUILD_ADMIN = 6265;
+     */
+    SG_CSAM_CONDUCT_GUILD_ADMIN = 6265,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_SG_CSAM_CONDUCT_NON_DEDICATED_GUILD_ADMIN = 6266;
+     */
+    SG_CSAM_CONDUCT_NON_DEDICATED_GUILD_ADMIN = 6266,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_SG_CSEM_CONDUCT_ADMIN = 6270;
+     */
+    SG_CSEM_CONDUCT_ADMIN = 6270,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_SG_CSEM_CONDUCT_GUILD_ADMIN = 6275;
+     */
+    SG_CSEM_CONDUCT_GUILD_ADMIN = 6275,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_SG_CSEM_CONDUCT_NON_DEDICATED_GUILD_ADMIN = 6276;
+     */
+    SG_CSEM_CONDUCT_NON_DEDICATED_GUILD_ADMIN = 6276,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_RISKY_AND_HARMFUL_TEEN_BEHAVIOR_ADMIN = 6280;
+     */
+    RISKY_AND_HARMFUL_TEEN_BEHAVIOR_ADMIN = 6280,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_RISKY_AND_HARMFUL_TEEN_BEHAVIOR_GUILD_ADMIN = 6285;
+     */
+    RISKY_AND_HARMFUL_TEEN_BEHAVIOR_GUILD_ADMIN = 6285,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_RISKY_AND_HARMFUL_TEEN_BEHAVIOR_NON_DEDICATED_GUILD_ADMIN = 6286;
+     */
+    RISKY_AND_HARMFUL_TEEN_BEHAVIOR_NON_DEDICATED_GUILD_ADMIN = 6286,
     /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_HIGH_RISK_DANGEROUS_AND_REGULATED_GOODS_GUILD_RETOOL = 7005;
      */
