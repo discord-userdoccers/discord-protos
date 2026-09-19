@@ -3611,7 +3611,23 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_MOBILE_SHOP_BROWSE_ALL_NITRO_UPSELL = 832;
      */
-    MOBILE_SHOP_BROWSE_ALL_NITRO_UPSELL = 832
+    MOBILE_SHOP_BROWSE_ALL_NITRO_UPSELL = 832,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GUILD_SPACE_COACHMARK = 834;
+     */
+    GUILD_SPACE_COACHMARK = 834,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GUILD_SPACE_NUX_MODAL = 835;
+     */
+    GUILD_SPACE_NUX_MODAL = 835,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_ORB_WALLET_SHOP_CTA_CARD = 836;
+     */
+    ORB_WALLET_SHOP_CTA_CARD = 836,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_ORB_WALLET_NITRO_UPSELL_CTA_CARD = 837;
+     */
+    ORB_WALLET_NITRO_UPSELL_CTA_CARD = 837
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant

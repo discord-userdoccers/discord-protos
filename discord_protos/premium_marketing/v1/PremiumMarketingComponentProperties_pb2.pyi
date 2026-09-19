@@ -659,6 +659,10 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_VIRTUAL_CURRENCY_PROFILE_ONBOARDING_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 830
         DISMISSIBLE_CONTENT_ORB_WALLET_PROFILE_INTRODUCTION_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 831
         DISMISSIBLE_CONTENT_MOBILE_SHOP_BROWSE_ALL_NITRO_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 832
+        DISMISSIBLE_CONTENT_GUILD_SPACE_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 834
+        DISMISSIBLE_CONTENT_GUILD_SPACE_NUX_MODAL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 835
+        DISMISSIBLE_CONTENT_ORB_WALLET_SHOP_CTA_CARD: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 836
+        DISMISSIBLE_CONTENT_ORB_WALLET_NITRO_UPSELL_CTA_CARD: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 837
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_UNSPECIFIED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1248,6 +1252,10 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_VIRTUAL_CURRENCY_PROFILE_ONBOARDING_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 830
     DISMISSIBLE_CONTENT_ORB_WALLET_PROFILE_INTRODUCTION_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 831
     DISMISSIBLE_CONTENT_MOBILE_SHOP_BROWSE_ALL_NITRO_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 832
+    DISMISSIBLE_CONTENT_GUILD_SPACE_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 834
+    DISMISSIBLE_CONTENT_GUILD_SPACE_NUX_MODAL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 835
+    DISMISSIBLE_CONTENT_ORB_WALLET_SHOP_CTA_CARD: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 836
+    DISMISSIBLE_CONTENT_ORB_WALLET_NITRO_UPSELL_CTA_CARD: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 837
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)

@@ -42,15 +42,21 @@ class QosToken(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
 
         CLAIMS_FIELD_NUMBER: _builtins.int
+        SIGNATURE_FIELD_NUMBER: _builtins.int
+        KEY_ID_FIELD_NUMBER: _builtins.int
         claims: _builtins.bytes
+        signature: _builtins.bytes
+        key_id: _builtins.int
         def __init__(
             self,
             *,
             claims: _builtins.bytes = ...,
+            signature: _builtins.bytes = ...,
+            key_id: _builtins.int = ...,
         ) -> None: ...
         _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["claims", b"claims"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["claims", b"claims", "key_id", b"key_id", "signature", b"signature"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         def WhichOneof(self, oneof_group: _Never) -> None: ...
 

@@ -9,6 +9,8 @@ message QosToken {
 
   message DerivedQosData {
     bytes claims = 1;
+    bytes signature = 2;
+    uint32 key_id = 3;
   }
 
   optional ClientProvidedQosData client_provided = 1;

@@ -348,6 +348,7 @@ message PreloadedUserSettings {
     ProfileVisibility profile_visibility = 32;
     optional google.protobuf.BoolValue hide_friend_request_notes = 33;
     repeated AdTopic ad_topic_opt_outs = 34;
+    optional google.protobuf.BoolValue swp_message_promotion_opted_out = 35;
   }
 
   message DebugSettings {

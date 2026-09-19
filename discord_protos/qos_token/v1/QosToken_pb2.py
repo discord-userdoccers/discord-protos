@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1bqos_token/v1/QosToken.proto\x12\x1b\x64iscord_protos.qos_token.v1\"\x9f\x02\n\x08QosToken\x12Y\n\x0f\x63lient_provided\x18\x01 \x01(\x0b\x32;.discord_protos.qos_token.v1.QosToken.ClientProvidedQosDataH\x00\x88\x01\x01\x12J\n\x07\x64\x65rived\x18\x02 \x01(\x0b\x32\x34.discord_protos.qos_token.v1.QosToken.DerivedQosDataH\x01\x88\x01\x01\x1a*\n\x15\x43lientProvidedQosData\x12\x11\n\tis_active\x18\x01 \x01(\x08\x1a \n\x0e\x44\x65rivedQosData\x12\x0e\n\x06\x63laims\x18\x01 \x01(\x0c\x42\x12\n\x10_client_providedB\n\n\x08_derivedb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1bqos_token/v1/QosToken.proto\x12\x1b\x64iscord_protos.qos_token.v1\"\xc2\x02\n\x08QosToken\x12Y\n\x0f\x63lient_provided\x18\x01 \x01(\x0b\x32;.discord_protos.qos_token.v1.QosToken.ClientProvidedQosDataH\x00\x88\x01\x01\x12J\n\x07\x64\x65rived\x18\x02 \x01(\x0b\x32\x34.discord_protos.qos_token.v1.QosToken.DerivedQosDataH\x01\x88\x01\x01\x1a*\n\x15\x43lientProvidedQosData\x12\x11\n\tis_active\x18\x01 \x01(\x08\x1a\x43\n\x0e\x44\x65rivedQosData\x12\x0e\n\x06\x63laims\x18\x01 \x01(\x0c\x12\x11\n\tsignature\x18\x02 \x01(\x0c\x12\x0e\n\x06key_id\x18\x03 \x01(\rB\x12\n\x10_client_providedB\n\n\x08_derivedb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,9 +32,9 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'qos_token.v1.QosToken_pb2',
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
   _globals['_QOSTOKEN']._serialized_start=61
-  _globals['_QOSTOKEN']._serialized_end=348
+  _globals['_QOSTOKEN']._serialized_end=383
   _globals['_QOSTOKEN_CLIENTPROVIDEDQOSDATA']._serialized_start=240
   _globals['_QOSTOKEN_CLIENTPROVIDEDQOSDATA']._serialized_end=282
   _globals['_QOSTOKEN_DERIVEDQOSDATA']._serialized_start=284
-  _globals['_QOSTOKEN_DERIVEDQOSDATA']._serialized_end=316
+  _globals['_QOSTOKEN_DERIVEDQOSDATA']._serialized_end=351
 # @@protoc_insertion_point(module_scope)

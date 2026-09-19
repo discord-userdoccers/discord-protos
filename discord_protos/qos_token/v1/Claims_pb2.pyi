@@ -23,19 +23,25 @@ class Claims(_message.Message):
     USER_ID_FIELD_NUMBER: _builtins.int
     ISSUED_AT_FIELD_NUMBER: _builtins.int
     IS_STAFF_FIELD_NUMBER: _builtins.int
+    AUTH_TOKEN_HASH_FIELD_NUMBER: _builtins.int
+    EXPIRES_AT_FIELD_NUMBER: _builtins.int
     user_id: _builtins.int
     issued_at: _builtins.int
     is_staff: _builtins.bool
+    auth_token_hash: _builtins.bytes
+    expires_at: _builtins.int
     def __init__(
         self,
         *,
         user_id: _builtins.int = ...,
         issued_at: _builtins.int = ...,
         is_staff: _builtins.bool = ...,
+        auth_token_hash: _builtins.bytes = ...,
+        expires_at: _builtins.int = ...,
     ) -> None: ...
     _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
     def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["is_staff", b"is_staff", "issued_at", b"issued_at", "user_id", b"user_id"]  # noqa: Y015
+    _ClearFieldArgType: _TypeAlias = _typing.Literal["auth_token_hash", b"auth_token_hash", "expires_at", b"expires_at", "is_staff", b"is_staff", "issued_at", b"issued_at", "user_id", b"user_id"]  # noqa: Y015
     def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
     def WhichOneof(self, oneof_group: _Never) -> None: ...
 

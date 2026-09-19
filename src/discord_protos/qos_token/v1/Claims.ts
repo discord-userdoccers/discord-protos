@@ -26,6 +26,14 @@ export interface Claims {
      * @generated from protobuf field: bool is_staff = 3
      */
     isStaff: boolean;
+    /**
+     * @generated from protobuf field: bytes auth_token_hash = 4
+     */
+    authTokenHash: Uint8Array;
+    /**
+     * @generated from protobuf field: fixed64 expires_at = 5
+     */
+    expiresAt: bigint;
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class Claims$Type extends MessageType<Claims> {
@@ -33,7 +41,9 @@ class Claims$Type extends MessageType<Claims> {
         super("discord_protos.qos_token.v1.Claims", [
             { no: 1, name: "user_id", kind: "scalar", T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ },
             { no: 2, name: "issued_at", kind: "scalar", T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ },
-            { no: 3, name: "is_staff", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
+            { no: 3, name: "is_staff", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
+            { no: 4, name: "auth_token_hash", kind: "scalar", T: 12 /*ScalarType.BYTES*/ },
+            { no: 5, name: "expires_at", kind: "scalar", T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ }
         ]);
     }
     create(value?: PartialMessage<Claims>): Claims {
@@ -41,6 +51,8 @@ class Claims$Type extends MessageType<Claims> {
         message.userId = 0n;
         message.issuedAt = 0n;
         message.isStaff = false;
+        message.authTokenHash = new Uint8Array(0);
+        message.expiresAt = 0n;
         if (value !== undefined)
             reflectionMergePartial<Claims>(this, message, value);
         return message;
@@ -58,6 +70,12 @@ class Claims$Type extends MessageType<Claims> {
                     break;
                 case /* bool is_staff */ 3:
                     message.isStaff = reader.bool();
+                    break;
+                case /* bytes auth_token_hash */ 4:
+                    message.authTokenHash = reader.bytes();
+                    break;
+                case /* fixed64 expires_at */ 5:
+                    message.expiresAt = reader.fixed64().toBigInt();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -80,6 +98,12 @@ class Claims$Type extends MessageType<Claims> {
         /* bool is_staff = 3; */
         if (message.isStaff !== false)
             writer.tag(3, WireType.Varint).bool(message.isStaff);
+        /* bytes auth_token_hash = 4; */
+        if (message.authTokenHash.length)
+            writer.tag(4, WireType.LengthDelimited).bytes(message.authTokenHash);
+        /* fixed64 expires_at = 5; */
+        if (message.expiresAt !== 0n)
+            writer.tag(5, WireType.Bit64).fixed64(message.expiresAt);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

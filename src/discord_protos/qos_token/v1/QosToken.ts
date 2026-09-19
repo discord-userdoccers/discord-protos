@@ -40,6 +40,14 @@ export interface QosToken_DerivedQosData {
      * @generated from protobuf field: bytes claims = 1
      */
     claims: Uint8Array;
+    /**
+     * @generated from protobuf field: bytes signature = 2
+     */
+    signature: Uint8Array;
+    /**
+     * @generated from protobuf field: uint32 key_id = 3
+     */
+    keyId: number;
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class QosToken$Type extends MessageType<QosToken> {
@@ -145,12 +153,16 @@ export const QosToken_ClientProvidedQosData = new QosToken_ClientProvidedQosData
 class QosToken_DerivedQosData$Type extends MessageType<QosToken_DerivedQosData> {
     constructor() {
         super("discord_protos.qos_token.v1.QosToken.DerivedQosData", [
-            { no: 1, name: "claims", kind: "scalar", T: 12 /*ScalarType.BYTES*/ }
+            { no: 1, name: "claims", kind: "scalar", T: 12 /*ScalarType.BYTES*/ },
+            { no: 2, name: "signature", kind: "scalar", T: 12 /*ScalarType.BYTES*/ },
+            { no: 3, name: "key_id", kind: "scalar", T: 13 /*ScalarType.UINT32*/ }
         ]);
     }
     create(value?: PartialMessage<QosToken_DerivedQosData>): QosToken_DerivedQosData {
         const message = globalThis.Object.create((this.messagePrototype!));
         message.claims = new Uint8Array(0);
+        message.signature = new Uint8Array(0);
+        message.keyId = 0;
         if (value !== undefined)
             reflectionMergePartial<QosToken_DerivedQosData>(this, message, value);
         return message;
@@ -162,6 +174,12 @@ class QosToken_DerivedQosData$Type extends MessageType<QosToken_DerivedQosData> 
             switch (fieldNo) {
                 case /* bytes claims */ 1:
                     message.claims = reader.bytes();
+                    break;
+                case /* bytes signature */ 2:
+                    message.signature = reader.bytes();
+                    break;
+                case /* uint32 key_id */ 3:
+                    message.keyId = reader.uint32();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -178,6 +196,12 @@ class QosToken_DerivedQosData$Type extends MessageType<QosToken_DerivedQosData> 
         /* bytes claims = 1; */
         if (message.claims.length)
             writer.tag(1, WireType.LengthDelimited).bytes(message.claims);
+        /* bytes signature = 2; */
+        if (message.signature.length)
+            writer.tag(2, WireType.LengthDelimited).bytes(message.signature);
+        /* uint32 key_id = 3; */
+        if (message.keyId !== 0)
+            writer.tag(3, WireType.Varint).uint32(message.keyId);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
