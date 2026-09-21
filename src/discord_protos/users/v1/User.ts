@@ -2309,6 +2309,22 @@ export enum User_ClassificationType {
      */
     BOT_WARN_OUTSIDE_CONTACT_ADMIN = 6300,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_GORE_ADMIN = 6310;
+     */
+    BOT_DELETE_GORE_ADMIN = 6310,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_GORE_ADMIN = 6320;
+     */
+    BOT_WARN_GORE_ADMIN = 6320,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_DOX_ADMIN = 6330;
+     */
+    BOT_DELETE_DOX_ADMIN = 6330,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_DOX_ADMIN = 6340;
+     */
+    BOT_WARN_DOX_ADMIN = 6340,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_HIGH_RISK_DANGEROUS_AND_REGULATED_GOODS_GUILD_RETOOL = 7005;
      */
     HIGH_RISK_DANGEROUS_AND_REGULATED_GOODS_GUILD_RETOOL = 7005,
