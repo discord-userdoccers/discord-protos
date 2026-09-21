@@ -2858,6 +2858,34 @@ export enum UserData_ClassificationType {
      */
     BOT_WARN_DOX_ADMIN = 6340,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_SCAMS_ADMIN = 6350;
+     */
+    BOT_DELETE_SCAMS_ADMIN = 6350,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_SCAMS_ADMIN = 6360;
+     */
+    BOT_WARN_SCAMS_ADMIN = 6360,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_DANGEROUS_GOODS_ADMIN = 6370;
+     */
+    BOT_DELETE_DANGEROUS_GOODS_ADMIN = 6370,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_DANGEROUS_GOODS_ADMIN = 6380;
+     */
+    BOT_WARN_DANGEROUS_GOODS_ADMIN = 6380,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_VIOLENT_EXTREMISM_ADMIN = 6390;
+     */
+    BOT_DELETE_VIOLENT_EXTREMISM_ADMIN = 6390,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_DATA_DISCLOSURE_ADMIN = 6400;
+     */
+    BOT_DELETE_DATA_DISCLOSURE_ADMIN = 6400,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_DATA_DISCLOSURE_ADMIN = 6410;
+     */
+    BOT_WARN_DATA_DISCLOSURE_ADMIN = 6410,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_HIGH_RISK_DANGEROUS_AND_REGULATED_GOODS_GUILD_RETOOL = 7005;
      */
     HIGH_RISK_DANGEROUS_AND_REGULATED_GOODS_GUILD_RETOOL = 7005,

@@ -3627,7 +3627,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_ORB_WALLET_NITRO_UPSELL_CTA_CARD = 837;
      */
-    ORB_WALLET_NITRO_UPSELL_CTA_CARD = 837
+    ORB_WALLET_NITRO_UPSELL_CTA_CARD = 837,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_SOUNDBOARD_FAVORITES_ORDERING_COACHMARK = 838;
+     */
+    SOUNDBOARD_FAVORITES_ORDERING_COACHMARK = 838
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant

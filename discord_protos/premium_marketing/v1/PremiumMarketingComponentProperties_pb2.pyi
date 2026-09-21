@@ -663,6 +663,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_GUILD_SPACE_NUX_MODAL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 835
         DISMISSIBLE_CONTENT_ORB_WALLET_SHOP_CTA_CARD: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 836
         DISMISSIBLE_CONTENT_ORB_WALLET_NITRO_UPSELL_CTA_CARD: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 837
+        DISMISSIBLE_CONTENT_SOUNDBOARD_FAVORITES_ORDERING_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 838
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_UNSPECIFIED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1256,6 +1257,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_GUILD_SPACE_NUX_MODAL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 835
     DISMISSIBLE_CONTENT_ORB_WALLET_SHOP_CTA_CARD: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 836
     DISMISSIBLE_CONTENT_ORB_WALLET_NITRO_UPSELL_CTA_CARD: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 837
+    DISMISSIBLE_CONTENT_SOUNDBOARD_FAVORITES_ORDERING_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 838
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)
