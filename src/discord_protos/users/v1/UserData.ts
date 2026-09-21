@@ -2834,6 +2834,14 @@ export enum UserData_ClassificationType {
      */
     RISKY_AND_HARMFUL_TEEN_BEHAVIOR_NON_DEDICATED_GUILD_ADMIN = 6286,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_OUTSIDE_CONTACT_ADMIN = 6290;
+     */
+    BOT_DELETE_OUTSIDE_CONTACT_ADMIN = 6290,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_OUTSIDE_CONTACT_ADMIN = 6300;
+     */
+    BOT_WARN_OUTSIDE_CONTACT_ADMIN = 6300,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_HIGH_RISK_DANGEROUS_AND_REGULATED_GOODS_GUILD_RETOOL = 7005;
      */
     HIGH_RISK_DANGEROUS_AND_REGULATED_GOODS_GUILD_RETOOL = 7005,
