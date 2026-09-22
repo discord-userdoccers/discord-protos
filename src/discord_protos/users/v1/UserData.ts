@@ -2886,6 +2886,22 @@ export enum UserData_ClassificationType {
      */
     BOT_WARN_DATA_DISCLOSURE_ADMIN = 6410,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_AGE_RESTRICTED_ADMIN = 6420;
+     */
+    BOT_DELETE_AGE_RESTRICTED_ADMIN = 6420,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_AGE_RESTRICTED_ADMIN = 6430;
+     */
+    BOT_WARN_AGE_RESTRICTED_ADMIN = 6430,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_OTHER_ADMIN = 6440;
+     */
+    BOT_DELETE_OTHER_ADMIN = 6440,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_OTHER_ADMIN = 6450;
+     */
+    BOT_WARN_OTHER_ADMIN = 6450,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_HIGH_RISK_DANGEROUS_AND_REGULATED_GOODS_GUILD_RETOOL = 7005;
      */
     HIGH_RISK_DANGEROUS_AND_REGULATED_GOODS_GUILD_RETOOL = 7005,
