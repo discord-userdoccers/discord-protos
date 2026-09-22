@@ -901,6 +901,26 @@ export enum User_ClassificationType {
      */
     RISKY_AND_HARMFUL_TEEN_BEHAVIOR_NON_DEDICATED_GUILD_SAFETY_DISPATCH = 1166,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSEA_CSAM_SAFETY_DISPATCH = 1170;
+     */
+    CSEA_CSAM_SAFETY_DISPATCH = 1170,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSEA_CSAM_NON_DEDICATED_GUILD_SAFETY_DISPATCH = 1176;
+     */
+    CSEA_CSAM_NON_DEDICATED_GUILD_SAFETY_DISPATCH = 1176,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSEA_CSAM_HIGH_CONFIDENCE_HASH_MATCH = 1180;
+     */
+    CSEA_CSAM_HIGH_CONFIDENCE_HASH_MATCH = 1180,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSEA_CSAM_MEDIUM_CONFIDENCE_HASH_MATCH = 1190;
+     */
+    CSEA_CSAM_MEDIUM_CONFIDENCE_HASH_MATCH = 1190,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSEA_CSAM_MEDIUM_CONFIDENCE_SAFETY_DISPATCH = 1200;
+     */
+    CSEA_CSAM_MEDIUM_CONFIDENCE_SAFETY_DISPATCH = 1200,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSAM_SMITE = 3000;
      */
     CSAM_SMITE = 3000,
@@ -996,6 +1016,14 @@ export enum User_ClassificationType {
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_HARASSMENT_AND_NONIMMINENT_AND_OR_NON_PHYSICAL_THREATS_GUILD_SMITE = 3125;
      */
     HARASSMENT_AND_NONIMMINENT_AND_OR_NON_PHYSICAL_THREATS_GUILD_SMITE = 3125,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSEA_CSAM_SMITE = 3150;
+     */
+    CSEA_CSAM_SMITE = 3150,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSEA_CSAM_GUILD_SMITE = 3155;
+     */
+    CSEA_CSAM_GUILD_SMITE = 3155,
     /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_QUARANTINE_SMITE = 3200;
      */
@@ -2441,6 +2469,26 @@ export enum User_ClassificationType {
      */
     BOT_WARN_MISINFO_ADMIN = 6630,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_DATA_MINING_ADMIN = 6640;
+     */
+    BOT_DELETE_DATA_MINING_ADMIN = 6640,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_DATA_MINING_ADMIN = 6650;
+     */
+    BOT_WARN_DATA_MINING_ADMIN = 6650,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSEA_CSAM_ADMIN = 6660;
+     */
+    CSEA_CSAM_ADMIN = 6660,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSEA_CSAM_GUILD_ADMIN = 6665;
+     */
+    CSEA_CSAM_GUILD_ADMIN = 6665,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSEA_CSAM_NON_DEDICATED_GUILD_ADMIN = 6666;
+     */
+    CSEA_CSAM_NON_DEDICATED_GUILD_ADMIN = 6666,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_HIGH_RISK_DANGEROUS_AND_REGULATED_GOODS_GUILD_RETOOL = 7005;
      */
     HIGH_RISK_DANGEROUS_AND_REGULATED_GOODS_GUILD_RETOOL = 7005,
@@ -2956,6 +3004,18 @@ export enum User_ClassificationType {
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_NON_CONSENSUAL_ADULT_INTIMATE_MEDIA_TAKEDOWN_NON_DEDICATED_GUILD_HASH_MATCH = 7505;
      */
     NON_CONSENSUAL_ADULT_INTIMATE_MEDIA_TAKEDOWN_NON_DEDICATED_GUILD_HASH_MATCH = 7505,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSEA_CSAM_RETOOL = 7510;
+     */
+    CSEA_CSAM_RETOOL = 7510,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSEA_CSAM_GUILD_RETOOL = 7515;
+     */
+    CSEA_CSAM_GUILD_RETOOL = 7515,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSEA_CSAM_NON_DEDICATED_GUILD_RETOOL = 7516;
+     */
+    CSEA_CSAM_NON_DEDICATED_GUILD_RETOOL = 7516,
     /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_TEST_CLASSIFICATION = 9000;
      */

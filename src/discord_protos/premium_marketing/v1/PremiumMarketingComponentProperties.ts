@@ -3631,7 +3631,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_SOUNDBOARD_FAVORITES_ORDERING_COACHMARK = 838;
      */
-    SOUNDBOARD_FAVORITES_ORDERING_COACHMARK = 838
+    SOUNDBOARD_FAVORITES_ORDERING_COACHMARK = 838,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_HOLIDAY_COACHMARK_HALLOWEEN_2026 = 839;
+     */
+    HOLIDAY_COACHMARK_HALLOWEEN_2026 = 839
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
