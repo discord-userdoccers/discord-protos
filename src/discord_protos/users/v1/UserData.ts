@@ -2902,6 +2902,78 @@ export enum UserData_ClassificationType {
      */
     BOT_WARN_OTHER_ADMIN = 6450,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_INAUTHENTIC_ENGAGEMENT_ADMIN = 6460;
+     */
+    BOT_DELETE_INAUTHENTIC_ENGAGEMENT_ADMIN = 6460,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_INAUTHENTIC_ENGAGEMENT_ADMIN = 6470;
+     */
+    BOT_WARN_INAUTHENTIC_ENGAGEMENT_ADMIN = 6470,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_DATA_MISUSE_ADMIN = 6480;
+     */
+    BOT_DELETE_DATA_MISUSE_ADMIN = 6480,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_DATA_MISUSE_ADMIN = 6490;
+     */
+    BOT_WARN_DATA_MISUSE_ADMIN = 6490,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_HATE_SPEECH_ADMIN = 6500;
+     */
+    BOT_DELETE_HATE_SPEECH_ADMIN = 6500,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_HATE_SPEECH_ADMIN = 6510;
+     */
+    BOT_WARN_HATE_SPEECH_ADMIN = 6510,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_MONETIZATION_OP_PAYMENTS_ADMIN = 6520;
+     */
+    BOT_DELETE_MONETIZATION_OP_PAYMENTS_ADMIN = 6520,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_MONETIZATION_OP_PAYMENTS_ADMIN = 6530;
+     */
+    BOT_WARN_MONETIZATION_OP_PAYMENTS_ADMIN = 6530,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_MONETIZATION_PRICE_PARITY_ADMIN = 6540;
+     */
+    BOT_DELETE_MONETIZATION_PRICE_PARITY_ADMIN = 6540,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_MONETIZATION_PRICE_PARITY_ADMIN = 6550;
+     */
+    BOT_WARN_MONETIZATION_PRICE_PARITY_ADMIN = 6550,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_UNSOLICITED_PROCESS_ADMIN = 6560;
+     */
+    BOT_DELETE_UNSOLICITED_PROCESS_ADMIN = 6560,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_UNSOLICITED_PROCESS_ADMIN = 6570;
+     */
+    BOT_WARN_UNSOLICITED_PROCESS_ADMIN = 6570,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_DIRECTED_UNDER_13_ADMIN = 6580;
+     */
+    BOT_DELETE_DIRECTED_UNDER_13_ADMIN = 6580,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_DIRECTED_UNDER_13_ADMIN = 6590;
+     */
+    BOT_WARN_DIRECTED_UNDER_13_ADMIN = 6590,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_HARASSMENT_OR_THREATS_ADMIN = 6600;
+     */
+    BOT_DELETE_HARASSMENT_OR_THREATS_ADMIN = 6600,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_HARASSMENT_OR_THREATS_ADMIN = 6610;
+     */
+    BOT_WARN_HARASSMENT_OR_THREATS_ADMIN = 6610,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_MISINFO_ADMIN = 6620;
+     */
+    BOT_DELETE_MISINFO_ADMIN = 6620,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_MISINFO_ADMIN = 6630;
+     */
+    BOT_WARN_MISINFO_ADMIN = 6630,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_HIGH_RISK_DANGEROUS_AND_REGULATED_GOODS_GUILD_RETOOL = 7005;
      */
     HIGH_RISK_DANGEROUS_AND_REGULATED_GOODS_GUILD_RETOOL = 7005,
