@@ -3022,6 +3022,58 @@ export enum UserData_ClassificationType {
      */
     CSEA_CSAM_NON_DEDICATED_GUILD_ADMIN = 6666,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_GROOMING_ADMIN = 6670;
+     */
+    BOT_DELETE_GROOMING_ADMIN = 6670,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_GROOMING_ADMIN = 6680;
+     */
+    BOT_WARN_GROOMING_ADMIN = 6680,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_DATA_UNENCRYPT_ADMIN = 6690;
+     */
+    BOT_DELETE_DATA_UNENCRYPT_ADMIN = 6690,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_DATA_UNENCRYPT_ADMIN = 6700;
+     */
+    BOT_WARN_DATA_UNENCRYPT_ADMIN = 6700,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_DISCORD_ASSETS_SALE_ADMIN = 6710;
+     */
+    BOT_DELETE_DISCORD_ASSETS_SALE_ADMIN = 6710,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_DISCORD_ASSETS_SALE_ADMIN = 6720;
+     */
+    BOT_WARN_DISCORD_ASSETS_SALE_ADMIN = 6720,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_COPYRIGHT_ADMIN = 6730;
+     */
+    BOT_DELETE_COPYRIGHT_ADMIN = 6730,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_COPYRIGHT_ADMIN = 6740;
+     */
+    BOT_WARN_COPYRIGHT_ADMIN = 6740,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_CIRCUMVENT_PRIVACY_SAFETY_SECURITY_ADMIN = 6750;
+     */
+    BOT_DELETE_CIRCUMVENT_PRIVACY_SAFETY_SECURITY_ADMIN = 6750,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_CIRCUMVENT_PRIVACY_SAFETY_SECURITY_ADMIN = 6760;
+     */
+    BOT_WARN_CIRCUMVENT_PRIVACY_SAFETY_SECURITY_ADMIN = 6760,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_SELF_HARM_ADMIN = 6770;
+     */
+    BOT_DELETE_SELF_HARM_ADMIN = 6770,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_SELF_HARM_ADMIN = 6780;
+     */
+    BOT_WARN_SELF_HARM_ADMIN = 6780,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_SPAM_ADMIN = 6790;
+     */
+    BOT_WARN_SPAM_ADMIN = 6790,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_HIGH_RISK_DANGEROUS_AND_REGULATED_GOODS_GUILD_RETOOL = 7005;
      */
     HIGH_RISK_DANGEROUS_AND_REGULATED_GOODS_GUILD_RETOOL = 7005,
