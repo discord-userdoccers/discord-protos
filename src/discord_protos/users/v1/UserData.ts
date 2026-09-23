@@ -3074,6 +3074,42 @@ export enum UserData_ClassificationType {
      */
     BOT_WARN_SPAM_ADMIN = 6790,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_FRAUD_ADMIN = 6800;
+     */
+    BOT_DELETE_FRAUD_ADMIN = 6800,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_FRAUD_ADMIN = 6810;
+     */
+    BOT_WARN_FRAUD_ADMIN = 6810,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_SECURITY_ADMIN = 6820;
+     */
+    BOT_DELETE_SECURITY_ADMIN = 6820,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_SECURITY_ADMIN = 6830;
+     */
+    BOT_WARN_SECURITY_ADMIN = 6830,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_UNSOLICITED_ACCOUNT_CHANGES_ADMIN = 6840;
+     */
+    BOT_WARN_UNSOLICITED_ACCOUNT_CHANGES_ADMIN = 6840,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_ADVERTISING_ADMIN = 6850;
+     */
+    BOT_DELETE_ADVERTISING_ADMIN = 6850,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_ADVERTISING_ADMIN = 6860;
+     */
+    BOT_WARN_ADVERTISING_ADMIN = 6860,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_DATA_PROFILING_ADMIN = 6870;
+     */
+    BOT_DELETE_DATA_PROFILING_ADMIN = 6870,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_DATA_PROFILING_ADMIN = 6880;
+     */
+    BOT_WARN_DATA_PROFILING_ADMIN = 6880,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_HIGH_RISK_DANGEROUS_AND_REGULATED_GOODS_GUILD_RETOOL = 7005;
      */
     HIGH_RISK_DANGEROUS_AND_REGULATED_GOODS_GUILD_RETOOL = 7005,
