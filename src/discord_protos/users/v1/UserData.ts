@@ -3138,6 +3138,14 @@ export enum UserData_ClassificationType {
      */
     BOT_WARN_IMPERSONATION_ADMIN = 6950,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_DATA_AI_TRAINING_ADMIN = 6960;
+     */
+    BOT_DELETE_DATA_AI_TRAINING_ADMIN = 6960,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_DATA_AI_TRAINING_ADMIN = 6970;
+     */
+    BOT_WARN_DATA_AI_TRAINING_ADMIN = 6970,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_HIGH_RISK_DANGEROUS_AND_REGULATED_GOODS_GUILD_RETOOL = 7005;
      */
     HIGH_RISK_DANGEROUS_AND_REGULATED_GOODS_GUILD_RETOOL = 7005,
