@@ -3118,6 +3118,26 @@ export enum UserData_ClassificationType {
      */
     BOT_WARN_DATA_SALE_ADMIN = 6900,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_LACKS_RATING_ADMIN = 6910;
+     */
+    BOT_DELETE_LACKS_RATING_ADMIN = 6910,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_LACKS_RATING_ADMIN = 6920;
+     */
+    BOT_WARN_LACKS_RATING_ADMIN = 6920,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_GAMBLING_ADMIN = 6930;
+     */
+    BOT_DELETE_GAMBLING_ADMIN = 6930,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_ILLEGAL_ADMIN = 6940;
+     */
+    BOT_DELETE_ILLEGAL_ADMIN = 6940,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_IMPERSONATION_ADMIN = 6950;
+     */
+    BOT_WARN_IMPERSONATION_ADMIN = 6950,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_HIGH_RISK_DANGEROUS_AND_REGULATED_GOODS_GUILD_RETOOL = 7005;
      */
     HIGH_RISK_DANGEROUS_AND_REGULATED_GOODS_GUILD_RETOOL = 7005,
