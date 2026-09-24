@@ -1563,6 +1563,7 @@ class User(_message.Message):
         DISPLAY_NAME_FONT_ORBITRON: User._DisplayNameFont.ValueType  # 14
         DISPLAY_NAME_FONT_NEW_ROCKER: User._DisplayNameFont.ValueType  # 15
         DISPLAY_NAME_FONT_KALAM: User._DisplayNameFont.ValueType  # 16
+        DISPLAY_NAME_FONT_HEXAGON: User._DisplayNameFont.ValueType  # 17
 
     class DisplayNameFont(_DisplayNameFont, metaclass=_DisplayNameFontEnumTypeWrapper): ...
     DISPLAY_NAME_FONT_UNSPECIFIED: User.DisplayNameFont.ValueType  # 0
@@ -1582,6 +1583,7 @@ class User(_message.Message):
     DISPLAY_NAME_FONT_ORBITRON: User.DisplayNameFont.ValueType  # 14
     DISPLAY_NAME_FONT_NEW_ROCKER: User.DisplayNameFont.ValueType  # 15
     DISPLAY_NAME_FONT_KALAM: User.DisplayNameFont.ValueType  # 16
+    DISPLAY_NAME_FONT_HEXAGON: User.DisplayNameFont.ValueType  # 17
 
     class _DisplayNameEffect:
         ValueType = _typing.NewType("ValueType", _builtins.int)

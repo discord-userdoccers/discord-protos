@@ -904,6 +904,7 @@ message UserData {
     DISPLAY_NAME_FONT_ORBITRON = 14;
     DISPLAY_NAME_FONT_NEW_ROCKER = 15;
     DISPLAY_NAME_FONT_KALAM = 16;
+    DISPLAY_NAME_FONT_HEXAGON = 17;
   }
 
   enum DisplayNameEffect {

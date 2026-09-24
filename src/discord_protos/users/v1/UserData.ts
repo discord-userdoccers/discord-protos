@@ -3942,7 +3942,11 @@ export enum UserData_DisplayNameFont {
     /**
      * @generated from protobuf enum value: DISPLAY_NAME_FONT_KALAM = 16;
      */
-    KALAM = 16
+    KALAM = 16,
+    /**
+     * @generated from protobuf enum value: DISPLAY_NAME_FONT_HEXAGON = 17;
+     */
+    HEXAGON = 17
 }
 /**
  * @generated from protobuf enum discord_protos.users.v1.UserData.DisplayNameEffect
