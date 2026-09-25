@@ -384,7 +384,6 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_RECENT_AVATARS_SETTINGS_PROFILE_PAGE_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 517
         DISMISSIBLE_CONTENT_PERMADECOS_NITRO_TAB_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 518
         DISMISSIBLE_CONTENT_PERMADECOS_NITRO_HOME_CARD_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 520
-        DISMISSIBLE_CONTENT_RING_USER_TO_VC_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 522
         DISMISSIBLE_CONTENT_DESKTOP_REFRESH_ONBOARDING_MODAL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 525
         DISMISSIBLE_CONTENT_GUILD_POWERUP_NOTIFICATION: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 529
         DISMISSIBLE_CONTENT_GUILD_POWERUP_PERKS_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 531
@@ -979,7 +978,6 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_RECENT_AVATARS_SETTINGS_PROFILE_PAGE_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 517
     DISMISSIBLE_CONTENT_PERMADECOS_NITRO_TAB_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 518
     DISMISSIBLE_CONTENT_PERMADECOS_NITRO_HOME_CARD_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 520
-    DISMISSIBLE_CONTENT_RING_USER_TO_VC_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 522
     DISMISSIBLE_CONTENT_DESKTOP_REFRESH_ONBOARDING_MODAL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 525
     DISMISSIBLE_CONTENT_GUILD_POWERUP_NOTIFICATION: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 529
     DISMISSIBLE_CONTENT_GUILD_POWERUP_PERKS_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 531

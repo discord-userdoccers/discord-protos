@@ -2513,10 +2513,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     PERMADECOS_NITRO_HOME_CARD_NEW_BADGE = 520,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_RING_USER_TO_VC_NEW_BADGE = 522;
-     */
-    RING_USER_TO_VC_NEW_BADGE = 522,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_DESKTOP_REFRESH_ONBOARDING_MODAL = 525;
      */
     DESKTOP_REFRESH_ONBOARDING_MODAL = 525,
