@@ -1008,6 +1008,10 @@ export interface Experiment_Rule {
      * @generated from protobuf field: string hash = 6
      */
     hash: string;
+    /**
+     * @generated from protobuf field: optional google.protobuf.StringValue title = 7
+     */
+    title?: StringValue;
 }
 /**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.DebugConfig
@@ -4714,7 +4718,8 @@ class Experiment_Rule$Type extends MessageType<Experiment_Rule> {
             { no: 3, name: "override", kind: "message", T: () => Experiment_Override },
             { no: 4, name: "is_sunset_rule", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
             { no: 5, name: "subtype", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.Subtype", Experiment_Subtype, "SUBTYPE_"] },
-            { no: 6, name: "hash", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+            { no: 6, name: "hash", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 7, name: "title", kind: "message", T: () => StringValue }
         ]);
     }
     create(value?: PartialMessage<Experiment_Rule>): Experiment_Rule {
@@ -4751,6 +4756,9 @@ class Experiment_Rule$Type extends MessageType<Experiment_Rule> {
                 case /* string hash */ 6:
                     message.hash = reader.string();
                     break;
+                case /* optional google.protobuf.StringValue title */ 7:
+                    message.title = StringValue.internalBinaryRead(reader, reader.uint32(), options, message.title);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -4781,6 +4789,9 @@ class Experiment_Rule$Type extends MessageType<Experiment_Rule> {
         /* string hash = 6; */
         if (message.hash !== "")
             writer.tag(6, WireType.LengthDelimited).string(message.hash);
+        /* optional google.protobuf.StringValue title = 7; */
+        if (message.title)
+            StringValue.internalBinaryWrite(message.title, writer.tag(7, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

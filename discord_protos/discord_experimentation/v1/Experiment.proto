@@ -360,6 +360,7 @@ message Experiment {
     bool is_sunset_rule = 4;
     Subtype subtype = 5;
     string hash = 6;
+    optional google.protobuf.StringValue title = 7;
   }
 
   enum Phase {

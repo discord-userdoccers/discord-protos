@@ -1502,6 +1502,7 @@ class Experiment(_message.Message):
         IS_SUNSET_RULE_FIELD_NUMBER: _builtins.int
         SUBTYPE_FIELD_NUMBER: _builtins.int
         HASH_FIELD_NUMBER: _builtins.int
+        TITLE_FIELD_NUMBER: _builtins.int
         type: Global___Experiment.Type.ValueType
         is_sunset_rule: _builtins.bool
         subtype: Global___Experiment.Subtype.ValueType
@@ -1510,6 +1511,8 @@ class Experiment(_message.Message):
         def filters(self) -> _containers.RepeatedCompositeFieldContainer[Global___Experiment.Filter]: ...
         @_builtins.property
         def override(self) -> Global___Experiment.Override: ...
+        @_builtins.property
+        def title(self) -> _wrappers_pb2.StringValue: ...
         def __init__(
             self,
             *,
@@ -1519,14 +1522,20 @@ class Experiment(_message.Message):
             is_sunset_rule: _builtins.bool = ...,
             subtype: Global___Experiment.Subtype.ValueType = ...,
             hash: _builtins.str = ...,
+            title: _wrappers_pb2.StringValue | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _typing.Literal["_override", b"_override", "override", b"override"]  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_override", b"_override", "_title", b"_title", "override", b"override", "title", b"title"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_override", b"_override", "filters", b"filters", "hash", b"hash", "is_sunset_rule", b"is_sunset_rule", "override", b"override", "subtype", b"subtype", "type", b"type"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_override", b"_override", "_title", b"_title", "filters", b"filters", "hash", b"hash", "is_sunset_rule", b"is_sunset_rule", "override", b"override", "subtype", b"subtype", "title", b"title", "type", b"type"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__override: _TypeAlias = _typing.Literal["override"]  # noqa: Y015
         _WhichOneofArgType__override: _TypeAlias = _typing.Literal["_override", b"_override"]  # noqa: Y015
+        _WhichOneofReturnType__title: _TypeAlias = _typing.Literal["title"]  # noqa: Y015
+        _WhichOneofArgType__title: _TypeAlias = _typing.Literal["_title", b"_title"]  # noqa: Y015
+        @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__override) -> _WhichOneofReturnType__override | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__title) -> _WhichOneofReturnType__title | None: ...
 
     @_typing.final
     class DebugConfig(_message.Message):
