@@ -229,6 +229,7 @@ message PreloadedUserSettings {
     optional google.protobuf.StringValue custom_search_url = 38;
     optional google.protobuf.BoolValue include_game_mentions_in_autocomplete = 39;
     optional google.protobuf.BoolValue inline_emoji_suggestions_enabled = 40;
+    optional google.protobuf.BoolValue display_compact_avatars = 41;
   }
 
   enum ReactionNotificationType {
