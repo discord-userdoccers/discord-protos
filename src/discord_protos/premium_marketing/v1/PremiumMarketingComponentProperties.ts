@@ -3057,10 +3057,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     QUEST_HOME_ENTRYPOINT_HERO_BADGE = 687,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GAME_DETECTION_CREATE_GAME_SERVER_COACHMARK = 688;
-     */
-    GAME_DETECTION_CREATE_GAME_SERVER_COACHMARK = 688,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GAME_DETECTION_CREATE_GAME_SERVER_NEW_BADGE = 689;
      */
     GAME_DETECTION_CREATE_GAME_SERVER_NEW_BADGE = 689,

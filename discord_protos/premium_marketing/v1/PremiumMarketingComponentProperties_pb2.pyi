@@ -520,7 +520,6 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_FIRST_BOOSTER_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 685
         DISMISSIBLE_CONTENT_REFERRAL_PROGRAM_POPOVER_V2: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 686
         DISMISSIBLE_CONTENT_QUEST_HOME_ENTRYPOINT_HERO_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 687
-        DISMISSIBLE_CONTENT_GAME_DETECTION_CREATE_GAME_SERVER_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 688
         DISMISSIBLE_CONTENT_GAME_DETECTION_CREATE_GAME_SERVER_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 689
         DISMISSIBLE_CONTENT_JOIN_GAME_COMMUNITY_RTC_CTA: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 690
         DISMISSIBLE_CONTENT_NAGBAR_QUEST_APP_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 691
@@ -1114,7 +1113,6 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_FIRST_BOOSTER_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 685
     DISMISSIBLE_CONTENT_REFERRAL_PROGRAM_POPOVER_V2: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 686
     DISMISSIBLE_CONTENT_QUEST_HOME_ENTRYPOINT_HERO_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 687
-    DISMISSIBLE_CONTENT_GAME_DETECTION_CREATE_GAME_SERVER_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 688
     DISMISSIBLE_CONTENT_GAME_DETECTION_CREATE_GAME_SERVER_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 689
     DISMISSIBLE_CONTENT_JOIN_GAME_COMMUNITY_RTC_CTA: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 690
     DISMISSIBLE_CONTENT_NAGBAR_QUEST_APP_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 691
