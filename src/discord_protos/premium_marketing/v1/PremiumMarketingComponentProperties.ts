@@ -3317,10 +3317,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     STEELSERIES_LOGITECH_REHEAT = 757,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_REFERRAL_PROGRAM_ENTRYPOINT_NITRO_BUTTON_NOTIFICATION = 758;
-     */
-    REFERRAL_PROGRAM_ENTRYPOINT_NITRO_BUTTON_NOTIFICATION = 758,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_INVITE_NONFRIENDS_TO_GDM_COACHMARK = 759;
      */
     INVITE_NONFRIENDS_TO_GDM_COACHMARK = 759,
@@ -3627,7 +3623,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_HOLIDAY_COACHMARK_HALLOWEEN_2026 = 839;
      */
-    HOLIDAY_COACHMARK_HALLOWEEN_2026 = 839
+    HOLIDAY_COACHMARK_HALLOWEEN_2026 = 839,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_TRY_COACHMARK = 840;
+     */
+    DISPLAY_NAME_STYLES_TRY_COACHMARK = 840
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant

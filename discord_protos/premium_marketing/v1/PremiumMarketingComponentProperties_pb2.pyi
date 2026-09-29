@@ -585,7 +585,6 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_GUILD_SETTINGS_GUILD_THEME_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 755
         DISMISSIBLE_CONTENT_XBOX_PERKS_RECONNECT_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 756
         DISMISSIBLE_CONTENT_STEELSERIES_LOGITECH_REHEAT: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 757
-        DISMISSIBLE_CONTENT_REFERRAL_PROGRAM_ENTRYPOINT_NITRO_BUTTON_NOTIFICATION: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 758
         DISMISSIBLE_CONTENT_INVITE_NONFRIENDS_TO_GDM_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 759
         DISMISSIBLE_CONTENT_APP_WIDGET_V2_PROFILE_UPSELL_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 761
         DISMISSIBLE_CONTENT_PARENTAL_CONSENT_GRACE_WARNING: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 762
@@ -663,6 +662,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_ORB_WALLET_NITRO_UPSELL_CTA_CARD: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 837
         DISMISSIBLE_CONTENT_SOUNDBOARD_FAVORITES_ORDERING_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 838
         DISMISSIBLE_CONTENT_HOLIDAY_COACHMARK_HALLOWEEN_2026: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 839
+        DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_TRY_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 840
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_UNSPECIFIED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1178,7 +1178,6 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_GUILD_SETTINGS_GUILD_THEME_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 755
     DISMISSIBLE_CONTENT_XBOX_PERKS_RECONNECT_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 756
     DISMISSIBLE_CONTENT_STEELSERIES_LOGITECH_REHEAT: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 757
-    DISMISSIBLE_CONTENT_REFERRAL_PROGRAM_ENTRYPOINT_NITRO_BUTTON_NOTIFICATION: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 758
     DISMISSIBLE_CONTENT_INVITE_NONFRIENDS_TO_GDM_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 759
     DISMISSIBLE_CONTENT_APP_WIDGET_V2_PROFILE_UPSELL_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 761
     DISMISSIBLE_CONTENT_PARENTAL_CONSENT_GRACE_WARNING: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 762
@@ -1256,6 +1255,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_ORB_WALLET_NITRO_UPSELL_CTA_CARD: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 837
     DISMISSIBLE_CONTENT_SOUNDBOARD_FAVORITES_ORDERING_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 838
     DISMISSIBLE_CONTENT_HOLIDAY_COACHMARK_HALLOWEEN_2026: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 839
+    DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_TRY_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 840
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)
