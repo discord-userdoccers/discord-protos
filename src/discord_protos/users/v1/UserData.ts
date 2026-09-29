@@ -2862,153 +2862,153 @@ export enum UserData_ClassificationType {
      */
     RISKY_AND_HARMFUL_TEEN_BEHAVIOR_NON_DEDICATED_GUILD_ADMIN = 6286,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_OUTSIDE_CONTACT_ADMIN = 6290;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_OUTSIDE_CONTACT_ADMIN = 6290;
      */
-    BOT_DELETE_OUTSIDE_CONTACT_ADMIN = 6290,
+    APP_DELETE_OUTSIDE_CONTACT_ADMIN = 6290,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_OUTSIDE_CONTACT_ADMIN = 6300;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_WARN_OUTSIDE_CONTACT_ADMIN = 6300;
      */
-    BOT_WARN_OUTSIDE_CONTACT_ADMIN = 6300,
+    APP_WARN_OUTSIDE_CONTACT_ADMIN = 6300,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_GORE_ADMIN = 6310;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_GORE_ADMIN = 6310;
      */
-    BOT_DELETE_GORE_ADMIN = 6310,
+    APP_DELETE_GORE_ADMIN = 6310,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_GORE_ADMIN = 6320;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_WARN_GORE_ADMIN = 6320;
      */
-    BOT_WARN_GORE_ADMIN = 6320,
+    APP_WARN_GORE_ADMIN = 6320,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_DOX_ADMIN = 6330;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_DOX_ADMIN = 6330;
      */
-    BOT_DELETE_DOX_ADMIN = 6330,
+    APP_DELETE_DOX_ADMIN = 6330,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_DOX_ADMIN = 6340;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_WARN_DOX_ADMIN = 6340;
      */
-    BOT_WARN_DOX_ADMIN = 6340,
+    APP_WARN_DOX_ADMIN = 6340,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_SCAMS_ADMIN = 6350;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_SCAMS_ADMIN = 6350;
      */
-    BOT_DELETE_SCAMS_ADMIN = 6350,
+    APP_DELETE_SCAMS_ADMIN = 6350,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_SCAMS_ADMIN = 6360;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_WARN_SCAMS_ADMIN = 6360;
      */
-    BOT_WARN_SCAMS_ADMIN = 6360,
+    APP_WARN_SCAMS_ADMIN = 6360,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_DANGEROUS_GOODS_ADMIN = 6370;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_DANGEROUS_GOODS_ADMIN = 6370;
      */
-    BOT_DELETE_DANGEROUS_GOODS_ADMIN = 6370,
+    APP_DELETE_DANGEROUS_GOODS_ADMIN = 6370,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_DANGEROUS_GOODS_ADMIN = 6380;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_WARN_DANGEROUS_GOODS_ADMIN = 6380;
      */
-    BOT_WARN_DANGEROUS_GOODS_ADMIN = 6380,
+    APP_WARN_DANGEROUS_GOODS_ADMIN = 6380,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_VIOLENT_EXTREMISM_ADMIN = 6390;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_VIOLENT_EXTREMISM_ADMIN = 6390;
      */
-    BOT_DELETE_VIOLENT_EXTREMISM_ADMIN = 6390,
+    APP_DELETE_VIOLENT_EXTREMISM_ADMIN = 6390,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_DATA_DISCLOSURE_ADMIN = 6400;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_DATA_DISCLOSURE_ADMIN = 6400;
      */
-    BOT_DELETE_DATA_DISCLOSURE_ADMIN = 6400,
+    APP_DELETE_DATA_DISCLOSURE_ADMIN = 6400,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_DATA_DISCLOSURE_ADMIN = 6410;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_WARN_DATA_DISCLOSURE_ADMIN = 6410;
      */
-    BOT_WARN_DATA_DISCLOSURE_ADMIN = 6410,
+    APP_WARN_DATA_DISCLOSURE_ADMIN = 6410,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_AGE_RESTRICTED_ADMIN = 6420;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_AGE_RESTRICTED_ADMIN = 6420;
      */
-    BOT_DELETE_AGE_RESTRICTED_ADMIN = 6420,
+    APP_DELETE_AGE_RESTRICTED_ADMIN = 6420,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_AGE_RESTRICTED_ADMIN = 6430;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_WARN_AGE_RESTRICTED_ADMIN = 6430;
      */
-    BOT_WARN_AGE_RESTRICTED_ADMIN = 6430,
+    APP_WARN_AGE_RESTRICTED_ADMIN = 6430,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_OTHER_ADMIN = 6440;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_OTHER_ADMIN = 6440;
      */
-    BOT_DELETE_OTHER_ADMIN = 6440,
+    APP_DELETE_OTHER_ADMIN = 6440,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_OTHER_ADMIN = 6450;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_WARN_OTHER_ADMIN = 6450;
      */
-    BOT_WARN_OTHER_ADMIN = 6450,
+    APP_WARN_OTHER_ADMIN = 6450,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_INAUTHENTIC_ENGAGEMENT_ADMIN = 6460;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_INAUTHENTIC_ENGAGEMENT_ADMIN = 6460;
      */
-    BOT_DELETE_INAUTHENTIC_ENGAGEMENT_ADMIN = 6460,
+    APP_DELETE_INAUTHENTIC_ENGAGEMENT_ADMIN = 6460,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_INAUTHENTIC_ENGAGEMENT_ADMIN = 6470;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_WARN_INAUTHENTIC_ENGAGEMENT_ADMIN = 6470;
      */
-    BOT_WARN_INAUTHENTIC_ENGAGEMENT_ADMIN = 6470,
+    APP_WARN_INAUTHENTIC_ENGAGEMENT_ADMIN = 6470,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_DATA_MISUSE_ADMIN = 6480;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_DATA_MISUSE_ADMIN = 6480;
      */
-    BOT_DELETE_DATA_MISUSE_ADMIN = 6480,
+    APP_DELETE_DATA_MISUSE_ADMIN = 6480,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_DATA_MISUSE_ADMIN = 6490;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_WARN_DATA_MISUSE_ADMIN = 6490;
      */
-    BOT_WARN_DATA_MISUSE_ADMIN = 6490,
+    APP_WARN_DATA_MISUSE_ADMIN = 6490,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_HATE_SPEECH_ADMIN = 6500;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_HATE_SPEECH_ADMIN = 6500;
      */
-    BOT_DELETE_HATE_SPEECH_ADMIN = 6500,
+    APP_DELETE_HATE_SPEECH_ADMIN = 6500,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_HATE_SPEECH_ADMIN = 6510;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_WARN_HATE_SPEECH_ADMIN = 6510;
      */
-    BOT_WARN_HATE_SPEECH_ADMIN = 6510,
+    APP_WARN_HATE_SPEECH_ADMIN = 6510,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_MONETIZATION_OP_PAYMENTS_ADMIN = 6520;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_MONETIZATION_OP_PAYMENTS_ADMIN = 6520;
      */
-    BOT_DELETE_MONETIZATION_OP_PAYMENTS_ADMIN = 6520,
+    APP_DELETE_MONETIZATION_OP_PAYMENTS_ADMIN = 6520,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_MONETIZATION_OP_PAYMENTS_ADMIN = 6530;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_WARN_MONETIZATION_OP_PAYMENTS_ADMIN = 6530;
      */
-    BOT_WARN_MONETIZATION_OP_PAYMENTS_ADMIN = 6530,
+    APP_WARN_MONETIZATION_OP_PAYMENTS_ADMIN = 6530,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_MONETIZATION_PRICE_PARITY_ADMIN = 6540;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_MONETIZATION_PRICE_PARITY_ADMIN = 6540;
      */
-    BOT_DELETE_MONETIZATION_PRICE_PARITY_ADMIN = 6540,
+    APP_DELETE_MONETIZATION_PRICE_PARITY_ADMIN = 6540,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_MONETIZATION_PRICE_PARITY_ADMIN = 6550;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_WARN_MONETIZATION_PRICE_PARITY_ADMIN = 6550;
      */
-    BOT_WARN_MONETIZATION_PRICE_PARITY_ADMIN = 6550,
+    APP_WARN_MONETIZATION_PRICE_PARITY_ADMIN = 6550,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_UNSOLICITED_PROCESS_ADMIN = 6560;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_UNSOLICITED_PROCESS_ADMIN = 6560;
      */
-    BOT_DELETE_UNSOLICITED_PROCESS_ADMIN = 6560,
+    APP_DELETE_UNSOLICITED_PROCESS_ADMIN = 6560,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_UNSOLICITED_PROCESS_ADMIN = 6570;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_WARN_UNSOLICITED_PROCESS_ADMIN = 6570;
      */
-    BOT_WARN_UNSOLICITED_PROCESS_ADMIN = 6570,
+    APP_WARN_UNSOLICITED_PROCESS_ADMIN = 6570,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_DIRECTED_UNDER_13_ADMIN = 6580;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_DIRECTED_UNDER_13_ADMIN = 6580;
      */
-    BOT_DELETE_DIRECTED_UNDER_13_ADMIN = 6580,
+    APP_DELETE_DIRECTED_UNDER_13_ADMIN = 6580,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_DIRECTED_UNDER_13_ADMIN = 6590;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_WARN_DIRECTED_UNDER_13_ADMIN = 6590;
      */
-    BOT_WARN_DIRECTED_UNDER_13_ADMIN = 6590,
+    APP_WARN_DIRECTED_UNDER_13_ADMIN = 6590,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_HARASSMENT_OR_THREATS_ADMIN = 6600;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_HARASSMENT_OR_THREATS_ADMIN = 6600;
      */
-    BOT_DELETE_HARASSMENT_OR_THREATS_ADMIN = 6600,
+    APP_DELETE_HARASSMENT_OR_THREATS_ADMIN = 6600,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_HARASSMENT_OR_THREATS_ADMIN = 6610;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_WARN_HARASSMENT_OR_THREATS_ADMIN = 6610;
      */
-    BOT_WARN_HARASSMENT_OR_THREATS_ADMIN = 6610,
+    APP_WARN_HARASSMENT_OR_THREATS_ADMIN = 6610,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_MISINFO_ADMIN = 6620;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_MISINFO_ADMIN = 6620;
      */
-    BOT_DELETE_MISINFO_ADMIN = 6620,
+    APP_DELETE_MISINFO_ADMIN = 6620,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_MISINFO_ADMIN = 6630;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_WARN_MISINFO_ADMIN = 6630;
      */
-    BOT_WARN_MISINFO_ADMIN = 6630,
+    APP_WARN_MISINFO_ADMIN = 6630,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_DATA_MINING_ADMIN = 6640;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_DATA_MINING_ADMIN = 6640;
      */
-    BOT_DELETE_DATA_MINING_ADMIN = 6640,
+    APP_DELETE_DATA_MINING_ADMIN = 6640,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_DATA_MINING_ADMIN = 6650;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_WARN_DATA_MINING_ADMIN = 6650;
      */
-    BOT_WARN_DATA_MINING_ADMIN = 6650,
+    APP_WARN_DATA_MINING_ADMIN = 6650,
     /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSEA_CSAM_ADMIN = 6660;
      */
@@ -3022,129 +3022,129 @@ export enum UserData_ClassificationType {
      */
     CSEA_CSAM_NON_DEDICATED_GUILD_ADMIN = 6666,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_GROOMING_ADMIN = 6670;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_GROOMING_ADMIN = 6670;
      */
-    BOT_DELETE_GROOMING_ADMIN = 6670,
+    APP_DELETE_GROOMING_ADMIN = 6670,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_GROOMING_ADMIN = 6680;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_WARN_GROOMING_ADMIN = 6680;
      */
-    BOT_WARN_GROOMING_ADMIN = 6680,
+    APP_WARN_GROOMING_ADMIN = 6680,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_DATA_UNENCRYPT_ADMIN = 6690;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_DATA_UNENCRYPT_ADMIN = 6690;
      */
-    BOT_DELETE_DATA_UNENCRYPT_ADMIN = 6690,
+    APP_DELETE_DATA_UNENCRYPT_ADMIN = 6690,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_DATA_UNENCRYPT_ADMIN = 6700;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_WARN_DATA_UNENCRYPT_ADMIN = 6700;
      */
-    BOT_WARN_DATA_UNENCRYPT_ADMIN = 6700,
+    APP_WARN_DATA_UNENCRYPT_ADMIN = 6700,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_DISCORD_ASSETS_SALE_ADMIN = 6710;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_DISCORD_ASSETS_SALE_ADMIN = 6710;
      */
-    BOT_DELETE_DISCORD_ASSETS_SALE_ADMIN = 6710,
+    APP_DELETE_DISCORD_ASSETS_SALE_ADMIN = 6710,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_DISCORD_ASSETS_SALE_ADMIN = 6720;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_WARN_DISCORD_ASSETS_SALE_ADMIN = 6720;
      */
-    BOT_WARN_DISCORD_ASSETS_SALE_ADMIN = 6720,
+    APP_WARN_DISCORD_ASSETS_SALE_ADMIN = 6720,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_COPYRIGHT_ADMIN = 6730;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_COPYRIGHT_ADMIN = 6730;
      */
-    BOT_DELETE_COPYRIGHT_ADMIN = 6730,
+    APP_DELETE_COPYRIGHT_ADMIN = 6730,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_COPYRIGHT_ADMIN = 6740;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_WARN_COPYRIGHT_ADMIN = 6740;
      */
-    BOT_WARN_COPYRIGHT_ADMIN = 6740,
+    APP_WARN_COPYRIGHT_ADMIN = 6740,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_CIRCUMVENT_PRIVACY_SAFETY_SECURITY_ADMIN = 6750;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_CIRCUMVENT_PRIVACY_SAFETY_SECURITY_ADMIN = 6750;
      */
-    BOT_DELETE_CIRCUMVENT_PRIVACY_SAFETY_SECURITY_ADMIN = 6750,
+    APP_DELETE_CIRCUMVENT_PRIVACY_SAFETY_SECURITY_ADMIN = 6750,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_CIRCUMVENT_PRIVACY_SAFETY_SECURITY_ADMIN = 6760;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_WARN_CIRCUMVENT_PRIVACY_SAFETY_SECURITY_ADMIN = 6760;
      */
-    BOT_WARN_CIRCUMVENT_PRIVACY_SAFETY_SECURITY_ADMIN = 6760,
+    APP_WARN_CIRCUMVENT_PRIVACY_SAFETY_SECURITY_ADMIN = 6760,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_SELF_HARM_ADMIN = 6770;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_SELF_HARM_ADMIN = 6770;
      */
-    BOT_DELETE_SELF_HARM_ADMIN = 6770,
+    APP_DELETE_SELF_HARM_ADMIN = 6770,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_SELF_HARM_ADMIN = 6780;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_WARN_SELF_HARM_ADMIN = 6780;
      */
-    BOT_WARN_SELF_HARM_ADMIN = 6780,
+    APP_WARN_SELF_HARM_ADMIN = 6780,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_SPAM_ADMIN = 6790;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_WARN_SPAM_ADMIN = 6790;
      */
-    BOT_WARN_SPAM_ADMIN = 6790,
+    APP_WARN_SPAM_ADMIN = 6790,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_FRAUD_ADMIN = 6800;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_FRAUD_ADMIN = 6800;
      */
-    BOT_DELETE_FRAUD_ADMIN = 6800,
+    APP_DELETE_FRAUD_ADMIN = 6800,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_FRAUD_ADMIN = 6810;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_WARN_FRAUD_ADMIN = 6810;
      */
-    BOT_WARN_FRAUD_ADMIN = 6810,
+    APP_WARN_FRAUD_ADMIN = 6810,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_SECURITY_ADMIN = 6820;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_SECURITY_ADMIN = 6820;
      */
-    BOT_DELETE_SECURITY_ADMIN = 6820,
+    APP_DELETE_SECURITY_ADMIN = 6820,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_SECURITY_ADMIN = 6830;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_WARN_SECURITY_ADMIN = 6830;
      */
-    BOT_WARN_SECURITY_ADMIN = 6830,
+    APP_WARN_SECURITY_ADMIN = 6830,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_UNSOLICITED_ACCOUNT_CHANGES_ADMIN = 6840;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_WARN_UNSOLICITED_ACCOUNT_CHANGES_ADMIN = 6840;
      */
-    BOT_WARN_UNSOLICITED_ACCOUNT_CHANGES_ADMIN = 6840,
+    APP_WARN_UNSOLICITED_ACCOUNT_CHANGES_ADMIN = 6840,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_ADVERTISING_ADMIN = 6850;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_ADVERTISING_ADMIN = 6850;
      */
-    BOT_DELETE_ADVERTISING_ADMIN = 6850,
+    APP_DELETE_ADVERTISING_ADMIN = 6850,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_ADVERTISING_ADMIN = 6860;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_WARN_ADVERTISING_ADMIN = 6860;
      */
-    BOT_WARN_ADVERTISING_ADMIN = 6860,
+    APP_WARN_ADVERTISING_ADMIN = 6860,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_DATA_PROFILING_ADMIN = 6870;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_DATA_PROFILING_ADMIN = 6870;
      */
-    BOT_DELETE_DATA_PROFILING_ADMIN = 6870,
+    APP_DELETE_DATA_PROFILING_ADMIN = 6870,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_DATA_PROFILING_ADMIN = 6880;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_WARN_DATA_PROFILING_ADMIN = 6880;
      */
-    BOT_WARN_DATA_PROFILING_ADMIN = 6880,
+    APP_WARN_DATA_PROFILING_ADMIN = 6880,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_DATA_SALE_ADMIN = 6890;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_DATA_SALE_ADMIN = 6890;
      */
-    BOT_DELETE_DATA_SALE_ADMIN = 6890,
+    APP_DELETE_DATA_SALE_ADMIN = 6890,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_DATA_SALE_ADMIN = 6900;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_WARN_DATA_SALE_ADMIN = 6900;
      */
-    BOT_WARN_DATA_SALE_ADMIN = 6900,
+    APP_WARN_DATA_SALE_ADMIN = 6900,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_LACKS_RATING_ADMIN = 6910;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_LACKS_RATING_ADMIN = 6910;
      */
-    BOT_DELETE_LACKS_RATING_ADMIN = 6910,
+    APP_DELETE_LACKS_RATING_ADMIN = 6910,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_LACKS_RATING_ADMIN = 6920;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_WARN_LACKS_RATING_ADMIN = 6920;
      */
-    BOT_WARN_LACKS_RATING_ADMIN = 6920,
+    APP_WARN_LACKS_RATING_ADMIN = 6920,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_GAMBLING_ADMIN = 6930;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_GAMBLING_ADMIN = 6930;
      */
-    BOT_DELETE_GAMBLING_ADMIN = 6930,
+    APP_DELETE_GAMBLING_ADMIN = 6930,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_ILLEGAL_ADMIN = 6940;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_ILLEGAL_ADMIN = 6940;
      */
-    BOT_DELETE_ILLEGAL_ADMIN = 6940,
+    APP_DELETE_ILLEGAL_ADMIN = 6940,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_IMPERSONATION_ADMIN = 6950;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_WARN_IMPERSONATION_ADMIN = 6950;
      */
-    BOT_WARN_IMPERSONATION_ADMIN = 6950,
+    APP_WARN_IMPERSONATION_ADMIN = 6950,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_DATA_AI_TRAINING_ADMIN = 6960;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_DATA_AI_TRAINING_ADMIN = 6960;
      */
-    BOT_DELETE_DATA_AI_TRAINING_ADMIN = 6960,
+    APP_DELETE_DATA_AI_TRAINING_ADMIN = 6960,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_WARN_DATA_AI_TRAINING_ADMIN = 6970;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_WARN_DATA_AI_TRAINING_ADMIN = 6970;
      */
-    BOT_WARN_DATA_AI_TRAINING_ADMIN = 6970,
+    APP_WARN_DATA_AI_TRAINING_ADMIN = 6970,
     /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_HIGH_RISK_DANGEROUS_AND_REGULATED_GOODS_GUILD_RETOOL = 7005;
      */

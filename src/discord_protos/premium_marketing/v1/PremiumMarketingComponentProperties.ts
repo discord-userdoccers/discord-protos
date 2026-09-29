@@ -3149,10 +3149,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     PREMIUM_MARKETING_MOMENT_REMINDER_UPSELL = 712,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GAME_SERVER_PRICING_CHANGE_COACHMARK = 713;
-     */
-    GAME_SERVER_PRICING_CHANGE_COACHMARK = 713,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_PREMIUM_GROUP_POPOVER_UPSELL_V2 = 715;
      */
     PREMIUM_GROUP_POPOVER_UPSELL_V2 = 715,
@@ -3627,7 +3623,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_TRY_COACHMARK = 840;
      */
-    DISPLAY_NAME_STYLES_TRY_COACHMARK = 840
+    DISPLAY_NAME_STYLES_TRY_COACHMARK = 840,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_YOUTUBE_3P_NAGBAR_NOTICE = 841;
+     */
+    YOUTUBE_3P_NAGBAR_NOTICE = 841
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant

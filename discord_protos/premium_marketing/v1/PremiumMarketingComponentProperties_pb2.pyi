@@ -543,7 +543,6 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_FAVORITES_GUILD_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 709
         DISMISSIBLE_CONTENT_FIRST_BOOSTER_UPSELL_OVERSEER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 710
         DISMISSIBLE_CONTENT_PREMIUM_MARKETING_MOMENT_REMINDER_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 712
-        DISMISSIBLE_CONTENT_GAME_SERVER_PRICING_CHANGE_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 713
         DISMISSIBLE_CONTENT_PREMIUM_GROUP_POPOVER_UPSELL_V2: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 715
         DISMISSIBLE_CONTENT_L_3PP_NON_NITRO_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 716
         DISMISSIBLE_CONTENT_L_3PP_NITRO_TOOLTIP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 717
@@ -663,6 +662,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_SOUNDBOARD_FAVORITES_ORDERING_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 838
         DISMISSIBLE_CONTENT_HOLIDAY_COACHMARK_HALLOWEEN_2026: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 839
         DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_TRY_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 840
+        DISMISSIBLE_CONTENT_YOUTUBE_3P_NAGBAR_NOTICE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 841
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_UNSPECIFIED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1136,7 +1136,6 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_FAVORITES_GUILD_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 709
     DISMISSIBLE_CONTENT_FIRST_BOOSTER_UPSELL_OVERSEER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 710
     DISMISSIBLE_CONTENT_PREMIUM_MARKETING_MOMENT_REMINDER_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 712
-    DISMISSIBLE_CONTENT_GAME_SERVER_PRICING_CHANGE_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 713
     DISMISSIBLE_CONTENT_PREMIUM_GROUP_POPOVER_UPSELL_V2: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 715
     DISMISSIBLE_CONTENT_L_3PP_NON_NITRO_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 716
     DISMISSIBLE_CONTENT_L_3PP_NITRO_TOOLTIP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 717
@@ -1256,6 +1255,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_SOUNDBOARD_FAVORITES_ORDERING_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 838
     DISMISSIBLE_CONTENT_HOLIDAY_COACHMARK_HALLOWEEN_2026: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 839
     DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_TRY_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 840
+    DISMISSIBLE_CONTENT_YOUTUBE_3P_NAGBAR_NOTICE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 841
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)
