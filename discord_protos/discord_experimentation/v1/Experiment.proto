@@ -446,6 +446,11 @@ message Experiment {
     PLAN_STATUS_CANCELED = 6;
   }
 
+  message VariationBuckets {
+    int32 variation_id = 1;
+    repeated Bucket buckets = 2;
+  }
+
   enum StepStatus {
     STEP_STATUS_UNSPECIFIED = 0;
     STEP_STATUS_PENDING = 1;
@@ -455,7 +460,7 @@ message Experiment {
   }
 
   message RampStep {
-    int32 target_basis_points = 1;
+    repeated VariationBuckets variation_buckets = 1;
     optional google.protobuf.Duration hold_duration = 2;
     bool require_manual_approval = 3;
     optional google.protobuf.Timestamp started_at = 4;

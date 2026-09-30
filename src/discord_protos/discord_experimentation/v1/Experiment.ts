@@ -1060,13 +1060,26 @@ export interface Experiment_NumberLineSettings {
     sharedControl: boolean;
 }
 /**
+ * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.VariationBuckets
+ */
+export interface Experiment_VariationBuckets {
+    /**
+     * @generated from protobuf field: int32 variation_id = 1
+     */
+    variationId: number;
+    /**
+     * @generated from protobuf field: repeated discord_protos.discord_experimentation.v1.Experiment.Bucket buckets = 2
+     */
+    buckets: Experiment_Bucket[];
+}
+/**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.RampStep
  */
 export interface Experiment_RampStep {
     /**
-     * @generated from protobuf field: int32 target_basis_points = 1
+     * @generated from protobuf field: repeated discord_protos.discord_experimentation.v1.Experiment.VariationBuckets variation_buckets = 1
      */
-    targetBasisPoints: number;
+    variationBuckets: Experiment_VariationBuckets[];
     /**
      * @generated from protobuf field: optional google.protobuf.Duration hold_duration = 2
      */
@@ -4953,10 +4966,65 @@ class Experiment_NumberLineSettings$Type extends MessageType<Experiment_NumberLi
  */
 export const Experiment_NumberLineSettings = new Experiment_NumberLineSettings$Type();
 // @generated message type with reflection information, may provide speed optimized methods
+class Experiment_VariationBuckets$Type extends MessageType<Experiment_VariationBuckets> {
+    constructor() {
+        super("discord_protos.discord_experimentation.v1.Experiment.VariationBuckets", [
+            { no: 1, name: "variation_id", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
+            { no: 2, name: "buckets", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => Experiment_Bucket }
+        ]);
+    }
+    create(value?: PartialMessage<Experiment_VariationBuckets>): Experiment_VariationBuckets {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.variationId = 0;
+        message.buckets = [];
+        if (value !== undefined)
+            reflectionMergePartial<Experiment_VariationBuckets>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: Experiment_VariationBuckets): Experiment_VariationBuckets {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* int32 variation_id */ 1:
+                    message.variationId = reader.int32();
+                    break;
+                case /* repeated discord_protos.discord_experimentation.v1.Experiment.Bucket buckets */ 2:
+                    message.buckets.push(Experiment_Bucket.internalBinaryRead(reader, reader.uint32(), options));
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: Experiment_VariationBuckets, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* int32 variation_id = 1; */
+        if (message.variationId !== 0)
+            writer.tag(1, WireType.Varint).int32(message.variationId);
+        /* repeated discord_protos.discord_experimentation.v1.Experiment.Bucket buckets = 2; */
+        for (let i = 0; i < message.buckets.length; i++)
+            Experiment_Bucket.internalBinaryWrite(message.buckets[i], writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_experimentation.v1.Experiment.VariationBuckets
+ */
+export const Experiment_VariationBuckets = new Experiment_VariationBuckets$Type();
+// @generated message type with reflection information, may provide speed optimized methods
 class Experiment_RampStep$Type extends MessageType<Experiment_RampStep> {
     constructor() {
         super("discord_protos.discord_experimentation.v1.Experiment.RampStep", [
-            { no: 1, name: "target_basis_points", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
+            { no: 1, name: "variation_buckets", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => Experiment_VariationBuckets },
             { no: 2, name: "hold_duration", kind: "message", T: () => Duration },
             { no: 3, name: "require_manual_approval", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
             { no: 4, name: "started_at", kind: "message", T: () => Timestamp },
@@ -4965,7 +5033,7 @@ class Experiment_RampStep$Type extends MessageType<Experiment_RampStep> {
     }
     create(value?: PartialMessage<Experiment_RampStep>): Experiment_RampStep {
         const message = globalThis.Object.create((this.messagePrototype!));
-        message.targetBasisPoints = 0;
+        message.variationBuckets = [];
         message.requireManualApproval = false;
         message.status = 0;
         if (value !== undefined)
@@ -4977,8 +5045,8 @@ class Experiment_RampStep$Type extends MessageType<Experiment_RampStep> {
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
-                case /* int32 target_basis_points */ 1:
-                    message.targetBasisPoints = reader.int32();
+                case /* repeated discord_protos.discord_experimentation.v1.Experiment.VariationBuckets variation_buckets */ 1:
+                    message.variationBuckets.push(Experiment_VariationBuckets.internalBinaryRead(reader, reader.uint32(), options));
                     break;
                 case /* optional google.protobuf.Duration hold_duration */ 2:
                     message.holdDuration = Duration.internalBinaryRead(reader, reader.uint32(), options, message.holdDuration);
@@ -5004,9 +5072,9 @@ class Experiment_RampStep$Type extends MessageType<Experiment_RampStep> {
         return message;
     }
     internalBinaryWrite(message: Experiment_RampStep, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* int32 target_basis_points = 1; */
-        if (message.targetBasisPoints !== 0)
-            writer.tag(1, WireType.Varint).int32(message.targetBasisPoints);
+        /* repeated discord_protos.discord_experimentation.v1.Experiment.VariationBuckets variation_buckets = 1; */
+        for (let i = 0; i < message.variationBuckets.length; i++)
+            Experiment_VariationBuckets.internalBinaryWrite(message.variationBuckets[i], writer.tag(1, WireType.LengthDelimited).fork(), options).join();
         /* optional google.protobuf.Duration hold_duration = 2; */
         if (message.holdDuration)
             Duration.internalBinaryWrite(message.holdDuration, writer.tag(2, WireType.LengthDelimited).fork(), options).join();

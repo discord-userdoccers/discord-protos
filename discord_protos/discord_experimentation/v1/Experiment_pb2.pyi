@@ -1593,17 +1593,39 @@ class Experiment(_message.Message):
         def WhichOneof(self, oneof_group: _Never) -> None: ...
 
     @_typing.final
+    class VariationBuckets(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        VARIATION_ID_FIELD_NUMBER: _builtins.int
+        BUCKETS_FIELD_NUMBER: _builtins.int
+        variation_id: _builtins.int
+        @_builtins.property
+        def buckets(self) -> _containers.RepeatedCompositeFieldContainer[Global___Experiment.Bucket]: ...
+        def __init__(
+            self,
+            *,
+            variation_id: _builtins.int = ...,
+            buckets: _abc.Iterable[Global___Experiment.Bucket] | None = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["buckets", b"buckets", "variation_id", b"variation_id"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
+
+    @_typing.final
     class RampStep(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
 
-        TARGET_BASIS_POINTS_FIELD_NUMBER: _builtins.int
+        VARIATION_BUCKETS_FIELD_NUMBER: _builtins.int
         HOLD_DURATION_FIELD_NUMBER: _builtins.int
         REQUIRE_MANUAL_APPROVAL_FIELD_NUMBER: _builtins.int
         STARTED_AT_FIELD_NUMBER: _builtins.int
         STATUS_FIELD_NUMBER: _builtins.int
-        target_basis_points: _builtins.int
         require_manual_approval: _builtins.bool
         status: Global___Experiment.StepStatus.ValueType
+        @_builtins.property
+        def variation_buckets(self) -> _containers.RepeatedCompositeFieldContainer[Global___Experiment.VariationBuckets]: ...
         @_builtins.property
         def hold_duration(self) -> _duration_pb2.Duration: ...
         @_builtins.property
@@ -1611,7 +1633,7 @@ class Experiment(_message.Message):
         def __init__(
             self,
             *,
-            target_basis_points: _builtins.int = ...,
+            variation_buckets: _abc.Iterable[Global___Experiment.VariationBuckets] | None = ...,
             hold_duration: _duration_pb2.Duration | None = ...,
             require_manual_approval: _builtins.bool = ...,
             started_at: _timestamp_pb2.Timestamp | None = ...,
@@ -1619,7 +1641,7 @@ class Experiment(_message.Message):
         ) -> None: ...
         _HasFieldArgType: _TypeAlias = _typing.Literal["_hold_duration", b"_hold_duration", "_started_at", b"_started_at", "hold_duration", b"hold_duration", "started_at", b"started_at"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_hold_duration", b"_hold_duration", "_started_at", b"_started_at", "hold_duration", b"hold_duration", "require_manual_approval", b"require_manual_approval", "started_at", b"started_at", "status", b"status", "target_basis_points", b"target_basis_points"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_hold_duration", b"_hold_duration", "_started_at", b"_started_at", "hold_duration", b"hold_duration", "require_manual_approval", b"require_manual_approval", "started_at", b"started_at", "status", b"status", "variation_buckets", b"variation_buckets"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__hold_duration: _TypeAlias = _typing.Literal["hold_duration"]  # noqa: Y015
         _WhichOneofArgType__hold_duration: _TypeAlias = _typing.Literal["_hold_duration", b"_hold_duration"]  # noqa: Y015
