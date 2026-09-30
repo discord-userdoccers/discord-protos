@@ -3146,6 +3146,14 @@ export enum UserData_ClassificationType {
      */
     APP_WARN_DATA_AI_TRAINING_ADMIN = 6970,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_DEV_FEEDBACK_ADMIN = 6980;
+     */
+    APP_DELETE_DEV_FEEDBACK_ADMIN = 6980,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_WARN_DEV_FEEDBACK_ADMIN = 6990;
+     */
+    APP_WARN_DEV_FEEDBACK_ADMIN = 6990,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_HIGH_RISK_DANGEROUS_AND_REGULATED_GOODS_GUILD_RETOOL = 7005;
      */
     HIGH_RISK_DANGEROUS_AND_REGULATED_GOODS_GUILD_RETOOL = 7005,
