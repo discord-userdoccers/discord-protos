@@ -1301,10 +1301,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     NAGBAR_NOTICE_CONNECT_SPOTIFY = 17,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_NAGBAR_NOTICE_CONNECT_PLAYSTATION = 18;
-     */
-    NAGBAR_NOTICE_CONNECT_PLAYSTATION = 18,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_ACTIVITIES_SUNSET_COACH_MARK = 20;
      */
     ACTIVITIES_SUNSET_COACH_MARK = 20,

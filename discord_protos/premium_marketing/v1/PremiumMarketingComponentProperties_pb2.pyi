@@ -81,7 +81,6 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_CHANNEL_NOTICE_GUILD_BANNER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 11
         DISMISSIBLE_CONTENT_NAGBAR_NOTICE_DOWNLOAD: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 16
         DISMISSIBLE_CONTENT_NAGBAR_NOTICE_CONNECT_SPOTIFY: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 17
-        DISMISSIBLE_CONTENT_NAGBAR_NOTICE_CONNECT_PLAYSTATION: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 18
         DISMISSIBLE_CONTENT_ACTIVITIES_SUNSET_COACH_MARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 20
         DISMISSIBLE_CONTENT_NAGBAR_NOTICE_PREMIUM_PROMO: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 21
         DISMISSIBLE_CONTENT_NAGBAR_NOTICE_PREMIUM_TIER_TWO_TRIAL_ENDING: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 22
@@ -674,7 +673,6 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_CHANNEL_NOTICE_GUILD_BANNER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 11
     DISMISSIBLE_CONTENT_NAGBAR_NOTICE_DOWNLOAD: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 16
     DISMISSIBLE_CONTENT_NAGBAR_NOTICE_CONNECT_SPOTIFY: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 17
-    DISMISSIBLE_CONTENT_NAGBAR_NOTICE_CONNECT_PLAYSTATION: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 18
     DISMISSIBLE_CONTENT_ACTIVITIES_SUNSET_COACH_MARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 20
     DISMISSIBLE_CONTENT_NAGBAR_NOTICE_PREMIUM_PROMO: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 21
     DISMISSIBLE_CONTENT_NAGBAR_NOTICE_PREMIUM_TIER_TWO_TRIAL_ENDING: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 22
