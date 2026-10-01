@@ -2625,10 +2625,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     GUILD_POWERUP_NEW_PERK_AVAILABLE_COACHMARK = 564,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_VANITY_URL_POWERUP_EDUCATIONAL_POPOVER = 565;
-     */
-    VANITY_URL_POWERUP_EDUCATIONAL_POPOVER = 565,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_AGE_VERIFICATION_SURVEY_MODAL_CLOSE = 566;
      */
     AGE_VERIFICATION_SURVEY_MODAL_CLOSE = 566,

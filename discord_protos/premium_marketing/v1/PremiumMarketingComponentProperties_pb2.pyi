@@ -412,7 +412,6 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_ACTIVITIES_VOICE_LAUNCHER_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 558
         DISMISSIBLE_CONTENT_NITRO_PRIVATE_BROWSING_SURVEY: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 563
         DISMISSIBLE_CONTENT_GUILD_POWERUP_NEW_PERK_AVAILABLE_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 564
-        DISMISSIBLE_CONTENT_VANITY_URL_POWERUP_EDUCATIONAL_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 565
         DISMISSIBLE_CONTENT_AGE_VERIFICATION_SURVEY_MODAL_CLOSE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 566
         DISMISSIBLE_CONTENT_AGE_VERIFICATION_SURVEY_MODAL_GET_STARTED: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 567
         DISMISSIBLE_CONTENT_GUILD_PIN_PERMISSION_MIGRATION_NOTIFICATION: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 568
@@ -1004,7 +1003,6 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_ACTIVITIES_VOICE_LAUNCHER_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 558
     DISMISSIBLE_CONTENT_NITRO_PRIVATE_BROWSING_SURVEY: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 563
     DISMISSIBLE_CONTENT_GUILD_POWERUP_NEW_PERK_AVAILABLE_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 564
-    DISMISSIBLE_CONTENT_VANITY_URL_POWERUP_EDUCATIONAL_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 565
     DISMISSIBLE_CONTENT_AGE_VERIFICATION_SURVEY_MODAL_CLOSE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 566
     DISMISSIBLE_CONTENT_AGE_VERIFICATION_SURVEY_MODAL_GET_STARTED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 567
     DISMISSIBLE_CONTENT_GUILD_PIN_PERMISSION_MIGRATION_NOTIFICATION: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 568
