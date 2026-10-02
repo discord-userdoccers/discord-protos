@@ -1218,7 +1218,11 @@ export enum Experiment_Subtype {
     /**
      * @generated from protobuf enum value: SUBTYPE_HOLDOUT = 1;
      */
-    HOLDOUT = 1
+    HOLDOUT = 1,
+    /**
+     * @generated from protobuf enum value: SUBTYPE_ROLLOUT = 2;
+     */
+    ROLLOUT = 2
 }
 /**
  * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.Phase

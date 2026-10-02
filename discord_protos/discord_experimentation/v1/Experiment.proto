@@ -351,6 +351,7 @@ message Experiment {
   enum Subtype {
     SUBTYPE_REGULAR = 0;
     SUBTYPE_HOLDOUT = 1;
+    SUBTYPE_ROLLOUT = 2;
   }
 
   message Rule {

@@ -129,10 +129,12 @@ class Experiment(_message.Message):
         DESCRIPTOR: _descriptor.EnumDescriptor
         SUBTYPE_REGULAR: Experiment._Subtype.ValueType  # 0
         SUBTYPE_HOLDOUT: Experiment._Subtype.ValueType  # 1
+        SUBTYPE_ROLLOUT: Experiment._Subtype.ValueType  # 2
 
     class Subtype(_Subtype, metaclass=_SubtypeEnumTypeWrapper): ...
     SUBTYPE_REGULAR: Experiment.Subtype.ValueType  # 0
     SUBTYPE_HOLDOUT: Experiment.Subtype.ValueType  # 1
+    SUBTYPE_ROLLOUT: Experiment.Subtype.ValueType  # 2
 
     class _Phase:
         ValueType = _typing.NewType("ValueType", _builtins.int)
