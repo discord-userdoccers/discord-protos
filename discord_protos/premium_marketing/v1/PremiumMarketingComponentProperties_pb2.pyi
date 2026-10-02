@@ -660,6 +660,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_HOLIDAY_COACHMARK_HALLOWEEN_2026: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 839
         DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_TRY_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 840
         DISMISSIBLE_CONTENT_YOUTUBE_3P_NAGBAR_NOTICE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 841
+        DISMISSIBLE_CONTENT_REFERRAL_REFRESH_NOTIFICATION_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 842
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_UNSPECIFIED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1250,6 +1251,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_HOLIDAY_COACHMARK_HALLOWEEN_2026: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 839
     DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_TRY_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 840
     DISMISSIBLE_CONTENT_YOUTUBE_3P_NAGBAR_NOTICE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 841
+    DISMISSIBLE_CONTENT_REFERRAL_REFRESH_NOTIFICATION_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 842
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)
