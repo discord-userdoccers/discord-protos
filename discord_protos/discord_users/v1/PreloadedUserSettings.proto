@@ -582,6 +582,14 @@ message PreloadedUserSettings {
     bool is_using_outdated_mobile_version = 1;
   }
 
+  message VibegrationsProjectSettings {
+    bool muted = 1;
+  }
+
+  message VibegrationsSettings {
+    map<fixed64, VibegrationsProjectSettings> projects = 1;
+  }
+
   optional Versions versions = 1;
   optional InboxSettings inbox = 2;
   optional AllGuildSettings guilds = 3;
@@ -608,4 +616,5 @@ message PreloadedUserSettings {
   optional AdsSettings ads = 24;
   optional InAppFeedbackSettings in_app_feedback_settings = 25;
   optional AppVersionSettings app_version_settings = 26;
+  optional VibegrationsSettings vibegrations = 27;
 }
