@@ -1957,10 +1957,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     CLYDE_AI_PERSONALITIES_NUX_MODAL = 312,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_NUX_GUILD_CHANNEL_EXPLAINER = 313;
-     */
-    NUX_GUILD_CHANNEL_EXPLAINER = 313,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_SUPER_REACTION_TOGGLE_EDUCATION_DESKTOP = 316;
      */
     SUPER_REACTION_TOGGLE_EDUCATION_DESKTOP = 316,

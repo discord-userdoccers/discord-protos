@@ -245,7 +245,6 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_DEKSTOP_CUSTOM_APP_ICON_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 306
         DISMISSIBLE_CONTENT_DEKSTOP_CUSTOM_APP_ICON_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 307
         DISMISSIBLE_CONTENT_CLYDE_AI_PERSONALITIES_NUX_MODAL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 312
-        DISMISSIBLE_CONTENT_NUX_GUILD_CHANNEL_EXPLAINER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 313
         DISMISSIBLE_CONTENT_SUPER_REACTION_TOGGLE_EDUCATION_DESKTOP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 316
         DISMISSIBLE_CONTENT_SUPER_REACTION_TOGGLE_EDUCATION_MOBILE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 317
         DISMISSIBLE_CONTENT_SEEN_LAUNCH_WELCOME_OR_REDESIGN: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 325
@@ -836,7 +835,6 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_DEKSTOP_CUSTOM_APP_ICON_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 306
     DISMISSIBLE_CONTENT_DEKSTOP_CUSTOM_APP_ICON_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 307
     DISMISSIBLE_CONTENT_CLYDE_AI_PERSONALITIES_NUX_MODAL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 312
-    DISMISSIBLE_CONTENT_NUX_GUILD_CHANNEL_EXPLAINER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 313
     DISMISSIBLE_CONTENT_SUPER_REACTION_TOGGLE_EDUCATION_DESKTOP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 316
     DISMISSIBLE_CONTENT_SUPER_REACTION_TOGGLE_EDUCATION_MOBILE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 317
     DISMISSIBLE_CONTENT_SEEN_LAUNCH_WELCOME_OR_REDESIGN: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 325
