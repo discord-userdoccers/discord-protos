@@ -95,7 +95,6 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_GUILD_HEADER_ROLE_SUBSCRIPTION_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 37
         DISMISSIBLE_CONTENT_CALL_CHAT_BUTTON_TEXT_IN_VOICE_COACH_MARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 38
         DISMISSIBLE_CONTENT_GUILD_DISCOVERY_LANDING_PAGE_SETTINGS_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 39
-        DISMISSIBLE_CONTENT_GUILD_INSIGHTS_ACCESS_RATE_NEW: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 40
         DISMISSIBLE_CONTENT_NOW_PLAYING_CONSENT_CARD: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 41
         DISMISSIBLE_CONTENT_GUILD_HEADER_BOOSTING_LOW_PRICE_EXPERIMENT_TOOLTIP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 42
         DISMISSIBLE_CONTENT_FORUM_CHANNEL_UPSELL_MODAL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 44
@@ -105,14 +104,11 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_MWEB_APP_DOWNLOAD_NAGBAR_BLURPLE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 49
         DISMISSIBLE_CONTENT_GUILD_FEED_NUX_CARD: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 50
         DISMISSIBLE_CONTENT_GUILD_HEADER_FREE_STICKER_SLOTS_TOOLTIP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 52
-        DISMISSIBLE_CONTENT_ACTIVITIES_NITRO_TUTORIAL_COACH_MARK_V2: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 53
         DISMISSIBLE_CONTENT_ACTIVITIES_TEXT_INPUT_BUTTON_SPARKLES: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 55
-        DISMISSIBLE_CONTENT_AUTH_SESSIONS_NEW: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 63
         DISMISSIBLE_CONTENT_DONUT_MOBILE_NUX: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 65
         DISMISSIBLE_CONTENT_GUILD_ROLE_SUBSCRIPTION_MWEB_PURCHASE_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 66
         DISMISSIBLE_CONTENT_PASSPORT_USER_SETTINGS: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 70
         DISMISSIBLE_CONTENT_SUMMER_BOGO_ANNOUNCEMENT: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 71
-        DISMISSIBLE_CONTENT_COMMANDS_MIGRATION_UPSELL_MODAL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 72
         DISMISSIBLE_CONTENT_FILE_LIMIT_UPLOAD_COACH_MARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 73
         DISMISSIBLE_CONTENT_DONUT_DESKTOP_NUX: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 77
         DISMISSIBLE_CONTENT_GUILD_ROLE_SUBSCRIPTION_EMOJI_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 79
@@ -134,19 +130,12 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_GUILD_AUTOMOD_REGEX_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 102
         DISMISSIBLE_CONTENT_XBOX_VOICE_SURVEY_NAGBAR: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 110
         DISMISSIBLE_CONTENT_PS_ONE_WAY_RECONNECT: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 112
-        DISMISSIBLE_CONTENT_NITRODUCTION_STEP_PROFILE_CUSTOMIZATION: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 116
-        DISMISSIBLE_CONTENT_NITRODUCTION_STEP_BOOSTING: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 117
-        DISMISSIBLE_CONTENT_NITRODUCTION_STEP_CUSTOM_EMOJI: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 118
-        DISMISSIBLE_CONTENT_NEW_CRUNCHYROLL_CONNECTION: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 119
         DISMISSIBLE_CONTENT_GUILD_HEADER_COMMUNITY_ONBOARDING_ADMIN_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 124
         DISMISSIBLE_CONTENT_COMMUNITY_ONBOARDING_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 125
         DISMISSIBLE_CONTENT_VERIFIED_ROLES_COACH_MARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 127
-        DISMISSIBLE_CONTENT_BLACK_FRIDAY_2022_BOGO_ANNOUNCEMENT_MODAL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 130
-        DISMISSIBLE_CONTENT_GG_ANNOUNCEMENT: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 132
         DISMISSIBLE_CONTENT_CHANNEL_BROWSER_NEW_BADGE_NUX: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 133
         DISMISSIBLE_CONTENT_CREATOR_PROMO_PAGE_COACH_MARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 134
         DISMISSIBLE_CONTENT_CREATOR_MONETIZATION_ONBOARDING_V2_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 136
-        DISMISSIBLE_CONTENT_GUILD_ONBOARDING_UPSELL_MODAL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 137
         DISMISSIBLE_CONTENT_NAGBAR_NOTICE_ONE_TIME_PAYMENT_PAST_DUE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 138
         DISMISSIBLE_CONTENT_DROPS_GO_LIVE_BANNER_NOTICE_HALO: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 139
         DISMISSIBLE_CONTENT_DROPS_ELIGIBILITY_ENROLLMENT_TOOLTIP_HALO: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 140
@@ -156,19 +145,14 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_CONSOLE_PTT_DISABLE_ALERT: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 152
         DISMISSIBLE_CONTENT_DROPS_ENDED_INCOMPLETE_HALO: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 154
         DISMISSIBLE_CONTENT_GDM_INVITE_REMINDER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 157
-        DISMISSIBLE_CONTENT_LINKED_ROLE_ADMIN_GUILD: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 163
         DISMISSIBLE_CONTENT_NAGBAR_ACTIVATE_SERVER_SUBSCRIPTION: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 164
-        DISMISSIBLE_CONTENT_BURST_REACTION_BUTTON_SPARKLE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 165
         DISMISSIBLE_CONTENT_NAGBAR_NOTICE_PREMIUM_TIER_0_TRIAL_ENDING: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 166
         DISMISSIBLE_CONTENT_VC_TILE_ACTIVITIES_ENTRY_POINT: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 167
         DISMISSIBLE_CONTENT_BURST_REACTION_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 169
         DISMISSIBLE_CONTENT_BURST_REACTIONS_REMOVE_MODAL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 170
-        DISMISSIBLE_CONTENT_BURST_REACTION_NITRO_TOOLTIP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 171
-        DISMISSIBLE_CONTENT_CLIENT_THEMES_SETTINGS_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 173
         DISMISSIBLE_CONTENT_CLIENT_THEMES_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 174
         DISMISSIBLE_CONTENT_STAGE_V2_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 176
         DISMISSIBLE_CONTENT_QUEST_1_ENROLLMENT_TOOLTIP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 177
-        DISMISSIBLE_CONTENT_QUEST_1_COMPLETION_TOOLTIP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 178
         DISMISSIBLE_CONTENT_QUEST_1_GO_LIVE_BANNER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 179
         DISMISSIBLE_CONTENT_QUEST_1_ENDED_INCOMPLETE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 180
         DISMISSIBLE_CONTENT_PREMIUM_TUTORIAL_EXPERIENCE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 181
@@ -220,48 +204,35 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_SUPER_REACTIONS_MOBILE_FULLSCREEN_TAP_TO_DISMISS: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 255
         DISMISSIBLE_CONTENT_CONSOLE_LOCAL_DETECT_CTA: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 257
         DISMISSIBLE_CONTENT_REMIXING_ENTRYPOINT_EDUCATION_UPSELLS_MOBILE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 263
-        DISMISSIBLE_CONTENT_GUEST_VOICE_INVITES_MENU_ITEM_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 264
         DISMISSIBLE_CONTENT_REMIXING_ENTRYPOINT_OPEN_MEDIA_KEYBOARD_UPSELL_MOBILE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 265
         DISMISSIBLE_CONTENT_GUILD_MEMBER_SAFETY_BANNER_NOTICE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 266
-        DISMISSIBLE_CONTENT_INVENTORY_GUILD_SETTINGS_MODMIN_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 271
         DISMISSIBLE_CONTENT_CUSTOM_CALL_SOUNDS_PICKER_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 272
-        DISMISSIBLE_CONTENT_CUSTOM_CALL_SOUNDS_SPARKLES: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 274
         DISMISSIBLE_CONTENT_SOUNDBOARD_MOBILE_FLOATING_CTA: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 275
-        DISMISSIBLE_CONTENT_PROFILE_THEMES_FEATURE_EDUCATION_TOOLTIP_TAKE_2: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 277
         DISMISSIBLE_CONTENT_VOICE_PANEL_BAD_CONNECTION_CTA: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 278
         DISMISSIBLE_CONTENT_PREMIUM_TRIAL_OFFER_MOBILE_ACTION_SHEET: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 279
         DISMISSIBLE_CONTENT_MEDIA_CHANNEL_MULTIPLE_THUMBNAIL_NOTICE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 280
         DISMISSIBLE_CONTENT_CLIPS_ONBOARDING_GO_LIVE_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 281
-        DISMISSIBLE_CONTENT_CLIPS_ONBOARDING_CLIP_BUTTON_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 282
         DISMISSIBLE_CONTENT_CUSTOM_APP_ICONS_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 283
         DISMISSIBLE_CONTENT_CUSTOM_APP_ICONS_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 284
         DISMISSIBLE_CONTENT_BROADCASTING_BROADCASTER_TOOLTIP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 285
         DISMISSIBLE_CONTENT_BROADCASTING_VIEWER_TOOLTIP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 286
         DISMISSIBLE_CONTENT_LAUNCH_PAD_PULL_TAB_NUX: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 289
         DISMISSIBLE_CONTENT_SERVER_SHOP_PHANTOM_PREVIEW: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 295
-        DISMISSIBLE_CONTENT_RECURRING_CONTACT_SYNC_PROMPT: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 297
         DISMISSIBLE_CONTENT_INVENTORY_TRY_PACKS_MODAL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 302
         DISMISSIBLE_CONTENT_DEPRECATE_WIN32_MESSAGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 305
         DISMISSIBLE_CONTENT_DEKSTOP_CUSTOM_APP_ICON_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 306
-        DISMISSIBLE_CONTENT_DEKSTOP_CUSTOM_APP_ICON_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 307
         DISMISSIBLE_CONTENT_CLYDE_AI_PERSONALITIES_NUX_MODAL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 312
         DISMISSIBLE_CONTENT_SUPER_REACTION_TOGGLE_EDUCATION_DESKTOP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 316
         DISMISSIBLE_CONTENT_SUPER_REACTION_TOGGLE_EDUCATION_MOBILE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 317
         DISMISSIBLE_CONTENT_SEEN_LAUNCH_WELCOME_OR_REDESIGN: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 325
         DISMISSIBLE_CONTENT_FAVORITE_SERVER_ADD_TO_FAVORITES_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 336
-        DISMISSIBLE_CONTENT_INVENTORY_GUILD_SETTINGS_MODMIN_COACHMARK_ROLLBACK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 337
-        DISMISSIBLE_CONTENT_FRIEND_FINDER_CONTACTS_IN_NOTIFICATIONS: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 338
         DISMISSIBLE_CONTENT_OVERLAY_KEYBIND_NOTIFICATION: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 340
         DISMISSIBLE_CONTENT_CHANNEL_LIST_V2_BROWSE_CHANNELS_NUX: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 343
         DISMISSIBLE_CONTENT_HANG_STATUS_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 346
         DISMISSIBLE_CONTENT_VOICE_CALL_BG_PICKER_TOOLTIP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 347
-        DISMISSIBLE_CONTENT_VOICE_CALL_BG_PICKER_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 348
         DISMISSIBLE_CONTENT_SWIPE_TO_REPLY_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 349
         DISMISSIBLE_CONTENT_MOBILE_ACCESSIBILITY_COLOR_SETTINGS: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 350
         DISMISSIBLE_CONTENT_LOOTBOXES_ENTRYPOINT: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 358
-        DISMISSIBLE_CONTENT_TENURE_REWARD_PENDING: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 360
-        DISMISSIBLE_CONTENT_TENURE_REWARD_REDEEMABLE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 361
-        DISMISSIBLE_CONTENT_TENURE_REWARD_REDEEMABLE_CONFETTI: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 363
         DISMISSIBLE_CONTENT_GAME_ONE_USER_SIGNUPS: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 364
         DISMISSIBLE_CONTENT_COLLECTIBLES_SHOP_SHY_COACHTIP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 365
         DISMISSIBLE_CONTENT_APP_LAUNCHER_ONBOARDING_BOTS_BANNER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 366
@@ -279,20 +250,11 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_COLLECTIBLES_SHOP_LOFI_VIBES_COACHTIP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 382
         DISMISSIBLE_CONTENT_COLLECTIBLES_SHOP_GALAXY_COACHTIP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 383
         DISMISSIBLE_CONTENT_CONTENT_INVENTORY_ONE_CLICK_REPLY_COACHTIP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 384
-        DISMISSIBLE_CONTENT_GUILD_LIST_CLAN_ADMIN_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 386
         DISMISSIBLE_CONTENT_MOBILE_NITRO_HOME_SETTINGS_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 387
-        DISMISSIBLE_CONTENT_BRAND_REFRESH_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 388
-        DISMISSIBLE_CONTENT_BRAND_REFRESH_BLURPLE_TWILIGHT_APP_ICON_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 389
-        DISMISSIBLE_CONTENT_BRAND_REFRESH_CLIENT_THEME_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 390
-        DISMISSIBLE_CONTENT_APP_LAUNCHER_USER_APP_BETA_NOTICE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 391
         DISMISSIBLE_CONTENT_COLLECTIBLES_PIRATES_MOBILE_BADGING: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 392
         DISMISSIBLE_CONTENT_COLLECTIBLES_SHOP_RETRO_AND_PIRATES_COACHTIP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 393
-        DISMISSIBLE_CONTENT_PRIDE_ICONS: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 394
-        DISMISSIBLE_CONTENT_PRIDE_ICONS_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 395
-        DISMISSIBLE_CONTENT_PRIDE_ICONS_APPEARANCE_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 396
         DISMISSIBLE_CONTENT_CLAN_TAG_WAITLIST: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 397
         DISMISSIBLE_CONTENT_GUILD_LIST_CLAN_USER_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 398
-        DISMISSIBLE_CONTENT_QUEST_HOME_FRIENDS_LIST_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 399
         DISMISSIBLE_CONTENT_WHATS_NEW_APP_STYLES_JUNE_2024_FLIP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 400
         DISMISSIBLE_CONTENT_WHATS_NEW_CUSTOM_NOTIFICATION_SOUNDS_FLIP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 401
         DISMISSIBLE_CONTENT_WHATS_NEW_REFERRAL_PROGRAM_FLIP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 402
@@ -305,10 +267,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_CHECKOUT_RECOVERY_NAGBAR: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 409
         DISMISSIBLE_CONTENT_PREMIUM_2024_JUNE_MARKETING_MODAL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 410
         DISMISSIBLE_CONTENT_APP_LAUNCHER_GLOBAL_SEARCH_ONBOARDING: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 411
-        DISMISSIBLE_CONTENT_NEW_GAMING_DISCOVERY_NOTIF: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 412
         DISMISSIBLE_CONTENT_NITRO_ON_PROFILE_SIDE_PANEL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 414
-        DISMISSIBLE_CONTENT_MESSAGE_FORWARDING_DESKTOP_UTILITIES_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 415
-        DISMISSIBLE_CONTENT_MESSAGE_FORWARDING_MOBILE_SHEET_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 416
         DISMISSIBLE_CONTENT_SUMMER_2024_BOGO_ANNOUNCEMENT_MODAL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 417
         DISMISSIBLE_CONTENT_GIFT_INVENTORY_QUESTS_MOVED_TO_QUEST_HOME: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 421
         DISMISSIBLE_CONTENT_COLLECTIBLES_SHOP_ENTRY_MARKETING: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 422
@@ -317,11 +276,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_PASSWORDLESS_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 427
         DISMISSIBLE_CONTENT_CHANNEL_LINKED_LOBBY_EDUCATION_TOOLTIP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 429
         DISMISSIBLE_CONTENT_COLLECTIBLES_SHOP_DOJO_MARKETING: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 431
-        DISMISSIBLE_CONTENT_REVERSE_TRIAL_STREAM_POPOUT: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 432
-        DISMISSIBLE_CONTENT_REVERSE_TRIAL_NITRO_TAB_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 433
-        DISMISSIBLE_CONTENT_REVERSE_TRIAL_EMOJI_BUTTON: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 434
         DISMISSIBLE_CONTENT_REVERSE_TRIAL_FIRST_IMPRESSION_MODAL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 435
-        DISMISSIBLE_CONTENT_REVERSE_TRIAL_EMOJI_PICKER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 436
         DISMISSIBLE_CONTENT_REVERSE_TRIAL_ENDED_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 437
         DISMISSIBLE_CONTENT_VOICE_PANEL_ACTIVITIES_SHAPES_BUTTON_EDUCATION_TOOLTIP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 439
         DISMISSIBLE_CONTENT_FOR_LATER_NOTIFICATIONS_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 440
@@ -333,8 +288,6 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_GLOBAL_DISCOVERY_RAPIDASH_NOTIF: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 448
         DISMISSIBLE_CONTENT_COLLECTIBLES_SHOP_BAND_MARKETING: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 449
         DISMISSIBLE_CONTENT_RAPIDASH_MORE_GUILDS_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 452
-        DISMISSIBLE_CONTENT_TRIAL_FOR_ALL_INITIAL_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 453
-        DISMISSIBLE_CONTENT_TRIAL_FOR_ALL_MOBILE_SETTINGS_NOTICE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 454
         DISMISSIBLE_CONTENT_RAPIDASH_RTC_BROWSE_GUILDS: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 456
         DISMISSIBLE_CONTENT_TRIAL_FOR_ALL_MARKETING_PAGE_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 457
         DISMISSIBLE_CONTENT_USER_PROFILE_PREMIUM_AND_SHOP_ENTRY_POINTS: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 458
@@ -362,27 +315,19 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_VIRTUAL_CURRENCY_ONBOARDING_ANNOUNCEMENT_MODAL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 492
         DISMISSIBLE_CONTENT_CONFETTI_POTION_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 494
         DISMISSIBLE_CONTENT_SHARE_ACTIVITY_COACHMARK_V2: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 496
-        DISMISSIBLE_CONTENT_VOICE_FILTER_LOOPBACK_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 497
-        DISMISSIBLE_CONTENT_VOICE_FILTER_LAUNCH_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 498
-        DISMISSIBLE_CONTENT_VOICE_FILTER_IN_CALL_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 499
         DISMISSIBLE_CONTENT_REVERSE_TRIAL_NITRO_TAB_BADGE_V2: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 500
         DISMISSIBLE_CONTENT_OVERLAY_OOP_WELCOME_NUX: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 501
         DISMISSIBLE_CONTENT_OVERLAY_OOP_WELCOME_SWITCH_FROM_IP_NUX: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 502
         DISMISSIBLE_CONTENT_OVERLAY_OOP_WELCOME_BACKGROUND_NUX: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 503
         DISMISSIBLE_CONTENT_OVERLAY_OOP_WELCOME_BACKGROUND_SWITCH_FROM_IP_NUX: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 504
         DISMISSIBLE_CONTENT_OVERLAY_OOP_SETTINGS_NUX: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 505
-        DISMISSIBLE_CONTENT_Q1_2025_REVERSE_TRIAL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 506
-        DISMISSIBLE_CONTENT_Q1_2025_FOLLOW_UP_REVERSE_TRIAL_OFFER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 507
         DISMISSIBLE_CONTENT_GUILD_POWERUPS_OVERVIEW_SIDEBAR_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 508
         DISMISSIBLE_CONTENT_SWIPE_TO_MEMBER_LIST_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 512
         DISMISSIBLE_CONTENT_VIRTUAL_CURRENCY_DISCOVERY_ONBOARDING_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 513
         DISMISSIBLE_CONTENT_VIRTUAL_CURRENCY_SHOP_ONBOARDING_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 514
         DISMISSIBLE_CONTENT_CLICKER_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 515
-        DISMISSIBLE_CONTENT_RECENT_AVATARS_SETTINGS_MENU_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 516
-        DISMISSIBLE_CONTENT_RECENT_AVATARS_SETTINGS_PROFILE_PAGE_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 517
         DISMISSIBLE_CONTENT_PERMADECOS_NITRO_TAB_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 518
         DISMISSIBLE_CONTENT_PERMADECOS_NITRO_HOME_CARD_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 520
-        DISMISSIBLE_CONTENT_DESKTOP_REFRESH_ONBOARDING_MODAL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 525
         DISMISSIBLE_CONTENT_GUILD_POWERUP_NOTIFICATION: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 529
         DISMISSIBLE_CONTENT_GUILD_POWERUP_PERKS_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 531
         DISMISSIBLE_CONTENT_THIRD_PARTY_OUTBOUND_PROMO_NAGBAR: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 532
@@ -390,18 +335,11 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_GUILD_TAG_SERVER_SETTINGS_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 535
         DISMISSIBLE_CONTENT_GUILD_SETTINGS_ROLE_STYLES_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 536
         DISMISSIBLE_CONTENT_NAGBAR_NOTICE_IGNORE_USER_FEEDBACK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 537
-        DISMISSIBLE_CONTENT_REPORT_TO_MOD_SURVEY_NOTICE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 538
-        DISMISSIBLE_CONTENT_Q2_2025_MARKETING_MOMENT_NITRO_TAB_BADGE_V2: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 539
-        DISMISSIBLE_CONTENT_Q2_2025_MARKETING_MOMENT_FIRST_IMPRESSION_MODAL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 540
-        DISMISSIBLE_CONTENT_Q2_2025_MARKETING_MOMENT_FOLLOW_UP_MODAL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 541
         DISMISSIBLE_CONTENT_REPORT_TO_MOD_NEW_TAG: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 542
         DISMISSIBLE_CONTENT_NITRO_TENURE_BADGE_LEVEL_UP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 544
         DISMISSIBLE_CONTENT_ROBLOX_CONNECTION_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 545
-        DISMISSIBLE_CONTENT_VOICE_FILTER_FIRST_USE_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 546
         DISMISSIBLE_CONTENT_CHANNEL_REORDER_MODAL_DISMISS_SETTING: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 547
         DISMISSIBLE_CONTENT_CUSTOM_THEME_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 548
-        DISMISSIBLE_CONTENT_VOICE_FILTER_EARLY_ACCESS_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 549
-        DISMISSIBLE_CONTENT_VOICE_FILTER_EARLY_ACCESS_PREMIUM_TAB_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 550
         DISMISSIBLE_CONTENT_CLIENT_THEMES_APPEARANCE_SETTINGS_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 551
         DISMISSIBLE_CONTENT_CUSTOM_THEME_ENTRYPOINT_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 552
         DISMISSIBLE_CONTENT_CUSTOM_THEME_ENTRYPOINT_GRADIENT: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 554
@@ -413,12 +351,10 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_GUILD_POWERUP_NEW_PERK_AVAILABLE_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 564
         DISMISSIBLE_CONTENT_AGE_VERIFICATION_SURVEY_MODAL_CLOSE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 566
         DISMISSIBLE_CONTENT_AGE_VERIFICATION_SURVEY_MODAL_GET_STARTED: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 567
-        DISMISSIBLE_CONTENT_GUILD_PIN_PERMISSION_MIGRATION_NOTIFICATION: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 568
         DISMISSIBLE_CONTENT_VIRTUAL_CURRENCY_DISCOVERY_REHEAT_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 571
         DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 572
         DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 573
         DISMISSIBLE_CONTENT_NAGBAR_NOTICE_OFFER_EXPIRING: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 574
-        DISMISSIBLE_CONTENT_SEARCH_AUTHOR_TYPE_FILTER_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 575
         DISMISSIBLE_CONTENT_SEARCH_AUTHOR_TYPE_SEARCH_RESULTS_HINT: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 576
         DISMISSIBLE_CONTENT_REFERRAL_PROGRAM_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 577
         DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_NEW_BADGE_PROFILE_PAGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 579
@@ -426,10 +362,6 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_ACCESSIBILITY_HIGH_CONTRAST_MODE_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 583
         DISMISSIBLE_CONTENT_WIDGETS_RTC_UPSELL_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 584
         DISMISSIBLE_CONTENT_CLOUD_PLAY_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 585
-        DISMISSIBLE_CONTENT_CUSTOM_THEMES_NITRO_HOME_TILE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 586
-        DISMISSIBLE_CONTENT_GUILD_HEADER_BOOST_PROGRESS_BAR_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 587
-        DISMISSIBLE_CONTENT_WIDGETS_USER_SETTINGS_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 588
-        DISMISSIBLE_CONTENT_WIDGETS_USER_SETTINGS_PROFILE_PAGE_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 589
         DISMISSIBLE_CONTENT_CHURN_DISCOUNT_PREMIUM_TAB_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 591
         DISMISSIBLE_CONTENT_CHURN_DISCOUNT_PREMIUM_TAB_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 592
         DISMISSIBLE_CONTENT_NITRO_DROP_REWARD: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 594
@@ -438,7 +370,6 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_DOUBLE_TAP_TO_REACT_REMINDER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 597
         DISMISSIBLE_CONTENT_VIRTUAL_CURRENCY_MOBILE_ONBOARDING_ANNOUNCEMENT_MODAL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 598
         DISMISSIBLE_CONTENT_SEPTEMBER_MARKETING_MOMENT_ANNOUNCEMENT_MODAL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 599
-        DISMISSIBLE_CONTENT_DO_NOT_DISTURB_REMINDER_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 600
         DISMISSIBLE_CONTENT_ACCOUNT_LINK_INVITE_FRIENDS: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 601
         DISMISSIBLE_CONTENT_HALLOWEEN_APP_ICONS_APPEARANCE_SETTINGS_WEB_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 603
         DISMISSIBLE_CONTENT_HALLOWEEN_APP_ICONS_APPEARANCE_SETTINGS_MOBILE_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 604
@@ -448,17 +379,12 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_NOTIFICATION_NUDGE_CHAT_BOTTOM_BANNER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 608
         DISMISSIBLE_CONTENT_NOTIFICATION_NUDGE_APP_START_BOTTOM_SHEET: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 609
         DISMISSIBLE_CONTENT_WISHLIST_NUX_TOOLTIP_AND_MODAL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 611
-        DISMISSIBLE_CONTENT_WIDGETS_USER_PROFILE_ACCOUNT_POPOUT_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 613
         DISMISSIBLE_CONTENT_GAME_SERVER_HOSTING_PORTKEY_TOS: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 614
-        DISMISSIBLE_CONTENT_APPLICATION_WIDGET_EDIT_PROFILE_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 615
         DISMISSIBLE_CONTENT_APPLICATION_WIDGET_EDIT_PROFILE_POPOVER_LINKED: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 616
         DISMISSIBLE_CONTENT_APPLICATION_WIDGET_EDIT_PROFILE_POPOVER_UNLINKED: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 617
-        DISMISSIBLE_CONTENT_APPLICATION_WIDGET_EMPTY_STATE_CARD_CONNECT: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 618
-        DISMISSIBLE_CONTENT_APPLICATION_WIDGET_EMPTY_STATE_CARD_ADD_WIDGET: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 619
         DISMISSIBLE_CONTENT_GAME_SERVER_HOSTING_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 620
         DISMISSIBLE_CONTENT_WISHLIST_SHOP_BUTTON_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 621
         DISMISSIBLE_CONTENT_HANG_STATUS_POPOVER_NUX: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 622
-        DISMISSIBLE_CONTENT_REPORT_TO_MOD_EXIT_SURVEY_NOTICE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 623
         DISMISSIBLE_CONTENT_NAGBAR_NOTICE_PASSKEY_BACKUP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 624
         DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_NITRO_HOME_TILE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 625
         DISMISSIBLE_CONTENT_CROSS_DM_SEARCH_SETTING_EDUCATION_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 627
@@ -466,7 +392,6 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_HOLIDAY_COACHMARK_HALLOWEEN_2025: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 631
         DISMISSIBLE_CONTENT_QUEST_HOME_ENTRYPOINT_ONBOARDING: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 632
         DISMISSIBLE_CONTENT_PREMIUM_MARKETING_MOMENT_ANNOUNCEMENT_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 633
-        DISMISSIBLE_CONTENT_NITRO_TAB_BADGE_OFFER_REMINDER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 634
         DISMISSIBLE_CONTENT_VIRTUAL_CURRENCY_MOBILE_ONBOARDING_PILL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 635
         DISMISSIBLE_CONTENT_GAME_WIDGETS_USER_PROFILE_ACCOUNT_POPOUT_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 636
         DISMISSIBLE_CONTENT_RECURRING_3P_PROMOTION_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 637
@@ -474,9 +399,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_GAME_SERVER_HOSTING_NEW_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 639
         DISMISSIBLE_CONTENT_GAME_SHOP_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 640
         DISMISSIBLE_CONTENT_GAME_SHOP_RTC_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 641
-        DISMISSIBLE_CONTENT_GUILD_JOINT_PERMISSION_MIGRATION_NOTIFICATION: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 642
         DISMISSIBLE_CONTENT_GAME_SHOP_ANNOUNCEMENT_MODAL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 643
-        DISMISSIBLE_CONTENT_CHECKPOINT_2025_BOTTOM_SHEET: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 644
         DISMISSIBLE_CONTENT_GAME_SHOP_WISHLIST_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 645
         DISMISSIBLE_CONTENT_DISCOUNT_OFFER_ACTION_SHEET: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 646
         DISMISSIBLE_CONTENT_MOBILE_PREMIUM_TRIAL_OFFER_ACTION_SHEET: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 647
@@ -485,18 +408,13 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_COLLECTIBLES_SHOP_WIDE_BANNER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 650
         DISMISSIBLE_CONTENT_NITRO_PRIVACY_PERK_BETA_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 651
         DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_MOBILE_PROFILE_TOOLTIP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 653
-        DISMISSIBLE_CONTENT_CHECKPOINT_2025_DESKTOP_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 654
-        DISMISSIBLE_CONTENT_APPLICATION_WIDGET_WUWA_SUGGESTED_WIDGET: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 655
         DISMISSIBLE_CONTENT_APPLICATION_WIDGET_WUWA_EDIT_PROFILE_POPOVER_LINKED: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 656
         DISMISSIBLE_CONTENT_APPLICATION_WIDGET_WUWA_EDIT_PROFILE_POPOVER_UNLINKED: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 657
         DISMISSIBLE_CONTENT_INSTALLED_GAME_COMMUNITY_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 658
-        DISMISSIBLE_CONTENT_GAME_SHOP_RTC_GIFTING_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 659
         DISMISSIBLE_CONTENT_GAME_INVITE_ACCOUNT_LINK_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 660
         DISMISSIBLE_CONTENT_NITRO_PRIVACY_PERK_NEW_BADGE_V2: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 661
         DISMISSIBLE_CONTENT_GUILD_TAG_AVAILABLE_COACHMARK_V2: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 662
         DISMISSIBLE_CONTENT_GUILD_TAG_UPDATED_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 663
-        DISMISSIBLE_CONTENT_ORB_RENTAL_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 664
-        DISMISSIBLE_CONTENT_HOLIDAY_COACHMARK_WINTER_2025: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 665
         DISMISSIBLE_CONTENT_TRIAL_FOR_ALL_2026_SETTINGS_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 667
         DISMISSIBLE_CONTENT_PREMIUM_GROUP_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 668
         DISMISSIBLE_CONTENT_PREMIUM_ORBS_UPSELL_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 669
@@ -505,14 +423,12 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_PREMIUM_ORBS_REWARDS_INTRO_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 673
         DISMISSIBLE_CONTENT_BOOST_PROGRESS_BAR_ADMIN_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 674
         DISMISSIBLE_CONTENT_BOOST_PROGRESS_BAR_MEMBER_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 675
-        DISMISSIBLE_CONTENT_QUEST_HOME_ENTRYPOINT_TAKEOVER_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 676
         DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_XBOX_ANNOUNCEMENT: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 677
         DISMISSIBLE_CONTENT_BOOST_TO_UNLOCK_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 678
         DISMISSIBLE_CONTENT_WISHLIST_MOBILE_NUX_PRODUCT_CARD_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 679
         DISMISSIBLE_CONTENT_WISHLIST_MOBILE_NUX_ACTION_SHEET: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 680
         DISMISSIBLE_CONTENT_WISHLIST_MOBILE_YOU_SCREEN_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 681
         DISMISSIBLE_CONTENT_GAME_CLAIM_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 682
-        DISMISSIBLE_CONTENT_COLLECTIBLES_SHOP_MARVEL_RIVALS_ORBS_REWARD: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 683
         DISMISSIBLE_CONTENT_EXPIRING_POWERUP_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 684
         DISMISSIBLE_CONTENT_FIRST_BOOSTER_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 685
         DISMISSIBLE_CONTENT_REFERRAL_PROGRAM_POPOVER_V2: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 686
@@ -520,17 +436,13 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_GAME_DETECTION_CREATE_GAME_SERVER_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 689
         DISMISSIBLE_CONTENT_JOIN_GAME_COMMUNITY_RTC_CTA: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 690
         DISMISSIBLE_CONTENT_NAGBAR_QUEST_APP_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 691
-        DISMISSIBLE_CONTENT_GAME_SHOP_ORBS_REWARD_BANNER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 692
-        DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_ORBS_REWARDS_ANNOUNCEMENT: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 693
         DISMISSIBLE_CONTENT_FAVORITES_SERVER_ONBOARDING_INTRO: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 694
         DISMISSIBLE_CONTENT_FAVORITES_SERVER_ONBOARDING_MENU_ITEM: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 695
-        DISMISSIBLE_CONTENT_GIFT_INTENT_MESSAGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 696
         DISMISSIBLE_CONTENT_MOBILE_REFERRAL_PROGRAM_BOTTOM_SHEET_ENTRYPOINT: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 697
         DISMISSIBLE_CONTENT_GAME_ACCOUNT_LINK_RECURRING_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 698
         DISMISSIBLE_CONTENT_WISHLIST_MOBILE_VIEWER_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 699
         DISMISSIBLE_CONTENT_EMPTY_GAME_SERVER_TAB: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 700
         DISMISSIBLE_CONTENT_GUILD_POWERUPS_OVERVIEW_SIDEBAR_VIDEO_CARD: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 701
-        DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_ORBS_REWARD_WISHLIST_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 702
         DISMISSIBLE_CONTENT_USER_PROFILE_WISHLIST_RECOMMENDATIONS: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 703
         DISMISSIBLE_CONTENT_GAME_SERVER_HOSTING_BATCH_RELEASE_V2_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 704
         DISMISSIBLE_CONTENT_QUEST_ACTIVITY_HEADER_INTRO: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 705
@@ -544,7 +456,6 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_L_3PP_NON_NITRO_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 716
         DISMISSIBLE_CONTENT_L_3PP_NITRO_TOOLTIP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 717
         DISMISSIBLE_CONTENT_MOBILE_ACCOUNT_LINKING_BANNER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 718
-        DISMISSIBLE_CONTENT_APRIL_FOOLS_2026_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 719
         DISMISSIBLE_CONTENT_PRIVATE_PROFILE_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 720
         DISMISSIBLE_CONTENT_PRIVATE_PROFILE_INLINE_NOTICE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 721
         DISMISSIBLE_CONTENT_GAME_SERVER_HOSTING_BATCH_RELEASE_V3_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 722
@@ -552,18 +463,15 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_ML_REVERSE_TRIAL_FOLLOWUP_UPSELL_MODAL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 724
         DISMISSIBLE_CONTENT_GAME_SHOP_NEW_DROP_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 725
         DISMISSIBLE_CONTENT_PREMIUM_MARKETING_MOMENT_NAGBAR_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 726
-        DISMISSIBLE_CONTENT_WISHLISTING_NITRO_TAB_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 727
         DISMISSIBLE_CONTENT_QUEST_HOME_NEW_QUEST_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 728
         DISMISSIBLE_CONTENT_PREMIUM_MARKETING_MOMENT_USER_SETTINGS_OFFER_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 729
         DISMISSIBLE_CONTENT_NITRO_TAB_QUEST_ORB_MULTIPLIER_TOOLTIP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 730
-        DISMISSIBLE_CONTENT_PIN_CHANNEL_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 731
         DISMISSIBLE_CONTENT_BOOST_PROGRESS_BAR_MOBILE_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 732
         DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_VC_GIFTING_STREAM_HEADER_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 733
         DISMISSIBLE_CONTENT_RIOT_CONNECTION_DEPRECATION: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 734
         DISMISSIBLE_CONTENT_RIOT_CONNECTION_DEPRECATION_DISABLE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 735
         DISMISSIBLE_CONTENT_RIOT_CONNECTION_DEPRECATION_ADMIN: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 736
         DISMISSIBLE_CONTENT_RIOT_CONNECTION_DEPRECATION_ADMIN_DISABLE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 737
-        DISMISSIBLE_CONTENT_CROISSANT_REHEAT_MOMENT: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 738
         DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_VC_GIFTING_PANEL_APP_WIDGET_CTA: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 739
         DISMISSIBLE_CONTENT_NOTIFICATION_NUDGE_POST_REACTION_BANNER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 742
         DISMISSIBLE_CONTENT_NEW_GIFTING_BADGES_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 743
@@ -580,16 +488,13 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_GUILD_THEME_NUX: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 754
         DISMISSIBLE_CONTENT_GUILD_SETTINGS_GUILD_THEME_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 755
         DISMISSIBLE_CONTENT_XBOX_PERKS_RECONNECT_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 756
-        DISMISSIBLE_CONTENT_STEELSERIES_LOGITECH_REHEAT: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 757
         DISMISSIBLE_CONTENT_INVITE_NONFRIENDS_TO_GDM_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 759
         DISMISSIBLE_CONTENT_APP_WIDGET_V2_PROFILE_UPSELL_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 761
         DISMISSIBLE_CONTENT_PARENTAL_CONSENT_GRACE_WARNING: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 762
         DISMISSIBLE_CONTENT_APP_WIDGET_V2_PROFILE_UPSELL_SUGGESTED: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 763
-        DISMISSIBLE_CONTENT_GUILD_THEME_NUX_FOLLOWUP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 764
         DISMISSIBLE_CONTENT_GIFT_CARD_MOBILE_CONSUMPTION_UNAVAILABLE_HALFSHEET: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 765
         DISMISSIBLE_CONTENT_IN_APP_NOTIFICATION_EXPAND_NUX: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 767
         DISMISSIBLE_CONTENT_HOME_DRAWER_SWIPE_PEEK_NUX: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 769
-        DISMISSIBLE_CONTENT_FILE_UPLOAD_POWERUP_ROLLBACK_NOTIFICATION: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 770
         DISMISSIBLE_CONTENT_FILE_UPLOAD_POWERUP_ROLLBACK_MODAL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 771
         DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_FLYWHEEL_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 772
         DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_FLYWHEEL_EDIT_PROFILE_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 773
@@ -612,7 +517,6 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_YOU_BAR_DM_SWIPE_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 790
         DISMISSIBLE_CONTENT_TOPICAL_NAVIGATION_HEADER_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 791
         DISMISSIBLE_CONTENT_PREMIUM_MARKETING_MOMENT_DESKTOP_ANNOUNCEMENT_MODAL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 792
-        DISMISSIBLE_CONTENT_BADGE_DIRECTORY_NEW_BADGE_INDICATOR: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 793
         DISMISSIBLE_CONTENT_NITRO_GDM_CAP_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 794
         DISMISSIBLE_CONTENT_BOUNTIES_RECURRING_SWIPE_UP_NUX: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 795
         DISMISSIBLE_CONTENT_SHOP_THIS_LOOK_WEB_MARKETING: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 796
@@ -686,7 +590,6 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_GUILD_HEADER_ROLE_SUBSCRIPTION_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 37
     DISMISSIBLE_CONTENT_CALL_CHAT_BUTTON_TEXT_IN_VOICE_COACH_MARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 38
     DISMISSIBLE_CONTENT_GUILD_DISCOVERY_LANDING_PAGE_SETTINGS_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 39
-    DISMISSIBLE_CONTENT_GUILD_INSIGHTS_ACCESS_RATE_NEW: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 40
     DISMISSIBLE_CONTENT_NOW_PLAYING_CONSENT_CARD: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 41
     DISMISSIBLE_CONTENT_GUILD_HEADER_BOOSTING_LOW_PRICE_EXPERIMENT_TOOLTIP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 42
     DISMISSIBLE_CONTENT_FORUM_CHANNEL_UPSELL_MODAL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 44
@@ -696,14 +599,11 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_MWEB_APP_DOWNLOAD_NAGBAR_BLURPLE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 49
     DISMISSIBLE_CONTENT_GUILD_FEED_NUX_CARD: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 50
     DISMISSIBLE_CONTENT_GUILD_HEADER_FREE_STICKER_SLOTS_TOOLTIP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 52
-    DISMISSIBLE_CONTENT_ACTIVITIES_NITRO_TUTORIAL_COACH_MARK_V2: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 53
     DISMISSIBLE_CONTENT_ACTIVITIES_TEXT_INPUT_BUTTON_SPARKLES: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 55
-    DISMISSIBLE_CONTENT_AUTH_SESSIONS_NEW: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 63
     DISMISSIBLE_CONTENT_DONUT_MOBILE_NUX: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 65
     DISMISSIBLE_CONTENT_GUILD_ROLE_SUBSCRIPTION_MWEB_PURCHASE_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 66
     DISMISSIBLE_CONTENT_PASSPORT_USER_SETTINGS: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 70
     DISMISSIBLE_CONTENT_SUMMER_BOGO_ANNOUNCEMENT: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 71
-    DISMISSIBLE_CONTENT_COMMANDS_MIGRATION_UPSELL_MODAL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 72
     DISMISSIBLE_CONTENT_FILE_LIMIT_UPLOAD_COACH_MARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 73
     DISMISSIBLE_CONTENT_DONUT_DESKTOP_NUX: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 77
     DISMISSIBLE_CONTENT_GUILD_ROLE_SUBSCRIPTION_EMOJI_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 79
@@ -725,19 +625,12 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_GUILD_AUTOMOD_REGEX_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 102
     DISMISSIBLE_CONTENT_XBOX_VOICE_SURVEY_NAGBAR: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 110
     DISMISSIBLE_CONTENT_PS_ONE_WAY_RECONNECT: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 112
-    DISMISSIBLE_CONTENT_NITRODUCTION_STEP_PROFILE_CUSTOMIZATION: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 116
-    DISMISSIBLE_CONTENT_NITRODUCTION_STEP_BOOSTING: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 117
-    DISMISSIBLE_CONTENT_NITRODUCTION_STEP_CUSTOM_EMOJI: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 118
-    DISMISSIBLE_CONTENT_NEW_CRUNCHYROLL_CONNECTION: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 119
     DISMISSIBLE_CONTENT_GUILD_HEADER_COMMUNITY_ONBOARDING_ADMIN_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 124
     DISMISSIBLE_CONTENT_COMMUNITY_ONBOARDING_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 125
     DISMISSIBLE_CONTENT_VERIFIED_ROLES_COACH_MARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 127
-    DISMISSIBLE_CONTENT_BLACK_FRIDAY_2022_BOGO_ANNOUNCEMENT_MODAL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 130
-    DISMISSIBLE_CONTENT_GG_ANNOUNCEMENT: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 132
     DISMISSIBLE_CONTENT_CHANNEL_BROWSER_NEW_BADGE_NUX: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 133
     DISMISSIBLE_CONTENT_CREATOR_PROMO_PAGE_COACH_MARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 134
     DISMISSIBLE_CONTENT_CREATOR_MONETIZATION_ONBOARDING_V2_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 136
-    DISMISSIBLE_CONTENT_GUILD_ONBOARDING_UPSELL_MODAL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 137
     DISMISSIBLE_CONTENT_NAGBAR_NOTICE_ONE_TIME_PAYMENT_PAST_DUE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 138
     DISMISSIBLE_CONTENT_DROPS_GO_LIVE_BANNER_NOTICE_HALO: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 139
     DISMISSIBLE_CONTENT_DROPS_ELIGIBILITY_ENROLLMENT_TOOLTIP_HALO: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 140
@@ -747,19 +640,14 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_CONSOLE_PTT_DISABLE_ALERT: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 152
     DISMISSIBLE_CONTENT_DROPS_ENDED_INCOMPLETE_HALO: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 154
     DISMISSIBLE_CONTENT_GDM_INVITE_REMINDER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 157
-    DISMISSIBLE_CONTENT_LINKED_ROLE_ADMIN_GUILD: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 163
     DISMISSIBLE_CONTENT_NAGBAR_ACTIVATE_SERVER_SUBSCRIPTION: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 164
-    DISMISSIBLE_CONTENT_BURST_REACTION_BUTTON_SPARKLE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 165
     DISMISSIBLE_CONTENT_NAGBAR_NOTICE_PREMIUM_TIER_0_TRIAL_ENDING: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 166
     DISMISSIBLE_CONTENT_VC_TILE_ACTIVITIES_ENTRY_POINT: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 167
     DISMISSIBLE_CONTENT_BURST_REACTION_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 169
     DISMISSIBLE_CONTENT_BURST_REACTIONS_REMOVE_MODAL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 170
-    DISMISSIBLE_CONTENT_BURST_REACTION_NITRO_TOOLTIP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 171
-    DISMISSIBLE_CONTENT_CLIENT_THEMES_SETTINGS_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 173
     DISMISSIBLE_CONTENT_CLIENT_THEMES_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 174
     DISMISSIBLE_CONTENT_STAGE_V2_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 176
     DISMISSIBLE_CONTENT_QUEST_1_ENROLLMENT_TOOLTIP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 177
-    DISMISSIBLE_CONTENT_QUEST_1_COMPLETION_TOOLTIP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 178
     DISMISSIBLE_CONTENT_QUEST_1_GO_LIVE_BANNER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 179
     DISMISSIBLE_CONTENT_QUEST_1_ENDED_INCOMPLETE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 180
     DISMISSIBLE_CONTENT_PREMIUM_TUTORIAL_EXPERIENCE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 181
@@ -811,48 +699,35 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_SUPER_REACTIONS_MOBILE_FULLSCREEN_TAP_TO_DISMISS: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 255
     DISMISSIBLE_CONTENT_CONSOLE_LOCAL_DETECT_CTA: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 257
     DISMISSIBLE_CONTENT_REMIXING_ENTRYPOINT_EDUCATION_UPSELLS_MOBILE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 263
-    DISMISSIBLE_CONTENT_GUEST_VOICE_INVITES_MENU_ITEM_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 264
     DISMISSIBLE_CONTENT_REMIXING_ENTRYPOINT_OPEN_MEDIA_KEYBOARD_UPSELL_MOBILE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 265
     DISMISSIBLE_CONTENT_GUILD_MEMBER_SAFETY_BANNER_NOTICE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 266
-    DISMISSIBLE_CONTENT_INVENTORY_GUILD_SETTINGS_MODMIN_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 271
     DISMISSIBLE_CONTENT_CUSTOM_CALL_SOUNDS_PICKER_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 272
-    DISMISSIBLE_CONTENT_CUSTOM_CALL_SOUNDS_SPARKLES: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 274
     DISMISSIBLE_CONTENT_SOUNDBOARD_MOBILE_FLOATING_CTA: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 275
-    DISMISSIBLE_CONTENT_PROFILE_THEMES_FEATURE_EDUCATION_TOOLTIP_TAKE_2: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 277
     DISMISSIBLE_CONTENT_VOICE_PANEL_BAD_CONNECTION_CTA: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 278
     DISMISSIBLE_CONTENT_PREMIUM_TRIAL_OFFER_MOBILE_ACTION_SHEET: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 279
     DISMISSIBLE_CONTENT_MEDIA_CHANNEL_MULTIPLE_THUMBNAIL_NOTICE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 280
     DISMISSIBLE_CONTENT_CLIPS_ONBOARDING_GO_LIVE_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 281
-    DISMISSIBLE_CONTENT_CLIPS_ONBOARDING_CLIP_BUTTON_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 282
     DISMISSIBLE_CONTENT_CUSTOM_APP_ICONS_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 283
     DISMISSIBLE_CONTENT_CUSTOM_APP_ICONS_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 284
     DISMISSIBLE_CONTENT_BROADCASTING_BROADCASTER_TOOLTIP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 285
     DISMISSIBLE_CONTENT_BROADCASTING_VIEWER_TOOLTIP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 286
     DISMISSIBLE_CONTENT_LAUNCH_PAD_PULL_TAB_NUX: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 289
     DISMISSIBLE_CONTENT_SERVER_SHOP_PHANTOM_PREVIEW: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 295
-    DISMISSIBLE_CONTENT_RECURRING_CONTACT_SYNC_PROMPT: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 297
     DISMISSIBLE_CONTENT_INVENTORY_TRY_PACKS_MODAL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 302
     DISMISSIBLE_CONTENT_DEPRECATE_WIN32_MESSAGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 305
     DISMISSIBLE_CONTENT_DEKSTOP_CUSTOM_APP_ICON_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 306
-    DISMISSIBLE_CONTENT_DEKSTOP_CUSTOM_APP_ICON_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 307
     DISMISSIBLE_CONTENT_CLYDE_AI_PERSONALITIES_NUX_MODAL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 312
     DISMISSIBLE_CONTENT_SUPER_REACTION_TOGGLE_EDUCATION_DESKTOP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 316
     DISMISSIBLE_CONTENT_SUPER_REACTION_TOGGLE_EDUCATION_MOBILE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 317
     DISMISSIBLE_CONTENT_SEEN_LAUNCH_WELCOME_OR_REDESIGN: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 325
     DISMISSIBLE_CONTENT_FAVORITE_SERVER_ADD_TO_FAVORITES_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 336
-    DISMISSIBLE_CONTENT_INVENTORY_GUILD_SETTINGS_MODMIN_COACHMARK_ROLLBACK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 337
-    DISMISSIBLE_CONTENT_FRIEND_FINDER_CONTACTS_IN_NOTIFICATIONS: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 338
     DISMISSIBLE_CONTENT_OVERLAY_KEYBIND_NOTIFICATION: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 340
     DISMISSIBLE_CONTENT_CHANNEL_LIST_V2_BROWSE_CHANNELS_NUX: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 343
     DISMISSIBLE_CONTENT_HANG_STATUS_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 346
     DISMISSIBLE_CONTENT_VOICE_CALL_BG_PICKER_TOOLTIP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 347
-    DISMISSIBLE_CONTENT_VOICE_CALL_BG_PICKER_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 348
     DISMISSIBLE_CONTENT_SWIPE_TO_REPLY_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 349
     DISMISSIBLE_CONTENT_MOBILE_ACCESSIBILITY_COLOR_SETTINGS: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 350
     DISMISSIBLE_CONTENT_LOOTBOXES_ENTRYPOINT: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 358
-    DISMISSIBLE_CONTENT_TENURE_REWARD_PENDING: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 360
-    DISMISSIBLE_CONTENT_TENURE_REWARD_REDEEMABLE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 361
-    DISMISSIBLE_CONTENT_TENURE_REWARD_REDEEMABLE_CONFETTI: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 363
     DISMISSIBLE_CONTENT_GAME_ONE_USER_SIGNUPS: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 364
     DISMISSIBLE_CONTENT_COLLECTIBLES_SHOP_SHY_COACHTIP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 365
     DISMISSIBLE_CONTENT_APP_LAUNCHER_ONBOARDING_BOTS_BANNER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 366
@@ -870,20 +745,11 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_COLLECTIBLES_SHOP_LOFI_VIBES_COACHTIP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 382
     DISMISSIBLE_CONTENT_COLLECTIBLES_SHOP_GALAXY_COACHTIP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 383
     DISMISSIBLE_CONTENT_CONTENT_INVENTORY_ONE_CLICK_REPLY_COACHTIP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 384
-    DISMISSIBLE_CONTENT_GUILD_LIST_CLAN_ADMIN_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 386
     DISMISSIBLE_CONTENT_MOBILE_NITRO_HOME_SETTINGS_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 387
-    DISMISSIBLE_CONTENT_BRAND_REFRESH_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 388
-    DISMISSIBLE_CONTENT_BRAND_REFRESH_BLURPLE_TWILIGHT_APP_ICON_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 389
-    DISMISSIBLE_CONTENT_BRAND_REFRESH_CLIENT_THEME_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 390
-    DISMISSIBLE_CONTENT_APP_LAUNCHER_USER_APP_BETA_NOTICE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 391
     DISMISSIBLE_CONTENT_COLLECTIBLES_PIRATES_MOBILE_BADGING: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 392
     DISMISSIBLE_CONTENT_COLLECTIBLES_SHOP_RETRO_AND_PIRATES_COACHTIP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 393
-    DISMISSIBLE_CONTENT_PRIDE_ICONS: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 394
-    DISMISSIBLE_CONTENT_PRIDE_ICONS_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 395
-    DISMISSIBLE_CONTENT_PRIDE_ICONS_APPEARANCE_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 396
     DISMISSIBLE_CONTENT_CLAN_TAG_WAITLIST: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 397
     DISMISSIBLE_CONTENT_GUILD_LIST_CLAN_USER_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 398
-    DISMISSIBLE_CONTENT_QUEST_HOME_FRIENDS_LIST_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 399
     DISMISSIBLE_CONTENT_WHATS_NEW_APP_STYLES_JUNE_2024_FLIP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 400
     DISMISSIBLE_CONTENT_WHATS_NEW_CUSTOM_NOTIFICATION_SOUNDS_FLIP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 401
     DISMISSIBLE_CONTENT_WHATS_NEW_REFERRAL_PROGRAM_FLIP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 402
@@ -896,10 +762,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_CHECKOUT_RECOVERY_NAGBAR: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 409
     DISMISSIBLE_CONTENT_PREMIUM_2024_JUNE_MARKETING_MODAL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 410
     DISMISSIBLE_CONTENT_APP_LAUNCHER_GLOBAL_SEARCH_ONBOARDING: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 411
-    DISMISSIBLE_CONTENT_NEW_GAMING_DISCOVERY_NOTIF: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 412
     DISMISSIBLE_CONTENT_NITRO_ON_PROFILE_SIDE_PANEL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 414
-    DISMISSIBLE_CONTENT_MESSAGE_FORWARDING_DESKTOP_UTILITIES_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 415
-    DISMISSIBLE_CONTENT_MESSAGE_FORWARDING_MOBILE_SHEET_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 416
     DISMISSIBLE_CONTENT_SUMMER_2024_BOGO_ANNOUNCEMENT_MODAL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 417
     DISMISSIBLE_CONTENT_GIFT_INVENTORY_QUESTS_MOVED_TO_QUEST_HOME: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 421
     DISMISSIBLE_CONTENT_COLLECTIBLES_SHOP_ENTRY_MARKETING: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 422
@@ -908,11 +771,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_PASSWORDLESS_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 427
     DISMISSIBLE_CONTENT_CHANNEL_LINKED_LOBBY_EDUCATION_TOOLTIP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 429
     DISMISSIBLE_CONTENT_COLLECTIBLES_SHOP_DOJO_MARKETING: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 431
-    DISMISSIBLE_CONTENT_REVERSE_TRIAL_STREAM_POPOUT: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 432
-    DISMISSIBLE_CONTENT_REVERSE_TRIAL_NITRO_TAB_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 433
-    DISMISSIBLE_CONTENT_REVERSE_TRIAL_EMOJI_BUTTON: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 434
     DISMISSIBLE_CONTENT_REVERSE_TRIAL_FIRST_IMPRESSION_MODAL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 435
-    DISMISSIBLE_CONTENT_REVERSE_TRIAL_EMOJI_PICKER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 436
     DISMISSIBLE_CONTENT_REVERSE_TRIAL_ENDED_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 437
     DISMISSIBLE_CONTENT_VOICE_PANEL_ACTIVITIES_SHAPES_BUTTON_EDUCATION_TOOLTIP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 439
     DISMISSIBLE_CONTENT_FOR_LATER_NOTIFICATIONS_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 440
@@ -924,8 +783,6 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_GLOBAL_DISCOVERY_RAPIDASH_NOTIF: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 448
     DISMISSIBLE_CONTENT_COLLECTIBLES_SHOP_BAND_MARKETING: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 449
     DISMISSIBLE_CONTENT_RAPIDASH_MORE_GUILDS_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 452
-    DISMISSIBLE_CONTENT_TRIAL_FOR_ALL_INITIAL_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 453
-    DISMISSIBLE_CONTENT_TRIAL_FOR_ALL_MOBILE_SETTINGS_NOTICE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 454
     DISMISSIBLE_CONTENT_RAPIDASH_RTC_BROWSE_GUILDS: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 456
     DISMISSIBLE_CONTENT_TRIAL_FOR_ALL_MARKETING_PAGE_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 457
     DISMISSIBLE_CONTENT_USER_PROFILE_PREMIUM_AND_SHOP_ENTRY_POINTS: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 458
@@ -953,27 +810,19 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_VIRTUAL_CURRENCY_ONBOARDING_ANNOUNCEMENT_MODAL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 492
     DISMISSIBLE_CONTENT_CONFETTI_POTION_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 494
     DISMISSIBLE_CONTENT_SHARE_ACTIVITY_COACHMARK_V2: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 496
-    DISMISSIBLE_CONTENT_VOICE_FILTER_LOOPBACK_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 497
-    DISMISSIBLE_CONTENT_VOICE_FILTER_LAUNCH_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 498
-    DISMISSIBLE_CONTENT_VOICE_FILTER_IN_CALL_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 499
     DISMISSIBLE_CONTENT_REVERSE_TRIAL_NITRO_TAB_BADGE_V2: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 500
     DISMISSIBLE_CONTENT_OVERLAY_OOP_WELCOME_NUX: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 501
     DISMISSIBLE_CONTENT_OVERLAY_OOP_WELCOME_SWITCH_FROM_IP_NUX: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 502
     DISMISSIBLE_CONTENT_OVERLAY_OOP_WELCOME_BACKGROUND_NUX: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 503
     DISMISSIBLE_CONTENT_OVERLAY_OOP_WELCOME_BACKGROUND_SWITCH_FROM_IP_NUX: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 504
     DISMISSIBLE_CONTENT_OVERLAY_OOP_SETTINGS_NUX: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 505
-    DISMISSIBLE_CONTENT_Q1_2025_REVERSE_TRIAL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 506
-    DISMISSIBLE_CONTENT_Q1_2025_FOLLOW_UP_REVERSE_TRIAL_OFFER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 507
     DISMISSIBLE_CONTENT_GUILD_POWERUPS_OVERVIEW_SIDEBAR_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 508
     DISMISSIBLE_CONTENT_SWIPE_TO_MEMBER_LIST_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 512
     DISMISSIBLE_CONTENT_VIRTUAL_CURRENCY_DISCOVERY_ONBOARDING_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 513
     DISMISSIBLE_CONTENT_VIRTUAL_CURRENCY_SHOP_ONBOARDING_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 514
     DISMISSIBLE_CONTENT_CLICKER_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 515
-    DISMISSIBLE_CONTENT_RECENT_AVATARS_SETTINGS_MENU_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 516
-    DISMISSIBLE_CONTENT_RECENT_AVATARS_SETTINGS_PROFILE_PAGE_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 517
     DISMISSIBLE_CONTENT_PERMADECOS_NITRO_TAB_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 518
     DISMISSIBLE_CONTENT_PERMADECOS_NITRO_HOME_CARD_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 520
-    DISMISSIBLE_CONTENT_DESKTOP_REFRESH_ONBOARDING_MODAL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 525
     DISMISSIBLE_CONTENT_GUILD_POWERUP_NOTIFICATION: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 529
     DISMISSIBLE_CONTENT_GUILD_POWERUP_PERKS_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 531
     DISMISSIBLE_CONTENT_THIRD_PARTY_OUTBOUND_PROMO_NAGBAR: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 532
@@ -981,18 +830,11 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_GUILD_TAG_SERVER_SETTINGS_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 535
     DISMISSIBLE_CONTENT_GUILD_SETTINGS_ROLE_STYLES_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 536
     DISMISSIBLE_CONTENT_NAGBAR_NOTICE_IGNORE_USER_FEEDBACK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 537
-    DISMISSIBLE_CONTENT_REPORT_TO_MOD_SURVEY_NOTICE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 538
-    DISMISSIBLE_CONTENT_Q2_2025_MARKETING_MOMENT_NITRO_TAB_BADGE_V2: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 539
-    DISMISSIBLE_CONTENT_Q2_2025_MARKETING_MOMENT_FIRST_IMPRESSION_MODAL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 540
-    DISMISSIBLE_CONTENT_Q2_2025_MARKETING_MOMENT_FOLLOW_UP_MODAL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 541
     DISMISSIBLE_CONTENT_REPORT_TO_MOD_NEW_TAG: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 542
     DISMISSIBLE_CONTENT_NITRO_TENURE_BADGE_LEVEL_UP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 544
     DISMISSIBLE_CONTENT_ROBLOX_CONNECTION_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 545
-    DISMISSIBLE_CONTENT_VOICE_FILTER_FIRST_USE_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 546
     DISMISSIBLE_CONTENT_CHANNEL_REORDER_MODAL_DISMISS_SETTING: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 547
     DISMISSIBLE_CONTENT_CUSTOM_THEME_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 548
-    DISMISSIBLE_CONTENT_VOICE_FILTER_EARLY_ACCESS_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 549
-    DISMISSIBLE_CONTENT_VOICE_FILTER_EARLY_ACCESS_PREMIUM_TAB_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 550
     DISMISSIBLE_CONTENT_CLIENT_THEMES_APPEARANCE_SETTINGS_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 551
     DISMISSIBLE_CONTENT_CUSTOM_THEME_ENTRYPOINT_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 552
     DISMISSIBLE_CONTENT_CUSTOM_THEME_ENTRYPOINT_GRADIENT: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 554
@@ -1004,12 +846,10 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_GUILD_POWERUP_NEW_PERK_AVAILABLE_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 564
     DISMISSIBLE_CONTENT_AGE_VERIFICATION_SURVEY_MODAL_CLOSE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 566
     DISMISSIBLE_CONTENT_AGE_VERIFICATION_SURVEY_MODAL_GET_STARTED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 567
-    DISMISSIBLE_CONTENT_GUILD_PIN_PERMISSION_MIGRATION_NOTIFICATION: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 568
     DISMISSIBLE_CONTENT_VIRTUAL_CURRENCY_DISCOVERY_REHEAT_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 571
     DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 572
     DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 573
     DISMISSIBLE_CONTENT_NAGBAR_NOTICE_OFFER_EXPIRING: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 574
-    DISMISSIBLE_CONTENT_SEARCH_AUTHOR_TYPE_FILTER_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 575
     DISMISSIBLE_CONTENT_SEARCH_AUTHOR_TYPE_SEARCH_RESULTS_HINT: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 576
     DISMISSIBLE_CONTENT_REFERRAL_PROGRAM_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 577
     DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_NEW_BADGE_PROFILE_PAGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 579
@@ -1017,10 +857,6 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_ACCESSIBILITY_HIGH_CONTRAST_MODE_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 583
     DISMISSIBLE_CONTENT_WIDGETS_RTC_UPSELL_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 584
     DISMISSIBLE_CONTENT_CLOUD_PLAY_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 585
-    DISMISSIBLE_CONTENT_CUSTOM_THEMES_NITRO_HOME_TILE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 586
-    DISMISSIBLE_CONTENT_GUILD_HEADER_BOOST_PROGRESS_BAR_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 587
-    DISMISSIBLE_CONTENT_WIDGETS_USER_SETTINGS_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 588
-    DISMISSIBLE_CONTENT_WIDGETS_USER_SETTINGS_PROFILE_PAGE_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 589
     DISMISSIBLE_CONTENT_CHURN_DISCOUNT_PREMIUM_TAB_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 591
     DISMISSIBLE_CONTENT_CHURN_DISCOUNT_PREMIUM_TAB_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 592
     DISMISSIBLE_CONTENT_NITRO_DROP_REWARD: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 594
@@ -1029,7 +865,6 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_DOUBLE_TAP_TO_REACT_REMINDER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 597
     DISMISSIBLE_CONTENT_VIRTUAL_CURRENCY_MOBILE_ONBOARDING_ANNOUNCEMENT_MODAL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 598
     DISMISSIBLE_CONTENT_SEPTEMBER_MARKETING_MOMENT_ANNOUNCEMENT_MODAL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 599
-    DISMISSIBLE_CONTENT_DO_NOT_DISTURB_REMINDER_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 600
     DISMISSIBLE_CONTENT_ACCOUNT_LINK_INVITE_FRIENDS: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 601
     DISMISSIBLE_CONTENT_HALLOWEEN_APP_ICONS_APPEARANCE_SETTINGS_WEB_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 603
     DISMISSIBLE_CONTENT_HALLOWEEN_APP_ICONS_APPEARANCE_SETTINGS_MOBILE_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 604
@@ -1039,17 +874,12 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_NOTIFICATION_NUDGE_CHAT_BOTTOM_BANNER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 608
     DISMISSIBLE_CONTENT_NOTIFICATION_NUDGE_APP_START_BOTTOM_SHEET: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 609
     DISMISSIBLE_CONTENT_WISHLIST_NUX_TOOLTIP_AND_MODAL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 611
-    DISMISSIBLE_CONTENT_WIDGETS_USER_PROFILE_ACCOUNT_POPOUT_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 613
     DISMISSIBLE_CONTENT_GAME_SERVER_HOSTING_PORTKEY_TOS: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 614
-    DISMISSIBLE_CONTENT_APPLICATION_WIDGET_EDIT_PROFILE_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 615
     DISMISSIBLE_CONTENT_APPLICATION_WIDGET_EDIT_PROFILE_POPOVER_LINKED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 616
     DISMISSIBLE_CONTENT_APPLICATION_WIDGET_EDIT_PROFILE_POPOVER_UNLINKED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 617
-    DISMISSIBLE_CONTENT_APPLICATION_WIDGET_EMPTY_STATE_CARD_CONNECT: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 618
-    DISMISSIBLE_CONTENT_APPLICATION_WIDGET_EMPTY_STATE_CARD_ADD_WIDGET: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 619
     DISMISSIBLE_CONTENT_GAME_SERVER_HOSTING_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 620
     DISMISSIBLE_CONTENT_WISHLIST_SHOP_BUTTON_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 621
     DISMISSIBLE_CONTENT_HANG_STATUS_POPOVER_NUX: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 622
-    DISMISSIBLE_CONTENT_REPORT_TO_MOD_EXIT_SURVEY_NOTICE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 623
     DISMISSIBLE_CONTENT_NAGBAR_NOTICE_PASSKEY_BACKUP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 624
     DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_NITRO_HOME_TILE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 625
     DISMISSIBLE_CONTENT_CROSS_DM_SEARCH_SETTING_EDUCATION_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 627
@@ -1057,7 +887,6 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_HOLIDAY_COACHMARK_HALLOWEEN_2025: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 631
     DISMISSIBLE_CONTENT_QUEST_HOME_ENTRYPOINT_ONBOARDING: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 632
     DISMISSIBLE_CONTENT_PREMIUM_MARKETING_MOMENT_ANNOUNCEMENT_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 633
-    DISMISSIBLE_CONTENT_NITRO_TAB_BADGE_OFFER_REMINDER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 634
     DISMISSIBLE_CONTENT_VIRTUAL_CURRENCY_MOBILE_ONBOARDING_PILL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 635
     DISMISSIBLE_CONTENT_GAME_WIDGETS_USER_PROFILE_ACCOUNT_POPOUT_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 636
     DISMISSIBLE_CONTENT_RECURRING_3P_PROMOTION_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 637
@@ -1065,9 +894,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_GAME_SERVER_HOSTING_NEW_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 639
     DISMISSIBLE_CONTENT_GAME_SHOP_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 640
     DISMISSIBLE_CONTENT_GAME_SHOP_RTC_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 641
-    DISMISSIBLE_CONTENT_GUILD_JOINT_PERMISSION_MIGRATION_NOTIFICATION: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 642
     DISMISSIBLE_CONTENT_GAME_SHOP_ANNOUNCEMENT_MODAL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 643
-    DISMISSIBLE_CONTENT_CHECKPOINT_2025_BOTTOM_SHEET: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 644
     DISMISSIBLE_CONTENT_GAME_SHOP_WISHLIST_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 645
     DISMISSIBLE_CONTENT_DISCOUNT_OFFER_ACTION_SHEET: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 646
     DISMISSIBLE_CONTENT_MOBILE_PREMIUM_TRIAL_OFFER_ACTION_SHEET: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 647
@@ -1076,18 +903,13 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_COLLECTIBLES_SHOP_WIDE_BANNER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 650
     DISMISSIBLE_CONTENT_NITRO_PRIVACY_PERK_BETA_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 651
     DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_MOBILE_PROFILE_TOOLTIP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 653
-    DISMISSIBLE_CONTENT_CHECKPOINT_2025_DESKTOP_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 654
-    DISMISSIBLE_CONTENT_APPLICATION_WIDGET_WUWA_SUGGESTED_WIDGET: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 655
     DISMISSIBLE_CONTENT_APPLICATION_WIDGET_WUWA_EDIT_PROFILE_POPOVER_LINKED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 656
     DISMISSIBLE_CONTENT_APPLICATION_WIDGET_WUWA_EDIT_PROFILE_POPOVER_UNLINKED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 657
     DISMISSIBLE_CONTENT_INSTALLED_GAME_COMMUNITY_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 658
-    DISMISSIBLE_CONTENT_GAME_SHOP_RTC_GIFTING_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 659
     DISMISSIBLE_CONTENT_GAME_INVITE_ACCOUNT_LINK_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 660
     DISMISSIBLE_CONTENT_NITRO_PRIVACY_PERK_NEW_BADGE_V2: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 661
     DISMISSIBLE_CONTENT_GUILD_TAG_AVAILABLE_COACHMARK_V2: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 662
     DISMISSIBLE_CONTENT_GUILD_TAG_UPDATED_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 663
-    DISMISSIBLE_CONTENT_ORB_RENTAL_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 664
-    DISMISSIBLE_CONTENT_HOLIDAY_COACHMARK_WINTER_2025: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 665
     DISMISSIBLE_CONTENT_TRIAL_FOR_ALL_2026_SETTINGS_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 667
     DISMISSIBLE_CONTENT_PREMIUM_GROUP_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 668
     DISMISSIBLE_CONTENT_PREMIUM_ORBS_UPSELL_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 669
@@ -1096,14 +918,12 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_PREMIUM_ORBS_REWARDS_INTRO_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 673
     DISMISSIBLE_CONTENT_BOOST_PROGRESS_BAR_ADMIN_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 674
     DISMISSIBLE_CONTENT_BOOST_PROGRESS_BAR_MEMBER_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 675
-    DISMISSIBLE_CONTENT_QUEST_HOME_ENTRYPOINT_TAKEOVER_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 676
     DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_XBOX_ANNOUNCEMENT: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 677
     DISMISSIBLE_CONTENT_BOOST_TO_UNLOCK_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 678
     DISMISSIBLE_CONTENT_WISHLIST_MOBILE_NUX_PRODUCT_CARD_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 679
     DISMISSIBLE_CONTENT_WISHLIST_MOBILE_NUX_ACTION_SHEET: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 680
     DISMISSIBLE_CONTENT_WISHLIST_MOBILE_YOU_SCREEN_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 681
     DISMISSIBLE_CONTENT_GAME_CLAIM_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 682
-    DISMISSIBLE_CONTENT_COLLECTIBLES_SHOP_MARVEL_RIVALS_ORBS_REWARD: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 683
     DISMISSIBLE_CONTENT_EXPIRING_POWERUP_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 684
     DISMISSIBLE_CONTENT_FIRST_BOOSTER_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 685
     DISMISSIBLE_CONTENT_REFERRAL_PROGRAM_POPOVER_V2: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 686
@@ -1111,17 +931,13 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_GAME_DETECTION_CREATE_GAME_SERVER_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 689
     DISMISSIBLE_CONTENT_JOIN_GAME_COMMUNITY_RTC_CTA: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 690
     DISMISSIBLE_CONTENT_NAGBAR_QUEST_APP_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 691
-    DISMISSIBLE_CONTENT_GAME_SHOP_ORBS_REWARD_BANNER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 692
-    DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_ORBS_REWARDS_ANNOUNCEMENT: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 693
     DISMISSIBLE_CONTENT_FAVORITES_SERVER_ONBOARDING_INTRO: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 694
     DISMISSIBLE_CONTENT_FAVORITES_SERVER_ONBOARDING_MENU_ITEM: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 695
-    DISMISSIBLE_CONTENT_GIFT_INTENT_MESSAGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 696
     DISMISSIBLE_CONTENT_MOBILE_REFERRAL_PROGRAM_BOTTOM_SHEET_ENTRYPOINT: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 697
     DISMISSIBLE_CONTENT_GAME_ACCOUNT_LINK_RECURRING_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 698
     DISMISSIBLE_CONTENT_WISHLIST_MOBILE_VIEWER_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 699
     DISMISSIBLE_CONTENT_EMPTY_GAME_SERVER_TAB: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 700
     DISMISSIBLE_CONTENT_GUILD_POWERUPS_OVERVIEW_SIDEBAR_VIDEO_CARD: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 701
-    DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_ORBS_REWARD_WISHLIST_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 702
     DISMISSIBLE_CONTENT_USER_PROFILE_WISHLIST_RECOMMENDATIONS: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 703
     DISMISSIBLE_CONTENT_GAME_SERVER_HOSTING_BATCH_RELEASE_V2_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 704
     DISMISSIBLE_CONTENT_QUEST_ACTIVITY_HEADER_INTRO: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 705
@@ -1135,7 +951,6 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_L_3PP_NON_NITRO_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 716
     DISMISSIBLE_CONTENT_L_3PP_NITRO_TOOLTIP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 717
     DISMISSIBLE_CONTENT_MOBILE_ACCOUNT_LINKING_BANNER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 718
-    DISMISSIBLE_CONTENT_APRIL_FOOLS_2026_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 719
     DISMISSIBLE_CONTENT_PRIVATE_PROFILE_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 720
     DISMISSIBLE_CONTENT_PRIVATE_PROFILE_INLINE_NOTICE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 721
     DISMISSIBLE_CONTENT_GAME_SERVER_HOSTING_BATCH_RELEASE_V3_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 722
@@ -1143,18 +958,15 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_ML_REVERSE_TRIAL_FOLLOWUP_UPSELL_MODAL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 724
     DISMISSIBLE_CONTENT_GAME_SHOP_NEW_DROP_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 725
     DISMISSIBLE_CONTENT_PREMIUM_MARKETING_MOMENT_NAGBAR_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 726
-    DISMISSIBLE_CONTENT_WISHLISTING_NITRO_TAB_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 727
     DISMISSIBLE_CONTENT_QUEST_HOME_NEW_QUEST_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 728
     DISMISSIBLE_CONTENT_PREMIUM_MARKETING_MOMENT_USER_SETTINGS_OFFER_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 729
     DISMISSIBLE_CONTENT_NITRO_TAB_QUEST_ORB_MULTIPLIER_TOOLTIP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 730
-    DISMISSIBLE_CONTENT_PIN_CHANNEL_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 731
     DISMISSIBLE_CONTENT_BOOST_PROGRESS_BAR_MOBILE_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 732
     DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_VC_GIFTING_STREAM_HEADER_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 733
     DISMISSIBLE_CONTENT_RIOT_CONNECTION_DEPRECATION: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 734
     DISMISSIBLE_CONTENT_RIOT_CONNECTION_DEPRECATION_DISABLE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 735
     DISMISSIBLE_CONTENT_RIOT_CONNECTION_DEPRECATION_ADMIN: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 736
     DISMISSIBLE_CONTENT_RIOT_CONNECTION_DEPRECATION_ADMIN_DISABLE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 737
-    DISMISSIBLE_CONTENT_CROISSANT_REHEAT_MOMENT: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 738
     DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_VC_GIFTING_PANEL_APP_WIDGET_CTA: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 739
     DISMISSIBLE_CONTENT_NOTIFICATION_NUDGE_POST_REACTION_BANNER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 742
     DISMISSIBLE_CONTENT_NEW_GIFTING_BADGES_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 743
@@ -1171,16 +983,13 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_GUILD_THEME_NUX: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 754
     DISMISSIBLE_CONTENT_GUILD_SETTINGS_GUILD_THEME_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 755
     DISMISSIBLE_CONTENT_XBOX_PERKS_RECONNECT_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 756
-    DISMISSIBLE_CONTENT_STEELSERIES_LOGITECH_REHEAT: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 757
     DISMISSIBLE_CONTENT_INVITE_NONFRIENDS_TO_GDM_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 759
     DISMISSIBLE_CONTENT_APP_WIDGET_V2_PROFILE_UPSELL_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 761
     DISMISSIBLE_CONTENT_PARENTAL_CONSENT_GRACE_WARNING: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 762
     DISMISSIBLE_CONTENT_APP_WIDGET_V2_PROFILE_UPSELL_SUGGESTED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 763
-    DISMISSIBLE_CONTENT_GUILD_THEME_NUX_FOLLOWUP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 764
     DISMISSIBLE_CONTENT_GIFT_CARD_MOBILE_CONSUMPTION_UNAVAILABLE_HALFSHEET: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 765
     DISMISSIBLE_CONTENT_IN_APP_NOTIFICATION_EXPAND_NUX: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 767
     DISMISSIBLE_CONTENT_HOME_DRAWER_SWIPE_PEEK_NUX: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 769
-    DISMISSIBLE_CONTENT_FILE_UPLOAD_POWERUP_ROLLBACK_NOTIFICATION: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 770
     DISMISSIBLE_CONTENT_FILE_UPLOAD_POWERUP_ROLLBACK_MODAL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 771
     DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_FLYWHEEL_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 772
     DISMISSIBLE_CONTENT_DISPLAY_NAME_STYLES_FLYWHEEL_EDIT_PROFILE_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 773
@@ -1203,7 +1012,6 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_YOU_BAR_DM_SWIPE_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 790
     DISMISSIBLE_CONTENT_TOPICAL_NAVIGATION_HEADER_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 791
     DISMISSIBLE_CONTENT_PREMIUM_MARKETING_MOMENT_DESKTOP_ANNOUNCEMENT_MODAL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 792
-    DISMISSIBLE_CONTENT_BADGE_DIRECTORY_NEW_BADGE_INDICATOR: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 793
     DISMISSIBLE_CONTENT_NITRO_GDM_CAP_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 794
     DISMISSIBLE_CONTENT_BOUNTIES_RECURRING_SWIPE_UP_NUX: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 795
     DISMISSIBLE_CONTENT_SHOP_THIS_LOOK_WEB_MARKETING: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 796

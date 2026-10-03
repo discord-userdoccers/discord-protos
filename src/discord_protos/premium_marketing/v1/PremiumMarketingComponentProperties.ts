@@ -1357,10 +1357,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     GUILD_DISCOVERY_LANDING_PAGE_SETTINGS_UPSELL = 39,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GUILD_INSIGHTS_ACCESS_RATE_NEW = 40;
-     */
-    GUILD_INSIGHTS_ACCESS_RATE_NEW = 40,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_NOW_PLAYING_CONSENT_CARD = 41;
      */
     NOW_PLAYING_CONSENT_CARD = 41,
@@ -1397,17 +1393,9 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     GUILD_HEADER_FREE_STICKER_SLOTS_TOOLTIP = 52,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_ACTIVITIES_NITRO_TUTORIAL_COACH_MARK_V2 = 53;
-     */
-    ACTIVITIES_NITRO_TUTORIAL_COACH_MARK_V2 = 53,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_ACTIVITIES_TEXT_INPUT_BUTTON_SPARKLES = 55;
      */
     ACTIVITIES_TEXT_INPUT_BUTTON_SPARKLES = 55,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_AUTH_SESSIONS_NEW = 63;
-     */
-    AUTH_SESSIONS_NEW = 63,
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_DONUT_MOBILE_NUX = 65;
      */
@@ -1424,10 +1412,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_SUMMER_BOGO_ANNOUNCEMENT = 71;
      */
     SUMMER_BOGO_ANNOUNCEMENT = 71,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_COMMANDS_MIGRATION_UPSELL_MODAL = 72;
-     */
-    COMMANDS_MIGRATION_UPSELL_MODAL = 72,
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_FILE_LIMIT_UPLOAD_COACH_MARK = 73;
      */
@@ -1513,22 +1497,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     PS_ONE_WAY_RECONNECT = 112,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_NITRODUCTION_STEP_PROFILE_CUSTOMIZATION = 116;
-     */
-    NITRODUCTION_STEP_PROFILE_CUSTOMIZATION = 116,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_NITRODUCTION_STEP_BOOSTING = 117;
-     */
-    NITRODUCTION_STEP_BOOSTING = 117,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_NITRODUCTION_STEP_CUSTOM_EMOJI = 118;
-     */
-    NITRODUCTION_STEP_CUSTOM_EMOJI = 118,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_NEW_CRUNCHYROLL_CONNECTION = 119;
-     */
-    NEW_CRUNCHYROLL_CONNECTION = 119,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GUILD_HEADER_COMMUNITY_ONBOARDING_ADMIN_UPSELL = 124;
      */
     GUILD_HEADER_COMMUNITY_ONBOARDING_ADMIN_UPSELL = 124,
@@ -1541,14 +1509,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     VERIFIED_ROLES_COACH_MARK = 127,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_BLACK_FRIDAY_2022_BOGO_ANNOUNCEMENT_MODAL = 130;
-     */
-    BLACK_FRIDAY_2022_BOGO_ANNOUNCEMENT_MODAL = 130,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GG_ANNOUNCEMENT = 132;
-     */
-    GG_ANNOUNCEMENT = 132,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CHANNEL_BROWSER_NEW_BADGE_NUX = 133;
      */
     CHANNEL_BROWSER_NEW_BADGE_NUX = 133,
@@ -1560,10 +1520,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CREATOR_MONETIZATION_ONBOARDING_V2_UPSELL = 136;
      */
     CREATOR_MONETIZATION_ONBOARDING_V2_UPSELL = 136,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GUILD_ONBOARDING_UPSELL_MODAL = 137;
-     */
-    GUILD_ONBOARDING_UPSELL_MODAL = 137,
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_NAGBAR_NOTICE_ONE_TIME_PAYMENT_PAST_DUE = 138;
      */
@@ -1601,17 +1557,9 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     GDM_INVITE_REMINDER = 157,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_LINKED_ROLE_ADMIN_GUILD = 163;
-     */
-    LINKED_ROLE_ADMIN_GUILD = 163,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_NAGBAR_ACTIVATE_SERVER_SUBSCRIPTION = 164;
      */
     NAGBAR_ACTIVATE_SERVER_SUBSCRIPTION = 164,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_BURST_REACTION_BUTTON_SPARKLE = 165;
-     */
-    BURST_REACTION_BUTTON_SPARKLE = 165,
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_NAGBAR_NOTICE_PREMIUM_TIER_0_TRIAL_ENDING = 166;
      */
@@ -1629,14 +1577,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     BURST_REACTIONS_REMOVE_MODAL = 170,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_BURST_REACTION_NITRO_TOOLTIP = 171;
-     */
-    BURST_REACTION_NITRO_TOOLTIP = 171,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CLIENT_THEMES_SETTINGS_BADGE = 173;
-     */
-    CLIENT_THEMES_SETTINGS_BADGE = 173,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CLIENT_THEMES_COACHMARK = 174;
      */
     CLIENT_THEMES_COACHMARK = 174,
@@ -1648,10 +1588,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_QUEST_1_ENROLLMENT_TOOLTIP = 177;
      */
     QUEST_1_ENROLLMENT_TOOLTIP = 177,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_QUEST_1_COMPLETION_TOOLTIP = 178;
-     */
-    QUEST_1_COMPLETION_TOOLTIP = 178,
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_QUEST_1_GO_LIVE_BANNER = 179;
      */
@@ -1857,10 +1793,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     REMIXING_ENTRYPOINT_EDUCATION_UPSELLS_MOBILE = 263,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GUEST_VOICE_INVITES_MENU_ITEM_NEW_BADGE = 264;
-     */
-    GUEST_VOICE_INVITES_MENU_ITEM_NEW_BADGE = 264,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_REMIXING_ENTRYPOINT_OPEN_MEDIA_KEYBOARD_UPSELL_MOBILE = 265;
      */
     REMIXING_ENTRYPOINT_OPEN_MEDIA_KEYBOARD_UPSELL_MOBILE = 265,
@@ -1869,25 +1801,13 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     GUILD_MEMBER_SAFETY_BANNER_NOTICE = 266,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_INVENTORY_GUILD_SETTINGS_MODMIN_COACHMARK = 271;
-     */
-    INVENTORY_GUILD_SETTINGS_MODMIN_COACHMARK = 271,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CUSTOM_CALL_SOUNDS_PICKER_UPSELL = 272;
      */
     CUSTOM_CALL_SOUNDS_PICKER_UPSELL = 272,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CUSTOM_CALL_SOUNDS_SPARKLES = 274;
-     */
-    CUSTOM_CALL_SOUNDS_SPARKLES = 274,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_SOUNDBOARD_MOBILE_FLOATING_CTA = 275;
      */
     SOUNDBOARD_MOBILE_FLOATING_CTA = 275,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_PROFILE_THEMES_FEATURE_EDUCATION_TOOLTIP_TAKE_2 = 277;
-     */
-    PROFILE_THEMES_FEATURE_EDUCATION_TOOLTIP_TAKE_2 = 277,
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_VOICE_PANEL_BAD_CONNECTION_CTA = 278;
      */
@@ -1904,10 +1824,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CLIPS_ONBOARDING_GO_LIVE_COACHMARK = 281;
      */
     CLIPS_ONBOARDING_GO_LIVE_COACHMARK = 281,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CLIPS_ONBOARDING_CLIP_BUTTON_COACHMARK = 282;
-     */
-    CLIPS_ONBOARDING_CLIP_BUTTON_COACHMARK = 282,
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CUSTOM_APP_ICONS_COACHMARK = 283;
      */
@@ -1933,10 +1849,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     SERVER_SHOP_PHANTOM_PREVIEW = 295,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_RECURRING_CONTACT_SYNC_PROMPT = 297;
-     */
-    RECURRING_CONTACT_SYNC_PROMPT = 297,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_INVENTORY_TRY_PACKS_MODAL = 302;
      */
     INVENTORY_TRY_PACKS_MODAL = 302,
@@ -1948,10 +1860,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_DEKSTOP_CUSTOM_APP_ICON_COACHMARK = 306;
      */
     DEKSTOP_CUSTOM_APP_ICON_COACHMARK = 306,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_DEKSTOP_CUSTOM_APP_ICON_BADGE = 307;
-     */
-    DEKSTOP_CUSTOM_APP_ICON_BADGE = 307,
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CLYDE_AI_PERSONALITIES_NUX_MODAL = 312;
      */
@@ -1973,14 +1881,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     FAVORITE_SERVER_ADD_TO_FAVORITES_COACHMARK = 336,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_INVENTORY_GUILD_SETTINGS_MODMIN_COACHMARK_ROLLBACK = 337;
-     */
-    INVENTORY_GUILD_SETTINGS_MODMIN_COACHMARK_ROLLBACK = 337,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_FRIEND_FINDER_CONTACTS_IN_NOTIFICATIONS = 338;
-     */
-    FRIEND_FINDER_CONTACTS_IN_NOTIFICATIONS = 338,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_OVERLAY_KEYBIND_NOTIFICATION = 340;
      */
     OVERLAY_KEYBIND_NOTIFICATION = 340,
@@ -1997,10 +1897,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     VOICE_CALL_BG_PICKER_TOOLTIP = 347,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_VOICE_CALL_BG_PICKER_NEW_BADGE = 348;
-     */
-    VOICE_CALL_BG_PICKER_NEW_BADGE = 348,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_SWIPE_TO_REPLY_COACHMARK = 349;
      */
     SWIPE_TO_REPLY_COACHMARK = 349,
@@ -2012,18 +1908,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_LOOTBOXES_ENTRYPOINT = 358;
      */
     LOOTBOXES_ENTRYPOINT = 358,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_TENURE_REWARD_PENDING = 360;
-     */
-    TENURE_REWARD_PENDING = 360,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_TENURE_REWARD_REDEEMABLE = 361;
-     */
-    TENURE_REWARD_REDEEMABLE = 361,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_TENURE_REWARD_REDEEMABLE_CONFETTI = 363;
-     */
-    TENURE_REWARD_REDEEMABLE_CONFETTI = 363,
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GAME_ONE_USER_SIGNUPS = 364;
      */
@@ -2093,29 +1977,9 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     CONTENT_INVENTORY_ONE_CLICK_REPLY_COACHTIP = 384,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GUILD_LIST_CLAN_ADMIN_UPSELL = 386;
-     */
-    GUILD_LIST_CLAN_ADMIN_UPSELL = 386,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_MOBILE_NITRO_HOME_SETTINGS_BADGE = 387;
      */
     MOBILE_NITRO_HOME_SETTINGS_BADGE = 387,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_BRAND_REFRESH_NEW_BADGE = 388;
-     */
-    BRAND_REFRESH_NEW_BADGE = 388,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_BRAND_REFRESH_BLURPLE_TWILIGHT_APP_ICON_BADGE = 389;
-     */
-    BRAND_REFRESH_BLURPLE_TWILIGHT_APP_ICON_BADGE = 389,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_BRAND_REFRESH_CLIENT_THEME_BADGE = 390;
-     */
-    BRAND_REFRESH_CLIENT_THEME_BADGE = 390,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_APP_LAUNCHER_USER_APP_BETA_NOTICE = 391;
-     */
-    APP_LAUNCHER_USER_APP_BETA_NOTICE = 391,
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_COLLECTIBLES_PIRATES_MOBILE_BADGING = 392;
      */
@@ -2125,18 +1989,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     COLLECTIBLES_SHOP_RETRO_AND_PIRATES_COACHTIP = 393,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_PRIDE_ICONS = 394;
-     */
-    PRIDE_ICONS = 394,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_PRIDE_ICONS_COACHMARK = 395;
-     */
-    PRIDE_ICONS_COACHMARK = 395,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_PRIDE_ICONS_APPEARANCE_BADGE = 396;
-     */
-    PRIDE_ICONS_APPEARANCE_BADGE = 396,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CLAN_TAG_WAITLIST = 397;
      */
     CLAN_TAG_WAITLIST = 397,
@@ -2144,10 +1996,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GUILD_LIST_CLAN_USER_UPSELL = 398;
      */
     GUILD_LIST_CLAN_USER_UPSELL = 398,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_QUEST_HOME_FRIENDS_LIST_NEW_BADGE = 399;
-     */
-    QUEST_HOME_FRIENDS_LIST_NEW_BADGE = 399,
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_WHATS_NEW_APP_STYLES_JUNE_2024_FLIP = 400;
      */
@@ -2197,21 +2045,9 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     APP_LAUNCHER_GLOBAL_SEARCH_ONBOARDING = 411,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_NEW_GAMING_DISCOVERY_NOTIF = 412;
-     */
-    NEW_GAMING_DISCOVERY_NOTIF = 412,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_NITRO_ON_PROFILE_SIDE_PANEL = 414;
      */
     NITRO_ON_PROFILE_SIDE_PANEL = 414,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_MESSAGE_FORWARDING_DESKTOP_UTILITIES_NEW_BADGE = 415;
-     */
-    MESSAGE_FORWARDING_DESKTOP_UTILITIES_NEW_BADGE = 415,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_MESSAGE_FORWARDING_MOBILE_SHEET_NEW_BADGE = 416;
-     */
-    MESSAGE_FORWARDING_MOBILE_SHEET_NEW_BADGE = 416,
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_SUMMER_2024_BOGO_ANNOUNCEMENT_MODAL = 417;
      */
@@ -2245,25 +2081,9 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     COLLECTIBLES_SHOP_DOJO_MARKETING = 431,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_REVERSE_TRIAL_STREAM_POPOUT = 432;
-     */
-    REVERSE_TRIAL_STREAM_POPOUT = 432,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_REVERSE_TRIAL_NITRO_TAB_BADGE = 433;
-     */
-    REVERSE_TRIAL_NITRO_TAB_BADGE = 433,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_REVERSE_TRIAL_EMOJI_BUTTON = 434;
-     */
-    REVERSE_TRIAL_EMOJI_BUTTON = 434,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_REVERSE_TRIAL_FIRST_IMPRESSION_MODAL = 435;
      */
     REVERSE_TRIAL_FIRST_IMPRESSION_MODAL = 435,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_REVERSE_TRIAL_EMOJI_PICKER = 436;
-     */
-    REVERSE_TRIAL_EMOJI_PICKER = 436,
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_REVERSE_TRIAL_ENDED_UPSELL = 437;
      */
@@ -2308,14 +2128,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_RAPIDASH_MORE_GUILDS_UPSELL = 452;
      */
     RAPIDASH_MORE_GUILDS_UPSELL = 452,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_TRIAL_FOR_ALL_INITIAL_UPSELL = 453;
-     */
-    TRIAL_FOR_ALL_INITIAL_UPSELL = 453,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_TRIAL_FOR_ALL_MOBILE_SETTINGS_NOTICE = 454;
-     */
-    TRIAL_FOR_ALL_MOBILE_SETTINGS_NOTICE = 454,
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_RAPIDASH_RTC_BROWSE_GUILDS = 456;
      */
@@ -2425,18 +2237,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     SHARE_ACTIVITY_COACHMARK_V2 = 496,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_VOICE_FILTER_LOOPBACK_COACHMARK = 497;
-     */
-    VOICE_FILTER_LOOPBACK_COACHMARK = 497,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_VOICE_FILTER_LAUNCH_COACHMARK = 498;
-     */
-    VOICE_FILTER_LAUNCH_COACHMARK = 498,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_VOICE_FILTER_IN_CALL_COACHMARK = 499;
-     */
-    VOICE_FILTER_IN_CALL_COACHMARK = 499,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_REVERSE_TRIAL_NITRO_TAB_BADGE_V2 = 500;
      */
     REVERSE_TRIAL_NITRO_TAB_BADGE_V2 = 500,
@@ -2461,14 +2261,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     OVERLAY_OOP_SETTINGS_NUX = 505,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_Q1_2025_REVERSE_TRIAL = 506;
-     */
-    Q1_2025_REVERSE_TRIAL = 506,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_Q1_2025_FOLLOW_UP_REVERSE_TRIAL_OFFER = 507;
-     */
-    Q1_2025_FOLLOW_UP_REVERSE_TRIAL_OFFER = 507,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GUILD_POWERUPS_OVERVIEW_SIDEBAR_COACHMARK = 508;
      */
     GUILD_POWERUPS_OVERVIEW_SIDEBAR_COACHMARK = 508,
@@ -2489,14 +2281,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     CLICKER_COACHMARK = 515,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_RECENT_AVATARS_SETTINGS_MENU_NEW_BADGE = 516;
-     */
-    RECENT_AVATARS_SETTINGS_MENU_NEW_BADGE = 516,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_RECENT_AVATARS_SETTINGS_PROFILE_PAGE_NEW_BADGE = 517;
-     */
-    RECENT_AVATARS_SETTINGS_PROFILE_PAGE_NEW_BADGE = 517,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_PERMADECOS_NITRO_TAB_NEW_BADGE = 518;
      */
     PERMADECOS_NITRO_TAB_NEW_BADGE = 518,
@@ -2504,10 +2288,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_PERMADECOS_NITRO_HOME_CARD_NEW_BADGE = 520;
      */
     PERMADECOS_NITRO_HOME_CARD_NEW_BADGE = 520,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_DESKTOP_REFRESH_ONBOARDING_MODAL = 525;
-     */
-    DESKTOP_REFRESH_ONBOARDING_MODAL = 525,
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GUILD_POWERUP_NOTIFICATION = 529;
      */
@@ -2537,22 +2317,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     NAGBAR_NOTICE_IGNORE_USER_FEEDBACK = 537,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_REPORT_TO_MOD_SURVEY_NOTICE = 538;
-     */
-    REPORT_TO_MOD_SURVEY_NOTICE = 538,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_Q2_2025_MARKETING_MOMENT_NITRO_TAB_BADGE_V2 = 539;
-     */
-    Q2_2025_MARKETING_MOMENT_NITRO_TAB_BADGE_V2 = 539,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_Q2_2025_MARKETING_MOMENT_FIRST_IMPRESSION_MODAL = 540;
-     */
-    Q2_2025_MARKETING_MOMENT_FIRST_IMPRESSION_MODAL = 540,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_Q2_2025_MARKETING_MOMENT_FOLLOW_UP_MODAL = 541;
-     */
-    Q2_2025_MARKETING_MOMENT_FOLLOW_UP_MODAL = 541,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_REPORT_TO_MOD_NEW_TAG = 542;
      */
     REPORT_TO_MOD_NEW_TAG = 542,
@@ -2565,10 +2329,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     ROBLOX_CONNECTION_COACHMARK = 545,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_VOICE_FILTER_FIRST_USE_COACHMARK = 546;
-     */
-    VOICE_FILTER_FIRST_USE_COACHMARK = 546,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CHANNEL_REORDER_MODAL_DISMISS_SETTING = 547;
      */
     CHANNEL_REORDER_MODAL_DISMISS_SETTING = 547,
@@ -2576,14 +2336,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CUSTOM_THEME_COACHMARK = 548;
      */
     CUSTOM_THEME_COACHMARK = 548,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_VOICE_FILTER_EARLY_ACCESS_COACHMARK = 549;
-     */
-    VOICE_FILTER_EARLY_ACCESS_COACHMARK = 549,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_VOICE_FILTER_EARLY_ACCESS_PREMIUM_TAB_BADGE = 550;
-     */
-    VOICE_FILTER_EARLY_ACCESS_PREMIUM_TAB_BADGE = 550,
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CLIENT_THEMES_APPEARANCE_SETTINGS_NEW_BADGE = 551;
      */
@@ -2629,10 +2381,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     AGE_VERIFICATION_SURVEY_MODAL_GET_STARTED = 567,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GUILD_PIN_PERMISSION_MIGRATION_NOTIFICATION = 568;
-     */
-    GUILD_PIN_PERMISSION_MIGRATION_NOTIFICATION = 568,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_VIRTUAL_CURRENCY_DISCOVERY_REHEAT_COACHMARK = 571;
      */
     VIRTUAL_CURRENCY_DISCOVERY_REHEAT_COACHMARK = 571,
@@ -2648,10 +2396,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_NAGBAR_NOTICE_OFFER_EXPIRING = 574;
      */
     NAGBAR_NOTICE_OFFER_EXPIRING = 574,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_SEARCH_AUTHOR_TYPE_FILTER_NEW_BADGE = 575;
-     */
-    SEARCH_AUTHOR_TYPE_FILTER_NEW_BADGE = 575,
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_SEARCH_AUTHOR_TYPE_SEARCH_RESULTS_HINT = 576;
      */
@@ -2680,22 +2424,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CLOUD_PLAY_POPOVER = 585;
      */
     CLOUD_PLAY_POPOVER = 585,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CUSTOM_THEMES_NITRO_HOME_TILE = 586;
-     */
-    CUSTOM_THEMES_NITRO_HOME_TILE = 586,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GUILD_HEADER_BOOST_PROGRESS_BAR_UPSELL = 587;
-     */
-    GUILD_HEADER_BOOST_PROGRESS_BAR_UPSELL = 587,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_WIDGETS_USER_SETTINGS_NEW_BADGE = 588;
-     */
-    WIDGETS_USER_SETTINGS_NEW_BADGE = 588,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_WIDGETS_USER_SETTINGS_PROFILE_PAGE_NEW_BADGE = 589;
-     */
-    WIDGETS_USER_SETTINGS_PROFILE_PAGE_NEW_BADGE = 589,
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CHURN_DISCOUNT_PREMIUM_TAB_COACHMARK = 591;
      */
@@ -2728,10 +2456,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_SEPTEMBER_MARKETING_MOMENT_ANNOUNCEMENT_MODAL = 599;
      */
     SEPTEMBER_MARKETING_MOMENT_ANNOUNCEMENT_MODAL = 599,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_DO_NOT_DISTURB_REMINDER_POPOVER = 600;
-     */
-    DO_NOT_DISTURB_REMINDER_POPOVER = 600,
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_ACCOUNT_LINK_INVITE_FRIENDS = 601;
      */
@@ -2769,17 +2493,9 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     WISHLIST_NUX_TOOLTIP_AND_MODAL = 611,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_WIDGETS_USER_PROFILE_ACCOUNT_POPOUT_NEW_BADGE = 613;
-     */
-    WIDGETS_USER_PROFILE_ACCOUNT_POPOUT_NEW_BADGE = 613,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GAME_SERVER_HOSTING_PORTKEY_TOS = 614;
      */
     GAME_SERVER_HOSTING_PORTKEY_TOS = 614,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_APPLICATION_WIDGET_EDIT_PROFILE_NEW_BADGE = 615;
-     */
-    APPLICATION_WIDGET_EDIT_PROFILE_NEW_BADGE = 615,
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_APPLICATION_WIDGET_EDIT_PROFILE_POPOVER_LINKED = 616;
      */
@@ -2788,14 +2504,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_APPLICATION_WIDGET_EDIT_PROFILE_POPOVER_UNLINKED = 617;
      */
     APPLICATION_WIDGET_EDIT_PROFILE_POPOVER_UNLINKED = 617,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_APPLICATION_WIDGET_EMPTY_STATE_CARD_CONNECT = 618;
-     */
-    APPLICATION_WIDGET_EMPTY_STATE_CARD_CONNECT = 618,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_APPLICATION_WIDGET_EMPTY_STATE_CARD_ADD_WIDGET = 619;
-     */
-    APPLICATION_WIDGET_EMPTY_STATE_CARD_ADD_WIDGET = 619,
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GAME_SERVER_HOSTING_NEW_BADGE = 620;
      */
@@ -2808,10 +2516,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_HANG_STATUS_POPOVER_NUX = 622;
      */
     HANG_STATUS_POPOVER_NUX = 622,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_REPORT_TO_MOD_EXIT_SURVEY_NOTICE = 623;
-     */
-    REPORT_TO_MOD_EXIT_SURVEY_NOTICE = 623,
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_NAGBAR_NOTICE_PASSKEY_BACKUP = 624;
      */
@@ -2841,10 +2545,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     PREMIUM_MARKETING_MOMENT_ANNOUNCEMENT_UPSELL = 633,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_NITRO_TAB_BADGE_OFFER_REMINDER = 634;
-     */
-    NITRO_TAB_BADGE_OFFER_REMINDER = 634,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_VIRTUAL_CURRENCY_MOBILE_ONBOARDING_PILL = 635;
      */
     VIRTUAL_CURRENCY_MOBILE_ONBOARDING_PILL = 635,
@@ -2873,17 +2573,9 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     GAME_SHOP_RTC_POPOVER = 641,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GUILD_JOINT_PERMISSION_MIGRATION_NOTIFICATION = 642;
-     */
-    GUILD_JOINT_PERMISSION_MIGRATION_NOTIFICATION = 642,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GAME_SHOP_ANNOUNCEMENT_MODAL = 643;
      */
     GAME_SHOP_ANNOUNCEMENT_MODAL = 643,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CHECKPOINT_2025_BOTTOM_SHEET = 644;
-     */
-    CHECKPOINT_2025_BOTTOM_SHEET = 644,
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GAME_SHOP_WISHLIST_POPOVER = 645;
      */
@@ -2917,14 +2609,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     DISPLAY_NAME_STYLES_MOBILE_PROFILE_TOOLTIP = 653,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CHECKPOINT_2025_DESKTOP_UPSELL = 654;
-     */
-    CHECKPOINT_2025_DESKTOP_UPSELL = 654,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_APPLICATION_WIDGET_WUWA_SUGGESTED_WIDGET = 655;
-     */
-    APPLICATION_WIDGET_WUWA_SUGGESTED_WIDGET = 655,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_APPLICATION_WIDGET_WUWA_EDIT_PROFILE_POPOVER_LINKED = 656;
      */
     APPLICATION_WIDGET_WUWA_EDIT_PROFILE_POPOVER_LINKED = 656,
@@ -2936,10 +2620,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_INSTALLED_GAME_COMMUNITY_UPSELL = 658;
      */
     INSTALLED_GAME_COMMUNITY_UPSELL = 658,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GAME_SHOP_RTC_GIFTING_NEW_BADGE = 659;
-     */
-    GAME_SHOP_RTC_GIFTING_NEW_BADGE = 659,
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GAME_INVITE_ACCOUNT_LINK_UPSELL = 660;
      */
@@ -2956,14 +2636,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GUILD_TAG_UPDATED_COACHMARK = 663;
      */
     GUILD_TAG_UPDATED_COACHMARK = 663,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_ORB_RENTAL_NEW_BADGE = 664;
-     */
-    ORB_RENTAL_NEW_BADGE = 664,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_HOLIDAY_COACHMARK_WINTER_2025 = 665;
-     */
-    HOLIDAY_COACHMARK_WINTER_2025 = 665,
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_TRIAL_FOR_ALL_2026_SETTINGS_BADGE = 667;
      */
@@ -2997,10 +2669,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     BOOST_PROGRESS_BAR_MEMBER_COACHMARK = 675,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_QUEST_HOME_ENTRYPOINT_TAKEOVER_BADGE = 676;
-     */
-    QUEST_HOME_ENTRYPOINT_TAKEOVER_BADGE = 676,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_XBOX_ANNOUNCEMENT = 677;
      */
     SLAYER_STOREFRONT_XBOX_ANNOUNCEMENT = 677,
@@ -3024,10 +2692,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GAME_CLAIM_COACHMARK = 682;
      */
     GAME_CLAIM_COACHMARK = 682,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_COLLECTIBLES_SHOP_MARVEL_RIVALS_ORBS_REWARD = 683;
-     */
-    COLLECTIBLES_SHOP_MARVEL_RIVALS_ORBS_REWARD = 683,
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_EXPIRING_POWERUP_COACHMARK = 684;
      */
@@ -3057,14 +2721,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     NAGBAR_QUEST_APP_UPSELL = 691,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GAME_SHOP_ORBS_REWARD_BANNER = 692;
-     */
-    GAME_SHOP_ORBS_REWARD_BANNER = 692,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_ORBS_REWARDS_ANNOUNCEMENT = 693;
-     */
-    SLAYER_STOREFRONT_ORBS_REWARDS_ANNOUNCEMENT = 693,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_FAVORITES_SERVER_ONBOARDING_INTRO = 694;
      */
     FAVORITES_SERVER_ONBOARDING_INTRO = 694,
@@ -3072,10 +2728,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_FAVORITES_SERVER_ONBOARDING_MENU_ITEM = 695;
      */
     FAVORITES_SERVER_ONBOARDING_MENU_ITEM = 695,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GIFT_INTENT_MESSAGE = 696;
-     */
-    GIFT_INTENT_MESSAGE = 696,
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_MOBILE_REFERRAL_PROGRAM_BOTTOM_SHEET_ENTRYPOINT = 697;
      */
@@ -3096,10 +2748,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GUILD_POWERUPS_OVERVIEW_SIDEBAR_VIDEO_CARD = 701;
      */
     GUILD_POWERUPS_OVERVIEW_SIDEBAR_VIDEO_CARD = 701,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_ORBS_REWARD_WISHLIST_UPSELL = 702;
-     */
-    SLAYER_STOREFRONT_ORBS_REWARD_WISHLIST_UPSELL = 702,
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_USER_PROFILE_WISHLIST_RECOMMENDATIONS = 703;
      */
@@ -3153,10 +2801,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     MOBILE_ACCOUNT_LINKING_BANNER = 718,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_APRIL_FOOLS_2026_COACHMARK = 719;
-     */
-    APRIL_FOOLS_2026_COACHMARK = 719,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_PRIVATE_PROFILE_COACHMARK = 720;
      */
     PRIVATE_PROFILE_COACHMARK = 720,
@@ -3185,10 +2829,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     PREMIUM_MARKETING_MOMENT_NAGBAR_UPSELL = 726,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_WISHLISTING_NITRO_TAB_NEW_BADGE = 727;
-     */
-    WISHLISTING_NITRO_TAB_NEW_BADGE = 727,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_QUEST_HOME_NEW_QUEST_BADGE = 728;
      */
     QUEST_HOME_NEW_QUEST_BADGE = 728,
@@ -3200,10 +2840,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_NITRO_TAB_QUEST_ORB_MULTIPLIER_TOOLTIP = 730;
      */
     NITRO_TAB_QUEST_ORB_MULTIPLIER_TOOLTIP = 730,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_PIN_CHANNEL_NEW_BADGE = 731;
-     */
-    PIN_CHANNEL_NEW_BADGE = 731,
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_BOOST_PROGRESS_BAR_MOBILE_COACHMARK = 732;
      */
@@ -3228,10 +2864,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_RIOT_CONNECTION_DEPRECATION_ADMIN_DISABLE = 737;
      */
     RIOT_CONNECTION_DEPRECATION_ADMIN_DISABLE = 737,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CROISSANT_REHEAT_MOMENT = 738;
-     */
-    CROISSANT_REHEAT_MOMENT = 738,
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_VC_GIFTING_PANEL_APP_WIDGET_CTA = 739;
      */
@@ -3297,10 +2929,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     XBOX_PERKS_RECONNECT_UPSELL = 756,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_STEELSERIES_LOGITECH_REHEAT = 757;
-     */
-    STEELSERIES_LOGITECH_REHEAT = 757,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_INVITE_NONFRIENDS_TO_GDM_COACHMARK = 759;
      */
     INVITE_NONFRIENDS_TO_GDM_COACHMARK = 759,
@@ -3317,10 +2945,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     APP_WIDGET_V2_PROFILE_UPSELL_SUGGESTED = 763,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GUILD_THEME_NUX_FOLLOWUP = 764;
-     */
-    GUILD_THEME_NUX_FOLLOWUP = 764,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GIFT_CARD_MOBILE_CONSUMPTION_UNAVAILABLE_HALFSHEET = 765;
      */
     GIFT_CARD_MOBILE_CONSUMPTION_UNAVAILABLE_HALFSHEET = 765,
@@ -3332,10 +2956,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_HOME_DRAWER_SWIPE_PEEK_NUX = 769;
      */
     HOME_DRAWER_SWIPE_PEEK_NUX = 769,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_FILE_UPLOAD_POWERUP_ROLLBACK_NOTIFICATION = 770;
-     */
-    FILE_UPLOAD_POWERUP_ROLLBACK_NOTIFICATION = 770,
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_FILE_UPLOAD_POWERUP_ROLLBACK_MODAL = 771;
      */
@@ -3424,10 +3044,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_PREMIUM_MARKETING_MOMENT_DESKTOP_ANNOUNCEMENT_MODAL = 792;
      */
     PREMIUM_MARKETING_MOMENT_DESKTOP_ANNOUNCEMENT_MODAL = 792,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_BADGE_DIRECTORY_NEW_BADGE_INDICATOR = 793;
-     */
-    BADGE_DIRECTORY_NEW_BADGE_INDICATOR = 793,
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_NITRO_GDM_CAP_COACHMARK = 794;
      */
