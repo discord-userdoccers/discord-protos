@@ -3235,7 +3235,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_REFERRAL_REFRESH_NOTIFICATION_POPOVER = 842;
      */
-    REFERRAL_REFRESH_NOTIFICATION_POPOVER = 842
+    REFERRAL_REFRESH_NOTIFICATION_POPOVER = 842,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CONTEXTUAL_REFERRAL_GDM_MEMBER_LIST_EMBED = 843;
+     */
+    CONTEXTUAL_REFERRAL_GDM_MEMBER_LIST_EMBED = 843
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
