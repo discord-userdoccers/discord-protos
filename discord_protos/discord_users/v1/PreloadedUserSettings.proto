@@ -277,6 +277,7 @@ message PreloadedUserSettings {
     optional google.protobuf.BoolValue enable_screen_downtime_schedule_notifications = 23;
     optional google.protobuf.BoolValue notify_friends_on_profile_update = 24;
     optional google.protobuf.BoolValue notify_friends_on_come_online = 25;
+    optional google.protobuf.BoolValue notify_server_members_on_go_live = 26;
   }
 
   enum GuildActivityStatusRestrictionDefault {

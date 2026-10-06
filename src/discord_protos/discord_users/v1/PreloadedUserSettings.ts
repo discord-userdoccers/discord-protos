@@ -833,6 +833,10 @@ export interface PreloadedUserSettings_NotificationSettings {
      * @generated from protobuf field: optional google.protobuf.BoolValue notify_friends_on_come_online = 25
      */
     notifyFriendsOnComeOnline?: BoolValue;
+    /**
+     * @generated from protobuf field: optional google.protobuf.BoolValue notify_server_members_on_go_live = 26
+     */
+    notifyServerMembersOnGoLive?: BoolValue;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.PrivacySettings
@@ -4013,7 +4017,8 @@ class PreloadedUserSettings_NotificationSettings$Type extends MessageType<Preloa
             { no: 22, name: "enable_upcoming_server_event_notifications", kind: "message", T: () => BoolValue },
             { no: 23, name: "enable_screen_downtime_schedule_notifications", kind: "message", T: () => BoolValue },
             { no: 24, name: "notify_friends_on_profile_update", kind: "message", T: () => BoolValue },
-            { no: 25, name: "notify_friends_on_come_online", kind: "message", T: () => BoolValue }
+            { no: 25, name: "notify_friends_on_come_online", kind: "message", T: () => BoolValue },
+            { no: 26, name: "notify_server_members_on_go_live", kind: "message", T: () => BoolValue }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_NotificationSettings>): PreloadedUserSettings_NotificationSettings {
@@ -4107,6 +4112,9 @@ class PreloadedUserSettings_NotificationSettings$Type extends MessageType<Preloa
                 case /* optional google.protobuf.BoolValue notify_friends_on_come_online */ 25:
                     message.notifyFriendsOnComeOnline = BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.notifyFriendsOnComeOnline);
                     break;
+                case /* optional google.protobuf.BoolValue notify_server_members_on_go_live */ 26:
+                    message.notifyServerMembersOnGoLive = BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.notifyServerMembersOnGoLive);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -4194,6 +4202,9 @@ class PreloadedUserSettings_NotificationSettings$Type extends MessageType<Preloa
         /* optional google.protobuf.BoolValue notify_friends_on_come_online = 25; */
         if (message.notifyFriendsOnComeOnline)
             BoolValue.internalBinaryWrite(message.notifyFriendsOnComeOnline, writer.tag(25, WireType.LengthDelimited).fork(), options).join();
+        /* optional google.protobuf.BoolValue notify_server_members_on_go_live = 26; */
+        if (message.notifyServerMembersOnGoLive)
+            BoolValue.internalBinaryWrite(message.notifyServerMembersOnGoLive, writer.tag(26, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
