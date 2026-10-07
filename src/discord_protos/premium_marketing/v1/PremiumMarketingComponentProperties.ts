@@ -3239,7 +3239,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CONTEXTUAL_REFERRAL_GDM_MEMBER_LIST_EMBED = 843;
      */
-    CONTEXTUAL_REFERRAL_GDM_MEMBER_LIST_EMBED = 843
+    CONTEXTUAL_REFERRAL_GDM_MEMBER_LIST_EMBED = 843,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GIFT_CARDS_MARKETING_COACHMARK = 844;
+     */
+    GIFT_CARDS_MARKETING_COACHMARK = 844
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant

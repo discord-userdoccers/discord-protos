@@ -566,6 +566,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_YOUTUBE_3P_NAGBAR_NOTICE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 841
         DISMISSIBLE_CONTENT_REFERRAL_REFRESH_NOTIFICATION_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 842
         DISMISSIBLE_CONTENT_CONTEXTUAL_REFERRAL_GDM_MEMBER_LIST_EMBED: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 843
+        DISMISSIBLE_CONTENT_GIFT_CARDS_MARKETING_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 844
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_UNSPECIFIED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1062,6 +1063,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_YOUTUBE_3P_NAGBAR_NOTICE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 841
     DISMISSIBLE_CONTENT_REFERRAL_REFRESH_NOTIFICATION_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 842
     DISMISSIBLE_CONTENT_CONTEXTUAL_REFERRAL_GDM_MEMBER_LIST_EMBED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 843
+    DISMISSIBLE_CONTENT_GIFT_CARDS_MARKETING_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 844
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)
