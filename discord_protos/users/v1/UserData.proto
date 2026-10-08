@@ -1185,4 +1185,5 @@ message UserData {
   optional UserTypingIndicatorStyle typing_indicator_style = 19;
   bool disable_staff_discount = 20;
   optional VadColors vad_colors = 21;
+  uint64 hidden_flags = 22;
 }

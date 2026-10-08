@@ -3247,7 +3247,15 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_MACARON_3P_POPOVER = 845;
      */
-    MACARON_3P_POPOVER = 845
+    MACARON_3P_POPOVER = 845,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_FRIENDS_SIDEBAR_APP_BAR_TOGGLE_COACHMARK = 846;
+     */
+    FRIENDS_SIDEBAR_APP_BAR_TOGGLE_COACHMARK = 846,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GIFT_INVENTORY_SETTINGS_NEW_BADGE = 847;
+     */
+    GIFT_INVENTORY_SETTINGS_NEW_BADGE = 847
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant

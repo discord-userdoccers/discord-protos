@@ -568,6 +568,8 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_CONTEXTUAL_REFERRAL_GDM_MEMBER_LIST_EMBED: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 843
         DISMISSIBLE_CONTENT_GIFT_CARDS_MARKETING_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 844
         DISMISSIBLE_CONTENT_MACARON_3P_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 845
+        DISMISSIBLE_CONTENT_FRIENDS_SIDEBAR_APP_BAR_TOGGLE_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 846
+        DISMISSIBLE_CONTENT_GIFT_INVENTORY_SETTINGS_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 847
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_UNSPECIFIED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1066,6 +1068,8 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_CONTEXTUAL_REFERRAL_GDM_MEMBER_LIST_EMBED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 843
     DISMISSIBLE_CONTENT_GIFT_CARDS_MARKETING_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 844
     DISMISSIBLE_CONTENT_MACARON_3P_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 845
+    DISMISSIBLE_CONTENT_FRIENDS_SIDEBAR_APP_BAR_TOGGLE_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 846
+    DISMISSIBLE_CONTENT_GIFT_INVENTORY_SETTINGS_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 847
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)

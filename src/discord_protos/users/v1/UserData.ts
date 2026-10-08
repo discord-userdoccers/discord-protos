@@ -108,6 +108,10 @@ export interface UserData {
      * @generated from protobuf field: optional discord_protos.users.v1.UserData.VadColors vad_colors = 21
      */
     vadColors?: UserData_VadColors;
+    /**
+     * @generated from protobuf field: uint64 hidden_flags = 22
+     */
+    hiddenFlags: bigint;
 }
 /**
  * @generated from protobuf message discord_protos.users.v1.UserData.LinkedUser
@@ -4393,7 +4397,8 @@ class UserData$Type extends MessageType<UserData> {
             { no: 18, name: "anonymization_info", kind: "message", T: () => UserData_AnonymizationInfo },
             { no: 19, name: "typing_indicator_style", kind: "message", T: () => UserData_UserTypingIndicatorStyle },
             { no: 20, name: "disable_staff_discount", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
-            { no: 21, name: "vad_colors", kind: "message", T: () => UserData_VadColors }
+            { no: 21, name: "vad_colors", kind: "message", T: () => UserData_VadColors },
+            { no: 22, name: "hidden_flags", kind: "scalar", T: 4 /*ScalarType.UINT64*/, L: 0 /*LongType.BIGINT*/ }
         ]);
     }
     create(value?: PartialMessage<UserData>): UserData {
@@ -4403,6 +4408,7 @@ class UserData$Type extends MessageType<UserData> {
         message.safetyFlags = {};
         message.isPendingRequiredAction = false;
         message.disableStaffDiscount = false;
+        message.hiddenFlags = 0n;
         if (value !== undefined)
             reflectionMergePartial<UserData>(this, message, value);
         return message;
@@ -4474,6 +4480,9 @@ class UserData$Type extends MessageType<UserData> {
                     break;
                 case /* optional discord_protos.users.v1.UserData.VadColors vad_colors */ 21:
                     message.vadColors = UserData_VadColors.internalBinaryRead(reader, reader.uint32(), options, message.vadColors);
+                    break;
+                case /* uint64 hidden_flags */ 22:
+                    message.hiddenFlags = reader.uint64().toBigInt();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -4610,6 +4619,9 @@ class UserData$Type extends MessageType<UserData> {
         /* optional discord_protos.users.v1.UserData.VadColors vad_colors = 21; */
         if (message.vadColors)
             UserData_VadColors.internalBinaryWrite(message.vadColors, writer.tag(21, WireType.LengthDelimited).fork(), options).join();
+        /* uint64 hidden_flags = 22; */
+        if (message.hiddenFlags !== 0n)
+            writer.tag(22, WireType.Varint).uint64(message.hiddenFlags);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
