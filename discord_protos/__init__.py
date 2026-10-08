@@ -2,7 +2,7 @@
 
 from enum import Enum as _Enum
 
-__version__ = '1.2.368'
+__version__ = '1.2.369'
 
 from .discord_users.v1.PreloadedUserSettings_pb2 import *
 from .discord_users.v1.FrecencyUserSettings_pb2 import *

@@ -3243,7 +3243,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GIFT_CARDS_MARKETING_COACHMARK = 844;
      */
-    GIFT_CARDS_MARKETING_COACHMARK = 844
+    GIFT_CARDS_MARKETING_COACHMARK = 844,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_MACARON_3P_POPOVER = 845;
+     */
+    MACARON_3P_POPOVER = 845
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
