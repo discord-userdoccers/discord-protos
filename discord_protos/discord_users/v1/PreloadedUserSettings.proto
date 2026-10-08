@@ -106,6 +106,7 @@ message PreloadedUserSettings {
     fixed64 last_received_changelog_id = 6;
     map<int32, RecurringDismissibleContentState> recurring_dismissible_content_states = 7;
     fixed64 last_gift_intent_dismissed_at_ms = 8;
+    fixed64 contextual_referral_upsell_dismissals_version = 9;
   }
 
   message VideoFilterBackgroundBlur {

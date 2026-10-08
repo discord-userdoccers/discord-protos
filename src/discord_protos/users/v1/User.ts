@@ -2125,41 +2125,41 @@ export enum User_ClassificationType {
      */
     QUEST_REWARD_ABUSE_POST_WARNING_ADMIN = 5980,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_IMPERSONATION_ADMIN = 5990;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_IMPERSONATION_ADMIN = 5990;
      */
-    APP_DELETE_IMPERSONATION_ADMIN = 5990,
+    BOT_DELETE_IMPERSONATION_ADMIN = 5990,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_UNSOLICITED_ACCOUNT_CHANGES_ADMIN = 6000;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_UNSOLICITED_ACCOUNT_CHANGES_ADMIN = 6000;
      */
-    APP_DELETE_UNSOLICITED_ACCOUNT_CHANGES_ADMIN = 6000,
+    BOT_DELETE_UNSOLICITED_ACCOUNT_CHANGES_ADMIN = 6000,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_TOKEN_SOLICITATION_ADMIN = 6010;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_TOKEN_SOLICITATION_ADMIN = 6010;
      */
-    APP_DELETE_TOKEN_SOLICITATION_ADMIN = 6010,
+    BOT_DELETE_TOKEN_SOLICITATION_ADMIN = 6010,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_PLATFORM_BAN_EVASION_ADMIN = 6020;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_PLATFORM_BAN_EVASION_ADMIN = 6020;
      */
-    APP_DELETE_PLATFORM_BAN_EVASION_ADMIN = 6020,
+    BOT_DELETE_PLATFORM_BAN_EVASION_ADMIN = 6020,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_CUSTOM_ADMIN = 6030;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_CUSTOM_ADMIN = 6030;
      */
-    APP_DELETE_CUSTOM_ADMIN = 6030,
+    BOT_DELETE_CUSTOM_ADMIN = 6030,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_CSAM_ADMIN = 6040;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_CSAM_ADMIN = 6040;
      */
-    APP_DELETE_CSAM_ADMIN = 6040,
+    BOT_DELETE_CSAM_ADMIN = 6040,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_NCAIM_ADMIN = 6050;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_NCAIM_ADMIN = 6050;
      */
-    APP_DELETE_NCAIM_ADMIN = 6050,
+    BOT_DELETE_NCAIM_ADMIN = 6050,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_SPAM_ADMIN = 6060;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_SPAM_ADMIN = 6060;
      */
-    APP_DELETE_SPAM_ADMIN = 6060,
+    BOT_DELETE_SPAM_ADMIN = 6060,
     /**
-     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_SPAM_SILENT_ADMIN = 6070;
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_BOT_DELETE_SPAM_SILENT_ADMIN = 6070;
      */
-    APP_DELETE_SPAM_SILENT_ADMIN = 6070,
+    BOT_DELETE_SPAM_SILENT_ADMIN = 6070,
     /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_GROWTH_HALT_SINGLE_SPAM_ADMIN = 6080;
      */
@@ -3184,6 +3184,42 @@ export enum User_ClassificationType {
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSEA_CSAM_NON_DEDICATED_GUILD_RETOOL = 7516;
      */
     CSEA_CSAM_NON_DEDICATED_GUILD_RETOOL = 7516,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_IMPERSONATION_ADMIN = 8000;
+     */
+    APP_DELETE_IMPERSONATION_ADMIN = 8000,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_UNSOLICITED_ACCOUNT_CHANGES_ADMIN = 8010;
+     */
+    APP_DELETE_UNSOLICITED_ACCOUNT_CHANGES_ADMIN = 8010,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_TOKEN_SOLICITATION_ADMIN = 8020;
+     */
+    APP_DELETE_TOKEN_SOLICITATION_ADMIN = 8020,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_PLATFORM_BAN_EVASION_ADMIN = 8030;
+     */
+    APP_DELETE_PLATFORM_BAN_EVASION_ADMIN = 8030,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_CUSTOM_ADMIN = 8040;
+     */
+    APP_DELETE_CUSTOM_ADMIN = 8040,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_CSAM_ADMIN = 8050;
+     */
+    APP_DELETE_CSAM_ADMIN = 8050,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_NCAIM_ADMIN = 8060;
+     */
+    APP_DELETE_NCAIM_ADMIN = 8060,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_SPAM_ADMIN = 8070;
+     */
+    APP_DELETE_SPAM_ADMIN = 8070,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_SPAM_SILENT_ADMIN = 8080;
+     */
+    APP_DELETE_SPAM_SILENT_ADMIN = 8080,
     /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_TEST_CLASSIFICATION = 9000;
      */
