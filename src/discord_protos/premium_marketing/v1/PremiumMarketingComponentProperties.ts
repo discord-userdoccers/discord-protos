@@ -3255,7 +3255,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GIFT_INVENTORY_SETTINGS_NEW_BADGE = 847;
      */
-    GIFT_INVENTORY_SETTINGS_NEW_BADGE = 847
+    GIFT_INVENTORY_SETTINGS_NEW_BADGE = 847,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_PINOT_MEMBER_SETTING_NEW_BADGE = 848;
+     */
+    PINOT_MEMBER_SETTING_NEW_BADGE = 848
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
