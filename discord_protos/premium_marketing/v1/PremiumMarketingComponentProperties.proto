@@ -623,6 +623,8 @@ message PremiumMarketingComponentProperties {
     DISMISSIBLE_CONTENT_FRIENDS_SIDEBAR_APP_BAR_TOGGLE_COACHMARK = 846;
     DISMISSIBLE_CONTENT_GIFT_INVENTORY_SETTINGS_NEW_BADGE = 847;
     DISMISSIBLE_CONTENT_PINOT_MEMBER_SETTING_NEW_BADGE = 848;
+    DISMISSIBLE_CONTENT_CONTEXTUAL_REFERRAL_SERVER_CHANNEL_MEMBER_LIST_EMBED = 849;
+    DISMISSIBLE_CONTENT_SHOP_TAB_TOOLTIP = 850;
   }
 
   message MobileBottomSheet {
@@ -848,6 +850,20 @@ message PremiumMarketingComponentProperties {
     string body = 6;
   }
 
+  message ShopTabTooltip {
+    string header = 1;
+    string body = 2;
+    optional ThemeAwareAsset asset = 3;
+    optional LocalizedString header_localized = 4;
+    optional LocalizedString body_localized = 5;
+    string badge_text = 6;
+    optional LocalizedString badge_text_localized = 7;
+    string badge_icon = 8;
+    string badge_countdown_ends_at = 9;
+    bool show_hover_gradient = 10;
+    optional ThemeAwareAsset hover_background = 11;
+  }
+
   string content_identifier = 3;
   bool is_default_base = 18;
   oneof properties {
@@ -875,6 +891,7 @@ message PremiumMarketingComponentProperties {
     GuildBoostCheckoutBanner guild_boost_checkout_banner = 24;
     GuildBoostMarketingPageBanner guild_boost_marketing_page_banner = 25;
     GuildBoostTabBanner guild_boost_tab_banner = 26;
+    ShopTabTooltip shop_tab_tooltip = 27;
   }
 
 }
