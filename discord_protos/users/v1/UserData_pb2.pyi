@@ -799,6 +799,10 @@ class UserData(_message.Message):
         CLASSIFICATION_TYPE_APP_DELETE_NCAIM_ADMIN: UserData._ClassificationType.ValueType  # 8060
         CLASSIFICATION_TYPE_APP_DELETE_SPAM_ADMIN: UserData._ClassificationType.ValueType  # 8070
         CLASSIFICATION_TYPE_APP_DELETE_SPAM_SILENT_ADMIN: UserData._ClassificationType.ValueType  # 8080
+        CLASSIFICATION_TYPE_APP_WARN_TOKEN_SOLICITATION_ADMIN: UserData._ClassificationType.ValueType  # 8090
+        CLASSIFICATION_TYPE_APP_WARN_NCAIM_ADMIN: UserData._ClassificationType.ValueType  # 8100
+        CLASSIFICATION_TYPE_APP_DELETE_TRADEMARK_ADMIN: UserData._ClassificationType.ValueType  # 8110
+        CLASSIFICATION_TYPE_APP_WARN_TRADEMARK_ADMIN: UserData._ClassificationType.ValueType  # 8120
         CLASSIFICATION_TYPE_TEST_CLASSIFICATION: UserData._ClassificationType.ValueType  # 9000
         CLASSIFICATION_TYPE_TEST_CLASSIFICATION_LOW: UserData._ClassificationType.ValueType  # 9001
         CLASSIFICATION_TYPE_TEST_CLASSIFICATION_SEVERE: UserData._ClassificationType.ValueType  # 9002
@@ -1542,6 +1546,10 @@ class UserData(_message.Message):
     CLASSIFICATION_TYPE_APP_DELETE_NCAIM_ADMIN: UserData.ClassificationType.ValueType  # 8060
     CLASSIFICATION_TYPE_APP_DELETE_SPAM_ADMIN: UserData.ClassificationType.ValueType  # 8070
     CLASSIFICATION_TYPE_APP_DELETE_SPAM_SILENT_ADMIN: UserData.ClassificationType.ValueType  # 8080
+    CLASSIFICATION_TYPE_APP_WARN_TOKEN_SOLICITATION_ADMIN: UserData.ClassificationType.ValueType  # 8090
+    CLASSIFICATION_TYPE_APP_WARN_NCAIM_ADMIN: UserData.ClassificationType.ValueType  # 8100
+    CLASSIFICATION_TYPE_APP_DELETE_TRADEMARK_ADMIN: UserData.ClassificationType.ValueType  # 8110
+    CLASSIFICATION_TYPE_APP_WARN_TRADEMARK_ADMIN: UserData.ClassificationType.ValueType  # 8120
     CLASSIFICATION_TYPE_TEST_CLASSIFICATION: UserData.ClassificationType.ValueType  # 9000
     CLASSIFICATION_TYPE_TEST_CLASSIFICATION_LOW: UserData.ClassificationType.ValueType  # 9001
     CLASSIFICATION_TYPE_TEST_CLASSIFICATION_SEVERE: UserData.ClassificationType.ValueType  # 9002

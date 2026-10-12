@@ -3221,6 +3221,22 @@ export enum User_ClassificationType {
      */
     APP_DELETE_SPAM_SILENT_ADMIN = 8080,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_WARN_TOKEN_SOLICITATION_ADMIN = 8090;
+     */
+    APP_WARN_TOKEN_SOLICITATION_ADMIN = 8090,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_WARN_NCAIM_ADMIN = 8100;
+     */
+    APP_WARN_NCAIM_ADMIN = 8100,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_TRADEMARK_ADMIN = 8110;
+     */
+    APP_DELETE_TRADEMARK_ADMIN = 8110,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_WARN_TRADEMARK_ADMIN = 8120;
+     */
+    APP_WARN_TRADEMARK_ADMIN = 8120,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_TEST_CLASSIFICATION = 9000;
      */
     TEST_CLASSIFICATION = 9000,

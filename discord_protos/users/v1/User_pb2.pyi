@@ -765,6 +765,10 @@ class User(_message.Message):
         CLASSIFICATION_TYPE_APP_DELETE_NCAIM_ADMIN: User._ClassificationType.ValueType  # 8060
         CLASSIFICATION_TYPE_APP_DELETE_SPAM_ADMIN: User._ClassificationType.ValueType  # 8070
         CLASSIFICATION_TYPE_APP_DELETE_SPAM_SILENT_ADMIN: User._ClassificationType.ValueType  # 8080
+        CLASSIFICATION_TYPE_APP_WARN_TOKEN_SOLICITATION_ADMIN: User._ClassificationType.ValueType  # 8090
+        CLASSIFICATION_TYPE_APP_WARN_NCAIM_ADMIN: User._ClassificationType.ValueType  # 8100
+        CLASSIFICATION_TYPE_APP_DELETE_TRADEMARK_ADMIN: User._ClassificationType.ValueType  # 8110
+        CLASSIFICATION_TYPE_APP_WARN_TRADEMARK_ADMIN: User._ClassificationType.ValueType  # 8120
         CLASSIFICATION_TYPE_TEST_CLASSIFICATION: User._ClassificationType.ValueType  # 9000
         CLASSIFICATION_TYPE_TEST_CLASSIFICATION_LOW: User._ClassificationType.ValueType  # 9001
         CLASSIFICATION_TYPE_TEST_CLASSIFICATION_SEVERE: User._ClassificationType.ValueType  # 9002
@@ -1508,6 +1512,10 @@ class User(_message.Message):
     CLASSIFICATION_TYPE_APP_DELETE_NCAIM_ADMIN: User.ClassificationType.ValueType  # 8060
     CLASSIFICATION_TYPE_APP_DELETE_SPAM_ADMIN: User.ClassificationType.ValueType  # 8070
     CLASSIFICATION_TYPE_APP_DELETE_SPAM_SILENT_ADMIN: User.ClassificationType.ValueType  # 8080
+    CLASSIFICATION_TYPE_APP_WARN_TOKEN_SOLICITATION_ADMIN: User.ClassificationType.ValueType  # 8090
+    CLASSIFICATION_TYPE_APP_WARN_NCAIM_ADMIN: User.ClassificationType.ValueType  # 8100
+    CLASSIFICATION_TYPE_APP_DELETE_TRADEMARK_ADMIN: User.ClassificationType.ValueType  # 8110
+    CLASSIFICATION_TYPE_APP_WARN_TRADEMARK_ADMIN: User.ClassificationType.ValueType  # 8120
     CLASSIFICATION_TYPE_TEST_CLASSIFICATION: User.ClassificationType.ValueType  # 9000
     CLASSIFICATION_TYPE_TEST_CLASSIFICATION_LOW: User.ClassificationType.ValueType  # 9001
     CLASSIFICATION_TYPE_TEST_CLASSIFICATION_SEVERE: User.ClassificationType.ValueType  # 9002
