@@ -3326,7 +3326,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CODE_BLURPLE_TEASER_TOOLTIP = 851;
      */
-    CODE_BLURPLE_TEASER_TOOLTIP = 851
+    CODE_BLURPLE_TEASER_TOOLTIP = 851,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_GAME_EXIT_PROMO_RUST = 852;
+     */
+    SLAYER_STOREFRONT_GAME_EXIT_PROMO_RUST = 852
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant

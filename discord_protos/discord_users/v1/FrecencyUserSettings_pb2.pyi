@@ -490,6 +490,24 @@ class FrecencyUserSettings(_message.Message):
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         def WhichOneof(self, oneof_group: _Never) -> None: ...
 
+    @_typing.final
+    class PinnedEmojiPacks(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        PACK_IDS_FIELD_NUMBER: _builtins.int
+        @_builtins.property
+        def pack_ids(self) -> _containers.RepeatedScalarFieldContainer[_builtins.int]: ...
+        def __init__(
+            self,
+            *,
+            pack_ids: _abc.Iterable[_builtins.int] | None = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["pack_ids", b"pack_ids"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
+
     VERSIONS_FIELD_NUMBER: _builtins.int
     FAVORITE_GIFS_FIELD_NUMBER: _builtins.int
     FAVORITE_STICKERS_FIELD_NUMBER: _builtins.int
@@ -503,6 +521,7 @@ class FrecencyUserSettings(_message.Message):
     PLAYED_SOUND_FRECENCY_FIELD_NUMBER: _builtins.int
     GUILD_AND_CHANNEL_FRECENCY_FIELD_NUMBER: _builtins.int
     EMOJI_REACTION_FRECENCY_FIELD_NUMBER: _builtins.int
+    PINNED_EMOJI_PACKS_FIELD_NUMBER: _builtins.int
     @_builtins.property
     def versions(self) -> Global___FrecencyUserSettings.Versions: ...
     @_builtins.property
@@ -529,6 +548,8 @@ class FrecencyUserSettings(_message.Message):
     def guild_and_channel_frecency(self) -> Global___FrecencyUserSettings.GuildAndChannelFrecency: ...
     @_builtins.property
     def emoji_reaction_frecency(self) -> Global___FrecencyUserSettings.EmojiFrecency: ...
+    @_builtins.property
+    def pinned_emoji_packs(self) -> Global___FrecencyUserSettings.PinnedEmojiPacks: ...
     def __init__(
         self,
         *,
@@ -545,10 +566,11 @@ class FrecencyUserSettings(_message.Message):
         played_sound_frecency: Global___FrecencyUserSettings.PlayedSoundFrecency | None = ...,
         guild_and_channel_frecency: Global___FrecencyUserSettings.GuildAndChannelFrecency | None = ...,
         emoji_reaction_frecency: Global___FrecencyUserSettings.EmojiFrecency | None = ...,
+        pinned_emoji_packs: Global___FrecencyUserSettings.PinnedEmojiPacks | None = ...,
     ) -> None: ...
-    _HasFieldArgType: _TypeAlias = _typing.Literal["_application_command_frecency", b"_application_command_frecency", "_application_frecency", b"_application_frecency", "_emoji_frecency", b"_emoji_frecency", "_emoji_reaction_frecency", b"_emoji_reaction_frecency", "_favorite_emojis", b"_favorite_emojis", "_favorite_gifs", b"_favorite_gifs", "_favorite_soundboard_sounds", b"_favorite_soundboard_sounds", "_favorite_stickers", b"_favorite_stickers", "_guild_and_channel_frecency", b"_guild_and_channel_frecency", "_heard_sound_frecency", b"_heard_sound_frecency", "_played_sound_frecency", b"_played_sound_frecency", "_sticker_frecency", b"_sticker_frecency", "_versions", b"_versions", "application_command_frecency", b"application_command_frecency", "application_frecency", b"application_frecency", "emoji_frecency", b"emoji_frecency", "emoji_reaction_frecency", b"emoji_reaction_frecency", "favorite_emojis", b"favorite_emojis", "favorite_gifs", b"favorite_gifs", "favorite_soundboard_sounds", b"favorite_soundboard_sounds", "favorite_stickers", b"favorite_stickers", "guild_and_channel_frecency", b"guild_and_channel_frecency", "heard_sound_frecency", b"heard_sound_frecency", "played_sound_frecency", b"played_sound_frecency", "sticker_frecency", b"sticker_frecency", "versions", b"versions"]  # noqa: Y015
+    _HasFieldArgType: _TypeAlias = _typing.Literal["_application_command_frecency", b"_application_command_frecency", "_application_frecency", b"_application_frecency", "_emoji_frecency", b"_emoji_frecency", "_emoji_reaction_frecency", b"_emoji_reaction_frecency", "_favorite_emojis", b"_favorite_emojis", "_favorite_gifs", b"_favorite_gifs", "_favorite_soundboard_sounds", b"_favorite_soundboard_sounds", "_favorite_stickers", b"_favorite_stickers", "_guild_and_channel_frecency", b"_guild_and_channel_frecency", "_heard_sound_frecency", b"_heard_sound_frecency", "_pinned_emoji_packs", b"_pinned_emoji_packs", "_played_sound_frecency", b"_played_sound_frecency", "_sticker_frecency", b"_sticker_frecency", "_versions", b"_versions", "application_command_frecency", b"application_command_frecency", "application_frecency", b"application_frecency", "emoji_frecency", b"emoji_frecency", "emoji_reaction_frecency", b"emoji_reaction_frecency", "favorite_emojis", b"favorite_emojis", "favorite_gifs", b"favorite_gifs", "favorite_soundboard_sounds", b"favorite_soundboard_sounds", "favorite_stickers", b"favorite_stickers", "guild_and_channel_frecency", b"guild_and_channel_frecency", "heard_sound_frecency", b"heard_sound_frecency", "pinned_emoji_packs", b"pinned_emoji_packs", "played_sound_frecency", b"played_sound_frecency", "sticker_frecency", b"sticker_frecency", "versions", b"versions"]  # noqa: Y015
     def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["_application_command_frecency", b"_application_command_frecency", "_application_frecency", b"_application_frecency", "_emoji_frecency", b"_emoji_frecency", "_emoji_reaction_frecency", b"_emoji_reaction_frecency", "_favorite_emojis", b"_favorite_emojis", "_favorite_gifs", b"_favorite_gifs", "_favorite_soundboard_sounds", b"_favorite_soundboard_sounds", "_favorite_stickers", b"_favorite_stickers", "_guild_and_channel_frecency", b"_guild_and_channel_frecency", "_heard_sound_frecency", b"_heard_sound_frecency", "_played_sound_frecency", b"_played_sound_frecency", "_sticker_frecency", b"_sticker_frecency", "_versions", b"_versions", "application_command_frecency", b"application_command_frecency", "application_frecency", b"application_frecency", "emoji_frecency", b"emoji_frecency", "emoji_reaction_frecency", b"emoji_reaction_frecency", "favorite_emojis", b"favorite_emojis", "favorite_gifs", b"favorite_gifs", "favorite_soundboard_sounds", b"favorite_soundboard_sounds", "favorite_stickers", b"favorite_stickers", "guild_and_channel_frecency", b"guild_and_channel_frecency", "heard_sound_frecency", b"heard_sound_frecency", "played_sound_frecency", b"played_sound_frecency", "sticker_frecency", b"sticker_frecency", "versions", b"versions"]  # noqa: Y015
+    _ClearFieldArgType: _TypeAlias = _typing.Literal["_application_command_frecency", b"_application_command_frecency", "_application_frecency", b"_application_frecency", "_emoji_frecency", b"_emoji_frecency", "_emoji_reaction_frecency", b"_emoji_reaction_frecency", "_favorite_emojis", b"_favorite_emojis", "_favorite_gifs", b"_favorite_gifs", "_favorite_soundboard_sounds", b"_favorite_soundboard_sounds", "_favorite_stickers", b"_favorite_stickers", "_guild_and_channel_frecency", b"_guild_and_channel_frecency", "_heard_sound_frecency", b"_heard_sound_frecency", "_pinned_emoji_packs", b"_pinned_emoji_packs", "_played_sound_frecency", b"_played_sound_frecency", "_sticker_frecency", b"_sticker_frecency", "_versions", b"_versions", "application_command_frecency", b"application_command_frecency", "application_frecency", b"application_frecency", "emoji_frecency", b"emoji_frecency", "emoji_reaction_frecency", b"emoji_reaction_frecency", "favorite_emojis", b"favorite_emojis", "favorite_gifs", b"favorite_gifs", "favorite_soundboard_sounds", b"favorite_soundboard_sounds", "favorite_stickers", b"favorite_stickers", "guild_and_channel_frecency", b"guild_and_channel_frecency", "heard_sound_frecency", b"heard_sound_frecency", "pinned_emoji_packs", b"pinned_emoji_packs", "played_sound_frecency", b"played_sound_frecency", "sticker_frecency", b"sticker_frecency", "versions", b"versions"]  # noqa: Y015
     def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
     _WhichOneofReturnType__application_command_frecency: _TypeAlias = _typing.Literal["application_command_frecency"]  # noqa: Y015
     _WhichOneofArgType__application_command_frecency: _TypeAlias = _typing.Literal["_application_command_frecency", b"_application_command_frecency"]  # noqa: Y015
@@ -570,6 +592,8 @@ class FrecencyUserSettings(_message.Message):
     _WhichOneofArgType__guild_and_channel_frecency: _TypeAlias = _typing.Literal["_guild_and_channel_frecency", b"_guild_and_channel_frecency"]  # noqa: Y015
     _WhichOneofReturnType__heard_sound_frecency: _TypeAlias = _typing.Literal["heard_sound_frecency"]  # noqa: Y015
     _WhichOneofArgType__heard_sound_frecency: _TypeAlias = _typing.Literal["_heard_sound_frecency", b"_heard_sound_frecency"]  # noqa: Y015
+    _WhichOneofReturnType__pinned_emoji_packs: _TypeAlias = _typing.Literal["pinned_emoji_packs"]  # noqa: Y015
+    _WhichOneofArgType__pinned_emoji_packs: _TypeAlias = _typing.Literal["_pinned_emoji_packs", b"_pinned_emoji_packs"]  # noqa: Y015
     _WhichOneofReturnType__played_sound_frecency: _TypeAlias = _typing.Literal["played_sound_frecency"]  # noqa: Y015
     _WhichOneofArgType__played_sound_frecency: _TypeAlias = _typing.Literal["_played_sound_frecency", b"_played_sound_frecency"]  # noqa: Y015
     _WhichOneofReturnType__sticker_frecency: _TypeAlias = _typing.Literal["sticker_frecency"]  # noqa: Y015
@@ -596,6 +620,8 @@ class FrecencyUserSettings(_message.Message):
     def WhichOneof(self, oneof_group: _WhichOneofArgType__guild_and_channel_frecency) -> _WhichOneofReturnType__guild_and_channel_frecency | None: ...
     @_typing.overload
     def WhichOneof(self, oneof_group: _WhichOneofArgType__heard_sound_frecency) -> _WhichOneofReturnType__heard_sound_frecency | None: ...
+    @_typing.overload
+    def WhichOneof(self, oneof_group: _WhichOneofArgType__pinned_emoji_packs) -> _WhichOneofReturnType__pinned_emoji_packs | None: ...
     @_typing.overload
     def WhichOneof(self, oneof_group: _WhichOneofArgType__played_sound_frecency) -> _WhichOneofReturnType__played_sound_frecency | None: ...
     @_typing.overload

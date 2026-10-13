@@ -66,6 +66,10 @@ export interface FrecencyUserSettings {
      * @generated from protobuf field: optional discord_protos.discord_users.v1.FrecencyUserSettings.EmojiFrecency emoji_reaction_frecency = 13
      */
     emojiReactionFrecency?: FrecencyUserSettings_EmojiFrecency;
+    /**
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.FrecencyUserSettings.PinnedEmojiPacks pinned_emoji_packs = 14
+     */
+    pinnedEmojiPacks?: FrecencyUserSettings_PinnedEmojiPacks;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.FrecencyUserSettings.Versions
@@ -254,6 +258,15 @@ export interface FrecencyUserSettings_GuildAndChannelFrecency {
     };
 }
 /**
+ * @generated from protobuf message discord_protos.discord_users.v1.FrecencyUserSettings.PinnedEmojiPacks
+ */
+export interface FrecencyUserSettings_PinnedEmojiPacks {
+    /**
+     * @generated from protobuf field: repeated fixed64 pack_ids = 1
+     */
+    packIds: bigint[];
+}
+/**
  * @generated from protobuf enum discord_protos.discord_users.v1.FrecencyUserSettings.GIFType
  */
 export enum FrecencyUserSettings_GIFType {
@@ -286,7 +299,8 @@ class FrecencyUserSettings$Type extends MessageType<FrecencyUserSettings> {
             { no: 10, name: "heard_sound_frecency", kind: "message", T: () => FrecencyUserSettings_HeardSoundFrecency },
             { no: 11, name: "played_sound_frecency", kind: "message", T: () => FrecencyUserSettings_PlayedSoundFrecency },
             { no: 12, name: "guild_and_channel_frecency", kind: "message", T: () => FrecencyUserSettings_GuildAndChannelFrecency },
-            { no: 13, name: "emoji_reaction_frecency", kind: "message", T: () => FrecencyUserSettings_EmojiFrecency }
+            { no: 13, name: "emoji_reaction_frecency", kind: "message", T: () => FrecencyUserSettings_EmojiFrecency },
+            { no: 14, name: "pinned_emoji_packs", kind: "message", T: () => FrecencyUserSettings_PinnedEmojiPacks }
         ]);
     }
     create(value?: PartialMessage<FrecencyUserSettings>): FrecencyUserSettings {
@@ -339,6 +353,9 @@ class FrecencyUserSettings$Type extends MessageType<FrecencyUserSettings> {
                 case /* optional discord_protos.discord_users.v1.FrecencyUserSettings.EmojiFrecency emoji_reaction_frecency */ 13:
                     message.emojiReactionFrecency = FrecencyUserSettings_EmojiFrecency.internalBinaryRead(reader, reader.uint32(), options, message.emojiReactionFrecency);
                     break;
+                case /* optional discord_protos.discord_users.v1.FrecencyUserSettings.PinnedEmojiPacks pinned_emoji_packs */ 14:
+                    message.pinnedEmojiPacks = FrecencyUserSettings_PinnedEmojiPacks.internalBinaryRead(reader, reader.uint32(), options, message.pinnedEmojiPacks);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -390,6 +407,9 @@ class FrecencyUserSettings$Type extends MessageType<FrecencyUserSettings> {
         /* optional discord_protos.discord_users.v1.FrecencyUserSettings.EmojiFrecency emoji_reaction_frecency = 13; */
         if (message.emojiReactionFrecency)
             FrecencyUserSettings_EmojiFrecency.internalBinaryWrite(message.emojiReactionFrecency, writer.tag(13, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.discord_users.v1.FrecencyUserSettings.PinnedEmojiPacks pinned_emoji_packs = 14; */
+        if (message.pinnedEmojiPacks)
+            FrecencyUserSettings_PinnedEmojiPacks.internalBinaryWrite(message.pinnedEmojiPacks, writer.tag(14, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -1338,3 +1358,58 @@ class FrecencyUserSettings_GuildAndChannelFrecency$Type extends MessageType<Frec
  * @generated MessageType for protobuf message discord_protos.discord_users.v1.FrecencyUserSettings.GuildAndChannelFrecency
  */
 export const FrecencyUserSettings_GuildAndChannelFrecency = new FrecencyUserSettings_GuildAndChannelFrecency$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class FrecencyUserSettings_PinnedEmojiPacks$Type extends MessageType<FrecencyUserSettings_PinnedEmojiPacks> {
+    constructor() {
+        super("discord_protos.discord_users.v1.FrecencyUserSettings.PinnedEmojiPacks", [
+            { no: 1, name: "pack_ids", kind: "scalar", repeat: 1 /*RepeatType.PACKED*/, T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ }
+        ]);
+    }
+    create(value?: PartialMessage<FrecencyUserSettings_PinnedEmojiPacks>): FrecencyUserSettings_PinnedEmojiPacks {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.packIds = [];
+        if (value !== undefined)
+            reflectionMergePartial<FrecencyUserSettings_PinnedEmojiPacks>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: FrecencyUserSettings_PinnedEmojiPacks): FrecencyUserSettings_PinnedEmojiPacks {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* repeated fixed64 pack_ids */ 1:
+                    if (wireType === WireType.LengthDelimited)
+                        for (let e = reader.int32() + reader.pos; reader.pos < e;)
+                            message.packIds.push(reader.fixed64().toBigInt());
+                    else
+                        message.packIds.push(reader.fixed64().toBigInt());
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: FrecencyUserSettings_PinnedEmojiPacks, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* repeated fixed64 pack_ids = 1; */
+        if (message.packIds.length) {
+            writer.tag(1, WireType.LengthDelimited).fork();
+            for (let i = 0; i < message.packIds.length; i++)
+                writer.fixed64(message.packIds[i]);
+            writer.join();
+        }
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_users.v1.FrecencyUserSettings.PinnedEmojiPacks
+ */
+export const FrecencyUserSettings_PinnedEmojiPacks = new FrecencyUserSettings_PinnedEmojiPacks$Type();

@@ -574,6 +574,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_CONTEXTUAL_REFERRAL_SERVER_CHANNEL_MEMBER_LIST_EMBED: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 849
         DISMISSIBLE_CONTENT_SHOP_TAB_TOOLTIP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 850
         DISMISSIBLE_CONTENT_CODE_BLURPLE_TEASER_TOOLTIP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 851
+        DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_GAME_EXIT_PROMO_RUST: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 852
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_UNSPECIFIED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1078,6 +1079,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_CONTEXTUAL_REFERRAL_SERVER_CHANNEL_MEMBER_LIST_EMBED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 849
     DISMISSIBLE_CONTENT_SHOP_TAB_TOOLTIP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 850
     DISMISSIBLE_CONTENT_CODE_BLURPLE_TEASER_TOOLTIP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 851
+    DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_GAME_EXIT_PROMO_RUST: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 852
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)

@@ -76,6 +76,10 @@ message FrecencyUserSettings {
     map<fixed64, FrecencyItem> guild_and_channels = 1;
   }
 
+  message PinnedEmojiPacks {
+    repeated fixed64 pack_ids = 1;
+  }
+
   optional Versions versions = 1;
   optional FavoriteGIFs favorite_gifs = 2;
   optional FavoriteStickers favorite_stickers = 3;
@@ -89,4 +93,5 @@ message FrecencyUserSettings {
   optional PlayedSoundFrecency played_sound_frecency = 11;
   optional GuildAndChannelFrecency guild_and_channel_frecency = 12;
   optional EmojiFrecency emoji_reaction_frecency = 13;
+  optional PinnedEmojiPacks pinned_emoji_packs = 14;
 }

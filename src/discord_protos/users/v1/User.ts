@@ -1213,6 +1213,10 @@ export enum User_ClassificationType {
      */
     APP_DELETE_SPAM_SILENT_SMITE = 3247,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DISABLE_GUILD_INSTALLS_SMITE = 3248;
+     */
+    APP_DISABLE_GUILD_INSTALLS_SMITE = 3248,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK = 4000;
      */
     PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK = 4000,
@@ -3236,6 +3240,10 @@ export enum User_ClassificationType {
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_WARN_TRADEMARK_ADMIN = 8120;
      */
     APP_WARN_TRADEMARK_ADMIN = 8120,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DISABLE_GUILD_INSTALLS_ADMIN = 8130;
+     */
+    APP_DISABLE_GUILD_INSTALLS_ADMIN = 8130,
     /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_TEST_CLASSIFICATION = 9000;
      */

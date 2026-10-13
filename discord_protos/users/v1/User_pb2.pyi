@@ -263,6 +263,7 @@ class User(_message.Message):
         CLASSIFICATION_TYPE_APP_DELETE_NCAIM_SMITE: User._ClassificationType.ValueType  # 3245
         CLASSIFICATION_TYPE_APP_DELETE_SPAM_SMITE: User._ClassificationType.ValueType  # 3246
         CLASSIFICATION_TYPE_APP_DELETE_SPAM_SILENT_SMITE: User._ClassificationType.ValueType  # 3247
+        CLASSIFICATION_TYPE_APP_DISABLE_GUILD_INSTALLS_SMITE: User._ClassificationType.ValueType  # 3248
         CLASSIFICATION_TYPE_PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK: User._ClassificationType.ValueType  # 4000
         CLASSIFICATION_TYPE_PRESENCE_IN_VIOLATIVE_GUILD_MEDIUM_RISK: User._ClassificationType.ValueType  # 4010
         CLASSIFICATION_TYPE_OWNER_OF_VIOLATIVE_GUILD_VERY_HIGH_RISK: User._ClassificationType.ValueType  # 4100
@@ -769,6 +770,7 @@ class User(_message.Message):
         CLASSIFICATION_TYPE_APP_WARN_NCAIM_ADMIN: User._ClassificationType.ValueType  # 8100
         CLASSIFICATION_TYPE_APP_DELETE_TRADEMARK_ADMIN: User._ClassificationType.ValueType  # 8110
         CLASSIFICATION_TYPE_APP_WARN_TRADEMARK_ADMIN: User._ClassificationType.ValueType  # 8120
+        CLASSIFICATION_TYPE_APP_DISABLE_GUILD_INSTALLS_ADMIN: User._ClassificationType.ValueType  # 8130
         CLASSIFICATION_TYPE_TEST_CLASSIFICATION: User._ClassificationType.ValueType  # 9000
         CLASSIFICATION_TYPE_TEST_CLASSIFICATION_LOW: User._ClassificationType.ValueType  # 9001
         CLASSIFICATION_TYPE_TEST_CLASSIFICATION_SEVERE: User._ClassificationType.ValueType  # 9002
@@ -1010,6 +1012,7 @@ class User(_message.Message):
     CLASSIFICATION_TYPE_APP_DELETE_NCAIM_SMITE: User.ClassificationType.ValueType  # 3245
     CLASSIFICATION_TYPE_APP_DELETE_SPAM_SMITE: User.ClassificationType.ValueType  # 3246
     CLASSIFICATION_TYPE_APP_DELETE_SPAM_SILENT_SMITE: User.ClassificationType.ValueType  # 3247
+    CLASSIFICATION_TYPE_APP_DISABLE_GUILD_INSTALLS_SMITE: User.ClassificationType.ValueType  # 3248
     CLASSIFICATION_TYPE_PRESENCE_IN_VIOLATIVE_GUILD_HIGH_RISK: User.ClassificationType.ValueType  # 4000
     CLASSIFICATION_TYPE_PRESENCE_IN_VIOLATIVE_GUILD_MEDIUM_RISK: User.ClassificationType.ValueType  # 4010
     CLASSIFICATION_TYPE_OWNER_OF_VIOLATIVE_GUILD_VERY_HIGH_RISK: User.ClassificationType.ValueType  # 4100
@@ -1516,6 +1519,7 @@ class User(_message.Message):
     CLASSIFICATION_TYPE_APP_WARN_NCAIM_ADMIN: User.ClassificationType.ValueType  # 8100
     CLASSIFICATION_TYPE_APP_DELETE_TRADEMARK_ADMIN: User.ClassificationType.ValueType  # 8110
     CLASSIFICATION_TYPE_APP_WARN_TRADEMARK_ADMIN: User.ClassificationType.ValueType  # 8120
+    CLASSIFICATION_TYPE_APP_DISABLE_GUILD_INSTALLS_ADMIN: User.ClassificationType.ValueType  # 8130
     CLASSIFICATION_TYPE_TEST_CLASSIFICATION: User.ClassificationType.ValueType  # 9000
     CLASSIFICATION_TYPE_TEST_CLASSIFICATION_LOW: User.ClassificationType.ValueType  # 9001
     CLASSIFICATION_TYPE_TEST_CLASSIFICATION_SEVERE: User.ClassificationType.ValueType  # 9002
