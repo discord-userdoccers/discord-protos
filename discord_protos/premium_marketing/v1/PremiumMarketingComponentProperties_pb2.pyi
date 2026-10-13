@@ -573,6 +573,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_PINOT_MEMBER_SETTING_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 848
         DISMISSIBLE_CONTENT_CONTEXTUAL_REFERRAL_SERVER_CHANNEL_MEMBER_LIST_EMBED: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 849
         DISMISSIBLE_CONTENT_SHOP_TAB_TOOLTIP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 850
+        DISMISSIBLE_CONTENT_CODE_BLURPLE_TEASER_TOOLTIP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 851
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_UNSPECIFIED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1076,6 +1077,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_PINOT_MEMBER_SETTING_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 848
     DISMISSIBLE_CONTENT_CONTEXTUAL_REFERRAL_SERVER_CHANNEL_MEMBER_LIST_EMBED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 849
     DISMISSIBLE_CONTENT_SHOP_TAB_TOOLTIP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 850
+    DISMISSIBLE_CONTENT_CODE_BLURPLE_TEASER_TOOLTIP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 851
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)

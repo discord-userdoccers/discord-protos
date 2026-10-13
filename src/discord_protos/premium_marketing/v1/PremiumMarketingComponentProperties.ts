@@ -3322,7 +3322,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_SHOP_TAB_TOOLTIP = 850;
      */
-    SHOP_TAB_TOOLTIP = 850
+    SHOP_TAB_TOOLTIP = 850,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CODE_BLURPLE_TEASER_TOOLTIP = 851;
+     */
+    CODE_BLURPLE_TEASER_TOOLTIP = 851
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
