@@ -174,6 +174,7 @@ class Experiment(_message.Message):
         SURFACE_AV_WORKER: Experiment._Surface.ValueType  # 6
         SURFACE_SEO: Experiment._Surface.ValueType  # 7
         SURFACE_MARKETING: Experiment._Surface.ValueType  # 8
+        SURFACE_DESIGN_DOCS: Experiment._Surface.ValueType  # 9
 
     class Surface(_Surface, metaclass=_SurfaceEnumTypeWrapper): ...
     SURFACE_UNSPECIFIED: Experiment.Surface.ValueType  # 0
@@ -185,6 +186,7 @@ class Experiment(_message.Message):
     SURFACE_AV_WORKER: Experiment.Surface.ValueType  # 6
     SURFACE_SEO: Experiment.Surface.ValueType  # 7
     SURFACE_MARKETING: Experiment.Surface.ValueType  # 8
+    SURFACE_DESIGN_DOCS: Experiment.Surface.ValueType  # 9
 
     class _ExposureTracking:
         ValueType = _typing.NewType("ValueType", _builtins.int)

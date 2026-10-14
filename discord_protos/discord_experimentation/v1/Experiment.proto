@@ -384,6 +384,7 @@ message Experiment {
     SURFACE_AV_WORKER = 6;
     SURFACE_SEO = 7;
     SURFACE_MARKETING = 8;
+    SURFACE_DESIGN_DOCS = 9;
   }
 
   enum ExposureTracking {

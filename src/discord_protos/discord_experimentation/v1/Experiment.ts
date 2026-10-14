@@ -1296,7 +1296,11 @@ export enum Experiment_Surface {
     /**
      * @generated from protobuf enum value: SURFACE_MARKETING = 8;
      */
-    MARKETING = 8
+    MARKETING = 8,
+    /**
+     * @generated from protobuf enum value: SURFACE_DESIGN_DOCS = 9;
+     */
+    DESIGN_DOCS = 9
 }
 /**
  * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.ExposureTracking
