@@ -127,9 +127,9 @@ export interface PreloadedUserSettings {
      */
     appVersionSettings?: PreloadedUserSettings_AppVersionSettings;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.VibegrationsSettings vibegrations = 27
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.ConjureSettings conjure = 27
      */
-    vibegrations?: PreloadedUserSettings_VibegrationsSettings;
+    conjure?: PreloadedUserSettings_ConjureSettings;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.Versions
@@ -1476,23 +1476,23 @@ export interface PreloadedUserSettings_AppVersionSettings {
     isUsingOutdatedMobileVersion: boolean;
 }
 /**
- * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.VibegrationsProjectSettings
+ * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.ConjureProjectSettings
  */
-export interface PreloadedUserSettings_VibegrationsProjectSettings {
+export interface PreloadedUserSettings_ConjureProjectSettings {
     /**
      * @generated from protobuf field: bool muted = 1
      */
     muted: boolean;
 }
 /**
- * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.VibegrationsSettings
+ * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.ConjureSettings
  */
-export interface PreloadedUserSettings_VibegrationsSettings {
+export interface PreloadedUserSettings_ConjureSettings {
     /**
-     * @generated from protobuf field: map<fixed64, discord_protos.discord_users.v1.PreloadedUserSettings.VibegrationsProjectSettings> projects = 1
+     * @generated from protobuf field: map<fixed64, discord_protos.discord_users.v1.PreloadedUserSettings.ConjureProjectSettings> projects = 1
      */
     projects: {
-        [key: string]: PreloadedUserSettings_VibegrationsProjectSettings;
+        [key: string]: PreloadedUserSettings_ConjureProjectSettings;
     };
 }
 /**
@@ -1979,7 +1979,7 @@ class PreloadedUserSettings$Type extends MessageType<PreloadedUserSettings> {
             { no: 24, name: "ads", kind: "message", T: () => PreloadedUserSettings_AdsSettings },
             { no: 25, name: "in_app_feedback_settings", kind: "message", T: () => PreloadedUserSettings_InAppFeedbackSettings },
             { no: 26, name: "app_version_settings", kind: "message", T: () => PreloadedUserSettings_AppVersionSettings },
-            { no: 27, name: "vibegrations", kind: "message", T: () => PreloadedUserSettings_VibegrationsSettings }
+            { no: 27, name: "conjure", kind: "message", T: () => PreloadedUserSettings_ConjureSettings }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings>): PreloadedUserSettings {
@@ -2071,8 +2071,8 @@ class PreloadedUserSettings$Type extends MessageType<PreloadedUserSettings> {
                 case /* optional discord_protos.discord_users.v1.PreloadedUserSettings.AppVersionSettings app_version_settings */ 26:
                     message.appVersionSettings = PreloadedUserSettings_AppVersionSettings.internalBinaryRead(reader, reader.uint32(), options, message.appVersionSettings);
                     break;
-                case /* optional discord_protos.discord_users.v1.PreloadedUserSettings.VibegrationsSettings vibegrations */ 27:
-                    message.vibegrations = PreloadedUserSettings_VibegrationsSettings.internalBinaryRead(reader, reader.uint32(), options, message.vibegrations);
+                case /* optional discord_protos.discord_users.v1.PreloadedUserSettings.ConjureSettings conjure */ 27:
+                    message.conjure = PreloadedUserSettings_ConjureSettings.internalBinaryRead(reader, reader.uint32(), options, message.conjure);
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -2164,9 +2164,9 @@ class PreloadedUserSettings$Type extends MessageType<PreloadedUserSettings> {
         /* optional discord_protos.discord_users.v1.PreloadedUserSettings.AppVersionSettings app_version_settings = 26; */
         if (message.appVersionSettings)
             PreloadedUserSettings_AppVersionSettings.internalBinaryWrite(message.appVersionSettings, writer.tag(26, WireType.LengthDelimited).fork(), options).join();
-        /* optional discord_protos.discord_users.v1.PreloadedUserSettings.VibegrationsSettings vibegrations = 27; */
-        if (message.vibegrations)
-            PreloadedUserSettings_VibegrationsSettings.internalBinaryWrite(message.vibegrations, writer.tag(27, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.discord_users.v1.PreloadedUserSettings.ConjureSettings conjure = 27; */
+        if (message.conjure)
+            PreloadedUserSettings_ConjureSettings.internalBinaryWrite(message.conjure, writer.tag(27, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -6498,20 +6498,20 @@ class PreloadedUserSettings_AppVersionSettings$Type extends MessageType<Preloade
  */
 export const PreloadedUserSettings_AppVersionSettings = new PreloadedUserSettings_AppVersionSettings$Type();
 // @generated message type with reflection information, may provide speed optimized methods
-class PreloadedUserSettings_VibegrationsProjectSettings$Type extends MessageType<PreloadedUserSettings_VibegrationsProjectSettings> {
+class PreloadedUserSettings_ConjureProjectSettings$Type extends MessageType<PreloadedUserSettings_ConjureProjectSettings> {
     constructor() {
-        super("discord_protos.discord_users.v1.PreloadedUserSettings.VibegrationsProjectSettings", [
+        super("discord_protos.discord_users.v1.PreloadedUserSettings.ConjureProjectSettings", [
             { no: 1, name: "muted", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
         ]);
     }
-    create(value?: PartialMessage<PreloadedUserSettings_VibegrationsProjectSettings>): PreloadedUserSettings_VibegrationsProjectSettings {
+    create(value?: PartialMessage<PreloadedUserSettings_ConjureProjectSettings>): PreloadedUserSettings_ConjureProjectSettings {
         const message = globalThis.Object.create((this.messagePrototype!));
         message.muted = false;
         if (value !== undefined)
-            reflectionMergePartial<PreloadedUserSettings_VibegrationsProjectSettings>(this, message, value);
+            reflectionMergePartial<PreloadedUserSettings_ConjureProjectSettings>(this, message, value);
         return message;
     }
-    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PreloadedUserSettings_VibegrationsProjectSettings): PreloadedUserSettings_VibegrationsProjectSettings {
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PreloadedUserSettings_ConjureProjectSettings): PreloadedUserSettings_ConjureProjectSettings {
         let message = target ?? this.create(), end = reader.pos + length;
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
@@ -6530,7 +6530,7 @@ class PreloadedUserSettings_VibegrationsProjectSettings$Type extends MessageType
         }
         return message;
     }
-    internalBinaryWrite(message: PreloadedUserSettings_VibegrationsProjectSettings, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+    internalBinaryWrite(message: PreloadedUserSettings_ConjureProjectSettings, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
         /* bool muted = 1; */
         if (message.muted !== false)
             writer.tag(1, WireType.Varint).bool(message.muted);
@@ -6541,29 +6541,29 @@ class PreloadedUserSettings_VibegrationsProjectSettings$Type extends MessageType
     }
 }
 /**
- * @generated MessageType for protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.VibegrationsProjectSettings
+ * @generated MessageType for protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.ConjureProjectSettings
  */
-export const PreloadedUserSettings_VibegrationsProjectSettings = new PreloadedUserSettings_VibegrationsProjectSettings$Type();
+export const PreloadedUserSettings_ConjureProjectSettings = new PreloadedUserSettings_ConjureProjectSettings$Type();
 // @generated message type with reflection information, may provide speed optimized methods
-class PreloadedUserSettings_VibegrationsSettings$Type extends MessageType<PreloadedUserSettings_VibegrationsSettings> {
+class PreloadedUserSettings_ConjureSettings$Type extends MessageType<PreloadedUserSettings_ConjureSettings> {
     constructor() {
-        super("discord_protos.discord_users.v1.PreloadedUserSettings.VibegrationsSettings", [
-            { no: 1, name: "projects", kind: "map", K: 6 /*ScalarType.FIXED64*/, V: { kind: "message", T: () => PreloadedUserSettings_VibegrationsProjectSettings } }
+        super("discord_protos.discord_users.v1.PreloadedUserSettings.ConjureSettings", [
+            { no: 1, name: "projects", kind: "map", K: 6 /*ScalarType.FIXED64*/, V: { kind: "message", T: () => PreloadedUserSettings_ConjureProjectSettings } }
         ]);
     }
-    create(value?: PartialMessage<PreloadedUserSettings_VibegrationsSettings>): PreloadedUserSettings_VibegrationsSettings {
+    create(value?: PartialMessage<PreloadedUserSettings_ConjureSettings>): PreloadedUserSettings_ConjureSettings {
         const message = globalThis.Object.create((this.messagePrototype!));
         message.projects = {};
         if (value !== undefined)
-            reflectionMergePartial<PreloadedUserSettings_VibegrationsSettings>(this, message, value);
+            reflectionMergePartial<PreloadedUserSettings_ConjureSettings>(this, message, value);
         return message;
     }
-    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PreloadedUserSettings_VibegrationsSettings): PreloadedUserSettings_VibegrationsSettings {
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PreloadedUserSettings_ConjureSettings): PreloadedUserSettings_ConjureSettings {
         let message = target ?? this.create(), end = reader.pos + length;
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
-                case /* map<fixed64, discord_protos.discord_users.v1.PreloadedUserSettings.VibegrationsProjectSettings> projects */ 1:
+                case /* map<fixed64, discord_protos.discord_users.v1.PreloadedUserSettings.ConjureProjectSettings> projects */ 1:
                     this.binaryReadMap1(message.projects, reader, options);
                     break;
                 default:
@@ -6577,8 +6577,8 @@ class PreloadedUserSettings_VibegrationsSettings$Type extends MessageType<Preloa
         }
         return message;
     }
-    private binaryReadMap1(map: PreloadedUserSettings_VibegrationsSettings["projects"], reader: IBinaryReader, options: BinaryReadOptions): void {
-        let len = reader.uint32(), end = reader.pos + len, key: keyof PreloadedUserSettings_VibegrationsSettings["projects"] | undefined, val: PreloadedUserSettings_VibegrationsSettings["projects"][any] | undefined;
+    private binaryReadMap1(map: PreloadedUserSettings_ConjureSettings["projects"], reader: IBinaryReader, options: BinaryReadOptions): void {
+        let len = reader.uint32(), end = reader.pos + len, key: keyof PreloadedUserSettings_ConjureSettings["projects"] | undefined, val: PreloadedUserSettings_ConjureSettings["projects"][any] | undefined;
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
@@ -6586,19 +6586,19 @@ class PreloadedUserSettings_VibegrationsSettings$Type extends MessageType<Preloa
                     key = reader.fixed64().toString();
                     break;
                 case 2:
-                    val = PreloadedUserSettings_VibegrationsProjectSettings.internalBinaryRead(reader, reader.uint32(), options);
+                    val = PreloadedUserSettings_ConjureProjectSettings.internalBinaryRead(reader, reader.uint32(), options);
                     break;
-                default: throw new globalThis.Error("unknown map entry field for discord_protos.discord_users.v1.PreloadedUserSettings.VibegrationsSettings.projects");
+                default: throw new globalThis.Error("unknown map entry field for discord_protos.discord_users.v1.PreloadedUserSettings.ConjureSettings.projects");
             }
         }
-        map[key ?? "0"] = val ?? PreloadedUserSettings_VibegrationsProjectSettings.create();
+        map[key ?? "0"] = val ?? PreloadedUserSettings_ConjureProjectSettings.create();
     }
-    internalBinaryWrite(message: PreloadedUserSettings_VibegrationsSettings, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* map<fixed64, discord_protos.discord_users.v1.PreloadedUserSettings.VibegrationsProjectSettings> projects = 1; */
+    internalBinaryWrite(message: PreloadedUserSettings_ConjureSettings, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* map<fixed64, discord_protos.discord_users.v1.PreloadedUserSettings.ConjureProjectSettings> projects = 1; */
         for (let k of globalThis.Object.keys(message.projects)) {
             writer.tag(1, WireType.LengthDelimited).fork().tag(1, WireType.Bit64).fixed64(k);
             writer.tag(2, WireType.LengthDelimited).fork();
-            PreloadedUserSettings_VibegrationsProjectSettings.internalBinaryWrite(message.projects[k], writer, options);
+            PreloadedUserSettings_ConjureProjectSettings.internalBinaryWrite(message.projects[k], writer, options);
             writer.join().join();
         }
         let u = options.writeUnknownFields;
@@ -6608,6 +6608,6 @@ class PreloadedUserSettings_VibegrationsSettings$Type extends MessageType<Preloa
     }
 }
 /**
- * @generated MessageType for protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.VibegrationsSettings
+ * @generated MessageType for protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.ConjureSettings
  */
-export const PreloadedUserSettings_VibegrationsSettings = new PreloadedUserSettings_VibegrationsSettings$Type();
+export const PreloadedUserSettings_ConjureSettings = new PreloadedUserSettings_ConjureSettings$Type();

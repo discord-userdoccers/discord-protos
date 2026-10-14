@@ -2821,7 +2821,7 @@ class PreloadedUserSettings(_message.Message):
         def WhichOneof(self, oneof_group: _Never) -> None: ...
 
     @_typing.final
-    class VibegrationsProjectSettings(_message.Message):
+    class ConjureProjectSettings(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
 
         MUTED_FIELD_NUMBER: _builtins.int
@@ -2838,7 +2838,7 @@ class PreloadedUserSettings(_message.Message):
         def WhichOneof(self, oneof_group: _Never) -> None: ...
 
     @_typing.final
-    class VibegrationsSettings(_message.Message):
+    class ConjureSettings(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
 
         @_typing.final
@@ -2849,12 +2849,12 @@ class PreloadedUserSettings(_message.Message):
             VALUE_FIELD_NUMBER: _builtins.int
             key: _builtins.int
             @_builtins.property
-            def value(self) -> Global___PreloadedUserSettings.VibegrationsProjectSettings: ...
+            def value(self) -> Global___PreloadedUserSettings.ConjureProjectSettings: ...
             def __init__(
                 self,
                 *,
                 key: _builtins.int = ...,
-                value: Global___PreloadedUserSettings.VibegrationsProjectSettings | None = ...,
+                value: Global___PreloadedUserSettings.ConjureProjectSettings | None = ...,
             ) -> None: ...
             _HasFieldArgType: _TypeAlias = _typing.Literal["value", b"value"]  # noqa: Y015
             def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
@@ -2864,11 +2864,11 @@ class PreloadedUserSettings(_message.Message):
 
         PROJECTS_FIELD_NUMBER: _builtins.int
         @_builtins.property
-        def projects(self) -> _containers.MessageMap[_builtins.int, Global___PreloadedUserSettings.VibegrationsProjectSettings]: ...
+        def projects(self) -> _containers.MessageMap[_builtins.int, Global___PreloadedUserSettings.ConjureProjectSettings]: ...
         def __init__(
             self,
             *,
-            projects: _abc.Mapping[_builtins.int, Global___PreloadedUserSettings.VibegrationsProjectSettings] | None = ...,
+            projects: _abc.Mapping[_builtins.int, Global___PreloadedUserSettings.ConjureProjectSettings] | None = ...,
         ) -> None: ...
         _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
@@ -2902,7 +2902,7 @@ class PreloadedUserSettings(_message.Message):
     ADS_FIELD_NUMBER: _builtins.int
     IN_APP_FEEDBACK_SETTINGS_FIELD_NUMBER: _builtins.int
     APP_VERSION_SETTINGS_FIELD_NUMBER: _builtins.int
-    VIBEGRATIONS_FIELD_NUMBER: _builtins.int
+    CONJURE_FIELD_NUMBER: _builtins.int
     @_builtins.property
     def versions(self) -> Global___PreloadedUserSettings.Versions: ...
     @_builtins.property
@@ -2956,7 +2956,7 @@ class PreloadedUserSettings(_message.Message):
     @_builtins.property
     def app_version_settings(self) -> Global___PreloadedUserSettings.AppVersionSettings: ...
     @_builtins.property
-    def vibegrations(self) -> Global___PreloadedUserSettings.VibegrationsSettings: ...
+    def conjure(self) -> Global___PreloadedUserSettings.ConjureSettings: ...
     def __init__(
         self,
         *,
@@ -2986,11 +2986,11 @@ class PreloadedUserSettings(_message.Message):
         ads: Global___PreloadedUserSettings.AdsSettings | None = ...,
         in_app_feedback_settings: Global___PreloadedUserSettings.InAppFeedbackSettings | None = ...,
         app_version_settings: Global___PreloadedUserSettings.AppVersionSettings | None = ...,
-        vibegrations: Global___PreloadedUserSettings.VibegrationsSettings | None = ...,
+        conjure: Global___PreloadedUserSettings.ConjureSettings | None = ...,
     ) -> None: ...
-    _HasFieldArgType: _TypeAlias = _typing.Literal["_ads", b"_ads", "_app_version_settings", b"_app_version_settings", "_appearance", b"_appearance", "_applications", b"_applications", "_audio_context_settings", b"_audio_context_settings", "_broadcast", b"_broadcast", "_clips", b"_clips", "_communities", b"_communities", "_debug", b"_debug", "_favorites", b"_favorites", "_for_later", b"_for_later", "_game_library", b"_game_library", "_guild_folders", b"_guild_folders", "_guilds", b"_guilds", "_icymi_settings", b"_icymi_settings", "_in_app_feedback_settings", b"_in_app_feedback_settings", "_inbox", b"_inbox", "_localization", b"_localization", "_notifications", b"_notifications", "_privacy", b"_privacy", "_safety_settings", b"_safety_settings", "_status", b"_status", "_text_and_images", b"_text_and_images", "_user_content", b"_user_content", "_versions", b"_versions", "_vibegrations", b"_vibegrations", "_voice_and_video", b"_voice_and_video", "ads", b"ads", "app_version_settings", b"app_version_settings", "appearance", b"appearance", "applications", b"applications", "audio_context_settings", b"audio_context_settings", "broadcast", b"broadcast", "clips", b"clips", "communities", b"communities", "debug", b"debug", "favorites", b"favorites", "for_later", b"for_later", "game_library", b"game_library", "guild_folders", b"guild_folders", "guilds", b"guilds", "icymi_settings", b"icymi_settings", "in_app_feedback_settings", b"in_app_feedback_settings", "inbox", b"inbox", "localization", b"localization", "notifications", b"notifications", "privacy", b"privacy", "safety_settings", b"safety_settings", "status", b"status", "text_and_images", b"text_and_images", "user_content", b"user_content", "versions", b"versions", "vibegrations", b"vibegrations", "voice_and_video", b"voice_and_video"]  # noqa: Y015
+    _HasFieldArgType: _TypeAlias = _typing.Literal["_ads", b"_ads", "_app_version_settings", b"_app_version_settings", "_appearance", b"_appearance", "_applications", b"_applications", "_audio_context_settings", b"_audio_context_settings", "_broadcast", b"_broadcast", "_clips", b"_clips", "_communities", b"_communities", "_conjure", b"_conjure", "_debug", b"_debug", "_favorites", b"_favorites", "_for_later", b"_for_later", "_game_library", b"_game_library", "_guild_folders", b"_guild_folders", "_guilds", b"_guilds", "_icymi_settings", b"_icymi_settings", "_in_app_feedback_settings", b"_in_app_feedback_settings", "_inbox", b"_inbox", "_localization", b"_localization", "_notifications", b"_notifications", "_privacy", b"_privacy", "_safety_settings", b"_safety_settings", "_status", b"_status", "_text_and_images", b"_text_and_images", "_user_content", b"_user_content", "_versions", b"_versions", "_voice_and_video", b"_voice_and_video", "ads", b"ads", "app_version_settings", b"app_version_settings", "appearance", b"appearance", "applications", b"applications", "audio_context_settings", b"audio_context_settings", "broadcast", b"broadcast", "clips", b"clips", "communities", b"communities", "conjure", b"conjure", "debug", b"debug", "favorites", b"favorites", "for_later", b"for_later", "game_library", b"game_library", "guild_folders", b"guild_folders", "guilds", b"guilds", "icymi_settings", b"icymi_settings", "in_app_feedback_settings", b"in_app_feedback_settings", "inbox", b"inbox", "localization", b"localization", "notifications", b"notifications", "privacy", b"privacy", "safety_settings", b"safety_settings", "status", b"status", "text_and_images", b"text_and_images", "user_content", b"user_content", "versions", b"versions", "voice_and_video", b"voice_and_video"]  # noqa: Y015
     def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["_ads", b"_ads", "_app_version_settings", b"_app_version_settings", "_appearance", b"_appearance", "_applications", b"_applications", "_audio_context_settings", b"_audio_context_settings", "_broadcast", b"_broadcast", "_clips", b"_clips", "_communities", b"_communities", "_debug", b"_debug", "_favorites", b"_favorites", "_for_later", b"_for_later", "_game_library", b"_game_library", "_guild_folders", b"_guild_folders", "_guilds", b"_guilds", "_icymi_settings", b"_icymi_settings", "_in_app_feedback_settings", b"_in_app_feedback_settings", "_inbox", b"_inbox", "_localization", b"_localization", "_notifications", b"_notifications", "_privacy", b"_privacy", "_safety_settings", b"_safety_settings", "_status", b"_status", "_text_and_images", b"_text_and_images", "_user_content", b"_user_content", "_versions", b"_versions", "_vibegrations", b"_vibegrations", "_voice_and_video", b"_voice_and_video", "ads", b"ads", "app_version_settings", b"app_version_settings", "appearance", b"appearance", "applications", b"applications", "audio_context_settings", b"audio_context_settings", "broadcast", b"broadcast", "clips", b"clips", "communities", b"communities", "debug", b"debug", "favorites", b"favorites", "for_later", b"for_later", "game_library", b"game_library", "guild_folders", b"guild_folders", "guilds", b"guilds", "icymi_settings", b"icymi_settings", "in_app_feedback_settings", b"in_app_feedback_settings", "inbox", b"inbox", "localization", b"localization", "notifications", b"notifications", "privacy", b"privacy", "safety_settings", b"safety_settings", "status", b"status", "text_and_images", b"text_and_images", "user_content", b"user_content", "versions", b"versions", "vibegrations", b"vibegrations", "voice_and_video", b"voice_and_video"]  # noqa: Y015
+    _ClearFieldArgType: _TypeAlias = _typing.Literal["_ads", b"_ads", "_app_version_settings", b"_app_version_settings", "_appearance", b"_appearance", "_applications", b"_applications", "_audio_context_settings", b"_audio_context_settings", "_broadcast", b"_broadcast", "_clips", b"_clips", "_communities", b"_communities", "_conjure", b"_conjure", "_debug", b"_debug", "_favorites", b"_favorites", "_for_later", b"_for_later", "_game_library", b"_game_library", "_guild_folders", b"_guild_folders", "_guilds", b"_guilds", "_icymi_settings", b"_icymi_settings", "_in_app_feedback_settings", b"_in_app_feedback_settings", "_inbox", b"_inbox", "_localization", b"_localization", "_notifications", b"_notifications", "_privacy", b"_privacy", "_safety_settings", b"_safety_settings", "_status", b"_status", "_text_and_images", b"_text_and_images", "_user_content", b"_user_content", "_versions", b"_versions", "_voice_and_video", b"_voice_and_video", "ads", b"ads", "app_version_settings", b"app_version_settings", "appearance", b"appearance", "applications", b"applications", "audio_context_settings", b"audio_context_settings", "broadcast", b"broadcast", "clips", b"clips", "communities", b"communities", "conjure", b"conjure", "debug", b"debug", "favorites", b"favorites", "for_later", b"for_later", "game_library", b"game_library", "guild_folders", b"guild_folders", "guilds", b"guilds", "icymi_settings", b"icymi_settings", "in_app_feedback_settings", b"in_app_feedback_settings", "inbox", b"inbox", "localization", b"localization", "notifications", b"notifications", "privacy", b"privacy", "safety_settings", b"safety_settings", "status", b"status", "text_and_images", b"text_and_images", "user_content", b"user_content", "versions", b"versions", "voice_and_video", b"voice_and_video"]  # noqa: Y015
     def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
     _WhichOneofReturnType__ads: _TypeAlias = _typing.Literal["ads"]  # noqa: Y015
     _WhichOneofArgType__ads: _TypeAlias = _typing.Literal["_ads", b"_ads"]  # noqa: Y015
@@ -3008,6 +3008,8 @@ class PreloadedUserSettings(_message.Message):
     _WhichOneofArgType__clips: _TypeAlias = _typing.Literal["_clips", b"_clips"]  # noqa: Y015
     _WhichOneofReturnType__communities: _TypeAlias = _typing.Literal["communities"]  # noqa: Y015
     _WhichOneofArgType__communities: _TypeAlias = _typing.Literal["_communities", b"_communities"]  # noqa: Y015
+    _WhichOneofReturnType__conjure: _TypeAlias = _typing.Literal["conjure"]  # noqa: Y015
+    _WhichOneofArgType__conjure: _TypeAlias = _typing.Literal["_conjure", b"_conjure"]  # noqa: Y015
     _WhichOneofReturnType__debug: _TypeAlias = _typing.Literal["debug"]  # noqa: Y015
     _WhichOneofArgType__debug: _TypeAlias = _typing.Literal["_debug", b"_debug"]  # noqa: Y015
     _WhichOneofReturnType__favorites: _TypeAlias = _typing.Literal["favorites"]  # noqa: Y015
@@ -3042,8 +3044,6 @@ class PreloadedUserSettings(_message.Message):
     _WhichOneofArgType__user_content: _TypeAlias = _typing.Literal["_user_content", b"_user_content"]  # noqa: Y015
     _WhichOneofReturnType__versions: _TypeAlias = _typing.Literal["versions"]  # noqa: Y015
     _WhichOneofArgType__versions: _TypeAlias = _typing.Literal["_versions", b"_versions"]  # noqa: Y015
-    _WhichOneofReturnType__vibegrations: _TypeAlias = _typing.Literal["vibegrations"]  # noqa: Y015
-    _WhichOneofArgType__vibegrations: _TypeAlias = _typing.Literal["_vibegrations", b"_vibegrations"]  # noqa: Y015
     _WhichOneofReturnType__voice_and_video: _TypeAlias = _typing.Literal["voice_and_video"]  # noqa: Y015
     _WhichOneofArgType__voice_and_video: _TypeAlias = _typing.Literal["_voice_and_video", b"_voice_and_video"]  # noqa: Y015
     @_typing.overload
@@ -3062,6 +3062,8 @@ class PreloadedUserSettings(_message.Message):
     def WhichOneof(self, oneof_group: _WhichOneofArgType__clips) -> _WhichOneofReturnType__clips | None: ...
     @_typing.overload
     def WhichOneof(self, oneof_group: _WhichOneofArgType__communities) -> _WhichOneofReturnType__communities | None: ...
+    @_typing.overload
+    def WhichOneof(self, oneof_group: _WhichOneofArgType__conjure) -> _WhichOneofReturnType__conjure | None: ...
     @_typing.overload
     def WhichOneof(self, oneof_group: _WhichOneofArgType__debug) -> _WhichOneofReturnType__debug | None: ...
     @_typing.overload
@@ -3096,8 +3098,6 @@ class PreloadedUserSettings(_message.Message):
     def WhichOneof(self, oneof_group: _WhichOneofArgType__user_content) -> _WhichOneofReturnType__user_content | None: ...
     @_typing.overload
     def WhichOneof(self, oneof_group: _WhichOneofArgType__versions) -> _WhichOneofReturnType__versions | None: ...
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__vibegrations) -> _WhichOneofReturnType__vibegrations | None: ...
     @_typing.overload
     def WhichOneof(self, oneof_group: _WhichOneofArgType__voice_and_video) -> _WhichOneofReturnType__voice_and_video | None: ...
 

@@ -584,12 +584,12 @@ message PreloadedUserSettings {
     bool is_using_outdated_mobile_version = 1;
   }
 
-  message VibegrationsProjectSettings {
+  message ConjureProjectSettings {
     bool muted = 1;
   }
 
-  message VibegrationsSettings {
-    map<fixed64, VibegrationsProjectSettings> projects = 1;
+  message ConjureSettings {
+    map<fixed64, ConjureProjectSettings> projects = 1;
   }
 
   optional Versions versions = 1;
@@ -618,5 +618,5 @@ message PreloadedUserSettings {
   optional AdsSettings ads = 24;
   optional InAppFeedbackSettings in_app_feedback_settings = 25;
   optional AppVersionSettings app_version_settings = 26;
-  optional VibegrationsSettings vibegrations = 27;
+  optional ConjureSettings conjure = 27;
 }
