@@ -575,6 +575,10 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_SHOP_TAB_TOOLTIP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 850
         DISMISSIBLE_CONTENT_CODE_BLURPLE_TEASER_TOOLTIP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 851
         DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_GAME_EXIT_PROMO_RUST: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 852
+        DISMISSIBLE_CONTENT_REFERRAL_PROGRAM_POPOVER_RECURRING_REMINDER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 853
+        DISMISSIBLE_CONTENT_MOBILE_REFERRAL_PROGRAM_BOTTOM_SHEET_RECURRING_REMINDER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 854
+        DISMISSIBLE_CONTENT_GIFTED_SUBSCRIPTIONS_DESKTOP_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 855
+        DISMISSIBLE_CONTENT_DEFAULT_EMOJIS_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 856
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_UNSPECIFIED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1080,6 +1084,10 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_SHOP_TAB_TOOLTIP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 850
     DISMISSIBLE_CONTENT_CODE_BLURPLE_TEASER_TOOLTIP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 851
     DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_GAME_EXIT_PROMO_RUST: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 852
+    DISMISSIBLE_CONTENT_REFERRAL_PROGRAM_POPOVER_RECURRING_REMINDER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 853
+    DISMISSIBLE_CONTENT_MOBILE_REFERRAL_PROGRAM_BOTTOM_SHEET_RECURRING_REMINDER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 854
+    DISMISSIBLE_CONTENT_GIFTED_SUBSCRIPTIONS_DESKTOP_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 855
+    DISMISSIBLE_CONTENT_DEFAULT_EMOJIS_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 856
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)

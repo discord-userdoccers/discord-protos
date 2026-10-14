@@ -3330,7 +3330,23 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_GAME_EXIT_PROMO_RUST = 852;
      */
-    SLAYER_STOREFRONT_GAME_EXIT_PROMO_RUST = 852
+    SLAYER_STOREFRONT_GAME_EXIT_PROMO_RUST = 852,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_REFERRAL_PROGRAM_POPOVER_RECURRING_REMINDER = 853;
+     */
+    REFERRAL_PROGRAM_POPOVER_RECURRING_REMINDER = 853,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_MOBILE_REFERRAL_PROGRAM_BOTTOM_SHEET_RECURRING_REMINDER = 854;
+     */
+    MOBILE_REFERRAL_PROGRAM_BOTTOM_SHEET_RECURRING_REMINDER = 854,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GIFTED_SUBSCRIPTIONS_DESKTOP_COACHMARK = 855;
+     */
+    GIFTED_SUBSCRIPTIONS_DESKTOP_COACHMARK = 855,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_DEFAULT_EMOJIS_POPOVER = 856;
+     */
+    DEFAULT_EMOJIS_POPOVER = 856
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
