@@ -3346,7 +3346,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_DEFAULT_EMOJIS_POPOVER = 856;
      */
-    DEFAULT_EMOJIS_POPOVER = 856
+    DEFAULT_EMOJIS_POPOVER = 856,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_MOBILE_EMOJI_SUGGESTIONS_NUX_COACHMARK = 857;
+     */
+    MOBILE_EMOJI_SUGGESTIONS_NUX_COACHMARK = 857
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant

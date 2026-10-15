@@ -3782,6 +3782,10 @@ export enum UserData_ClassificationType {
      */
     APP_DISABLE_GUILD_INSTALLS_ADMIN = 8130,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_APP_DELETE_CG_ADMIN = 8140;
+     */
+    APP_DELETE_CG_ADMIN = 8140,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_TEST_CLASSIFICATION = 9000;
      */
     TEST_CLASSIFICATION = 9000,

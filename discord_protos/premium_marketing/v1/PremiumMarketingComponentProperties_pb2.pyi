@@ -579,6 +579,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_MOBILE_REFERRAL_PROGRAM_BOTTOM_SHEET_RECURRING_REMINDER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 854
         DISMISSIBLE_CONTENT_GIFTED_SUBSCRIPTIONS_DESKTOP_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 855
         DISMISSIBLE_CONTENT_DEFAULT_EMOJIS_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 856
+        DISMISSIBLE_CONTENT_MOBILE_EMOJI_SUGGESTIONS_NUX_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 857
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_UNSPECIFIED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1088,6 +1089,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_MOBILE_REFERRAL_PROGRAM_BOTTOM_SHEET_RECURRING_REMINDER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 854
     DISMISSIBLE_CONTENT_GIFTED_SUBSCRIPTIONS_DESKTOP_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 855
     DISMISSIBLE_CONTENT_DEFAULT_EMOJIS_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 856
+    DISMISSIBLE_CONTENT_MOBILE_EMOJI_SUGGESTIONS_NUX_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 857
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)
