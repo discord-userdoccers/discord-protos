@@ -2945,22 +2945,31 @@ class UserData(_message.Message):
 
         STATUS_FIELD_NUMBER: _builtins.int
         ANON_USER_ID_FIELD_NUMBER: _builtins.int
+        ORIGINAL_USER_CREATED_AT_FIELD_NUMBER: _builtins.int
         status: Global___UserData.AnonymizationStatus.ValueType
         @_builtins.property
         def anon_user_id(self) -> _wrappers_pb2.UInt64Value: ...
+        @_builtins.property
+        def original_user_created_at(self) -> _timestamp_pb2.Timestamp: ...
         def __init__(
             self,
             *,
             status: Global___UserData.AnonymizationStatus.ValueType = ...,
             anon_user_id: _wrappers_pb2.UInt64Value | None = ...,
+            original_user_created_at: _timestamp_pb2.Timestamp | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _typing.Literal["_anon_user_id", b"_anon_user_id", "anon_user_id", b"anon_user_id"]  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_anon_user_id", b"_anon_user_id", "_original_user_created_at", b"_original_user_created_at", "anon_user_id", b"anon_user_id", "original_user_created_at", b"original_user_created_at"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_anon_user_id", b"_anon_user_id", "anon_user_id", b"anon_user_id", "status", b"status"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_anon_user_id", b"_anon_user_id", "_original_user_created_at", b"_original_user_created_at", "anon_user_id", b"anon_user_id", "original_user_created_at", b"original_user_created_at", "status", b"status"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__anon_user_id: _TypeAlias = _typing.Literal["anon_user_id"]  # noqa: Y015
         _WhichOneofArgType__anon_user_id: _TypeAlias = _typing.Literal["_anon_user_id", b"_anon_user_id"]  # noqa: Y015
+        _WhichOneofReturnType__original_user_created_at: _TypeAlias = _typing.Literal["original_user_created_at"]  # noqa: Y015
+        _WhichOneofArgType__original_user_created_at: _TypeAlias = _typing.Literal["_original_user_created_at", b"_original_user_created_at"]  # noqa: Y015
+        @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__anon_user_id) -> _WhichOneofReturnType__anon_user_id | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__original_user_created_at) -> _WhichOneofReturnType__original_user_created_at | None: ...
 
     @_typing.final
     class TypingIndicatorEmoji(_message.Message):

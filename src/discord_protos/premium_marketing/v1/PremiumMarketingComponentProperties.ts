@@ -3350,7 +3350,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_MOBILE_EMOJI_SUGGESTIONS_NUX_COACHMARK = 857;
      */
-    MOBILE_EMOJI_SUGGESTIONS_NUX_COACHMARK = 857
+    MOBILE_EMOJI_SUGGESTIONS_NUX_COACHMARK = 857,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_USER_PROFILE_WIDGET_SUGGESTIONS = 858;
+     */
+    USER_PROFILE_WIDGET_SUGGESTIONS = 858
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant

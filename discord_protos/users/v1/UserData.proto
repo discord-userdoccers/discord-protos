@@ -1133,6 +1133,7 @@ message UserData {
   message AnonymizationInfo {
     AnonymizationStatus status = 1;
     optional google.protobuf.UInt64Value anon_user_id = 2;
+    optional google.protobuf.Timestamp original_user_created_at = 3;
   }
 
   message TypingIndicatorEmoji {
