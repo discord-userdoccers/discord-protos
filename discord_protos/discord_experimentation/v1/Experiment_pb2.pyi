@@ -241,12 +241,14 @@ class Experiment(_message.Message):
         EXPOSURE_POINT_ID_SEO_INSTALLATION_PAGE_LOAD: Experiment._ExposurePointId.ValueType  # 1
         EXPOSURE_POINT_ID_MARKETING_INSTALLATION_PAGE_LOAD: Experiment._ExposurePointId.ValueType  # 2
         EXPOSURE_POINT_ID_INVITE_GUILD_RESOLVE: Experiment._ExposurePointId.ValueType  # 3
+        EXPOSURE_POINT_ID_ADS_BUDGET_AB_DECISION: Experiment._ExposurePointId.ValueType  # 4
 
     class ExposurePointId(_ExposurePointId, metaclass=_ExposurePointIdEnumTypeWrapper): ...
     EXPOSURE_POINT_ID_UNSPECIFIED: Experiment.ExposurePointId.ValueType  # 0
     EXPOSURE_POINT_ID_SEO_INSTALLATION_PAGE_LOAD: Experiment.ExposurePointId.ValueType  # 1
     EXPOSURE_POINT_ID_MARKETING_INSTALLATION_PAGE_LOAD: Experiment.ExposurePointId.ValueType  # 2
     EXPOSURE_POINT_ID_INVITE_GUILD_RESOLVE: Experiment.ExposurePointId.ValueType  # 3
+    EXPOSURE_POINT_ID_ADS_BUDGET_AB_DECISION: Experiment.ExposurePointId.ValueType  # 4
 
     class _Mode:
         ValueType = _typing.NewType("ValueType", _builtins.int)

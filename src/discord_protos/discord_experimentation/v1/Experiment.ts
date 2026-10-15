@@ -1364,7 +1364,11 @@ export enum Experiment_ExposurePointId {
     /**
      * @generated from protobuf enum value: EXPOSURE_POINT_ID_INVITE_GUILD_RESOLVE = 3;
      */
-    INVITE_GUILD_RESOLVE = 3
+    INVITE_GUILD_RESOLVE = 3,
+    /**
+     * @generated from protobuf enum value: EXPOSURE_POINT_ID_ADS_BUDGET_AB_DECISION = 4;
+     */
+    ADS_BUDGET_AB_DECISION = 4
 }
 /**
  * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.Mode
