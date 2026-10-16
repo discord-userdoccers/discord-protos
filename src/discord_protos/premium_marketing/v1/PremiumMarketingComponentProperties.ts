@@ -3403,7 +3403,19 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CODE_BLURPLE_POPOVER = 859;
      */
-    CODE_BLURPLE_POPOVER = 859
+    CODE_BLURPLE_POPOVER = 859,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_COD_RELINK_NOTICE = 860;
+     */
+    COD_RELINK_NOTICE = 860,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_COD_RELINK_NOTICE_DISABLE = 861;
+     */
+    COD_RELINK_NOTICE_DISABLE = 861,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CONTEXTUAL_REFERRAL_USER_DM_SIDEBAR_EMBED = 862;
+     */
+    CONTEXTUAL_REFERRAL_USER_DM_SIDEBAR_EMBED = 862
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant

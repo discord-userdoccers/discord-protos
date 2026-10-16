@@ -582,6 +582,9 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_MOBILE_EMOJI_SUGGESTIONS_NUX_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 857
         DISMISSIBLE_CONTENT_USER_PROFILE_WIDGET_SUGGESTIONS: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 858
         DISMISSIBLE_CONTENT_CODE_BLURPLE_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 859
+        DISMISSIBLE_CONTENT_COD_RELINK_NOTICE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 860
+        DISMISSIBLE_CONTENT_COD_RELINK_NOTICE_DISABLE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 861
+        DISMISSIBLE_CONTENT_CONTEXTUAL_REFERRAL_USER_DM_SIDEBAR_EMBED: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 862
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_UNSPECIFIED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1094,6 +1097,9 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_MOBILE_EMOJI_SUGGESTIONS_NUX_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 857
     DISMISSIBLE_CONTENT_USER_PROFILE_WIDGET_SUGGESTIONS: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 858
     DISMISSIBLE_CONTENT_CODE_BLURPLE_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 859
+    DISMISSIBLE_CONTENT_COD_RELINK_NOTICE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 860
+    DISMISSIBLE_CONTENT_COD_RELINK_NOTICE_DISABLE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 861
+    DISMISSIBLE_CONTENT_CONTEXTUAL_REFERRAL_USER_DM_SIDEBAR_EMBED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 862
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)
