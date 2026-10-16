@@ -177,6 +177,24 @@ export interface PremiumMarketingComponentProperties {
          */
         shopTabTooltip: PremiumMarketingComponentProperties_ShopTabTooltip;
     } | {
+        oneofKind: "premiumHomeRewardsPerkCard";
+        /**
+         * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PremiumHomePerkCard premium_home_rewards_perk_card = 28
+         */
+        premiumHomeRewardsPerkCard: PremiumMarketingComponentProperties_PremiumHomePerkCard;
+    } | {
+        oneofKind: "marketingPageRewardsBentoBox";
+        /**
+         * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MarketingPageBentoBox marketing_page_rewards_bento_box = 29
+         */
+        marketingPageRewardsBentoBox: PremiumMarketingComponentProperties_MarketingPageBentoBox;
+    } | {
+        oneofKind: "outboundPromotionPopover";
+        /**
+         * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.OutboundPromotionPopover outbound_promotion_popover = 30
+         */
+        outboundPromotionPopover: PremiumMarketingComponentProperties_OutboundPromotionPopover;
+    } | {
         oneofKind: undefined;
     };
 }
@@ -1256,6 +1274,33 @@ export interface PremiumMarketingComponentProperties_ShopTabTooltip {
      * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset hover_background = 11
      */
     hoverBackground?: PremiumMarketingComponentProperties_ThemeAwareAsset;
+}
+/**
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PremiumHomePerkCard
+ */
+export interface PremiumMarketingComponentProperties_PremiumHomePerkCard {
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset = 1
+     */
+    asset?: PremiumMarketingComponentProperties_ThemeAwareAsset;
+}
+/**
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MarketingPageBentoBox
+ */
+export interface PremiumMarketingComponentProperties_MarketingPageBentoBox {
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset = 1
+     */
+    asset?: PremiumMarketingComponentProperties_ThemeAwareAsset;
+}
+/**
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.OutboundPromotionPopover
+ */
+export interface PremiumMarketingComponentProperties_OutboundPromotionPopover {
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset = 1
+     */
+    asset?: PremiumMarketingComponentProperties_ThemeAwareAsset;
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction
@@ -3354,7 +3399,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_USER_PROFILE_WIDGET_SUGGESTIONS = 858;
      */
-    USER_PROFILE_WIDGET_SUGGESTIONS = 858
+    USER_PROFILE_WIDGET_SUGGESTIONS = 858,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CODE_BLURPLE_POPOVER = 859;
+     */
+    CODE_BLURPLE_POPOVER = 859
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
@@ -3420,7 +3469,10 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
             { no: 24, name: "guild_boost_checkout_banner", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_GuildBoostCheckoutBanner },
             { no: 25, name: "guild_boost_marketing_page_banner", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_GuildBoostMarketingPageBanner },
             { no: 26, name: "guild_boost_tab_banner", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_GuildBoostTabBanner },
-            { no: 27, name: "shop_tab_tooltip", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_ShopTabTooltip }
+            { no: 27, name: "shop_tab_tooltip", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_ShopTabTooltip },
+            { no: 28, name: "premium_home_rewards_perk_card", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_PremiumHomePerkCard },
+            { no: 29, name: "marketing_page_rewards_bento_box", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_MarketingPageBentoBox },
+            { no: 30, name: "outbound_promotion_popover", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_OutboundPromotionPopover }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties>): PremiumMarketingComponentProperties {
@@ -3593,6 +3645,24 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
                         shopTabTooltip: PremiumMarketingComponentProperties_ShopTabTooltip.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).shopTabTooltip)
                     };
                     break;
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PremiumHomePerkCard premium_home_rewards_perk_card */ 28:
+                    message.properties = {
+                        oneofKind: "premiumHomeRewardsPerkCard",
+                        premiumHomeRewardsPerkCard: PremiumMarketingComponentProperties_PremiumHomePerkCard.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).premiumHomeRewardsPerkCard)
+                    };
+                    break;
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MarketingPageBentoBox marketing_page_rewards_bento_box */ 29:
+                    message.properties = {
+                        oneofKind: "marketingPageRewardsBentoBox",
+                        marketingPageRewardsBentoBox: PremiumMarketingComponentProperties_MarketingPageBentoBox.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).marketingPageRewardsBentoBox)
+                    };
+                    break;
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.OutboundPromotionPopover outbound_promotion_popover */ 30:
+                    message.properties = {
+                        oneofKind: "outboundPromotionPopover",
+                        outboundPromotionPopover: PremiumMarketingComponentProperties_OutboundPromotionPopover.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).outboundPromotionPopover)
+                    };
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -3686,6 +3756,15 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
         /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ShopTabTooltip shop_tab_tooltip = 27; */
         if (message.properties.oneofKind === "shopTabTooltip")
             PremiumMarketingComponentProperties_ShopTabTooltip.internalBinaryWrite(message.properties.shopTabTooltip, writer.tag(27, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PremiumHomePerkCard premium_home_rewards_perk_card = 28; */
+        if (message.properties.oneofKind === "premiumHomeRewardsPerkCard")
+            PremiumMarketingComponentProperties_PremiumHomePerkCard.internalBinaryWrite(message.properties.premiumHomeRewardsPerkCard, writer.tag(28, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MarketingPageBentoBox marketing_page_rewards_bento_box = 29; */
+        if (message.properties.oneofKind === "marketingPageRewardsBentoBox")
+            PremiumMarketingComponentProperties_MarketingPageBentoBox.internalBinaryWrite(message.properties.marketingPageRewardsBentoBox, writer.tag(29, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.OutboundPromotionPopover outbound_promotion_popover = 30; */
+        if (message.properties.oneofKind === "outboundPromotionPopover")
+            PremiumMarketingComponentProperties_OutboundPromotionPopover.internalBinaryWrite(message.properties.outboundPromotionPopover, writer.tag(30, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -6746,3 +6825,141 @@ class PremiumMarketingComponentProperties_ShopTabTooltip$Type extends MessageTyp
  * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ShopTabTooltip
  */
 export const PremiumMarketingComponentProperties_ShopTabTooltip = new PremiumMarketingComponentProperties_ShopTabTooltip$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PremiumMarketingComponentProperties_PremiumHomePerkCard$Type extends MessageType<PremiumMarketingComponentProperties_PremiumHomePerkCard> {
+    constructor() {
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PremiumHomePerkCard", [
+            { no: 1, name: "asset", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset }
+        ]);
+    }
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_PremiumHomePerkCard>): PremiumMarketingComponentProperties_PremiumHomePerkCard {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        if (value !== undefined)
+            reflectionMergePartial<PremiumMarketingComponentProperties_PremiumHomePerkCard>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_PremiumHomePerkCard): PremiumMarketingComponentProperties_PremiumHomePerkCard {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset */ 1:
+                    message.asset = PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryRead(reader, reader.uint32(), options, message.asset);
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_PremiumHomePerkCard, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset = 1; */
+        if (message.asset)
+            PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryWrite(message.asset, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PremiumHomePerkCard
+ */
+export const PremiumMarketingComponentProperties_PremiumHomePerkCard = new PremiumMarketingComponentProperties_PremiumHomePerkCard$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PremiumMarketingComponentProperties_MarketingPageBentoBox$Type extends MessageType<PremiumMarketingComponentProperties_MarketingPageBentoBox> {
+    constructor() {
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MarketingPageBentoBox", [
+            { no: 1, name: "asset", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset }
+        ]);
+    }
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_MarketingPageBentoBox>): PremiumMarketingComponentProperties_MarketingPageBentoBox {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        if (value !== undefined)
+            reflectionMergePartial<PremiumMarketingComponentProperties_MarketingPageBentoBox>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_MarketingPageBentoBox): PremiumMarketingComponentProperties_MarketingPageBentoBox {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset */ 1:
+                    message.asset = PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryRead(reader, reader.uint32(), options, message.asset);
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_MarketingPageBentoBox, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset = 1; */
+        if (message.asset)
+            PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryWrite(message.asset, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MarketingPageBentoBox
+ */
+export const PremiumMarketingComponentProperties_MarketingPageBentoBox = new PremiumMarketingComponentProperties_MarketingPageBentoBox$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PremiumMarketingComponentProperties_OutboundPromotionPopover$Type extends MessageType<PremiumMarketingComponentProperties_OutboundPromotionPopover> {
+    constructor() {
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.OutboundPromotionPopover", [
+            { no: 1, name: "asset", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset }
+        ]);
+    }
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_OutboundPromotionPopover>): PremiumMarketingComponentProperties_OutboundPromotionPopover {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        if (value !== undefined)
+            reflectionMergePartial<PremiumMarketingComponentProperties_OutboundPromotionPopover>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_OutboundPromotionPopover): PremiumMarketingComponentProperties_OutboundPromotionPopover {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset */ 1:
+                    message.asset = PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryRead(reader, reader.uint32(), options, message.asset);
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_OutboundPromotionPopover, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset = 1; */
+        if (message.asset)
+            PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryWrite(message.asset, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.OutboundPromotionPopover
+ */
+export const PremiumMarketingComponentProperties_OutboundPromotionPopover = new PremiumMarketingComponentProperties_OutboundPromotionPopover$Type();

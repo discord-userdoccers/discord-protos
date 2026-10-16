@@ -633,6 +633,7 @@ message PremiumMarketingComponentProperties {
     DISMISSIBLE_CONTENT_DEFAULT_EMOJIS_POPOVER = 856;
     DISMISSIBLE_CONTENT_MOBILE_EMOJI_SUGGESTIONS_NUX_COACHMARK = 857;
     DISMISSIBLE_CONTENT_USER_PROFILE_WIDGET_SUGGESTIONS = 858;
+    DISMISSIBLE_CONTENT_CODE_BLURPLE_POPOVER = 859;
   }
 
   message MobileBottomSheet {
@@ -872,6 +873,18 @@ message PremiumMarketingComponentProperties {
     optional ThemeAwareAsset hover_background = 11;
   }
 
+  message PremiumHomePerkCard {
+    optional ThemeAwareAsset asset = 1;
+  }
+
+  message MarketingPageBentoBox {
+    optional ThemeAwareAsset asset = 1;
+  }
+
+  message OutboundPromotionPopover {
+    optional ThemeAwareAsset asset = 1;
+  }
+
   string content_identifier = 3;
   bool is_default_base = 18;
   oneof properties {
@@ -900,6 +913,9 @@ message PremiumMarketingComponentProperties {
     GuildBoostMarketingPageBanner guild_boost_marketing_page_banner = 25;
     GuildBoostTabBanner guild_boost_tab_banner = 26;
     ShopTabTooltip shop_tab_tooltip = 27;
+    PremiumHomePerkCard premium_home_rewards_perk_card = 28;
+    MarketingPageBentoBox marketing_page_rewards_bento_box = 29;
+    OutboundPromotionPopover outbound_promotion_popover = 30;
   }
 
 }
