@@ -195,6 +195,12 @@ export interface PremiumMarketingComponentProperties {
          */
         outboundPromotionPopover: PremiumMarketingComponentProperties_OutboundPromotionPopover;
     } | {
+        oneofKind: "outboundPromotionClaimModalCard";
+        /**
+         * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.OutboundPromotionClaimModalCard outbound_promotion_claim_modal_card = 31
+         */
+        outboundPromotionClaimModalCard: PremiumMarketingComponentProperties_OutboundPromotionClaimModalCard;
+    } | {
         oneofKind: undefined;
     };
 }
@@ -1297,6 +1303,15 @@ export interface PremiumMarketingComponentProperties_MarketingPageBentoBox {
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.OutboundPromotionPopover
  */
 export interface PremiumMarketingComponentProperties_OutboundPromotionPopover {
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset = 1
+     */
+    asset?: PremiumMarketingComponentProperties_ThemeAwareAsset;
+}
+/**
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.OutboundPromotionClaimModalCard
+ */
+export interface PremiumMarketingComponentProperties_OutboundPromotionClaimModalCard {
     /**
      * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset = 1
      */
@@ -3484,7 +3499,8 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
             { no: 27, name: "shop_tab_tooltip", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_ShopTabTooltip },
             { no: 28, name: "premium_home_rewards_perk_card", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_PremiumHomePerkCard },
             { no: 29, name: "marketing_page_rewards_bento_box", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_MarketingPageBentoBox },
-            { no: 30, name: "outbound_promotion_popover", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_OutboundPromotionPopover }
+            { no: 30, name: "outbound_promotion_popover", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_OutboundPromotionPopover },
+            { no: 31, name: "outbound_promotion_claim_modal_card", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_OutboundPromotionClaimModalCard }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties>): PremiumMarketingComponentProperties {
@@ -3675,6 +3691,12 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
                         outboundPromotionPopover: PremiumMarketingComponentProperties_OutboundPromotionPopover.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).outboundPromotionPopover)
                     };
                     break;
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.OutboundPromotionClaimModalCard outbound_promotion_claim_modal_card */ 31:
+                    message.properties = {
+                        oneofKind: "outboundPromotionClaimModalCard",
+                        outboundPromotionClaimModalCard: PremiumMarketingComponentProperties_OutboundPromotionClaimModalCard.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).outboundPromotionClaimModalCard)
+                    };
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -3777,6 +3799,9 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
         /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.OutboundPromotionPopover outbound_promotion_popover = 30; */
         if (message.properties.oneofKind === "outboundPromotionPopover")
             PremiumMarketingComponentProperties_OutboundPromotionPopover.internalBinaryWrite(message.properties.outboundPromotionPopover, writer.tag(30, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.OutboundPromotionClaimModalCard outbound_promotion_claim_modal_card = 31; */
+        if (message.properties.oneofKind === "outboundPromotionClaimModalCard")
+            PremiumMarketingComponentProperties_OutboundPromotionClaimModalCard.internalBinaryWrite(message.properties.outboundPromotionClaimModalCard, writer.tag(31, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -6975,3 +7000,49 @@ class PremiumMarketingComponentProperties_OutboundPromotionPopover$Type extends 
  * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.OutboundPromotionPopover
  */
 export const PremiumMarketingComponentProperties_OutboundPromotionPopover = new PremiumMarketingComponentProperties_OutboundPromotionPopover$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PremiumMarketingComponentProperties_OutboundPromotionClaimModalCard$Type extends MessageType<PremiumMarketingComponentProperties_OutboundPromotionClaimModalCard> {
+    constructor() {
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.OutboundPromotionClaimModalCard", [
+            { no: 1, name: "asset", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset }
+        ]);
+    }
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_OutboundPromotionClaimModalCard>): PremiumMarketingComponentProperties_OutboundPromotionClaimModalCard {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        if (value !== undefined)
+            reflectionMergePartial<PremiumMarketingComponentProperties_OutboundPromotionClaimModalCard>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_OutboundPromotionClaimModalCard): PremiumMarketingComponentProperties_OutboundPromotionClaimModalCard {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset */ 1:
+                    message.asset = PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryRead(reader, reader.uint32(), options, message.asset);
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_OutboundPromotionClaimModalCard, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset = 1; */
+        if (message.asset)
+            PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryWrite(message.asset, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.OutboundPromotionClaimModalCard
+ */
+export const PremiumMarketingComponentProperties_OutboundPromotionClaimModalCard = new PremiumMarketingComponentProperties_OutboundPromotionClaimModalCard$Type();

@@ -888,6 +888,10 @@ message PremiumMarketingComponentProperties {
     optional ThemeAwareAsset asset = 1;
   }
 
+  message OutboundPromotionClaimModalCard {
+    optional ThemeAwareAsset asset = 1;
+  }
+
   string content_identifier = 3;
   bool is_default_base = 18;
   oneof properties {
@@ -919,6 +923,7 @@ message PremiumMarketingComponentProperties {
     PremiumHomePerkCard premium_home_rewards_perk_card = 28;
     MarketingPageBentoBox marketing_page_rewards_bento_box = 29;
     OutboundPromotionPopover outbound_promotion_popover = 30;
+    OutboundPromotionClaimModalCard outbound_promotion_claim_modal_card = 31;
   }
 
 }
