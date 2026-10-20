@@ -892,6 +892,31 @@ message PremiumMarketingComponentProperties {
     optional ThemeAwareAsset asset = 1;
   }
 
+  enum ShopCoachmarkDisplayType {
+    SHOP_COACHMARK_DISPLAY_TYPE_UNSPECIFIED = 0;
+    SHOP_COACHMARK_DISPLAY_TYPE_SM_TILE = 1;
+    SHOP_COACHMARK_DISPLAY_TYPE_MD_TILE = 2;
+    SHOP_COACHMARK_DISPLAY_TYPE_LG_TILE = 3;
+    SHOP_COACHMARK_DISPLAY_TYPE_VIDEO_TILE = 4;
+  }
+
+  message ShopCoachmark {
+    optional ThemeAwareAsset asset = 1;
+    optional LocalizedString header_localized = 2;
+    optional LocalizedString body_localized = 3;
+    optional LocalizedString button_label_localized = 4;
+    ShopCoachmarkDisplayType display_type = 5;
+    optional LocalizedString badge_text_localized = 6;
+    string badge_icon = 7;
+    string badge_countdown_ends_at = 8;
+    bool show_hover_gradient = 9;
+    optional ThemeAwareAsset hover_background = 10;
+    string header = 11;
+    string body = 12;
+    string button_label = 13;
+    string badge_text = 14;
+  }
+
   string content_identifier = 3;
   bool is_default_base = 18;
   oneof properties {
@@ -924,6 +949,7 @@ message PremiumMarketingComponentProperties {
     MarketingPageBentoBox marketing_page_rewards_bento_box = 29;
     OutboundPromotionPopover outbound_promotion_popover = 30;
     OutboundPromotionClaimModalCard outbound_promotion_claim_modal_card = 31;
+    ShopCoachmark shop_coachmark = 32;
   }
 
 }

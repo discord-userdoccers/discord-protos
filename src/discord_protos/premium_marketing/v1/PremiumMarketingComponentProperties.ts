@@ -201,6 +201,12 @@ export interface PremiumMarketingComponentProperties {
          */
         outboundPromotionClaimModalCard: PremiumMarketingComponentProperties_OutboundPromotionClaimModalCard;
     } | {
+        oneofKind: "shopCoachmark";
+        /**
+         * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ShopCoachmark shop_coachmark = 32
+         */
+        shopCoachmark: PremiumMarketingComponentProperties_ShopCoachmark;
+    } | {
         oneofKind: undefined;
     };
 }
@@ -1316,6 +1322,67 @@ export interface PremiumMarketingComponentProperties_OutboundPromotionClaimModal
      * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset = 1
      */
     asset?: PremiumMarketingComponentProperties_ThemeAwareAsset;
+}
+/**
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ShopCoachmark
+ */
+export interface PremiumMarketingComponentProperties_ShopCoachmark {
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset = 1
+     */
+    asset?: PremiumMarketingComponentProperties_ThemeAwareAsset;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString header_localized = 2
+     */
+    headerLocalized?: PremiumMarketingComponentProperties_LocalizedString;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString body_localized = 3
+     */
+    bodyLocalized?: PremiumMarketingComponentProperties_LocalizedString;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString button_label_localized = 4
+     */
+    buttonLabelLocalized?: PremiumMarketingComponentProperties_LocalizedString;
+    /**
+     * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ShopCoachmarkDisplayType display_type = 5
+     */
+    displayType: PremiumMarketingComponentProperties_ShopCoachmarkDisplayType;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString badge_text_localized = 6
+     */
+    badgeTextLocalized?: PremiumMarketingComponentProperties_LocalizedString;
+    /**
+     * @generated from protobuf field: string badge_icon = 7
+     */
+    badgeIcon: string;
+    /**
+     * @generated from protobuf field: string badge_countdown_ends_at = 8
+     */
+    badgeCountdownEndsAt: string;
+    /**
+     * @generated from protobuf field: bool show_hover_gradient = 9
+     */
+    showHoverGradient: boolean;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset hover_background = 10
+     */
+    hoverBackground?: PremiumMarketingComponentProperties_ThemeAwareAsset;
+    /**
+     * @generated from protobuf field: string header = 11
+     */
+    header: string;
+    /**
+     * @generated from protobuf field: string body = 12
+     */
+    body: string;
+    /**
+     * @generated from protobuf field: string button_label = 13
+     */
+    buttonLabel: string;
+    /**
+     * @generated from protobuf field: string badge_text = 14
+     */
+    badgeText: string;
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction
@@ -3466,6 +3533,31 @@ export enum PremiumMarketingComponentProperties_AdminEditorTestSelectOption {
      */
     SECOND = 2
 }
+/**
+ * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ShopCoachmarkDisplayType
+ */
+export enum PremiumMarketingComponentProperties_ShopCoachmarkDisplayType {
+    /**
+     * @generated from protobuf enum value: SHOP_COACHMARK_DISPLAY_TYPE_UNSPECIFIED = 0;
+     */
+    UNSPECIFIED = 0,
+    /**
+     * @generated from protobuf enum value: SHOP_COACHMARK_DISPLAY_TYPE_SM_TILE = 1;
+     */
+    SM_TILE = 1,
+    /**
+     * @generated from protobuf enum value: SHOP_COACHMARK_DISPLAY_TYPE_MD_TILE = 2;
+     */
+    MD_TILE = 2,
+    /**
+     * @generated from protobuf enum value: SHOP_COACHMARK_DISPLAY_TYPE_LG_TILE = 3;
+     */
+    LG_TILE = 3,
+    /**
+     * @generated from protobuf enum value: SHOP_COACHMARK_DISPLAY_TYPE_VIDEO_TILE = 4;
+     */
+    VIDEO_TILE = 4
+}
 // @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarketingComponentProperties> {
     constructor() {
@@ -3500,7 +3592,8 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
             { no: 28, name: "premium_home_rewards_perk_card", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_PremiumHomePerkCard },
             { no: 29, name: "marketing_page_rewards_bento_box", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_MarketingPageBentoBox },
             { no: 30, name: "outbound_promotion_popover", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_OutboundPromotionPopover },
-            { no: 31, name: "outbound_promotion_claim_modal_card", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_OutboundPromotionClaimModalCard }
+            { no: 31, name: "outbound_promotion_claim_modal_card", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_OutboundPromotionClaimModalCard },
+            { no: 32, name: "shop_coachmark", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_ShopCoachmark }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties>): PremiumMarketingComponentProperties {
@@ -3697,6 +3790,12 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
                         outboundPromotionClaimModalCard: PremiumMarketingComponentProperties_OutboundPromotionClaimModalCard.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).outboundPromotionClaimModalCard)
                     };
                     break;
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ShopCoachmark shop_coachmark */ 32:
+                    message.properties = {
+                        oneofKind: "shopCoachmark",
+                        shopCoachmark: PremiumMarketingComponentProperties_ShopCoachmark.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).shopCoachmark)
+                    };
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -3802,6 +3901,9 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
         /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.OutboundPromotionClaimModalCard outbound_promotion_claim_modal_card = 31; */
         if (message.properties.oneofKind === "outboundPromotionClaimModalCard")
             PremiumMarketingComponentProperties_OutboundPromotionClaimModalCard.internalBinaryWrite(message.properties.outboundPromotionClaimModalCard, writer.tag(31, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ShopCoachmark shop_coachmark = 32; */
+        if (message.properties.oneofKind === "shopCoachmark")
+            PremiumMarketingComponentProperties_ShopCoachmark.internalBinaryWrite(message.properties.shopCoachmark, writer.tag(32, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -7046,3 +7148,148 @@ class PremiumMarketingComponentProperties_OutboundPromotionClaimModalCard$Type e
  * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.OutboundPromotionClaimModalCard
  */
 export const PremiumMarketingComponentProperties_OutboundPromotionClaimModalCard = new PremiumMarketingComponentProperties_OutboundPromotionClaimModalCard$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PremiumMarketingComponentProperties_ShopCoachmark$Type extends MessageType<PremiumMarketingComponentProperties_ShopCoachmark> {
+    constructor() {
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ShopCoachmark", [
+            { no: 1, name: "asset", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset },
+            { no: 2, name: "header_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
+            { no: 3, name: "body_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
+            { no: 4, name: "button_label_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
+            { no: 5, name: "display_type", kind: "enum", T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ShopCoachmarkDisplayType", PremiumMarketingComponentProperties_ShopCoachmarkDisplayType, "SHOP_COACHMARK_DISPLAY_TYPE_"] },
+            { no: 6, name: "badge_text_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
+            { no: 7, name: "badge_icon", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 8, name: "badge_countdown_ends_at", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 9, name: "show_hover_gradient", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
+            { no: 10, name: "hover_background", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset },
+            { no: 11, name: "header", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 12, name: "body", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 13, name: "button_label", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 14, name: "badge_text", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+        ]);
+    }
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_ShopCoachmark>): PremiumMarketingComponentProperties_ShopCoachmark {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.displayType = 0;
+        message.badgeIcon = "";
+        message.badgeCountdownEndsAt = "";
+        message.showHoverGradient = false;
+        message.header = "";
+        message.body = "";
+        message.buttonLabel = "";
+        message.badgeText = "";
+        if (value !== undefined)
+            reflectionMergePartial<PremiumMarketingComponentProperties_ShopCoachmark>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_ShopCoachmark): PremiumMarketingComponentProperties_ShopCoachmark {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset */ 1:
+                    message.asset = PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryRead(reader, reader.uint32(), options, message.asset);
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString header_localized */ 2:
+                    message.headerLocalized = PremiumMarketingComponentProperties_LocalizedString.internalBinaryRead(reader, reader.uint32(), options, message.headerLocalized);
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString body_localized */ 3:
+                    message.bodyLocalized = PremiumMarketingComponentProperties_LocalizedString.internalBinaryRead(reader, reader.uint32(), options, message.bodyLocalized);
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString button_label_localized */ 4:
+                    message.buttonLabelLocalized = PremiumMarketingComponentProperties_LocalizedString.internalBinaryRead(reader, reader.uint32(), options, message.buttonLabelLocalized);
+                    break;
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ShopCoachmarkDisplayType display_type */ 5:
+                    message.displayType = reader.int32();
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString badge_text_localized */ 6:
+                    message.badgeTextLocalized = PremiumMarketingComponentProperties_LocalizedString.internalBinaryRead(reader, reader.uint32(), options, message.badgeTextLocalized);
+                    break;
+                case /* string badge_icon */ 7:
+                    message.badgeIcon = reader.string();
+                    break;
+                case /* string badge_countdown_ends_at */ 8:
+                    message.badgeCountdownEndsAt = reader.string();
+                    break;
+                case /* bool show_hover_gradient */ 9:
+                    message.showHoverGradient = reader.bool();
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset hover_background */ 10:
+                    message.hoverBackground = PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryRead(reader, reader.uint32(), options, message.hoverBackground);
+                    break;
+                case /* string header */ 11:
+                    message.header = reader.string();
+                    break;
+                case /* string body */ 12:
+                    message.body = reader.string();
+                    break;
+                case /* string button_label */ 13:
+                    message.buttonLabel = reader.string();
+                    break;
+                case /* string badge_text */ 14:
+                    message.badgeText = reader.string();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_ShopCoachmark, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset = 1; */
+        if (message.asset)
+            PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryWrite(message.asset, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString header_localized = 2; */
+        if (message.headerLocalized)
+            PremiumMarketingComponentProperties_LocalizedString.internalBinaryWrite(message.headerLocalized, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString body_localized = 3; */
+        if (message.bodyLocalized)
+            PremiumMarketingComponentProperties_LocalizedString.internalBinaryWrite(message.bodyLocalized, writer.tag(3, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString button_label_localized = 4; */
+        if (message.buttonLabelLocalized)
+            PremiumMarketingComponentProperties_LocalizedString.internalBinaryWrite(message.buttonLabelLocalized, writer.tag(4, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ShopCoachmarkDisplayType display_type = 5; */
+        if (message.displayType !== 0)
+            writer.tag(5, WireType.Varint).int32(message.displayType);
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString badge_text_localized = 6; */
+        if (message.badgeTextLocalized)
+            PremiumMarketingComponentProperties_LocalizedString.internalBinaryWrite(message.badgeTextLocalized, writer.tag(6, WireType.LengthDelimited).fork(), options).join();
+        /* string badge_icon = 7; */
+        if (message.badgeIcon !== "")
+            writer.tag(7, WireType.LengthDelimited).string(message.badgeIcon);
+        /* string badge_countdown_ends_at = 8; */
+        if (message.badgeCountdownEndsAt !== "")
+            writer.tag(8, WireType.LengthDelimited).string(message.badgeCountdownEndsAt);
+        /* bool show_hover_gradient = 9; */
+        if (message.showHoverGradient !== false)
+            writer.tag(9, WireType.Varint).bool(message.showHoverGradient);
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset hover_background = 10; */
+        if (message.hoverBackground)
+            PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryWrite(message.hoverBackground, writer.tag(10, WireType.LengthDelimited).fork(), options).join();
+        /* string header = 11; */
+        if (message.header !== "")
+            writer.tag(11, WireType.LengthDelimited).string(message.header);
+        /* string body = 12; */
+        if (message.body !== "")
+            writer.tag(12, WireType.LengthDelimited).string(message.body);
+        /* string button_label = 13; */
+        if (message.buttonLabel !== "")
+            writer.tag(13, WireType.LengthDelimited).string(message.buttonLabel);
+        /* string badge_text = 14; */
+        if (message.badgeText !== "")
+            writer.tag(14, WireType.LengthDelimited).string(message.badgeText);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ShopCoachmark
+ */
+export const PremiumMarketingComponentProperties_ShopCoachmark = new PremiumMarketingComponentProperties_ShopCoachmark$Type();
