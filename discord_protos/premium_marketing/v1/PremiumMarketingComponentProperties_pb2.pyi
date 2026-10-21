@@ -585,6 +585,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_COD_RELINK_NOTICE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 860
         DISMISSIBLE_CONTENT_COD_RELINK_NOTICE_DISABLE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 861
         DISMISSIBLE_CONTENT_CONTEXTUAL_REFERRAL_USER_DM_SIDEBAR_EMBED: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 862
+        DISMISSIBLE_CONTENT_MARVEL_STRIKE_FORCE_ACCOUNT_LINK_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 863
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_UNSPECIFIED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1100,6 +1101,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_COD_RELINK_NOTICE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 860
     DISMISSIBLE_CONTENT_COD_RELINK_NOTICE_DISABLE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 861
     DISMISSIBLE_CONTENT_CONTEXTUAL_REFERRAL_USER_DM_SIDEBAR_EMBED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 862
+    DISMISSIBLE_CONTENT_MARVEL_STRIKE_FORCE_ACCOUNT_LINK_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 863
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)
@@ -2082,6 +2084,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         HEADER_LOCALIZED_FIELD_NUMBER: _builtins.int
         BODY_LOCALIZED_FIELD_NUMBER: _builtins.int
         ADDITIONAL_TERMS_LOCALIZED_FIELD_NUMBER: _builtins.int
+        HELP_ARTICLE_FIELD_NUMBER: _builtins.int
         asset_url: _builtins.str
         header: _builtins.str
         body: _builtins.str
@@ -2100,6 +2103,8 @@ class PremiumMarketingComponentProperties(_message.Message):
         def body_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
         @_builtins.property
         def additional_terms_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
+        @_builtins.property
+        def help_article(self) -> Global___PremiumMarketingComponentProperties.HelpArticle: ...
         def __init__(
             self,
             *,
@@ -2115,10 +2120,11 @@ class PremiumMarketingComponentProperties(_message.Message):
             header_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
             body_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
             additional_terms_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
+            help_article: Global___PremiumMarketingComponentProperties.HelpArticle | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _typing.Literal["_additional_terms_localized", b"_additional_terms_localized", "_asset", b"_asset", "_background_asset", b"_background_asset", "_body_localized", b"_body_localized", "_gradient", b"_gradient", "_header_localized", b"_header_localized", "additional_terms_localized", b"additional_terms_localized", "asset", b"asset", "background_asset", b"background_asset", "body_localized", b"body_localized", "gradient", b"gradient", "header_localized", b"header_localized"]  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_additional_terms_localized", b"_additional_terms_localized", "_asset", b"_asset", "_background_asset", b"_background_asset", "_body_localized", b"_body_localized", "_gradient", b"_gradient", "_header_localized", b"_header_localized", "_help_article", b"_help_article", "additional_terms_localized", b"additional_terms_localized", "asset", b"asset", "background_asset", b"background_asset", "body_localized", b"body_localized", "gradient", b"gradient", "header_localized", b"header_localized", "help_article", b"help_article"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_additional_terms_localized", b"_additional_terms_localized", "_asset", b"_asset", "_background_asset", b"_background_asset", "_body_localized", b"_body_localized", "_gradient", b"_gradient", "_header_localized", b"_header_localized", "additional_terms", b"additional_terms", "additional_terms_localized", b"additional_terms_localized", "asset", b"asset", "asset_url", b"asset_url", "background_asset", b"background_asset", "background_asset_url", b"background_asset_url", "body", b"body", "body_localized", b"body_localized", "gradient", b"gradient", "header", b"header", "header_localized", b"header_localized", "text_color", b"text_color"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_additional_terms_localized", b"_additional_terms_localized", "_asset", b"_asset", "_background_asset", b"_background_asset", "_body_localized", b"_body_localized", "_gradient", b"_gradient", "_header_localized", b"_header_localized", "_help_article", b"_help_article", "additional_terms", b"additional_terms", "additional_terms_localized", b"additional_terms_localized", "asset", b"asset", "asset_url", b"asset_url", "background_asset", b"background_asset", "background_asset_url", b"background_asset_url", "body", b"body", "body_localized", b"body_localized", "gradient", b"gradient", "header", b"header", "header_localized", b"header_localized", "help_article", b"help_article", "text_color", b"text_color"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__additional_terms_localized: _TypeAlias = _typing.Literal["additional_terms_localized"]  # noqa: Y015
         _WhichOneofArgType__additional_terms_localized: _TypeAlias = _typing.Literal["_additional_terms_localized", b"_additional_terms_localized"]  # noqa: Y015
@@ -2132,6 +2138,8 @@ class PremiumMarketingComponentProperties(_message.Message):
         _WhichOneofArgType__gradient: _TypeAlias = _typing.Literal["_gradient", b"_gradient"]  # noqa: Y015
         _WhichOneofReturnType__header_localized: _TypeAlias = _typing.Literal["header_localized"]  # noqa: Y015
         _WhichOneofArgType__header_localized: _TypeAlias = _typing.Literal["_header_localized", b"_header_localized"]  # noqa: Y015
+        _WhichOneofReturnType__help_article: _TypeAlias = _typing.Literal["help_article"]  # noqa: Y015
+        _WhichOneofArgType__help_article: _TypeAlias = _typing.Literal["_help_article", b"_help_article"]  # noqa: Y015
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__additional_terms_localized) -> _WhichOneofReturnType__additional_terms_localized | None: ...
         @_typing.overload
@@ -2144,6 +2152,8 @@ class PremiumMarketingComponentProperties(_message.Message):
         def WhichOneof(self, oneof_group: _WhichOneofArgType__gradient) -> _WhichOneofReturnType__gradient | None: ...
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__header_localized) -> _WhichOneofReturnType__header_localized | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__help_article) -> _WhichOneofReturnType__help_article | None: ...
 
     @_typing.final
     class GiftReminderNagbar(_message.Message):

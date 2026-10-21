@@ -836,6 +836,10 @@ export interface PremiumMarketingComponentProperties_BillingSettingsNitroGiftBan
      * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString additional_terms_localized = 12
      */
     additionalTermsLocalized?: PremiumMarketingComponentProperties_LocalizedString;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle help_article = 13
+     */
+    helpArticle?: PremiumMarketingComponentProperties_HelpArticle;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftReminderNagbar
@@ -3497,7 +3501,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CONTEXTUAL_REFERRAL_USER_DM_SIDEBAR_EMBED = 862;
      */
-    CONTEXTUAL_REFERRAL_USER_DM_SIDEBAR_EMBED = 862
+    CONTEXTUAL_REFERRAL_USER_DM_SIDEBAR_EMBED = 862,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_MARVEL_STRIKE_FORCE_ACCOUNT_LINK_UPSELL = 863;
+     */
+    MARVEL_STRIKE_FORCE_ACCOUNT_LINK_UPSELL = 863
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
@@ -5600,7 +5608,8 @@ class PremiumMarketingComponentProperties_BillingSettingsNitroGiftBanner$Type ex
             { no: 9, name: "background_asset", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset },
             { no: 10, name: "header_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
             { no: 11, name: "body_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
-            { no: 12, name: "additional_terms_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString }
+            { no: 12, name: "additional_terms_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
+            { no: 13, name: "help_article", kind: "message", T: () => PremiumMarketingComponentProperties_HelpArticle }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_BillingSettingsNitroGiftBanner>): PremiumMarketingComponentProperties_BillingSettingsNitroGiftBanner {
@@ -5656,6 +5665,9 @@ class PremiumMarketingComponentProperties_BillingSettingsNitroGiftBanner$Type ex
                 case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString additional_terms_localized */ 12:
                     message.additionalTermsLocalized = PremiumMarketingComponentProperties_LocalizedString.internalBinaryRead(reader, reader.uint32(), options, message.additionalTermsLocalized);
                     break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle help_article */ 13:
+                    message.helpArticle = PremiumMarketingComponentProperties_HelpArticle.internalBinaryRead(reader, reader.uint32(), options, message.helpArticle);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -5704,6 +5716,9 @@ class PremiumMarketingComponentProperties_BillingSettingsNitroGiftBanner$Type ex
         /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString additional_terms_localized = 12; */
         if (message.additionalTermsLocalized)
             PremiumMarketingComponentProperties_LocalizedString.internalBinaryWrite(message.additionalTermsLocalized, writer.tag(12, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle help_article = 13; */
+        if (message.helpArticle)
+            PremiumMarketingComponentProperties_HelpArticle.internalBinaryWrite(message.helpArticle, writer.tag(13, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
