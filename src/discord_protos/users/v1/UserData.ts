@@ -1566,6 +1566,10 @@ export enum UserData_ClassificationType {
      */
     CSEA_CSAM_GUILD_SMITE = 3155,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_COPYRIGHT_LIVESTREAMING_512C_NON_DEDICATED_GUILD_SMITE = 3166;
+     */
+    COPYRIGHT_LIVESTREAMING_512C_NON_DEDICATED_GUILD_SMITE = 3166,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_QUARANTINE_SMITE = 3200;
      */
     QUARANTINE_SMITE = 3200,
@@ -4203,9 +4207,9 @@ export enum UserData_AgeAssuranceMethod {
      */
     GOOGLE_WALLET = 9,
     /**
-     * @generated from protobuf enum value: AGE_ASSURANCE_METHOD_NEW_METHOD = 10;
+     * @generated from protobuf enum value: AGE_ASSURANCE_METHOD_AGE_KEY = 10;
      */
-    NEW_METHOD = 10,
+    AGE_KEY = 10,
     /**
      * @generated from protobuf enum value: AGE_ASSURANCE_METHOD_MANUAL_REVIEW = 11;
      */

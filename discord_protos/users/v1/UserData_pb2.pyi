@@ -250,6 +250,7 @@ class UserData(_message.Message):
         CLASSIFICATION_TYPE_HARASSMENT_AND_NONIMMINENT_AND_OR_NON_PHYSICAL_THREATS_GUILD_SMITE: UserData._ClassificationType.ValueType  # 3125
         CLASSIFICATION_TYPE_CSEA_CSAM_SMITE: UserData._ClassificationType.ValueType  # 3150
         CLASSIFICATION_TYPE_CSEA_CSAM_GUILD_SMITE: UserData._ClassificationType.ValueType  # 3155
+        CLASSIFICATION_TYPE_COPYRIGHT_LIVESTREAMING_512C_NON_DEDICATED_GUILD_SMITE: UserData._ClassificationType.ValueType  # 3166
         CLASSIFICATION_TYPE_QUARANTINE_SMITE: UserData._ClassificationType.ValueType  # 3200
         CLASSIFICATION_TYPE_REQUIRE_VERIFIED_PHONE_SMITE: UserData._ClassificationType.ValueType  # 3201
         CLASSIFICATION_TYPE_REQUIRE_REVERIFIED_PHONE_SMITE: UserData._ClassificationType.ValueType  # 3202
@@ -1000,6 +1001,7 @@ class UserData(_message.Message):
     CLASSIFICATION_TYPE_HARASSMENT_AND_NONIMMINENT_AND_OR_NON_PHYSICAL_THREATS_GUILD_SMITE: UserData.ClassificationType.ValueType  # 3125
     CLASSIFICATION_TYPE_CSEA_CSAM_SMITE: UserData.ClassificationType.ValueType  # 3150
     CLASSIFICATION_TYPE_CSEA_CSAM_GUILD_SMITE: UserData.ClassificationType.ValueType  # 3155
+    CLASSIFICATION_TYPE_COPYRIGHT_LIVESTREAMING_512C_NON_DEDICATED_GUILD_SMITE: UserData.ClassificationType.ValueType  # 3166
     CLASSIFICATION_TYPE_QUARANTINE_SMITE: UserData.ClassificationType.ValueType  # 3200
     CLASSIFICATION_TYPE_REQUIRE_VERIFIED_PHONE_SMITE: UserData.ClassificationType.ValueType  # 3201
     CLASSIFICATION_TYPE_REQUIRE_REVERIFIED_PHONE_SMITE: UserData.ClassificationType.ValueType  # 3202
@@ -1802,7 +1804,7 @@ class UserData(_message.Message):
         AGE_ASSURANCE_METHOD_OS_SIGNAL: UserData._AgeAssuranceMethod.ValueType  # 7
         AGE_ASSURANCE_METHOD_ML_AGE_INFERENCE: UserData._AgeAssuranceMethod.ValueType  # 8
         AGE_ASSURANCE_METHOD_GOOGLE_WALLET: UserData._AgeAssuranceMethod.ValueType  # 9
-        AGE_ASSURANCE_METHOD_NEW_METHOD: UserData._AgeAssuranceMethod.ValueType  # 10
+        AGE_ASSURANCE_METHOD_AGE_KEY: UserData._AgeAssuranceMethod.ValueType  # 10
         AGE_ASSURANCE_METHOD_MANUAL_REVIEW: UserData._AgeAssuranceMethod.ValueType  # 11
         AGE_ASSURANCE_METHOD_OS_SIGNAL_CONFIRMED: UserData._AgeAssuranceMethod.ValueType  # 12
         AGE_ASSURANCE_METHOD_TNS_DETERMINATION: UserData._AgeAssuranceMethod.ValueType  # 13
@@ -1818,7 +1820,7 @@ class UserData(_message.Message):
     AGE_ASSURANCE_METHOD_OS_SIGNAL: UserData.AgeAssuranceMethod.ValueType  # 7
     AGE_ASSURANCE_METHOD_ML_AGE_INFERENCE: UserData.AgeAssuranceMethod.ValueType  # 8
     AGE_ASSURANCE_METHOD_GOOGLE_WALLET: UserData.AgeAssuranceMethod.ValueType  # 9
-    AGE_ASSURANCE_METHOD_NEW_METHOD: UserData.AgeAssuranceMethod.ValueType  # 10
+    AGE_ASSURANCE_METHOD_AGE_KEY: UserData.AgeAssuranceMethod.ValueType  # 10
     AGE_ASSURANCE_METHOD_MANUAL_REVIEW: UserData.AgeAssuranceMethod.ValueType  # 11
     AGE_ASSURANCE_METHOD_OS_SIGNAL_CONFIRMED: UserData.AgeAssuranceMethod.ValueType  # 12
     AGE_ASSURANCE_METHOD_TNS_DETERMINATION: UserData.AgeAssuranceMethod.ValueType  # 13

@@ -1025,6 +1025,10 @@ export enum User_ClassificationType {
      */
     CSEA_CSAM_GUILD_SMITE = 3155,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_COPYRIGHT_LIVESTREAMING_512C_NON_DEDICATED_GUILD_SMITE = 3166;
+     */
+    COPYRIGHT_LIVESTREAMING_512C_NON_DEDICATED_GUILD_SMITE = 3166,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_QUARANTINE_SMITE = 3200;
      */
     QUARANTINE_SMITE = 3200,
