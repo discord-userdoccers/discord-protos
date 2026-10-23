@@ -845,6 +845,10 @@ export enum User_ClassificationType {
      */
     GROOMING_AND_ENTICEMENT_SAFETY_DISPATCH = 1080,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_GROOMING_AND_ENTICEMENT_NON_DEDICATED_GUILD_SAFETY_DISPATCH = 1086;
+     */
+    GROOMING_AND_ENTICEMENT_NON_DEDICATED_GUILD_SAFETY_DISPATCH = 1086,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_SEX_TRAFFICKING_SAFETY_DISPATCH = 1090;
      */
     SEX_TRAFFICKING_SAFETY_DISPATCH = 1090,
@@ -876,6 +880,10 @@ export enum User_ClassificationType {
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_RIHAB_SG_CSAM_SAFETY_DISPATCH = 1130;
      */
     RIHAB_SG_CSAM_SAFETY_DISPATCH = 1130,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_RIHAB_SG_CSAM_NON_DEDICATED_GUILD_SAFETY_DISPATCH = 1136;
+     */
+    RIHAB_SG_CSAM_NON_DEDICATED_GUILD_SAFETY_DISPATCH = 1136,
     /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_SG_CSAM_CONDUCT_SAFETY_DISPATCH = 1140;
      */
@@ -1024,6 +1032,10 @@ export enum User_ClassificationType {
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSEA_CSAM_GUILD_SMITE = 3155;
      */
     CSEA_CSAM_GUILD_SMITE = 3155,
+    /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_QUEST_REWARD_ABUSE_SPOOFING_MODEL_SMITE = 3160;
+     */
+    QUEST_REWARD_ABUSE_SPOOFING_MODEL_SMITE = 3160,
     /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_COPYRIGHT_LIVESTREAMING_512C_NON_DEDICATED_GUILD_SMITE = 3166;
      */
