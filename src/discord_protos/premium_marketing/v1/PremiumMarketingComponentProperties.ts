@@ -3505,7 +3505,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_MARVEL_STRIKE_FORCE_ACCOUNT_LINK_UPSELL = 863;
      */
-    MARVEL_STRIKE_FORCE_ACCOUNT_LINK_UPSELL = 863
+    MARVEL_STRIKE_FORCE_ACCOUNT_LINK_UPSELL = 863,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_PINOT_MEMBER_COACHMARK = 864;
+     */
+    PINOT_MEMBER_COACHMARK = 864
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
