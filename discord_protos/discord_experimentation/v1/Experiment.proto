@@ -529,4 +529,5 @@ message Experiment {
   optional NumberLineSettings number_line_settings = 43;
   EligibilityPersistence eligibility_persistence = 42;
   optional LifecyclePlan lifecycle_plan = 48;
+  bool is_feature_flag = 49;
 }
