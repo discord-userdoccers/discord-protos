@@ -3509,7 +3509,15 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_PINOT_MEMBER_COACHMARK = 864;
      */
-    PINOT_MEMBER_COACHMARK = 864
+    PINOT_MEMBER_COACHMARK = 864,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_DISCORD_ANNIVERSARY_INTRO = 865;
+     */
+    DISCORD_ANNIVERSARY_INTRO = 865,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_DISCORD_ANNIVERSARY_CHAT_COACHMARK = 866;
+     */
+    DISCORD_ANNIVERSARY_CHAT_COACHMARK = 866
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
