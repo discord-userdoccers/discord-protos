@@ -3517,7 +3517,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_DISCORD_ANNIVERSARY_CHAT_COACHMARK = 866;
      */
-    DISCORD_ANNIVERSARY_CHAT_COACHMARK = 866
+    DISCORD_ANNIVERSARY_CHAT_COACHMARK = 866,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_DEFAULT_EMOJIS_PACKS_DISCOVERY_DOT = 867;
+     */
+    DEFAULT_EMOJIS_PACKS_DISCOVERY_DOT = 867
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant

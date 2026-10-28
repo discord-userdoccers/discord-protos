@@ -978,6 +978,10 @@ export interface PreloadedUserSettings_PrivacySettings {
      * @generated from protobuf field: optional google.protobuf.BoolValue swp_message_promotion_opted_out = 35
      */
     swpMessagePromotionOptedOut?: BoolValue;
+    /**
+     * @generated from protobuf field: optional google.protobuf.BoolValue personal_access_opted_out = 36
+     */
+    personalAccessOptedOut?: BoolValue;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.DebugSettings
@@ -4263,7 +4267,8 @@ class PreloadedUserSettings_PrivacySettings$Type extends MessageType<PreloadedUs
             { no: 32, name: "profile_visibility", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.ProfileVisibility", PreloadedUserSettings_ProfileVisibility, "PROFILE_VISIBILITY_"] },
             { no: 33, name: "hide_friend_request_notes", kind: "message", T: () => BoolValue },
             { no: 34, name: "ad_topic_opt_outs", kind: "enum", repeat: 1 /*RepeatType.PACKED*/, T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.AdTopic", PreloadedUserSettings_AdTopic, "AD_TOPIC_"] },
-            { no: 35, name: "swp_message_promotion_opted_out", kind: "message", T: () => BoolValue }
+            { no: 35, name: "swp_message_promotion_opted_out", kind: "message", T: () => BoolValue },
+            { no: 36, name: "personal_access_opted_out", kind: "message", T: () => BoolValue }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_PrivacySettings>): PreloadedUserSettings_PrivacySettings {
@@ -4408,6 +4413,9 @@ class PreloadedUserSettings_PrivacySettings$Type extends MessageType<PreloadedUs
                 case /* optional google.protobuf.BoolValue swp_message_promotion_opted_out */ 35:
                     message.swpMessagePromotionOptedOut = BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.swpMessagePromotionOptedOut);
                     break;
+                case /* optional google.protobuf.BoolValue personal_access_opted_out */ 36:
+                    message.personalAccessOptedOut = BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.personalAccessOptedOut);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -4539,6 +4547,9 @@ class PreloadedUserSettings_PrivacySettings$Type extends MessageType<PreloadedUs
         /* optional google.protobuf.BoolValue swp_message_promotion_opted_out = 35; */
         if (message.swpMessagePromotionOptedOut)
             BoolValue.internalBinaryWrite(message.swpMessagePromotionOptedOut, writer.tag(35, WireType.LengthDelimited).fork(), options).join();
+        /* optional google.protobuf.BoolValue personal_access_opted_out = 36; */
+        if (message.personalAccessOptedOut)
+            BoolValue.internalBinaryWrite(message.personalAccessOptedOut, writer.tag(36, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

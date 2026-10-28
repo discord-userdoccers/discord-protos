@@ -589,6 +589,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_PINOT_MEMBER_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 864
         DISMISSIBLE_CONTENT_DISCORD_ANNIVERSARY_INTRO: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 865
         DISMISSIBLE_CONTENT_DISCORD_ANNIVERSARY_CHAT_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 866
+        DISMISSIBLE_CONTENT_DEFAULT_EMOJIS_PACKS_DISCOVERY_DOT: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 867
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_UNSPECIFIED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1108,6 +1109,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_PINOT_MEMBER_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 864
     DISMISSIBLE_CONTENT_DISCORD_ANNIVERSARY_INTRO: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 865
     DISMISSIBLE_CONTENT_DISCORD_ANNIVERSARY_CHAT_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 866
+    DISMISSIBLE_CONTENT_DEFAULT_EMOJIS_PACKS_DISCOVERY_DOT: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 867
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)
