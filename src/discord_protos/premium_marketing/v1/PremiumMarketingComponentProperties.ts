@@ -3521,7 +3521,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_DEFAULT_EMOJIS_PACKS_DISCOVERY_DOT = 867;
      */
-    DEFAULT_EMOJIS_PACKS_DISCOVERY_DOT = 867
+    DEFAULT_EMOJIS_PACKS_DISCOVERY_DOT = 867,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_MOBILE_MARKDOWN_FORMAT_MENU_COACHMARK = 868;
+     */
+    MOBILE_MARKDOWN_FORMAT_MENU_COACHMARK = 868
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
