@@ -643,6 +643,7 @@ message PremiumMarketingComponentProperties {
     DISMISSIBLE_CONTENT_DISCORD_ANNIVERSARY_CHAT_COACHMARK = 866;
     DISMISSIBLE_CONTENT_DEFAULT_EMOJIS_PACKS_DISCOVERY_DOT = 867;
     DISMISSIBLE_CONTENT_MOBILE_MARKDOWN_FORMAT_MENU_COACHMARK = 868;
+    DISMISSIBLE_CONTENT_COLLECTIBLES_SHOP_ENTRY_MARKETING_COACHMARK = 869;
   }
 
   message MobileBottomSheet {
@@ -922,6 +923,7 @@ message PremiumMarketingComponentProperties {
     string body = 12;
     string button_label = 13;
     string badge_text = 14;
+    uint32 version = 15;
   }
 
   string content_identifier = 3;

@@ -204,6 +204,10 @@ export interface Experiment {
      * @generated from protobuf field: bool is_feature_flag = 49
      */
     isFeatureFlag: boolean;
+    /**
+     * @generated from protobuf field: bool is_official_holdout = 50
+     */
+    isOfficialHoldout: boolean;
 }
 /**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.Bucket
@@ -1557,7 +1561,8 @@ class Experiment$Type extends MessageType<Experiment> {
             { no: 43, name: "number_line_settings", kind: "message", T: () => Experiment_NumberLineSettings },
             { no: 42, name: "eligibility_persistence", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.EligibilityPersistence", Experiment_EligibilityPersistence, "ELIGIBILITY_PERSISTENCE_"] },
             { no: 48, name: "lifecycle_plan", kind: "message", T: () => Experiment_LifecyclePlan },
-            { no: 49, name: "is_feature_flag", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
+            { no: 49, name: "is_feature_flag", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
+            { no: 50, name: "is_official_holdout", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
         ]);
     }
     create(value?: PartialMessage<Experiment>): Experiment {
@@ -1597,6 +1602,7 @@ class Experiment$Type extends MessageType<Experiment> {
         message.isManaged = false;
         message.eligibilityPersistence = 0;
         message.isFeatureFlag = false;
+        message.isOfficialHoldout = false;
         if (value !== undefined)
             reflectionMergePartial<Experiment>(this, message, value);
         return message;
@@ -1755,6 +1761,9 @@ class Experiment$Type extends MessageType<Experiment> {
                     break;
                 case /* bool is_feature_flag */ 49:
                     message.isFeatureFlag = reader.bool();
+                    break;
+                case /* bool is_official_holdout */ 50:
+                    message.isOfficialHoldout = reader.bool();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -1918,6 +1927,9 @@ class Experiment$Type extends MessageType<Experiment> {
         /* bool is_feature_flag = 49; */
         if (message.isFeatureFlag !== false)
             writer.tag(49, WireType.Varint).bool(message.isFeatureFlag);
+        /* bool is_official_holdout = 50; */
+        if (message.isOfficialHoldout !== false)
+            writer.tag(50, WireType.Varint).bool(message.isOfficialHoldout);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

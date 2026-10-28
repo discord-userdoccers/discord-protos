@@ -530,4 +530,5 @@ message Experiment {
   EligibilityPersistence eligibility_persistence = 42;
   optional LifecyclePlan lifecycle_plan = 48;
   bool is_feature_flag = 49;
+  bool is_official_holdout = 50;
 }

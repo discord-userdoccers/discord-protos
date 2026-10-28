@@ -591,6 +591,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_DISCORD_ANNIVERSARY_CHAT_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 866
         DISMISSIBLE_CONTENT_DEFAULT_EMOJIS_PACKS_DISCOVERY_DOT: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 867
         DISMISSIBLE_CONTENT_MOBILE_MARKDOWN_FORMAT_MENU_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 868
+        DISMISSIBLE_CONTENT_COLLECTIBLES_SHOP_ENTRY_MARKETING_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 869
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_UNSPECIFIED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1112,6 +1113,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_DISCORD_ANNIVERSARY_CHAT_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 866
     DISMISSIBLE_CONTENT_DEFAULT_EMOJIS_PACKS_DISCOVERY_DOT: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 867
     DISMISSIBLE_CONTENT_MOBILE_MARKDOWN_FORMAT_MENU_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 868
+    DISMISSIBLE_CONTENT_COLLECTIBLES_SHOP_ENTRY_MARKETING_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 869
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)
@@ -3009,6 +3011,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         BODY_FIELD_NUMBER: _builtins.int
         BUTTON_LABEL_FIELD_NUMBER: _builtins.int
         BADGE_TEXT_FIELD_NUMBER: _builtins.int
+        VERSION_FIELD_NUMBER: _builtins.int
         display_type: Global___PremiumMarketingComponentProperties.ShopCoachmarkDisplayType.ValueType
         badge_icon: _builtins.str
         badge_countdown_ends_at: _builtins.str
@@ -3017,6 +3020,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         body: _builtins.str
         button_label: _builtins.str
         badge_text: _builtins.str
+        version: _builtins.int
         @_builtins.property
         def asset(self) -> Global___PremiumMarketingComponentProperties.ThemeAwareAsset: ...
         @_builtins.property
@@ -3046,10 +3050,11 @@ class PremiumMarketingComponentProperties(_message.Message):
             body: _builtins.str = ...,
             button_label: _builtins.str = ...,
             badge_text: _builtins.str = ...,
+            version: _builtins.int = ...,
         ) -> None: ...
         _HasFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_badge_text_localized", b"_badge_text_localized", "_body_localized", b"_body_localized", "_button_label_localized", b"_button_label_localized", "_header_localized", b"_header_localized", "_hover_background", b"_hover_background", "asset", b"asset", "badge_text_localized", b"badge_text_localized", "body_localized", b"body_localized", "button_label_localized", b"button_label_localized", "header_localized", b"header_localized", "hover_background", b"hover_background"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_badge_text_localized", b"_badge_text_localized", "_body_localized", b"_body_localized", "_button_label_localized", b"_button_label_localized", "_header_localized", b"_header_localized", "_hover_background", b"_hover_background", "asset", b"asset", "badge_countdown_ends_at", b"badge_countdown_ends_at", "badge_icon", b"badge_icon", "badge_text", b"badge_text", "badge_text_localized", b"badge_text_localized", "body", b"body", "body_localized", b"body_localized", "button_label", b"button_label", "button_label_localized", b"button_label_localized", "display_type", b"display_type", "header", b"header", "header_localized", b"header_localized", "hover_background", b"hover_background", "show_hover_gradient", b"show_hover_gradient"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_badge_text_localized", b"_badge_text_localized", "_body_localized", b"_body_localized", "_button_label_localized", b"_button_label_localized", "_header_localized", b"_header_localized", "_hover_background", b"_hover_background", "asset", b"asset", "badge_countdown_ends_at", b"badge_countdown_ends_at", "badge_icon", b"badge_icon", "badge_text", b"badge_text", "badge_text_localized", b"badge_text_localized", "body", b"body", "body_localized", b"body_localized", "button_label", b"button_label", "button_label_localized", b"button_label_localized", "display_type", b"display_type", "header", b"header", "header_localized", b"header_localized", "hover_background", b"hover_background", "show_hover_gradient", b"show_hover_gradient", "version", b"version"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__asset: _TypeAlias = _typing.Literal["asset"]  # noqa: Y015
         _WhichOneofArgType__asset: _TypeAlias = _typing.Literal["_asset", b"_asset"]  # noqa: Y015

@@ -1387,6 +1387,10 @@ export interface PremiumMarketingComponentProperties_ShopCoachmark {
      * @generated from protobuf field: string badge_text = 14
      */
     badgeText: string;
+    /**
+     * @generated from protobuf field: uint32 version = 15
+     */
+    version: number;
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction
@@ -3525,7 +3529,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_MOBILE_MARKDOWN_FORMAT_MENU_COACHMARK = 868;
      */
-    MOBILE_MARKDOWN_FORMAT_MENU_COACHMARK = 868
+    MOBILE_MARKDOWN_FORMAT_MENU_COACHMARK = 868,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_COLLECTIBLES_SHOP_ENTRY_MARKETING_COACHMARK = 869;
+     */
+    COLLECTIBLES_SHOP_ENTRY_MARKETING_COACHMARK = 869
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
@@ -7200,7 +7208,8 @@ class PremiumMarketingComponentProperties_ShopCoachmark$Type extends MessageType
             { no: 11, name: "header", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 12, name: "body", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 13, name: "button_label", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 14, name: "badge_text", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+            { no: 14, name: "badge_text", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 15, name: "version", kind: "scalar", T: 13 /*ScalarType.UINT32*/ }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_ShopCoachmark>): PremiumMarketingComponentProperties_ShopCoachmark {
@@ -7213,6 +7222,7 @@ class PremiumMarketingComponentProperties_ShopCoachmark$Type extends MessageType
         message.body = "";
         message.buttonLabel = "";
         message.badgeText = "";
+        message.version = 0;
         if (value !== undefined)
             reflectionMergePartial<PremiumMarketingComponentProperties_ShopCoachmark>(this, message, value);
         return message;
@@ -7263,6 +7273,9 @@ class PremiumMarketingComponentProperties_ShopCoachmark$Type extends MessageType
                     break;
                 case /* string badge_text */ 14:
                     message.badgeText = reader.string();
+                    break;
+                case /* uint32 version */ 15:
+                    message.version = reader.uint32();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -7318,6 +7331,9 @@ class PremiumMarketingComponentProperties_ShopCoachmark$Type extends MessageType
         /* string badge_text = 14; */
         if (message.badgeText !== "")
             writer.tag(14, WireType.LengthDelimited).string(message.badgeText);
+        /* uint32 version = 15; */
+        if (message.version !== 0)
+            writer.tag(15, WireType.Varint).uint32(message.version);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
