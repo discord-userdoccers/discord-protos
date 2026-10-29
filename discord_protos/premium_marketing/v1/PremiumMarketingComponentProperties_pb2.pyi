@@ -592,6 +592,8 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_DEFAULT_EMOJIS_PACKS_DISCOVERY_DOT: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 867
         DISMISSIBLE_CONTENT_MOBILE_MARKDOWN_FORMAT_MENU_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 868
         DISMISSIBLE_CONTENT_COLLECTIBLES_SHOP_ENTRY_MARKETING_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 869
+        DISMISSIBLE_CONTENT_SOUNDBOARD_NEW_SOUNDS_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 870
+        DISMISSIBLE_CONTENT_NITRO_BADGE_UNHIDDEN_NOTICE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 871
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_UNSPECIFIED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1114,6 +1116,8 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_DEFAULT_EMOJIS_PACKS_DISCOVERY_DOT: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 867
     DISMISSIBLE_CONTENT_MOBILE_MARKDOWN_FORMAT_MENU_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 868
     DISMISSIBLE_CONTENT_COLLECTIBLES_SHOP_ENTRY_MARKETING_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 869
+    DISMISSIBLE_CONTENT_SOUNDBOARD_NEW_SOUNDS_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 870
+    DISMISSIBLE_CONTENT_NITRO_BADGE_UNHIDDEN_NOTICE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 871
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)

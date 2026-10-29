@@ -3533,7 +3533,15 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_COLLECTIBLES_SHOP_ENTRY_MARKETING_COACHMARK = 869;
      */
-    COLLECTIBLES_SHOP_ENTRY_MARKETING_COACHMARK = 869
+    COLLECTIBLES_SHOP_ENTRY_MARKETING_COACHMARK = 869,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_SOUNDBOARD_NEW_SOUNDS_BADGE = 870;
+     */
+    SOUNDBOARD_NEW_SOUNDS_BADGE = 870,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_NITRO_BADGE_UNHIDDEN_NOTICE = 871;
+     */
+    NITRO_BADGE_UNHIDDEN_NOTICE = 871
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
