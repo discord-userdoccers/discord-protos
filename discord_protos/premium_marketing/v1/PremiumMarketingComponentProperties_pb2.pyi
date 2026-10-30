@@ -1170,6 +1170,21 @@ class PremiumMarketingComponentProperties(_message.Message):
     SHOP_COACHMARK_DISPLAY_TYPE_LG_TILE: PremiumMarketingComponentProperties.ShopCoachmarkDisplayType.ValueType  # 3
     SHOP_COACHMARK_DISPLAY_TYPE_VIDEO_TILE: PremiumMarketingComponentProperties.ShopCoachmarkDisplayType.ValueType  # 4
 
+    class _NitroPerkCardPlacement:
+        ValueType = _typing.NewType("ValueType", _builtins.int)
+        V: _TypeAlias = ValueType  # noqa: Y015
+
+    class _NitroPerkCardPlacementEnumTypeWrapper(_enum_type_wrapper._EnumTypeWrapper[PremiumMarketingComponentProperties._NitroPerkCardPlacement.ValueType], _builtins.type):
+        DESCRIPTOR: _descriptor.EnumDescriptor
+        NITRO_PERK_CARD_PLACEMENT_UNSPECIFIED: PremiumMarketingComponentProperties._NitroPerkCardPlacement.ValueType  # 0
+        NITRO_PERK_CARD_PLACEMENT_MARKETING_PAGE: PremiumMarketingComponentProperties._NitroPerkCardPlacement.ValueType  # 1
+        NITRO_PERK_CARD_PLACEMENT_NITRO_HOME: PremiumMarketingComponentProperties._NitroPerkCardPlacement.ValueType  # 2
+
+    class NitroPerkCardPlacement(_NitroPerkCardPlacement, metaclass=_NitroPerkCardPlacementEnumTypeWrapper): ...
+    NITRO_PERK_CARD_PLACEMENT_UNSPECIFIED: PremiumMarketingComponentProperties.NitroPerkCardPlacement.ValueType  # 0
+    NITRO_PERK_CARD_PLACEMENT_MARKETING_PAGE: PremiumMarketingComponentProperties.NitroPerkCardPlacement.ValueType  # 1
+    NITRO_PERK_CARD_PLACEMENT_NITRO_HOME: PremiumMarketingComponentProperties.NitroPerkCardPlacement.ValueType  # 2
+
     @_typing.final
     class LocalizedString(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
@@ -2575,6 +2590,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         CTA_FIELD_FIELD_NUMBER: _builtins.int
         GRADIENT_FIELD_FIELD_NUMBER: _builtins.int
         SELECT_FIELD_FIELD_NUMBER: _builtins.int
+        MULTI_SELECT_FIELD_FIELD_NUMBER: _builtins.int
         deprecated_field: _builtins.str
         plain_text_field: _builtins.str
         checkbox_field: _builtins.bool
@@ -2592,6 +2608,8 @@ class PremiumMarketingComponentProperties(_message.Message):
         def cta_field(self) -> Global___PremiumMarketingComponentProperties.CTAButton: ...
         @_builtins.property
         def gradient_field(self) -> Global___PremiumMarketingComponentProperties.Gradient: ...
+        @_builtins.property
+        def multi_select_field(self) -> _containers.RepeatedScalarFieldContainer[Global___PremiumMarketingComponentProperties.AdminEditorTestSelectOption.ValueType]: ...
         def __init__(
             self,
             *,
@@ -2606,10 +2624,11 @@ class PremiumMarketingComponentProperties(_message.Message):
             cta_field: Global___PremiumMarketingComponentProperties.CTAButton | None = ...,
             gradient_field: Global___PremiumMarketingComponentProperties.Gradient | None = ...,
             select_field: Global___PremiumMarketingComponentProperties.AdminEditorTestSelectOption.ValueType = ...,
+            multi_select_field: _abc.Iterable[Global___PremiumMarketingComponentProperties.AdminEditorTestSelectOption.ValueType] | None = ...,
         ) -> None: ...
         _HasFieldArgType: _TypeAlias = _typing.Literal["_cta_field", b"_cta_field", "_gradient_field", b"_gradient_field", "_help_article_field", b"_help_article_field", "_localized_text_field", b"_localized_text_field", "_textarea_field", b"_textarea_field", "_themed_asset_field", b"_themed_asset_field", "cta_field", b"cta_field", "gradient_field", b"gradient_field", "help_article_field", b"help_article_field", "localized_text_field", b"localized_text_field", "textarea_field", b"textarea_field", "themed_asset_field", b"themed_asset_field"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_cta_field", b"_cta_field", "_gradient_field", b"_gradient_field", "_help_article_field", b"_help_article_field", "_localized_text_field", b"_localized_text_field", "_textarea_field", b"_textarea_field", "_themed_asset_field", b"_themed_asset_field", "asset_field", b"asset_field", "checkbox_field", b"checkbox_field", "cta_field", b"cta_field", "deprecated_field", b"deprecated_field", "gradient_field", b"gradient_field", "help_article_field", b"help_article_field", "localized_text_field", b"localized_text_field", "plain_text_field", b"plain_text_field", "select_field", b"select_field", "textarea_field", b"textarea_field", "themed_asset_field", b"themed_asset_field"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_cta_field", b"_cta_field", "_gradient_field", b"_gradient_field", "_help_article_field", b"_help_article_field", "_localized_text_field", b"_localized_text_field", "_textarea_field", b"_textarea_field", "_themed_asset_field", b"_themed_asset_field", "asset_field", b"asset_field", "checkbox_field", b"checkbox_field", "cta_field", b"cta_field", "deprecated_field", b"deprecated_field", "gradient_field", b"gradient_field", "help_article_field", b"help_article_field", "localized_text_field", b"localized_text_field", "multi_select_field", b"multi_select_field", "plain_text_field", b"plain_text_field", "select_field", b"select_field", "textarea_field", b"textarea_field", "themed_asset_field", b"themed_asset_field"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__cta_field: _TypeAlias = _typing.Literal["cta_field"]  # noqa: Y015
         _WhichOneofArgType__cta_field: _TypeAlias = _typing.Literal["_cta_field", b"_cta_field"]  # noqa: Y015
@@ -3087,6 +3106,77 @@ class PremiumMarketingComponentProperties(_message.Message):
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__hover_background) -> _WhichOneofReturnType__hover_background | None: ...
 
+    @_typing.final
+    class NitroPerkCard(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        HEADER_LOCALIZED_FIELD_NUMBER: _builtins.int
+        HEADER_FIELD_NUMBER: _builtins.int
+        DESCRIPTION_LOCALIZED_FIELD_NUMBER: _builtins.int
+        DESCRIPTION_FIELD_NUMBER: _builtins.int
+        BUTTON_FIELD_NUMBER: _builtins.int
+        BACKGROUND_FIELD_NUMBER: _builtins.int
+        FOREGROUND_FIELD_NUMBER: _builtins.int
+        THIRD_PARTY_LOGO_FIELD_NUMBER: _builtins.int
+        PLACEMENTS_FIELD_NUMBER: _builtins.int
+        header: _builtins.str
+        description: _builtins.str
+        @_builtins.property
+        def header_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
+        @_builtins.property
+        def description_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
+        @_builtins.property
+        def button(self) -> Global___PremiumMarketingComponentProperties.CTAButton: ...
+        @_builtins.property
+        def background(self) -> Global___PremiumMarketingComponentProperties.ThemeAwareAsset: ...
+        @_builtins.property
+        def foreground(self) -> Global___PremiumMarketingComponentProperties.ThemeAwareAsset: ...
+        @_builtins.property
+        def third_party_logo(self) -> Global___PremiumMarketingComponentProperties.ThemeAwareAsset: ...
+        @_builtins.property
+        def placements(self) -> _containers.RepeatedScalarFieldContainer[Global___PremiumMarketingComponentProperties.NitroPerkCardPlacement.ValueType]: ...
+        def __init__(
+            self,
+            *,
+            header_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
+            header: _builtins.str = ...,
+            description_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
+            description: _builtins.str = ...,
+            button: Global___PremiumMarketingComponentProperties.CTAButton | None = ...,
+            background: Global___PremiumMarketingComponentProperties.ThemeAwareAsset | None = ...,
+            foreground: Global___PremiumMarketingComponentProperties.ThemeAwareAsset | None = ...,
+            third_party_logo: Global___PremiumMarketingComponentProperties.ThemeAwareAsset | None = ...,
+            placements: _abc.Iterable[Global___PremiumMarketingComponentProperties.NitroPerkCardPlacement.ValueType] | None = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_background", b"_background", "_button", b"_button", "_description_localized", b"_description_localized", "_foreground", b"_foreground", "_header_localized", b"_header_localized", "_third_party_logo", b"_third_party_logo", "background", b"background", "button", b"button", "description_localized", b"description_localized", "foreground", b"foreground", "header_localized", b"header_localized", "third_party_logo", b"third_party_logo"]  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_background", b"_background", "_button", b"_button", "_description_localized", b"_description_localized", "_foreground", b"_foreground", "_header_localized", b"_header_localized", "_third_party_logo", b"_third_party_logo", "background", b"background", "button", b"button", "description", b"description", "description_localized", b"description_localized", "foreground", b"foreground", "header", b"header", "header_localized", b"header_localized", "placements", b"placements", "third_party_logo", b"third_party_logo"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        _WhichOneofReturnType__background: _TypeAlias = _typing.Literal["background"]  # noqa: Y015
+        _WhichOneofArgType__background: _TypeAlias = _typing.Literal["_background", b"_background"]  # noqa: Y015
+        _WhichOneofReturnType__button: _TypeAlias = _typing.Literal["button"]  # noqa: Y015
+        _WhichOneofArgType__button: _TypeAlias = _typing.Literal["_button", b"_button"]  # noqa: Y015
+        _WhichOneofReturnType__description_localized: _TypeAlias = _typing.Literal["description_localized"]  # noqa: Y015
+        _WhichOneofArgType__description_localized: _TypeAlias = _typing.Literal["_description_localized", b"_description_localized"]  # noqa: Y015
+        _WhichOneofReturnType__foreground: _TypeAlias = _typing.Literal["foreground"]  # noqa: Y015
+        _WhichOneofArgType__foreground: _TypeAlias = _typing.Literal["_foreground", b"_foreground"]  # noqa: Y015
+        _WhichOneofReturnType__header_localized: _TypeAlias = _typing.Literal["header_localized"]  # noqa: Y015
+        _WhichOneofArgType__header_localized: _TypeAlias = _typing.Literal["_header_localized", b"_header_localized"]  # noqa: Y015
+        _WhichOneofReturnType__third_party_logo: _TypeAlias = _typing.Literal["third_party_logo"]  # noqa: Y015
+        _WhichOneofArgType__third_party_logo: _TypeAlias = _typing.Literal["_third_party_logo", b"_third_party_logo"]  # noqa: Y015
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__background) -> _WhichOneofReturnType__background | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__button) -> _WhichOneofReturnType__button | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__description_localized) -> _WhichOneofReturnType__description_localized | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__foreground) -> _WhichOneofReturnType__foreground | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__header_localized) -> _WhichOneofReturnType__header_localized | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__third_party_logo) -> _WhichOneofReturnType__third_party_logo | None: ...
+
     CONTENT_IDENTIFIER_FIELD_NUMBER: _builtins.int
     IS_DEFAULT_BASE_FIELD_NUMBER: _builtins.int
     PLACEHOLDER_FIELD_NUMBER: _builtins.int
@@ -3119,6 +3209,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     OUTBOUND_PROMOTION_POPOVER_FIELD_NUMBER: _builtins.int
     OUTBOUND_PROMOTION_CLAIM_MODAL_CARD_FIELD_NUMBER: _builtins.int
     SHOP_COACHMARK_FIELD_NUMBER: _builtins.int
+    NITRO_PERK_CARD_FIELD_NUMBER: _builtins.int
     content_identifier: _builtins.str
     is_default_base: _builtins.bool
     placeholder: _builtins.str
@@ -3180,6 +3271,8 @@ class PremiumMarketingComponentProperties(_message.Message):
     def outbound_promotion_claim_modal_card(self) -> Global___PremiumMarketingComponentProperties.OutboundPromotionClaimModalCard: ...
     @_builtins.property
     def shop_coachmark(self) -> Global___PremiumMarketingComponentProperties.ShopCoachmark: ...
+    @_builtins.property
+    def nitro_perk_card(self) -> Global___PremiumMarketingComponentProperties.NitroPerkCard: ...
     def __init__(
         self,
         *,
@@ -3215,12 +3308,13 @@ class PremiumMarketingComponentProperties(_message.Message):
         outbound_promotion_popover: Global___PremiumMarketingComponentProperties.OutboundPromotionPopover | None = ...,
         outbound_promotion_claim_modal_card: Global___PremiumMarketingComponentProperties.OutboundPromotionClaimModalCard | None = ...,
         shop_coachmark: Global___PremiumMarketingComponentProperties.ShopCoachmark | None = ...,
+        nitro_perk_card: Global___PremiumMarketingComponentProperties.NitroPerkCard | None = ...,
     ) -> None: ...
-    _HasFieldArgType: _TypeAlias = _typing.Literal["admin_editor_test_component", b"admin_editor_test_component", "announcement_modal_variant_1", b"announcement_modal_variant_1", "billing_settings_banner", b"billing_settings_banner", "billing_settings_nitro_gift_banner", b"billing_settings_nitro_gift_banner", "gift_customization_banner", b"gift_customization_banner", "gift_icon", b"gift_icon", "gift_icon_coachmark", b"gift_icon_coachmark", "gift_plan_selection_card_banner", b"gift_plan_selection_card_banner", "gift_reminder_coachmark", b"gift_reminder_coachmark", "gift_reminder_nagbar", b"gift_reminder_nagbar", "guild_boost_checkout_banner", b"guild_boost_checkout_banner", "guild_boost_marketing_page_banner", b"guild_boost_marketing_page_banner", "guild_boost_tab_banner", b"guild_boost_tab_banner", "guild_header_coachmark", b"guild_header_coachmark", "marketing_page_banner", b"marketing_page_banner", "marketing_page_rewards_bento_box", b"marketing_page_rewards_bento_box", "mobile_bottom_sheet", b"mobile_bottom_sheet", "nagbar", b"nagbar", "outbound_promotion_claim_modal_card", b"outbound_promotion_claim_modal_card", "outbound_promotion_popover", b"outbound_promotion_popover", "payment_modal_banner", b"payment_modal_banner", "placeholder", b"placeholder", "plan_select_card_banner", b"plan_select_card_banner", "premium_home_rewards_perk_card", b"premium_home_rewards_perk_card", "premium_tab", b"premium_tab", "premium_tab_popover", b"premium_tab_popover", "premium_tab_tooltip", b"premium_tab_tooltip", "properties", b"properties", "shop_coachmark", b"shop_coachmark", "shop_nagbar", b"shop_nagbar", "shop_tab_tooltip", b"shop_tab_tooltip"]  # noqa: Y015
+    _HasFieldArgType: _TypeAlias = _typing.Literal["admin_editor_test_component", b"admin_editor_test_component", "announcement_modal_variant_1", b"announcement_modal_variant_1", "billing_settings_banner", b"billing_settings_banner", "billing_settings_nitro_gift_banner", b"billing_settings_nitro_gift_banner", "gift_customization_banner", b"gift_customization_banner", "gift_icon", b"gift_icon", "gift_icon_coachmark", b"gift_icon_coachmark", "gift_plan_selection_card_banner", b"gift_plan_selection_card_banner", "gift_reminder_coachmark", b"gift_reminder_coachmark", "gift_reminder_nagbar", b"gift_reminder_nagbar", "guild_boost_checkout_banner", b"guild_boost_checkout_banner", "guild_boost_marketing_page_banner", b"guild_boost_marketing_page_banner", "guild_boost_tab_banner", b"guild_boost_tab_banner", "guild_header_coachmark", b"guild_header_coachmark", "marketing_page_banner", b"marketing_page_banner", "marketing_page_rewards_bento_box", b"marketing_page_rewards_bento_box", "mobile_bottom_sheet", b"mobile_bottom_sheet", "nagbar", b"nagbar", "nitro_perk_card", b"nitro_perk_card", "outbound_promotion_claim_modal_card", b"outbound_promotion_claim_modal_card", "outbound_promotion_popover", b"outbound_promotion_popover", "payment_modal_banner", b"payment_modal_banner", "placeholder", b"placeholder", "plan_select_card_banner", b"plan_select_card_banner", "premium_home_rewards_perk_card", b"premium_home_rewards_perk_card", "premium_tab", b"premium_tab", "premium_tab_popover", b"premium_tab_popover", "premium_tab_tooltip", b"premium_tab_tooltip", "properties", b"properties", "shop_coachmark", b"shop_coachmark", "shop_nagbar", b"shop_nagbar", "shop_tab_tooltip", b"shop_tab_tooltip"]  # noqa: Y015
     def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["admin_editor_test_component", b"admin_editor_test_component", "announcement_modal_variant_1", b"announcement_modal_variant_1", "billing_settings_banner", b"billing_settings_banner", "billing_settings_nitro_gift_banner", b"billing_settings_nitro_gift_banner", "content_identifier", b"content_identifier", "gift_customization_banner", b"gift_customization_banner", "gift_icon", b"gift_icon", "gift_icon_coachmark", b"gift_icon_coachmark", "gift_plan_selection_card_banner", b"gift_plan_selection_card_banner", "gift_reminder_coachmark", b"gift_reminder_coachmark", "gift_reminder_nagbar", b"gift_reminder_nagbar", "guild_boost_checkout_banner", b"guild_boost_checkout_banner", "guild_boost_marketing_page_banner", b"guild_boost_marketing_page_banner", "guild_boost_tab_banner", b"guild_boost_tab_banner", "guild_header_coachmark", b"guild_header_coachmark", "is_default_base", b"is_default_base", "marketing_page_banner", b"marketing_page_banner", "marketing_page_rewards_bento_box", b"marketing_page_rewards_bento_box", "mobile_bottom_sheet", b"mobile_bottom_sheet", "nagbar", b"nagbar", "outbound_promotion_claim_modal_card", b"outbound_promotion_claim_modal_card", "outbound_promotion_popover", b"outbound_promotion_popover", "payment_modal_banner", b"payment_modal_banner", "placeholder", b"placeholder", "plan_select_card_banner", b"plan_select_card_banner", "premium_home_rewards_perk_card", b"premium_home_rewards_perk_card", "premium_tab", b"premium_tab", "premium_tab_popover", b"premium_tab_popover", "premium_tab_tooltip", b"premium_tab_tooltip", "properties", b"properties", "shop_coachmark", b"shop_coachmark", "shop_nagbar", b"shop_nagbar", "shop_tab_tooltip", b"shop_tab_tooltip"]  # noqa: Y015
+    _ClearFieldArgType: _TypeAlias = _typing.Literal["admin_editor_test_component", b"admin_editor_test_component", "announcement_modal_variant_1", b"announcement_modal_variant_1", "billing_settings_banner", b"billing_settings_banner", "billing_settings_nitro_gift_banner", b"billing_settings_nitro_gift_banner", "content_identifier", b"content_identifier", "gift_customization_banner", b"gift_customization_banner", "gift_icon", b"gift_icon", "gift_icon_coachmark", b"gift_icon_coachmark", "gift_plan_selection_card_banner", b"gift_plan_selection_card_banner", "gift_reminder_coachmark", b"gift_reminder_coachmark", "gift_reminder_nagbar", b"gift_reminder_nagbar", "guild_boost_checkout_banner", b"guild_boost_checkout_banner", "guild_boost_marketing_page_banner", b"guild_boost_marketing_page_banner", "guild_boost_tab_banner", b"guild_boost_tab_banner", "guild_header_coachmark", b"guild_header_coachmark", "is_default_base", b"is_default_base", "marketing_page_banner", b"marketing_page_banner", "marketing_page_rewards_bento_box", b"marketing_page_rewards_bento_box", "mobile_bottom_sheet", b"mobile_bottom_sheet", "nagbar", b"nagbar", "nitro_perk_card", b"nitro_perk_card", "outbound_promotion_claim_modal_card", b"outbound_promotion_claim_modal_card", "outbound_promotion_popover", b"outbound_promotion_popover", "payment_modal_banner", b"payment_modal_banner", "placeholder", b"placeholder", "plan_select_card_banner", b"plan_select_card_banner", "premium_home_rewards_perk_card", b"premium_home_rewards_perk_card", "premium_tab", b"premium_tab", "premium_tab_popover", b"premium_tab_popover", "premium_tab_tooltip", b"premium_tab_tooltip", "properties", b"properties", "shop_coachmark", b"shop_coachmark", "shop_nagbar", b"shop_nagbar", "shop_tab_tooltip", b"shop_tab_tooltip"]  # noqa: Y015
     def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-    _WhichOneofReturnType_properties: _TypeAlias = _typing.Literal["placeholder", "announcement_modal_variant_1", "premium_tab", "marketing_page_banner", "payment_modal_banner", "mobile_bottom_sheet", "gift_icon", "gift_icon_coachmark", "gift_plan_selection_card_banner", "gift_customization_banner", "billing_settings_nitro_gift_banner", "gift_reminder_nagbar", "gift_reminder_coachmark", "premium_tab_tooltip", "premium_tab_popover", "nagbar", "plan_select_card_banner", "billing_settings_banner", "shop_nagbar", "admin_editor_test_component", "guild_header_coachmark", "guild_boost_checkout_banner", "guild_boost_marketing_page_banner", "guild_boost_tab_banner", "shop_tab_tooltip", "premium_home_rewards_perk_card", "marketing_page_rewards_bento_box", "outbound_promotion_popover", "outbound_promotion_claim_modal_card", "shop_coachmark"]  # noqa: Y015
+    _WhichOneofReturnType_properties: _TypeAlias = _typing.Literal["placeholder", "announcement_modal_variant_1", "premium_tab", "marketing_page_banner", "payment_modal_banner", "mobile_bottom_sheet", "gift_icon", "gift_icon_coachmark", "gift_plan_selection_card_banner", "gift_customization_banner", "billing_settings_nitro_gift_banner", "gift_reminder_nagbar", "gift_reminder_coachmark", "premium_tab_tooltip", "premium_tab_popover", "nagbar", "plan_select_card_banner", "billing_settings_banner", "shop_nagbar", "admin_editor_test_component", "guild_header_coachmark", "guild_boost_checkout_banner", "guild_boost_marketing_page_banner", "guild_boost_tab_banner", "shop_tab_tooltip", "premium_home_rewards_perk_card", "marketing_page_rewards_bento_box", "outbound_promotion_popover", "outbound_promotion_claim_modal_card", "shop_coachmark", "nitro_perk_card"]  # noqa: Y015
     _WhichOneofArgType_properties: _TypeAlias = _typing.Literal["properties", b"properties"]  # noqa: Y015
     def WhichOneof(self, oneof_group: _WhichOneofArgType_properties) -> _WhichOneofReturnType_properties | None: ...
 

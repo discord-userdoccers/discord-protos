@@ -915,6 +915,7 @@ message UserData {
     PremiumSource premium_source = 1;
     PremiumSubscriptionType premium_subscription_type = 2;
     PremiumSubscriptionGroupRole premium_subscription_group_role = 3;
+    optional google.protobuf.Timestamp premium_trial_ends_at = 4;
   }
 
   enum DisplayNameFont {

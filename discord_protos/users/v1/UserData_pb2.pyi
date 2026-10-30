@@ -2395,21 +2395,27 @@ class UserData(_message.Message):
         PREMIUM_SOURCE_FIELD_NUMBER: _builtins.int
         PREMIUM_SUBSCRIPTION_TYPE_FIELD_NUMBER: _builtins.int
         PREMIUM_SUBSCRIPTION_GROUP_ROLE_FIELD_NUMBER: _builtins.int
+        PREMIUM_TRIAL_ENDS_AT_FIELD_NUMBER: _builtins.int
         premium_source: Global___UserData.PremiumSource.ValueType
         premium_subscription_type: Global___UserData.PremiumSubscriptionType.ValueType
         premium_subscription_group_role: Global___UserData.PremiumSubscriptionGroupRole.ValueType
+        @_builtins.property
+        def premium_trial_ends_at(self) -> _timestamp_pb2.Timestamp: ...
         def __init__(
             self,
             *,
             premium_source: Global___UserData.PremiumSource.ValueType = ...,
             premium_subscription_type: Global___UserData.PremiumSubscriptionType.ValueType = ...,
             premium_subscription_group_role: Global___UserData.PremiumSubscriptionGroupRole.ValueType = ...,
+            premium_trial_ends_at: _timestamp_pb2.Timestamp | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_premium_trial_ends_at", b"_premium_trial_ends_at", "premium_trial_ends_at", b"premium_trial_ends_at"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["premium_source", b"premium_source", "premium_subscription_group_role", b"premium_subscription_group_role", "premium_subscription_type", b"premium_subscription_type"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_premium_trial_ends_at", b"_premium_trial_ends_at", "premium_source", b"premium_source", "premium_subscription_group_role", b"premium_subscription_group_role", "premium_subscription_type", b"premium_subscription_type", "premium_trial_ends_at", b"premium_trial_ends_at"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-        def WhichOneof(self, oneof_group: _Never) -> None: ...
+        _WhichOneofReturnType__premium_trial_ends_at: _TypeAlias = _typing.Literal["premium_trial_ends_at"]  # noqa: Y015
+        _WhichOneofArgType__premium_trial_ends_at: _TypeAlias = _typing.Literal["_premium_trial_ends_at", b"_premium_trial_ends_at"]  # noqa: Y015
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__premium_trial_ends_at) -> _WhichOneofReturnType__premium_trial_ends_at | None: ...
 
     @_typing.final
     class DisplayNameStyles(_message.Message):

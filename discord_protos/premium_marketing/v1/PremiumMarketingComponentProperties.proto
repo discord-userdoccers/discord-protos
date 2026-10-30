@@ -834,6 +834,7 @@ message PremiumMarketingComponentProperties {
     optional CTAButton cta_field = 9;
     optional Gradient gradient_field = 10;
     AdminEditorTestSelectOption select_field = 11;
+    repeated AdminEditorTestSelectOption multi_select_field = 12;
   }
 
   message GuildHeaderCoachmark {
@@ -929,6 +930,24 @@ message PremiumMarketingComponentProperties {
     uint32 version = 15;
   }
 
+  enum NitroPerkCardPlacement {
+    NITRO_PERK_CARD_PLACEMENT_UNSPECIFIED = 0;
+    NITRO_PERK_CARD_PLACEMENT_MARKETING_PAGE = 1;
+    NITRO_PERK_CARD_PLACEMENT_NITRO_HOME = 2;
+  }
+
+  message NitroPerkCard {
+    optional LocalizedString header_localized = 1;
+    string header = 2;
+    optional LocalizedString description_localized = 3;
+    string description = 4;
+    optional CTAButton button = 5;
+    optional ThemeAwareAsset background = 6;
+    optional ThemeAwareAsset foreground = 7;
+    optional ThemeAwareAsset third_party_logo = 8;
+    repeated NitroPerkCardPlacement placements = 9;
+  }
+
   string content_identifier = 3;
   bool is_default_base = 18;
   oneof properties {
@@ -962,6 +981,7 @@ message PremiumMarketingComponentProperties {
     OutboundPromotionPopover outbound_promotion_popover = 30;
     OutboundPromotionClaimModalCard outbound_promotion_claim_modal_card = 31;
     ShopCoachmark shop_coachmark = 32;
+    NitroPerkCard nitro_perk_card = 33;
   }
 
 }

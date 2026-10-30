@@ -370,6 +370,10 @@ export interface UserData_PremiumState {
      * @generated from protobuf field: discord_protos.users.v1.UserData.PremiumSubscriptionGroupRole premium_subscription_group_role = 3
      */
     premiumSubscriptionGroupRole: UserData_PremiumSubscriptionGroupRole;
+    /**
+     * @generated from protobuf field: optional google.protobuf.Timestamp premium_trial_ends_at = 4
+     */
+    premiumTrialEndsAt?: Timestamp;
 }
 /**
  * @generated from protobuf message discord_protos.users.v1.UserData.DisplayNameStyles
@@ -5603,7 +5607,8 @@ class UserData_PremiumState$Type extends MessageType<UserData_PremiumState> {
         super("discord_protos.users.v1.UserData.PremiumState", [
             { no: 1, name: "premium_source", kind: "enum", T: () => ["discord_protos.users.v1.UserData.PremiumSource", UserData_PremiumSource, "PREMIUM_SOURCE_"] },
             { no: 2, name: "premium_subscription_type", kind: "enum", T: () => ["discord_protos.users.v1.UserData.PremiumSubscriptionType", UserData_PremiumSubscriptionType, "PREMIUM_SUBSCRIPTION_TYPE_"] },
-            { no: 3, name: "premium_subscription_group_role", kind: "enum", T: () => ["discord_protos.users.v1.UserData.PremiumSubscriptionGroupRole", UserData_PremiumSubscriptionGroupRole, "PREMIUM_SUBSCRIPTION_GROUP_ROLE_"] }
+            { no: 3, name: "premium_subscription_group_role", kind: "enum", T: () => ["discord_protos.users.v1.UserData.PremiumSubscriptionGroupRole", UserData_PremiumSubscriptionGroupRole, "PREMIUM_SUBSCRIPTION_GROUP_ROLE_"] },
+            { no: 4, name: "premium_trial_ends_at", kind: "message", T: () => Timestamp }
         ]);
     }
     create(value?: PartialMessage<UserData_PremiumState>): UserData_PremiumState {
@@ -5629,6 +5634,9 @@ class UserData_PremiumState$Type extends MessageType<UserData_PremiumState> {
                 case /* discord_protos.users.v1.UserData.PremiumSubscriptionGroupRole premium_subscription_group_role */ 3:
                     message.premiumSubscriptionGroupRole = reader.int32();
                     break;
+                case /* optional google.protobuf.Timestamp premium_trial_ends_at */ 4:
+                    message.premiumTrialEndsAt = Timestamp.internalBinaryRead(reader, reader.uint32(), options, message.premiumTrialEndsAt);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -5650,6 +5658,9 @@ class UserData_PremiumState$Type extends MessageType<UserData_PremiumState> {
         /* discord_protos.users.v1.UserData.PremiumSubscriptionGroupRole premium_subscription_group_role = 3; */
         if (message.premiumSubscriptionGroupRole !== 0)
             writer.tag(3, WireType.Varint).int32(message.premiumSubscriptionGroupRole);
+        /* optional google.protobuf.Timestamp premium_trial_ends_at = 4; */
+        if (message.premiumTrialEndsAt)
+            Timestamp.internalBinaryWrite(message.premiumTrialEndsAt, writer.tag(4, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
