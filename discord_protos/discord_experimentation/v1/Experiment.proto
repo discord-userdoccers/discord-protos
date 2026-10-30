@@ -310,6 +310,11 @@ message Experiment {
     repeated string iso_countries = 1 [packed = false];
   }
 
+  message ClientDesignId {
+    option (discord_protos.discord_experimentation.v1.filter_category) = FILTER_CATEGORY_CLIENT;
+    repeated int32 design_ids = 1;
+  }
+
   message Filter {
     oneof filter {
       ClientPlatform client_version = 2;
@@ -340,6 +345,7 @@ message Experiment {
       UserIP user_ip = 28;
       InstallationIds installation_ids = 29;
       UserStoreCountry user_store_country = 31;
+      ClientDesignId client_design_id = 32;
     }
     bool negate = 30;
   }
@@ -484,6 +490,24 @@ message Experiment {
     optional RolloutPlan rollout_plan = 2;
   }
 
+  enum Kind {
+    KIND_CHANGE_SOURCE_UNSPECIFIED = 0;
+    KIND_MANUAL = 1;
+    KIND_CAP_PROPOSED = 2;
+    KIND_CAP_PROPOSED_WITH_MODIFICATIONS = 3;
+    KIND_CAP_AUTOMATED = 4;
+  }
+
+  message ChangeSource {
+    Kind kind = 1;
+    string proposal_id = 2;
+    string agent_product = 3;
+    string conversation_id = 4;
+    string skill = 5;
+    string skill_version = 6;
+    string conversation_type = 7;
+  }
+
   fixed64 id = 1;
   string name = 2;
   optional google.protobuf.Timestamp created_at = 3;
@@ -531,4 +555,5 @@ message Experiment {
   optional LifecyclePlan lifecycle_plan = 48;
   bool is_feature_flag = 49;
   bool is_official_holdout = 50;
+  optional ChangeSource change_source = 51;
 }

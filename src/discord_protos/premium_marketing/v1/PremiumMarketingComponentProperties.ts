@@ -3541,7 +3541,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_NITRO_BADGE_UNHIDDEN_NOTICE = 871;
      */
-    NITRO_BADGE_UNHIDDEN_NOTICE = 871
+    NITRO_BADGE_UNHIDDEN_NOTICE = 871,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_DEFAULT_NITRO_SOUNDS_COACHMARK = 872;
+     */
+    DEFAULT_NITRO_SOUNDS_COACHMARK = 872
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant

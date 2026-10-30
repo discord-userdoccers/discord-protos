@@ -322,6 +322,25 @@ class Experiment(_message.Message):
     STEP_STATUS_AWAITING_MANUAL_APPROVAL: Experiment.StepStatus.ValueType  # 3
     STEP_STATUS_COMPLETED: Experiment.StepStatus.ValueType  # 4
 
+    class _Kind:
+        ValueType = _typing.NewType("ValueType", _builtins.int)
+        V: _TypeAlias = ValueType  # noqa: Y015
+
+    class _KindEnumTypeWrapper(_enum_type_wrapper._EnumTypeWrapper[Experiment._Kind.ValueType], _builtins.type):
+        DESCRIPTOR: _descriptor.EnumDescriptor
+        KIND_CHANGE_SOURCE_UNSPECIFIED: Experiment._Kind.ValueType  # 0
+        KIND_MANUAL: Experiment._Kind.ValueType  # 1
+        KIND_CAP_PROPOSED: Experiment._Kind.ValueType  # 2
+        KIND_CAP_PROPOSED_WITH_MODIFICATIONS: Experiment._Kind.ValueType  # 3
+        KIND_CAP_AUTOMATED: Experiment._Kind.ValueType  # 4
+
+    class Kind(_Kind, metaclass=_KindEnumTypeWrapper): ...
+    KIND_CHANGE_SOURCE_UNSPECIFIED: Experiment.Kind.ValueType  # 0
+    KIND_MANUAL: Experiment.Kind.ValueType  # 1
+    KIND_CAP_PROPOSED: Experiment.Kind.ValueType  # 2
+    KIND_CAP_PROPOSED_WITH_MODIFICATIONS: Experiment.Kind.ValueType  # 3
+    KIND_CAP_AUTOMATED: Experiment.Kind.ValueType  # 4
+
     @_typing.final
     class Bucket(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
@@ -1351,6 +1370,24 @@ class Experiment(_message.Message):
         def WhichOneof(self, oneof_group: _Never) -> None: ...
 
     @_typing.final
+    class ClientDesignId(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        DESIGN_IDS_FIELD_NUMBER: _builtins.int
+        @_builtins.property
+        def design_ids(self) -> _containers.RepeatedScalarFieldContainer[_builtins.int]: ...
+        def __init__(
+            self,
+            *,
+            design_ids: _abc.Iterable[_builtins.int] | None = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["design_ids", b"design_ids"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
+
+    @_typing.final
     class Filter(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
 
@@ -1382,6 +1419,7 @@ class Experiment(_message.Message):
         USER_IP_FIELD_NUMBER: _builtins.int
         INSTALLATION_IDS_FIELD_NUMBER: _builtins.int
         USER_STORE_COUNTRY_FIELD_NUMBER: _builtins.int
+        CLIENT_DESIGN_ID_FIELD_NUMBER: _builtins.int
         NEGATE_FIELD_NUMBER: _builtins.int
         negate: _builtins.bool
         @_builtins.property
@@ -1440,6 +1478,8 @@ class Experiment(_message.Message):
         def installation_ids(self) -> Global___Experiment.InstallationIds: ...
         @_builtins.property
         def user_store_country(self) -> Global___Experiment.UserStoreCountry: ...
+        @_builtins.property
+        def client_design_id(self) -> Global___Experiment.ClientDesignId: ...
         def __init__(
             self,
             *,
@@ -1471,13 +1511,14 @@ class Experiment(_message.Message):
             user_ip: Global___Experiment.UserIP | None = ...,
             installation_ids: Global___Experiment.InstallationIds | None = ...,
             user_store_country: Global___Experiment.UserStoreCountry | None = ...,
+            client_design_id: Global___Experiment.ClientDesignId | None = ...,
             negate: _builtins.bool = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _typing.Literal["always", b"always", "bot", b"bot", "client_ip", b"client_ip", "client_locale", b"client_locale", "client_location", b"client_location", "client_os", b"client_os", "client_release_channel", b"client_release_channel", "client_system_locale", b"client_system_locale", "client_version", b"client_version", "filter", b"filter", "guild_has_feature", b"guild_has_feature", "guild_id_range", b"guild_id_range", "guild_ids", b"guild_ids", "guild_member_count_range", b"guild_member_count_range", "installation_ids", b"installation_ids", "staff", b"staff", "unit_id_in_experiment", b"unit_id_in_experiment", "unit_id_in_range_by_hash", b"unit_id_in_range_by_hash", "unit_id_matches_filter_snapshot", b"unit_id_matches_filter_snapshot", "user_age_range", b"user_age_range", "user_has_flag", b"user_has_flag", "user_id_range", b"user_id_range", "user_ids", b"user_ids", "user_in_guild", b"user_in_guild", "user_ip", b"user_ip", "user_locale", b"user_locale", "user_location", b"user_location", "user_premium_type", b"user_premium_type", "user_store_country", b"user_store_country"]  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["always", b"always", "bot", b"bot", "client_design_id", b"client_design_id", "client_ip", b"client_ip", "client_locale", b"client_locale", "client_location", b"client_location", "client_os", b"client_os", "client_release_channel", b"client_release_channel", "client_system_locale", b"client_system_locale", "client_version", b"client_version", "filter", b"filter", "guild_has_feature", b"guild_has_feature", "guild_id_range", b"guild_id_range", "guild_ids", b"guild_ids", "guild_member_count_range", b"guild_member_count_range", "installation_ids", b"installation_ids", "staff", b"staff", "unit_id_in_experiment", b"unit_id_in_experiment", "unit_id_in_range_by_hash", b"unit_id_in_range_by_hash", "unit_id_matches_filter_snapshot", b"unit_id_matches_filter_snapshot", "user_age_range", b"user_age_range", "user_has_flag", b"user_has_flag", "user_id_range", b"user_id_range", "user_ids", b"user_ids", "user_in_guild", b"user_in_guild", "user_ip", b"user_ip", "user_locale", b"user_locale", "user_location", b"user_location", "user_premium_type", b"user_premium_type", "user_store_country", b"user_store_country"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["always", b"always", "bot", b"bot", "client_ip", b"client_ip", "client_locale", b"client_locale", "client_location", b"client_location", "client_os", b"client_os", "client_release_channel", b"client_release_channel", "client_system_locale", b"client_system_locale", "client_version", b"client_version", "filter", b"filter", "guild_has_feature", b"guild_has_feature", "guild_id_range", b"guild_id_range", "guild_ids", b"guild_ids", "guild_member_count_range", b"guild_member_count_range", "installation_ids", b"installation_ids", "negate", b"negate", "staff", b"staff", "unit_id_in_experiment", b"unit_id_in_experiment", "unit_id_in_range_by_hash", b"unit_id_in_range_by_hash", "unit_id_matches_filter_snapshot", b"unit_id_matches_filter_snapshot", "user_age_range", b"user_age_range", "user_has_flag", b"user_has_flag", "user_id_range", b"user_id_range", "user_ids", b"user_ids", "user_in_guild", b"user_in_guild", "user_ip", b"user_ip", "user_locale", b"user_locale", "user_location", b"user_location", "user_premium_type", b"user_premium_type", "user_store_country", b"user_store_country"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["always", b"always", "bot", b"bot", "client_design_id", b"client_design_id", "client_ip", b"client_ip", "client_locale", b"client_locale", "client_location", b"client_location", "client_os", b"client_os", "client_release_channel", b"client_release_channel", "client_system_locale", b"client_system_locale", "client_version", b"client_version", "filter", b"filter", "guild_has_feature", b"guild_has_feature", "guild_id_range", b"guild_id_range", "guild_ids", b"guild_ids", "guild_member_count_range", b"guild_member_count_range", "installation_ids", b"installation_ids", "negate", b"negate", "staff", b"staff", "unit_id_in_experiment", b"unit_id_in_experiment", "unit_id_in_range_by_hash", b"unit_id_in_range_by_hash", "unit_id_matches_filter_snapshot", b"unit_id_matches_filter_snapshot", "user_age_range", b"user_age_range", "user_has_flag", b"user_has_flag", "user_id_range", b"user_id_range", "user_ids", b"user_ids", "user_in_guild", b"user_in_guild", "user_ip", b"user_ip", "user_locale", b"user_locale", "user_location", b"user_location", "user_premium_type", b"user_premium_type", "user_store_country", b"user_store_country"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-        _WhichOneofReturnType_filter: _TypeAlias = _typing.Literal["client_version", "client_os", "staff", "user_in_guild", "user_ids", "client_locale", "client_location", "client_ip", "user_locale", "bot", "user_age_range", "user_id_range", "user_has_flag", "unit_id_in_range_by_hash", "client_release_channel", "always", "client_system_locale", "unit_id_in_experiment", "user_premium_type", "unit_id_matches_filter_snapshot", "guild_ids", "guild_id_range", "guild_member_count_range", "guild_has_feature", "user_location", "user_ip", "installation_ids", "user_store_country"]  # noqa: Y015
+        _WhichOneofReturnType_filter: _TypeAlias = _typing.Literal["client_version", "client_os", "staff", "user_in_guild", "user_ids", "client_locale", "client_location", "client_ip", "user_locale", "bot", "user_age_range", "user_id_range", "user_has_flag", "unit_id_in_range_by_hash", "client_release_channel", "always", "client_system_locale", "unit_id_in_experiment", "user_premium_type", "unit_id_matches_filter_snapshot", "guild_ids", "guild_id_range", "guild_member_count_range", "guild_has_feature", "user_location", "user_ip", "installation_ids", "user_store_country", "client_design_id"]  # noqa: Y015
         _WhichOneofArgType_filter: _TypeAlias = _typing.Literal["filter", b"filter"]  # noqa: Y015
         def WhichOneof(self, oneof_group: _WhichOneofArgType_filter) -> _WhichOneofReturnType_filter | None: ...
 
@@ -1726,6 +1767,41 @@ class Experiment(_message.Message):
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__rollout_plan) -> _WhichOneofReturnType__rollout_plan | None: ...
 
+    @_typing.final
+    class ChangeSource(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        KIND_FIELD_NUMBER: _builtins.int
+        PROPOSAL_ID_FIELD_NUMBER: _builtins.int
+        AGENT_PRODUCT_FIELD_NUMBER: _builtins.int
+        CONVERSATION_ID_FIELD_NUMBER: _builtins.int
+        SKILL_FIELD_NUMBER: _builtins.int
+        SKILL_VERSION_FIELD_NUMBER: _builtins.int
+        CONVERSATION_TYPE_FIELD_NUMBER: _builtins.int
+        kind: Global___Experiment.Kind.ValueType
+        proposal_id: _builtins.str
+        agent_product: _builtins.str
+        conversation_id: _builtins.str
+        skill: _builtins.str
+        skill_version: _builtins.str
+        conversation_type: _builtins.str
+        def __init__(
+            self,
+            *,
+            kind: Global___Experiment.Kind.ValueType = ...,
+            proposal_id: _builtins.str = ...,
+            agent_product: _builtins.str = ...,
+            conversation_id: _builtins.str = ...,
+            skill: _builtins.str = ...,
+            skill_version: _builtins.str = ...,
+            conversation_type: _builtins.str = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["agent_product", b"agent_product", "conversation_id", b"conversation_id", "conversation_type", b"conversation_type", "kind", b"kind", "proposal_id", b"proposal_id", "skill", b"skill", "skill_version", b"skill_version"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
+
     ID_FIELD_NUMBER: _builtins.int
     NAME_FIELD_NUMBER: _builtins.int
     CREATED_AT_FIELD_NUMBER: _builtins.int
@@ -1773,6 +1849,7 @@ class Experiment(_message.Message):
     LIFECYCLE_PLAN_FIELD_NUMBER: _builtins.int
     IS_FEATURE_FLAG_FIELD_NUMBER: _builtins.int
     IS_OFFICIAL_HOLDOUT_FIELD_NUMBER: _builtins.int
+    CHANGE_SOURCE_FIELD_NUMBER: _builtins.int
     id: _builtins.int
     name: _builtins.str
     creator_id: _builtins.int
@@ -1838,6 +1915,8 @@ class Experiment(_message.Message):
     def number_line_settings(self) -> Global___Experiment.NumberLineSettings: ...
     @_builtins.property
     def lifecycle_plan(self) -> Global___Experiment.LifecyclePlan: ...
+    @_builtins.property
+    def change_source(self) -> Global___Experiment.ChangeSource: ...
     def __init__(
         self,
         *,
@@ -1888,13 +1967,16 @@ class Experiment(_message.Message):
         lifecycle_plan: Global___Experiment.LifecyclePlan | None = ...,
         is_feature_flag: _builtins.bool = ...,
         is_official_holdout: _builtins.bool = ...,
+        change_source: Global___Experiment.ChangeSource | None = ...,
     ) -> None: ...
-    _HasFieldArgType: _TypeAlias = _typing.Literal["_archive_at", b"_archive_at", "_created_at", b"_created_at", "_debug_config", b"_debug_config", "_dynamic_config_size_limit_override", b"_dynamic_config_size_limit_override", "_edited_at", b"_edited_at", "_expected_end_date", b"_expected_end_date", "_guild_experiment_version", b"_guild_experiment_version", "_hypothesis", b"_hypothesis", "_lifecycle_plan", b"_lifecycle_plan", "_number_line_settings", b"_number_line_settings", "_tech_spec_link", b"_tech_spec_link", "archive_at", b"archive_at", "created_at", b"created_at", "debug_config", b"debug_config", "dynamic_config_size_limit_override", b"dynamic_config_size_limit_override", "edited_at", b"edited_at", "expected_end_date", b"expected_end_date", "guild_experiment_version", b"guild_experiment_version", "hypothesis", b"hypothesis", "lifecycle_plan", b"lifecycle_plan", "number_line_settings", b"number_line_settings", "tech_spec_link", b"tech_spec_link"]  # noqa: Y015
+    _HasFieldArgType: _TypeAlias = _typing.Literal["_archive_at", b"_archive_at", "_change_source", b"_change_source", "_created_at", b"_created_at", "_debug_config", b"_debug_config", "_dynamic_config_size_limit_override", b"_dynamic_config_size_limit_override", "_edited_at", b"_edited_at", "_expected_end_date", b"_expected_end_date", "_guild_experiment_version", b"_guild_experiment_version", "_hypothesis", b"_hypothesis", "_lifecycle_plan", b"_lifecycle_plan", "_number_line_settings", b"_number_line_settings", "_tech_spec_link", b"_tech_spec_link", "archive_at", b"archive_at", "change_source", b"change_source", "created_at", b"created_at", "debug_config", b"debug_config", "dynamic_config_size_limit_override", b"dynamic_config_size_limit_override", "edited_at", b"edited_at", "expected_end_date", b"expected_end_date", "guild_experiment_version", b"guild_experiment_version", "hypothesis", b"hypothesis", "lifecycle_plan", b"lifecycle_plan", "number_line_settings", b"number_line_settings", "tech_spec_link", b"tech_spec_link"]  # noqa: Y015
     def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["_archive_at", b"_archive_at", "_created_at", b"_created_at", "_debug_config", b"_debug_config", "_dynamic_config_size_limit_override", b"_dynamic_config_size_limit_override", "_edited_at", b"_edited_at", "_expected_end_date", b"_expected_end_date", "_guild_experiment_version", b"_guild_experiment_version", "_hypothesis", b"_hypothesis", "_lifecycle_plan", b"_lifecycle_plan", "_number_line_settings", b"_number_line_settings", "_tech_spec_link", b"_tech_spec_link", "allocate_right_to_left", b"allocate_right_to_left", "archive_at", b"archive_at", "assignment_mode", b"assignment_mode", "cached_notification_channel_id", b"cached_notification_channel_id", "created_at", b"created_at", "creator_id", b"creator_id", "custom_unit_prefix", b"custom_unit_prefix", "debug_config", b"debug_config", "description", b"description", "dynamic_config_model", b"dynamic_config_model", "dynamic_config_size_limit_override", b"dynamic_config_size_limit_override", "edited_at", b"edited_at", "editor_id", b"editor_id", "eligibility_persistence", b"eligibility_persistence", "enable_edit_raw_json_ui", b"enable_edit_raw_json_ui", "engine_feature_flags", b"engine_feature_flags", "expected_end_date", b"expected_end_date", "exposure_points", b"exposure_points", "exposure_tracking", b"exposure_tracking", "extra_outcome_context", b"extra_outcome_context", "field_numbers_to_copy", b"field_numbers_to_copy", "growthbook_tags", b"growthbook_tags", "guild_experiment_version", b"guild_experiment_version", "hash_key", b"hash_key", "hypothesis", b"hypothesis", "id", b"id", "is_automated_change", b"is_automated_change", "is_feature_flag", b"is_feature_flag", "is_managed", b"is_managed", "is_official_holdout", b"is_official_holdout", "is_template", b"is_template", "lifecycle_plan", b"lifecycle_plan", "name", b"name", "number_line_settings", b"number_line_settings", "owning_team_id", b"owning_team_id", "phase", b"phase", "revision", b"revision", "rules", b"rules", "suppress_editor_mention", b"suppress_editor_mention", "surfaces", b"surfaces", "tech_spec_link", b"tech_spec_link", "title", b"title", "type", b"type", "unit_type", b"unit_type", "variations", b"variations", "version", b"version", "winning_variation_id", b"winning_variation_id"]  # noqa: Y015
+    _ClearFieldArgType: _TypeAlias = _typing.Literal["_archive_at", b"_archive_at", "_change_source", b"_change_source", "_created_at", b"_created_at", "_debug_config", b"_debug_config", "_dynamic_config_size_limit_override", b"_dynamic_config_size_limit_override", "_edited_at", b"_edited_at", "_expected_end_date", b"_expected_end_date", "_guild_experiment_version", b"_guild_experiment_version", "_hypothesis", b"_hypothesis", "_lifecycle_plan", b"_lifecycle_plan", "_number_line_settings", b"_number_line_settings", "_tech_spec_link", b"_tech_spec_link", "allocate_right_to_left", b"allocate_right_to_left", "archive_at", b"archive_at", "assignment_mode", b"assignment_mode", "cached_notification_channel_id", b"cached_notification_channel_id", "change_source", b"change_source", "created_at", b"created_at", "creator_id", b"creator_id", "custom_unit_prefix", b"custom_unit_prefix", "debug_config", b"debug_config", "description", b"description", "dynamic_config_model", b"dynamic_config_model", "dynamic_config_size_limit_override", b"dynamic_config_size_limit_override", "edited_at", b"edited_at", "editor_id", b"editor_id", "eligibility_persistence", b"eligibility_persistence", "enable_edit_raw_json_ui", b"enable_edit_raw_json_ui", "engine_feature_flags", b"engine_feature_flags", "expected_end_date", b"expected_end_date", "exposure_points", b"exposure_points", "exposure_tracking", b"exposure_tracking", "extra_outcome_context", b"extra_outcome_context", "field_numbers_to_copy", b"field_numbers_to_copy", "growthbook_tags", b"growthbook_tags", "guild_experiment_version", b"guild_experiment_version", "hash_key", b"hash_key", "hypothesis", b"hypothesis", "id", b"id", "is_automated_change", b"is_automated_change", "is_feature_flag", b"is_feature_flag", "is_managed", b"is_managed", "is_official_holdout", b"is_official_holdout", "is_template", b"is_template", "lifecycle_plan", b"lifecycle_plan", "name", b"name", "number_line_settings", b"number_line_settings", "owning_team_id", b"owning_team_id", "phase", b"phase", "revision", b"revision", "rules", b"rules", "suppress_editor_mention", b"suppress_editor_mention", "surfaces", b"surfaces", "tech_spec_link", b"tech_spec_link", "title", b"title", "type", b"type", "unit_type", b"unit_type", "variations", b"variations", "version", b"version", "winning_variation_id", b"winning_variation_id"]  # noqa: Y015
     def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
     _WhichOneofReturnType__archive_at: _TypeAlias = _typing.Literal["archive_at"]  # noqa: Y015
     _WhichOneofArgType__archive_at: _TypeAlias = _typing.Literal["_archive_at", b"_archive_at"]  # noqa: Y015
+    _WhichOneofReturnType__change_source: _TypeAlias = _typing.Literal["change_source"]  # noqa: Y015
+    _WhichOneofArgType__change_source: _TypeAlias = _typing.Literal["_change_source", b"_change_source"]  # noqa: Y015
     _WhichOneofReturnType__created_at: _TypeAlias = _typing.Literal["created_at"]  # noqa: Y015
     _WhichOneofArgType__created_at: _TypeAlias = _typing.Literal["_created_at", b"_created_at"]  # noqa: Y015
     _WhichOneofReturnType__debug_config: _TypeAlias = _typing.Literal["debug_config"]  # noqa: Y015
@@ -1917,6 +1999,8 @@ class Experiment(_message.Message):
     _WhichOneofArgType__tech_spec_link: _TypeAlias = _typing.Literal["_tech_spec_link", b"_tech_spec_link"]  # noqa: Y015
     @_typing.overload
     def WhichOneof(self, oneof_group: _WhichOneofArgType__archive_at) -> _WhichOneofReturnType__archive_at | None: ...
+    @_typing.overload
+    def WhichOneof(self, oneof_group: _WhichOneofArgType__change_source) -> _WhichOneofReturnType__change_source | None: ...
     @_typing.overload
     def WhichOneof(self, oneof_group: _WhichOneofArgType__created_at) -> _WhichOneofReturnType__created_at | None: ...
     @_typing.overload

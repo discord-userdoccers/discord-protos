@@ -208,6 +208,10 @@ export interface Experiment {
      * @generated from protobuf field: bool is_official_holdout = 50
      */
     isOfficialHoldout: boolean;
+    /**
+     * @generated from protobuf field: optional discord_protos.discord_experimentation.v1.Experiment.ChangeSource change_source = 51
+     */
+    changeSource?: Experiment_ChangeSource;
 }
 /**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.Bucket
@@ -797,6 +801,15 @@ export interface Experiment_UserStoreCountry {
     isoCountries: string[];
 }
 /**
+ * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.ClientDesignId
+ */
+export interface Experiment_ClientDesignId {
+    /**
+     * @generated from protobuf field: repeated int32 design_ids = 1
+     */
+    designIds: number[];
+}
+/**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.Filter
  */
 export interface Experiment_Filter {
@@ -972,6 +985,12 @@ export interface Experiment_Filter {
          */
         userStoreCountry: Experiment_UserStoreCountry;
     } | {
+        oneofKind: "clientDesignId";
+        /**
+         * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.ClientDesignId client_design_id = 32
+         */
+        clientDesignId: Experiment_ClientDesignId;
+    } | {
         oneofKind: undefined;
     };
     /**
@@ -1139,6 +1158,39 @@ export interface Experiment_LifecyclePlan {
      * @generated from protobuf field: optional discord_protos.discord_experimentation.v1.Experiment.RolloutPlan rollout_plan = 2
      */
     rolloutPlan?: Experiment_RolloutPlan;
+}
+/**
+ * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.ChangeSource
+ */
+export interface Experiment_ChangeSource {
+    /**
+     * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.Kind kind = 1
+     */
+    kind: Experiment_Kind;
+    /**
+     * @generated from protobuf field: string proposal_id = 2
+     */
+    proposalId: string;
+    /**
+     * @generated from protobuf field: string agent_product = 3
+     */
+    agentProduct: string;
+    /**
+     * @generated from protobuf field: string conversation_id = 4
+     */
+    conversationId: string;
+    /**
+     * @generated from protobuf field: string skill = 5
+     */
+    skill: string;
+    /**
+     * @generated from protobuf field: string skill_version = 6
+     */
+    skillVersion: string;
+    /**
+     * @generated from protobuf field: string conversation_type = 7
+     */
+    conversationType: string;
 }
 /**
  * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.UnitType
@@ -1471,6 +1523,31 @@ export enum Experiment_StepStatus {
     COMPLETED = 4
 }
 /**
+ * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.Kind
+ */
+export enum Experiment_Kind {
+    /**
+     * @generated from protobuf enum value: KIND_CHANGE_SOURCE_UNSPECIFIED = 0;
+     */
+    CHANGE_SOURCE_UNSPECIFIED = 0,
+    /**
+     * @generated from protobuf enum value: KIND_MANUAL = 1;
+     */
+    MANUAL = 1,
+    /**
+     * @generated from protobuf enum value: KIND_CAP_PROPOSED = 2;
+     */
+    CAP_PROPOSED = 2,
+    /**
+     * @generated from protobuf enum value: KIND_CAP_PROPOSED_WITH_MODIFICATIONS = 3;
+     */
+    CAP_PROPOSED_WITH_MODIFICATIONS = 3,
+    /**
+     * @generated from protobuf enum value: KIND_CAP_AUTOMATED = 4;
+     */
+    CAP_AUTOMATED = 4
+}
+/**
  * @generated from protobuf enum discord_protos.discord_experimentation.v1.FilterCategory
  */
 export enum FilterCategory {
@@ -1562,7 +1639,8 @@ class Experiment$Type extends MessageType<Experiment> {
             { no: 42, name: "eligibility_persistence", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.EligibilityPersistence", Experiment_EligibilityPersistence, "ELIGIBILITY_PERSISTENCE_"] },
             { no: 48, name: "lifecycle_plan", kind: "message", T: () => Experiment_LifecyclePlan },
             { no: 49, name: "is_feature_flag", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
-            { no: 50, name: "is_official_holdout", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
+            { no: 50, name: "is_official_holdout", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
+            { no: 51, name: "change_source", kind: "message", T: () => Experiment_ChangeSource }
         ]);
     }
     create(value?: PartialMessage<Experiment>): Experiment {
@@ -1765,6 +1843,9 @@ class Experiment$Type extends MessageType<Experiment> {
                 case /* bool is_official_holdout */ 50:
                     message.isOfficialHoldout = reader.bool();
                     break;
+                case /* optional discord_protos.discord_experimentation.v1.Experiment.ChangeSource change_source */ 51:
+                    message.changeSource = Experiment_ChangeSource.internalBinaryRead(reader, reader.uint32(), options, message.changeSource);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -1930,6 +2011,9 @@ class Experiment$Type extends MessageType<Experiment> {
         /* bool is_official_holdout = 50; */
         if (message.isOfficialHoldout !== false)
             writer.tag(50, WireType.Varint).bool(message.isOfficialHoldout);
+        /* optional discord_protos.discord_experimentation.v1.Experiment.ChangeSource change_source = 51; */
+        if (message.changeSource)
+            Experiment_ChangeSource.internalBinaryWrite(message.changeSource, writer.tag(51, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -4380,6 +4464,61 @@ class Experiment_UserStoreCountry$Type extends MessageType<Experiment_UserStoreC
  */
 export const Experiment_UserStoreCountry = new Experiment_UserStoreCountry$Type();
 // @generated message type with reflection information, may provide speed optimized methods
+class Experiment_ClientDesignId$Type extends MessageType<Experiment_ClientDesignId> {
+    constructor() {
+        super("discord_protos.discord_experimentation.v1.Experiment.ClientDesignId", [
+            { no: 1, name: "design_ids", kind: "scalar", repeat: 1 /*RepeatType.PACKED*/, T: 5 /*ScalarType.INT32*/ }
+        ], { "discord_protos.discord_experimentation.v1.filter_category": "FILTER_CATEGORY_CLIENT" });
+    }
+    create(value?: PartialMessage<Experiment_ClientDesignId>): Experiment_ClientDesignId {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.designIds = [];
+        if (value !== undefined)
+            reflectionMergePartial<Experiment_ClientDesignId>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: Experiment_ClientDesignId): Experiment_ClientDesignId {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* repeated int32 design_ids */ 1:
+                    if (wireType === WireType.LengthDelimited)
+                        for (let e = reader.int32() + reader.pos; reader.pos < e;)
+                            message.designIds.push(reader.int32());
+                    else
+                        message.designIds.push(reader.int32());
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: Experiment_ClientDesignId, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* repeated int32 design_ids = 1; */
+        if (message.designIds.length) {
+            writer.tag(1, WireType.LengthDelimited).fork();
+            for (let i = 0; i < message.designIds.length; i++)
+                writer.int32(message.designIds[i]);
+            writer.join();
+        }
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_experimentation.v1.Experiment.ClientDesignId
+ */
+export const Experiment_ClientDesignId = new Experiment_ClientDesignId$Type();
+// @generated message type with reflection information, may provide speed optimized methods
 class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
     constructor() {
         super("discord_protos.discord_experimentation.v1.Experiment.Filter", [
@@ -4411,6 +4550,7 @@ class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
             { no: 28, name: "user_ip", kind: "message", oneof: "filter", T: () => Experiment_UserIP },
             { no: 29, name: "installation_ids", kind: "message", oneof: "filter", T: () => Experiment_InstallationIds },
             { no: 31, name: "user_store_country", kind: "message", oneof: "filter", T: () => Experiment_UserStoreCountry },
+            { no: 32, name: "client_design_id", kind: "message", oneof: "filter", T: () => Experiment_ClientDesignId },
             { no: 30, name: "negate", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
         ]);
     }
@@ -4595,6 +4735,12 @@ class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
                         userStoreCountry: Experiment_UserStoreCountry.internalBinaryRead(reader, reader.uint32(), options, (message.filter as any).userStoreCountry)
                     };
                     break;
+                case /* discord_protos.discord_experimentation.v1.Experiment.ClientDesignId client_design_id */ 32:
+                    message.filter = {
+                        oneofKind: "clientDesignId",
+                        clientDesignId: Experiment_ClientDesignId.internalBinaryRead(reader, reader.uint32(), options, (message.filter as any).clientDesignId)
+                    };
+                    break;
                 case /* bool negate */ 30:
                     message.negate = reader.bool();
                     break;
@@ -4697,6 +4843,9 @@ class Experiment_Filter$Type extends MessageType<Experiment_Filter> {
         /* discord_protos.discord_experimentation.v1.Experiment.UserStoreCountry user_store_country = 31; */
         if (message.filter.oneofKind === "userStoreCountry")
             Experiment_UserStoreCountry.internalBinaryWrite(message.filter.userStoreCountry, writer.tag(31, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.discord_experimentation.v1.Experiment.ClientDesignId client_design_id = 32; */
+        if (message.filter.oneofKind === "clientDesignId")
+            Experiment_ClientDesignId.internalBinaryWrite(message.filter.clientDesignId, writer.tag(32, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -5284,3 +5433,98 @@ class Experiment_LifecyclePlan$Type extends MessageType<Experiment_LifecyclePlan
  * @generated MessageType for protobuf message discord_protos.discord_experimentation.v1.Experiment.LifecyclePlan
  */
 export const Experiment_LifecyclePlan = new Experiment_LifecyclePlan$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class Experiment_ChangeSource$Type extends MessageType<Experiment_ChangeSource> {
+    constructor() {
+        super("discord_protos.discord_experimentation.v1.Experiment.ChangeSource", [
+            { no: 1, name: "kind", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.Kind", Experiment_Kind, "KIND_"] },
+            { no: 2, name: "proposal_id", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 3, name: "agent_product", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 4, name: "conversation_id", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 5, name: "skill", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 6, name: "skill_version", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 7, name: "conversation_type", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+        ]);
+    }
+    create(value?: PartialMessage<Experiment_ChangeSource>): Experiment_ChangeSource {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.kind = 0;
+        message.proposalId = "";
+        message.agentProduct = "";
+        message.conversationId = "";
+        message.skill = "";
+        message.skillVersion = "";
+        message.conversationType = "";
+        if (value !== undefined)
+            reflectionMergePartial<Experiment_ChangeSource>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: Experiment_ChangeSource): Experiment_ChangeSource {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* discord_protos.discord_experimentation.v1.Experiment.Kind kind */ 1:
+                    message.kind = reader.int32();
+                    break;
+                case /* string proposal_id */ 2:
+                    message.proposalId = reader.string();
+                    break;
+                case /* string agent_product */ 3:
+                    message.agentProduct = reader.string();
+                    break;
+                case /* string conversation_id */ 4:
+                    message.conversationId = reader.string();
+                    break;
+                case /* string skill */ 5:
+                    message.skill = reader.string();
+                    break;
+                case /* string skill_version */ 6:
+                    message.skillVersion = reader.string();
+                    break;
+                case /* string conversation_type */ 7:
+                    message.conversationType = reader.string();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: Experiment_ChangeSource, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* discord_protos.discord_experimentation.v1.Experiment.Kind kind = 1; */
+        if (message.kind !== 0)
+            writer.tag(1, WireType.Varint).int32(message.kind);
+        /* string proposal_id = 2; */
+        if (message.proposalId !== "")
+            writer.tag(2, WireType.LengthDelimited).string(message.proposalId);
+        /* string agent_product = 3; */
+        if (message.agentProduct !== "")
+            writer.tag(3, WireType.LengthDelimited).string(message.agentProduct);
+        /* string conversation_id = 4; */
+        if (message.conversationId !== "")
+            writer.tag(4, WireType.LengthDelimited).string(message.conversationId);
+        /* string skill = 5; */
+        if (message.skill !== "")
+            writer.tag(5, WireType.LengthDelimited).string(message.skill);
+        /* string skill_version = 6; */
+        if (message.skillVersion !== "")
+            writer.tag(6, WireType.LengthDelimited).string(message.skillVersion);
+        /* string conversation_type = 7; */
+        if (message.conversationType !== "")
+            writer.tag(7, WireType.LengthDelimited).string(message.conversationType);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_experimentation.v1.Experiment.ChangeSource
+ */
+export const Experiment_ChangeSource = new Experiment_ChangeSource$Type();

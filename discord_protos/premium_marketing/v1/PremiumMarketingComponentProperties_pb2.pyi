@@ -594,6 +594,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_COLLECTIBLES_SHOP_ENTRY_MARKETING_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 869
         DISMISSIBLE_CONTENT_SOUNDBOARD_NEW_SOUNDS_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 870
         DISMISSIBLE_CONTENT_NITRO_BADGE_UNHIDDEN_NOTICE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 871
+        DISMISSIBLE_CONTENT_DEFAULT_NITRO_SOUNDS_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 872
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_UNSPECIFIED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1118,6 +1119,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_COLLECTIBLES_SHOP_ENTRY_MARKETING_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 869
     DISMISSIBLE_CONTENT_SOUNDBOARD_NEW_SOUNDS_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 870
     DISMISSIBLE_CONTENT_NITRO_BADGE_UNHIDDEN_NOTICE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 871
+    DISMISSIBLE_CONTENT_DEFAULT_NITRO_SOUNDS_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 872
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)
