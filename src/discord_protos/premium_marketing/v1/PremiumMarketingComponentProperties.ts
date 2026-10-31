@@ -2938,10 +2938,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     EXPIRING_POWERUP_COACHMARK = 684,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_FIRST_BOOSTER_UPSELL = 685;
-     */
-    FIRST_BOOSTER_UPSELL = 685,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_REFERRAL_PROGRAM_POPOVER_V2 = 686;
      */
     REFERRAL_PROGRAM_POPOVER_V2 = 686,
@@ -3017,10 +3013,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_FAVORITES_GUILD_NEW_BADGE = 709;
      */
     FAVORITES_GUILD_NEW_BADGE = 709,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_FIRST_BOOSTER_UPSELL_OVERSEER = 710;
-     */
-    FIRST_BOOSTER_UPSELL_OVERSEER = 710,
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_PREMIUM_MARKETING_MOMENT_REMINDER_UPSELL = 712;
      */

@@ -430,7 +430,6 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_WISHLIST_MOBILE_YOU_SCREEN_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 681
         DISMISSIBLE_CONTENT_GAME_CLAIM_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 682
         DISMISSIBLE_CONTENT_EXPIRING_POWERUP_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 684
-        DISMISSIBLE_CONTENT_FIRST_BOOSTER_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 685
         DISMISSIBLE_CONTENT_REFERRAL_PROGRAM_POPOVER_V2: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 686
         DISMISSIBLE_CONTENT_QUEST_HOME_ENTRYPOINT_HERO_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 687
         DISMISSIBLE_CONTENT_GAME_DETECTION_CREATE_GAME_SERVER_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 689
@@ -450,7 +449,6 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_REFERRAL_PROGRAM_ENTRYPOINT_NITRO_TAB_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 707
         DISMISSIBLE_CONTENT_DOUBLE_TAP_TO_REACT_EXPANDED_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 708
         DISMISSIBLE_CONTENT_FAVORITES_GUILD_NEW_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 709
-        DISMISSIBLE_CONTENT_FIRST_BOOSTER_UPSELL_OVERSEER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 710
         DISMISSIBLE_CONTENT_PREMIUM_MARKETING_MOMENT_REMINDER_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 712
         DISMISSIBLE_CONTENT_PREMIUM_GROUP_POPOVER_UPSELL_V2: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 715
         DISMISSIBLE_CONTENT_L_3PP_NON_NITRO_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 716
@@ -955,7 +953,6 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_WISHLIST_MOBILE_YOU_SCREEN_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 681
     DISMISSIBLE_CONTENT_GAME_CLAIM_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 682
     DISMISSIBLE_CONTENT_EXPIRING_POWERUP_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 684
-    DISMISSIBLE_CONTENT_FIRST_BOOSTER_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 685
     DISMISSIBLE_CONTENT_REFERRAL_PROGRAM_POPOVER_V2: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 686
     DISMISSIBLE_CONTENT_QUEST_HOME_ENTRYPOINT_HERO_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 687
     DISMISSIBLE_CONTENT_GAME_DETECTION_CREATE_GAME_SERVER_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 689
@@ -975,7 +972,6 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_REFERRAL_PROGRAM_ENTRYPOINT_NITRO_TAB_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 707
     DISMISSIBLE_CONTENT_DOUBLE_TAP_TO_REACT_EXPANDED_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 708
     DISMISSIBLE_CONTENT_FAVORITES_GUILD_NEW_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 709
-    DISMISSIBLE_CONTENT_FIRST_BOOSTER_UPSELL_OVERSEER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 710
     DISMISSIBLE_CONTENT_PREMIUM_MARKETING_MOMENT_REMINDER_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 712
     DISMISSIBLE_CONTENT_PREMIUM_GROUP_POPOVER_UPSELL_V2: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 715
     DISMISSIBLE_CONTENT_L_3PP_NON_NITRO_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 716
