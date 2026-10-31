@@ -3588,7 +3588,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_DEFAULT_NITRO_SOUNDS_COACHMARK = 872;
      */
-    DEFAULT_NITRO_SOUNDS_COACHMARK = 872
+    DEFAULT_NITRO_SOUNDS_COACHMARK = 872,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_DEFAULT_NITRO_SOUNDS_SUGGESTED_POPOVER = 873;
+     */
+    DEFAULT_NITRO_SOUNDS_SUGGESTED_POPOVER = 873
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
