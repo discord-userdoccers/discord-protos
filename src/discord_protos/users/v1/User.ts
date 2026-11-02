@@ -929,6 +929,10 @@ export enum User_ClassificationType {
      */
     CSEA_CSAM_MEDIUM_CONFIDENCE_SAFETY_DISPATCH = 1200,
     /**
+     * @generated from protobuf enum value: CLASSIFICATION_TYPE_PHISHING_HASH_MATCH = 1210;
+     */
+    PHISHING_HASH_MATCH = 1210,
+    /**
      * @generated from protobuf enum value: CLASSIFICATION_TYPE_CSAM_SMITE = 3000;
      */
     CSAM_SMITE = 3000,

@@ -409,6 +409,41 @@ export interface Experiment_SDKVersionRange {
     upperBound?: Experiment_SDKVersionRangeBound;
 }
 /**
+ * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.OSVersionRangeBound
+ */
+export interface Experiment_OSVersionRangeBound {
+    /**
+     * @generated from protobuf field: string version = 1
+     */
+    version: string;
+    /**
+     * @generated from protobuf field: bool inclusive = 2
+     */
+    inclusive: boolean;
+}
+/**
+ * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.OSVersionRange
+ */
+export interface Experiment_OSVersionRange {
+    /**
+     * @generated from protobuf field: optional discord_protos.discord_experimentation.v1.Experiment.OSVersionRangeBound lower_bound = 1
+     */
+    lowerBound?: Experiment_OSVersionRangeBound;
+    /**
+     * @generated from protobuf field: optional discord_protos.discord_experimentation.v1.Experiment.OSVersionRangeBound upper_bound = 2
+     */
+    upperBound?: Experiment_OSVersionRangeBound;
+}
+/**
+ * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.OSVersion
+ */
+export interface Experiment_OSVersion {
+    /**
+     * @generated from protobuf field: repeated discord_protos.discord_experimentation.v1.Experiment.OSVersionRange ranges = 1
+     */
+    ranges: Experiment_OSVersionRange[];
+}
+/**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.SDKVersion
  */
 export interface Experiment_SDKVersion {
@@ -420,6 +455,14 @@ export interface Experiment_SDKVersion {
      * @generated from protobuf field: bool work_around_pyoto_bug = 2
      */
     workAroundPyotoBug: boolean;
+    /**
+     * @generated from protobuf field: optional discord_protos.discord_experimentation.v1.Experiment.OSVersion os_version = 3
+     */
+    osVersion?: Experiment_OSVersion;
+    /**
+     * @generated from protobuf field: bool allow_sdk_fallback = 4
+     */
+    allowSdkFallback: boolean;
 }
 /**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.ClientOperatingSystem
@@ -2728,17 +2771,175 @@ class Experiment_SDKVersionRange$Type extends MessageType<Experiment_SDKVersionR
  */
 export const Experiment_SDKVersionRange = new Experiment_SDKVersionRange$Type();
 // @generated message type with reflection information, may provide speed optimized methods
+class Experiment_OSVersionRangeBound$Type extends MessageType<Experiment_OSVersionRangeBound> {
+    constructor() {
+        super("discord_protos.discord_experimentation.v1.Experiment.OSVersionRangeBound", [
+            { no: 1, name: "version", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "inclusive", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
+        ]);
+    }
+    create(value?: PartialMessage<Experiment_OSVersionRangeBound>): Experiment_OSVersionRangeBound {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.version = "";
+        message.inclusive = false;
+        if (value !== undefined)
+            reflectionMergePartial<Experiment_OSVersionRangeBound>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: Experiment_OSVersionRangeBound): Experiment_OSVersionRangeBound {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string version */ 1:
+                    message.version = reader.string();
+                    break;
+                case /* bool inclusive */ 2:
+                    message.inclusive = reader.bool();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: Experiment_OSVersionRangeBound, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string version = 1; */
+        if (message.version !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.version);
+        /* bool inclusive = 2; */
+        if (message.inclusive !== false)
+            writer.tag(2, WireType.Varint).bool(message.inclusive);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_experimentation.v1.Experiment.OSVersionRangeBound
+ */
+export const Experiment_OSVersionRangeBound = new Experiment_OSVersionRangeBound$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class Experiment_OSVersionRange$Type extends MessageType<Experiment_OSVersionRange> {
+    constructor() {
+        super("discord_protos.discord_experimentation.v1.Experiment.OSVersionRange", [
+            { no: 1, name: "lower_bound", kind: "message", T: () => Experiment_OSVersionRangeBound },
+            { no: 2, name: "upper_bound", kind: "message", T: () => Experiment_OSVersionRangeBound }
+        ]);
+    }
+    create(value?: PartialMessage<Experiment_OSVersionRange>): Experiment_OSVersionRange {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        if (value !== undefined)
+            reflectionMergePartial<Experiment_OSVersionRange>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: Experiment_OSVersionRange): Experiment_OSVersionRange {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* optional discord_protos.discord_experimentation.v1.Experiment.OSVersionRangeBound lower_bound */ 1:
+                    message.lowerBound = Experiment_OSVersionRangeBound.internalBinaryRead(reader, reader.uint32(), options, message.lowerBound);
+                    break;
+                case /* optional discord_protos.discord_experimentation.v1.Experiment.OSVersionRangeBound upper_bound */ 2:
+                    message.upperBound = Experiment_OSVersionRangeBound.internalBinaryRead(reader, reader.uint32(), options, message.upperBound);
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: Experiment_OSVersionRange, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* optional discord_protos.discord_experimentation.v1.Experiment.OSVersionRangeBound lower_bound = 1; */
+        if (message.lowerBound)
+            Experiment_OSVersionRangeBound.internalBinaryWrite(message.lowerBound, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.discord_experimentation.v1.Experiment.OSVersionRangeBound upper_bound = 2; */
+        if (message.upperBound)
+            Experiment_OSVersionRangeBound.internalBinaryWrite(message.upperBound, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_experimentation.v1.Experiment.OSVersionRange
+ */
+export const Experiment_OSVersionRange = new Experiment_OSVersionRange$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class Experiment_OSVersion$Type extends MessageType<Experiment_OSVersion> {
+    constructor() {
+        super("discord_protos.discord_experimentation.v1.Experiment.OSVersion", [
+            { no: 1, name: "ranges", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => Experiment_OSVersionRange }
+        ]);
+    }
+    create(value?: PartialMessage<Experiment_OSVersion>): Experiment_OSVersion {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.ranges = [];
+        if (value !== undefined)
+            reflectionMergePartial<Experiment_OSVersion>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: Experiment_OSVersion): Experiment_OSVersion {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* repeated discord_protos.discord_experimentation.v1.Experiment.OSVersionRange ranges */ 1:
+                    message.ranges.push(Experiment_OSVersionRange.internalBinaryRead(reader, reader.uint32(), options));
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: Experiment_OSVersion, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* repeated discord_protos.discord_experimentation.v1.Experiment.OSVersionRange ranges = 1; */
+        for (let i = 0; i < message.ranges.length; i++)
+            Experiment_OSVersionRange.internalBinaryWrite(message.ranges[i], writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_experimentation.v1.Experiment.OSVersion
+ */
+export const Experiment_OSVersion = new Experiment_OSVersion$Type();
+// @generated message type with reflection information, may provide speed optimized methods
 class Experiment_SDKVersion$Type extends MessageType<Experiment_SDKVersion> {
     constructor() {
         super("discord_protos.discord_experimentation.v1.Experiment.SDKVersion", [
             { no: 1, name: "ranges", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => Experiment_SDKVersionRange },
-            { no: 2, name: "work_around_pyoto_bug", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
+            { no: 2, name: "work_around_pyoto_bug", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
+            { no: 3, name: "os_version", kind: "message", T: () => Experiment_OSVersion },
+            { no: 4, name: "allow_sdk_fallback", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
         ]);
     }
     create(value?: PartialMessage<Experiment_SDKVersion>): Experiment_SDKVersion {
         const message = globalThis.Object.create((this.messagePrototype!));
         message.ranges = [];
         message.workAroundPyotoBug = false;
+        message.allowSdkFallback = false;
         if (value !== undefined)
             reflectionMergePartial<Experiment_SDKVersion>(this, message, value);
         return message;
@@ -2753,6 +2954,12 @@ class Experiment_SDKVersion$Type extends MessageType<Experiment_SDKVersion> {
                     break;
                 case /* bool work_around_pyoto_bug */ 2:
                     message.workAroundPyotoBug = reader.bool();
+                    break;
+                case /* optional discord_protos.discord_experimentation.v1.Experiment.OSVersion os_version */ 3:
+                    message.osVersion = Experiment_OSVersion.internalBinaryRead(reader, reader.uint32(), options, message.osVersion);
+                    break;
+                case /* bool allow_sdk_fallback */ 4:
+                    message.allowSdkFallback = reader.bool();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -2772,6 +2979,12 @@ class Experiment_SDKVersion$Type extends MessageType<Experiment_SDKVersion> {
         /* bool work_around_pyoto_bug = 2; */
         if (message.workAroundPyotoBug !== false)
             writer.tag(2, WireType.Varint).bool(message.workAroundPyotoBug);
+        /* optional discord_protos.discord_experimentation.v1.Experiment.OSVersion os_version = 3; */
+        if (message.osVersion)
+            Experiment_OSVersion.internalBinaryWrite(message.osVersion, writer.tag(3, WireType.LengthDelimited).fork(), options).join();
+        /* bool allow_sdk_fallback = 4; */
+        if (message.allowSdkFallback !== false)
+            writer.tag(4, WireType.Varint).bool(message.allowSdkFallback);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

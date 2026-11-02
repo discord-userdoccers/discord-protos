@@ -125,9 +125,25 @@ message Experiment {
     optional SDKVersionRangeBound upper_bound = 2;
   }
 
+  message OSVersionRangeBound {
+    string version = 1;
+    bool inclusive = 2;
+  }
+
+  message OSVersionRange {
+    optional OSVersionRangeBound lower_bound = 1;
+    optional OSVersionRangeBound upper_bound = 2;
+  }
+
+  message OSVersion {
+    repeated OSVersionRange ranges = 1;
+  }
+
   message SDKVersion {
     repeated SDKVersionRange ranges = 1;
     bool work_around_pyoto_bug = 2;
+    optional OSVersion os_version = 3;
+    bool allow_sdk_fallback = 4;
   }
 
   message ClientOperatingSystem {

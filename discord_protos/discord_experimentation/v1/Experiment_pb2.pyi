@@ -665,25 +665,101 @@ class Experiment(_message.Message):
         def WhichOneof(self, oneof_group: _WhichOneofArgType__upper_bound) -> _WhichOneofReturnType__upper_bound | None: ...
 
     @_typing.final
+    class OSVersionRangeBound(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        VERSION_FIELD_NUMBER: _builtins.int
+        INCLUSIVE_FIELD_NUMBER: _builtins.int
+        version: _builtins.str
+        inclusive: _builtins.bool
+        def __init__(
+            self,
+            *,
+            version: _builtins.str = ...,
+            inclusive: _builtins.bool = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["inclusive", b"inclusive", "version", b"version"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
+
+    @_typing.final
+    class OSVersionRange(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        LOWER_BOUND_FIELD_NUMBER: _builtins.int
+        UPPER_BOUND_FIELD_NUMBER: _builtins.int
+        @_builtins.property
+        def lower_bound(self) -> Global___Experiment.OSVersionRangeBound: ...
+        @_builtins.property
+        def upper_bound(self) -> Global___Experiment.OSVersionRangeBound: ...
+        def __init__(
+            self,
+            *,
+            lower_bound: Global___Experiment.OSVersionRangeBound | None = ...,
+            upper_bound: Global___Experiment.OSVersionRangeBound | None = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_lower_bound", b"_lower_bound", "_upper_bound", b"_upper_bound", "lower_bound", b"lower_bound", "upper_bound", b"upper_bound"]  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_lower_bound", b"_lower_bound", "_upper_bound", b"_upper_bound", "lower_bound", b"lower_bound", "upper_bound", b"upper_bound"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        _WhichOneofReturnType__lower_bound: _TypeAlias = _typing.Literal["lower_bound"]  # noqa: Y015
+        _WhichOneofArgType__lower_bound: _TypeAlias = _typing.Literal["_lower_bound", b"_lower_bound"]  # noqa: Y015
+        _WhichOneofReturnType__upper_bound: _TypeAlias = _typing.Literal["upper_bound"]  # noqa: Y015
+        _WhichOneofArgType__upper_bound: _TypeAlias = _typing.Literal["_upper_bound", b"_upper_bound"]  # noqa: Y015
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__lower_bound) -> _WhichOneofReturnType__lower_bound | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__upper_bound) -> _WhichOneofReturnType__upper_bound | None: ...
+
+    @_typing.final
+    class OSVersion(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        RANGES_FIELD_NUMBER: _builtins.int
+        @_builtins.property
+        def ranges(self) -> _containers.RepeatedCompositeFieldContainer[Global___Experiment.OSVersionRange]: ...
+        def __init__(
+            self,
+            *,
+            ranges: _abc.Iterable[Global___Experiment.OSVersionRange] | None = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["ranges", b"ranges"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
+
+    @_typing.final
     class SDKVersion(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
 
         RANGES_FIELD_NUMBER: _builtins.int
         WORK_AROUND_PYOTO_BUG_FIELD_NUMBER: _builtins.int
+        OS_VERSION_FIELD_NUMBER: _builtins.int
+        ALLOW_SDK_FALLBACK_FIELD_NUMBER: _builtins.int
         work_around_pyoto_bug: _builtins.bool
+        allow_sdk_fallback: _builtins.bool
         @_builtins.property
         def ranges(self) -> _containers.RepeatedCompositeFieldContainer[Global___Experiment.SDKVersionRange]: ...
+        @_builtins.property
+        def os_version(self) -> Global___Experiment.OSVersion: ...
         def __init__(
             self,
             *,
             ranges: _abc.Iterable[Global___Experiment.SDKVersionRange] | None = ...,
             work_around_pyoto_bug: _builtins.bool = ...,
+            os_version: Global___Experiment.OSVersion | None = ...,
+            allow_sdk_fallback: _builtins.bool = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_os_version", b"_os_version", "os_version", b"os_version"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["ranges", b"ranges", "work_around_pyoto_bug", b"work_around_pyoto_bug"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_os_version", b"_os_version", "allow_sdk_fallback", b"allow_sdk_fallback", "os_version", b"os_version", "ranges", b"ranges", "work_around_pyoto_bug", b"work_around_pyoto_bug"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-        def WhichOneof(self, oneof_group: _Never) -> None: ...
+        _WhichOneofReturnType__os_version: _TypeAlias = _typing.Literal["os_version"]  # noqa: Y015
+        _WhichOneofArgType__os_version: _TypeAlias = _typing.Literal["_os_version", b"_os_version"]  # noqa: Y015
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__os_version) -> _WhichOneofReturnType__os_version | None: ...
 
     @_typing.final
     class ClientOperatingSystem(_message.Message):
