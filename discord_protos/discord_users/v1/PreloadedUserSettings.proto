@@ -587,6 +587,7 @@ message PreloadedUserSettings {
 
   message ConjureProjectSettings {
     bool muted = 1;
+    uint64 sidebar_dismissed_at = 2;
   }
 
   message ConjureSettings {

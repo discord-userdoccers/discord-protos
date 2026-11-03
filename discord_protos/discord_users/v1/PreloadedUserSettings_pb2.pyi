@@ -2833,15 +2833,18 @@ class PreloadedUserSettings(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
 
         MUTED_FIELD_NUMBER: _builtins.int
+        SIDEBAR_DISMISSED_AT_FIELD_NUMBER: _builtins.int
         muted: _builtins.bool
+        sidebar_dismissed_at: _builtins.int
         def __init__(
             self,
             *,
             muted: _builtins.bool = ...,
+            sidebar_dismissed_at: _builtins.int = ...,
         ) -> None: ...
         _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["muted", b"muted"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["muted", b"muted", "sidebar_dismissed_at", b"sidebar_dismissed_at"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         def WhichOneof(self, oneof_group: _Never) -> None: ...
 

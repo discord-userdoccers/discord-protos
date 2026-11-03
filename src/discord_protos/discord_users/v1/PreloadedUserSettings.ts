@@ -1487,6 +1487,10 @@ export interface PreloadedUserSettings_ConjureProjectSettings {
      * @generated from protobuf field: bool muted = 1
      */
     muted: boolean;
+    /**
+     * @generated from protobuf field: uint64 sidebar_dismissed_at = 2
+     */
+    sidebarDismissedAt: bigint;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.ConjureSettings
@@ -6512,12 +6516,14 @@ export const PreloadedUserSettings_AppVersionSettings = new PreloadedUserSetting
 class PreloadedUserSettings_ConjureProjectSettings$Type extends MessageType<PreloadedUserSettings_ConjureProjectSettings> {
     constructor() {
         super("discord_protos.discord_users.v1.PreloadedUserSettings.ConjureProjectSettings", [
-            { no: 1, name: "muted", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
+            { no: 1, name: "muted", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
+            { no: 2, name: "sidebar_dismissed_at", kind: "scalar", T: 4 /*ScalarType.UINT64*/, L: 0 /*LongType.BIGINT*/ }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_ConjureProjectSettings>): PreloadedUserSettings_ConjureProjectSettings {
         const message = globalThis.Object.create((this.messagePrototype!));
         message.muted = false;
+        message.sidebarDismissedAt = 0n;
         if (value !== undefined)
             reflectionMergePartial<PreloadedUserSettings_ConjureProjectSettings>(this, message, value);
         return message;
@@ -6529,6 +6535,9 @@ class PreloadedUserSettings_ConjureProjectSettings$Type extends MessageType<Prel
             switch (fieldNo) {
                 case /* bool muted */ 1:
                     message.muted = reader.bool();
+                    break;
+                case /* uint64 sidebar_dismissed_at */ 2:
+                    message.sidebarDismissedAt = reader.uint64().toBigInt();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -6545,6 +6554,9 @@ class PreloadedUserSettings_ConjureProjectSettings$Type extends MessageType<Prel
         /* bool muted = 1; */
         if (message.muted !== false)
             writer.tag(1, WireType.Varint).bool(message.muted);
+        /* uint64 sidebar_dismissed_at = 2; */
+        if (message.sidebarDismissedAt !== 0n)
+            writer.tag(2, WireType.Varint).uint64(message.sidebarDismissedAt);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

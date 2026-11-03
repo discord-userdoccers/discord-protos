@@ -3592,7 +3592,15 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_DEFAULT_NITRO_SOUNDS_SUGGESTED_POPOVER = 873;
      */
-    DEFAULT_NITRO_SOUNDS_SUGGESTED_POPOVER = 873
+    DEFAULT_NITRO_SOUNDS_SUGGESTED_POPOVER = 873,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_PERSONAL_WIDGET_GOING_AWAY_COACHMARK = 874;
+     */
+    PERSONAL_WIDGET_GOING_AWAY_COACHMARK = 874,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_BUILD_A_BEAR_INTRO = 875;
+     */
+    BUILD_A_BEAR_INTRO = 875
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
