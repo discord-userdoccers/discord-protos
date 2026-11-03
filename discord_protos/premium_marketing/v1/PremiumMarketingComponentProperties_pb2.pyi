@@ -596,6 +596,9 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_DEFAULT_NITRO_SOUNDS_SUGGESTED_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 873
         DISMISSIBLE_CONTENT_PERSONAL_WIDGET_GOING_AWAY_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 874
         DISMISSIBLE_CONTENT_BUILD_A_BEAR_INTRO: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 875
+        DISMISSIBLE_CONTENT_CUSTOM_TYPING_INDICATOR_MOBILE_NEW_PRESETS_SETTINGS_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 876
+        DISMISSIBLE_CONTENT_CUSTOM_TYPING_INDICATOR_MOBILE_NEW_PRESETS_STYLING_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 877
+        DISMISSIBLE_CONTENT_CUSTOM_TYPING_INDICATOR_MOBILE_NEW_PRESETS_ACTION_SHEET: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 878
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_UNSPECIFIED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1122,6 +1125,9 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_DEFAULT_NITRO_SOUNDS_SUGGESTED_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 873
     DISMISSIBLE_CONTENT_PERSONAL_WIDGET_GOING_AWAY_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 874
     DISMISSIBLE_CONTENT_BUILD_A_BEAR_INTRO: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 875
+    DISMISSIBLE_CONTENT_CUSTOM_TYPING_INDICATOR_MOBILE_NEW_PRESETS_SETTINGS_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 876
+    DISMISSIBLE_CONTENT_CUSTOM_TYPING_INDICATOR_MOBILE_NEW_PRESETS_STYLING_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 877
+    DISMISSIBLE_CONTENT_CUSTOM_TYPING_INDICATOR_MOBILE_NEW_PRESETS_ACTION_SHEET: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 878
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)

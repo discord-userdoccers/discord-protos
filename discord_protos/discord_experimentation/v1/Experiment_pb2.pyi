@@ -322,6 +322,36 @@ class Experiment(_message.Message):
     STEP_STATUS_AWAITING_MANUAL_APPROVAL: Experiment.StepStatus.ValueType  # 3
     STEP_STATUS_COMPLETED: Experiment.StepStatus.ValueType  # 4
 
+    class _Level:
+        ValueType = _typing.NewType("ValueType", _builtins.int)
+        V: _TypeAlias = ValueType  # noqa: Y015
+
+    class _LevelEnumTypeWrapper(_enum_type_wrapper._EnumTypeWrapper[Experiment._Level.ValueType], _builtins.type):
+        DESCRIPTOR: _descriptor.EnumDescriptor
+        LEVEL_UNSPECIFIED: Experiment._Level.ValueType  # 0
+        LEVEL_ORGANIZATION: Experiment._Level.ValueType  # 1
+        LEVEL_SQUAD: Experiment._Level.ValueType  # 2
+
+    class Level(_Level, metaclass=_LevelEnumTypeWrapper): ...
+    LEVEL_UNSPECIFIED: Experiment.Level.ValueType  # 0
+    LEVEL_ORGANIZATION: Experiment.Level.ValueType  # 1
+    LEVEL_SQUAD: Experiment.Level.ValueType  # 2
+
+    class _FiscalPeriod:
+        ValueType = _typing.NewType("ValueType", _builtins.int)
+        V: _TypeAlias = ValueType  # noqa: Y015
+
+    class _FiscalPeriodEnumTypeWrapper(_enum_type_wrapper._EnumTypeWrapper[Experiment._FiscalPeriod.ValueType], _builtins.type):
+        DESCRIPTOR: _descriptor.EnumDescriptor
+        FISCAL_PERIOD_UNSPECIFIED: Experiment._FiscalPeriod.ValueType  # 0
+        FISCAL_PERIOD_H1: Experiment._FiscalPeriod.ValueType  # 1
+        FISCAL_PERIOD_H2: Experiment._FiscalPeriod.ValueType  # 2
+
+    class FiscalPeriod(_FiscalPeriod, metaclass=_FiscalPeriodEnumTypeWrapper): ...
+    FISCAL_PERIOD_UNSPECIFIED: Experiment.FiscalPeriod.ValueType  # 0
+    FISCAL_PERIOD_H1: Experiment.FiscalPeriod.ValueType  # 1
+    FISCAL_PERIOD_H2: Experiment.FiscalPeriod.ValueType  # 2
+
     class _Kind:
         ValueType = _typing.NewType("ValueType", _builtins.int)
         V: _TypeAlias = ValueType  # noqa: Y015
@@ -1844,6 +1874,29 @@ class Experiment(_message.Message):
         def WhichOneof(self, oneof_group: _WhichOneofArgType__rollout_plan) -> _WhichOneofReturnType__rollout_plan | None: ...
 
     @_typing.final
+    class HoldoutScope(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        LEVEL_FIELD_NUMBER: _builtins.int
+        FISCAL_HALF_FIELD_NUMBER: _builtins.int
+        FISCAL_YEAR_FIELD_NUMBER: _builtins.int
+        level: Global___Experiment.Level.ValueType
+        fiscal_half: Global___Experiment.FiscalPeriod.ValueType
+        fiscal_year: _builtins.int
+        def __init__(
+            self,
+            *,
+            level: Global___Experiment.Level.ValueType = ...,
+            fiscal_half: Global___Experiment.FiscalPeriod.ValueType = ...,
+            fiscal_year: _builtins.int = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["fiscal_half", b"fiscal_half", "fiscal_year", b"fiscal_year", "level", b"level"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
+
+    @_typing.final
     class ChangeSource(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
 
@@ -1925,6 +1978,7 @@ class Experiment(_message.Message):
     LIFECYCLE_PLAN_FIELD_NUMBER: _builtins.int
     IS_FEATURE_FLAG_FIELD_NUMBER: _builtins.int
     IS_OFFICIAL_HOLDOUT_FIELD_NUMBER: _builtins.int
+    HOLDOUT_SCOPE_FIELD_NUMBER: _builtins.int
     CHANGE_SOURCE_FIELD_NUMBER: _builtins.int
     id: _builtins.int
     name: _builtins.str
@@ -1992,6 +2046,8 @@ class Experiment(_message.Message):
     @_builtins.property
     def lifecycle_plan(self) -> Global___Experiment.LifecyclePlan: ...
     @_builtins.property
+    def holdout_scope(self) -> Global___Experiment.HoldoutScope: ...
+    @_builtins.property
     def change_source(self) -> Global___Experiment.ChangeSource: ...
     def __init__(
         self,
@@ -2043,11 +2099,12 @@ class Experiment(_message.Message):
         lifecycle_plan: Global___Experiment.LifecyclePlan | None = ...,
         is_feature_flag: _builtins.bool = ...,
         is_official_holdout: _builtins.bool = ...,
+        holdout_scope: Global___Experiment.HoldoutScope | None = ...,
         change_source: Global___Experiment.ChangeSource | None = ...,
     ) -> None: ...
-    _HasFieldArgType: _TypeAlias = _typing.Literal["_archive_at", b"_archive_at", "_change_source", b"_change_source", "_created_at", b"_created_at", "_debug_config", b"_debug_config", "_dynamic_config_size_limit_override", b"_dynamic_config_size_limit_override", "_edited_at", b"_edited_at", "_expected_end_date", b"_expected_end_date", "_guild_experiment_version", b"_guild_experiment_version", "_hypothesis", b"_hypothesis", "_lifecycle_plan", b"_lifecycle_plan", "_number_line_settings", b"_number_line_settings", "_tech_spec_link", b"_tech_spec_link", "archive_at", b"archive_at", "change_source", b"change_source", "created_at", b"created_at", "debug_config", b"debug_config", "dynamic_config_size_limit_override", b"dynamic_config_size_limit_override", "edited_at", b"edited_at", "expected_end_date", b"expected_end_date", "guild_experiment_version", b"guild_experiment_version", "hypothesis", b"hypothesis", "lifecycle_plan", b"lifecycle_plan", "number_line_settings", b"number_line_settings", "tech_spec_link", b"tech_spec_link"]  # noqa: Y015
+    _HasFieldArgType: _TypeAlias = _typing.Literal["_archive_at", b"_archive_at", "_change_source", b"_change_source", "_created_at", b"_created_at", "_debug_config", b"_debug_config", "_dynamic_config_size_limit_override", b"_dynamic_config_size_limit_override", "_edited_at", b"_edited_at", "_expected_end_date", b"_expected_end_date", "_guild_experiment_version", b"_guild_experiment_version", "_holdout_scope", b"_holdout_scope", "_hypothesis", b"_hypothesis", "_lifecycle_plan", b"_lifecycle_plan", "_number_line_settings", b"_number_line_settings", "_tech_spec_link", b"_tech_spec_link", "archive_at", b"archive_at", "change_source", b"change_source", "created_at", b"created_at", "debug_config", b"debug_config", "dynamic_config_size_limit_override", b"dynamic_config_size_limit_override", "edited_at", b"edited_at", "expected_end_date", b"expected_end_date", "guild_experiment_version", b"guild_experiment_version", "holdout_scope", b"holdout_scope", "hypothesis", b"hypothesis", "lifecycle_plan", b"lifecycle_plan", "number_line_settings", b"number_line_settings", "tech_spec_link", b"tech_spec_link"]  # noqa: Y015
     def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["_archive_at", b"_archive_at", "_change_source", b"_change_source", "_created_at", b"_created_at", "_debug_config", b"_debug_config", "_dynamic_config_size_limit_override", b"_dynamic_config_size_limit_override", "_edited_at", b"_edited_at", "_expected_end_date", b"_expected_end_date", "_guild_experiment_version", b"_guild_experiment_version", "_hypothesis", b"_hypothesis", "_lifecycle_plan", b"_lifecycle_plan", "_number_line_settings", b"_number_line_settings", "_tech_spec_link", b"_tech_spec_link", "allocate_right_to_left", b"allocate_right_to_left", "archive_at", b"archive_at", "assignment_mode", b"assignment_mode", "cached_notification_channel_id", b"cached_notification_channel_id", "change_source", b"change_source", "created_at", b"created_at", "creator_id", b"creator_id", "custom_unit_prefix", b"custom_unit_prefix", "debug_config", b"debug_config", "description", b"description", "dynamic_config_model", b"dynamic_config_model", "dynamic_config_size_limit_override", b"dynamic_config_size_limit_override", "edited_at", b"edited_at", "editor_id", b"editor_id", "eligibility_persistence", b"eligibility_persistence", "enable_edit_raw_json_ui", b"enable_edit_raw_json_ui", "engine_feature_flags", b"engine_feature_flags", "expected_end_date", b"expected_end_date", "exposure_points", b"exposure_points", "exposure_tracking", b"exposure_tracking", "extra_outcome_context", b"extra_outcome_context", "field_numbers_to_copy", b"field_numbers_to_copy", "growthbook_tags", b"growthbook_tags", "guild_experiment_version", b"guild_experiment_version", "hash_key", b"hash_key", "hypothesis", b"hypothesis", "id", b"id", "is_automated_change", b"is_automated_change", "is_feature_flag", b"is_feature_flag", "is_managed", b"is_managed", "is_official_holdout", b"is_official_holdout", "is_template", b"is_template", "lifecycle_plan", b"lifecycle_plan", "name", b"name", "number_line_settings", b"number_line_settings", "owning_team_id", b"owning_team_id", "phase", b"phase", "revision", b"revision", "rules", b"rules", "suppress_editor_mention", b"suppress_editor_mention", "surfaces", b"surfaces", "tech_spec_link", b"tech_spec_link", "title", b"title", "type", b"type", "unit_type", b"unit_type", "variations", b"variations", "version", b"version", "winning_variation_id", b"winning_variation_id"]  # noqa: Y015
+    _ClearFieldArgType: _TypeAlias = _typing.Literal["_archive_at", b"_archive_at", "_change_source", b"_change_source", "_created_at", b"_created_at", "_debug_config", b"_debug_config", "_dynamic_config_size_limit_override", b"_dynamic_config_size_limit_override", "_edited_at", b"_edited_at", "_expected_end_date", b"_expected_end_date", "_guild_experiment_version", b"_guild_experiment_version", "_holdout_scope", b"_holdout_scope", "_hypothesis", b"_hypothesis", "_lifecycle_plan", b"_lifecycle_plan", "_number_line_settings", b"_number_line_settings", "_tech_spec_link", b"_tech_spec_link", "allocate_right_to_left", b"allocate_right_to_left", "archive_at", b"archive_at", "assignment_mode", b"assignment_mode", "cached_notification_channel_id", b"cached_notification_channel_id", "change_source", b"change_source", "created_at", b"created_at", "creator_id", b"creator_id", "custom_unit_prefix", b"custom_unit_prefix", "debug_config", b"debug_config", "description", b"description", "dynamic_config_model", b"dynamic_config_model", "dynamic_config_size_limit_override", b"dynamic_config_size_limit_override", "edited_at", b"edited_at", "editor_id", b"editor_id", "eligibility_persistence", b"eligibility_persistence", "enable_edit_raw_json_ui", b"enable_edit_raw_json_ui", "engine_feature_flags", b"engine_feature_flags", "expected_end_date", b"expected_end_date", "exposure_points", b"exposure_points", "exposure_tracking", b"exposure_tracking", "extra_outcome_context", b"extra_outcome_context", "field_numbers_to_copy", b"field_numbers_to_copy", "growthbook_tags", b"growthbook_tags", "guild_experiment_version", b"guild_experiment_version", "hash_key", b"hash_key", "holdout_scope", b"holdout_scope", "hypothesis", b"hypothesis", "id", b"id", "is_automated_change", b"is_automated_change", "is_feature_flag", b"is_feature_flag", "is_managed", b"is_managed", "is_official_holdout", b"is_official_holdout", "is_template", b"is_template", "lifecycle_plan", b"lifecycle_plan", "name", b"name", "number_line_settings", b"number_line_settings", "owning_team_id", b"owning_team_id", "phase", b"phase", "revision", b"revision", "rules", b"rules", "suppress_editor_mention", b"suppress_editor_mention", "surfaces", b"surfaces", "tech_spec_link", b"tech_spec_link", "title", b"title", "type", b"type", "unit_type", b"unit_type", "variations", b"variations", "version", b"version", "winning_variation_id", b"winning_variation_id"]  # noqa: Y015
     def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
     _WhichOneofReturnType__archive_at: _TypeAlias = _typing.Literal["archive_at"]  # noqa: Y015
     _WhichOneofArgType__archive_at: _TypeAlias = _typing.Literal["_archive_at", b"_archive_at"]  # noqa: Y015
@@ -2065,6 +2122,8 @@ class Experiment(_message.Message):
     _WhichOneofArgType__expected_end_date: _TypeAlias = _typing.Literal["_expected_end_date", b"_expected_end_date"]  # noqa: Y015
     _WhichOneofReturnType__guild_experiment_version: _TypeAlias = _typing.Literal["guild_experiment_version"]  # noqa: Y015
     _WhichOneofArgType__guild_experiment_version: _TypeAlias = _typing.Literal["_guild_experiment_version", b"_guild_experiment_version"]  # noqa: Y015
+    _WhichOneofReturnType__holdout_scope: _TypeAlias = _typing.Literal["holdout_scope"]  # noqa: Y015
+    _WhichOneofArgType__holdout_scope: _TypeAlias = _typing.Literal["_holdout_scope", b"_holdout_scope"]  # noqa: Y015
     _WhichOneofReturnType__hypothesis: _TypeAlias = _typing.Literal["hypothesis"]  # noqa: Y015
     _WhichOneofArgType__hypothesis: _TypeAlias = _typing.Literal["_hypothesis", b"_hypothesis"]  # noqa: Y015
     _WhichOneofReturnType__lifecycle_plan: _TypeAlias = _typing.Literal["lifecycle_plan"]  # noqa: Y015
@@ -2089,6 +2148,8 @@ class Experiment(_message.Message):
     def WhichOneof(self, oneof_group: _WhichOneofArgType__expected_end_date) -> _WhichOneofReturnType__expected_end_date | None: ...
     @_typing.overload
     def WhichOneof(self, oneof_group: _WhichOneofArgType__guild_experiment_version) -> _WhichOneofReturnType__guild_experiment_version | None: ...
+    @_typing.overload
+    def WhichOneof(self, oneof_group: _WhichOneofArgType__holdout_scope) -> _WhichOneofReturnType__holdout_scope | None: ...
     @_typing.overload
     def WhichOneof(self, oneof_group: _WhichOneofArgType__hypothesis) -> _WhichOneofReturnType__hypothesis | None: ...
     @_typing.overload

@@ -811,6 +811,7 @@ class UserData(_message.Message):
         CLASSIFICATION_TYPE_APP_WARN_TRADEMARK_ADMIN: UserData._ClassificationType.ValueType  # 8120
         CLASSIFICATION_TYPE_APP_DISABLE_GUILD_INSTALLS_ADMIN: UserData._ClassificationType.ValueType  # 8130
         CLASSIFICATION_TYPE_APP_DELETE_CG_ADMIN: UserData._ClassificationType.ValueType  # 8140
+        CLASSIFICATION_TYPE_APP_WARN_CG_ADMIN: UserData._ClassificationType.ValueType  # 8150
         CLASSIFICATION_TYPE_TEST_CLASSIFICATION: UserData._ClassificationType.ValueType  # 9000
         CLASSIFICATION_TYPE_TEST_CLASSIFICATION_LOW: UserData._ClassificationType.ValueType  # 9001
         CLASSIFICATION_TYPE_TEST_CLASSIFICATION_SEVERE: UserData._ClassificationType.ValueType  # 9002
@@ -1566,6 +1567,7 @@ class UserData(_message.Message):
     CLASSIFICATION_TYPE_APP_WARN_TRADEMARK_ADMIN: UserData.ClassificationType.ValueType  # 8120
     CLASSIFICATION_TYPE_APP_DISABLE_GUILD_INSTALLS_ADMIN: UserData.ClassificationType.ValueType  # 8130
     CLASSIFICATION_TYPE_APP_DELETE_CG_ADMIN: UserData.ClassificationType.ValueType  # 8140
+    CLASSIFICATION_TYPE_APP_WARN_CG_ADMIN: UserData.ClassificationType.ValueType  # 8150
     CLASSIFICATION_TYPE_TEST_CLASSIFICATION: UserData.ClassificationType.ValueType  # 9000
     CLASSIFICATION_TYPE_TEST_CLASSIFICATION_LOW: UserData.ClassificationType.ValueType  # 9001
     CLASSIFICATION_TYPE_TEST_CLASSIFICATION_SEVERE: UserData.ClassificationType.ValueType  # 9002

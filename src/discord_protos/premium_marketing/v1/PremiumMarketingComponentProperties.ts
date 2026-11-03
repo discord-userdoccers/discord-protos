@@ -3600,7 +3600,19 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_BUILD_A_BEAR_INTRO = 875;
      */
-    BUILD_A_BEAR_INTRO = 875
+    BUILD_A_BEAR_INTRO = 875,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CUSTOM_TYPING_INDICATOR_MOBILE_NEW_PRESETS_SETTINGS_BADGE = 876;
+     */
+    CUSTOM_TYPING_INDICATOR_MOBILE_NEW_PRESETS_SETTINGS_BADGE = 876,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CUSTOM_TYPING_INDICATOR_MOBILE_NEW_PRESETS_STYLING_BADGE = 877;
+     */
+    CUSTOM_TYPING_INDICATOR_MOBILE_NEW_PRESETS_STYLING_BADGE = 877,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CUSTOM_TYPING_INDICATOR_MOBILE_NEW_PRESETS_ACTION_SHEET = 878;
+     */
+    CUSTOM_TYPING_INDICATOR_MOBILE_NEW_PRESETS_ACTION_SHEET = 878
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant

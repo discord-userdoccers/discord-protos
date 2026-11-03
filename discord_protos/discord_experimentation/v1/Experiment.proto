@@ -506,6 +506,24 @@ message Experiment {
     optional RolloutPlan rollout_plan = 2;
   }
 
+  enum Level {
+    LEVEL_UNSPECIFIED = 0;
+    LEVEL_ORGANIZATION = 1;
+    LEVEL_SQUAD = 2;
+  }
+
+  enum FiscalPeriod {
+    FISCAL_PERIOD_UNSPECIFIED = 0;
+    FISCAL_PERIOD_H1 = 1;
+    FISCAL_PERIOD_H2 = 2;
+  }
+
+  message HoldoutScope {
+    Level level = 1;
+    FiscalPeriod fiscal_half = 2;
+    int32 fiscal_year = 3;
+  }
+
   enum Kind {
     KIND_CHANGE_SOURCE_UNSPECIFIED = 0;
     KIND_MANUAL = 1;
@@ -571,5 +589,6 @@ message Experiment {
   optional LifecyclePlan lifecycle_plan = 48;
   bool is_feature_flag = 49;
   bool is_official_holdout = 50;
+  optional HoldoutScope holdout_scope = 52;
   optional ChangeSource change_source = 51;
 }

@@ -209,6 +209,10 @@ export interface Experiment {
      */
     isOfficialHoldout: boolean;
     /**
+     * @generated from protobuf field: optional discord_protos.discord_experimentation.v1.Experiment.HoldoutScope holdout_scope = 52
+     */
+    holdoutScope?: Experiment_HoldoutScope;
+    /**
      * @generated from protobuf field: optional discord_protos.discord_experimentation.v1.Experiment.ChangeSource change_source = 51
      */
     changeSource?: Experiment_ChangeSource;
@@ -1203,6 +1207,23 @@ export interface Experiment_LifecyclePlan {
     rolloutPlan?: Experiment_RolloutPlan;
 }
 /**
+ * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.HoldoutScope
+ */
+export interface Experiment_HoldoutScope {
+    /**
+     * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.Level level = 1
+     */
+    level: Experiment_Level;
+    /**
+     * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.FiscalPeriod fiscal_half = 2
+     */
+    fiscalHalf: Experiment_FiscalPeriod;
+    /**
+     * @generated from protobuf field: int32 fiscal_year = 3
+     */
+    fiscalYear: number;
+}
+/**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.ChangeSource
  */
 export interface Experiment_ChangeSource {
@@ -1566,6 +1587,40 @@ export enum Experiment_StepStatus {
     COMPLETED = 4
 }
 /**
+ * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.Level
+ */
+export enum Experiment_Level {
+    /**
+     * @generated from protobuf enum value: LEVEL_UNSPECIFIED = 0;
+     */
+    UNSPECIFIED = 0,
+    /**
+     * @generated from protobuf enum value: LEVEL_ORGANIZATION = 1;
+     */
+    ORGANIZATION = 1,
+    /**
+     * @generated from protobuf enum value: LEVEL_SQUAD = 2;
+     */
+    SQUAD = 2
+}
+/**
+ * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.FiscalPeriod
+ */
+export enum Experiment_FiscalPeriod {
+    /**
+     * @generated from protobuf enum value: FISCAL_PERIOD_UNSPECIFIED = 0;
+     */
+    UNSPECIFIED = 0,
+    /**
+     * @generated from protobuf enum value: FISCAL_PERIOD_H1 = 1;
+     */
+    H1 = 1,
+    /**
+     * @generated from protobuf enum value: FISCAL_PERIOD_H2 = 2;
+     */
+    H2 = 2
+}
+/**
  * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.Kind
  */
 export enum Experiment_Kind {
@@ -1683,6 +1738,7 @@ class Experiment$Type extends MessageType<Experiment> {
             { no: 48, name: "lifecycle_plan", kind: "message", T: () => Experiment_LifecyclePlan },
             { no: 49, name: "is_feature_flag", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
             { no: 50, name: "is_official_holdout", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
+            { no: 52, name: "holdout_scope", kind: "message", T: () => Experiment_HoldoutScope },
             { no: 51, name: "change_source", kind: "message", T: () => Experiment_ChangeSource }
         ]);
     }
@@ -1886,6 +1942,9 @@ class Experiment$Type extends MessageType<Experiment> {
                 case /* bool is_official_holdout */ 50:
                     message.isOfficialHoldout = reader.bool();
                     break;
+                case /* optional discord_protos.discord_experimentation.v1.Experiment.HoldoutScope holdout_scope */ 52:
+                    message.holdoutScope = Experiment_HoldoutScope.internalBinaryRead(reader, reader.uint32(), options, message.holdoutScope);
+                    break;
                 case /* optional discord_protos.discord_experimentation.v1.Experiment.ChangeSource change_source */ 51:
                     message.changeSource = Experiment_ChangeSource.internalBinaryRead(reader, reader.uint32(), options, message.changeSource);
                     break;
@@ -2057,6 +2116,9 @@ class Experiment$Type extends MessageType<Experiment> {
         /* optional discord_protos.discord_experimentation.v1.Experiment.ChangeSource change_source = 51; */
         if (message.changeSource)
             Experiment_ChangeSource.internalBinaryWrite(message.changeSource, writer.tag(51, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.discord_experimentation.v1.Experiment.HoldoutScope holdout_scope = 52; */
+        if (message.holdoutScope)
+            Experiment_HoldoutScope.internalBinaryWrite(message.holdoutScope, writer.tag(52, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -5646,6 +5708,69 @@ class Experiment_LifecyclePlan$Type extends MessageType<Experiment_LifecyclePlan
  * @generated MessageType for protobuf message discord_protos.discord_experimentation.v1.Experiment.LifecyclePlan
  */
 export const Experiment_LifecyclePlan = new Experiment_LifecyclePlan$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class Experiment_HoldoutScope$Type extends MessageType<Experiment_HoldoutScope> {
+    constructor() {
+        super("discord_protos.discord_experimentation.v1.Experiment.HoldoutScope", [
+            { no: 1, name: "level", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.Level", Experiment_Level, "LEVEL_"] },
+            { no: 2, name: "fiscal_half", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.FiscalPeriod", Experiment_FiscalPeriod, "FISCAL_PERIOD_"] },
+            { no: 3, name: "fiscal_year", kind: "scalar", T: 5 /*ScalarType.INT32*/ }
+        ]);
+    }
+    create(value?: PartialMessage<Experiment_HoldoutScope>): Experiment_HoldoutScope {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.level = 0;
+        message.fiscalHalf = 0;
+        message.fiscalYear = 0;
+        if (value !== undefined)
+            reflectionMergePartial<Experiment_HoldoutScope>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: Experiment_HoldoutScope): Experiment_HoldoutScope {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* discord_protos.discord_experimentation.v1.Experiment.Level level */ 1:
+                    message.level = reader.int32();
+                    break;
+                case /* discord_protos.discord_experimentation.v1.Experiment.FiscalPeriod fiscal_half */ 2:
+                    message.fiscalHalf = reader.int32();
+                    break;
+                case /* int32 fiscal_year */ 3:
+                    message.fiscalYear = reader.int32();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: Experiment_HoldoutScope, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* discord_protos.discord_experimentation.v1.Experiment.Level level = 1; */
+        if (message.level !== 0)
+            writer.tag(1, WireType.Varint).int32(message.level);
+        /* discord_protos.discord_experimentation.v1.Experiment.FiscalPeriod fiscal_half = 2; */
+        if (message.fiscalHalf !== 0)
+            writer.tag(2, WireType.Varint).int32(message.fiscalHalf);
+        /* int32 fiscal_year = 3; */
+        if (message.fiscalYear !== 0)
+            writer.tag(3, WireType.Varint).int32(message.fiscalYear);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_experimentation.v1.Experiment.HoldoutScope
+ */
+export const Experiment_HoldoutScope = new Experiment_HoldoutScope$Type();
 // @generated message type with reflection information, may provide speed optimized methods
 class Experiment_ChangeSource$Type extends MessageType<Experiment_ChangeSource> {
     constructor() {
