@@ -3612,7 +3612,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CUSTOM_TYPING_INDICATOR_MOBILE_NEW_PRESETS_ACTION_SHEET = 878;
      */
-    CUSTOM_TYPING_INDICATOR_MOBILE_NEW_PRESETS_ACTION_SHEET = 878
+    CUSTOM_TYPING_INDICATOR_MOBILE_NEW_PRESETS_ACTION_SHEET = 878,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_BLOONS_TD_BATTLES_ACCOUNT_LINK_UPSELL = 879;
+     */
+    BLOONS_TD_BATTLES_ACCOUNT_LINK_UPSELL = 879
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant

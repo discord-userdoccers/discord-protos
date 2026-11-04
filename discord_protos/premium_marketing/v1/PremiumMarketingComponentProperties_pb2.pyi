@@ -599,6 +599,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_CUSTOM_TYPING_INDICATOR_MOBILE_NEW_PRESETS_SETTINGS_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 876
         DISMISSIBLE_CONTENT_CUSTOM_TYPING_INDICATOR_MOBILE_NEW_PRESETS_STYLING_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 877
         DISMISSIBLE_CONTENT_CUSTOM_TYPING_INDICATOR_MOBILE_NEW_PRESETS_ACTION_SHEET: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 878
+        DISMISSIBLE_CONTENT_BLOONS_TD_BATTLES_ACCOUNT_LINK_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 879
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_UNSPECIFIED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1128,6 +1129,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_CUSTOM_TYPING_INDICATOR_MOBILE_NEW_PRESETS_SETTINGS_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 876
     DISMISSIBLE_CONTENT_CUSTOM_TYPING_INDICATOR_MOBILE_NEW_PRESETS_STYLING_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 877
     DISMISSIBLE_CONTENT_CUSTOM_TYPING_INDICATOR_MOBILE_NEW_PRESETS_ACTION_SHEET: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 878
+    DISMISSIBLE_CONTENT_BLOONS_TD_BATTLES_ACCOUNT_LINK_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 879
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)

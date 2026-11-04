@@ -1260,6 +1260,18 @@ export interface PreloadedUserSettings_Favorites {
      * @generated from protobuf field: bool auto_add_joined_threads = 4
      */
     autoAddJoinedThreads: boolean;
+    /**
+     * @generated from protobuf field: optional google.protobuf.BoolValue prune_inactive_threads = 5
+     */
+    pruneInactiveThreads?: BoolValue;
+    /**
+     * @generated from protobuf field: uint32 prune_inactive_threads_days = 6
+     */
+    pruneInactiveThreadsDays: number;
+    /**
+     * @generated from protobuf field: bool prune_all_favorited_threads = 7
+     */
+    pruneAllFavoritedThreads: boolean;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.AudioContextSetting
@@ -5401,7 +5413,10 @@ class PreloadedUserSettings_Favorites$Type extends MessageType<PreloadedUserSett
             { no: 1, name: "favorite_channels", kind: "map", K: 6 /*ScalarType.FIXED64*/, V: { kind: "message", T: () => PreloadedUserSettings_FavoriteChannel } },
             { no: 2, name: "muted", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
             { no: 3, name: "guild_visible", kind: "message", T: () => BoolValue },
-            { no: 4, name: "auto_add_joined_threads", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
+            { no: 4, name: "auto_add_joined_threads", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
+            { no: 5, name: "prune_inactive_threads", kind: "message", T: () => BoolValue },
+            { no: 6, name: "prune_inactive_threads_days", kind: "scalar", T: 13 /*ScalarType.UINT32*/ },
+            { no: 7, name: "prune_all_favorited_threads", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_Favorites>): PreloadedUserSettings_Favorites {
@@ -5409,6 +5424,8 @@ class PreloadedUserSettings_Favorites$Type extends MessageType<PreloadedUserSett
         message.favoriteChannels = {};
         message.muted = false;
         message.autoAddJoinedThreads = false;
+        message.pruneInactiveThreadsDays = 0;
+        message.pruneAllFavoritedThreads = false;
         if (value !== undefined)
             reflectionMergePartial<PreloadedUserSettings_Favorites>(this, message, value);
         return message;
@@ -5429,6 +5446,15 @@ class PreloadedUserSettings_Favorites$Type extends MessageType<PreloadedUserSett
                     break;
                 case /* bool auto_add_joined_threads */ 4:
                     message.autoAddJoinedThreads = reader.bool();
+                    break;
+                case /* optional google.protobuf.BoolValue prune_inactive_threads */ 5:
+                    message.pruneInactiveThreads = BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.pruneInactiveThreads);
+                    break;
+                case /* uint32 prune_inactive_threads_days */ 6:
+                    message.pruneInactiveThreadsDays = reader.uint32();
+                    break;
+                case /* bool prune_all_favorited_threads */ 7:
+                    message.pruneAllFavoritedThreads = reader.bool();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -5474,6 +5500,15 @@ class PreloadedUserSettings_Favorites$Type extends MessageType<PreloadedUserSett
         /* bool auto_add_joined_threads = 4; */
         if (message.autoAddJoinedThreads !== false)
             writer.tag(4, WireType.Varint).bool(message.autoAddJoinedThreads);
+        /* optional google.protobuf.BoolValue prune_inactive_threads = 5; */
+        if (message.pruneInactiveThreads)
+            BoolValue.internalBinaryWrite(message.pruneInactiveThreads, writer.tag(5, WireType.LengthDelimited).fork(), options).join();
+        /* uint32 prune_inactive_threads_days = 6; */
+        if (message.pruneInactiveThreadsDays !== 0)
+            writer.tag(6, WireType.Varint).uint32(message.pruneInactiveThreadsDays);
+        /* bool prune_all_favorited_threads = 7; */
+        if (message.pruneAllFavoritedThreads !== false)
+            writer.tag(7, WireType.Varint).bool(message.pruneAllFavoritedThreads);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

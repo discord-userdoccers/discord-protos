@@ -484,6 +484,9 @@ message PreloadedUserSettings {
     bool muted = 2;
     optional google.protobuf.BoolValue guild_visible = 3;
     bool auto_add_joined_threads = 4;
+    optional google.protobuf.BoolValue prune_inactive_threads = 5;
+    uint32 prune_inactive_threads_days = 6;
+    bool prune_all_favorited_threads = 7;
   }
 
   message AudioContextSetting {
