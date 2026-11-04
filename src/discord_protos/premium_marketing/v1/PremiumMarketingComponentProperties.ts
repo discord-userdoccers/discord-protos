@@ -621,6 +621,10 @@ export interface PremiumMarketingComponentProperties_GiftIcon {
      * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Gradient gradient = 4
      */
     gradient?: PremiumMarketingComponentProperties_Gradient;
+    /**
+     * @generated from protobuf field: string trinket_rive_animation_url = 5
+     */
+    trinketRiveAnimationUrl: string;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset
@@ -5234,7 +5238,8 @@ class PremiumMarketingComponentProperties_GiftIcon$Type extends MessageType<Prem
             { no: 1, name: "box_animation_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 2, name: "trinket_animation_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 3, name: "trinket_glow_animation_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 4, name: "gradient", kind: "message", T: () => PremiumMarketingComponentProperties_Gradient }
+            { no: 4, name: "gradient", kind: "message", T: () => PremiumMarketingComponentProperties_Gradient },
+            { no: 5, name: "trinket_rive_animation_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_GiftIcon>): PremiumMarketingComponentProperties_GiftIcon {
@@ -5242,6 +5247,7 @@ class PremiumMarketingComponentProperties_GiftIcon$Type extends MessageType<Prem
         message.boxAnimationUrl = "";
         message.trinketAnimationUrl = "";
         message.trinketGlowAnimationUrl = "";
+        message.trinketRiveAnimationUrl = "";
         if (value !== undefined)
             reflectionMergePartial<PremiumMarketingComponentProperties_GiftIcon>(this, message, value);
         return message;
@@ -5262,6 +5268,9 @@ class PremiumMarketingComponentProperties_GiftIcon$Type extends MessageType<Prem
                     break;
                 case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Gradient gradient */ 4:
                     message.gradient = PremiumMarketingComponentProperties_Gradient.internalBinaryRead(reader, reader.uint32(), options, message.gradient);
+                    break;
+                case /* string trinket_rive_animation_url */ 5:
+                    message.trinketRiveAnimationUrl = reader.string();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -5287,6 +5296,9 @@ class PremiumMarketingComponentProperties_GiftIcon$Type extends MessageType<Prem
         /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Gradient gradient = 4; */
         if (message.gradient)
             PremiumMarketingComponentProperties_Gradient.internalBinaryWrite(message.gradient, writer.tag(4, WireType.LengthDelimited).fork(), options).join();
+        /* string trinket_rive_animation_url = 5; */
+        if (message.trinketRiveAnimationUrl !== "")
+            writer.tag(5, WireType.LengthDelimited).string(message.trinketRiveAnimationUrl);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

@@ -676,6 +676,7 @@ message PremiumMarketingComponentProperties {
     string trinket_animation_url = 2;
     string trinket_glow_animation_url = 3;
     optional Gradient gradient = 4;
+    string trinket_rive_animation_url = 5;
   }
 
   message ThemeAwareAsset {
