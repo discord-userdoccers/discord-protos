@@ -3620,7 +3620,15 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_BLOONS_TD_BATTLES_ACCOUNT_LINK_UPSELL = 879;
      */
-    BLOONS_TD_BATTLES_ACCOUNT_LINK_UPSELL = 879
+    BLOONS_TD_BATTLES_ACCOUNT_LINK_UPSELL = 879,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_DEFAULT_NITRO_SOUNDS_CAROUSEL_PREVIEW = 880;
+     */
+    DEFAULT_NITRO_SOUNDS_CAROUSEL_PREVIEW = 880,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GLOBAL_DISCOVERY_GAMES_TAB_COACHMARK = 881;
+     */
+    GLOBAL_DISCOVERY_GAMES_TAB_COACHMARK = 881
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
