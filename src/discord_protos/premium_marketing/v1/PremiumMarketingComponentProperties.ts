@@ -3628,7 +3628,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GLOBAL_DISCOVERY_GAMES_TAB_COACHMARK = 881;
      */
-    GLOBAL_DISCOVERY_GAMES_TAB_COACHMARK = 881
+    GLOBAL_DISCOVERY_GAMES_TAB_COACHMARK = 881,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_GAME_EXIT_PROMO_BLOONS = 882;
+     */
+    SLAYER_STOREFRONT_GAME_EXIT_PROMO_BLOONS = 882
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant

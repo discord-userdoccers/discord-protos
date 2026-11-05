@@ -602,6 +602,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_BLOONS_TD_BATTLES_ACCOUNT_LINK_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 879
         DISMISSIBLE_CONTENT_DEFAULT_NITRO_SOUNDS_CAROUSEL_PREVIEW: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 880
         DISMISSIBLE_CONTENT_GLOBAL_DISCOVERY_GAMES_TAB_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 881
+        DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_GAME_EXIT_PROMO_BLOONS: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 882
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_UNSPECIFIED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1134,6 +1135,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_BLOONS_TD_BATTLES_ACCOUNT_LINK_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 879
     DISMISSIBLE_CONTENT_DEFAULT_NITRO_SOUNDS_CAROUSEL_PREVIEW: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 880
     DISMISSIBLE_CONTENT_GLOBAL_DISCOVERY_GAMES_TAB_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 881
+    DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_GAME_EXIT_PROMO_BLOONS: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 882
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)
