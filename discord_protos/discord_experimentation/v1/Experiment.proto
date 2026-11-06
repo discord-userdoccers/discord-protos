@@ -406,6 +406,7 @@ message Experiment {
     SURFACE_SEO = 7;
     SURFACE_MARKETING = 8;
     SURFACE_DESIGN_DOCS = 9;
+    SURFACE_APP_LAUNCH = 10;
   }
 
   enum ExposureTracking {

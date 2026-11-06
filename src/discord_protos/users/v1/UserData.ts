@@ -4447,7 +4447,11 @@ export enum UserData_TypingSuggestion {
     /**
      * @generated from protobuf enum value: TYPING_SUGGESTION_THINKING = 11;
      */
-    THINKING = 11
+    THINKING = 11,
+    /**
+     * @generated from protobuf enum value: TYPING_SUGGESTION_SQUEAKING = 12;
+     */
+    SQUEAKING = 12
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class UserData$Type extends MessageType<UserData> {

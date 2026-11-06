@@ -1960,6 +1960,7 @@ class UserData(_message.Message):
         TYPING_SUGGESTION_CHIRPING: UserData._TypingSuggestion.ValueType  # 9
         TYPING_SUGGESTION_KEYSMASHING: UserData._TypingSuggestion.ValueType  # 10
         TYPING_SUGGESTION_THINKING: UserData._TypingSuggestion.ValueType  # 11
+        TYPING_SUGGESTION_SQUEAKING: UserData._TypingSuggestion.ValueType  # 12
 
     class TypingSuggestion(_TypingSuggestion, metaclass=_TypingSuggestionEnumTypeWrapper): ...
     TYPING_SUGGESTION_UNSPECIFIED: UserData.TypingSuggestion.ValueType  # 0
@@ -1974,6 +1975,7 @@ class UserData(_message.Message):
     TYPING_SUGGESTION_CHIRPING: UserData.TypingSuggestion.ValueType  # 9
     TYPING_SUGGESTION_KEYSMASHING: UserData.TypingSuggestion.ValueType  # 10
     TYPING_SUGGESTION_THINKING: UserData.TypingSuggestion.ValueType  # 11
+    TYPING_SUGGESTION_SQUEAKING: UserData.TypingSuggestion.ValueType  # 12
 
     @_typing.final
     class LinkedUser(_message.Message):
