@@ -3707,7 +3707,15 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_AUTOCLIPPING_EARLY_ACCESS_LAUNCH_ANNOUNCEMENT = 894;
      */
-    AUTOCLIPPING_EARLY_ACCESS_LAUNCH_ANNOUNCEMENT = 894
+    AUTOCLIPPING_EARLY_ACCESS_LAUNCH_ANNOUNCEMENT = 894,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_ORB_WALLET_SHOP_CTA_CARD_MOBILE = 895;
+     */
+    ORB_WALLET_SHOP_CTA_CARD_MOBILE = 895,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_ORB_WALLET_NITRO_UPSELL_CTA_CARD_MOBILE = 896;
+     */
+    ORB_WALLET_NITRO_UPSELL_CTA_CARD_MOBILE = 896
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant

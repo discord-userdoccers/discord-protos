@@ -615,6 +615,8 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_AUTOCLIPPING_EARLY_ACCESS_FREE_USER_CHAT_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 892
         DISMISSIBLE_CONTENT_AUTOCLIPPING_EARLY_ACCESS_FREE_USER_POST_SESSION_OPT_OUT: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 893
         DISMISSIBLE_CONTENT_AUTOCLIPPING_EARLY_ACCESS_LAUNCH_ANNOUNCEMENT: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 894
+        DISMISSIBLE_CONTENT_ORB_WALLET_SHOP_CTA_CARD_MOBILE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 895
+        DISMISSIBLE_CONTENT_ORB_WALLET_NITRO_UPSELL_CTA_CARD_MOBILE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 896
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_UNSPECIFIED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1160,6 +1162,8 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_AUTOCLIPPING_EARLY_ACCESS_FREE_USER_CHAT_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 892
     DISMISSIBLE_CONTENT_AUTOCLIPPING_EARLY_ACCESS_FREE_USER_POST_SESSION_OPT_OUT: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 893
     DISMISSIBLE_CONTENT_AUTOCLIPPING_EARLY_ACCESS_LAUNCH_ANNOUNCEMENT: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 894
+    DISMISSIBLE_CONTENT_ORB_WALLET_SHOP_CTA_CARD_MOBILE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 895
+    DISMISSIBLE_CONTENT_ORB_WALLET_NITRO_UPSELL_CTA_CARD_MOBILE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 896
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)
