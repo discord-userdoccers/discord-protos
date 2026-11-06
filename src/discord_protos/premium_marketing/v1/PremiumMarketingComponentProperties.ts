@@ -213,6 +213,12 @@ export interface PremiumMarketingComponentProperties {
          */
         nitroPerkCard: PremiumMarketingComponentProperties_NitroPerkCard;
     } | {
+        oneofKind: "collectionPageMarketingBlock";
+        /**
+         * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.CollectionPageMarketingBlock collection_page_marketing_block = 34
+         */
+        collectionPageMarketingBlock: PremiumMarketingComponentProperties_CollectionPageMarketingBlock;
+    } | {
         oneofKind: undefined;
     };
 }
@@ -1446,6 +1452,27 @@ export interface PremiumMarketingComponentProperties_NitroPerkCard {
      * @generated from protobuf field: repeated discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.NitroPerkCardPlacement placements = 9
      */
     placements: PremiumMarketingComponentProperties_NitroPerkCardPlacement[];
+}
+/**
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.CollectionPageMarketingBlock
+ */
+export interface PremiumMarketingComponentProperties_CollectionPageMarketingBlock {
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString title_localized = 1
+     */
+    titleLocalized?: PremiumMarketingComponentProperties_LocalizedString;
+    /**
+     * @generated from protobuf field: string title = 2
+     */
+    title: string;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset art = 3
+     */
+    art?: PremiumMarketingComponentProperties_ThemeAwareAsset;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.CTAButton button = 4
+     */
+    button?: PremiumMarketingComponentProperties_CTAButton;
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction
@@ -3632,7 +3659,55 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_GAME_EXIT_PROMO_BLOONS = 882;
      */
-    SLAYER_STOREFRONT_GAME_EXIT_PROMO_BLOONS = 882
+    SLAYER_STOREFRONT_GAME_EXIT_PROMO_BLOONS = 882,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_AUTOCLIPPING_EARLY_ACCESS_FIRST_CALL_EDUCATION = 883;
+     */
+    AUTOCLIPPING_EARLY_ACCESS_FIRST_CALL_EDUCATION = 883,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_AUTOCLIPPING_EARLY_ACCESS_OPT_IN_SUCCESS_NOTICE = 884;
+     */
+    AUTOCLIPPING_EARLY_ACCESS_OPT_IN_SUCCESS_NOTICE = 884,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_AUTOCLIPPING_EARLY_ACCESS_SENT_MANUAL_CLIP_NOTICE = 885;
+     */
+    AUTOCLIPPING_EARLY_ACCESS_SENT_MANUAL_CLIP_NOTICE = 885,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_AUTOCLIPPING_EARLY_ACCESS_RECEIVED_CLIP_NOTICE = 886;
+     */
+    AUTOCLIPPING_EARLY_ACCESS_RECEIVED_CLIP_NOTICE = 886,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_AUTOCLIPPING_EARLY_ACCESS_FRIEND_CLIP_VOICE_NOTICE = 887;
+     */
+    AUTOCLIPPING_EARLY_ACCESS_FRIEND_CLIP_VOICE_NOTICE = 887,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_AUTOCLIPPING_EARLY_ACCESS_RTC_NUDGE_ACKNOWLEDGMENT = 888;
+     */
+    AUTOCLIPPING_EARLY_ACCESS_RTC_NUDGE_ACKNOWLEDGMENT = 888,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_AUTOCLIPPING_EARLY_ACCESS_NITRO_TAB_CUE = 889;
+     */
+    AUTOCLIPPING_EARLY_ACCESS_NITRO_TAB_CUE = 889,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_AUTOCLIPPING_EARLY_ACCESS_LIBRARY_EDUCATION_POPOVER = 890;
+     */
+    AUTOCLIPPING_EARLY_ACCESS_LIBRARY_EDUCATION_POPOVER = 890,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_AUTOCLIPPING_EARLY_ACCESS_LIBRARY_VOICE_BANNER = 891;
+     */
+    AUTOCLIPPING_EARLY_ACCESS_LIBRARY_VOICE_BANNER = 891,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_AUTOCLIPPING_EARLY_ACCESS_FREE_USER_CHAT_UPSELL = 892;
+     */
+    AUTOCLIPPING_EARLY_ACCESS_FREE_USER_CHAT_UPSELL = 892,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_AUTOCLIPPING_EARLY_ACCESS_FREE_USER_POST_SESSION_OPT_OUT = 893;
+     */
+    AUTOCLIPPING_EARLY_ACCESS_FREE_USER_POST_SESSION_OPT_OUT = 893,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_AUTOCLIPPING_EARLY_ACCESS_LAUNCH_ANNOUNCEMENT = 894;
+     */
+    AUTOCLIPPING_EARLY_ACCESS_LAUNCH_ANNOUNCEMENT = 894
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
@@ -3746,7 +3821,8 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
             { no: 30, name: "outbound_promotion_popover", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_OutboundPromotionPopover },
             { no: 31, name: "outbound_promotion_claim_modal_card", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_OutboundPromotionClaimModalCard },
             { no: 32, name: "shop_coachmark", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_ShopCoachmark },
-            { no: 33, name: "nitro_perk_card", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_NitroPerkCard }
+            { no: 33, name: "nitro_perk_card", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_NitroPerkCard },
+            { no: 34, name: "collection_page_marketing_block", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_CollectionPageMarketingBlock }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties>): PremiumMarketingComponentProperties {
@@ -3955,6 +4031,12 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
                         nitroPerkCard: PremiumMarketingComponentProperties_NitroPerkCard.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).nitroPerkCard)
                     };
                     break;
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.CollectionPageMarketingBlock collection_page_marketing_block */ 34:
+                    message.properties = {
+                        oneofKind: "collectionPageMarketingBlock",
+                        collectionPageMarketingBlock: PremiumMarketingComponentProperties_CollectionPageMarketingBlock.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).collectionPageMarketingBlock)
+                    };
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -4066,6 +4148,9 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
         /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.NitroPerkCard nitro_perk_card = 33; */
         if (message.properties.oneofKind === "nitroPerkCard")
             PremiumMarketingComponentProperties_NitroPerkCard.internalBinaryWrite(message.properties.nitroPerkCard, writer.tag(33, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.CollectionPageMarketingBlock collection_page_marketing_block = 34; */
+        if (message.properties.oneofKind === "collectionPageMarketingBlock")
+            PremiumMarketingComponentProperties_CollectionPageMarketingBlock.internalBinaryWrite(message.properties.collectionPageMarketingBlock, writer.tag(34, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -7607,3 +7692,71 @@ class PremiumMarketingComponentProperties_NitroPerkCard$Type extends MessageType
  * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.NitroPerkCard
  */
 export const PremiumMarketingComponentProperties_NitroPerkCard = new PremiumMarketingComponentProperties_NitroPerkCard$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PremiumMarketingComponentProperties_CollectionPageMarketingBlock$Type extends MessageType<PremiumMarketingComponentProperties_CollectionPageMarketingBlock> {
+    constructor() {
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.CollectionPageMarketingBlock", [
+            { no: 1, name: "title_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
+            { no: 2, name: "title", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 3, name: "art", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset },
+            { no: 4, name: "button", kind: "message", T: () => PremiumMarketingComponentProperties_CTAButton }
+        ]);
+    }
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_CollectionPageMarketingBlock>): PremiumMarketingComponentProperties_CollectionPageMarketingBlock {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.title = "";
+        if (value !== undefined)
+            reflectionMergePartial<PremiumMarketingComponentProperties_CollectionPageMarketingBlock>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_CollectionPageMarketingBlock): PremiumMarketingComponentProperties_CollectionPageMarketingBlock {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString title_localized */ 1:
+                    message.titleLocalized = PremiumMarketingComponentProperties_LocalizedString.internalBinaryRead(reader, reader.uint32(), options, message.titleLocalized);
+                    break;
+                case /* string title */ 2:
+                    message.title = reader.string();
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset art */ 3:
+                    message.art = PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryRead(reader, reader.uint32(), options, message.art);
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.CTAButton button */ 4:
+                    message.button = PremiumMarketingComponentProperties_CTAButton.internalBinaryRead(reader, reader.uint32(), options, message.button);
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_CollectionPageMarketingBlock, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString title_localized = 1; */
+        if (message.titleLocalized)
+            PremiumMarketingComponentProperties_LocalizedString.internalBinaryWrite(message.titleLocalized, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        /* string title = 2; */
+        if (message.title !== "")
+            writer.tag(2, WireType.LengthDelimited).string(message.title);
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset art = 3; */
+        if (message.art)
+            PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryWrite(message.art, writer.tag(3, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.CTAButton button = 4; */
+        if (message.button)
+            PremiumMarketingComponentProperties_CTAButton.internalBinaryWrite(message.button, writer.tag(4, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.CollectionPageMarketingBlock
+ */
+export const PremiumMarketingComponentProperties_CollectionPageMarketingBlock = new PremiumMarketingComponentProperties_CollectionPageMarketingBlock$Type();
