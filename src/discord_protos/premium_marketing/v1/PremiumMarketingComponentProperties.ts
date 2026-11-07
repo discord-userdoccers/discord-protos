@@ -319,6 +319,10 @@ export interface PremiumMarketingComponentProperties_CTAButton {
      * @generated from protobuf field: optional google.protobuf.UInt64Value navigable_storefront_application_id = 5
      */
     navigableStorefrontApplicationId?: UInt64Value;
+    /**
+     * @generated from protobuf field: optional google.protobuf.UInt64Value shop_collection_id = 6
+     */
+    shopCollectionId?: UInt64Value;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Subtitle
@@ -997,6 +1001,10 @@ export interface PremiumMarketingComponentProperties_Nagbar {
      * @generated from protobuf field: optional google.protobuf.UInt64Value navigable_storefront_application_id = 8
      */
     navigableStorefrontApplicationId?: UInt64Value;
+    /**
+     * @generated from protobuf field: optional google.protobuf.UInt64Value shop_collection_id = 9
+     */
+    shopCollectionId?: UInt64Value;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PlanSelectCardBanner
@@ -1088,6 +1096,10 @@ export interface PremiumMarketingComponentProperties_ShopNagbar {
      * @generated from protobuf field: optional google.protobuf.UInt64Value navigable_storefront_application_id = 8
      */
     navigableStorefrontApplicationId?: UInt64Value;
+    /**
+     * @generated from protobuf field: optional google.protobuf.UInt64Value shop_collection_id = 9
+     */
+    shopCollectionId?: UInt64Value;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AdminEditorTestComponent
@@ -1513,7 +1525,11 @@ export enum PremiumMarketingComponentProperties_ButtonAction {
     /**
      * @generated from protobuf enum value: BUTTON_ACTION_OPEN_GUILD_BOOST_CHECKOUT = 8;
      */
-    OPEN_GUILD_BOOST_CHECKOUT = 8
+    OPEN_GUILD_BOOST_CHECKOUT = 8,
+    /**
+     * @generated from protobuf enum value: BUTTON_ACTION_OPEN_SHOP = 9;
+     */
+    OPEN_SHOP = 9
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MarketingPageBannerButtonVariant
@@ -3715,7 +3731,15 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_ORB_WALLET_NITRO_UPSELL_CTA_CARD_MOBILE = 896;
      */
-    ORB_WALLET_NITRO_UPSELL_CTA_CARD_MOBILE = 896
+    ORB_WALLET_NITRO_UPSELL_CTA_CARD_MOBILE = 896,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CONSOLE_CONNECTION_COACHMARK = 897;
+     */
+    CONSOLE_CONNECTION_COACHMARK = 897,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GUILD_SPACE_CHANNEL_ROW_HIGHLIGHT = 898;
+     */
+    GUILD_SPACE_CHANNEL_ROW_HIGHLIGHT = 898
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
@@ -4417,7 +4441,8 @@ class PremiumMarketingComponentProperties_CTAButton$Type extends MessageType<Pre
             { no: 2, name: "button_action", kind: "enum", T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction", PremiumMarketingComponentProperties_ButtonAction, "BUTTON_ACTION_"] },
             { no: 3, name: "deeplink_section", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 4, name: "copy_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
-            { no: 5, name: "navigable_storefront_application_id", kind: "message", T: () => UInt64Value }
+            { no: 5, name: "navigable_storefront_application_id", kind: "message", T: () => UInt64Value },
+            { no: 6, name: "shop_collection_id", kind: "message", T: () => UInt64Value }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_CTAButton>): PremiumMarketingComponentProperties_CTAButton {
@@ -4449,6 +4474,9 @@ class PremiumMarketingComponentProperties_CTAButton$Type extends MessageType<Pre
                 case /* optional google.protobuf.UInt64Value navigable_storefront_application_id */ 5:
                     message.navigableStorefrontApplicationId = UInt64Value.internalBinaryRead(reader, reader.uint32(), options, message.navigableStorefrontApplicationId);
                     break;
+                case /* optional google.protobuf.UInt64Value shop_collection_id */ 6:
+                    message.shopCollectionId = UInt64Value.internalBinaryRead(reader, reader.uint32(), options, message.shopCollectionId);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -4476,6 +4504,9 @@ class PremiumMarketingComponentProperties_CTAButton$Type extends MessageType<Pre
         /* optional google.protobuf.UInt64Value navigable_storefront_application_id = 5; */
         if (message.navigableStorefrontApplicationId)
             UInt64Value.internalBinaryWrite(message.navigableStorefrontApplicationId, writer.tag(5, WireType.LengthDelimited).fork(), options).join();
+        /* optional google.protobuf.UInt64Value shop_collection_id = 6; */
+        if (message.shopCollectionId)
+            UInt64Value.internalBinaryWrite(message.shopCollectionId, writer.tag(6, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -6307,7 +6338,8 @@ class PremiumMarketingComponentProperties_Nagbar$Type extends MessageType<Premiu
             { no: 5, name: "help_article", kind: "message", T: () => PremiumMarketingComponentProperties_HelpArticle },
             { no: 6, name: "body_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
             { no: 7, name: "cta_label_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
-            { no: 8, name: "navigable_storefront_application_id", kind: "message", T: () => UInt64Value }
+            { no: 8, name: "navigable_storefront_application_id", kind: "message", T: () => UInt64Value },
+            { no: 9, name: "shop_collection_id", kind: "message", T: () => UInt64Value }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_Nagbar>): PremiumMarketingComponentProperties_Nagbar {
@@ -6349,6 +6381,9 @@ class PremiumMarketingComponentProperties_Nagbar$Type extends MessageType<Premiu
                 case /* optional google.protobuf.UInt64Value navigable_storefront_application_id */ 8:
                     message.navigableStorefrontApplicationId = UInt64Value.internalBinaryRead(reader, reader.uint32(), options, message.navigableStorefrontApplicationId);
                     break;
+                case /* optional google.protobuf.UInt64Value shop_collection_id */ 9:
+                    message.shopCollectionId = UInt64Value.internalBinaryRead(reader, reader.uint32(), options, message.shopCollectionId);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -6385,6 +6420,9 @@ class PremiumMarketingComponentProperties_Nagbar$Type extends MessageType<Premiu
         /* optional google.protobuf.UInt64Value navigable_storefront_application_id = 8; */
         if (message.navigableStorefrontApplicationId)
             UInt64Value.internalBinaryWrite(message.navigableStorefrontApplicationId, writer.tag(8, WireType.LengthDelimited).fork(), options).join();
+        /* optional google.protobuf.UInt64Value shop_collection_id = 9; */
+        if (message.shopCollectionId)
+            UInt64Value.internalBinaryWrite(message.shopCollectionId, writer.tag(9, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -6564,7 +6602,8 @@ class PremiumMarketingComponentProperties_ShopNagbar$Type extends MessageType<Pr
             { no: 5, name: "help_article", kind: "message", T: () => PremiumMarketingComponentProperties_HelpArticle },
             { no: 6, name: "body_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
             { no: 7, name: "cta_label_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
-            { no: 8, name: "navigable_storefront_application_id", kind: "message", T: () => UInt64Value }
+            { no: 8, name: "navigable_storefront_application_id", kind: "message", T: () => UInt64Value },
+            { no: 9, name: "shop_collection_id", kind: "message", T: () => UInt64Value }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_ShopNagbar>): PremiumMarketingComponentProperties_ShopNagbar {
@@ -6606,6 +6645,9 @@ class PremiumMarketingComponentProperties_ShopNagbar$Type extends MessageType<Pr
                 case /* optional google.protobuf.UInt64Value navigable_storefront_application_id */ 8:
                     message.navigableStorefrontApplicationId = UInt64Value.internalBinaryRead(reader, reader.uint32(), options, message.navigableStorefrontApplicationId);
                     break;
+                case /* optional google.protobuf.UInt64Value shop_collection_id */ 9:
+                    message.shopCollectionId = UInt64Value.internalBinaryRead(reader, reader.uint32(), options, message.shopCollectionId);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -6642,6 +6684,9 @@ class PremiumMarketingComponentProperties_ShopNagbar$Type extends MessageType<Pr
         /* optional google.protobuf.UInt64Value navigable_storefront_application_id = 8; */
         if (message.navigableStorefrontApplicationId)
             UInt64Value.internalBinaryWrite(message.navigableStorefrontApplicationId, writer.tag(8, WireType.LengthDelimited).fork(), options).join();
+        /* optional google.protobuf.UInt64Value shop_collection_id = 9; */
+        if (message.shopCollectionId)
+            UInt64Value.internalBinaryWrite(message.shopCollectionId, writer.tag(9, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

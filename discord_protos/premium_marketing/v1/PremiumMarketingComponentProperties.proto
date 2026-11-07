@@ -38,6 +38,7 @@ message PremiumMarketingComponentProperties {
     BUTTON_ACTION_OPEN_PREMIUM_GROUP_PAYMENT_MODAL = 6;
     BUTTON_ACTION_OPEN_SOCIAL_LAYER_STOREFRONT = 7;
     BUTTON_ACTION_OPEN_GUILD_BOOST_CHECKOUT = 8;
+    BUTTON_ACTION_OPEN_SHOP = 9;
   }
 
   message CTAButton {
@@ -46,6 +47,7 @@ message PremiumMarketingComponentProperties {
     string deeplink_section = 3;
     optional LocalizedString copy_localized = 4;
     optional google.protobuf.UInt64Value navigable_storefront_application_id = 5;
+    optional google.protobuf.UInt64Value shop_collection_id = 6;
   }
 
   message Subtitle {
@@ -669,6 +671,8 @@ message PremiumMarketingComponentProperties {
     DISMISSIBLE_CONTENT_AUTOCLIPPING_EARLY_ACCESS_LAUNCH_ANNOUNCEMENT = 894;
     DISMISSIBLE_CONTENT_ORB_WALLET_SHOP_CTA_CARD_MOBILE = 895;
     DISMISSIBLE_CONTENT_ORB_WALLET_NITRO_UPSELL_CTA_CARD_MOBILE = 896;
+    DISMISSIBLE_CONTENT_CONSOLE_CONNECTION_COACHMARK = 897;
+    DISMISSIBLE_CONTENT_GUILD_SPACE_CHANNEL_ROW_HIGHLIGHT = 898;
   }
 
   message MobileBottomSheet {
@@ -809,6 +813,7 @@ message PremiumMarketingComponentProperties {
     optional LocalizedString body_localized = 6;
     optional LocalizedString cta_label_localized = 7;
     optional google.protobuf.UInt64Value navigable_storefront_application_id = 8;
+    optional google.protobuf.UInt64Value shop_collection_id = 9;
   }
 
   message PlanSelectCardBanner {
@@ -837,6 +842,7 @@ message PremiumMarketingComponentProperties {
     optional LocalizedString body_localized = 6;
     optional LocalizedString cta_label_localized = 7;
     optional google.protobuf.UInt64Value navigable_storefront_application_id = 8;
+    optional google.protobuf.UInt64Value shop_collection_id = 9;
   }
 
   enum AdminEditorTestSelectOption {
