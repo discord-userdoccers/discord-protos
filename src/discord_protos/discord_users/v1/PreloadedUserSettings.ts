@@ -1272,6 +1272,10 @@ export interface PreloadedUserSettings_Favorites {
      * @generated from protobuf field: bool prune_all_favorited_threads = 7
      */
     pruneAllFavoritedThreads: boolean;
+    /**
+     * @generated from protobuf field: bool auto_add_joined_threads_per_guild = 8
+     */
+    autoAddJoinedThreadsPerGuild: boolean;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.AudioContextSetting
@@ -5416,7 +5420,8 @@ class PreloadedUserSettings_Favorites$Type extends MessageType<PreloadedUserSett
             { no: 4, name: "auto_add_joined_threads", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
             { no: 5, name: "prune_inactive_threads", kind: "message", T: () => BoolValue },
             { no: 6, name: "prune_inactive_threads_days", kind: "scalar", T: 13 /*ScalarType.UINT32*/ },
-            { no: 7, name: "prune_all_favorited_threads", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
+            { no: 7, name: "prune_all_favorited_threads", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
+            { no: 8, name: "auto_add_joined_threads_per_guild", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
         ]);
     }
     create(value?: PartialMessage<PreloadedUserSettings_Favorites>): PreloadedUserSettings_Favorites {
@@ -5426,6 +5431,7 @@ class PreloadedUserSettings_Favorites$Type extends MessageType<PreloadedUserSett
         message.autoAddJoinedThreads = false;
         message.pruneInactiveThreadsDays = 0;
         message.pruneAllFavoritedThreads = false;
+        message.autoAddJoinedThreadsPerGuild = false;
         if (value !== undefined)
             reflectionMergePartial<PreloadedUserSettings_Favorites>(this, message, value);
         return message;
@@ -5455,6 +5461,9 @@ class PreloadedUserSettings_Favorites$Type extends MessageType<PreloadedUserSett
                     break;
                 case /* bool prune_all_favorited_threads */ 7:
                     message.pruneAllFavoritedThreads = reader.bool();
+                    break;
+                case /* bool auto_add_joined_threads_per_guild */ 8:
+                    message.autoAddJoinedThreadsPerGuild = reader.bool();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -5509,6 +5518,9 @@ class PreloadedUserSettings_Favorites$Type extends MessageType<PreloadedUserSett
         /* bool prune_all_favorited_threads = 7; */
         if (message.pruneAllFavoritedThreads !== false)
             writer.tag(7, WireType.Varint).bool(message.pruneAllFavoritedThreads);
+        /* bool auto_add_joined_threads_per_guild = 8; */
+        if (message.autoAddJoinedThreadsPerGuild !== false)
+            writer.tag(8, WireType.Varint).bool(message.autoAddJoinedThreadsPerGuild);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

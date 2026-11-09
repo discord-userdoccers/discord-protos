@@ -2338,10 +2338,12 @@ class PreloadedUserSettings(_message.Message):
         PRUNE_INACTIVE_THREADS_FIELD_NUMBER: _builtins.int
         PRUNE_INACTIVE_THREADS_DAYS_FIELD_NUMBER: _builtins.int
         PRUNE_ALL_FAVORITED_THREADS_FIELD_NUMBER: _builtins.int
+        AUTO_ADD_JOINED_THREADS_PER_GUILD_FIELD_NUMBER: _builtins.int
         muted: _builtins.bool
         auto_add_joined_threads: _builtins.bool
         prune_inactive_threads_days: _builtins.int
         prune_all_favorited_threads: _builtins.bool
+        auto_add_joined_threads_per_guild: _builtins.bool
         @_builtins.property
         def favorite_channels(self) -> _containers.MessageMap[_builtins.int, Global___PreloadedUserSettings.FavoriteChannel]: ...
         @_builtins.property
@@ -2358,10 +2360,11 @@ class PreloadedUserSettings(_message.Message):
             prune_inactive_threads: _wrappers_pb2.BoolValue | None = ...,
             prune_inactive_threads_days: _builtins.int = ...,
             prune_all_favorited_threads: _builtins.bool = ...,
+            auto_add_joined_threads_per_guild: _builtins.bool = ...,
         ) -> None: ...
         _HasFieldArgType: _TypeAlias = _typing.Literal["_guild_visible", b"_guild_visible", "_prune_inactive_threads", b"_prune_inactive_threads", "guild_visible", b"guild_visible", "prune_inactive_threads", b"prune_inactive_threads"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_guild_visible", b"_guild_visible", "_prune_inactive_threads", b"_prune_inactive_threads", "auto_add_joined_threads", b"auto_add_joined_threads", "favorite_channels", b"favorite_channels", "guild_visible", b"guild_visible", "muted", b"muted", "prune_all_favorited_threads", b"prune_all_favorited_threads", "prune_inactive_threads", b"prune_inactive_threads", "prune_inactive_threads_days", b"prune_inactive_threads_days"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_guild_visible", b"_guild_visible", "_prune_inactive_threads", b"_prune_inactive_threads", "auto_add_joined_threads", b"auto_add_joined_threads", "auto_add_joined_threads_per_guild", b"auto_add_joined_threads_per_guild", "favorite_channels", b"favorite_channels", "guild_visible", b"guild_visible", "muted", b"muted", "prune_all_favorited_threads", b"prune_all_favorited_threads", "prune_inactive_threads", b"prune_inactive_threads", "prune_inactive_threads_days", b"prune_inactive_threads_days"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__guild_visible: _TypeAlias = _typing.Literal["guild_visible"]  # noqa: Y015
         _WhichOneofArgType__guild_visible: _TypeAlias = _typing.Literal["_guild_visible", b"_guild_visible"]  # noqa: Y015
