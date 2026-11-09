@@ -1592,7 +1592,11 @@ export enum Experiment_StepStatus {
     /**
      * @generated from protobuf enum value: STEP_STATUS_COMPLETED = 4;
      */
-    COMPLETED = 4
+    COMPLETED = 4,
+    /**
+     * @generated from protobuf enum value: STEP_STATUS_AWAITING_FINAL_HEALTH_CHECK = 5;
+     */
+    AWAITING_FINAL_HEALTH_CHECK = 5
 }
 /**
  * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.Level

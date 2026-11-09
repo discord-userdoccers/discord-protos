@@ -316,6 +316,7 @@ class Experiment(_message.Message):
         STEP_STATUS_IN_PROGRESS: Experiment._StepStatus.ValueType  # 2
         STEP_STATUS_AWAITING_MANUAL_APPROVAL: Experiment._StepStatus.ValueType  # 3
         STEP_STATUS_COMPLETED: Experiment._StepStatus.ValueType  # 4
+        STEP_STATUS_AWAITING_FINAL_HEALTH_CHECK: Experiment._StepStatus.ValueType  # 5
 
     class StepStatus(_StepStatus, metaclass=_StepStatusEnumTypeWrapper): ...
     STEP_STATUS_UNSPECIFIED: Experiment.StepStatus.ValueType  # 0
@@ -323,6 +324,7 @@ class Experiment(_message.Message):
     STEP_STATUS_IN_PROGRESS: Experiment.StepStatus.ValueType  # 2
     STEP_STATUS_AWAITING_MANUAL_APPROVAL: Experiment.StepStatus.ValueType  # 3
     STEP_STATUS_COMPLETED: Experiment.StepStatus.ValueType  # 4
+    STEP_STATUS_AWAITING_FINAL_HEALTH_CHECK: Experiment.StepStatus.ValueType  # 5
 
     class _Level:
         ValueType = _typing.NewType("ValueType", _builtins.int)
