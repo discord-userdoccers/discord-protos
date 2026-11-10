@@ -984,6 +984,50 @@ message PremiumMarketingComponentProperties {
     optional CTAButton button = 4;
   }
 
+  message GameExitPanel {
+    repeated string trigger_application_ids = 1 [packed = false];
+    optional LocalizedString body_localized = 2;
+    string body = 3;
+    optional CTAButton cta = 4;
+    optional ThemeAwareAsset image = 5;
+  }
+
+  message AnnouncementModalPerkCard {
+    optional ThemeAwareAsset asset = 1;
+    optional LocalizedString title_localized = 2;
+    optional LocalizedString body_localized = 3;
+    string title = 4;
+    string body = 5;
+  }
+
+  message AnnouncementModalVideoLed {
+    optional ThemeAwareAsset asset = 1;
+    optional LocalizedString title_localized = 2;
+    optional LocalizedString body_localized = 3;
+    repeated AnnouncementModalPerkCard perk_cards = 4;
+    optional CTAButton button = 5;
+    optional LocalizedString legalese_localized = 6;
+    string terms_url = 7;
+    string title = 8;
+    string body = 9;
+    string legalese = 10;
+  }
+
+  message AnnouncementModalPanel {
+    optional ThemeAwareAsset asset = 1;
+    optional LocalizedString title_localized = 2;
+    optional LocalizedString body_localized = 3;
+    optional LocalizedString legalese_localized = 4;
+    string terms_url = 5;
+    optional CTAButton button = 6;
+    optional LocalizedString perk_title_localized = 7;
+    repeated AnnouncementModalPerkCard perk_cards = 8;
+    string title = 9;
+    string body = 10;
+    string legalese = 11;
+    string perk_title = 12;
+  }
+
   string content_identifier = 3;
   bool is_default_base = 18;
   oneof properties {
@@ -1019,6 +1063,9 @@ message PremiumMarketingComponentProperties {
     ShopCoachmark shop_coachmark = 32;
     NitroPerkCard nitro_perk_card = 33;
     CollectionPageMarketingBlock collection_page_marketing_block = 34;
+    GameExitPanel game_exit_panel = 35;
+    AnnouncementModalVideoLed announcement_modal_video_led = 36;
+    AnnouncementModalPanel announcement_modal_panel = 37;
   }
 
 }
