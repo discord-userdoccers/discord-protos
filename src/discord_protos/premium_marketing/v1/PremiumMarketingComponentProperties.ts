@@ -3905,7 +3905,19 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GUILD_SPACE_CHANNEL_ROW_HIGHLIGHT = 898;
      */
-    GUILD_SPACE_CHANNEL_ROW_HIGHLIGHT = 898
+    GUILD_SPACE_CHANNEL_ROW_HIGHLIGHT = 898,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_SHOP_TWELVE_DAYS_MOBILE_HOME_NAGBAR = 899;
+     */
+    SHOP_TWELVE_DAYS_MOBILE_HOME_NAGBAR = 899,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_HEXAGON_CAMPAIGN_PERKS_EXPIRING_PROMO_SHEET = 900;
+     */
+    HEXAGON_CAMPAIGN_PERKS_EXPIRING_PROMO_SHEET = 900,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_HEXAGON_CAMPAIGN_PERKS_EXPIRED_PROMO_SHEET = 901;
+     */
+    HEXAGON_CAMPAIGN_PERKS_EXPIRED_PROMO_SHEET = 901
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
