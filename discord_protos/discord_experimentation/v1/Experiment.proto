@@ -491,6 +491,8 @@ message Experiment {
     bool require_manual_approval = 3;
     optional google.protobuf.Timestamp started_at = 4;
     StepStatus status = 5;
+    optional google.protobuf.Timestamp paused_at = 6;
+    optional google.protobuf.Duration paused_duration = 7;
   }
 
   message MeasurementPlan {

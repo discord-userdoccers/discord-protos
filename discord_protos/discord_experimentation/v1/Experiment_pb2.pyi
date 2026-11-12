@@ -1776,6 +1776,8 @@ class Experiment(_message.Message):
         REQUIRE_MANUAL_APPROVAL_FIELD_NUMBER: _builtins.int
         STARTED_AT_FIELD_NUMBER: _builtins.int
         STATUS_FIELD_NUMBER: _builtins.int
+        PAUSED_AT_FIELD_NUMBER: _builtins.int
+        PAUSED_DURATION_FIELD_NUMBER: _builtins.int
         require_manual_approval: _builtins.bool
         status: Global___Experiment.StepStatus.ValueType
         @_builtins.property
@@ -1784,6 +1786,10 @@ class Experiment(_message.Message):
         def hold_duration(self) -> _duration_pb2.Duration: ...
         @_builtins.property
         def started_at(self) -> _timestamp_pb2.Timestamp: ...
+        @_builtins.property
+        def paused_at(self) -> _timestamp_pb2.Timestamp: ...
+        @_builtins.property
+        def paused_duration(self) -> _duration_pb2.Duration: ...
         def __init__(
             self,
             *,
@@ -1792,17 +1798,27 @@ class Experiment(_message.Message):
             require_manual_approval: _builtins.bool = ...,
             started_at: _timestamp_pb2.Timestamp | None = ...,
             status: Global___Experiment.StepStatus.ValueType = ...,
+            paused_at: _timestamp_pb2.Timestamp | None = ...,
+            paused_duration: _duration_pb2.Duration | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _typing.Literal["_hold_duration", b"_hold_duration", "_started_at", b"_started_at", "hold_duration", b"hold_duration", "started_at", b"started_at"]  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_hold_duration", b"_hold_duration", "_paused_at", b"_paused_at", "_paused_duration", b"_paused_duration", "_started_at", b"_started_at", "hold_duration", b"hold_duration", "paused_at", b"paused_at", "paused_duration", b"paused_duration", "started_at", b"started_at"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_hold_duration", b"_hold_duration", "_started_at", b"_started_at", "hold_duration", b"hold_duration", "require_manual_approval", b"require_manual_approval", "started_at", b"started_at", "status", b"status", "variation_buckets", b"variation_buckets"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_hold_duration", b"_hold_duration", "_paused_at", b"_paused_at", "_paused_duration", b"_paused_duration", "_started_at", b"_started_at", "hold_duration", b"hold_duration", "paused_at", b"paused_at", "paused_duration", b"paused_duration", "require_manual_approval", b"require_manual_approval", "started_at", b"started_at", "status", b"status", "variation_buckets", b"variation_buckets"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__hold_duration: _TypeAlias = _typing.Literal["hold_duration"]  # noqa: Y015
         _WhichOneofArgType__hold_duration: _TypeAlias = _typing.Literal["_hold_duration", b"_hold_duration"]  # noqa: Y015
+        _WhichOneofReturnType__paused_at: _TypeAlias = _typing.Literal["paused_at"]  # noqa: Y015
+        _WhichOneofArgType__paused_at: _TypeAlias = _typing.Literal["_paused_at", b"_paused_at"]  # noqa: Y015
+        _WhichOneofReturnType__paused_duration: _TypeAlias = _typing.Literal["paused_duration"]  # noqa: Y015
+        _WhichOneofArgType__paused_duration: _TypeAlias = _typing.Literal["_paused_duration", b"_paused_duration"]  # noqa: Y015
         _WhichOneofReturnType__started_at: _TypeAlias = _typing.Literal["started_at"]  # noqa: Y015
         _WhichOneofArgType__started_at: _TypeAlias = _typing.Literal["_started_at", b"_started_at"]  # noqa: Y015
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__hold_duration) -> _WhichOneofReturnType__hold_duration | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__paused_at) -> _WhichOneofReturnType__paused_at | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__paused_duration) -> _WhichOneofReturnType__paused_duration | None: ...
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__started_at) -> _WhichOneofReturnType__started_at | None: ...
 

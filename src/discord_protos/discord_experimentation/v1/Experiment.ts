@@ -1170,6 +1170,14 @@ export interface Experiment_RampStep {
      * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.StepStatus status = 5
      */
     status: Experiment_StepStatus;
+    /**
+     * @generated from protobuf field: optional google.protobuf.Timestamp paused_at = 6
+     */
+    pausedAt?: Timestamp;
+    /**
+     * @generated from protobuf field: optional google.protobuf.Duration paused_duration = 7
+     */
+    pausedDuration?: Duration;
 }
 /**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.MeasurementPlan
@@ -5495,7 +5503,9 @@ class Experiment_RampStep$Type extends MessageType<Experiment_RampStep> {
             { no: 2, name: "hold_duration", kind: "message", T: () => Duration },
             { no: 3, name: "require_manual_approval", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
             { no: 4, name: "started_at", kind: "message", T: () => Timestamp },
-            { no: 5, name: "status", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.StepStatus", Experiment_StepStatus, "STEP_STATUS_"] }
+            { no: 5, name: "status", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.StepStatus", Experiment_StepStatus, "STEP_STATUS_"] },
+            { no: 6, name: "paused_at", kind: "message", T: () => Timestamp },
+            { no: 7, name: "paused_duration", kind: "message", T: () => Duration }
         ]);
     }
     create(value?: PartialMessage<Experiment_RampStep>): Experiment_RampStep {
@@ -5527,6 +5537,12 @@ class Experiment_RampStep$Type extends MessageType<Experiment_RampStep> {
                 case /* discord_protos.discord_experimentation.v1.Experiment.StepStatus status */ 5:
                     message.status = reader.int32();
                     break;
+                case /* optional google.protobuf.Timestamp paused_at */ 6:
+                    message.pausedAt = Timestamp.internalBinaryRead(reader, reader.uint32(), options, message.pausedAt);
+                    break;
+                case /* optional google.protobuf.Duration paused_duration */ 7:
+                    message.pausedDuration = Duration.internalBinaryRead(reader, reader.uint32(), options, message.pausedDuration);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -5554,6 +5570,12 @@ class Experiment_RampStep$Type extends MessageType<Experiment_RampStep> {
         /* discord_protos.discord_experimentation.v1.Experiment.StepStatus status = 5; */
         if (message.status !== 0)
             writer.tag(5, WireType.Varint).int32(message.status);
+        /* optional google.protobuf.Timestamp paused_at = 6; */
+        if (message.pausedAt)
+            Timestamp.internalBinaryWrite(message.pausedAt, writer.tag(6, WireType.LengthDelimited).fork(), options).join();
+        /* optional google.protobuf.Duration paused_duration = 7; */
+        if (message.pausedDuration)
+            Duration.internalBinaryWrite(message.pausedDuration, writer.tag(7, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
