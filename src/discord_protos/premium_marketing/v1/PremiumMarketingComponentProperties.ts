@@ -1509,9 +1509,9 @@ export interface PremiumMarketingComponentProperties_CollectionPageMarketingBloc
  */
 export interface PremiumMarketingComponentProperties_GameExitPanel {
     /**
-     * @generated from protobuf field: repeated string trigger_application_ids = 1 [packed = false]
+     * @generated from protobuf field: string trigger_application_id = 6
      */
-    triggerApplicationIds: string[];
+    triggerApplicationId: string;
     /**
      * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString body_localized = 2
      */
@@ -3099,21 +3099,9 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     PREMIUM_GROUP_POPOVER = 668,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_PREMIUM_ORBS_UPSELL_POPOVER = 669;
-     */
-    PREMIUM_ORBS_UPSELL_POPOVER = 669,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_PREMIUM_ORBS_REWARDS_DROP_POPOVER = 670;
-     */
-    PREMIUM_ORBS_REWARDS_DROP_POPOVER = 670,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GAME_SERVER_HOSTING_NEW_PERK_AVAILABLE_COACHMARK = 672;
      */
     GAME_SERVER_HOSTING_NEW_PERK_AVAILABLE_COACHMARK = 672,
-    /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_PREMIUM_ORBS_REWARDS_INTRO_POPOVER = 673;
-     */
-    PREMIUM_ORBS_REWARDS_INTRO_POPOVER = 673,
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_BOOST_PROGRESS_BAR_ADMIN_COACHMARK = 674;
      */
@@ -3933,7 +3921,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_LAUNCH_ACCOUNT_LINKING_CAMPAIGN_ACTION_SHEET = 905;
      */
-    LAUNCH_ACCOUNT_LINKING_CAMPAIGN_ACTION_SHEET = 905
+    LAUNCH_ACCOUNT_LINKING_CAMPAIGN_ACTION_SHEET = 905,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_AUTOCLIPPING_EARLY_ACCESS_FIRST_AUTO_CLIPS_RECAP = 906;
+     */
+    AUTOCLIPPING_EARLY_ACCESS_FIRST_AUTO_CLIPS_RECAP = 906
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
@@ -8041,7 +8033,7 @@ export const PremiumMarketingComponentProperties_CollectionPageMarketingBlock = 
 class PremiumMarketingComponentProperties_GameExitPanel$Type extends MessageType<PremiumMarketingComponentProperties_GameExitPanel> {
     constructor() {
         super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GameExitPanel", [
-            { no: 1, name: "trigger_application_ids", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 9 /*ScalarType.STRING*/ },
+            { no: 6, name: "trigger_application_id", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 2, name: "body_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
             { no: 3, name: "body", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 4, name: "cta", kind: "message", T: () => PremiumMarketingComponentProperties_CTAButton },
@@ -8050,7 +8042,7 @@ class PremiumMarketingComponentProperties_GameExitPanel$Type extends MessageType
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_GameExitPanel>): PremiumMarketingComponentProperties_GameExitPanel {
         const message = globalThis.Object.create((this.messagePrototype!));
-        message.triggerApplicationIds = [];
+        message.triggerApplicationId = "";
         message.body = "";
         if (value !== undefined)
             reflectionMergePartial<PremiumMarketingComponentProperties_GameExitPanel>(this, message, value);
@@ -8061,8 +8053,8 @@ class PremiumMarketingComponentProperties_GameExitPanel$Type extends MessageType
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
-                case /* repeated string trigger_application_ids = 1 [packed = false] */ 1:
-                    message.triggerApplicationIds.push(reader.string());
+                case /* string trigger_application_id */ 6:
+                    message.triggerApplicationId = reader.string();
                     break;
                 case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString body_localized */ 2:
                     message.bodyLocalized = PremiumMarketingComponentProperties_LocalizedString.internalBinaryRead(reader, reader.uint32(), options, message.bodyLocalized);
@@ -8088,9 +8080,6 @@ class PremiumMarketingComponentProperties_GameExitPanel$Type extends MessageType
         return message;
     }
     internalBinaryWrite(message: PremiumMarketingComponentProperties_GameExitPanel, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* repeated string trigger_application_ids = 1 [packed = false]; */
-        for (let i = 0; i < message.triggerApplicationIds.length; i++)
-            writer.tag(1, WireType.LengthDelimited).string(message.triggerApplicationIds[i]);
         /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString body_localized = 2; */
         if (message.bodyLocalized)
             PremiumMarketingComponentProperties_LocalizedString.internalBinaryWrite(message.bodyLocalized, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
@@ -8103,6 +8092,9 @@ class PremiumMarketingComponentProperties_GameExitPanel$Type extends MessageType
         /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset image = 5; */
         if (message.image)
             PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryWrite(message.image, writer.tag(5, WireType.LengthDelimited).fork(), options).join();
+        /* string trigger_application_id = 6; */
+        if (message.triggerApplicationId !== "")
+            writer.tag(6, WireType.LengthDelimited).string(message.triggerApplicationId);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

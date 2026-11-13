@@ -419,10 +419,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_GUILD_TAG_UPDATED_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 663
         DISMISSIBLE_CONTENT_TRIAL_FOR_ALL_2026_SETTINGS_BADGE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 667
         DISMISSIBLE_CONTENT_PREMIUM_GROUP_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 668
-        DISMISSIBLE_CONTENT_PREMIUM_ORBS_UPSELL_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 669
-        DISMISSIBLE_CONTENT_PREMIUM_ORBS_REWARDS_DROP_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 670
         DISMISSIBLE_CONTENT_GAME_SERVER_HOSTING_NEW_PERK_AVAILABLE_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 672
-        DISMISSIBLE_CONTENT_PREMIUM_ORBS_REWARDS_INTRO_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 673
         DISMISSIBLE_CONTENT_BOOST_PROGRESS_BAR_ADMIN_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 674
         DISMISSIBLE_CONTENT_BOOST_PROGRESS_BAR_MEMBER_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 675
         DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_XBOX_ANNOUNCEMENT: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 677
@@ -628,6 +625,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_GAME_EXIT_PROMO_BLOONS_2026_BF: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 903
         DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_GAME_EXIT_PROMO_RUST_2026_BF: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 904
         DISMISSIBLE_CONTENT_LAUNCH_ACCOUNT_LINKING_CAMPAIGN_ACTION_SHEET: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 905
+        DISMISSIBLE_CONTENT_AUTOCLIPPING_EARLY_ACCESS_FIRST_AUTO_CLIPS_RECAP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 906
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_UNSPECIFIED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -975,10 +973,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_GUILD_TAG_UPDATED_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 663
     DISMISSIBLE_CONTENT_TRIAL_FOR_ALL_2026_SETTINGS_BADGE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 667
     DISMISSIBLE_CONTENT_PREMIUM_GROUP_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 668
-    DISMISSIBLE_CONTENT_PREMIUM_ORBS_UPSELL_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 669
-    DISMISSIBLE_CONTENT_PREMIUM_ORBS_REWARDS_DROP_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 670
     DISMISSIBLE_CONTENT_GAME_SERVER_HOSTING_NEW_PERK_AVAILABLE_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 672
-    DISMISSIBLE_CONTENT_PREMIUM_ORBS_REWARDS_INTRO_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 673
     DISMISSIBLE_CONTENT_BOOST_PROGRESS_BAR_ADMIN_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 674
     DISMISSIBLE_CONTENT_BOOST_PROGRESS_BAR_MEMBER_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 675
     DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_XBOX_ANNOUNCEMENT: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 677
@@ -1184,6 +1179,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_GAME_EXIT_PROMO_BLOONS_2026_BF: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 903
     DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_GAME_EXIT_PROMO_RUST_2026_BF: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 904
     DISMISSIBLE_CONTENT_LAUNCH_ACCOUNT_LINKING_CAMPAIGN_ACTION_SHEET: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 905
+    DISMISSIBLE_CONTENT_AUTOCLIPPING_EARLY_ACCESS_FIRST_AUTO_CLIPS_RECAP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 906
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)
@@ -3312,14 +3308,13 @@ class PremiumMarketingComponentProperties(_message.Message):
     class GameExitPanel(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
 
-        TRIGGER_APPLICATION_IDS_FIELD_NUMBER: _builtins.int
+        TRIGGER_APPLICATION_ID_FIELD_NUMBER: _builtins.int
         BODY_LOCALIZED_FIELD_NUMBER: _builtins.int
         BODY_FIELD_NUMBER: _builtins.int
         CTA_FIELD_NUMBER: _builtins.int
         IMAGE_FIELD_NUMBER: _builtins.int
+        trigger_application_id: _builtins.str
         body: _builtins.str
-        @_builtins.property
-        def trigger_application_ids(self) -> _containers.RepeatedScalarFieldContainer[_builtins.str]: ...
         @_builtins.property
         def body_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
         @_builtins.property
@@ -3329,7 +3324,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         def __init__(
             self,
             *,
-            trigger_application_ids: _abc.Iterable[_builtins.str] | None = ...,
+            trigger_application_id: _builtins.str = ...,
             body_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
             body: _builtins.str = ...,
             cta: Global___PremiumMarketingComponentProperties.CTAButton | None = ...,
@@ -3337,7 +3332,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         ) -> None: ...
         _HasFieldArgType: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized", "_cta", b"_cta", "_image", b"_image", "body_localized", b"body_localized", "cta", b"cta", "image", b"image"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized", "_cta", b"_cta", "_image", b"_image", "body", b"body", "body_localized", b"body_localized", "cta", b"cta", "image", b"image", "trigger_application_ids", b"trigger_application_ids"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized", "_cta", b"_cta", "_image", b"_image", "body", b"body", "body_localized", b"body_localized", "cta", b"cta", "image", b"image", "trigger_application_id", b"trigger_application_id"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__body_localized: _TypeAlias = _typing.Literal["body_localized"]  # noqa: Y015
         _WhichOneofArgType__body_localized: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized"]  # noqa: Y015
