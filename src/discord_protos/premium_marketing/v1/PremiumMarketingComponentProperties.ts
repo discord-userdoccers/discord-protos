@@ -3917,7 +3917,23 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_HEXAGON_CAMPAIGN_PERKS_EXPIRED_PROMO_SHEET = 901;
      */
-    HEXAGON_CAMPAIGN_PERKS_EXPIRED_PROMO_SHEET = 901
+    HEXAGON_CAMPAIGN_PERKS_EXPIRED_PROMO_SHEET = 901,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_META_QUEST_APP_UPSELL_COACHMARK = 902;
+     */
+    META_QUEST_APP_UPSELL_COACHMARK = 902,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_GAME_EXIT_PROMO_BLOONS_2026_BF = 903;
+     */
+    SLAYER_STOREFRONT_GAME_EXIT_PROMO_BLOONS_2026_BF = 903,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_GAME_EXIT_PROMO_RUST_2026_BF = 904;
+     */
+    SLAYER_STOREFRONT_GAME_EXIT_PROMO_RUST_2026_BF = 904,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_LAUNCH_ACCOUNT_LINKING_CAMPAIGN_ACTION_SHEET = 905;
+     */
+    LAUNCH_ACCOUNT_LINKING_CAMPAIGN_ACTION_SHEET = 905
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant

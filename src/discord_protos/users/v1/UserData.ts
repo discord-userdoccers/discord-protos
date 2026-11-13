@@ -112,6 +112,10 @@ export interface UserData {
      * @generated from protobuf field: uint64 hidden_flags = 22
      */
     hiddenFlags: bigint;
+    /**
+     * @generated from protobuf field: repeated string play_install_ids = 23 [packed = false]
+     */
+    playInstallIds: string[];
 }
 /**
  * @generated from protobuf message discord_protos.users.v1.UserData.LinkedUser
@@ -4478,7 +4482,8 @@ class UserData$Type extends MessageType<UserData> {
             { no: 19, name: "typing_indicator_style", kind: "message", T: () => UserData_UserTypingIndicatorStyle },
             { no: 20, name: "disable_staff_discount", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
             { no: 21, name: "vad_colors", kind: "message", T: () => UserData_VadColors },
-            { no: 22, name: "hidden_flags", kind: "scalar", T: 4 /*ScalarType.UINT64*/, L: 0 /*LongType.BIGINT*/ }
+            { no: 22, name: "hidden_flags", kind: "scalar", T: 4 /*ScalarType.UINT64*/, L: 0 /*LongType.BIGINT*/ },
+            { no: 23, name: "play_install_ids", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 9 /*ScalarType.STRING*/ }
         ]);
     }
     create(value?: PartialMessage<UserData>): UserData {
@@ -4489,6 +4494,7 @@ class UserData$Type extends MessageType<UserData> {
         message.isPendingRequiredAction = false;
         message.disableStaffDiscount = false;
         message.hiddenFlags = 0n;
+        message.playInstallIds = [];
         if (value !== undefined)
             reflectionMergePartial<UserData>(this, message, value);
         return message;
@@ -4563,6 +4569,9 @@ class UserData$Type extends MessageType<UserData> {
                     break;
                 case /* uint64 hidden_flags */ 22:
                     message.hiddenFlags = reader.uint64().toBigInt();
+                    break;
+                case /* repeated string play_install_ids = 23 [packed = false] */ 23:
+                    message.playInstallIds.push(reader.string());
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -4702,6 +4711,9 @@ class UserData$Type extends MessageType<UserData> {
         /* uint64 hidden_flags = 22; */
         if (message.hiddenFlags !== 0n)
             writer.tag(22, WireType.Varint).uint64(message.hiddenFlags);
+        /* repeated string play_install_ids = 23 [packed = false]; */
+        for (let i = 0; i < message.playInstallIds.length; i++)
+            writer.tag(23, WireType.LengthDelimited).string(message.playInstallIds[i]);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

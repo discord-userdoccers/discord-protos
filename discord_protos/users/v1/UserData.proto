@@ -1206,4 +1206,5 @@ message UserData {
   bool disable_staff_discount = 20;
   optional VadColors vad_colors = 21;
   uint64 hidden_flags = 22;
+  repeated string play_install_ids = 23 [packed = false];
 }
