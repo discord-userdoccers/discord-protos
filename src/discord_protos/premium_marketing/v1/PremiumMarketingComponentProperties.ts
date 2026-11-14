@@ -3925,7 +3925,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_AUTOCLIPPING_EARLY_ACCESS_FIRST_AUTO_CLIPS_RECAP = 906;
      */
-    AUTOCLIPPING_EARLY_ACCESS_FIRST_AUTO_CLIPS_RECAP = 906
+    AUTOCLIPPING_EARLY_ACCESS_FIRST_AUTO_CLIPS_RECAP = 906,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_VOICE_PANEL_STREAM_VOLUME_MOVED_NOTICE = 907;
+     */
+    VOICE_PANEL_STREAM_VOLUME_MOVED_NOTICE = 907
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant

@@ -626,6 +626,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_GAME_EXIT_PROMO_RUST_2026_BF: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 904
         DISMISSIBLE_CONTENT_LAUNCH_ACCOUNT_LINKING_CAMPAIGN_ACTION_SHEET: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 905
         DISMISSIBLE_CONTENT_AUTOCLIPPING_EARLY_ACCESS_FIRST_AUTO_CLIPS_RECAP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 906
+        DISMISSIBLE_CONTENT_VOICE_PANEL_STREAM_VOLUME_MOVED_NOTICE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 907
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_UNSPECIFIED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1180,6 +1181,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_SLAYER_STOREFRONT_GAME_EXIT_PROMO_RUST_2026_BF: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 904
     DISMISSIBLE_CONTENT_LAUNCH_ACCOUNT_LINKING_CAMPAIGN_ACTION_SHEET: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 905
     DISMISSIBLE_CONTENT_AUTOCLIPPING_EARLY_ACCESS_FIRST_AUTO_CLIPS_RECAP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 906
+    DISMISSIBLE_CONTENT_VOICE_PANEL_STREAM_VOLUME_MOVED_NOTICE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 907
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)
