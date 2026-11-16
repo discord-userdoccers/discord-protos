@@ -627,6 +627,8 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_LAUNCH_ACCOUNT_LINKING_CAMPAIGN_ACTION_SHEET: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 905
         DISMISSIBLE_CONTENT_AUTOCLIPPING_EARLY_ACCESS_FIRST_AUTO_CLIPS_RECAP: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 906
         DISMISSIBLE_CONTENT_VOICE_PANEL_STREAM_VOLUME_MOVED_NOTICE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 907
+        DISMISSIBLE_CONTENT_ORB_WALLET_BLACK_FRIDAY_RUST_PROMO: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 908
+        DISMISSIBLE_CONTENT_ORB_WALLET_BLACK_FRIDAY_BLOONS_PROMO: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 909
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_UNSPECIFIED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1182,6 +1184,8 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_LAUNCH_ACCOUNT_LINKING_CAMPAIGN_ACTION_SHEET: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 905
     DISMISSIBLE_CONTENT_AUTOCLIPPING_EARLY_ACCESS_FIRST_AUTO_CLIPS_RECAP: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 906
     DISMISSIBLE_CONTENT_VOICE_PANEL_STREAM_VOLUME_MOVED_NOTICE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 907
+    DISMISSIBLE_CONTENT_ORB_WALLET_BLACK_FRIDAY_RUST_PROMO: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 908
+    DISMISSIBLE_CONTENT_ORB_WALLET_BLACK_FRIDAY_BLOONS_PROMO: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 909
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)
@@ -2665,6 +2669,38 @@ class PremiumMarketingComponentProperties(_message.Message):
         def WhichOneof(self, oneof_group: _WhichOneofArgType__shop_collection_id) -> _WhichOneofReturnType__shop_collection_id | None: ...
 
     @_typing.final
+    class AdminEditorTestListItem(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        TEXT_LOCALIZED_FIELD_NUMBER: _builtins.int
+        ASSET_FIELD_NUMBER: _builtins.int
+        TEXT_FIELD_NUMBER: _builtins.int
+        text: _builtins.str
+        @_builtins.property
+        def text_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
+        @_builtins.property
+        def asset(self) -> Global___PremiumMarketingComponentProperties.ThemeAwareAsset: ...
+        def __init__(
+            self,
+            *,
+            text_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
+            asset: Global___PremiumMarketingComponentProperties.ThemeAwareAsset | None = ...,
+            text: _builtins.str = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_text_localized", b"_text_localized", "asset", b"asset", "text_localized", b"text_localized"]  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_text_localized", b"_text_localized", "asset", b"asset", "text", b"text", "text_localized", b"text_localized"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        _WhichOneofReturnType__asset: _TypeAlias = _typing.Literal["asset"]  # noqa: Y015
+        _WhichOneofArgType__asset: _TypeAlias = _typing.Literal["_asset", b"_asset"]  # noqa: Y015
+        _WhichOneofReturnType__text_localized: _TypeAlias = _typing.Literal["text_localized"]  # noqa: Y015
+        _WhichOneofArgType__text_localized: _TypeAlias = _typing.Literal["_text_localized", b"_text_localized"]  # noqa: Y015
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__asset) -> _WhichOneofReturnType__asset | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__text_localized) -> _WhichOneofReturnType__text_localized | None: ...
+
+    @_typing.final
     class AdminEditorTestComponent(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
 
@@ -2680,6 +2716,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         GRADIENT_FIELD_FIELD_NUMBER: _builtins.int
         SELECT_FIELD_FIELD_NUMBER: _builtins.int
         MULTI_SELECT_FIELD_FIELD_NUMBER: _builtins.int
+        LIST_FIELD_FIELD_NUMBER: _builtins.int
         deprecated_field: _builtins.str
         plain_text_field: _builtins.str
         checkbox_field: _builtins.bool
@@ -2699,6 +2736,8 @@ class PremiumMarketingComponentProperties(_message.Message):
         def gradient_field(self) -> Global___PremiumMarketingComponentProperties.Gradient: ...
         @_builtins.property
         def multi_select_field(self) -> _containers.RepeatedScalarFieldContainer[Global___PremiumMarketingComponentProperties.AdminEditorTestSelectOption.ValueType]: ...
+        @_builtins.property
+        def list_field(self) -> _containers.RepeatedCompositeFieldContainer[Global___PremiumMarketingComponentProperties.AdminEditorTestListItem]: ...
         def __init__(
             self,
             *,
@@ -2714,10 +2753,11 @@ class PremiumMarketingComponentProperties(_message.Message):
             gradient_field: Global___PremiumMarketingComponentProperties.Gradient | None = ...,
             select_field: Global___PremiumMarketingComponentProperties.AdminEditorTestSelectOption.ValueType = ...,
             multi_select_field: _abc.Iterable[Global___PremiumMarketingComponentProperties.AdminEditorTestSelectOption.ValueType] | None = ...,
+            list_field: _abc.Iterable[Global___PremiumMarketingComponentProperties.AdminEditorTestListItem] | None = ...,
         ) -> None: ...
         _HasFieldArgType: _TypeAlias = _typing.Literal["_cta_field", b"_cta_field", "_gradient_field", b"_gradient_field", "_help_article_field", b"_help_article_field", "_localized_text_field", b"_localized_text_field", "_textarea_field", b"_textarea_field", "_themed_asset_field", b"_themed_asset_field", "cta_field", b"cta_field", "gradient_field", b"gradient_field", "help_article_field", b"help_article_field", "localized_text_field", b"localized_text_field", "textarea_field", b"textarea_field", "themed_asset_field", b"themed_asset_field"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_cta_field", b"_cta_field", "_gradient_field", b"_gradient_field", "_help_article_field", b"_help_article_field", "_localized_text_field", b"_localized_text_field", "_textarea_field", b"_textarea_field", "_themed_asset_field", b"_themed_asset_field", "asset_field", b"asset_field", "checkbox_field", b"checkbox_field", "cta_field", b"cta_field", "deprecated_field", b"deprecated_field", "gradient_field", b"gradient_field", "help_article_field", b"help_article_field", "localized_text_field", b"localized_text_field", "multi_select_field", b"multi_select_field", "plain_text_field", b"plain_text_field", "select_field", b"select_field", "textarea_field", b"textarea_field", "themed_asset_field", b"themed_asset_field"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_cta_field", b"_cta_field", "_gradient_field", b"_gradient_field", "_help_article_field", b"_help_article_field", "_localized_text_field", b"_localized_text_field", "_textarea_field", b"_textarea_field", "_themed_asset_field", b"_themed_asset_field", "asset_field", b"asset_field", "checkbox_field", b"checkbox_field", "cta_field", b"cta_field", "deprecated_field", b"deprecated_field", "gradient_field", b"gradient_field", "help_article_field", b"help_article_field", "list_field", b"list_field", "localized_text_field", b"localized_text_field", "multi_select_field", b"multi_select_field", "plain_text_field", b"plain_text_field", "select_field", b"select_field", "textarea_field", b"textarea_field", "themed_asset_field", b"themed_asset_field"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__cta_field: _TypeAlias = _typing.Literal["cta_field"]  # noqa: Y015
         _WhichOneofArgType__cta_field: _TypeAlias = _typing.Literal["_cta_field", b"_cta_field"]  # noqa: Y015

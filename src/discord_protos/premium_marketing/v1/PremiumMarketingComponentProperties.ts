@@ -1120,6 +1120,23 @@ export interface PremiumMarketingComponentProperties_ShopNagbar {
     shopCollectionId?: UInt64Value;
 }
 /**
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AdminEditorTestListItem
+ */
+export interface PremiumMarketingComponentProperties_AdminEditorTestListItem {
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString text_localized = 1
+     */
+    textLocalized?: PremiumMarketingComponentProperties_LocalizedString;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset = 2
+     */
+    asset?: PremiumMarketingComponentProperties_ThemeAwareAsset;
+    /**
+     * @generated from protobuf field: string text = 3
+     */
+    text: string;
+}
+/**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AdminEditorTestComponent
  */
 export interface PremiumMarketingComponentProperties_AdminEditorTestComponent {
@@ -1171,6 +1188,10 @@ export interface PremiumMarketingComponentProperties_AdminEditorTestComponent {
      * @generated from protobuf field: repeated discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AdminEditorTestSelectOption multi_select_field = 12
      */
     multiSelectField: PremiumMarketingComponentProperties_AdminEditorTestSelectOption[];
+    /**
+     * @generated from protobuf field: repeated discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AdminEditorTestListItem list_field = 13
+     */
+    listField: PremiumMarketingComponentProperties_AdminEditorTestListItem[];
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GuildHeaderCoachmark
@@ -3929,7 +3950,15 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_VOICE_PANEL_STREAM_VOLUME_MOVED_NOTICE = 907;
      */
-    VOICE_PANEL_STREAM_VOLUME_MOVED_NOTICE = 907
+    VOICE_PANEL_STREAM_VOLUME_MOVED_NOTICE = 907,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_ORB_WALLET_BLACK_FRIDAY_RUST_PROMO = 908;
+     */
+    ORB_WALLET_BLACK_FRIDAY_RUST_PROMO = 908,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_ORB_WALLET_BLACK_FRIDAY_BLOONS_PROMO = 909;
+     */
+    ORB_WALLET_BLACK_FRIDAY_BLOONS_PROMO = 909
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
@@ -6918,6 +6947,67 @@ class PremiumMarketingComponentProperties_ShopNagbar$Type extends MessageType<Pr
  */
 export const PremiumMarketingComponentProperties_ShopNagbar = new PremiumMarketingComponentProperties_ShopNagbar$Type();
 // @generated message type with reflection information, may provide speed optimized methods
+class PremiumMarketingComponentProperties_AdminEditorTestListItem$Type extends MessageType<PremiumMarketingComponentProperties_AdminEditorTestListItem> {
+    constructor() {
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AdminEditorTestListItem", [
+            { no: 1, name: "text_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
+            { no: 2, name: "asset", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset },
+            { no: 3, name: "text", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+        ]);
+    }
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_AdminEditorTestListItem>): PremiumMarketingComponentProperties_AdminEditorTestListItem {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.text = "";
+        if (value !== undefined)
+            reflectionMergePartial<PremiumMarketingComponentProperties_AdminEditorTestListItem>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_AdminEditorTestListItem): PremiumMarketingComponentProperties_AdminEditorTestListItem {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString text_localized */ 1:
+                    message.textLocalized = PremiumMarketingComponentProperties_LocalizedString.internalBinaryRead(reader, reader.uint32(), options, message.textLocalized);
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset */ 2:
+                    message.asset = PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryRead(reader, reader.uint32(), options, message.asset);
+                    break;
+                case /* string text */ 3:
+                    message.text = reader.string();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_AdminEditorTestListItem, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString text_localized = 1; */
+        if (message.textLocalized)
+            PremiumMarketingComponentProperties_LocalizedString.internalBinaryWrite(message.textLocalized, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset = 2; */
+        if (message.asset)
+            PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryWrite(message.asset, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+        /* string text = 3; */
+        if (message.text !== "")
+            writer.tag(3, WireType.LengthDelimited).string(message.text);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AdminEditorTestListItem
+ */
+export const PremiumMarketingComponentProperties_AdminEditorTestListItem = new PremiumMarketingComponentProperties_AdminEditorTestListItem$Type();
+// @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties_AdminEditorTestComponent$Type extends MessageType<PremiumMarketingComponentProperties_AdminEditorTestComponent> {
     constructor() {
         super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AdminEditorTestComponent", [
@@ -6932,7 +7022,8 @@ class PremiumMarketingComponentProperties_AdminEditorTestComponent$Type extends 
             { no: 9, name: "cta_field", kind: "message", T: () => PremiumMarketingComponentProperties_CTAButton },
             { no: 10, name: "gradient_field", kind: "message", T: () => PremiumMarketingComponentProperties_Gradient },
             { no: 11, name: "select_field", kind: "enum", T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AdminEditorTestSelectOption", PremiumMarketingComponentProperties_AdminEditorTestSelectOption, "ADMIN_EDITOR_TEST_SELECT_OPTION_"] },
-            { no: 12, name: "multi_select_field", kind: "enum", repeat: 1 /*RepeatType.PACKED*/, T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AdminEditorTestSelectOption", PremiumMarketingComponentProperties_AdminEditorTestSelectOption, "ADMIN_EDITOR_TEST_SELECT_OPTION_"] }
+            { no: 12, name: "multi_select_field", kind: "enum", repeat: 1 /*RepeatType.PACKED*/, T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AdminEditorTestSelectOption", PremiumMarketingComponentProperties_AdminEditorTestSelectOption, "ADMIN_EDITOR_TEST_SELECT_OPTION_"] },
+            { no: 13, name: "list_field", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => PremiumMarketingComponentProperties_AdminEditorTestListItem }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_AdminEditorTestComponent>): PremiumMarketingComponentProperties_AdminEditorTestComponent {
@@ -6943,6 +7034,7 @@ class PremiumMarketingComponentProperties_AdminEditorTestComponent$Type extends 
         message.assetField = "";
         message.selectField = 0;
         message.multiSelectField = [];
+        message.listField = [];
         if (value !== undefined)
             reflectionMergePartial<PremiumMarketingComponentProperties_AdminEditorTestComponent>(this, message, value);
         return message;
@@ -6991,6 +7083,9 @@ class PremiumMarketingComponentProperties_AdminEditorTestComponent$Type extends 
                             message.multiSelectField.push(reader.int32());
                     else
                         message.multiSelectField.push(reader.int32());
+                    break;
+                case /* repeated discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AdminEditorTestListItem list_field */ 13:
+                    message.listField.push(PremiumMarketingComponentProperties_AdminEditorTestListItem.internalBinaryRead(reader, reader.uint32(), options));
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -7044,6 +7139,9 @@ class PremiumMarketingComponentProperties_AdminEditorTestComponent$Type extends 
                 writer.int32(message.multiSelectField[i]);
             writer.join();
         }
+        /* repeated discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AdminEditorTestListItem list_field = 13; */
+        for (let i = 0; i < message.listField.length; i++)
+            PremiumMarketingComponentProperties_AdminEditorTestListItem.internalBinaryWrite(message.listField[i], writer.tag(13, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
