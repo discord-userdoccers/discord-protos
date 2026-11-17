@@ -646,6 +646,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_VOICE_PANEL_STREAM_VOLUME_MOVED_NOTICE: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 907
         DISMISSIBLE_CONTENT_ORB_WALLET_BLACK_FRIDAY_RUST_PROMO: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 908
         DISMISSIBLE_CONTENT_ORB_WALLET_BLACK_FRIDAY_BLOONS_PROMO: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 909
+        DISMISSIBLE_CONTENT_VOICEMOD_3P_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 910
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_UNSPECIFIED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1203,6 +1204,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_VOICE_PANEL_STREAM_VOLUME_MOVED_NOTICE: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 907
     DISMISSIBLE_CONTENT_ORB_WALLET_BLACK_FRIDAY_RUST_PROMO: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 908
     DISMISSIBLE_CONTENT_ORB_WALLET_BLACK_FRIDAY_BLOONS_PROMO: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 909
+    DISMISSIBLE_CONTENT_VOICEMOD_3P_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 910
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)

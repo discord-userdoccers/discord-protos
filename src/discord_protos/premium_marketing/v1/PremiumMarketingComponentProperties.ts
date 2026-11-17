@@ -4026,7 +4026,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_ORB_WALLET_BLACK_FRIDAY_BLOONS_PROMO = 909;
      */
-    ORB_WALLET_BLACK_FRIDAY_BLOONS_PROMO = 909
+    ORB_WALLET_BLACK_FRIDAY_BLOONS_PROMO = 909,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_VOICEMOD_3P_POPOVER = 910;
+     */
+    VOICEMOD_3P_POPOVER = 910
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
