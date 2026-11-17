@@ -237,6 +237,12 @@ export interface PremiumMarketingComponentProperties {
          */
         announcementModalPanel: PremiumMarketingComponentProperties_AnnouncementModalPanel;
     } | {
+        oneofKind: "nitroHomeSectionHeader";
+        /**
+         * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.NitroHomeSectionHeader nitro_home_section_header = 38
+         */
+        nitroHomeSectionHeader: PremiumMarketingComponentProperties_NitroHomeSectionHeader;
+    } | {
         oneofKind: undefined;
     };
 }
@@ -341,6 +347,10 @@ export interface PremiumMarketingComponentProperties_CTAButton {
      * @generated from protobuf field: optional google.protobuf.UInt64Value shop_collection_id = 6
      */
     shopCollectionId?: UInt64Value;
+    /**
+     * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftModalDestination gift_modal_destination = 7
+     */
+    giftModalDestination: PremiumMarketingComponentProperties_GiftModalDestination;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Subtitle
@@ -1023,6 +1033,10 @@ export interface PremiumMarketingComponentProperties_Nagbar {
      * @generated from protobuf field: optional google.protobuf.UInt64Value shop_collection_id = 9
      */
     shopCollectionId?: UInt64Value;
+    /**
+     * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftModalDestination gift_modal_destination = 10
+     */
+    giftModalDestination: PremiumMarketingComponentProperties_GiftModalDestination;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PlanSelectCardBanner
@@ -1118,6 +1132,10 @@ export interface PremiumMarketingComponentProperties_ShopNagbar {
      * @generated from protobuf field: optional google.protobuf.UInt64Value shop_collection_id = 9
      */
     shopCollectionId?: UInt64Value;
+    /**
+     * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftModalDestination gift_modal_destination = 10
+     */
+    giftModalDestination: PremiumMarketingComponentProperties_GiftModalDestination;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AdminEditorTestListItem
@@ -1503,6 +1521,10 @@ export interface PremiumMarketingComponentProperties_NitroPerkCard {
      * @generated from protobuf field: repeated discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.NitroPerkCardPlacement placements = 9
      */
     placements: PremiumMarketingComponentProperties_NitroPerkCardPlacement[];
+    /**
+     * @generated from protobuf field: uint32 position = 10
+     */
+    position: number;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.CollectionPageMarketingBlock
@@ -1674,6 +1696,31 @@ export interface PremiumMarketingComponentProperties_AnnouncementModalPanel {
     perkTitle: string;
 }
 /**
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.NitroHomeSectionHeader
+ */
+export interface PremiumMarketingComponentProperties_NitroHomeSectionHeader {
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString header_localized = 1
+     */
+    headerLocalized?: PremiumMarketingComponentProperties_LocalizedString;
+    /**
+     * @generated from protobuf field: string header = 2
+     */
+    header: string;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString subheader_localized = 3
+     */
+    subheaderLocalized?: PremiumMarketingComponentProperties_LocalizedString;
+    /**
+     * @generated from protobuf field: string subheader = 4
+     */
+    subheader: string;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle help_article = 5
+     */
+    helpArticle?: PremiumMarketingComponentProperties_HelpArticle;
+}
+/**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction
  */
 export enum PremiumMarketingComponentProperties_ButtonAction {
@@ -1716,7 +1763,28 @@ export enum PremiumMarketingComponentProperties_ButtonAction {
     /**
      * @generated from protobuf enum value: BUTTON_ACTION_OPEN_SHOP = 9;
      */
-    OPEN_SHOP = 9
+    OPEN_SHOP = 9,
+    /**
+     * @generated from protobuf enum value: BUTTON_ACTION_OPEN_GIFT_MODAL = 10;
+     */
+    OPEN_GIFT_MODAL = 10
+}
+/**
+ * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftModalDestination
+ */
+export enum PremiumMarketingComponentProperties_GiftModalDestination {
+    /**
+     * @generated from protobuf enum value: GIFT_MODAL_DESTINATION_UNSPECIFIED = 0;
+     */
+    UNSPECIFIED = 0,
+    /**
+     * @generated from protobuf enum value: GIFT_MODAL_DESTINATION_PLAN_SELECTION = 1;
+     */
+    PLAN_SELECTION = 1,
+    /**
+     * @generated from protobuf enum value: GIFT_MODAL_DESTINATION_TIER_2 = 2;
+     */
+    TIER_2 = 2
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MarketingPageBannerButtonVariant
@@ -4076,7 +4144,8 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
             { no: 34, name: "collection_page_marketing_block", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_CollectionPageMarketingBlock },
             { no: 35, name: "game_exit_panel", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_GameExitPanel },
             { no: 36, name: "announcement_modal_video_led", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_AnnouncementModalVideoLed },
-            { no: 37, name: "announcement_modal_panel", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_AnnouncementModalPanel }
+            { no: 37, name: "announcement_modal_panel", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_AnnouncementModalPanel },
+            { no: 38, name: "nitro_home_section_header", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_NitroHomeSectionHeader }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties>): PremiumMarketingComponentProperties {
@@ -4309,6 +4378,12 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
                         announcementModalPanel: PremiumMarketingComponentProperties_AnnouncementModalPanel.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).announcementModalPanel)
                     };
                     break;
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.NitroHomeSectionHeader nitro_home_section_header */ 38:
+                    message.properties = {
+                        oneofKind: "nitroHomeSectionHeader",
+                        nitroHomeSectionHeader: PremiumMarketingComponentProperties_NitroHomeSectionHeader.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).nitroHomeSectionHeader)
+                    };
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -4432,6 +4507,9 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
         /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalPanel announcement_modal_panel = 37; */
         if (message.properties.oneofKind === "announcementModalPanel")
             PremiumMarketingComponentProperties_AnnouncementModalPanel.internalBinaryWrite(message.properties.announcementModalPanel, writer.tag(37, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.NitroHomeSectionHeader nitro_home_section_header = 38; */
+        if (message.properties.oneofKind === "nitroHomeSectionHeader")
+            PremiumMarketingComponentProperties_NitroHomeSectionHeader.internalBinaryWrite(message.properties.nitroHomeSectionHeader, writer.tag(38, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -4691,7 +4769,8 @@ class PremiumMarketingComponentProperties_CTAButton$Type extends MessageType<Pre
             { no: 3, name: "deeplink_section", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 4, name: "copy_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
             { no: 5, name: "navigable_storefront_application_id", kind: "message", T: () => UInt64Value },
-            { no: 6, name: "shop_collection_id", kind: "message", T: () => UInt64Value }
+            { no: 6, name: "shop_collection_id", kind: "message", T: () => UInt64Value },
+            { no: 7, name: "gift_modal_destination", kind: "enum", T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftModalDestination", PremiumMarketingComponentProperties_GiftModalDestination, "GIFT_MODAL_DESTINATION_"] }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_CTAButton>): PremiumMarketingComponentProperties_CTAButton {
@@ -4699,6 +4778,7 @@ class PremiumMarketingComponentProperties_CTAButton$Type extends MessageType<Pre
         message.copy = "";
         message.buttonAction = 0;
         message.deeplinkSection = "";
+        message.giftModalDestination = 0;
         if (value !== undefined)
             reflectionMergePartial<PremiumMarketingComponentProperties_CTAButton>(this, message, value);
         return message;
@@ -4725,6 +4805,9 @@ class PremiumMarketingComponentProperties_CTAButton$Type extends MessageType<Pre
                     break;
                 case /* optional google.protobuf.UInt64Value shop_collection_id */ 6:
                     message.shopCollectionId = UInt64Value.internalBinaryRead(reader, reader.uint32(), options, message.shopCollectionId);
+                    break;
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftModalDestination gift_modal_destination */ 7:
+                    message.giftModalDestination = reader.int32();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -4756,6 +4839,9 @@ class PremiumMarketingComponentProperties_CTAButton$Type extends MessageType<Pre
         /* optional google.protobuf.UInt64Value shop_collection_id = 6; */
         if (message.shopCollectionId)
             UInt64Value.internalBinaryWrite(message.shopCollectionId, writer.tag(6, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftModalDestination gift_modal_destination = 7; */
+        if (message.giftModalDestination !== 0)
+            writer.tag(7, WireType.Varint).int32(message.giftModalDestination);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -6588,7 +6674,8 @@ class PremiumMarketingComponentProperties_Nagbar$Type extends MessageType<Premiu
             { no: 6, name: "body_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
             { no: 7, name: "cta_label_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
             { no: 8, name: "navigable_storefront_application_id", kind: "message", T: () => UInt64Value },
-            { no: 9, name: "shop_collection_id", kind: "message", T: () => UInt64Value }
+            { no: 9, name: "shop_collection_id", kind: "message", T: () => UInt64Value },
+            { no: 10, name: "gift_modal_destination", kind: "enum", T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftModalDestination", PremiumMarketingComponentProperties_GiftModalDestination, "GIFT_MODAL_DESTINATION_"] }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_Nagbar>): PremiumMarketingComponentProperties_Nagbar {
@@ -6597,6 +6684,7 @@ class PremiumMarketingComponentProperties_Nagbar$Type extends MessageType<Premiu
         message.ctaLabel = "";
         message.ctaAction = 0;
         message.deeplinkSection = "";
+        message.giftModalDestination = 0;
         if (value !== undefined)
             reflectionMergePartial<PremiumMarketingComponentProperties_Nagbar>(this, message, value);
         return message;
@@ -6632,6 +6720,9 @@ class PremiumMarketingComponentProperties_Nagbar$Type extends MessageType<Premiu
                     break;
                 case /* optional google.protobuf.UInt64Value shop_collection_id */ 9:
                     message.shopCollectionId = UInt64Value.internalBinaryRead(reader, reader.uint32(), options, message.shopCollectionId);
+                    break;
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftModalDestination gift_modal_destination */ 10:
+                    message.giftModalDestination = reader.int32();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -6672,6 +6763,9 @@ class PremiumMarketingComponentProperties_Nagbar$Type extends MessageType<Premiu
         /* optional google.protobuf.UInt64Value shop_collection_id = 9; */
         if (message.shopCollectionId)
             UInt64Value.internalBinaryWrite(message.shopCollectionId, writer.tag(9, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftModalDestination gift_modal_destination = 10; */
+        if (message.giftModalDestination !== 0)
+            writer.tag(10, WireType.Varint).int32(message.giftModalDestination);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -6852,7 +6946,8 @@ class PremiumMarketingComponentProperties_ShopNagbar$Type extends MessageType<Pr
             { no: 6, name: "body_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
             { no: 7, name: "cta_label_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
             { no: 8, name: "navigable_storefront_application_id", kind: "message", T: () => UInt64Value },
-            { no: 9, name: "shop_collection_id", kind: "message", T: () => UInt64Value }
+            { no: 9, name: "shop_collection_id", kind: "message", T: () => UInt64Value },
+            { no: 10, name: "gift_modal_destination", kind: "enum", T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftModalDestination", PremiumMarketingComponentProperties_GiftModalDestination, "GIFT_MODAL_DESTINATION_"] }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_ShopNagbar>): PremiumMarketingComponentProperties_ShopNagbar {
@@ -6861,6 +6956,7 @@ class PremiumMarketingComponentProperties_ShopNagbar$Type extends MessageType<Pr
         message.ctaLabel = "";
         message.ctaAction = 0;
         message.deeplinkSection = "";
+        message.giftModalDestination = 0;
         if (value !== undefined)
             reflectionMergePartial<PremiumMarketingComponentProperties_ShopNagbar>(this, message, value);
         return message;
@@ -6896,6 +6992,9 @@ class PremiumMarketingComponentProperties_ShopNagbar$Type extends MessageType<Pr
                     break;
                 case /* optional google.protobuf.UInt64Value shop_collection_id */ 9:
                     message.shopCollectionId = UInt64Value.internalBinaryRead(reader, reader.uint32(), options, message.shopCollectionId);
+                    break;
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftModalDestination gift_modal_destination */ 10:
+                    message.giftModalDestination = reader.int32();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -6936,6 +7035,9 @@ class PremiumMarketingComponentProperties_ShopNagbar$Type extends MessageType<Pr
         /* optional google.protobuf.UInt64Value shop_collection_id = 9; */
         if (message.shopCollectionId)
             UInt64Value.internalBinaryWrite(message.shopCollectionId, writer.tag(9, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftModalDestination gift_modal_destination = 10; */
+        if (message.giftModalDestination !== 0)
+            writer.tag(10, WireType.Varint).int32(message.giftModalDestination);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -7962,7 +8064,8 @@ class PremiumMarketingComponentProperties_NitroPerkCard$Type extends MessageType
             { no: 6, name: "background", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset },
             { no: 7, name: "foreground", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset },
             { no: 8, name: "third_party_logo", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset },
-            { no: 9, name: "placements", kind: "enum", repeat: 1 /*RepeatType.PACKED*/, T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.NitroPerkCardPlacement", PremiumMarketingComponentProperties_NitroPerkCardPlacement, "NITRO_PERK_CARD_PLACEMENT_"] }
+            { no: 9, name: "placements", kind: "enum", repeat: 1 /*RepeatType.PACKED*/, T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.NitroPerkCardPlacement", PremiumMarketingComponentProperties_NitroPerkCardPlacement, "NITRO_PERK_CARD_PLACEMENT_"] },
+            { no: 10, name: "position", kind: "scalar", T: 13 /*ScalarType.UINT32*/ }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_NitroPerkCard>): PremiumMarketingComponentProperties_NitroPerkCard {
@@ -7970,6 +8073,7 @@ class PremiumMarketingComponentProperties_NitroPerkCard$Type extends MessageType
         message.header = "";
         message.description = "";
         message.placements = [];
+        message.position = 0;
         if (value !== undefined)
             reflectionMergePartial<PremiumMarketingComponentProperties_NitroPerkCard>(this, message, value);
         return message;
@@ -8009,6 +8113,9 @@ class PremiumMarketingComponentProperties_NitroPerkCard$Type extends MessageType
                             message.placements.push(reader.int32());
                     else
                         message.placements.push(reader.int32());
+                    break;
+                case /* uint32 position */ 10:
+                    message.position = reader.uint32();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -8053,6 +8160,9 @@ class PremiumMarketingComponentProperties_NitroPerkCard$Type extends MessageType
                 writer.int32(message.placements[i]);
             writer.join();
         }
+        /* uint32 position = 10; */
+        if (message.position !== 0)
+            writer.tag(10, WireType.Varint).uint32(message.position);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -8526,3 +8636,79 @@ class PremiumMarketingComponentProperties_AnnouncementModalPanel$Type extends Me
  * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalPanel
  */
 export const PremiumMarketingComponentProperties_AnnouncementModalPanel = new PremiumMarketingComponentProperties_AnnouncementModalPanel$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PremiumMarketingComponentProperties_NitroHomeSectionHeader$Type extends MessageType<PremiumMarketingComponentProperties_NitroHomeSectionHeader> {
+    constructor() {
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.NitroHomeSectionHeader", [
+            { no: 1, name: "header_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
+            { no: 2, name: "header", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 3, name: "subheader_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
+            { no: 4, name: "subheader", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 5, name: "help_article", kind: "message", T: () => PremiumMarketingComponentProperties_HelpArticle }
+        ]);
+    }
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_NitroHomeSectionHeader>): PremiumMarketingComponentProperties_NitroHomeSectionHeader {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.header = "";
+        message.subheader = "";
+        if (value !== undefined)
+            reflectionMergePartial<PremiumMarketingComponentProperties_NitroHomeSectionHeader>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_NitroHomeSectionHeader): PremiumMarketingComponentProperties_NitroHomeSectionHeader {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString header_localized */ 1:
+                    message.headerLocalized = PremiumMarketingComponentProperties_LocalizedString.internalBinaryRead(reader, reader.uint32(), options, message.headerLocalized);
+                    break;
+                case /* string header */ 2:
+                    message.header = reader.string();
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString subheader_localized */ 3:
+                    message.subheaderLocalized = PremiumMarketingComponentProperties_LocalizedString.internalBinaryRead(reader, reader.uint32(), options, message.subheaderLocalized);
+                    break;
+                case /* string subheader */ 4:
+                    message.subheader = reader.string();
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle help_article */ 5:
+                    message.helpArticle = PremiumMarketingComponentProperties_HelpArticle.internalBinaryRead(reader, reader.uint32(), options, message.helpArticle);
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_NitroHomeSectionHeader, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString header_localized = 1; */
+        if (message.headerLocalized)
+            PremiumMarketingComponentProperties_LocalizedString.internalBinaryWrite(message.headerLocalized, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        /* string header = 2; */
+        if (message.header !== "")
+            writer.tag(2, WireType.LengthDelimited).string(message.header);
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString subheader_localized = 3; */
+        if (message.subheaderLocalized)
+            PremiumMarketingComponentProperties_LocalizedString.internalBinaryWrite(message.subheaderLocalized, writer.tag(3, WireType.LengthDelimited).fork(), options).join();
+        /* string subheader = 4; */
+        if (message.subheader !== "")
+            writer.tag(4, WireType.LengthDelimited).string(message.subheader);
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle help_article = 5; */
+        if (message.helpArticle)
+            PremiumMarketingComponentProperties_HelpArticle.internalBinaryWrite(message.helpArticle, writer.tag(5, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.NitroHomeSectionHeader
+ */
+export const PremiumMarketingComponentProperties_NitroHomeSectionHeader = new PremiumMarketingComponentProperties_NitroHomeSectionHeader$Type();

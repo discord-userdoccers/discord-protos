@@ -39,6 +39,13 @@ message PremiumMarketingComponentProperties {
     BUTTON_ACTION_OPEN_SOCIAL_LAYER_STOREFRONT = 7;
     BUTTON_ACTION_OPEN_GUILD_BOOST_CHECKOUT = 8;
     BUTTON_ACTION_OPEN_SHOP = 9;
+    BUTTON_ACTION_OPEN_GIFT_MODAL = 10;
+  }
+
+  enum GiftModalDestination {
+    GIFT_MODAL_DESTINATION_UNSPECIFIED = 0;
+    GIFT_MODAL_DESTINATION_PLAN_SELECTION = 1;
+    GIFT_MODAL_DESTINATION_TIER_2 = 2;
   }
 
   message CTAButton {
@@ -48,6 +55,7 @@ message PremiumMarketingComponentProperties {
     optional LocalizedString copy_localized = 4;
     optional google.protobuf.UInt64Value navigable_storefront_application_id = 5;
     optional google.protobuf.UInt64Value shop_collection_id = 6;
+    GiftModalDestination gift_modal_destination = 7;
   }
 
   message Subtitle {
@@ -822,6 +830,7 @@ message PremiumMarketingComponentProperties {
     optional LocalizedString cta_label_localized = 7;
     optional google.protobuf.UInt64Value navigable_storefront_application_id = 8;
     optional google.protobuf.UInt64Value shop_collection_id = 9;
+    GiftModalDestination gift_modal_destination = 10;
   }
 
   message PlanSelectCardBanner {
@@ -851,6 +860,7 @@ message PremiumMarketingComponentProperties {
     optional LocalizedString cta_label_localized = 7;
     optional google.protobuf.UInt64Value navigable_storefront_application_id = 8;
     optional google.protobuf.UInt64Value shop_collection_id = 9;
+    GiftModalDestination gift_modal_destination = 10;
   }
 
   enum AdminEditorTestSelectOption {
@@ -990,6 +1000,7 @@ message PremiumMarketingComponentProperties {
     optional ThemeAwareAsset foreground = 7;
     optional ThemeAwareAsset third_party_logo = 8;
     repeated NitroPerkCardPlacement placements = 9;
+    uint32 position = 10;
   }
 
   message CollectionPageMarketingBlock {
@@ -1043,6 +1054,14 @@ message PremiumMarketingComponentProperties {
     string perk_title = 12;
   }
 
+  message NitroHomeSectionHeader {
+    optional LocalizedString header_localized = 1;
+    string header = 2;
+    optional LocalizedString subheader_localized = 3;
+    string subheader = 4;
+    optional HelpArticle help_article = 5;
+  }
+
   string content_identifier = 3;
   bool is_default_base = 18;
   oneof properties {
@@ -1081,6 +1100,7 @@ message PremiumMarketingComponentProperties {
     GameExitPanel game_exit_panel = 35;
     AnnouncementModalVideoLed announcement_modal_video_led = 36;
     AnnouncementModalPanel announcement_modal_panel = 37;
+    NitroHomeSectionHeader nitro_home_section_header = 38;
   }
 
 }
