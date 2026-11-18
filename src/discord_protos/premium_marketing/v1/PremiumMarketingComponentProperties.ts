@@ -243,6 +243,12 @@ export interface PremiumMarketingComponentProperties {
          */
         nitroHomeSectionHeader: PremiumMarketingComponentProperties_NitroHomeSectionHeader;
     } | {
+        oneofKind: "orbsConfirmationModal";
+        /**
+         * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.OrbsConfirmationModal orbs_confirmation_modal = 39
+         */
+        orbsConfirmationModal: PremiumMarketingComponentProperties_OrbsConfirmationModal;
+    } | {
         oneofKind: undefined;
     };
 }
@@ -1719,6 +1725,31 @@ export interface PremiumMarketingComponentProperties_NitroHomeSectionHeader {
      * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.HelpArticle help_article = 5
      */
     helpArticle?: PremiumMarketingComponentProperties_HelpArticle;
+}
+/**
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.OrbsConfirmationModal
+ */
+export interface PremiumMarketingComponentProperties_OrbsConfirmationModal {
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset art = 1
+     */
+    art?: PremiumMarketingComponentProperties_ThemeAwareAsset;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString header_localized = 2
+     */
+    headerLocalized?: PremiumMarketingComponentProperties_LocalizedString;
+    /**
+     * @generated from protobuf field: string header = 3
+     */
+    header: string;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString subheader_localized = 4
+     */
+    subheaderLocalized?: PremiumMarketingComponentProperties_LocalizedString;
+    /**
+     * @generated from protobuf field: string subheader = 5
+     */
+    subheader: string;
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ButtonAction
@@ -4030,7 +4061,15 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_VOICEMOD_3P_POPOVER = 910;
      */
-    VOICEMOD_3P_POPOVER = 910
+    VOICEMOD_3P_POPOVER = 910,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GIFTED_NITRO_EXPIRATION_WINBACK_NAGBAR = 911;
+     */
+    GIFTED_NITRO_EXPIRATION_WINBACK_NAGBAR = 911,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_HOLIDAY_COACHMARK_WINTER_2026 = 912;
+     */
+    HOLIDAY_COACHMARK_WINTER_2026 = 912
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
@@ -4149,7 +4188,8 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
             { no: 35, name: "game_exit_panel", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_GameExitPanel },
             { no: 36, name: "announcement_modal_video_led", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_AnnouncementModalVideoLed },
             { no: 37, name: "announcement_modal_panel", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_AnnouncementModalPanel },
-            { no: 38, name: "nitro_home_section_header", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_NitroHomeSectionHeader }
+            { no: 38, name: "nitro_home_section_header", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_NitroHomeSectionHeader },
+            { no: 39, name: "orbs_confirmation_modal", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_OrbsConfirmationModal }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties>): PremiumMarketingComponentProperties {
@@ -4388,6 +4428,12 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
                         nitroHomeSectionHeader: PremiumMarketingComponentProperties_NitroHomeSectionHeader.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).nitroHomeSectionHeader)
                     };
                     break;
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.OrbsConfirmationModal orbs_confirmation_modal */ 39:
+                    message.properties = {
+                        oneofKind: "orbsConfirmationModal",
+                        orbsConfirmationModal: PremiumMarketingComponentProperties_OrbsConfirmationModal.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).orbsConfirmationModal)
+                    };
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -4514,6 +4560,9 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
         /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.NitroHomeSectionHeader nitro_home_section_header = 38; */
         if (message.properties.oneofKind === "nitroHomeSectionHeader")
             PremiumMarketingComponentProperties_NitroHomeSectionHeader.internalBinaryWrite(message.properties.nitroHomeSectionHeader, writer.tag(38, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.OrbsConfirmationModal orbs_confirmation_modal = 39; */
+        if (message.properties.oneofKind === "orbsConfirmationModal")
+            PremiumMarketingComponentProperties_OrbsConfirmationModal.internalBinaryWrite(message.properties.orbsConfirmationModal, writer.tag(39, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -8716,3 +8765,79 @@ class PremiumMarketingComponentProperties_NitroHomeSectionHeader$Type extends Me
  * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.NitroHomeSectionHeader
  */
 export const PremiumMarketingComponentProperties_NitroHomeSectionHeader = new PremiumMarketingComponentProperties_NitroHomeSectionHeader$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PremiumMarketingComponentProperties_OrbsConfirmationModal$Type extends MessageType<PremiumMarketingComponentProperties_OrbsConfirmationModal> {
+    constructor() {
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.OrbsConfirmationModal", [
+            { no: 1, name: "art", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset },
+            { no: 2, name: "header_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
+            { no: 3, name: "header", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 4, name: "subheader_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
+            { no: 5, name: "subheader", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+        ]);
+    }
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_OrbsConfirmationModal>): PremiumMarketingComponentProperties_OrbsConfirmationModal {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.header = "";
+        message.subheader = "";
+        if (value !== undefined)
+            reflectionMergePartial<PremiumMarketingComponentProperties_OrbsConfirmationModal>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_OrbsConfirmationModal): PremiumMarketingComponentProperties_OrbsConfirmationModal {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset art */ 1:
+                    message.art = PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryRead(reader, reader.uint32(), options, message.art);
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString header_localized */ 2:
+                    message.headerLocalized = PremiumMarketingComponentProperties_LocalizedString.internalBinaryRead(reader, reader.uint32(), options, message.headerLocalized);
+                    break;
+                case /* string header */ 3:
+                    message.header = reader.string();
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString subheader_localized */ 4:
+                    message.subheaderLocalized = PremiumMarketingComponentProperties_LocalizedString.internalBinaryRead(reader, reader.uint32(), options, message.subheaderLocalized);
+                    break;
+                case /* string subheader */ 5:
+                    message.subheader = reader.string();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_OrbsConfirmationModal, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset art = 1; */
+        if (message.art)
+            PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryWrite(message.art, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString header_localized = 2; */
+        if (message.headerLocalized)
+            PremiumMarketingComponentProperties_LocalizedString.internalBinaryWrite(message.headerLocalized, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+        /* string header = 3; */
+        if (message.header !== "")
+            writer.tag(3, WireType.LengthDelimited).string(message.header);
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString subheader_localized = 4; */
+        if (message.subheaderLocalized)
+            PremiumMarketingComponentProperties_LocalizedString.internalBinaryWrite(message.subheaderLocalized, writer.tag(4, WireType.LengthDelimited).fork(), options).join();
+        /* string subheader = 5; */
+        if (message.subheader !== "")
+            writer.tag(5, WireType.LengthDelimited).string(message.subheader);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.OrbsConfirmationModal
+ */
+export const PremiumMarketingComponentProperties_OrbsConfirmationModal = new PremiumMarketingComponentProperties_OrbsConfirmationModal$Type();

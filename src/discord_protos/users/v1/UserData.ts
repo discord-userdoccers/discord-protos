@@ -4377,7 +4377,11 @@ export enum UserData_AnonymizationStatus {
     /**
      * @generated from protobuf enum value: ANONYMIZATION_STATUS_ANONYMOUS_USER = 3;
      */
-    ANONYMOUS_USER = 3
+    ANONYMOUS_USER = 3,
+    /**
+     * @generated from protobuf enum value: ANONYMIZATION_STATUS_ABANDONED_ZOMBIE = 4;
+     */
+    ABANDONED_ZOMBIE = 4
 }
 /**
  * @generated from protobuf enum discord_protos.users.v1.UserData.TypingIndicatorAnimation

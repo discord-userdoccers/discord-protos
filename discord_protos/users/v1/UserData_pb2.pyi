@@ -1918,12 +1918,14 @@ class UserData(_message.Message):
         ANONYMIZATION_STATUS_TO_BE_ANONYMIZED_USER: UserData._AnonymizationStatus.ValueType  # 1
         ANONYMIZATION_STATUS_INACCESSIBLE_ANONYMIZED_USER: UserData._AnonymizationStatus.ValueType  # 2
         ANONYMIZATION_STATUS_ANONYMOUS_USER: UserData._AnonymizationStatus.ValueType  # 3
+        ANONYMIZATION_STATUS_ABANDONED_ZOMBIE: UserData._AnonymizationStatus.ValueType  # 4
 
     class AnonymizationStatus(_AnonymizationStatus, metaclass=_AnonymizationStatusEnumTypeWrapper): ...
     ANONYMIZATION_STATUS_UNSPECIFIED: UserData.AnonymizationStatus.ValueType  # 0
     ANONYMIZATION_STATUS_TO_BE_ANONYMIZED_USER: UserData.AnonymizationStatus.ValueType  # 1
     ANONYMIZATION_STATUS_INACCESSIBLE_ANONYMIZED_USER: UserData.AnonymizationStatus.ValueType  # 2
     ANONYMIZATION_STATUS_ANONYMOUS_USER: UserData.AnonymizationStatus.ValueType  # 3
+    ANONYMIZATION_STATUS_ABANDONED_ZOMBIE: UserData.AnonymizationStatus.ValueType  # 4
 
     class _TypingIndicatorAnimation:
         ValueType = _typing.NewType("ValueType", _builtins.int)
