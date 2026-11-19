@@ -920,6 +920,8 @@ message PremiumMarketingComponentProperties {
     repeated AdminEditorTestSelectOption multi_select_field = 12;
     repeated AdminEditorTestListItem list_field = 13;
     optional TabGradientColors tab_gradient_colors_field = 14;
+    bool shown_when_checkbox_field = 15;
+    optional TabGradientColors shown_when_field = 16;
   }
 
   message GuildHeaderCoachmark {
@@ -1070,7 +1072,7 @@ message PremiumMarketingComponentProperties {
     string legalese = 10;
   }
 
-  message AnnouncementModalPanel {
+  message AnnouncementModalTwoPanel {
     optional ThemeAwareAsset asset = 1;
     optional LocalizedString title_localized = 2;
     optional LocalizedString body_localized = 3;
@@ -1138,7 +1140,7 @@ message PremiumMarketingComponentProperties {
     CollectionPageMarketingBlock collection_page_marketing_block = 34;
     GameExitPanel game_exit_panel = 35;
     AnnouncementModalVideoLed announcement_modal_video_led = 36;
-    AnnouncementModalPanel announcement_modal_panel = 37;
+    AnnouncementModalTwoPanel announcement_modal_two_panel = 37;
     NitroHomeSectionHeader nitro_home_section_header = 38;
     OrbsConfirmationModal orbs_confirmation_modal = 39;
   }

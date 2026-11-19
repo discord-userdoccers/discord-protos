@@ -217,6 +217,14 @@ export interface Experiment {
      */
     holdoutScope?: Experiment_HoldoutScope;
     /**
+     * @generated from protobuf field: bool opt_out_of_official_holdout = 54
+     */
+    optOutOfOfficialHoldout: boolean;
+    /**
+     * @generated from protobuf field: string official_holdout_opt_out_reason = 55
+     */
+    officialHoldoutOptOutReason: string;
+    /**
      * @generated from protobuf field: optional discord_protos.discord_experimentation.v1.Experiment.ChangeSource change_source = 51
      */
     changeSource?: Experiment_ChangeSource;
@@ -1760,6 +1768,8 @@ class Experiment$Type extends MessageType<Experiment> {
             { no: 49, name: "is_feature_flag", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
             { no: 50, name: "is_official_holdout", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
             { no: 52, name: "holdout_scope", kind: "message", T: () => Experiment_HoldoutScope },
+            { no: 54, name: "opt_out_of_official_holdout", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
+            { no: 55, name: "official_holdout_opt_out_reason", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 51, name: "change_source", kind: "message", T: () => Experiment_ChangeSource }
         ]);
     }
@@ -1801,6 +1811,8 @@ class Experiment$Type extends MessageType<Experiment> {
         message.eligibilityPersistence = 0;
         message.isFeatureFlag = false;
         message.isOfficialHoldout = false;
+        message.optOutOfOfficialHoldout = false;
+        message.officialHoldoutOptOutReason = "";
         if (value !== undefined)
             reflectionMergePartial<Experiment>(this, message, value);
         return message;
@@ -1968,6 +1980,12 @@ class Experiment$Type extends MessageType<Experiment> {
                     break;
                 case /* optional discord_protos.discord_experimentation.v1.Experiment.HoldoutScope holdout_scope */ 52:
                     message.holdoutScope = Experiment_HoldoutScope.internalBinaryRead(reader, reader.uint32(), options, message.holdoutScope);
+                    break;
+                case /* bool opt_out_of_official_holdout */ 54:
+                    message.optOutOfOfficialHoldout = reader.bool();
+                    break;
+                case /* string official_holdout_opt_out_reason */ 55:
+                    message.officialHoldoutOptOutReason = reader.string();
                     break;
                 case /* optional discord_protos.discord_experimentation.v1.Experiment.ChangeSource change_source */ 51:
                     message.changeSource = Experiment_ChangeSource.internalBinaryRead(reader, reader.uint32(), options, message.changeSource);
@@ -2146,6 +2164,12 @@ class Experiment$Type extends MessageType<Experiment> {
         /* optional google.protobuf.Int32Value experiment_size_limit_override = 53; */
         if (message.experimentSizeLimitOverride)
             Int32Value.internalBinaryWrite(message.experimentSizeLimitOverride, writer.tag(53, WireType.LengthDelimited).fork(), options).join();
+        /* bool opt_out_of_official_holdout = 54; */
+        if (message.optOutOfOfficialHoldout !== false)
+            writer.tag(54, WireType.Varint).bool(message.optOutOfOfficialHoldout);
+        /* string official_holdout_opt_out_reason = 55; */
+        if (message.officialHoldoutOptOutReason !== "")
+            writer.tag(55, WireType.LengthDelimited).string(message.officialHoldoutOptOutReason);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

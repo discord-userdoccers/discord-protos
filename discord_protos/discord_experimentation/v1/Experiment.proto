@@ -595,5 +595,7 @@ message Experiment {
   bool is_feature_flag = 49;
   bool is_official_holdout = 50;
   optional HoldoutScope holdout_scope = 52;
+  bool opt_out_of_official_holdout = 54;
+  string official_holdout_opt_out_reason = 55;
   optional ChangeSource change_source = 51;
 }

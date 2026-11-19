@@ -231,11 +231,11 @@ export interface PremiumMarketingComponentProperties {
          */
         announcementModalVideoLed: PremiumMarketingComponentProperties_AnnouncementModalVideoLed;
     } | {
-        oneofKind: "announcementModalPanel";
+        oneofKind: "announcementModalTwoPanel";
         /**
-         * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalPanel announcement_modal_panel = 37
+         * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalTwoPanel announcement_modal_two_panel = 37
          */
-        announcementModalPanel: PremiumMarketingComponentProperties_AnnouncementModalPanel;
+        announcementModalTwoPanel: PremiumMarketingComponentProperties_AnnouncementModalTwoPanel;
     } | {
         oneofKind: "nitroHomeSectionHeader";
         /**
@@ -1283,6 +1283,14 @@ export interface PremiumMarketingComponentProperties_AdminEditorTestComponent {
      * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.TabGradientColors tab_gradient_colors_field = 14
      */
     tabGradientColorsField?: PremiumMarketingComponentProperties_TabGradientColors;
+    /**
+     * @generated from protobuf field: bool shown_when_checkbox_field = 15
+     */
+    shownWhenCheckboxField: boolean;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.TabGradientColors shown_when_field = 16
+     */
+    shownWhenField?: PremiumMarketingComponentProperties_TabGradientColors;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GuildHeaderCoachmark
@@ -1716,9 +1724,9 @@ export interface PremiumMarketingComponentProperties_AnnouncementModalVideoLed {
     legalese: string;
 }
 /**
- * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalPanel
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalTwoPanel
  */
-export interface PremiumMarketingComponentProperties_AnnouncementModalPanel {
+export interface PremiumMarketingComponentProperties_AnnouncementModalTwoPanel {
     /**
      * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset = 1
      */
@@ -4271,7 +4279,7 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
             { no: 34, name: "collection_page_marketing_block", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_CollectionPageMarketingBlock },
             { no: 35, name: "game_exit_panel", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_GameExitPanel },
             { no: 36, name: "announcement_modal_video_led", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_AnnouncementModalVideoLed },
-            { no: 37, name: "announcement_modal_panel", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_AnnouncementModalPanel },
+            { no: 37, name: "announcement_modal_two_panel", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_AnnouncementModalTwoPanel },
             { no: 38, name: "nitro_home_section_header", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_NitroHomeSectionHeader },
             { no: 39, name: "orbs_confirmation_modal", kind: "message", oneof: "properties", T: () => PremiumMarketingComponentProperties_OrbsConfirmationModal }
         ]);
@@ -4500,10 +4508,10 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
                         announcementModalVideoLed: PremiumMarketingComponentProperties_AnnouncementModalVideoLed.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).announcementModalVideoLed)
                     };
                     break;
-                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalPanel announcement_modal_panel */ 37:
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalTwoPanel announcement_modal_two_panel */ 37:
                     message.properties = {
-                        oneofKind: "announcementModalPanel",
-                        announcementModalPanel: PremiumMarketingComponentProperties_AnnouncementModalPanel.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).announcementModalPanel)
+                        oneofKind: "announcementModalTwoPanel",
+                        announcementModalTwoPanel: PremiumMarketingComponentProperties_AnnouncementModalTwoPanel.internalBinaryRead(reader, reader.uint32(), options, (message.properties as any).announcementModalTwoPanel)
                     };
                     break;
                 case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.NitroHomeSectionHeader nitro_home_section_header */ 38:
@@ -4638,9 +4646,9 @@ class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarket
         /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalVideoLed announcement_modal_video_led = 36; */
         if (message.properties.oneofKind === "announcementModalVideoLed")
             PremiumMarketingComponentProperties_AnnouncementModalVideoLed.internalBinaryWrite(message.properties.announcementModalVideoLed, writer.tag(36, WireType.LengthDelimited).fork(), options).join();
-        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalPanel announcement_modal_panel = 37; */
-        if (message.properties.oneofKind === "announcementModalPanel")
-            PremiumMarketingComponentProperties_AnnouncementModalPanel.internalBinaryWrite(message.properties.announcementModalPanel, writer.tag(37, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalTwoPanel announcement_modal_two_panel = 37; */
+        if (message.properties.oneofKind === "announcementModalTwoPanel")
+            PremiumMarketingComponentProperties_AnnouncementModalTwoPanel.internalBinaryWrite(message.properties.announcementModalTwoPanel, writer.tag(37, WireType.LengthDelimited).fork(), options).join();
         /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.NitroHomeSectionHeader nitro_home_section_header = 38; */
         if (message.properties.oneofKind === "nitroHomeSectionHeader")
             PremiumMarketingComponentProperties_NitroHomeSectionHeader.internalBinaryWrite(message.properties.nitroHomeSectionHeader, writer.tag(38, WireType.LengthDelimited).fork(), options).join();
@@ -7467,7 +7475,9 @@ class PremiumMarketingComponentProperties_AdminEditorTestComponent$Type extends 
             { no: 11, name: "select_field", kind: "enum", T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AdminEditorTestSelectOption", PremiumMarketingComponentProperties_AdminEditorTestSelectOption, "ADMIN_EDITOR_TEST_SELECT_OPTION_"] },
             { no: 12, name: "multi_select_field", kind: "enum", repeat: 1 /*RepeatType.PACKED*/, T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AdminEditorTestSelectOption", PremiumMarketingComponentProperties_AdminEditorTestSelectOption, "ADMIN_EDITOR_TEST_SELECT_OPTION_"] },
             { no: 13, name: "list_field", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => PremiumMarketingComponentProperties_AdminEditorTestListItem },
-            { no: 14, name: "tab_gradient_colors_field", kind: "message", T: () => PremiumMarketingComponentProperties_TabGradientColors }
+            { no: 14, name: "tab_gradient_colors_field", kind: "message", T: () => PremiumMarketingComponentProperties_TabGradientColors },
+            { no: 15, name: "shown_when_checkbox_field", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
+            { no: 16, name: "shown_when_field", kind: "message", T: () => PremiumMarketingComponentProperties_TabGradientColors }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_AdminEditorTestComponent>): PremiumMarketingComponentProperties_AdminEditorTestComponent {
@@ -7479,6 +7489,7 @@ class PremiumMarketingComponentProperties_AdminEditorTestComponent$Type extends 
         message.selectField = 0;
         message.multiSelectField = [];
         message.listField = [];
+        message.shownWhenCheckboxField = false;
         if (value !== undefined)
             reflectionMergePartial<PremiumMarketingComponentProperties_AdminEditorTestComponent>(this, message, value);
         return message;
@@ -7533,6 +7544,12 @@ class PremiumMarketingComponentProperties_AdminEditorTestComponent$Type extends 
                     break;
                 case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.TabGradientColors tab_gradient_colors_field */ 14:
                     message.tabGradientColorsField = PremiumMarketingComponentProperties_TabGradientColors.internalBinaryRead(reader, reader.uint32(), options, message.tabGradientColorsField);
+                    break;
+                case /* bool shown_when_checkbox_field */ 15:
+                    message.shownWhenCheckboxField = reader.bool();
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.TabGradientColors shown_when_field */ 16:
+                    message.shownWhenField = PremiumMarketingComponentProperties_TabGradientColors.internalBinaryRead(reader, reader.uint32(), options, message.shownWhenField);
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -7592,6 +7609,12 @@ class PremiumMarketingComponentProperties_AdminEditorTestComponent$Type extends 
         /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.TabGradientColors tab_gradient_colors_field = 14; */
         if (message.tabGradientColorsField)
             PremiumMarketingComponentProperties_TabGradientColors.internalBinaryWrite(message.tabGradientColorsField, writer.tag(14, WireType.LengthDelimited).fork(), options).join();
+        /* bool shown_when_checkbox_field = 15; */
+        if (message.shownWhenCheckboxField !== false)
+            writer.tag(15, WireType.Varint).bool(message.shownWhenCheckboxField);
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.TabGradientColors shown_when_field = 16; */
+        if (message.shownWhenField)
+            PremiumMarketingComponentProperties_TabGradientColors.internalBinaryWrite(message.shownWhenField, writer.tag(16, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -8856,9 +8879,9 @@ class PremiumMarketingComponentProperties_AnnouncementModalVideoLed$Type extends
  */
 export const PremiumMarketingComponentProperties_AnnouncementModalVideoLed = new PremiumMarketingComponentProperties_AnnouncementModalVideoLed$Type();
 // @generated message type with reflection information, may provide speed optimized methods
-class PremiumMarketingComponentProperties_AnnouncementModalPanel$Type extends MessageType<PremiumMarketingComponentProperties_AnnouncementModalPanel> {
+class PremiumMarketingComponentProperties_AnnouncementModalTwoPanel$Type extends MessageType<PremiumMarketingComponentProperties_AnnouncementModalTwoPanel> {
     constructor() {
-        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalPanel", [
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalTwoPanel", [
             { no: 1, name: "asset", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset },
             { no: 2, name: "title_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
             { no: 3, name: "body_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
@@ -8873,7 +8896,7 @@ class PremiumMarketingComponentProperties_AnnouncementModalPanel$Type extends Me
             { no: 12, name: "perk_title", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
         ]);
     }
-    create(value?: PartialMessage<PremiumMarketingComponentProperties_AnnouncementModalPanel>): PremiumMarketingComponentProperties_AnnouncementModalPanel {
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_AnnouncementModalTwoPanel>): PremiumMarketingComponentProperties_AnnouncementModalTwoPanel {
         const message = globalThis.Object.create((this.messagePrototype!));
         message.termsUrl = "";
         message.perkCards = [];
@@ -8882,10 +8905,10 @@ class PremiumMarketingComponentProperties_AnnouncementModalPanel$Type extends Me
         message.legalese = "";
         message.perkTitle = "";
         if (value !== undefined)
-            reflectionMergePartial<PremiumMarketingComponentProperties_AnnouncementModalPanel>(this, message, value);
+            reflectionMergePartial<PremiumMarketingComponentProperties_AnnouncementModalTwoPanel>(this, message, value);
         return message;
     }
-    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_AnnouncementModalPanel): PremiumMarketingComponentProperties_AnnouncementModalPanel {
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_AnnouncementModalTwoPanel): PremiumMarketingComponentProperties_AnnouncementModalTwoPanel {
         let message = target ?? this.create(), end = reader.pos + length;
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
@@ -8937,7 +8960,7 @@ class PremiumMarketingComponentProperties_AnnouncementModalPanel$Type extends Me
         }
         return message;
     }
-    internalBinaryWrite(message: PremiumMarketingComponentProperties_AnnouncementModalPanel, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_AnnouncementModalTwoPanel, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
         /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset = 1; */
         if (message.asset)
             PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryWrite(message.asset, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
@@ -8981,9 +9004,9 @@ class PremiumMarketingComponentProperties_AnnouncementModalPanel$Type extends Me
     }
 }
 /**
- * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalPanel
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalTwoPanel
  */
-export const PremiumMarketingComponentProperties_AnnouncementModalPanel = new PremiumMarketingComponentProperties_AnnouncementModalPanel$Type();
+export const PremiumMarketingComponentProperties_AnnouncementModalTwoPanel = new PremiumMarketingComponentProperties_AnnouncementModalTwoPanel$Type();
 // @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties_NitroHomeSectionHeader$Type extends MessageType<PremiumMarketingComponentProperties_NitroHomeSectionHeader> {
     constructor() {
