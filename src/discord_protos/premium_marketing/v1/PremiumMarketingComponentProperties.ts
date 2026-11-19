@@ -497,6 +497,78 @@ export interface PremiumMarketingComponentProperties_AnnouncementModalVariant1Pr
     body: string;
 }
 /**
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset
+ */
+export interface PremiumMarketingComponentProperties_ThemeAwareAsset {
+    /**
+     * @generated from protobuf field: string light_url = 1
+     */
+    lightUrl: string;
+    /**
+     * @generated from protobuf field: string dark_url = 2
+     */
+    darkUrl: string;
+    /**
+     * @generated from protobuf field: string light_static_url = 3
+     */
+    lightStaticUrl: string;
+    /**
+     * @generated from protobuf field: string dark_static_url = 4
+     */
+    darkStaticUrl: string;
+}
+/**
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PaletteColor
+ */
+export interface PremiumMarketingComponentProperties_PaletteColor {
+    /**
+     * @generated from protobuf field: string palette_color = 1
+     */
+    paletteColor: string;
+    /**
+     * @generated from protobuf field: float opacity = 2
+     */
+    opacity: number;
+}
+/**
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemedPaletteColor
+ */
+export interface PremiumMarketingComponentProperties_ThemedPaletteColor {
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PaletteColor light = 1
+     */
+    light?: PremiumMarketingComponentProperties_PaletteColor;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PaletteColor ash = 2
+     */
+    ash?: PremiumMarketingComponentProperties_PaletteColor;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PaletteColor dark = 3
+     */
+    dark?: PremiumMarketingComponentProperties_PaletteColor;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PaletteColor onyx = 4
+     */
+    onyx?: PremiumMarketingComponentProperties_PaletteColor;
+}
+/**
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.TabGradientColors
+ */
+export interface PremiumMarketingComponentProperties_TabGradientColors {
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemedPaletteColor center = 1
+     */
+    center?: PremiumMarketingComponentProperties_ThemedPaletteColor;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemedPaletteColor inner_ring = 2
+     */
+    innerRing?: PremiumMarketingComponentProperties_ThemedPaletteColor;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemedPaletteColor outer_ring = 3
+     */
+    outerRing?: PremiumMarketingComponentProperties_ThemedPaletteColor;
+}
+/**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PremiumTab
  */
 export interface PremiumMarketingComponentProperties_PremiumTab {
@@ -524,6 +596,14 @@ export interface PremiumMarketingComponentProperties_PremiumTab {
      * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString acknowledged_badge_label_localized = 6
      */
     acknowledgedBadgeLabelLocalized?: PremiumMarketingComponentProperties_LocalizedString;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset background_image = 7
+     */
+    backgroundImage?: PremiumMarketingComponentProperties_ThemeAwareAsset;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.TabGradientColors hover_gradient_colors = 8
+     */
+    hoverGradientColors?: PremiumMarketingComponentProperties_TabGradientColors;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MarketingPageBanner
@@ -590,6 +670,10 @@ export interface PremiumMarketingComponentProperties_PaymentModalBanner {
      * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString body_localized = 5
      */
     bodyLocalized?: PremiumMarketingComponentProperties_LocalizedString;
+    /**
+     * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PaymentModalBannerGradient gradient = 6
+     */
+    gradient: PremiumMarketingComponentProperties_PaymentModalBannerGradient;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.MobileBottomSheet
@@ -669,27 +753,6 @@ export interface PremiumMarketingComponentProperties_GiftIcon {
      * @generated from protobuf field: string trinket_rive_animation_url = 5
      */
     trinketRiveAnimationUrl: string;
-}
-/**
- * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset
- */
-export interface PremiumMarketingComponentProperties_ThemeAwareAsset {
-    /**
-     * @generated from protobuf field: string light_url = 1
-     */
-    lightUrl: string;
-    /**
-     * @generated from protobuf field: string dark_url = 2
-     */
-    darkUrl: string;
-    /**
-     * @generated from protobuf field: string light_static_url = 3
-     */
-    lightStaticUrl: string;
-    /**
-     * @generated from protobuf field: string dark_static_url = 4
-     */
-    darkStaticUrl: string;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftIconCoachmark
@@ -1216,6 +1279,10 @@ export interface PremiumMarketingComponentProperties_AdminEditorTestComponent {
      * @generated from protobuf field: repeated discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AdminEditorTestListItem list_field = 13
      */
     listField: PremiumMarketingComponentProperties_AdminEditorTestListItem[];
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.TabGradientColors tab_gradient_colors_field = 14
+     */
+    tabGradientColorsField?: PremiumMarketingComponentProperties_TabGradientColors;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GuildHeaderCoachmark
@@ -1833,6 +1900,23 @@ export enum PremiumMarketingComponentProperties_MarketingPageBannerButtonVariant
      * @generated from protobuf enum value: MARKETING_PAGE_BANNER_BUTTON_VARIANT_PRIMARY = 2;
      */
     PRIMARY = 2
+}
+/**
+ * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PaymentModalBannerGradient
+ */
+export enum PremiumMarketingComponentProperties_PaymentModalBannerGradient {
+    /**
+     * @generated from protobuf enum value: PAYMENT_MODAL_BANNER_GRADIENT_UNSPECIFIED = 0;
+     */
+    UNSPECIFIED = 0,
+    /**
+     * @generated from protobuf enum value: PAYMENT_MODAL_BANNER_GRADIENT_BLURPLE = 1;
+     */
+    BLURPLE = 1,
+    /**
+     * @generated from protobuf enum value: PAYMENT_MODAL_BANNER_GRADIENT_NITRO_PINK = 2;
+     */
+    NITRO_PINK = 2
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.DismissibleContent
@@ -5325,6 +5409,259 @@ class PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties$Ty
  */
 export const PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties = new PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties$Type();
 // @generated message type with reflection information, may provide speed optimized methods
+class PremiumMarketingComponentProperties_ThemeAwareAsset$Type extends MessageType<PremiumMarketingComponentProperties_ThemeAwareAsset> {
+    constructor() {
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset", [
+            { no: 1, name: "light_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "dark_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 3, name: "light_static_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 4, name: "dark_static_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+        ]);
+    }
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_ThemeAwareAsset>): PremiumMarketingComponentProperties_ThemeAwareAsset {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.lightUrl = "";
+        message.darkUrl = "";
+        message.lightStaticUrl = "";
+        message.darkStaticUrl = "";
+        if (value !== undefined)
+            reflectionMergePartial<PremiumMarketingComponentProperties_ThemeAwareAsset>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_ThemeAwareAsset): PremiumMarketingComponentProperties_ThemeAwareAsset {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string light_url */ 1:
+                    message.lightUrl = reader.string();
+                    break;
+                case /* string dark_url */ 2:
+                    message.darkUrl = reader.string();
+                    break;
+                case /* string light_static_url */ 3:
+                    message.lightStaticUrl = reader.string();
+                    break;
+                case /* string dark_static_url */ 4:
+                    message.darkStaticUrl = reader.string();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_ThemeAwareAsset, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string light_url = 1; */
+        if (message.lightUrl !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.lightUrl);
+        /* string dark_url = 2; */
+        if (message.darkUrl !== "")
+            writer.tag(2, WireType.LengthDelimited).string(message.darkUrl);
+        /* string light_static_url = 3; */
+        if (message.lightStaticUrl !== "")
+            writer.tag(3, WireType.LengthDelimited).string(message.lightStaticUrl);
+        /* string dark_static_url = 4; */
+        if (message.darkStaticUrl !== "")
+            writer.tag(4, WireType.LengthDelimited).string(message.darkStaticUrl);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset
+ */
+export const PremiumMarketingComponentProperties_ThemeAwareAsset = new PremiumMarketingComponentProperties_ThemeAwareAsset$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PremiumMarketingComponentProperties_PaletteColor$Type extends MessageType<PremiumMarketingComponentProperties_PaletteColor> {
+    constructor() {
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PaletteColor", [
+            { no: 1, name: "palette_color", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "opacity", kind: "scalar", T: 2 /*ScalarType.FLOAT*/ }
+        ]);
+    }
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_PaletteColor>): PremiumMarketingComponentProperties_PaletteColor {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.paletteColor = "";
+        message.opacity = 0;
+        if (value !== undefined)
+            reflectionMergePartial<PremiumMarketingComponentProperties_PaletteColor>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_PaletteColor): PremiumMarketingComponentProperties_PaletteColor {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string palette_color */ 1:
+                    message.paletteColor = reader.string();
+                    break;
+                case /* float opacity */ 2:
+                    message.opacity = reader.float();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_PaletteColor, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string palette_color = 1; */
+        if (message.paletteColor !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.paletteColor);
+        /* float opacity = 2; */
+        if (message.opacity !== 0)
+            writer.tag(2, WireType.Bit32).float(message.opacity);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PaletteColor
+ */
+export const PremiumMarketingComponentProperties_PaletteColor = new PremiumMarketingComponentProperties_PaletteColor$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PremiumMarketingComponentProperties_ThemedPaletteColor$Type extends MessageType<PremiumMarketingComponentProperties_ThemedPaletteColor> {
+    constructor() {
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemedPaletteColor", [
+            { no: 1, name: "light", kind: "message", T: () => PremiumMarketingComponentProperties_PaletteColor },
+            { no: 2, name: "ash", kind: "message", T: () => PremiumMarketingComponentProperties_PaletteColor },
+            { no: 3, name: "dark", kind: "message", T: () => PremiumMarketingComponentProperties_PaletteColor },
+            { no: 4, name: "onyx", kind: "message", T: () => PremiumMarketingComponentProperties_PaletteColor }
+        ]);
+    }
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_ThemedPaletteColor>): PremiumMarketingComponentProperties_ThemedPaletteColor {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        if (value !== undefined)
+            reflectionMergePartial<PremiumMarketingComponentProperties_ThemedPaletteColor>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_ThemedPaletteColor): PremiumMarketingComponentProperties_ThemedPaletteColor {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PaletteColor light */ 1:
+                    message.light = PremiumMarketingComponentProperties_PaletteColor.internalBinaryRead(reader, reader.uint32(), options, message.light);
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PaletteColor ash */ 2:
+                    message.ash = PremiumMarketingComponentProperties_PaletteColor.internalBinaryRead(reader, reader.uint32(), options, message.ash);
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PaletteColor dark */ 3:
+                    message.dark = PremiumMarketingComponentProperties_PaletteColor.internalBinaryRead(reader, reader.uint32(), options, message.dark);
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PaletteColor onyx */ 4:
+                    message.onyx = PremiumMarketingComponentProperties_PaletteColor.internalBinaryRead(reader, reader.uint32(), options, message.onyx);
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_ThemedPaletteColor, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PaletteColor light = 1; */
+        if (message.light)
+            PremiumMarketingComponentProperties_PaletteColor.internalBinaryWrite(message.light, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PaletteColor ash = 2; */
+        if (message.ash)
+            PremiumMarketingComponentProperties_PaletteColor.internalBinaryWrite(message.ash, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PaletteColor dark = 3; */
+        if (message.dark)
+            PremiumMarketingComponentProperties_PaletteColor.internalBinaryWrite(message.dark, writer.tag(3, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PaletteColor onyx = 4; */
+        if (message.onyx)
+            PremiumMarketingComponentProperties_PaletteColor.internalBinaryWrite(message.onyx, writer.tag(4, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemedPaletteColor
+ */
+export const PremiumMarketingComponentProperties_ThemedPaletteColor = new PremiumMarketingComponentProperties_ThemedPaletteColor$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PremiumMarketingComponentProperties_TabGradientColors$Type extends MessageType<PremiumMarketingComponentProperties_TabGradientColors> {
+    constructor() {
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.TabGradientColors", [
+            { no: 1, name: "center", kind: "message", T: () => PremiumMarketingComponentProperties_ThemedPaletteColor },
+            { no: 2, name: "inner_ring", kind: "message", T: () => PremiumMarketingComponentProperties_ThemedPaletteColor },
+            { no: 3, name: "outer_ring", kind: "message", T: () => PremiumMarketingComponentProperties_ThemedPaletteColor }
+        ]);
+    }
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_TabGradientColors>): PremiumMarketingComponentProperties_TabGradientColors {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        if (value !== undefined)
+            reflectionMergePartial<PremiumMarketingComponentProperties_TabGradientColors>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_TabGradientColors): PremiumMarketingComponentProperties_TabGradientColors {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemedPaletteColor center */ 1:
+                    message.center = PremiumMarketingComponentProperties_ThemedPaletteColor.internalBinaryRead(reader, reader.uint32(), options, message.center);
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemedPaletteColor inner_ring */ 2:
+                    message.innerRing = PremiumMarketingComponentProperties_ThemedPaletteColor.internalBinaryRead(reader, reader.uint32(), options, message.innerRing);
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemedPaletteColor outer_ring */ 3:
+                    message.outerRing = PremiumMarketingComponentProperties_ThemedPaletteColor.internalBinaryRead(reader, reader.uint32(), options, message.outerRing);
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_TabGradientColors, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemedPaletteColor center = 1; */
+        if (message.center)
+            PremiumMarketingComponentProperties_ThemedPaletteColor.internalBinaryWrite(message.center, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemedPaletteColor inner_ring = 2; */
+        if (message.innerRing)
+            PremiumMarketingComponentProperties_ThemedPaletteColor.internalBinaryWrite(message.innerRing, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemedPaletteColor outer_ring = 3; */
+        if (message.outerRing)
+            PremiumMarketingComponentProperties_ThemedPaletteColor.internalBinaryWrite(message.outerRing, writer.tag(3, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.TabGradientColors
+ */
+export const PremiumMarketingComponentProperties_TabGradientColors = new PremiumMarketingComponentProperties_TabGradientColors$Type();
+// @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties_PremiumTab$Type extends MessageType<PremiumMarketingComponentProperties_PremiumTab> {
     constructor() {
         super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PremiumTab", [
@@ -5333,7 +5670,9 @@ class PremiumMarketingComponentProperties_PremiumTab$Type extends MessageType<Pr
             { no: 3, name: "show_hover_gradient", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
             { no: 4, name: "deeplink_section", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 5, name: "badge_label_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
-            { no: 6, name: "acknowledged_badge_label_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString }
+            { no: 6, name: "acknowledged_badge_label_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
+            { no: 7, name: "background_image", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset },
+            { no: 8, name: "hover_gradient_colors", kind: "message", T: () => PremiumMarketingComponentProperties_TabGradientColors }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_PremiumTab>): PremiumMarketingComponentProperties_PremiumTab {
@@ -5369,6 +5708,12 @@ class PremiumMarketingComponentProperties_PremiumTab$Type extends MessageType<Pr
                 case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString acknowledged_badge_label_localized */ 6:
                     message.acknowledgedBadgeLabelLocalized = PremiumMarketingComponentProperties_LocalizedString.internalBinaryRead(reader, reader.uint32(), options, message.acknowledgedBadgeLabelLocalized);
                     break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset background_image */ 7:
+                    message.backgroundImage = PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryRead(reader, reader.uint32(), options, message.backgroundImage);
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.TabGradientColors hover_gradient_colors */ 8:
+                    message.hoverGradientColors = PremiumMarketingComponentProperties_TabGradientColors.internalBinaryRead(reader, reader.uint32(), options, message.hoverGradientColors);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -5399,6 +5744,12 @@ class PremiumMarketingComponentProperties_PremiumTab$Type extends MessageType<Pr
         /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString acknowledged_badge_label_localized = 6; */
         if (message.acknowledgedBadgeLabelLocalized)
             PremiumMarketingComponentProperties_LocalizedString.internalBinaryWrite(message.acknowledgedBadgeLabelLocalized, writer.tag(6, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset background_image = 7; */
+        if (message.backgroundImage)
+            PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryWrite(message.backgroundImage, writer.tag(7, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.TabGradientColors hover_gradient_colors = 8; */
+        if (message.hoverGradientColors)
+            PremiumMarketingComponentProperties_TabGradientColors.internalBinaryWrite(message.hoverGradientColors, writer.tag(8, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -5524,7 +5875,8 @@ class PremiumMarketingComponentProperties_PaymentModalBanner$Type extends Messag
             { no: 2, name: "header", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 3, name: "body", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 4, name: "header_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
-            { no: 5, name: "body_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString }
+            { no: 5, name: "body_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
+            { no: 6, name: "gradient", kind: "enum", T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PaymentModalBannerGradient", PremiumMarketingComponentProperties_PaymentModalBannerGradient, "PAYMENT_MODAL_BANNER_GRADIENT_"] }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_PaymentModalBanner>): PremiumMarketingComponentProperties_PaymentModalBanner {
@@ -5532,6 +5884,7 @@ class PremiumMarketingComponentProperties_PaymentModalBanner$Type extends Messag
         message.assetUrl = "";
         message.header = "";
         message.body = "";
+        message.gradient = 0;
         if (value !== undefined)
             reflectionMergePartial<PremiumMarketingComponentProperties_PaymentModalBanner>(this, message, value);
         return message;
@@ -5555,6 +5908,9 @@ class PremiumMarketingComponentProperties_PaymentModalBanner$Type extends Messag
                     break;
                 case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString body_localized */ 5:
                     message.bodyLocalized = PremiumMarketingComponentProperties_LocalizedString.internalBinaryRead(reader, reader.uint32(), options, message.bodyLocalized);
+                    break;
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PaymentModalBannerGradient gradient */ 6:
+                    message.gradient = reader.int32();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -5583,6 +5939,9 @@ class PremiumMarketingComponentProperties_PaymentModalBanner$Type extends Messag
         /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString body_localized = 5; */
         if (message.bodyLocalized)
             PremiumMarketingComponentProperties_LocalizedString.internalBinaryWrite(message.bodyLocalized, writer.tag(5, WireType.LengthDelimited).fork(), options).join();
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.PaymentModalBannerGradient gradient = 6; */
+        if (message.gradient !== 0)
+            writer.tag(6, WireType.Varint).int32(message.gradient);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -5833,77 +6192,6 @@ class PremiumMarketingComponentProperties_GiftIcon$Type extends MessageType<Prem
  * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.GiftIcon
  */
 export const PremiumMarketingComponentProperties_GiftIcon = new PremiumMarketingComponentProperties_GiftIcon$Type();
-// @generated message type with reflection information, may provide speed optimized methods
-class PremiumMarketingComponentProperties_ThemeAwareAsset$Type extends MessageType<PremiumMarketingComponentProperties_ThemeAwareAsset> {
-    constructor() {
-        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset", [
-            { no: 1, name: "light_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 2, name: "dark_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 3, name: "light_static_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 4, name: "dark_static_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
-        ]);
-    }
-    create(value?: PartialMessage<PremiumMarketingComponentProperties_ThemeAwareAsset>): PremiumMarketingComponentProperties_ThemeAwareAsset {
-        const message = globalThis.Object.create((this.messagePrototype!));
-        message.lightUrl = "";
-        message.darkUrl = "";
-        message.lightStaticUrl = "";
-        message.darkStaticUrl = "";
-        if (value !== undefined)
-            reflectionMergePartial<PremiumMarketingComponentProperties_ThemeAwareAsset>(this, message, value);
-        return message;
-    }
-    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_ThemeAwareAsset): PremiumMarketingComponentProperties_ThemeAwareAsset {
-        let message = target ?? this.create(), end = reader.pos + length;
-        while (reader.pos < end) {
-            let [fieldNo, wireType] = reader.tag();
-            switch (fieldNo) {
-                case /* string light_url */ 1:
-                    message.lightUrl = reader.string();
-                    break;
-                case /* string dark_url */ 2:
-                    message.darkUrl = reader.string();
-                    break;
-                case /* string light_static_url */ 3:
-                    message.lightStaticUrl = reader.string();
-                    break;
-                case /* string dark_static_url */ 4:
-                    message.darkStaticUrl = reader.string();
-                    break;
-                default:
-                    let u = options.readUnknownField;
-                    if (u === "throw")
-                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
-                    let d = reader.skip(wireType);
-                    if (u !== false)
-                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
-            }
-        }
-        return message;
-    }
-    internalBinaryWrite(message: PremiumMarketingComponentProperties_ThemeAwareAsset, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* string light_url = 1; */
-        if (message.lightUrl !== "")
-            writer.tag(1, WireType.LengthDelimited).string(message.lightUrl);
-        /* string dark_url = 2; */
-        if (message.darkUrl !== "")
-            writer.tag(2, WireType.LengthDelimited).string(message.darkUrl);
-        /* string light_static_url = 3; */
-        if (message.lightStaticUrl !== "")
-            writer.tag(3, WireType.LengthDelimited).string(message.lightStaticUrl);
-        /* string dark_static_url = 4; */
-        if (message.darkStaticUrl !== "")
-            writer.tag(4, WireType.LengthDelimited).string(message.darkStaticUrl);
-        let u = options.writeUnknownFields;
-        if (u !== false)
-            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
-        return writer;
-    }
-}
-/**
- * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset
- */
-export const PremiumMarketingComponentProperties_ThemeAwareAsset = new PremiumMarketingComponentProperties_ThemeAwareAsset$Type();
 // @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties_GiftIconCoachmark$Type extends MessageType<PremiumMarketingComponentProperties_GiftIconCoachmark> {
     constructor() {
@@ -7178,7 +7466,8 @@ class PremiumMarketingComponentProperties_AdminEditorTestComponent$Type extends 
             { no: 10, name: "gradient_field", kind: "message", T: () => PremiumMarketingComponentProperties_Gradient },
             { no: 11, name: "select_field", kind: "enum", T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AdminEditorTestSelectOption", PremiumMarketingComponentProperties_AdminEditorTestSelectOption, "ADMIN_EDITOR_TEST_SELECT_OPTION_"] },
             { no: 12, name: "multi_select_field", kind: "enum", repeat: 1 /*RepeatType.PACKED*/, T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AdminEditorTestSelectOption", PremiumMarketingComponentProperties_AdminEditorTestSelectOption, "ADMIN_EDITOR_TEST_SELECT_OPTION_"] },
-            { no: 13, name: "list_field", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => PremiumMarketingComponentProperties_AdminEditorTestListItem }
+            { no: 13, name: "list_field", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => PremiumMarketingComponentProperties_AdminEditorTestListItem },
+            { no: 14, name: "tab_gradient_colors_field", kind: "message", T: () => PremiumMarketingComponentProperties_TabGradientColors }
         ]);
     }
     create(value?: PartialMessage<PremiumMarketingComponentProperties_AdminEditorTestComponent>): PremiumMarketingComponentProperties_AdminEditorTestComponent {
@@ -7242,6 +7531,9 @@ class PremiumMarketingComponentProperties_AdminEditorTestComponent$Type extends 
                 case /* repeated discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AdminEditorTestListItem list_field */ 13:
                     message.listField.push(PremiumMarketingComponentProperties_AdminEditorTestListItem.internalBinaryRead(reader, reader.uint32(), options));
                     break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.TabGradientColors tab_gradient_colors_field */ 14:
+                    message.tabGradientColorsField = PremiumMarketingComponentProperties_TabGradientColors.internalBinaryRead(reader, reader.uint32(), options, message.tabGradientColorsField);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -7297,6 +7589,9 @@ class PremiumMarketingComponentProperties_AdminEditorTestComponent$Type extends 
         /* repeated discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AdminEditorTestListItem list_field = 13; */
         for (let i = 0; i < message.listField.length; i++)
             PremiumMarketingComponentProperties_AdminEditorTestListItem.internalBinaryWrite(message.listField[i], writer.tag(13, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.TabGradientColors tab_gradient_colors_field = 14; */
+        if (message.tabGradientColorsField)
+            PremiumMarketingComponentProperties_TabGradientColors.internalBinaryWrite(message.tabGradientColorsField, writer.tag(14, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

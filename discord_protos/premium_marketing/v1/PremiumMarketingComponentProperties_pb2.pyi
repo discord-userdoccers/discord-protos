@@ -85,6 +85,21 @@ class PremiumMarketingComponentProperties(_message.Message):
     MARKETING_PAGE_BANNER_BUTTON_VARIANT_EXPRESSIVE: PremiumMarketingComponentProperties.MarketingPageBannerButtonVariant.ValueType  # 1
     MARKETING_PAGE_BANNER_BUTTON_VARIANT_PRIMARY: PremiumMarketingComponentProperties.MarketingPageBannerButtonVariant.ValueType  # 2
 
+    class _PaymentModalBannerGradient:
+        ValueType = _typing.NewType("ValueType", _builtins.int)
+        V: _TypeAlias = ValueType  # noqa: Y015
+
+    class _PaymentModalBannerGradientEnumTypeWrapper(_enum_type_wrapper._EnumTypeWrapper[PremiumMarketingComponentProperties._PaymentModalBannerGradient.ValueType], _builtins.type):
+        DESCRIPTOR: _descriptor.EnumDescriptor
+        PAYMENT_MODAL_BANNER_GRADIENT_UNSPECIFIED: PremiumMarketingComponentProperties._PaymentModalBannerGradient.ValueType  # 0
+        PAYMENT_MODAL_BANNER_GRADIENT_BLURPLE: PremiumMarketingComponentProperties._PaymentModalBannerGradient.ValueType  # 1
+        PAYMENT_MODAL_BANNER_GRADIENT_NITRO_PINK: PremiumMarketingComponentProperties._PaymentModalBannerGradient.ValueType  # 2
+
+    class PaymentModalBannerGradient(_PaymentModalBannerGradient, metaclass=_PaymentModalBannerGradientEnumTypeWrapper): ...
+    PAYMENT_MODAL_BANNER_GRADIENT_UNSPECIFIED: PremiumMarketingComponentProperties.PaymentModalBannerGradient.ValueType  # 0
+    PAYMENT_MODAL_BANNER_GRADIENT_BLURPLE: PremiumMarketingComponentProperties.PaymentModalBannerGradient.ValueType  # 1
+    PAYMENT_MODAL_BANNER_GRADIENT_NITRO_PINK: PremiumMarketingComponentProperties.PaymentModalBannerGradient.ValueType  # 2
+
     class _DismissibleContent:
         ValueType = _typing.NewType("ValueType", _builtins.int)
         V: _TypeAlias = ValueType  # noqa: Y015
@@ -1699,6 +1714,134 @@ class PremiumMarketingComponentProperties(_message.Message):
         def WhichOneof(self, oneof_group: _WhichOneofArgType__subheader_localized) -> _WhichOneofReturnType__subheader_localized | None: ...
 
     @_typing.final
+    class ThemeAwareAsset(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        LIGHT_URL_FIELD_NUMBER: _builtins.int
+        DARK_URL_FIELD_NUMBER: _builtins.int
+        LIGHT_STATIC_URL_FIELD_NUMBER: _builtins.int
+        DARK_STATIC_URL_FIELD_NUMBER: _builtins.int
+        light_url: _builtins.str
+        dark_url: _builtins.str
+        light_static_url: _builtins.str
+        dark_static_url: _builtins.str
+        def __init__(
+            self,
+            *,
+            light_url: _builtins.str = ...,
+            dark_url: _builtins.str = ...,
+            light_static_url: _builtins.str = ...,
+            dark_static_url: _builtins.str = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["dark_static_url", b"dark_static_url", "dark_url", b"dark_url", "light_static_url", b"light_static_url", "light_url", b"light_url"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
+
+    @_typing.final
+    class PaletteColor(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        PALETTE_COLOR_FIELD_NUMBER: _builtins.int
+        OPACITY_FIELD_NUMBER: _builtins.int
+        palette_color: _builtins.str
+        opacity: _builtins.float
+        def __init__(
+            self,
+            *,
+            palette_color: _builtins.str = ...,
+            opacity: _builtins.float = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["opacity", b"opacity", "palette_color", b"palette_color"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
+
+    @_typing.final
+    class ThemedPaletteColor(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        LIGHT_FIELD_NUMBER: _builtins.int
+        ASH_FIELD_NUMBER: _builtins.int
+        DARK_FIELD_NUMBER: _builtins.int
+        ONYX_FIELD_NUMBER: _builtins.int
+        @_builtins.property
+        def light(self) -> Global___PremiumMarketingComponentProperties.PaletteColor: ...
+        @_builtins.property
+        def ash(self) -> Global___PremiumMarketingComponentProperties.PaletteColor: ...
+        @_builtins.property
+        def dark(self) -> Global___PremiumMarketingComponentProperties.PaletteColor: ...
+        @_builtins.property
+        def onyx(self) -> Global___PremiumMarketingComponentProperties.PaletteColor: ...
+        def __init__(
+            self,
+            *,
+            light: Global___PremiumMarketingComponentProperties.PaletteColor | None = ...,
+            ash: Global___PremiumMarketingComponentProperties.PaletteColor | None = ...,
+            dark: Global___PremiumMarketingComponentProperties.PaletteColor | None = ...,
+            onyx: Global___PremiumMarketingComponentProperties.PaletteColor | None = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_ash", b"_ash", "_dark", b"_dark", "_light", b"_light", "_onyx", b"_onyx", "ash", b"ash", "dark", b"dark", "light", b"light", "onyx", b"onyx"]  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_ash", b"_ash", "_dark", b"_dark", "_light", b"_light", "_onyx", b"_onyx", "ash", b"ash", "dark", b"dark", "light", b"light", "onyx", b"onyx"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        _WhichOneofReturnType__ash: _TypeAlias = _typing.Literal["ash"]  # noqa: Y015
+        _WhichOneofArgType__ash: _TypeAlias = _typing.Literal["_ash", b"_ash"]  # noqa: Y015
+        _WhichOneofReturnType__dark: _TypeAlias = _typing.Literal["dark"]  # noqa: Y015
+        _WhichOneofArgType__dark: _TypeAlias = _typing.Literal["_dark", b"_dark"]  # noqa: Y015
+        _WhichOneofReturnType__light: _TypeAlias = _typing.Literal["light"]  # noqa: Y015
+        _WhichOneofArgType__light: _TypeAlias = _typing.Literal["_light", b"_light"]  # noqa: Y015
+        _WhichOneofReturnType__onyx: _TypeAlias = _typing.Literal["onyx"]  # noqa: Y015
+        _WhichOneofArgType__onyx: _TypeAlias = _typing.Literal["_onyx", b"_onyx"]  # noqa: Y015
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__ash) -> _WhichOneofReturnType__ash | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__dark) -> _WhichOneofReturnType__dark | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__light) -> _WhichOneofReturnType__light | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__onyx) -> _WhichOneofReturnType__onyx | None: ...
+
+    @_typing.final
+    class TabGradientColors(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        CENTER_FIELD_NUMBER: _builtins.int
+        INNER_RING_FIELD_NUMBER: _builtins.int
+        OUTER_RING_FIELD_NUMBER: _builtins.int
+        @_builtins.property
+        def center(self) -> Global___PremiumMarketingComponentProperties.ThemedPaletteColor: ...
+        @_builtins.property
+        def inner_ring(self) -> Global___PremiumMarketingComponentProperties.ThemedPaletteColor: ...
+        @_builtins.property
+        def outer_ring(self) -> Global___PremiumMarketingComponentProperties.ThemedPaletteColor: ...
+        def __init__(
+            self,
+            *,
+            center: Global___PremiumMarketingComponentProperties.ThemedPaletteColor | None = ...,
+            inner_ring: Global___PremiumMarketingComponentProperties.ThemedPaletteColor | None = ...,
+            outer_ring: Global___PremiumMarketingComponentProperties.ThemedPaletteColor | None = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_center", b"_center", "_inner_ring", b"_inner_ring", "_outer_ring", b"_outer_ring", "center", b"center", "inner_ring", b"inner_ring", "outer_ring", b"outer_ring"]  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_center", b"_center", "_inner_ring", b"_inner_ring", "_outer_ring", b"_outer_ring", "center", b"center", "inner_ring", b"inner_ring", "outer_ring", b"outer_ring"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        _WhichOneofReturnType__center: _TypeAlias = _typing.Literal["center"]  # noqa: Y015
+        _WhichOneofArgType__center: _TypeAlias = _typing.Literal["_center", b"_center"]  # noqa: Y015
+        _WhichOneofReturnType__inner_ring: _TypeAlias = _typing.Literal["inner_ring"]  # noqa: Y015
+        _WhichOneofArgType__inner_ring: _TypeAlias = _typing.Literal["_inner_ring", b"_inner_ring"]  # noqa: Y015
+        _WhichOneofReturnType__outer_ring: _TypeAlias = _typing.Literal["outer_ring"]  # noqa: Y015
+        _WhichOneofArgType__outer_ring: _TypeAlias = _typing.Literal["_outer_ring", b"_outer_ring"]  # noqa: Y015
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__center) -> _WhichOneofReturnType__center | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__inner_ring) -> _WhichOneofReturnType__inner_ring | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__outer_ring) -> _WhichOneofReturnType__outer_ring | None: ...
+
+    @_typing.final
     class PremiumTab(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
 
@@ -1708,6 +1851,8 @@ class PremiumMarketingComponentProperties(_message.Message):
         DEEPLINK_SECTION_FIELD_NUMBER: _builtins.int
         BADGE_LABEL_LOCALIZED_FIELD_NUMBER: _builtins.int
         ACKNOWLEDGED_BADGE_LABEL_LOCALIZED_FIELD_NUMBER: _builtins.int
+        BACKGROUND_IMAGE_FIELD_NUMBER: _builtins.int
+        HOVER_GRADIENT_COLORS_FIELD_NUMBER: _builtins.int
         badge_label: _builtins.str
         acknowledged_badge_label: _builtins.str
         show_hover_gradient: _builtins.bool
@@ -1716,6 +1861,10 @@ class PremiumMarketingComponentProperties(_message.Message):
         def badge_label_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
         @_builtins.property
         def acknowledged_badge_label_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
+        @_builtins.property
+        def background_image(self) -> Global___PremiumMarketingComponentProperties.ThemeAwareAsset: ...
+        @_builtins.property
+        def hover_gradient_colors(self) -> Global___PremiumMarketingComponentProperties.TabGradientColors: ...
         def __init__(
             self,
             *,
@@ -1725,19 +1874,29 @@ class PremiumMarketingComponentProperties(_message.Message):
             deeplink_section: _builtins.str = ...,
             badge_label_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
             acknowledged_badge_label_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
+            background_image: Global___PremiumMarketingComponentProperties.ThemeAwareAsset | None = ...,
+            hover_gradient_colors: Global___PremiumMarketingComponentProperties.TabGradientColors | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _typing.Literal["_acknowledged_badge_label_localized", b"_acknowledged_badge_label_localized", "_badge_label_localized", b"_badge_label_localized", "acknowledged_badge_label_localized", b"acknowledged_badge_label_localized", "badge_label_localized", b"badge_label_localized"]  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_acknowledged_badge_label_localized", b"_acknowledged_badge_label_localized", "_background_image", b"_background_image", "_badge_label_localized", b"_badge_label_localized", "_hover_gradient_colors", b"_hover_gradient_colors", "acknowledged_badge_label_localized", b"acknowledged_badge_label_localized", "background_image", b"background_image", "badge_label_localized", b"badge_label_localized", "hover_gradient_colors", b"hover_gradient_colors"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_acknowledged_badge_label_localized", b"_acknowledged_badge_label_localized", "_badge_label_localized", b"_badge_label_localized", "acknowledged_badge_label", b"acknowledged_badge_label", "acknowledged_badge_label_localized", b"acknowledged_badge_label_localized", "badge_label", b"badge_label", "badge_label_localized", b"badge_label_localized", "deeplink_section", b"deeplink_section", "show_hover_gradient", b"show_hover_gradient"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_acknowledged_badge_label_localized", b"_acknowledged_badge_label_localized", "_background_image", b"_background_image", "_badge_label_localized", b"_badge_label_localized", "_hover_gradient_colors", b"_hover_gradient_colors", "acknowledged_badge_label", b"acknowledged_badge_label", "acknowledged_badge_label_localized", b"acknowledged_badge_label_localized", "background_image", b"background_image", "badge_label", b"badge_label", "badge_label_localized", b"badge_label_localized", "deeplink_section", b"deeplink_section", "hover_gradient_colors", b"hover_gradient_colors", "show_hover_gradient", b"show_hover_gradient"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__acknowledged_badge_label_localized: _TypeAlias = _typing.Literal["acknowledged_badge_label_localized"]  # noqa: Y015
         _WhichOneofArgType__acknowledged_badge_label_localized: _TypeAlias = _typing.Literal["_acknowledged_badge_label_localized", b"_acknowledged_badge_label_localized"]  # noqa: Y015
+        _WhichOneofReturnType__background_image: _TypeAlias = _typing.Literal["background_image"]  # noqa: Y015
+        _WhichOneofArgType__background_image: _TypeAlias = _typing.Literal["_background_image", b"_background_image"]  # noqa: Y015
         _WhichOneofReturnType__badge_label_localized: _TypeAlias = _typing.Literal["badge_label_localized"]  # noqa: Y015
         _WhichOneofArgType__badge_label_localized: _TypeAlias = _typing.Literal["_badge_label_localized", b"_badge_label_localized"]  # noqa: Y015
+        _WhichOneofReturnType__hover_gradient_colors: _TypeAlias = _typing.Literal["hover_gradient_colors"]  # noqa: Y015
+        _WhichOneofArgType__hover_gradient_colors: _TypeAlias = _typing.Literal["_hover_gradient_colors", b"_hover_gradient_colors"]  # noqa: Y015
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__acknowledged_badge_label_localized) -> _WhichOneofReturnType__acknowledged_badge_label_localized | None: ...
         @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__background_image) -> _WhichOneofReturnType__background_image | None: ...
+        @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__badge_label_localized) -> _WhichOneofReturnType__badge_label_localized | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__hover_gradient_colors) -> _WhichOneofReturnType__hover_gradient_colors | None: ...
 
     @_typing.final
     class MarketingPageBanner(_message.Message):
@@ -1808,9 +1967,11 @@ class PremiumMarketingComponentProperties(_message.Message):
         BODY_FIELD_NUMBER: _builtins.int
         HEADER_LOCALIZED_FIELD_NUMBER: _builtins.int
         BODY_LOCALIZED_FIELD_NUMBER: _builtins.int
+        GRADIENT_FIELD_NUMBER: _builtins.int
         asset_url: _builtins.str
         header: _builtins.str
         body: _builtins.str
+        gradient: Global___PremiumMarketingComponentProperties.PaymentModalBannerGradient.ValueType
         @_builtins.property
         def header_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
         @_builtins.property
@@ -1823,10 +1984,11 @@ class PremiumMarketingComponentProperties(_message.Message):
             body: _builtins.str = ...,
             header_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
             body_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
+            gradient: Global___PremiumMarketingComponentProperties.PaymentModalBannerGradient.ValueType = ...,
         ) -> None: ...
         _HasFieldArgType: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized", "_header_localized", b"_header_localized", "body_localized", b"body_localized", "header_localized", b"header_localized"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized", "_header_localized", b"_header_localized", "asset_url", b"asset_url", "body", b"body", "body_localized", b"body_localized", "header", b"header", "header_localized", b"header_localized"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized", "_header_localized", b"_header_localized", "asset_url", b"asset_url", "body", b"body", "body_localized", b"body_localized", "gradient", b"gradient", "header", b"header", "header_localized", b"header_localized"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__body_localized: _TypeAlias = _typing.Literal["body_localized"]  # noqa: Y015
         _WhichOneofArgType__body_localized: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized"]  # noqa: Y015
@@ -1949,32 +2111,6 @@ class PremiumMarketingComponentProperties(_message.Message):
         _WhichOneofReturnType__gradient: _TypeAlias = _typing.Literal["gradient"]  # noqa: Y015
         _WhichOneofArgType__gradient: _TypeAlias = _typing.Literal["_gradient", b"_gradient"]  # noqa: Y015
         def WhichOneof(self, oneof_group: _WhichOneofArgType__gradient) -> _WhichOneofReturnType__gradient | None: ...
-
-    @_typing.final
-    class ThemeAwareAsset(_message.Message):
-        DESCRIPTOR: _descriptor.Descriptor
-
-        LIGHT_URL_FIELD_NUMBER: _builtins.int
-        DARK_URL_FIELD_NUMBER: _builtins.int
-        LIGHT_STATIC_URL_FIELD_NUMBER: _builtins.int
-        DARK_STATIC_URL_FIELD_NUMBER: _builtins.int
-        light_url: _builtins.str
-        dark_url: _builtins.str
-        light_static_url: _builtins.str
-        dark_static_url: _builtins.str
-        def __init__(
-            self,
-            *,
-            light_url: _builtins.str = ...,
-            dark_url: _builtins.str = ...,
-            light_static_url: _builtins.str = ...,
-            dark_static_url: _builtins.str = ...,
-        ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
-        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["dark_static_url", b"dark_static_url", "dark_url", b"dark_url", "light_static_url", b"light_static_url", "light_url", b"light_url"]  # noqa: Y015
-        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-        def WhichOneof(self, oneof_group: _Never) -> None: ...
 
     @_typing.final
     class GiftIconCoachmark(_message.Message):
@@ -2749,6 +2885,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         SELECT_FIELD_FIELD_NUMBER: _builtins.int
         MULTI_SELECT_FIELD_FIELD_NUMBER: _builtins.int
         LIST_FIELD_FIELD_NUMBER: _builtins.int
+        TAB_GRADIENT_COLORS_FIELD_FIELD_NUMBER: _builtins.int
         deprecated_field: _builtins.str
         plain_text_field: _builtins.str
         checkbox_field: _builtins.bool
@@ -2770,6 +2907,8 @@ class PremiumMarketingComponentProperties(_message.Message):
         def multi_select_field(self) -> _containers.RepeatedScalarFieldContainer[Global___PremiumMarketingComponentProperties.AdminEditorTestSelectOption.ValueType]: ...
         @_builtins.property
         def list_field(self) -> _containers.RepeatedCompositeFieldContainer[Global___PremiumMarketingComponentProperties.AdminEditorTestListItem]: ...
+        @_builtins.property
+        def tab_gradient_colors_field(self) -> Global___PremiumMarketingComponentProperties.TabGradientColors: ...
         def __init__(
             self,
             *,
@@ -2786,10 +2925,11 @@ class PremiumMarketingComponentProperties(_message.Message):
             select_field: Global___PremiumMarketingComponentProperties.AdminEditorTestSelectOption.ValueType = ...,
             multi_select_field: _abc.Iterable[Global___PremiumMarketingComponentProperties.AdminEditorTestSelectOption.ValueType] | None = ...,
             list_field: _abc.Iterable[Global___PremiumMarketingComponentProperties.AdminEditorTestListItem] | None = ...,
+            tab_gradient_colors_field: Global___PremiumMarketingComponentProperties.TabGradientColors | None = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _typing.Literal["_cta_field", b"_cta_field", "_gradient_field", b"_gradient_field", "_help_article_field", b"_help_article_field", "_localized_text_field", b"_localized_text_field", "_textarea_field", b"_textarea_field", "_themed_asset_field", b"_themed_asset_field", "cta_field", b"cta_field", "gradient_field", b"gradient_field", "help_article_field", b"help_article_field", "localized_text_field", b"localized_text_field", "textarea_field", b"textarea_field", "themed_asset_field", b"themed_asset_field"]  # noqa: Y015
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_cta_field", b"_cta_field", "_gradient_field", b"_gradient_field", "_help_article_field", b"_help_article_field", "_localized_text_field", b"_localized_text_field", "_tab_gradient_colors_field", b"_tab_gradient_colors_field", "_textarea_field", b"_textarea_field", "_themed_asset_field", b"_themed_asset_field", "cta_field", b"cta_field", "gradient_field", b"gradient_field", "help_article_field", b"help_article_field", "localized_text_field", b"localized_text_field", "tab_gradient_colors_field", b"tab_gradient_colors_field", "textarea_field", b"textarea_field", "themed_asset_field", b"themed_asset_field"]  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_cta_field", b"_cta_field", "_gradient_field", b"_gradient_field", "_help_article_field", b"_help_article_field", "_localized_text_field", b"_localized_text_field", "_textarea_field", b"_textarea_field", "_themed_asset_field", b"_themed_asset_field", "asset_field", b"asset_field", "checkbox_field", b"checkbox_field", "cta_field", b"cta_field", "deprecated_field", b"deprecated_field", "gradient_field", b"gradient_field", "help_article_field", b"help_article_field", "list_field", b"list_field", "localized_text_field", b"localized_text_field", "multi_select_field", b"multi_select_field", "plain_text_field", b"plain_text_field", "select_field", b"select_field", "textarea_field", b"textarea_field", "themed_asset_field", b"themed_asset_field"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_cta_field", b"_cta_field", "_gradient_field", b"_gradient_field", "_help_article_field", b"_help_article_field", "_localized_text_field", b"_localized_text_field", "_tab_gradient_colors_field", b"_tab_gradient_colors_field", "_textarea_field", b"_textarea_field", "_themed_asset_field", b"_themed_asset_field", "asset_field", b"asset_field", "checkbox_field", b"checkbox_field", "cta_field", b"cta_field", "deprecated_field", b"deprecated_field", "gradient_field", b"gradient_field", "help_article_field", b"help_article_field", "list_field", b"list_field", "localized_text_field", b"localized_text_field", "multi_select_field", b"multi_select_field", "plain_text_field", b"plain_text_field", "select_field", b"select_field", "tab_gradient_colors_field", b"tab_gradient_colors_field", "textarea_field", b"textarea_field", "themed_asset_field", b"themed_asset_field"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         _WhichOneofReturnType__cta_field: _TypeAlias = _typing.Literal["cta_field"]  # noqa: Y015
         _WhichOneofArgType__cta_field: _TypeAlias = _typing.Literal["_cta_field", b"_cta_field"]  # noqa: Y015
@@ -2799,6 +2939,8 @@ class PremiumMarketingComponentProperties(_message.Message):
         _WhichOneofArgType__help_article_field: _TypeAlias = _typing.Literal["_help_article_field", b"_help_article_field"]  # noqa: Y015
         _WhichOneofReturnType__localized_text_field: _TypeAlias = _typing.Literal["localized_text_field"]  # noqa: Y015
         _WhichOneofArgType__localized_text_field: _TypeAlias = _typing.Literal["_localized_text_field", b"_localized_text_field"]  # noqa: Y015
+        _WhichOneofReturnType__tab_gradient_colors_field: _TypeAlias = _typing.Literal["tab_gradient_colors_field"]  # noqa: Y015
+        _WhichOneofArgType__tab_gradient_colors_field: _TypeAlias = _typing.Literal["_tab_gradient_colors_field", b"_tab_gradient_colors_field"]  # noqa: Y015
         _WhichOneofReturnType__textarea_field: _TypeAlias = _typing.Literal["textarea_field"]  # noqa: Y015
         _WhichOneofArgType__textarea_field: _TypeAlias = _typing.Literal["_textarea_field", b"_textarea_field"]  # noqa: Y015
         _WhichOneofReturnType__themed_asset_field: _TypeAlias = _typing.Literal["themed_asset_field"]  # noqa: Y015
@@ -2811,6 +2953,8 @@ class PremiumMarketingComponentProperties(_message.Message):
         def WhichOneof(self, oneof_group: _WhichOneofArgType__help_article_field) -> _WhichOneofReturnType__help_article_field | None: ...
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__localized_text_field) -> _WhichOneofReturnType__localized_text_field | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__tab_gradient_colors_field) -> _WhichOneofReturnType__tab_gradient_colors_field | None: ...
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__textarea_field) -> _WhichOneofReturnType__textarea_field | None: ...
         @_typing.overload
