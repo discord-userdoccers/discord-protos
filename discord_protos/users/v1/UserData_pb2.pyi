@@ -3069,6 +3069,23 @@ class UserData(_message.Message):
         def WhichOneof(self, oneof_group: _Never) -> None: ...
 
     @_typing.final
+    class LabEnrollment(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        ENABLED_FIELD_NUMBER: _builtins.int
+        enabled: _builtins.bool
+        def __init__(
+            self,
+            *,
+            enabled: _builtins.bool = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["enabled", b"enabled"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
+
+    @_typing.final
     class LinkedUsersEntry(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
 
@@ -3131,6 +3148,27 @@ class UserData(_message.Message):
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         def WhichOneof(self, oneof_group: _Never) -> None: ...
 
+    @_typing.final
+    class LabsEntry(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: _builtins.int
+        VALUE_FIELD_NUMBER: _builtins.int
+        key: _builtins.str
+        @_builtins.property
+        def value(self) -> Global___UserData.LabEnrollment: ...
+        def __init__(
+            self,
+            *,
+            key: _builtins.str = ...,
+            value: Global___UserData.LabEnrollment | None = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _typing.Literal["value", b"value"]  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["key", b"key", "value", b"value"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
+
     LINKED_USERS_FIELD_NUMBER: _builtins.int
     SAFETY_FEATURE_LIMITS_FIELD_NUMBER: _builtins.int
     SAFETY_FLAGS_FIELD_NUMBER: _builtins.int
@@ -3154,6 +3192,7 @@ class UserData(_message.Message):
     VAD_COLORS_FIELD_NUMBER: _builtins.int
     HIDDEN_FLAGS_FIELD_NUMBER: _builtins.int
     PLAY_INSTALL_IDS_FIELD_NUMBER: _builtins.int
+    LABS_FIELD_NUMBER: _builtins.int
     is_pending_required_action: _builtins.bool
     disable_staff_discount: _builtins.bool
     hidden_flags: _builtins.int
@@ -3197,6 +3236,8 @@ class UserData(_message.Message):
     def vad_colors(self) -> Global___UserData.VadColors: ...
     @_builtins.property
     def play_install_ids(self) -> _containers.RepeatedScalarFieldContainer[_builtins.str]: ...
+    @_builtins.property
+    def labs(self) -> _containers.MessageMap[_builtins.str, Global___UserData.LabEnrollment]: ...
     def __init__(
         self,
         *,
@@ -3223,10 +3264,11 @@ class UserData(_message.Message):
         vad_colors: Global___UserData.VadColors | None = ...,
         hidden_flags: _builtins.int = ...,
         play_install_ids: _abc.Iterable[_builtins.str] | None = ...,
+        labs: _abc.Mapping[_builtins.str, Global___UserData.LabEnrollment] | None = ...,
     ) -> None: ...
     _HasFieldArgType: _TypeAlias = _typing.Literal["_age_assurance_data", b"_age_assurance_data", "_anonymization_info", b"_anonymization_info", "_badges", b"_badges", "_collectibles", b"_collectibles", "_country_data", b"_country_data", "_cross_platform_restriction", b"_cross_platform_restriction", "_display_name_styles", b"_display_name_styles", "_perks", b"_perks", "_premium_state", b"_premium_state", "_primary_guild", b"_primary_guild", "_quest", b"_quest", "_restricted_schedule", b"_restricted_schedule", "_safety_state", b"_safety_state", "_store_country", b"_store_country", "_typing_indicator_style", b"_typing_indicator_style", "_vad_colors", b"_vad_colors", "age_assurance_data", b"age_assurance_data", "anonymization_info", b"anonymization_info", "badges", b"badges", "collectibles", b"collectibles", "country_data", b"country_data", "cross_platform_restriction", b"cross_platform_restriction", "display_name_styles", b"display_name_styles", "perks", b"perks", "premium_state", b"premium_state", "primary_guild", b"primary_guild", "quest", b"quest", "restricted_schedule", b"restricted_schedule", "safety_state", b"safety_state", "store_country", b"store_country", "typing_indicator_style", b"typing_indicator_style", "vad_colors", b"vad_colors"]  # noqa: Y015
     def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["_age_assurance_data", b"_age_assurance_data", "_anonymization_info", b"_anonymization_info", "_badges", b"_badges", "_collectibles", b"_collectibles", "_country_data", b"_country_data", "_cross_platform_restriction", b"_cross_platform_restriction", "_display_name_styles", b"_display_name_styles", "_perks", b"_perks", "_premium_state", b"_premium_state", "_primary_guild", b"_primary_guild", "_quest", b"_quest", "_restricted_schedule", b"_restricted_schedule", "_safety_state", b"_safety_state", "_store_country", b"_store_country", "_typing_indicator_style", b"_typing_indicator_style", "_vad_colors", b"_vad_colors", "age_assurance_data", b"age_assurance_data", "anonymization_info", b"anonymization_info", "badges", b"badges", "collectibles", b"collectibles", "country_data", b"country_data", "cross_platform_restriction", b"cross_platform_restriction", "disable_staff_discount", b"disable_staff_discount", "display_name_styles", b"display_name_styles", "hidden_flags", b"hidden_flags", "is_pending_required_action", b"is_pending_required_action", "linked_users", b"linked_users", "perks", b"perks", "play_install_ids", b"play_install_ids", "premium_state", b"premium_state", "primary_guild", b"primary_guild", "quest", b"quest", "restricted_schedule", b"restricted_schedule", "safety_feature_limits", b"safety_feature_limits", "safety_flags", b"safety_flags", "safety_state", b"safety_state", "store_country", b"store_country", "typing_indicator_style", b"typing_indicator_style", "vad_colors", b"vad_colors"]  # noqa: Y015
+    _ClearFieldArgType: _TypeAlias = _typing.Literal["_age_assurance_data", b"_age_assurance_data", "_anonymization_info", b"_anonymization_info", "_badges", b"_badges", "_collectibles", b"_collectibles", "_country_data", b"_country_data", "_cross_platform_restriction", b"_cross_platform_restriction", "_display_name_styles", b"_display_name_styles", "_perks", b"_perks", "_premium_state", b"_premium_state", "_primary_guild", b"_primary_guild", "_quest", b"_quest", "_restricted_schedule", b"_restricted_schedule", "_safety_state", b"_safety_state", "_store_country", b"_store_country", "_typing_indicator_style", b"_typing_indicator_style", "_vad_colors", b"_vad_colors", "age_assurance_data", b"age_assurance_data", "anonymization_info", b"anonymization_info", "badges", b"badges", "collectibles", b"collectibles", "country_data", b"country_data", "cross_platform_restriction", b"cross_platform_restriction", "disable_staff_discount", b"disable_staff_discount", "display_name_styles", b"display_name_styles", "hidden_flags", b"hidden_flags", "is_pending_required_action", b"is_pending_required_action", "labs", b"labs", "linked_users", b"linked_users", "perks", b"perks", "play_install_ids", b"play_install_ids", "premium_state", b"premium_state", "primary_guild", b"primary_guild", "quest", b"quest", "restricted_schedule", b"restricted_schedule", "safety_feature_limits", b"safety_feature_limits", "safety_flags", b"safety_flags", "safety_state", b"safety_state", "store_country", b"store_country", "typing_indicator_style", b"typing_indicator_style", "vad_colors", b"vad_colors"]  # noqa: Y015
     def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
     _WhichOneofReturnType__age_assurance_data: _TypeAlias = _typing.Literal["age_assurance_data"]  # noqa: Y015
     _WhichOneofArgType__age_assurance_data: _TypeAlias = _typing.Literal["_age_assurance_data", b"_age_assurance_data"]  # noqa: Y015

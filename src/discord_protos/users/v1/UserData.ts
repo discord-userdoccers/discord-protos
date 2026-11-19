@@ -116,6 +116,12 @@ export interface UserData {
      * @generated from protobuf field: repeated string play_install_ids = 23 [packed = false]
      */
     playInstallIds: string[];
+    /**
+     * @generated from protobuf field: map<string, discord_protos.users.v1.UserData.LabEnrollment> labs = 24
+     */
+    labs: {
+        [key: string]: UserData_LabEnrollment;
+    };
 }
 /**
  * @generated from protobuf message discord_protos.users.v1.UserData.LinkedUser
@@ -786,6 +792,15 @@ export interface UserData_VadColors {
      * @generated from protobuf field: repeated uint32 colors = 1
      */
     colors: number[];
+}
+/**
+ * @generated from protobuf message discord_protos.users.v1.UserData.LabEnrollment
+ */
+export interface UserData_LabEnrollment {
+    /**
+     * @generated from protobuf field: bool enabled = 1
+     */
+    enabled: boolean;
 }
 /**
  * @generated from protobuf enum discord_protos.users.v1.UserData.UserLinkType
@@ -4487,7 +4502,8 @@ class UserData$Type extends MessageType<UserData> {
             { no: 20, name: "disable_staff_discount", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
             { no: 21, name: "vad_colors", kind: "message", T: () => UserData_VadColors },
             { no: 22, name: "hidden_flags", kind: "scalar", T: 4 /*ScalarType.UINT64*/, L: 0 /*LongType.BIGINT*/ },
-            { no: 23, name: "play_install_ids", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 9 /*ScalarType.STRING*/ }
+            { no: 23, name: "play_install_ids", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 9 /*ScalarType.STRING*/ },
+            { no: 24, name: "labs", kind: "map", K: 9 /*ScalarType.STRING*/, V: { kind: "message", T: () => UserData_LabEnrollment } }
         ]);
     }
     create(value?: PartialMessage<UserData>): UserData {
@@ -4499,6 +4515,7 @@ class UserData$Type extends MessageType<UserData> {
         message.disableStaffDiscount = false;
         message.hiddenFlags = 0n;
         message.playInstallIds = [];
+        message.labs = {};
         if (value !== undefined)
             reflectionMergePartial<UserData>(this, message, value);
         return message;
@@ -4577,6 +4594,9 @@ class UserData$Type extends MessageType<UserData> {
                 case /* repeated string play_install_ids = 23 [packed = false] */ 23:
                     message.playInstallIds.push(reader.string());
                     break;
+                case /* map<string, discord_protos.users.v1.UserData.LabEnrollment> labs */ 24:
+                    this.binaryReadMap24(message.labs, reader, options);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -4635,6 +4655,22 @@ class UserData$Type extends MessageType<UserData> {
             }
         }
         map[key ?? 0] = val ?? UserData_SafetyFlag.create();
+    }
+    private binaryReadMap24(map: UserData["labs"], reader: IBinaryReader, options: BinaryReadOptions): void {
+        let len = reader.uint32(), end = reader.pos + len, key: keyof UserData["labs"] | undefined, val: UserData["labs"][any] | undefined;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case 1:
+                    key = reader.string();
+                    break;
+                case 2:
+                    val = UserData_LabEnrollment.internalBinaryRead(reader, reader.uint32(), options);
+                    break;
+                default: throw new globalThis.Error("unknown map entry field for discord_protos.users.v1.UserData.labs");
+            }
+        }
+        map[key ?? ""] = val ?? UserData_LabEnrollment.create();
     }
     internalBinaryWrite(message: UserData, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
         /* map<fixed64, discord_protos.users.v1.UserData.LinkedUser> linked_users = 1; */
@@ -4718,6 +4754,13 @@ class UserData$Type extends MessageType<UserData> {
         /* repeated string play_install_ids = 23 [packed = false]; */
         for (let i = 0; i < message.playInstallIds.length; i++)
             writer.tag(23, WireType.LengthDelimited).string(message.playInstallIds[i]);
+        /* map<string, discord_protos.users.v1.UserData.LabEnrollment> labs = 24; */
+        for (let k of globalThis.Object.keys(message.labs)) {
+            writer.tag(24, WireType.LengthDelimited).fork().tag(1, WireType.LengthDelimited).string(k);
+            writer.tag(2, WireType.LengthDelimited).fork();
+            UserData_LabEnrollment.internalBinaryWrite(message.labs[k], writer, options);
+            writer.join().join();
+        }
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -7180,3 +7223,50 @@ class UserData_VadColors$Type extends MessageType<UserData_VadColors> {
  * @generated MessageType for protobuf message discord_protos.users.v1.UserData.VadColors
  */
 export const UserData_VadColors = new UserData_VadColors$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class UserData_LabEnrollment$Type extends MessageType<UserData_LabEnrollment> {
+    constructor() {
+        super("discord_protos.users.v1.UserData.LabEnrollment", [
+            { no: 1, name: "enabled", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
+        ]);
+    }
+    create(value?: PartialMessage<UserData_LabEnrollment>): UserData_LabEnrollment {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.enabled = false;
+        if (value !== undefined)
+            reflectionMergePartial<UserData_LabEnrollment>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: UserData_LabEnrollment): UserData_LabEnrollment {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* bool enabled */ 1:
+                    message.enabled = reader.bool();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: UserData_LabEnrollment, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* bool enabled = 1; */
+        if (message.enabled !== false)
+            writer.tag(1, WireType.Varint).bool(message.enabled);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.users.v1.UserData.LabEnrollment
+ */
+export const UserData_LabEnrollment = new UserData_LabEnrollment$Type();
