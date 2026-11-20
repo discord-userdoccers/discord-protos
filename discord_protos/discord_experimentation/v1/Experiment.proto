@@ -407,6 +407,7 @@ message Experiment {
     SURFACE_MARKETING = 8;
     SURFACE_DESIGN_DOCS = 9;
     SURFACE_APP_LAUNCH = 10;
+    SURFACE_CAP = 11;
   }
 
   enum ExposureTracking {
@@ -433,6 +434,7 @@ message Experiment {
   enum CustomUnitPrefix {
     CUSTOM_UNIT_PREFIX_UNSPECIFIED = 0;
     CUSTOM_UNIT_PREFIX_SEO_URL_SLUG = 1;
+    CUSTOM_UNIT_PREFIX_CAP_CONVERSATION = 2;
   }
 
   enum ExposurePointId {

@@ -1654,13 +1654,13 @@ export interface PremiumMarketingComponentProperties_GameExitPanel {
     image?: PremiumMarketingComponentProperties_ThemeAwareAsset;
 }
 /**
- * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalPerkCard
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalIconPerkCard
  */
-export interface PremiumMarketingComponentProperties_AnnouncementModalPerkCard {
+export interface PremiumMarketingComponentProperties_AnnouncementModalIconPerkCard {
     /**
-     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset = 1
+     * @generated from protobuf field: discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalPerkIcon icon = 6
      */
-    asset?: PremiumMarketingComponentProperties_ThemeAwareAsset;
+    icon: PremiumMarketingComponentProperties_AnnouncementModalPerkIcon;
     /**
      * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString title_localized = 2
      */
@@ -1695,9 +1695,9 @@ export interface PremiumMarketingComponentProperties_AnnouncementModalVideoLed {
      */
     bodyLocalized?: PremiumMarketingComponentProperties_LocalizedString;
     /**
-     * @generated from protobuf field: repeated discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalPerkCard perk_cards = 4
+     * @generated from protobuf field: repeated discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalIconPerkCard perk_cards = 4
      */
-    perkCards: PremiumMarketingComponentProperties_AnnouncementModalPerkCard[];
+    perkCards: PremiumMarketingComponentProperties_AnnouncementModalIconPerkCard[];
     /**
      * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.CTAButton button = 5
      */
@@ -1722,6 +1722,31 @@ export interface PremiumMarketingComponentProperties_AnnouncementModalVideoLed {
      * @generated from protobuf field: string legalese = 10
      */
     legalese: string;
+}
+/**
+ * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalPerkCard
+ */
+export interface PremiumMarketingComponentProperties_AnnouncementModalPerkCard {
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset = 1
+     */
+    asset?: PremiumMarketingComponentProperties_ThemeAwareAsset;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString title_localized = 2
+     */
+    titleLocalized?: PremiumMarketingComponentProperties_LocalizedString;
+    /**
+     * @generated from protobuf field: optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString body_localized = 3
+     */
+    bodyLocalized?: PremiumMarketingComponentProperties_LocalizedString;
+    /**
+     * @generated from protobuf field: string title = 4
+     */
+    title: string;
+    /**
+     * @generated from protobuf field: string body = 5
+     */
+    body: string;
 }
 /**
  * @generated from protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalTwoPanel
@@ -4238,6 +4263,71 @@ export enum PremiumMarketingComponentProperties_NitroPerkCardPlacement {
      * @generated from protobuf enum value: NITRO_PERK_CARD_PLACEMENT_NITRO_HOME = 2;
      */
     NITRO_HOME = 2
+}
+/**
+ * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalPerkIcon
+ */
+export enum PremiumMarketingComponentProperties_AnnouncementModalPerkIcon {
+    /**
+     * @generated from protobuf enum value: ANNOUNCEMENT_MODAL_PERK_ICON_UNSPECIFIED = 0;
+     */
+    UNSPECIFIED = 0,
+    /**
+     * @generated from protobuf enum value: ANNOUNCEMENT_MODAL_PERK_ICON_NITRO_WHEEL = 1;
+     */
+    NITRO_WHEEL = 1,
+    /**
+     * @generated from protobuf enum value: ANNOUNCEMENT_MODAL_PERK_ICON_XBOX = 2;
+     */
+    XBOX = 2,
+    /**
+     * @generated from protobuf enum value: ANNOUNCEMENT_MODAL_PERK_ICON_GAME_CONTROLLER = 3;
+     */
+    GAME_CONTROLLER = 3,
+    /**
+     * @generated from protobuf enum value: ANNOUNCEMENT_MODAL_PERK_ICON_ORBS = 4;
+     */
+    ORBS = 4,
+    /**
+     * @generated from protobuf enum value: ANNOUNCEMENT_MODAL_PERK_ICON_SHOP = 5;
+     */
+    SHOP = 5,
+    /**
+     * @generated from protobuf enum value: ANNOUNCEMENT_MODAL_PERK_ICON_GIFT = 6;
+     */
+    GIFT = 6,
+    /**
+     * @generated from protobuf enum value: ANNOUNCEMENT_MODAL_PERK_ICON_BOOST_GEM = 7;
+     */
+    BOOST_GEM = 7,
+    /**
+     * @generated from protobuf enum value: ANNOUNCEMENT_MODAL_PERK_ICON_REACTION = 8;
+     */
+    REACTION = 8,
+    /**
+     * @generated from protobuf enum value: ANNOUNCEMENT_MODAL_PERK_ICON_STICKER = 9;
+     */
+    STICKER = 9,
+    /**
+     * @generated from protobuf enum value: ANNOUNCEMENT_MODAL_PERK_ICON_UPLOAD = 10;
+     */
+    UPLOAD = 10,
+    /**
+     * @generated from protobuf enum value: ANNOUNCEMENT_MODAL_PERK_ICON_PAINT_PALETTE = 11;
+     */
+    PAINT_PALETTE = 11,
+    /**
+     * @generated from protobuf enum value: ANNOUNCEMENT_MODAL_PERK_ICON_SCREEN_STREAM = 12;
+     */
+    SCREEN_STREAM = 12,
+    /**
+     * @generated from protobuf enum value: ANNOUNCEMENT_MODAL_PERK_ICON_SOUNDBOARD = 13;
+     */
+    SOUNDBOARD = 13,
+    /**
+     * @generated from protobuf enum value: ANNOUNCEMENT_MODAL_PERK_ICON_SPARKLES = 14;
+     */
+    SPARKLES = 14
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties$Type extends MessageType<PremiumMarketingComponentProperties> {
@@ -8689,6 +8779,197 @@ class PremiumMarketingComponentProperties_GameExitPanel$Type extends MessageType
  */
 export const PremiumMarketingComponentProperties_GameExitPanel = new PremiumMarketingComponentProperties_GameExitPanel$Type();
 // @generated message type with reflection information, may provide speed optimized methods
+class PremiumMarketingComponentProperties_AnnouncementModalIconPerkCard$Type extends MessageType<PremiumMarketingComponentProperties_AnnouncementModalIconPerkCard> {
+    constructor() {
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalIconPerkCard", [
+            { no: 6, name: "icon", kind: "enum", T: () => ["discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalPerkIcon", PremiumMarketingComponentProperties_AnnouncementModalPerkIcon, "ANNOUNCEMENT_MODAL_PERK_ICON_"] },
+            { no: 2, name: "title_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
+            { no: 3, name: "body_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
+            { no: 4, name: "title", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 5, name: "body", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+        ]);
+    }
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_AnnouncementModalIconPerkCard>): PremiumMarketingComponentProperties_AnnouncementModalIconPerkCard {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.icon = 0;
+        message.title = "";
+        message.body = "";
+        if (value !== undefined)
+            reflectionMergePartial<PremiumMarketingComponentProperties_AnnouncementModalIconPerkCard>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_AnnouncementModalIconPerkCard): PremiumMarketingComponentProperties_AnnouncementModalIconPerkCard {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalPerkIcon icon */ 6:
+                    message.icon = reader.int32();
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString title_localized */ 2:
+                    message.titleLocalized = PremiumMarketingComponentProperties_LocalizedString.internalBinaryRead(reader, reader.uint32(), options, message.titleLocalized);
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString body_localized */ 3:
+                    message.bodyLocalized = PremiumMarketingComponentProperties_LocalizedString.internalBinaryRead(reader, reader.uint32(), options, message.bodyLocalized);
+                    break;
+                case /* string title */ 4:
+                    message.title = reader.string();
+                    break;
+                case /* string body */ 5:
+                    message.body = reader.string();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_AnnouncementModalIconPerkCard, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString title_localized = 2; */
+        if (message.titleLocalized)
+            PremiumMarketingComponentProperties_LocalizedString.internalBinaryWrite(message.titleLocalized, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString body_localized = 3; */
+        if (message.bodyLocalized)
+            PremiumMarketingComponentProperties_LocalizedString.internalBinaryWrite(message.bodyLocalized, writer.tag(3, WireType.LengthDelimited).fork(), options).join();
+        /* string title = 4; */
+        if (message.title !== "")
+            writer.tag(4, WireType.LengthDelimited).string(message.title);
+        /* string body = 5; */
+        if (message.body !== "")
+            writer.tag(5, WireType.LengthDelimited).string(message.body);
+        /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalPerkIcon icon = 6; */
+        if (message.icon !== 0)
+            writer.tag(6, WireType.Varint).int32(message.icon);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalIconPerkCard
+ */
+export const PremiumMarketingComponentProperties_AnnouncementModalIconPerkCard = new PremiumMarketingComponentProperties_AnnouncementModalIconPerkCard$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PremiumMarketingComponentProperties_AnnouncementModalVideoLed$Type extends MessageType<PremiumMarketingComponentProperties_AnnouncementModalVideoLed> {
+    constructor() {
+        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalVideoLed", [
+            { no: 1, name: "asset", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset },
+            { no: 2, name: "title_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
+            { no: 3, name: "body_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
+            { no: 4, name: "perk_cards", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => PremiumMarketingComponentProperties_AnnouncementModalIconPerkCard },
+            { no: 5, name: "button", kind: "message", T: () => PremiumMarketingComponentProperties_CTAButton },
+            { no: 6, name: "legalese_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
+            { no: 7, name: "terms_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 8, name: "title", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 9, name: "body", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 10, name: "legalese", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+        ]);
+    }
+    create(value?: PartialMessage<PremiumMarketingComponentProperties_AnnouncementModalVideoLed>): PremiumMarketingComponentProperties_AnnouncementModalVideoLed {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.perkCards = [];
+        message.termsUrl = "";
+        message.title = "";
+        message.body = "";
+        message.legalese = "";
+        if (value !== undefined)
+            reflectionMergePartial<PremiumMarketingComponentProperties_AnnouncementModalVideoLed>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_AnnouncementModalVideoLed): PremiumMarketingComponentProperties_AnnouncementModalVideoLed {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset */ 1:
+                    message.asset = PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryRead(reader, reader.uint32(), options, message.asset);
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString title_localized */ 2:
+                    message.titleLocalized = PremiumMarketingComponentProperties_LocalizedString.internalBinaryRead(reader, reader.uint32(), options, message.titleLocalized);
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString body_localized */ 3:
+                    message.bodyLocalized = PremiumMarketingComponentProperties_LocalizedString.internalBinaryRead(reader, reader.uint32(), options, message.bodyLocalized);
+                    break;
+                case /* repeated discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalIconPerkCard perk_cards */ 4:
+                    message.perkCards.push(PremiumMarketingComponentProperties_AnnouncementModalIconPerkCard.internalBinaryRead(reader, reader.uint32(), options));
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.CTAButton button */ 5:
+                    message.button = PremiumMarketingComponentProperties_CTAButton.internalBinaryRead(reader, reader.uint32(), options, message.button);
+                    break;
+                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString legalese_localized */ 6:
+                    message.legaleseLocalized = PremiumMarketingComponentProperties_LocalizedString.internalBinaryRead(reader, reader.uint32(), options, message.legaleseLocalized);
+                    break;
+                case /* string terms_url */ 7:
+                    message.termsUrl = reader.string();
+                    break;
+                case /* string title */ 8:
+                    message.title = reader.string();
+                    break;
+                case /* string body */ 9:
+                    message.body = reader.string();
+                    break;
+                case /* string legalese */ 10:
+                    message.legalese = reader.string();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PremiumMarketingComponentProperties_AnnouncementModalVideoLed, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset = 1; */
+        if (message.asset)
+            PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryWrite(message.asset, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString title_localized = 2; */
+        if (message.titleLocalized)
+            PremiumMarketingComponentProperties_LocalizedString.internalBinaryWrite(message.titleLocalized, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString body_localized = 3; */
+        if (message.bodyLocalized)
+            PremiumMarketingComponentProperties_LocalizedString.internalBinaryWrite(message.bodyLocalized, writer.tag(3, WireType.LengthDelimited).fork(), options).join();
+        /* repeated discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalIconPerkCard perk_cards = 4; */
+        for (let i = 0; i < message.perkCards.length; i++)
+            PremiumMarketingComponentProperties_AnnouncementModalIconPerkCard.internalBinaryWrite(message.perkCards[i], writer.tag(4, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.CTAButton button = 5; */
+        if (message.button)
+            PremiumMarketingComponentProperties_CTAButton.internalBinaryWrite(message.button, writer.tag(5, WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString legalese_localized = 6; */
+        if (message.legaleseLocalized)
+            PremiumMarketingComponentProperties_LocalizedString.internalBinaryWrite(message.legaleseLocalized, writer.tag(6, WireType.LengthDelimited).fork(), options).join();
+        /* string terms_url = 7; */
+        if (message.termsUrl !== "")
+            writer.tag(7, WireType.LengthDelimited).string(message.termsUrl);
+        /* string title = 8; */
+        if (message.title !== "")
+            writer.tag(8, WireType.LengthDelimited).string(message.title);
+        /* string body = 9; */
+        if (message.body !== "")
+            writer.tag(9, WireType.LengthDelimited).string(message.body);
+        /* string legalese = 10; */
+        if (message.legalese !== "")
+            writer.tag(10, WireType.LengthDelimited).string(message.legalese);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalVideoLed
+ */
+export const PremiumMarketingComponentProperties_AnnouncementModalVideoLed = new PremiumMarketingComponentProperties_AnnouncementModalVideoLed$Type();
+// @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties_AnnouncementModalPerkCard$Type extends MessageType<PremiumMarketingComponentProperties_AnnouncementModalPerkCard> {
     constructor() {
         super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalPerkCard", [
@@ -8764,120 +9045,6 @@ class PremiumMarketingComponentProperties_AnnouncementModalPerkCard$Type extends
  * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalPerkCard
  */
 export const PremiumMarketingComponentProperties_AnnouncementModalPerkCard = new PremiumMarketingComponentProperties_AnnouncementModalPerkCard$Type();
-// @generated message type with reflection information, may provide speed optimized methods
-class PremiumMarketingComponentProperties_AnnouncementModalVideoLed$Type extends MessageType<PremiumMarketingComponentProperties_AnnouncementModalVideoLed> {
-    constructor() {
-        super("discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalVideoLed", [
-            { no: 1, name: "asset", kind: "message", T: () => PremiumMarketingComponentProperties_ThemeAwareAsset },
-            { no: 2, name: "title_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
-            { no: 3, name: "body_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
-            { no: 4, name: "perk_cards", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => PremiumMarketingComponentProperties_AnnouncementModalPerkCard },
-            { no: 5, name: "button", kind: "message", T: () => PremiumMarketingComponentProperties_CTAButton },
-            { no: 6, name: "legalese_localized", kind: "message", T: () => PremiumMarketingComponentProperties_LocalizedString },
-            { no: 7, name: "terms_url", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 8, name: "title", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 9, name: "body", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 10, name: "legalese", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
-        ]);
-    }
-    create(value?: PartialMessage<PremiumMarketingComponentProperties_AnnouncementModalVideoLed>): PremiumMarketingComponentProperties_AnnouncementModalVideoLed {
-        const message = globalThis.Object.create((this.messagePrototype!));
-        message.perkCards = [];
-        message.termsUrl = "";
-        message.title = "";
-        message.body = "";
-        message.legalese = "";
-        if (value !== undefined)
-            reflectionMergePartial<PremiumMarketingComponentProperties_AnnouncementModalVideoLed>(this, message, value);
-        return message;
-    }
-    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PremiumMarketingComponentProperties_AnnouncementModalVideoLed): PremiumMarketingComponentProperties_AnnouncementModalVideoLed {
-        let message = target ?? this.create(), end = reader.pos + length;
-        while (reader.pos < end) {
-            let [fieldNo, wireType] = reader.tag();
-            switch (fieldNo) {
-                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset */ 1:
-                    message.asset = PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryRead(reader, reader.uint32(), options, message.asset);
-                    break;
-                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString title_localized */ 2:
-                    message.titleLocalized = PremiumMarketingComponentProperties_LocalizedString.internalBinaryRead(reader, reader.uint32(), options, message.titleLocalized);
-                    break;
-                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString body_localized */ 3:
-                    message.bodyLocalized = PremiumMarketingComponentProperties_LocalizedString.internalBinaryRead(reader, reader.uint32(), options, message.bodyLocalized);
-                    break;
-                case /* repeated discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalPerkCard perk_cards */ 4:
-                    message.perkCards.push(PremiumMarketingComponentProperties_AnnouncementModalPerkCard.internalBinaryRead(reader, reader.uint32(), options));
-                    break;
-                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.CTAButton button */ 5:
-                    message.button = PremiumMarketingComponentProperties_CTAButton.internalBinaryRead(reader, reader.uint32(), options, message.button);
-                    break;
-                case /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString legalese_localized */ 6:
-                    message.legaleseLocalized = PremiumMarketingComponentProperties_LocalizedString.internalBinaryRead(reader, reader.uint32(), options, message.legaleseLocalized);
-                    break;
-                case /* string terms_url */ 7:
-                    message.termsUrl = reader.string();
-                    break;
-                case /* string title */ 8:
-                    message.title = reader.string();
-                    break;
-                case /* string body */ 9:
-                    message.body = reader.string();
-                    break;
-                case /* string legalese */ 10:
-                    message.legalese = reader.string();
-                    break;
-                default:
-                    let u = options.readUnknownField;
-                    if (u === "throw")
-                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
-                    let d = reader.skip(wireType);
-                    if (u !== false)
-                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
-            }
-        }
-        return message;
-    }
-    internalBinaryWrite(message: PremiumMarketingComponentProperties_AnnouncementModalVideoLed, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.ThemeAwareAsset asset = 1; */
-        if (message.asset)
-            PremiumMarketingComponentProperties_ThemeAwareAsset.internalBinaryWrite(message.asset, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
-        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString title_localized = 2; */
-        if (message.titleLocalized)
-            PremiumMarketingComponentProperties_LocalizedString.internalBinaryWrite(message.titleLocalized, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
-        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString body_localized = 3; */
-        if (message.bodyLocalized)
-            PremiumMarketingComponentProperties_LocalizedString.internalBinaryWrite(message.bodyLocalized, writer.tag(3, WireType.LengthDelimited).fork(), options).join();
-        /* repeated discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalPerkCard perk_cards = 4; */
-        for (let i = 0; i < message.perkCards.length; i++)
-            PremiumMarketingComponentProperties_AnnouncementModalPerkCard.internalBinaryWrite(message.perkCards[i], writer.tag(4, WireType.LengthDelimited).fork(), options).join();
-        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.CTAButton button = 5; */
-        if (message.button)
-            PremiumMarketingComponentProperties_CTAButton.internalBinaryWrite(message.button, writer.tag(5, WireType.LengthDelimited).fork(), options).join();
-        /* optional discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.LocalizedString legalese_localized = 6; */
-        if (message.legaleseLocalized)
-            PremiumMarketingComponentProperties_LocalizedString.internalBinaryWrite(message.legaleseLocalized, writer.tag(6, WireType.LengthDelimited).fork(), options).join();
-        /* string terms_url = 7; */
-        if (message.termsUrl !== "")
-            writer.tag(7, WireType.LengthDelimited).string(message.termsUrl);
-        /* string title = 8; */
-        if (message.title !== "")
-            writer.tag(8, WireType.LengthDelimited).string(message.title);
-        /* string body = 9; */
-        if (message.body !== "")
-            writer.tag(9, WireType.LengthDelimited).string(message.body);
-        /* string legalese = 10; */
-        if (message.legalese !== "")
-            writer.tag(10, WireType.LengthDelimited).string(message.legalese);
-        let u = options.writeUnknownFields;
-        if (u !== false)
-            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
-        return writer;
-    }
-}
-/**
- * @generated MessageType for protobuf message discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalVideoLed
- */
-export const PremiumMarketingComponentProperties_AnnouncementModalVideoLed = new PremiumMarketingComponentProperties_AnnouncementModalVideoLed$Type();
 // @generated message type with reflection information, may provide speed optimized methods
 class PremiumMarketingComponentProperties_AnnouncementModalTwoPanel$Type extends MessageType<PremiumMarketingComponentProperties_AnnouncementModalTwoPanel> {
     constructor() {

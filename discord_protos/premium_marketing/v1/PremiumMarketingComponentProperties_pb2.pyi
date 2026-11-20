@@ -1289,6 +1289,45 @@ class PremiumMarketingComponentProperties(_message.Message):
     NITRO_PERK_CARD_PLACEMENT_MARKETING_PAGE: PremiumMarketingComponentProperties.NitroPerkCardPlacement.ValueType  # 1
     NITRO_PERK_CARD_PLACEMENT_NITRO_HOME: PremiumMarketingComponentProperties.NitroPerkCardPlacement.ValueType  # 2
 
+    class _AnnouncementModalPerkIcon:
+        ValueType = _typing.NewType("ValueType", _builtins.int)
+        V: _TypeAlias = ValueType  # noqa: Y015
+
+    class _AnnouncementModalPerkIconEnumTypeWrapper(_enum_type_wrapper._EnumTypeWrapper[PremiumMarketingComponentProperties._AnnouncementModalPerkIcon.ValueType], _builtins.type):
+        DESCRIPTOR: _descriptor.EnumDescriptor
+        ANNOUNCEMENT_MODAL_PERK_ICON_UNSPECIFIED: PremiumMarketingComponentProperties._AnnouncementModalPerkIcon.ValueType  # 0
+        ANNOUNCEMENT_MODAL_PERK_ICON_NITRO_WHEEL: PremiumMarketingComponentProperties._AnnouncementModalPerkIcon.ValueType  # 1
+        ANNOUNCEMENT_MODAL_PERK_ICON_XBOX: PremiumMarketingComponentProperties._AnnouncementModalPerkIcon.ValueType  # 2
+        ANNOUNCEMENT_MODAL_PERK_ICON_GAME_CONTROLLER: PremiumMarketingComponentProperties._AnnouncementModalPerkIcon.ValueType  # 3
+        ANNOUNCEMENT_MODAL_PERK_ICON_ORBS: PremiumMarketingComponentProperties._AnnouncementModalPerkIcon.ValueType  # 4
+        ANNOUNCEMENT_MODAL_PERK_ICON_SHOP: PremiumMarketingComponentProperties._AnnouncementModalPerkIcon.ValueType  # 5
+        ANNOUNCEMENT_MODAL_PERK_ICON_GIFT: PremiumMarketingComponentProperties._AnnouncementModalPerkIcon.ValueType  # 6
+        ANNOUNCEMENT_MODAL_PERK_ICON_BOOST_GEM: PremiumMarketingComponentProperties._AnnouncementModalPerkIcon.ValueType  # 7
+        ANNOUNCEMENT_MODAL_PERK_ICON_REACTION: PremiumMarketingComponentProperties._AnnouncementModalPerkIcon.ValueType  # 8
+        ANNOUNCEMENT_MODAL_PERK_ICON_STICKER: PremiumMarketingComponentProperties._AnnouncementModalPerkIcon.ValueType  # 9
+        ANNOUNCEMENT_MODAL_PERK_ICON_UPLOAD: PremiumMarketingComponentProperties._AnnouncementModalPerkIcon.ValueType  # 10
+        ANNOUNCEMENT_MODAL_PERK_ICON_PAINT_PALETTE: PremiumMarketingComponentProperties._AnnouncementModalPerkIcon.ValueType  # 11
+        ANNOUNCEMENT_MODAL_PERK_ICON_SCREEN_STREAM: PremiumMarketingComponentProperties._AnnouncementModalPerkIcon.ValueType  # 12
+        ANNOUNCEMENT_MODAL_PERK_ICON_SOUNDBOARD: PremiumMarketingComponentProperties._AnnouncementModalPerkIcon.ValueType  # 13
+        ANNOUNCEMENT_MODAL_PERK_ICON_SPARKLES: PremiumMarketingComponentProperties._AnnouncementModalPerkIcon.ValueType  # 14
+
+    class AnnouncementModalPerkIcon(_AnnouncementModalPerkIcon, metaclass=_AnnouncementModalPerkIconEnumTypeWrapper): ...
+    ANNOUNCEMENT_MODAL_PERK_ICON_UNSPECIFIED: PremiumMarketingComponentProperties.AnnouncementModalPerkIcon.ValueType  # 0
+    ANNOUNCEMENT_MODAL_PERK_ICON_NITRO_WHEEL: PremiumMarketingComponentProperties.AnnouncementModalPerkIcon.ValueType  # 1
+    ANNOUNCEMENT_MODAL_PERK_ICON_XBOX: PremiumMarketingComponentProperties.AnnouncementModalPerkIcon.ValueType  # 2
+    ANNOUNCEMENT_MODAL_PERK_ICON_GAME_CONTROLLER: PremiumMarketingComponentProperties.AnnouncementModalPerkIcon.ValueType  # 3
+    ANNOUNCEMENT_MODAL_PERK_ICON_ORBS: PremiumMarketingComponentProperties.AnnouncementModalPerkIcon.ValueType  # 4
+    ANNOUNCEMENT_MODAL_PERK_ICON_SHOP: PremiumMarketingComponentProperties.AnnouncementModalPerkIcon.ValueType  # 5
+    ANNOUNCEMENT_MODAL_PERK_ICON_GIFT: PremiumMarketingComponentProperties.AnnouncementModalPerkIcon.ValueType  # 6
+    ANNOUNCEMENT_MODAL_PERK_ICON_BOOST_GEM: PremiumMarketingComponentProperties.AnnouncementModalPerkIcon.ValueType  # 7
+    ANNOUNCEMENT_MODAL_PERK_ICON_REACTION: PremiumMarketingComponentProperties.AnnouncementModalPerkIcon.ValueType  # 8
+    ANNOUNCEMENT_MODAL_PERK_ICON_STICKER: PremiumMarketingComponentProperties.AnnouncementModalPerkIcon.ValueType  # 9
+    ANNOUNCEMENT_MODAL_PERK_ICON_UPLOAD: PremiumMarketingComponentProperties.AnnouncementModalPerkIcon.ValueType  # 10
+    ANNOUNCEMENT_MODAL_PERK_ICON_PAINT_PALETTE: PremiumMarketingComponentProperties.AnnouncementModalPerkIcon.ValueType  # 11
+    ANNOUNCEMENT_MODAL_PERK_ICON_SCREEN_STREAM: PremiumMarketingComponentProperties.AnnouncementModalPerkIcon.ValueType  # 12
+    ANNOUNCEMENT_MODAL_PERK_ICON_SOUNDBOARD: PremiumMarketingComponentProperties.AnnouncementModalPerkIcon.ValueType  # 13
+    ANNOUNCEMENT_MODAL_PERK_ICON_SPARKLES: PremiumMarketingComponentProperties.AnnouncementModalPerkIcon.ValueType  # 14
+
     @_typing.final
     class LocalizedString(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
@@ -3580,6 +3619,113 @@ class PremiumMarketingComponentProperties(_message.Message):
         def WhichOneof(self, oneof_group: _WhichOneofArgType__image) -> _WhichOneofReturnType__image | None: ...
 
     @_typing.final
+    class AnnouncementModalIconPerkCard(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        ICON_FIELD_NUMBER: _builtins.int
+        TITLE_LOCALIZED_FIELD_NUMBER: _builtins.int
+        BODY_LOCALIZED_FIELD_NUMBER: _builtins.int
+        TITLE_FIELD_NUMBER: _builtins.int
+        BODY_FIELD_NUMBER: _builtins.int
+        icon: Global___PremiumMarketingComponentProperties.AnnouncementModalPerkIcon.ValueType
+        title: _builtins.str
+        body: _builtins.str
+        @_builtins.property
+        def title_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
+        @_builtins.property
+        def body_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
+        def __init__(
+            self,
+            *,
+            icon: Global___PremiumMarketingComponentProperties.AnnouncementModalPerkIcon.ValueType = ...,
+            title_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
+            body_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
+            title: _builtins.str = ...,
+            body: _builtins.str = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized", "_title_localized", b"_title_localized", "body_localized", b"body_localized", "title_localized", b"title_localized"]  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized", "_title_localized", b"_title_localized", "body", b"body", "body_localized", b"body_localized", "icon", b"icon", "title", b"title", "title_localized", b"title_localized"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        _WhichOneofReturnType__body_localized: _TypeAlias = _typing.Literal["body_localized"]  # noqa: Y015
+        _WhichOneofArgType__body_localized: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized"]  # noqa: Y015
+        _WhichOneofReturnType__title_localized: _TypeAlias = _typing.Literal["title_localized"]  # noqa: Y015
+        _WhichOneofArgType__title_localized: _TypeAlias = _typing.Literal["_title_localized", b"_title_localized"]  # noqa: Y015
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__body_localized) -> _WhichOneofReturnType__body_localized | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__title_localized) -> _WhichOneofReturnType__title_localized | None: ...
+
+    @_typing.final
+    class AnnouncementModalVideoLed(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        ASSET_FIELD_NUMBER: _builtins.int
+        TITLE_LOCALIZED_FIELD_NUMBER: _builtins.int
+        BODY_LOCALIZED_FIELD_NUMBER: _builtins.int
+        PERK_CARDS_FIELD_NUMBER: _builtins.int
+        BUTTON_FIELD_NUMBER: _builtins.int
+        LEGALESE_LOCALIZED_FIELD_NUMBER: _builtins.int
+        TERMS_URL_FIELD_NUMBER: _builtins.int
+        TITLE_FIELD_NUMBER: _builtins.int
+        BODY_FIELD_NUMBER: _builtins.int
+        LEGALESE_FIELD_NUMBER: _builtins.int
+        terms_url: _builtins.str
+        title: _builtins.str
+        body: _builtins.str
+        legalese: _builtins.str
+        @_builtins.property
+        def asset(self) -> Global___PremiumMarketingComponentProperties.ThemeAwareAsset: ...
+        @_builtins.property
+        def title_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
+        @_builtins.property
+        def body_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
+        @_builtins.property
+        def perk_cards(self) -> _containers.RepeatedCompositeFieldContainer[Global___PremiumMarketingComponentProperties.AnnouncementModalIconPerkCard]: ...
+        @_builtins.property
+        def button(self) -> Global___PremiumMarketingComponentProperties.CTAButton: ...
+        @_builtins.property
+        def legalese_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
+        def __init__(
+            self,
+            *,
+            asset: Global___PremiumMarketingComponentProperties.ThemeAwareAsset | None = ...,
+            title_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
+            body_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
+            perk_cards: _abc.Iterable[Global___PremiumMarketingComponentProperties.AnnouncementModalIconPerkCard] | None = ...,
+            button: Global___PremiumMarketingComponentProperties.CTAButton | None = ...,
+            legalese_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
+            terms_url: _builtins.str = ...,
+            title: _builtins.str = ...,
+            body: _builtins.str = ...,
+            legalese: _builtins.str = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_body_localized", b"_body_localized", "_button", b"_button", "_legalese_localized", b"_legalese_localized", "_title_localized", b"_title_localized", "asset", b"asset", "body_localized", b"body_localized", "button", b"button", "legalese_localized", b"legalese_localized", "title_localized", b"title_localized"]  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_body_localized", b"_body_localized", "_button", b"_button", "_legalese_localized", b"_legalese_localized", "_title_localized", b"_title_localized", "asset", b"asset", "body", b"body", "body_localized", b"body_localized", "button", b"button", "legalese", b"legalese", "legalese_localized", b"legalese_localized", "perk_cards", b"perk_cards", "terms_url", b"terms_url", "title", b"title", "title_localized", b"title_localized"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        _WhichOneofReturnType__asset: _TypeAlias = _typing.Literal["asset"]  # noqa: Y015
+        _WhichOneofArgType__asset: _TypeAlias = _typing.Literal["_asset", b"_asset"]  # noqa: Y015
+        _WhichOneofReturnType__body_localized: _TypeAlias = _typing.Literal["body_localized"]  # noqa: Y015
+        _WhichOneofArgType__body_localized: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized"]  # noqa: Y015
+        _WhichOneofReturnType__button: _TypeAlias = _typing.Literal["button"]  # noqa: Y015
+        _WhichOneofArgType__button: _TypeAlias = _typing.Literal["_button", b"_button"]  # noqa: Y015
+        _WhichOneofReturnType__legalese_localized: _TypeAlias = _typing.Literal["legalese_localized"]  # noqa: Y015
+        _WhichOneofArgType__legalese_localized: _TypeAlias = _typing.Literal["_legalese_localized", b"_legalese_localized"]  # noqa: Y015
+        _WhichOneofReturnType__title_localized: _TypeAlias = _typing.Literal["title_localized"]  # noqa: Y015
+        _WhichOneofArgType__title_localized: _TypeAlias = _typing.Literal["_title_localized", b"_title_localized"]  # noqa: Y015
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__asset) -> _WhichOneofReturnType__asset | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__body_localized) -> _WhichOneofReturnType__body_localized | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__button) -> _WhichOneofReturnType__button | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__legalese_localized) -> _WhichOneofReturnType__legalese_localized | None: ...
+        @_typing.overload
+        def WhichOneof(self, oneof_group: _WhichOneofArgType__title_localized) -> _WhichOneofReturnType__title_localized | None: ...
+
+    @_typing.final
     class AnnouncementModalPerkCard(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
 
@@ -3619,75 +3765,6 @@ class PremiumMarketingComponentProperties(_message.Message):
         def WhichOneof(self, oneof_group: _WhichOneofArgType__asset) -> _WhichOneofReturnType__asset | None: ...
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__body_localized) -> _WhichOneofReturnType__body_localized | None: ...
-        @_typing.overload
-        def WhichOneof(self, oneof_group: _WhichOneofArgType__title_localized) -> _WhichOneofReturnType__title_localized | None: ...
-
-    @_typing.final
-    class AnnouncementModalVideoLed(_message.Message):
-        DESCRIPTOR: _descriptor.Descriptor
-
-        ASSET_FIELD_NUMBER: _builtins.int
-        TITLE_LOCALIZED_FIELD_NUMBER: _builtins.int
-        BODY_LOCALIZED_FIELD_NUMBER: _builtins.int
-        PERK_CARDS_FIELD_NUMBER: _builtins.int
-        BUTTON_FIELD_NUMBER: _builtins.int
-        LEGALESE_LOCALIZED_FIELD_NUMBER: _builtins.int
-        TERMS_URL_FIELD_NUMBER: _builtins.int
-        TITLE_FIELD_NUMBER: _builtins.int
-        BODY_FIELD_NUMBER: _builtins.int
-        LEGALESE_FIELD_NUMBER: _builtins.int
-        terms_url: _builtins.str
-        title: _builtins.str
-        body: _builtins.str
-        legalese: _builtins.str
-        @_builtins.property
-        def asset(self) -> Global___PremiumMarketingComponentProperties.ThemeAwareAsset: ...
-        @_builtins.property
-        def title_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
-        @_builtins.property
-        def body_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
-        @_builtins.property
-        def perk_cards(self) -> _containers.RepeatedCompositeFieldContainer[Global___PremiumMarketingComponentProperties.AnnouncementModalPerkCard]: ...
-        @_builtins.property
-        def button(self) -> Global___PremiumMarketingComponentProperties.CTAButton: ...
-        @_builtins.property
-        def legalese_localized(self) -> Global___PremiumMarketingComponentProperties.LocalizedString: ...
-        def __init__(
-            self,
-            *,
-            asset: Global___PremiumMarketingComponentProperties.ThemeAwareAsset | None = ...,
-            title_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
-            body_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
-            perk_cards: _abc.Iterable[Global___PremiumMarketingComponentProperties.AnnouncementModalPerkCard] | None = ...,
-            button: Global___PremiumMarketingComponentProperties.CTAButton | None = ...,
-            legalese_localized: Global___PremiumMarketingComponentProperties.LocalizedString | None = ...,
-            terms_url: _builtins.str = ...,
-            title: _builtins.str = ...,
-            body: _builtins.str = ...,
-            legalese: _builtins.str = ...,
-        ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_body_localized", b"_body_localized", "_button", b"_button", "_legalese_localized", b"_legalese_localized", "_title_localized", b"_title_localized", "asset", b"asset", "body_localized", b"body_localized", "button", b"button", "legalese_localized", b"legalese_localized", "title_localized", b"title_localized"]  # noqa: Y015
-        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["_asset", b"_asset", "_body_localized", b"_body_localized", "_button", b"_button", "_legalese_localized", b"_legalese_localized", "_title_localized", b"_title_localized", "asset", b"asset", "body", b"body", "body_localized", b"body_localized", "button", b"button", "legalese", b"legalese", "legalese_localized", b"legalese_localized", "perk_cards", b"perk_cards", "terms_url", b"terms_url", "title", b"title", "title_localized", b"title_localized"]  # noqa: Y015
-        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-        _WhichOneofReturnType__asset: _TypeAlias = _typing.Literal["asset"]  # noqa: Y015
-        _WhichOneofArgType__asset: _TypeAlias = _typing.Literal["_asset", b"_asset"]  # noqa: Y015
-        _WhichOneofReturnType__body_localized: _TypeAlias = _typing.Literal["body_localized"]  # noqa: Y015
-        _WhichOneofArgType__body_localized: _TypeAlias = _typing.Literal["_body_localized", b"_body_localized"]  # noqa: Y015
-        _WhichOneofReturnType__button: _TypeAlias = _typing.Literal["button"]  # noqa: Y015
-        _WhichOneofArgType__button: _TypeAlias = _typing.Literal["_button", b"_button"]  # noqa: Y015
-        _WhichOneofReturnType__legalese_localized: _TypeAlias = _typing.Literal["legalese_localized"]  # noqa: Y015
-        _WhichOneofArgType__legalese_localized: _TypeAlias = _typing.Literal["_legalese_localized", b"_legalese_localized"]  # noqa: Y015
-        _WhichOneofReturnType__title_localized: _TypeAlias = _typing.Literal["title_localized"]  # noqa: Y015
-        _WhichOneofArgType__title_localized: _TypeAlias = _typing.Literal["_title_localized", b"_title_localized"]  # noqa: Y015
-        @_typing.overload
-        def WhichOneof(self, oneof_group: _WhichOneofArgType__asset) -> _WhichOneofReturnType__asset | None: ...
-        @_typing.overload
-        def WhichOneof(self, oneof_group: _WhichOneofArgType__body_localized) -> _WhichOneofReturnType__body_localized | None: ...
-        @_typing.overload
-        def WhichOneof(self, oneof_group: _WhichOneofArgType__button) -> _WhichOneofReturnType__button | None: ...
-        @_typing.overload
-        def WhichOneof(self, oneof_group: _WhichOneofArgType__legalese_localized) -> _WhichOneofReturnType__legalese_localized | None: ...
         @_typing.overload
         def WhichOneof(self, oneof_group: _WhichOneofArgType__title_localized) -> _WhichOneofReturnType__title_localized | None: ...
 

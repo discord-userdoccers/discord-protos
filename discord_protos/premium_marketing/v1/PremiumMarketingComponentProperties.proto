@@ -1051,8 +1051,26 @@ message PremiumMarketingComponentProperties {
     optional ThemeAwareAsset image = 5;
   }
 
-  message AnnouncementModalPerkCard {
-    optional ThemeAwareAsset asset = 1;
+  enum AnnouncementModalPerkIcon {
+    ANNOUNCEMENT_MODAL_PERK_ICON_UNSPECIFIED = 0;
+    ANNOUNCEMENT_MODAL_PERK_ICON_NITRO_WHEEL = 1;
+    ANNOUNCEMENT_MODAL_PERK_ICON_XBOX = 2;
+    ANNOUNCEMENT_MODAL_PERK_ICON_GAME_CONTROLLER = 3;
+    ANNOUNCEMENT_MODAL_PERK_ICON_ORBS = 4;
+    ANNOUNCEMENT_MODAL_PERK_ICON_SHOP = 5;
+    ANNOUNCEMENT_MODAL_PERK_ICON_GIFT = 6;
+    ANNOUNCEMENT_MODAL_PERK_ICON_BOOST_GEM = 7;
+    ANNOUNCEMENT_MODAL_PERK_ICON_REACTION = 8;
+    ANNOUNCEMENT_MODAL_PERK_ICON_STICKER = 9;
+    ANNOUNCEMENT_MODAL_PERK_ICON_UPLOAD = 10;
+    ANNOUNCEMENT_MODAL_PERK_ICON_PAINT_PALETTE = 11;
+    ANNOUNCEMENT_MODAL_PERK_ICON_SCREEN_STREAM = 12;
+    ANNOUNCEMENT_MODAL_PERK_ICON_SOUNDBOARD = 13;
+    ANNOUNCEMENT_MODAL_PERK_ICON_SPARKLES = 14;
+  }
+
+  message AnnouncementModalIconPerkCard {
+    AnnouncementModalPerkIcon icon = 6;
     optional LocalizedString title_localized = 2;
     optional LocalizedString body_localized = 3;
     string title = 4;
@@ -1063,13 +1081,21 @@ message PremiumMarketingComponentProperties {
     optional ThemeAwareAsset asset = 1;
     optional LocalizedString title_localized = 2;
     optional LocalizedString body_localized = 3;
-    repeated AnnouncementModalPerkCard perk_cards = 4;
+    repeated AnnouncementModalIconPerkCard perk_cards = 4;
     optional CTAButton button = 5;
     optional LocalizedString legalese_localized = 6;
     string terms_url = 7;
     string title = 8;
     string body = 9;
     string legalese = 10;
+  }
+
+  message AnnouncementModalPerkCard {
+    optional ThemeAwareAsset asset = 1;
+    optional LocalizedString title_localized = 2;
+    optional LocalizedString body_localized = 3;
+    string title = 4;
+    string body = 5;
   }
 
   message AnnouncementModalTwoPanel {

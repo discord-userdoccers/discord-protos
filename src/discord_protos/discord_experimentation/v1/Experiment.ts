@@ -1444,7 +1444,11 @@ export enum Experiment_Surface {
     /**
      * @generated from protobuf enum value: SURFACE_APP_LAUNCH = 10;
      */
-    APP_LAUNCH = 10
+    APP_LAUNCH = 10,
+    /**
+     * @generated from protobuf enum value: SURFACE_CAP = 11;
+     */
+    CAP = 11
 }
 /**
  * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.ExposureTracking
@@ -1491,7 +1495,11 @@ export enum Experiment_CustomUnitPrefix {
     /**
      * @generated from protobuf enum value: CUSTOM_UNIT_PREFIX_SEO_URL_SLUG = 1;
      */
-    SEO_URL_SLUG = 1
+    SEO_URL_SLUG = 1,
+    /**
+     * @generated from protobuf enum value: CUSTOM_UNIT_PREFIX_CAP_CONVERSATION = 2;
+     */
+    CAP_CONVERSATION = 2
 }
 /**
  * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.ExposurePointId

@@ -176,6 +176,7 @@ class Experiment(_message.Message):
         SURFACE_MARKETING: Experiment._Surface.ValueType  # 8
         SURFACE_DESIGN_DOCS: Experiment._Surface.ValueType  # 9
         SURFACE_APP_LAUNCH: Experiment._Surface.ValueType  # 10
+        SURFACE_CAP: Experiment._Surface.ValueType  # 11
 
     class Surface(_Surface, metaclass=_SurfaceEnumTypeWrapper): ...
     SURFACE_UNSPECIFIED: Experiment.Surface.ValueType  # 0
@@ -189,6 +190,7 @@ class Experiment(_message.Message):
     SURFACE_MARKETING: Experiment.Surface.ValueType  # 8
     SURFACE_DESIGN_DOCS: Experiment.Surface.ValueType  # 9
     SURFACE_APP_LAUNCH: Experiment.Surface.ValueType  # 10
+    SURFACE_CAP: Experiment.Surface.ValueType  # 11
 
     class _ExposureTracking:
         ValueType = _typing.NewType("ValueType", _builtins.int)
@@ -228,10 +230,12 @@ class Experiment(_message.Message):
         DESCRIPTOR: _descriptor.EnumDescriptor
         CUSTOM_UNIT_PREFIX_UNSPECIFIED: Experiment._CustomUnitPrefix.ValueType  # 0
         CUSTOM_UNIT_PREFIX_SEO_URL_SLUG: Experiment._CustomUnitPrefix.ValueType  # 1
+        CUSTOM_UNIT_PREFIX_CAP_CONVERSATION: Experiment._CustomUnitPrefix.ValueType  # 2
 
     class CustomUnitPrefix(_CustomUnitPrefix, metaclass=_CustomUnitPrefixEnumTypeWrapper): ...
     CUSTOM_UNIT_PREFIX_UNSPECIFIED: Experiment.CustomUnitPrefix.ValueType  # 0
     CUSTOM_UNIT_PREFIX_SEO_URL_SLUG: Experiment.CustomUnitPrefix.ValueType  # 1
+    CUSTOM_UNIT_PREFIX_CAP_CONVERSATION: Experiment.CustomUnitPrefix.ValueType  # 2
 
     class _ExposurePointId:
         ValueType = _typing.NewType("ValueType", _builtins.int)
