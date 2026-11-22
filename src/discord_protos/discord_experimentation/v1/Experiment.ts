@@ -209,6 +209,10 @@ export interface Experiment {
      */
     isFeatureFlag: boolean;
     /**
+     * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.FeatureFlagAssignment feature_flag_assignment = 56
+     */
+    featureFlagAssignment: Experiment_FeatureFlagAssignment;
+    /**
      * @generated from protobuf field: bool is_official_holdout = 50
      */
     isOfficialHoldout: boolean;
@@ -1623,6 +1627,23 @@ export enum Experiment_StepStatus {
     AWAITING_FINAL_HEALTH_CHECK = 5
 }
 /**
+ * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.FeatureFlagAssignment
+ */
+export enum Experiment_FeatureFlagAssignment {
+    /**
+     * @generated from protobuf enum value: FEATURE_FLAG_ASSIGNMENT_STICKY = 0;
+     */
+    STICKY = 0,
+    /**
+     * @generated from protobuf enum value: FEATURE_FLAG_ASSIGNMENT_RANDOM_PER_CHECK = 1;
+     */
+    RANDOM_PER_CHECK = 1,
+    /**
+     * @generated from protobuf enum value: FEATURE_FLAG_ASSIGNMENT_LEGACY_HASH = 2;
+     */
+    LEGACY_HASH = 2
+}
+/**
  * @generated from protobuf enum discord_protos.discord_experimentation.v1.Experiment.Level
  */
 export enum Experiment_Level {
@@ -1774,6 +1795,7 @@ class Experiment$Type extends MessageType<Experiment> {
             { no: 42, name: "eligibility_persistence", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.EligibilityPersistence", Experiment_EligibilityPersistence, "ELIGIBILITY_PERSISTENCE_"] },
             { no: 48, name: "lifecycle_plan", kind: "message", T: () => Experiment_LifecyclePlan },
             { no: 49, name: "is_feature_flag", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
+            { no: 56, name: "feature_flag_assignment", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.FeatureFlagAssignment", Experiment_FeatureFlagAssignment, "FEATURE_FLAG_ASSIGNMENT_"] },
             { no: 50, name: "is_official_holdout", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
             { no: 52, name: "holdout_scope", kind: "message", T: () => Experiment_HoldoutScope },
             { no: 54, name: "opt_out_of_official_holdout", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
@@ -1818,6 +1840,7 @@ class Experiment$Type extends MessageType<Experiment> {
         message.isManaged = false;
         message.eligibilityPersistence = 0;
         message.isFeatureFlag = false;
+        message.featureFlagAssignment = 0;
         message.isOfficialHoldout = false;
         message.optOutOfOfficialHoldout = false;
         message.officialHoldoutOptOutReason = "";
@@ -1982,6 +2005,9 @@ class Experiment$Type extends MessageType<Experiment> {
                     break;
                 case /* bool is_feature_flag */ 49:
                     message.isFeatureFlag = reader.bool();
+                    break;
+                case /* discord_protos.discord_experimentation.v1.Experiment.FeatureFlagAssignment feature_flag_assignment */ 56:
+                    message.featureFlagAssignment = reader.int32();
                     break;
                 case /* bool is_official_holdout */ 50:
                     message.isOfficialHoldout = reader.bool();
@@ -2178,6 +2204,9 @@ class Experiment$Type extends MessageType<Experiment> {
         /* string official_holdout_opt_out_reason = 55; */
         if (message.officialHoldoutOptOutReason !== "")
             writer.tag(55, WireType.LengthDelimited).string(message.officialHoldoutOptOutReason);
+        /* discord_protos.discord_experimentation.v1.Experiment.FeatureFlagAssignment feature_flag_assignment = 56; */
+        if (message.featureFlagAssignment !== 0)
+            writer.tag(56, WireType.Varint).int32(message.featureFlagAssignment);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

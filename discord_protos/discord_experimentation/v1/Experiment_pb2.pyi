@@ -330,6 +330,21 @@ class Experiment(_message.Message):
     STEP_STATUS_COMPLETED: Experiment.StepStatus.ValueType  # 4
     STEP_STATUS_AWAITING_FINAL_HEALTH_CHECK: Experiment.StepStatus.ValueType  # 5
 
+    class _FeatureFlagAssignment:
+        ValueType = _typing.NewType("ValueType", _builtins.int)
+        V: _TypeAlias = ValueType  # noqa: Y015
+
+    class _FeatureFlagAssignmentEnumTypeWrapper(_enum_type_wrapper._EnumTypeWrapper[Experiment._FeatureFlagAssignment.ValueType], _builtins.type):
+        DESCRIPTOR: _descriptor.EnumDescriptor
+        FEATURE_FLAG_ASSIGNMENT_STICKY: Experiment._FeatureFlagAssignment.ValueType  # 0
+        FEATURE_FLAG_ASSIGNMENT_RANDOM_PER_CHECK: Experiment._FeatureFlagAssignment.ValueType  # 1
+        FEATURE_FLAG_ASSIGNMENT_LEGACY_HASH: Experiment._FeatureFlagAssignment.ValueType  # 2
+
+    class FeatureFlagAssignment(_FeatureFlagAssignment, metaclass=_FeatureFlagAssignmentEnumTypeWrapper): ...
+    FEATURE_FLAG_ASSIGNMENT_STICKY: Experiment.FeatureFlagAssignment.ValueType  # 0
+    FEATURE_FLAG_ASSIGNMENT_RANDOM_PER_CHECK: Experiment.FeatureFlagAssignment.ValueType  # 1
+    FEATURE_FLAG_ASSIGNMENT_LEGACY_HASH: Experiment.FeatureFlagAssignment.ValueType  # 2
+
     class _Level:
         ValueType = _typing.NewType("ValueType", _builtins.int)
         V: _TypeAlias = ValueType  # noqa: Y015
@@ -2002,6 +2017,7 @@ class Experiment(_message.Message):
     ELIGIBILITY_PERSISTENCE_FIELD_NUMBER: _builtins.int
     LIFECYCLE_PLAN_FIELD_NUMBER: _builtins.int
     IS_FEATURE_FLAG_FIELD_NUMBER: _builtins.int
+    FEATURE_FLAG_ASSIGNMENT_FIELD_NUMBER: _builtins.int
     IS_OFFICIAL_HOLDOUT_FIELD_NUMBER: _builtins.int
     HOLDOUT_SCOPE_FIELD_NUMBER: _builtins.int
     OPT_OUT_OF_OFFICIAL_HOLDOUT_FIELD_NUMBER: _builtins.int
@@ -2035,6 +2051,7 @@ class Experiment(_message.Message):
     is_managed: _builtins.bool
     eligibility_persistence: Global___Experiment.EligibilityPersistence.ValueType
     is_feature_flag: _builtins.bool
+    feature_flag_assignment: Global___Experiment.FeatureFlagAssignment.ValueType
     is_official_holdout: _builtins.bool
     opt_out_of_official_holdout: _builtins.bool
     official_holdout_opt_out_reason: _builtins.str
@@ -2130,6 +2147,7 @@ class Experiment(_message.Message):
         eligibility_persistence: Global___Experiment.EligibilityPersistence.ValueType = ...,
         lifecycle_plan: Global___Experiment.LifecyclePlan | None = ...,
         is_feature_flag: _builtins.bool = ...,
+        feature_flag_assignment: Global___Experiment.FeatureFlagAssignment.ValueType = ...,
         is_official_holdout: _builtins.bool = ...,
         holdout_scope: Global___Experiment.HoldoutScope | None = ...,
         opt_out_of_official_holdout: _builtins.bool = ...,
@@ -2138,7 +2156,7 @@ class Experiment(_message.Message):
     ) -> None: ...
     _HasFieldArgType: _TypeAlias = _typing.Literal["_archive_at", b"_archive_at", "_change_source", b"_change_source", "_created_at", b"_created_at", "_debug_config", b"_debug_config", "_dynamic_config_size_limit_override", b"_dynamic_config_size_limit_override", "_edited_at", b"_edited_at", "_expected_end_date", b"_expected_end_date", "_experiment_size_limit_override", b"_experiment_size_limit_override", "_guild_experiment_version", b"_guild_experiment_version", "_holdout_scope", b"_holdout_scope", "_hypothesis", b"_hypothesis", "_lifecycle_plan", b"_lifecycle_plan", "_number_line_settings", b"_number_line_settings", "_tech_spec_link", b"_tech_spec_link", "archive_at", b"archive_at", "change_source", b"change_source", "created_at", b"created_at", "debug_config", b"debug_config", "dynamic_config_size_limit_override", b"dynamic_config_size_limit_override", "edited_at", b"edited_at", "expected_end_date", b"expected_end_date", "experiment_size_limit_override", b"experiment_size_limit_override", "guild_experiment_version", b"guild_experiment_version", "holdout_scope", b"holdout_scope", "hypothesis", b"hypothesis", "lifecycle_plan", b"lifecycle_plan", "number_line_settings", b"number_line_settings", "tech_spec_link", b"tech_spec_link"]  # noqa: Y015
     def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["_archive_at", b"_archive_at", "_change_source", b"_change_source", "_created_at", b"_created_at", "_debug_config", b"_debug_config", "_dynamic_config_size_limit_override", b"_dynamic_config_size_limit_override", "_edited_at", b"_edited_at", "_expected_end_date", b"_expected_end_date", "_experiment_size_limit_override", b"_experiment_size_limit_override", "_guild_experiment_version", b"_guild_experiment_version", "_holdout_scope", b"_holdout_scope", "_hypothesis", b"_hypothesis", "_lifecycle_plan", b"_lifecycle_plan", "_number_line_settings", b"_number_line_settings", "_tech_spec_link", b"_tech_spec_link", "allocate_right_to_left", b"allocate_right_to_left", "archive_at", b"archive_at", "assignment_mode", b"assignment_mode", "cached_notification_channel_id", b"cached_notification_channel_id", "change_source", b"change_source", "created_at", b"created_at", "creator_id", b"creator_id", "custom_unit_prefix", b"custom_unit_prefix", "debug_config", b"debug_config", "description", b"description", "dynamic_config_model", b"dynamic_config_model", "dynamic_config_size_limit_override", b"dynamic_config_size_limit_override", "edited_at", b"edited_at", "editor_id", b"editor_id", "eligibility_persistence", b"eligibility_persistence", "enable_edit_raw_json_ui", b"enable_edit_raw_json_ui", "engine_feature_flags", b"engine_feature_flags", "expected_end_date", b"expected_end_date", "experiment_size_limit_override", b"experiment_size_limit_override", "exposure_points", b"exposure_points", "exposure_tracking", b"exposure_tracking", "extra_outcome_context", b"extra_outcome_context", "field_numbers_to_copy", b"field_numbers_to_copy", "growthbook_tags", b"growthbook_tags", "guild_experiment_version", b"guild_experiment_version", "hash_key", b"hash_key", "holdout_scope", b"holdout_scope", "hypothesis", b"hypothesis", "id", b"id", "is_automated_change", b"is_automated_change", "is_feature_flag", b"is_feature_flag", "is_managed", b"is_managed", "is_official_holdout", b"is_official_holdout", "is_template", b"is_template", "lifecycle_plan", b"lifecycle_plan", "name", b"name", "number_line_settings", b"number_line_settings", "official_holdout_opt_out_reason", b"official_holdout_opt_out_reason", "opt_out_of_official_holdout", b"opt_out_of_official_holdout", "owning_team_id", b"owning_team_id", "phase", b"phase", "revision", b"revision", "rules", b"rules", "suppress_editor_mention", b"suppress_editor_mention", "surfaces", b"surfaces", "tech_spec_link", b"tech_spec_link", "title", b"title", "type", b"type", "unit_type", b"unit_type", "variations", b"variations", "version", b"version", "winning_variation_id", b"winning_variation_id"]  # noqa: Y015
+    _ClearFieldArgType: _TypeAlias = _typing.Literal["_archive_at", b"_archive_at", "_change_source", b"_change_source", "_created_at", b"_created_at", "_debug_config", b"_debug_config", "_dynamic_config_size_limit_override", b"_dynamic_config_size_limit_override", "_edited_at", b"_edited_at", "_expected_end_date", b"_expected_end_date", "_experiment_size_limit_override", b"_experiment_size_limit_override", "_guild_experiment_version", b"_guild_experiment_version", "_holdout_scope", b"_holdout_scope", "_hypothesis", b"_hypothesis", "_lifecycle_plan", b"_lifecycle_plan", "_number_line_settings", b"_number_line_settings", "_tech_spec_link", b"_tech_spec_link", "allocate_right_to_left", b"allocate_right_to_left", "archive_at", b"archive_at", "assignment_mode", b"assignment_mode", "cached_notification_channel_id", b"cached_notification_channel_id", "change_source", b"change_source", "created_at", b"created_at", "creator_id", b"creator_id", "custom_unit_prefix", b"custom_unit_prefix", "debug_config", b"debug_config", "description", b"description", "dynamic_config_model", b"dynamic_config_model", "dynamic_config_size_limit_override", b"dynamic_config_size_limit_override", "edited_at", b"edited_at", "editor_id", b"editor_id", "eligibility_persistence", b"eligibility_persistence", "enable_edit_raw_json_ui", b"enable_edit_raw_json_ui", "engine_feature_flags", b"engine_feature_flags", "expected_end_date", b"expected_end_date", "experiment_size_limit_override", b"experiment_size_limit_override", "exposure_points", b"exposure_points", "exposure_tracking", b"exposure_tracking", "extra_outcome_context", b"extra_outcome_context", "feature_flag_assignment", b"feature_flag_assignment", "field_numbers_to_copy", b"field_numbers_to_copy", "growthbook_tags", b"growthbook_tags", "guild_experiment_version", b"guild_experiment_version", "hash_key", b"hash_key", "holdout_scope", b"holdout_scope", "hypothesis", b"hypothesis", "id", b"id", "is_automated_change", b"is_automated_change", "is_feature_flag", b"is_feature_flag", "is_managed", b"is_managed", "is_official_holdout", b"is_official_holdout", "is_template", b"is_template", "lifecycle_plan", b"lifecycle_plan", "name", b"name", "number_line_settings", b"number_line_settings", "official_holdout_opt_out_reason", b"official_holdout_opt_out_reason", "opt_out_of_official_holdout", b"opt_out_of_official_holdout", "owning_team_id", b"owning_team_id", "phase", b"phase", "revision", b"revision", "rules", b"rules", "suppress_editor_mention", b"suppress_editor_mention", "surfaces", b"surfaces", "tech_spec_link", b"tech_spec_link", "title", b"title", "type", b"type", "unit_type", b"unit_type", "variations", b"variations", "version", b"version", "winning_variation_id", b"winning_variation_id"]  # noqa: Y015
     def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
     _WhichOneofReturnType__archive_at: _TypeAlias = _typing.Literal["archive_at"]  # noqa: Y015
     _WhichOneofArgType__archive_at: _TypeAlias = _typing.Literal["_archive_at", b"_archive_at"]  # noqa: Y015

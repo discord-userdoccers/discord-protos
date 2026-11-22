@@ -512,6 +512,12 @@ message Experiment {
     optional RolloutPlan rollout_plan = 2;
   }
 
+  enum FeatureFlagAssignment {
+    FEATURE_FLAG_ASSIGNMENT_STICKY = 0;
+    FEATURE_FLAG_ASSIGNMENT_RANDOM_PER_CHECK = 1;
+    FEATURE_FLAG_ASSIGNMENT_LEGACY_HASH = 2;
+  }
+
   enum Level {
     LEVEL_UNSPECIFIED = 0;
     LEVEL_ORGANIZATION = 1;
@@ -595,6 +601,7 @@ message Experiment {
   EligibilityPersistence eligibility_persistence = 42;
   optional LifecyclePlan lifecycle_plan = 48;
   bool is_feature_flag = 49;
+  FeatureFlagAssignment feature_flag_assignment = 56;
   bool is_official_holdout = 50;
   optional HoldoutScope holdout_scope = 52;
   bool opt_out_of_official_holdout = 54;
