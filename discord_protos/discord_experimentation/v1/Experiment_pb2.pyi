@@ -1917,21 +1917,21 @@ class Experiment(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
 
         LEVEL_FIELD_NUMBER: _builtins.int
-        FISCAL_HALF_FIELD_NUMBER: _builtins.int
+        FISCAL_PERIOD_FIELD_NUMBER: _builtins.int
         FISCAL_YEAR_FIELD_NUMBER: _builtins.int
         level: Global___Experiment.Level.ValueType
-        fiscal_half: Global___Experiment.FiscalPeriod.ValueType
+        fiscal_period: Global___Experiment.FiscalPeriod.ValueType
         fiscal_year: _builtins.int
         def __init__(
             self,
             *,
             level: Global___Experiment.Level.ValueType = ...,
-            fiscal_half: Global___Experiment.FiscalPeriod.ValueType = ...,
+            fiscal_period: Global___Experiment.FiscalPeriod.ValueType = ...,
             fiscal_year: _builtins.int = ...,
         ) -> None: ...
         _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["fiscal_half", b"fiscal_half", "fiscal_year", b"fiscal_year", "level", b"level"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["fiscal_period", b"fiscal_period", "fiscal_year", b"fiscal_year", "level", b"level"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         def WhichOneof(self, oneof_group: _Never) -> None: ...
 

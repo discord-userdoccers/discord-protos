@@ -1239,9 +1239,9 @@ export interface Experiment_HoldoutScope {
      */
     level: Experiment_Level;
     /**
-     * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.FiscalPeriod fiscal_half = 2
+     * @generated from protobuf field: discord_protos.discord_experimentation.v1.Experiment.FiscalPeriod fiscal_period = 2
      */
-    fiscalHalf: Experiment_FiscalPeriod;
+    fiscalPeriod: Experiment_FiscalPeriod;
     /**
      * @generated from protobuf field: int32 fiscal_year = 3
      */
@@ -5815,14 +5815,14 @@ class Experiment_HoldoutScope$Type extends MessageType<Experiment_HoldoutScope> 
     constructor() {
         super("discord_protos.discord_experimentation.v1.Experiment.HoldoutScope", [
             { no: 1, name: "level", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.Level", Experiment_Level, "LEVEL_"] },
-            { no: 2, name: "fiscal_half", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.FiscalPeriod", Experiment_FiscalPeriod, "FISCAL_PERIOD_"] },
+            { no: 2, name: "fiscal_period", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.FiscalPeriod", Experiment_FiscalPeriod, "FISCAL_PERIOD_"] },
             { no: 3, name: "fiscal_year", kind: "scalar", T: 5 /*ScalarType.INT32*/ }
         ]);
     }
     create(value?: PartialMessage<Experiment_HoldoutScope>): Experiment_HoldoutScope {
         const message = globalThis.Object.create((this.messagePrototype!));
         message.level = 0;
-        message.fiscalHalf = 0;
+        message.fiscalPeriod = 0;
         message.fiscalYear = 0;
         if (value !== undefined)
             reflectionMergePartial<Experiment_HoldoutScope>(this, message, value);
@@ -5836,8 +5836,8 @@ class Experiment_HoldoutScope$Type extends MessageType<Experiment_HoldoutScope> 
                 case /* discord_protos.discord_experimentation.v1.Experiment.Level level */ 1:
                     message.level = reader.int32();
                     break;
-                case /* discord_protos.discord_experimentation.v1.Experiment.FiscalPeriod fiscal_half */ 2:
-                    message.fiscalHalf = reader.int32();
+                case /* discord_protos.discord_experimentation.v1.Experiment.FiscalPeriod fiscal_period */ 2:
+                    message.fiscalPeriod = reader.int32();
                     break;
                 case /* int32 fiscal_year */ 3:
                     message.fiscalYear = reader.int32();
@@ -5857,9 +5857,9 @@ class Experiment_HoldoutScope$Type extends MessageType<Experiment_HoldoutScope> 
         /* discord_protos.discord_experimentation.v1.Experiment.Level level = 1; */
         if (message.level !== 0)
             writer.tag(1, WireType.Varint).int32(message.level);
-        /* discord_protos.discord_experimentation.v1.Experiment.FiscalPeriod fiscal_half = 2; */
-        if (message.fiscalHalf !== 0)
-            writer.tag(2, WireType.Varint).int32(message.fiscalHalf);
+        /* discord_protos.discord_experimentation.v1.Experiment.FiscalPeriod fiscal_period = 2; */
+        if (message.fiscalPeriod !== 0)
+            writer.tag(2, WireType.Varint).int32(message.fiscalPeriod);
         /* int32 fiscal_year = 3; */
         if (message.fiscalYear !== 0)
             writer.tag(3, WireType.Varint).int32(message.fiscalYear);

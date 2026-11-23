@@ -532,7 +532,7 @@ message Experiment {
 
   message HoldoutScope {
     Level level = 1;
-    FiscalPeriod fiscal_half = 2;
+    FiscalPeriod fiscal_period = 2;
     int32 fiscal_year = 3;
   }
 

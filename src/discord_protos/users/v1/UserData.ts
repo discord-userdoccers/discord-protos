@@ -739,6 +739,10 @@ export interface UserData_AnonymizationInfo {
      * @generated from protobuf field: optional google.protobuf.Timestamp original_user_created_at = 3
      */
     originalUserCreatedAt?: Timestamp;
+    /**
+     * @generated from protobuf field: optional google.protobuf.UInt64Value original_user_id = 4
+     */
+    originalUserId?: UInt64Value;
 }
 /**
  * @generated from protobuf message discord_protos.users.v1.UserData.TypingIndicatorEmoji
@@ -6982,7 +6986,8 @@ class UserData_AnonymizationInfo$Type extends MessageType<UserData_Anonymization
         super("discord_protos.users.v1.UserData.AnonymizationInfo", [
             { no: 1, name: "status", kind: "enum", T: () => ["discord_protos.users.v1.UserData.AnonymizationStatus", UserData_AnonymizationStatus, "ANONYMIZATION_STATUS_"] },
             { no: 2, name: "anon_user_id", kind: "message", T: () => UInt64Value },
-            { no: 3, name: "original_user_created_at", kind: "message", T: () => Timestamp }
+            { no: 3, name: "original_user_created_at", kind: "message", T: () => Timestamp },
+            { no: 4, name: "original_user_id", kind: "message", T: () => UInt64Value }
         ]);
     }
     create(value?: PartialMessage<UserData_AnonymizationInfo>): UserData_AnonymizationInfo {
@@ -7006,6 +7011,9 @@ class UserData_AnonymizationInfo$Type extends MessageType<UserData_Anonymization
                 case /* optional google.protobuf.Timestamp original_user_created_at */ 3:
                     message.originalUserCreatedAt = Timestamp.internalBinaryRead(reader, reader.uint32(), options, message.originalUserCreatedAt);
                     break;
+                case /* optional google.protobuf.UInt64Value original_user_id */ 4:
+                    message.originalUserId = UInt64Value.internalBinaryRead(reader, reader.uint32(), options, message.originalUserId);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -7027,6 +7035,9 @@ class UserData_AnonymizationInfo$Type extends MessageType<UserData_Anonymization
         /* optional google.protobuf.Timestamp original_user_created_at = 3; */
         if (message.originalUserCreatedAt)
             Timestamp.internalBinaryWrite(message.originalUserCreatedAt, writer.tag(3, WireType.LengthDelimited).fork(), options).join();
+        /* optional google.protobuf.UInt64Value original_user_id = 4; */
+        if (message.originalUserId)
+            UInt64Value.internalBinaryWrite(message.originalUserId, writer.tag(4, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
