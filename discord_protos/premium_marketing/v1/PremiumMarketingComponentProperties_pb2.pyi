@@ -664,6 +664,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_VOICEMOD_3P_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 910
         DISMISSIBLE_CONTENT_GIFTED_NITRO_EXPIRATION_WINBACK_NAGBAR: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 911
         DISMISSIBLE_CONTENT_HOLIDAY_COACHMARK_WINTER_2026: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 912
+        DISMISSIBLE_CONTENT_BUILD_A_BEAR_RELAUNCH_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 913
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_UNSPECIFIED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1224,6 +1225,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_VOICEMOD_3P_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 910
     DISMISSIBLE_CONTENT_GIFTED_NITRO_EXPIRATION_WINBACK_NAGBAR: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 911
     DISMISSIBLE_CONTENT_HOLIDAY_COACHMARK_WINTER_2026: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 912
+    DISMISSIBLE_CONTENT_BUILD_A_BEAR_RELAUNCH_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 913
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)

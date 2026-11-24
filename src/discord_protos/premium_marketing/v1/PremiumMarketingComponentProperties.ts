@@ -4186,7 +4186,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_HOLIDAY_COACHMARK_WINTER_2026 = 912;
      */
-    HOLIDAY_COACHMARK_WINTER_2026 = 912
+    HOLIDAY_COACHMARK_WINTER_2026 = 912,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_BUILD_A_BEAR_RELAUNCH_COACHMARK = 913;
+     */
+    BUILD_A_BEAR_RELAUNCH_COACHMARK = 913
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
