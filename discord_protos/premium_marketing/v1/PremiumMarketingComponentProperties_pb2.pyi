@@ -584,7 +584,6 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_GUILD_THEME_POWERUP_ROLLBACK_MODAL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 829
         DISMISSIBLE_CONTENT_VIRTUAL_CURRENCY_PROFILE_ONBOARDING_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 830
         DISMISSIBLE_CONTENT_ORB_WALLET_PROFILE_INTRODUCTION_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 831
-        DISMISSIBLE_CONTENT_MOBILE_SHOP_BROWSE_ALL_NITRO_UPSELL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 832
         DISMISSIBLE_CONTENT_GUILD_SPACE_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 834
         DISMISSIBLE_CONTENT_GUILD_SPACE_NUX_MODAL: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 835
         DISMISSIBLE_CONTENT_ORB_WALLET_SHOP_CTA_CARD: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 836
@@ -665,6 +664,7 @@ class PremiumMarketingComponentProperties(_message.Message):
         DISMISSIBLE_CONTENT_GIFTED_NITRO_EXPIRATION_WINBACK_NAGBAR: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 911
         DISMISSIBLE_CONTENT_HOLIDAY_COACHMARK_WINTER_2026: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 912
         DISMISSIBLE_CONTENT_BUILD_A_BEAR_RELAUNCH_COACHMARK: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 913
+        DISMISSIBLE_CONTENT_CHANNEL_TABS_UPSELL_POPOVER: PremiumMarketingComponentProperties._DismissibleContent.ValueType  # 914
 
     class DismissibleContent(_DismissibleContent, metaclass=_DismissibleContentEnumTypeWrapper): ...
     DISMISSIBLE_CONTENT_UNSPECIFIED: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 0
@@ -1145,7 +1145,6 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_GUILD_THEME_POWERUP_ROLLBACK_MODAL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 829
     DISMISSIBLE_CONTENT_VIRTUAL_CURRENCY_PROFILE_ONBOARDING_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 830
     DISMISSIBLE_CONTENT_ORB_WALLET_PROFILE_INTRODUCTION_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 831
-    DISMISSIBLE_CONTENT_MOBILE_SHOP_BROWSE_ALL_NITRO_UPSELL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 832
     DISMISSIBLE_CONTENT_GUILD_SPACE_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 834
     DISMISSIBLE_CONTENT_GUILD_SPACE_NUX_MODAL: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 835
     DISMISSIBLE_CONTENT_ORB_WALLET_SHOP_CTA_CARD: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 836
@@ -1226,6 +1225,7 @@ class PremiumMarketingComponentProperties(_message.Message):
     DISMISSIBLE_CONTENT_GIFTED_NITRO_EXPIRATION_WINBACK_NAGBAR: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 911
     DISMISSIBLE_CONTENT_HOLIDAY_COACHMARK_WINTER_2026: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 912
     DISMISSIBLE_CONTENT_BUILD_A_BEAR_RELAUNCH_COACHMARK: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 913
+    DISMISSIBLE_CONTENT_CHANNEL_TABS_UPSELL_POPOVER: PremiumMarketingComponentProperties.DismissibleContent.ValueType  # 914
 
     class _AssetVariant:
         ValueType = _typing.NewType("ValueType", _builtins.int)

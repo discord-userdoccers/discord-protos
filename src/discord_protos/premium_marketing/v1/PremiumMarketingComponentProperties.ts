@@ -3868,10 +3868,6 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
      */
     ORB_WALLET_PROFILE_INTRODUCTION_COACHMARK = 831,
     /**
-     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_MOBILE_SHOP_BROWSE_ALL_NITRO_UPSELL = 832;
-     */
-    MOBILE_SHOP_BROWSE_ALL_NITRO_UPSELL = 832,
-    /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_GUILD_SPACE_COACHMARK = 834;
      */
     GUILD_SPACE_COACHMARK = 834,
@@ -4190,7 +4186,11 @@ export enum PremiumMarketingComponentProperties_DismissibleContent {
     /**
      * @generated from protobuf enum value: DISMISSIBLE_CONTENT_BUILD_A_BEAR_RELAUNCH_COACHMARK = 913;
      */
-    BUILD_A_BEAR_RELAUNCH_COACHMARK = 913
+    BUILD_A_BEAR_RELAUNCH_COACHMARK = 913,
+    /**
+     * @generated from protobuf enum value: DISMISSIBLE_CONTENT_CHANNEL_TABS_UPSELL_POPOVER = 914;
+     */
+    CHANNEL_TABS_UPSELL_POPOVER = 914
 }
 /**
  * @generated from protobuf enum discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AssetVariant
