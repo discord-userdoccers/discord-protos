@@ -1847,7 +1847,9 @@ class Experiment(_message.Message):
 
         STATUS_FIELD_NUMBER: _builtins.int
         RAMP_STEPS_FIELD_NUMBER: _builtins.int
+        ID_FIELD_NUMBER: _builtins.int
         status: Global___Experiment.PlanStatus.ValueType
+        id: _builtins.int
         @_builtins.property
         def ramp_steps(self) -> _containers.RepeatedCompositeFieldContainer[Global___Experiment.RampStep]: ...
         def __init__(
@@ -1855,10 +1857,11 @@ class Experiment(_message.Message):
             *,
             status: Global___Experiment.PlanStatus.ValueType = ...,
             ramp_steps: _abc.Iterable[Global___Experiment.RampStep] | None = ...,
+            id: _builtins.int = ...,
         ) -> None: ...
         _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["ramp_steps", b"ramp_steps", "status", b"status"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["id", b"id", "ramp_steps", b"ramp_steps", "status", b"status"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         def WhichOneof(self, oneof_group: _Never) -> None: ...
 
@@ -1868,7 +1871,9 @@ class Experiment(_message.Message):
 
         STATUS_FIELD_NUMBER: _builtins.int
         RAMP_STEPS_FIELD_NUMBER: _builtins.int
+        ID_FIELD_NUMBER: _builtins.int
         status: Global___Experiment.PlanStatus.ValueType
+        id: _builtins.int
         @_builtins.property
         def ramp_steps(self) -> _containers.RepeatedCompositeFieldContainer[Global___Experiment.RampStep]: ...
         def __init__(
@@ -1876,10 +1881,11 @@ class Experiment(_message.Message):
             *,
             status: Global___Experiment.PlanStatus.ValueType = ...,
             ramp_steps: _abc.Iterable[Global___Experiment.RampStep] | None = ...,
+            id: _builtins.int = ...,
         ) -> None: ...
         _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
         def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["ramp_steps", b"ramp_steps", "status", b"status"]  # noqa: Y015
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["id", b"id", "ramp_steps", b"ramp_steps", "status", b"status"]  # noqa: Y015
         def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
         def WhichOneof(self, oneof_group: _Never) -> None: ...
 

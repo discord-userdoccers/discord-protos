@@ -500,11 +500,13 @@ message Experiment {
   message MeasurementPlan {
     PlanStatus status = 1;
     repeated RampStep ramp_steps = 2;
+    fixed64 id = 3;
   }
 
   message RolloutPlan {
     PlanStatus status = 1;
     repeated RampStep ramp_steps = 2;
+    fixed64 id = 3;
   }
 
   message LifecyclePlan {

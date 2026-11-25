@@ -1203,6 +1203,10 @@ export interface Experiment_MeasurementPlan {
      * @generated from protobuf field: repeated discord_protos.discord_experimentation.v1.Experiment.RampStep ramp_steps = 2
      */
     rampSteps: Experiment_RampStep[];
+    /**
+     * @generated from protobuf field: fixed64 id = 3
+     */
+    id: bigint;
 }
 /**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.RolloutPlan
@@ -1216,6 +1220,10 @@ export interface Experiment_RolloutPlan {
      * @generated from protobuf field: repeated discord_protos.discord_experimentation.v1.Experiment.RampStep ramp_steps = 2
      */
     rampSteps: Experiment_RampStep[];
+    /**
+     * @generated from protobuf field: fixed64 id = 3
+     */
+    id: bigint;
 }
 /**
  * @generated from protobuf message discord_protos.discord_experimentation.v1.Experiment.LifecyclePlan
@@ -5652,13 +5660,15 @@ class Experiment_MeasurementPlan$Type extends MessageType<Experiment_Measurement
     constructor() {
         super("discord_protos.discord_experimentation.v1.Experiment.MeasurementPlan", [
             { no: 1, name: "status", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.PlanStatus", Experiment_PlanStatus, "PLAN_STATUS_"] },
-            { no: 2, name: "ramp_steps", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => Experiment_RampStep }
+            { no: 2, name: "ramp_steps", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => Experiment_RampStep },
+            { no: 3, name: "id", kind: "scalar", T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ }
         ]);
     }
     create(value?: PartialMessage<Experiment_MeasurementPlan>): Experiment_MeasurementPlan {
         const message = globalThis.Object.create((this.messagePrototype!));
         message.status = 0;
         message.rampSteps = [];
+        message.id = 0n;
         if (value !== undefined)
             reflectionMergePartial<Experiment_MeasurementPlan>(this, message, value);
         return message;
@@ -5673,6 +5683,9 @@ class Experiment_MeasurementPlan$Type extends MessageType<Experiment_Measurement
                     break;
                 case /* repeated discord_protos.discord_experimentation.v1.Experiment.RampStep ramp_steps */ 2:
                     message.rampSteps.push(Experiment_RampStep.internalBinaryRead(reader, reader.uint32(), options));
+                    break;
+                case /* fixed64 id */ 3:
+                    message.id = reader.fixed64().toBigInt();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -5692,6 +5705,9 @@ class Experiment_MeasurementPlan$Type extends MessageType<Experiment_Measurement
         /* repeated discord_protos.discord_experimentation.v1.Experiment.RampStep ramp_steps = 2; */
         for (let i = 0; i < message.rampSteps.length; i++)
             Experiment_RampStep.internalBinaryWrite(message.rampSteps[i], writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+        /* fixed64 id = 3; */
+        if (message.id !== 0n)
+            writer.tag(3, WireType.Bit64).fixed64(message.id);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -5707,13 +5723,15 @@ class Experiment_RolloutPlan$Type extends MessageType<Experiment_RolloutPlan> {
     constructor() {
         super("discord_protos.discord_experimentation.v1.Experiment.RolloutPlan", [
             { no: 1, name: "status", kind: "enum", T: () => ["discord_protos.discord_experimentation.v1.Experiment.PlanStatus", Experiment_PlanStatus, "PLAN_STATUS_"] },
-            { no: 2, name: "ramp_steps", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => Experiment_RampStep }
+            { no: 2, name: "ramp_steps", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => Experiment_RampStep },
+            { no: 3, name: "id", kind: "scalar", T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ }
         ]);
     }
     create(value?: PartialMessage<Experiment_RolloutPlan>): Experiment_RolloutPlan {
         const message = globalThis.Object.create((this.messagePrototype!));
         message.status = 0;
         message.rampSteps = [];
+        message.id = 0n;
         if (value !== undefined)
             reflectionMergePartial<Experiment_RolloutPlan>(this, message, value);
         return message;
@@ -5728,6 +5746,9 @@ class Experiment_RolloutPlan$Type extends MessageType<Experiment_RolloutPlan> {
                     break;
                 case /* repeated discord_protos.discord_experimentation.v1.Experiment.RampStep ramp_steps */ 2:
                     message.rampSteps.push(Experiment_RampStep.internalBinaryRead(reader, reader.uint32(), options));
+                    break;
+                case /* fixed64 id */ 3:
+                    message.id = reader.fixed64().toBigInt();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -5747,6 +5768,9 @@ class Experiment_RolloutPlan$Type extends MessageType<Experiment_RolloutPlan> {
         /* repeated discord_protos.discord_experimentation.v1.Experiment.RampStep ramp_steps = 2; */
         for (let i = 0; i < message.rampSteps.length; i++)
             Experiment_RampStep.internalBinaryWrite(message.rampSteps[i], writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+        /* fixed64 id = 3; */
+        if (message.id !== 0n)
+            writer.tag(3, WireType.Bit64).fixed64(message.id);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
